@@ -8,5 +8,10 @@ in [BMOPFDraftData](https://github.com/frederikgeth/BMOPFDraftData/tree/main/out
 licensing and attribution are in that folder (`ATTRIBUTION.md`, `LICENSING.md`). Basemap © CARTO
 © OpenStreetMap contributors.
 
+`norwood/13-*`, `norwood/14-*` add 8 synthetic 70 kW batteries to a scratch copy of the Norwood model
+(not part of the published data) to show inverter-based resources.
+
+`oracle/`: Tellegen's own test case `crates/tellegen/tests/data/mc_pf/oracle_inputs/pf_1ph_line.json`.
+
 `schematic-symbols.png`, `schematic-zones.png`: the French feeder `75_MVFeeder0100` from
 [Representative French Power Grids](https://github.com/frederikgeth/Representative_French_Power_Grids).
