@@ -11,7 +11,7 @@ licensing and attribution are in that folder (`ATTRIBUTION.md`, `LICENSING.md`).
 `norwood/13-*`, `norwood/14-*` add 8 synthetic 70 kW batteries to a scratch copy of the Norwood model
 (not part of the published data) to show inverter-based resources.
 
-`oracle/`: Tellegen's own test case `crates/tellegen/tests/data/mc_pf/oracle_inputs/pf_1ph_line.json`.
+`oracle/`: Tellegen's own test cases in `crates/tellegen/tests/data/mc_pf/oracle_inputs/`: `pf_1ph_line.json` (solid earth), `pf_dy_xfmr.json` (a Dyn transformer) and `pf_center_tap_loaded.json` (a centre tap).
 
 `schematic-symbols.png`, `schematic-zones.png`: the French feeder `75_MVFeeder0100` from
 [Representative French Power Grids](https://github.com/frederikgeth/Representative_French_Power_Grids).
