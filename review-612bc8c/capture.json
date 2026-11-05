@@ -1,0 +1,31 @@
+{
+  "source_commit": "612bc8c",
+  "case": "ACTIVSg200",
+  "coordinates": "From the PowerWorld aux file; omitted for the synthetic/stress comparison",
+  "highlighted": "230 kV",
+  "desktop": [
+    1440,
+    900
+  ],
+  "phone": [
+    390,
+    844
+  ],
+  "captures": [
+    "1-geographic.png",
+    "2-schematic.png",
+    "3-substations.png",
+    "4-results.png",
+    "7-highlight-voltage.png",
+    "5-no-coordinates-before.png",
+    "6-no-coordinates-schematic.png",
+    "8-phone-overview.png",
+    "9-phone-detail.png"
+  ],
+  "synthetic_clip": {
+    "x": 500,
+    "y": 290,
+    "width": 440,
+    "height": 400
+  }
+}
