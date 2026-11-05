@@ -1,0 +1,20 @@
+[
+  {
+    "name": "ac-flat",
+    "code": 1,
+    "seconds": 2.633,
+    "error": "tellegen: AC power flow did not converge: best mismatch 8.650e-1 over 5 starts"
+  },
+  {
+    "name": "ac-case",
+    "code": 1,
+    "seconds": 1.771,
+    "error": "tellegen: AC power flow did not converge: best mismatch 6.503e-1 over 6 starts"
+  },
+  {
+    "name": "ac-dcpf-seed",
+    "code": 1,
+    "seconds": 2.026,
+    "error": "tellegen: AC power flow did not converge: best mismatch 3.153e-1 over 6 starts"
+  }
+]

@@ -1,0 +1,42 @@
+{
+  "case200": {
+    "buses": 200,
+    "branches": 245,
+    "status": "optimal",
+    "objective": 27479.643306074344,
+    "published_objective": 27479.643306074344,
+    "matched_paths": 245,
+    "enforced": 245,
+    "binding": 0
+  },
+  "case500": {
+    "buses": 500,
+    "branches": 597,
+    "status": "optimal",
+    "objective": 70784.4449322562,
+    "published_objective": 70784.4449322562,
+    "matched_paths": 597,
+    "enforced": 597,
+    "binding": 1
+  },
+  "case7000": {
+    "buses": 6717,
+    "branches": 9140,
+    "status": "optimal",
+    "objective": 1688055.344482727,
+    "published_objective": 1688055.344482727,
+    "matched_paths": 9140,
+    "enforced": 9140,
+    "binding": 1
+  },
+  "cats": {
+    "buses": 8870,
+    "branches": 10823,
+    "status": "optimal",
+    "objective": 752160.5139561775,
+    "published_objective": 752160.5139561775,
+    "matched_paths": 10823,
+    "enforced": 10823,
+    "binding": 24
+  }
+}

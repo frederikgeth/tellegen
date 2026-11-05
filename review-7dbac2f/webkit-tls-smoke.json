@@ -1,0 +1,20 @@
+[
+  {
+    "engine": "webkit",
+    "version": "27.2",
+    "phone": false,
+    "errors": [],
+    "transfer": "Branch 10324\nFrame\nClear\n\nPositive flow enters the branch from the named bus.\n\nEnd\tActive\nFrom · bus 7928\t-2608.423434 MW\nTo · bus 7927\t+2608.423434 MW\nActive magnitude\n2608.423434 MW\nDirection\nBus 7927 → bus 7928\nUtilization\n79.817119%\nLoading status\nbelow warning\nRating basis\nMW\nEffective rating\n3268 MW\nHeadroom\n+659.576566 MW\nLimiting end\nDC magnitude",
+    "binding": "Branch 5311\n26.699464 objective units/MW · marginal relief",
+    "passed": true
+  },
+  {
+    "engine": "webkit",
+    "version": "27.2",
+    "phone": true,
+    "errors": [],
+    "transfer": "Branch 10324\nFrame\nClear\n\nPositive flow enters the branch from the named bus.\n\nEnd\tActive\nFrom · bus 7928\t-2608.423434 MW\nTo · bus 7927\t+2608.423434 MW\nActive magnitude\n2608.423434 MW\nDirection\nBus 7927 → bus 7928\nUtilization\n79.817119%\nLoading status\nbelow warning\nRating basis\nMW\nEffective rating\n3268 MW\nHeadroom\n+659.576566 MW\nLimiting end\nDC magnitude",
+    "binding": "Branch 5311\n26.699464 objective units/MW · marginal relief",
+    "passed": true
+  }
+]

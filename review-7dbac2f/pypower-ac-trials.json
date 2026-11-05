@@ -1,0 +1,21 @@
+{
+  "pypower": "5.1.21",
+  "reactive_limits_enforced": false,
+  "trials": [
+    {
+      "start": "stored",
+      "converged": false,
+      "seconds": 0.941
+    },
+    {
+      "start": "flat",
+      "converged": false,
+      "seconds": 0.949
+    },
+    {
+      "start": "dc-angle",
+      "converged": false,
+      "seconds": 1.016
+    }
+  ]
+}
