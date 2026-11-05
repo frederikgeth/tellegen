@@ -1,0 +1,153 @@
+{
+  "source_commit": "e5579db073dad55624d92ae3e5ce324c5743b7cb",
+  "chrome": "157.0.8103.39",
+  "desktop": [
+    1440,
+    900
+  ],
+  "touch": [
+    390,
+    844
+  ],
+  "case": "CATS",
+  "methods": "requestAnimationFrame timestamps during mouse drag and wheel zoom, and emulated touch pan and pinch at case overview",
+  "results": [
+    {
+      "phone": false,
+      "loadMs": 260,
+      "diagramMs": 213,
+      "key": "Power transfers\nDC OPF\n\nResult available \u00b7 optimal \u00b7 base case\n\nBlue halo width \u00b7 Largest reported endpoint |P| \u00b7 0 to 500 MW\n\nHalo scale\n100 MW\n500 MW\n1500 MW\nWider halos cap at the selected MW.\n\nChevrons show direction close in \u00b7 Red gauges show overload in percent of rating.\n\n86 zero flow \u00b7 0 active flow unavailable \u00b7 Lossless DC endpoints\n\nBus readouts show solved generation and model demand.\n\nLargest active transfers",
+      "mapOff": {
+        "pan": {
+          "frames": 136,
+          "p50": 16.7,
+          "p95": 16.8,
+          "max": 16.8,
+          "over34": 0
+        },
+        "zoom": {
+          "frames": 105,
+          "p50": 16.7,
+          "p95": 16.7,
+          "max": 16.8,
+          "over34": 0
+        }
+      },
+      "mapOn": {
+        "pan": {
+          "frames": 136,
+          "p50": 16.7,
+          "p95": 16.8,
+          "max": 16.8,
+          "over34": 0
+        },
+        "zoom": {
+          "frames": 105,
+          "p50": 16.7,
+          "p95": 16.7,
+          "max": 16.8,
+          "over34": 0
+        }
+      },
+      "selected": {
+        "branch": 8406,
+        "mw": -1796.9053643570899,
+        "loading": 0.6392406134319067,
+        "loading_info": {
+          "basis": "mw",
+          "rating": 2811,
+          "rating_source": "stated"
+        },
+        "path_vertices": 286,
+        "displayed_mw": [
+          -1796.905364,
+          1796.905364
+        ]
+      },
+      "schematicMs": 171,
+      "schematicPan": {
+        "frames": 135,
+        "p50": 16.7,
+        "p95": 16.7,
+        "max": 16.8,
+        "over34": 0
+      },
+      "errors": []
+    },
+    {
+      "phone": true,
+      "loadMs": 235,
+      "diagramMs": 206,
+      "key": "Power transfers\nDC OPF\n\nResult available \u00b7 optimal \u00b7 base case\n\nBlue halo width \u00b7 Largest reported endpoint |P| \u00b7 0 to 500 MW\n\nHalo scale\n100 MW\n500 MW\n1500 MW\nWider halos cap at the selected MW.\n\nChevrons show direction close in \u00b7 Red gauges show overload in percent of rating.\n\n86 zero flow \u00b7 0 active flow unavailable \u00b7 Lossless DC endpoints\n\nBus readouts show solved generation and model demand.\n\nLargest active transfers",
+      "mapOff": {
+        "pan": {
+          "frames": 133,
+          "p50": 16.7,
+          "p95": 16.8,
+          "max": 33.3,
+          "over34": 0
+        },
+        "zoom": {
+          "frames": 126,
+          "p50": 16.7,
+          "p95": 16.8,
+          "max": 33.4,
+          "over34": 0
+        }
+      },
+      "mapOn": {
+        "pan": {
+          "frames": 135,
+          "p50": 16.7,
+          "p95": 16.8,
+          "max": 33.4,
+          "over34": 0
+        },
+        "zoom": {
+          "frames": 126,
+          "p50": 16.7,
+          "p95": 16.8,
+          "max": 33.4,
+          "over34": 0
+        }
+      },
+      "selected": {
+        "branch": 8406,
+        "mw": -1796.9053643570899,
+        "loading": 0.6392406134319067,
+        "loading_info": {
+          "basis": "mw",
+          "rating": 2811,
+          "rating_source": "stated"
+        },
+        "path_vertices": 286,
+        "displayed_mw": [
+          -1796.905364,
+          1796.905364
+        ]
+      },
+      "schematicMs": 324,
+      "schematicPan": {
+        "frames": 136,
+        "p50": 16.7,
+        "p95": 16.7,
+        "max": 33.4,
+        "over34": 0
+      },
+      "errors": []
+    }
+  ],
+  "captures": [
+    "22-cats-transfer.png",
+    "23-cats-transfer-phone.png",
+    "24-ac-overload-transfers.png"
+  ],
+  "ac_fixture": {
+    "branch": 1,
+    "from_mw": 91.013283,
+    "to_mw": -90.927504,
+    "from_mvar": 17.161017,
+    "to_mvar": -12.872058,
+    "gauge": "265%"
+  }
+}
