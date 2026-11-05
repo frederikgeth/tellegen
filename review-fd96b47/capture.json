@@ -1,0 +1,21 @@
+{
+  "source_commit": "fd96b4725afd1dd6b016d399bb1511ea9cab8cae",
+  "chrome": "157.0.8103.39",
+  "platform": "darwin arm64",
+  "desktop": [
+    1440,
+    900
+  ],
+  "phone_touch_emulation": [
+    390,
+    844
+  ],
+  "cats_data": "8a6f7fa067a77109abb59a67b8f4ac8ee908e04d",
+  "captures": [
+    "15-cats-geographic.png",
+    "16-cats-exceptions.png",
+    "17-cats-routed-branch.png",
+    "18-cats-phone-inspector.png",
+    "19-ac-endpoint-inspector.png"
+  ]
+}

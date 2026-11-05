@@ -1,0 +1,96 @@
+[
+  {
+    "phone": false,
+    "loadMs": 256,
+    "diagramMs": 210,
+    "counts": "DC: |V| not solved\n0 overloads\n179 warning · 24 at rating\n0 loading unknown · 0 out of service",
+    "mapOff": {
+      "pan": {
+        "frames": 136,
+        "p50": 16.7,
+        "p95": 16.8,
+        "max": 66.7,
+        "over34": 1
+      },
+      "zoom": {
+        "frames": 104,
+        "p50": 16.7,
+        "p95": 16.8,
+        "max": 33.4,
+        "over34": 0
+      }
+    },
+    "mapOn": {
+      "pan": {
+        "frames": 136,
+        "p50": 16.7,
+        "p95": 16.8,
+        "max": 16.8,
+        "over34": 0
+      },
+      "zoom": {
+        "frames": 105,
+        "p50": 16.7,
+        "p95": 16.7,
+        "max": 16.8,
+        "over34": 0
+      }
+    },
+    "schematicMs": 198,
+    "schematicPan": {
+      "frames": 135,
+      "p50": 16.7,
+      "p95": 16.8,
+      "max": 16.8,
+      "over34": 0
+    },
+    "errors": []
+  },
+  {
+    "phone": true,
+    "loadMs": 226,
+    "diagramMs": 198,
+    "counts": "DC: |V| not solved\n0 overloads\n179 warning · 24 at rating\n0 loading unknown · 0 out of service",
+    "mapOff": {
+      "pan": {
+        "frames": 139,
+        "p50": 16.7,
+        "p95": 16.7,
+        "max": 16.8,
+        "over34": 0
+      },
+      "zoom": {
+        "frames": 97,
+        "p50": 16.7,
+        "p95": 16.7,
+        "max": 16.8,
+        "over34": 0
+      }
+    },
+    "mapOn": {
+      "pan": {
+        "frames": 138,
+        "p50": 16.7,
+        "p95": 16.8,
+        "max": 16.8,
+        "over34": 0
+      },
+      "zoom": {
+        "frames": 96,
+        "p50": 16.7,
+        "p95": 16.7,
+        "max": 16.8,
+        "over34": 0
+      }
+    },
+    "schematicMs": 204,
+    "schematicPan": {
+      "frames": 137,
+      "p50": 16.7,
+      "p95": 16.8,
+      "max": 16.8,
+      "over34": 0
+    },
+    "errors": []
+  }
+]

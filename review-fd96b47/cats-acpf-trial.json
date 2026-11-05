@@ -1,0 +1,17 @@
+{
+  "elapsedMs": 2957,
+  "panel": "Operating limits\nAC power flow\n\nCalculation unavailable · no result · status unavailable · base case\n\nLoading: max(|S from|, |S to|) / MVA rating · tick at 100%\n\nVoltage results unavailable\n0 overloads\n0 warning · 0 at rating\n8870 voltage unknown ·10823 loading unknown · 0 out of service\nKey and settings",
+  "errors": [],
+  "notifications": [
+    "Calculation did not complete",
+    "CATS (California): AC power flow runs only in the browser Study, which is unavailable: browser study unavailable: AC power flow did not converge: best mismatch 3.201e-1 over 5 starts",
+    "Calculation did not complete  Retry Details Close"
+  ],
+  "body": [
+    "Calculation unavailable · no result · status unavailable · base case",
+    "Voltage results unavailable",
+    "UNAVAILABLE",
+    "UNAVAILABLE",
+    "UNAVAILABLE"
+  ]
+}
