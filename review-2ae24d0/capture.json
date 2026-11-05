@@ -1,0 +1,31 @@
+{
+  "source_commit": "2ae24d0b8fe676abdf20e99b69a86a48556f1f5f",
+  "chrome": "157.0.8103.39",
+  "desktop": [
+    1440,
+    900
+  ],
+  "phone_touch_emulation": [
+    390,
+    844
+  ],
+  "case": "CATS",
+  "captures": [
+    "20-cats-economics.png",
+    "21-cats-economics-phone.png"
+  ],
+  "checks": [
+    {
+      "phone": false,
+      "highest_impact_branch": 5311,
+      "relief_per_mw": 26.699463764965696,
+      "binding": 24
+    },
+    {
+      "phone": true,
+      "highest_impact_branch": 5311,
+      "relief_per_mw": 26.699463764965696,
+      "binding": 24
+    }
+  ]
+}
