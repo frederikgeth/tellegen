@@ -1670,7 +1670,7 @@ dependencies = [
 [[package]]
 name = "powerio"
 version = "0.11.9"
-source = "git+https://github.com/eigenergy/powerio.git?rev=49e8eacb45b2051de91f917815a26706b8a30a07#49e8eacb45b2051de91f917815a26706b8a30a07"
+source = "git+https://github.com/eigenergy/powerio.git?rev=98d5c88fa7eed18ba537a6c278d0f934dc7d2422#98d5c88fa7eed18ba537a6c278d0f934dc7d2422"
 dependencies = [
  "num-complex",
  "powerio-core",
@@ -1686,7 +1686,7 @@ dependencies = [
 [[package]]
 name = "powerio-core"
 version = "0.11.9"
-source = "git+https://github.com/eigenergy/powerio.git?rev=49e8eacb45b2051de91f917815a26706b8a30a07#49e8eacb45b2051de91f917815a26706b8a30a07"
+source = "git+https://github.com/eigenergy/powerio.git?rev=98d5c88fa7eed18ba537a6c278d0f934dc7d2422#98d5c88fa7eed18ba537a6c278d0f934dc7d2422"
 dependencies = [
  "errno",
  "libc",
@@ -1699,7 +1699,7 @@ dependencies = [
 [[package]]
 name = "powerio-dist"
 version = "0.11.9"
-source = "git+https://github.com/eigenergy/powerio.git?rev=49e8eacb45b2051de91f917815a26706b8a30a07#49e8eacb45b2051de91f917815a26706b8a30a07"
+source = "git+https://github.com/eigenergy/powerio.git?rev=98d5c88fa7eed18ba537a6c278d0f934dc7d2422#98d5c88fa7eed18ba537a6c278d0f934dc7d2422"
 dependencies = [
  "memchr",
  "num-complex",
@@ -1716,7 +1716,7 @@ dependencies = [
 [[package]]
 name = "powerio-matrix"
 version = "0.11.9"
-source = "git+https://github.com/eigenergy/powerio.git?rev=49e8eacb45b2051de91f917815a26706b8a30a07#49e8eacb45b2051de91f917815a26706b8a30a07"
+source = "git+https://github.com/eigenergy/powerio.git?rev=98d5c88fa7eed18ba537a6c278d0f934dc7d2422#98d5c88fa7eed18ba537a6c278d0f934dc7d2422"
 dependencies = [
  "faer",
  "num-complex",
@@ -1738,7 +1738,7 @@ dependencies = [
 [[package]]
 name = "powerio-prob"
 version = "0.11.9"
-source = "git+https://github.com/eigenergy/powerio.git?rev=49e8eacb45b2051de91f917815a26706b8a30a07#49e8eacb45b2051de91f917815a26706b8a30a07"
+source = "git+https://github.com/eigenergy/powerio.git?rev=98d5c88fa7eed18ba537a6c278d0f934dc7d2422#98d5c88fa7eed18ba537a6c278d0f934dc7d2422"
 dependencies = [
  "powerio-core",
  "powerio-dist",
@@ -1752,7 +1752,7 @@ dependencies = [
 [[package]]
 name = "powerio-synth"
 version = "0.11.9"
-source = "git+https://github.com/eigenergy/powerio.git?rev=49e8eacb45b2051de91f917815a26706b8a30a07#49e8eacb45b2051de91f917815a26706b8a30a07"
+source = "git+https://github.com/eigenergy/powerio.git?rev=98d5c88fa7eed18ba537a6c278d0f934dc7d2422#98d5c88fa7eed18ba537a6c278d0f934dc7d2422"
 dependencies = [
  "powerio-tx",
  "rand",
@@ -1763,7 +1763,7 @@ dependencies = [
 [[package]]
 name = "powerio-tnd"
 version = "0.11.9"
-source = "git+https://github.com/eigenergy/powerio.git?rev=49e8eacb45b2051de91f917815a26706b8a30a07#49e8eacb45b2051de91f917815a26706b8a30a07"
+source = "git+https://github.com/eigenergy/powerio.git?rev=98d5c88fa7eed18ba537a6c278d0f934dc7d2422#98d5c88fa7eed18ba537a6c278d0f934dc7d2422"
 dependencies = [
  "num-complex",
  "powerio-core",
@@ -1777,7 +1777,7 @@ dependencies = [
 [[package]]
 name = "powerio-tx"
 version = "0.11.9"
-source = "git+https://github.com/eigenergy/powerio.git?rev=49e8eacb45b2051de91f917815a26706b8a30a07#49e8eacb45b2051de91f917815a26706b8a30a07"
+source = "git+https://github.com/eigenergy/powerio.git?rev=98d5c88fa7eed18ba537a6c278d0f934dc7d2422#98d5c88fa7eed18ba537a6c278d0f934dc7d2422"
 dependencies = [
  "lexical-core",
  "memchr",

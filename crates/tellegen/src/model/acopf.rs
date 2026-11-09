@@ -276,7 +276,10 @@ fn element_name(kind: &str, row: usize, uid: Option<&str>) -> String {
 }
 
 fn validate_supported(instance: &AcOpfInstance) -> Result<(), String> {
-    let network = instance.network();
+    validate_supported_network(instance.network())
+}
+
+fn validate_supported_network(network: &powerio::BalancedNetwork) -> Result<(), String> {
     network.validate().map_err(|error| error.to_string())?;
     validate_canonical_identity(network)?;
     if network.is_normalized() {
@@ -435,6 +438,27 @@ fn compile_ac_opf_model_with(
     let policy = AcOpfAssemblyPolicy::CANONICAL;
     let prep = build_ac_opf_preparation(instance, &policy.options())
         .map_err(|error| format!("{}: {error}", error.code().code))?;
+    compile_ac_opf_preparation_with(
+        instance.network(),
+        instance.constraints(),
+        instance.initial_point().is_some(),
+        prep,
+        augment,
+    )
+}
+
+fn compile_ac_opf_preparation_with(
+    network: &powerio::BalancedNetwork,
+    constraints: &powerio_prob::ActiveConstraints,
+    has_initial_point: bool,
+    prep: AcOpfPreparation,
+    augment: impl FnOnce(
+        &AcOpfPreparation,
+        &AcOpfColumns,
+        &AcOpfRows,
+        &mut NlProblemParts,
+    ) -> Result<(), String>,
+) -> Result<CanonicalAcOpfModel, String> {
     let n = prep.n_buses;
     let k = prep.n_generators();
     let m = prep.n_branches();
@@ -469,7 +493,7 @@ fn compile_ac_opf_model_with(
     let mut x_u = vec![INF; next_column];
     let mut x0 = vec![0.0; next_column];
     let mut var_names = vec![String::new(); next_column];
-    let vm_start = if instance.initial_point().is_some() {
+    let vm_start = if has_initial_point {
         prep.buses.initial_vm.clone()
     } else {
         prep.calc_vm_setpoints()
@@ -609,7 +633,7 @@ fn compile_ac_opf_model_with(
         if let powerio_matrix::AnalysisBranchSource::Branch { row } =
             prep.branches.analysis_sources[branch]
         {
-            let source = &instance.network().branches()[row];
+            let source = &network.branches()[row];
             if prep.branches.angle_bound_active[branch] {
                 validate_bounds(
                     &format!("angle_difference[{identity}]"),
@@ -617,7 +641,7 @@ fn compile_ac_opf_model_with(
                     source.angmax,
                 )?;
             }
-            if instance.constraints().thermal_limits.selects(identity) {
+            if constraints.thermal_limits.selects(identity) {
                 validate_bounds(&format!("thermal_limit[{identity}]"), 0.0, source.rate_a)?;
             }
         }
@@ -748,7 +772,7 @@ fn compile_ac_opf_model_with(
 
     Ok(CanonicalAcOpfModel {
         preparation: prep,
-        policy,
+        policy: AcOpfAssemblyPolicy::CANONICAL,
         columns,
         rows,
         fingerprint,

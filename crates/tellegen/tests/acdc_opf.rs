@@ -5,7 +5,7 @@ use std::{
     path::Path,
     sync::{atomic::AtomicBool, Arc},
 };
-use tellegen::ac_dc::{AcDcOpfProfile, AcDcOpfSpec, AcDcOpfStart, PreparedAcDcOpf};
+use tellegen::ac_dc::{AcDcOpfProfile, AcDcOpfStart, PreparedAcDcOpf};
 fn fixture() -> (
     powerio::BalancedNetwork,
     serde_json::Value,
@@ -13,17 +13,16 @@ fn fixture() -> (
 ) {
     reference::load(&Path::new(env!("CARGO_MANIFEST_DIR")).join("../../evals/validation/acdc"))
 }
-fn spec() -> AcDcOpfSpec {
-    AcDcOpfSpec {
-        profile: AcDcOpfProfile::PowerModelsAcDc0101AcpVscV1,
-    }
+fn instance(net: &powerio::BalancedNetwork) -> powerio::AcDcOpfInstance {
+    powerio::AcDcOpfInstance::from_network(net.clone(), AcDcOpfProfile::PowerModelsAcDc0101AcpVscV1)
+        .unwrap()
 }
 
 #[test]
 fn native_case5_opf_converges_from_reference_declared_and_flat_starts() {
     let (net, oracle, map) = fixture();
     let source = serde_json::to_value(&net).unwrap();
-    let prepared = PreparedAcDcOpf::new(&net, &spec()).unwrap();
+    let prepared = PreparedAcDcOpf::new(instance(&net)).unwrap();
     let reference = reference::point(&net, &oracle["solves"]["opf"]["solution"], &map);
     let target = oracle["solves"]["opf"]["objective"].as_f64().unwrap();
     let warm = AcDcOpfStart::Point {
@@ -47,6 +46,31 @@ fn native_case5_opf_converges_from_reference_declared_and_flat_starts() {
         assert!((result.validation.objective - target).abs() < 1e-7 + 1e-8 * target.abs());
         assert_eq!(result.initial_point, initial);
         assert_eq!(result.point.len(), 95);
+        let module = powerio::PioModule::new(powerio::PioValue::from(result.solution.clone()));
+        let emitted = powerio::serialize(
+            &module,
+            powerio::Destination::memory("solution.json").unwrap(),
+        )
+        .unwrap();
+        let powerio::EmittedOutput::Memory { mut artifacts } = emitted.into_output() else {
+            panic!()
+        };
+        let restored = powerio::deserialize(
+            powerio::Source::from_memory("solution.json", artifacts.pop().unwrap().into_bytes())
+                .unwrap(),
+        )
+        .unwrap();
+        let powerio::PioValue::AcDcOpfSolution(solution) = restored.value() else {
+            panic!()
+        };
+        assert_eq!(solution.point(), result.solution.point());
+        let supplied = instance(&net)
+            .with_initial_point(solution.point().clone())
+            .unwrap();
+        let warm = PreparedAcDcOpf::new(supplied).unwrap();
+        let restored_point = warm.initial_point(&AcDcOpfStart::InstancePoint).unwrap();
+        assert!(warm.evaluate(&restored_point).unwrap().max_violation < 1e-7);
+
         assert_eq!(
             result.model_fingerprint,
             prepared.manifest().model_fingerprint
@@ -59,9 +83,9 @@ fn native_case5_opf_converges_from_reference_declared_and_flat_starts() {
 #[test]
 fn preparation_identity_includes_dc_data_and_start_roundtrips_fail_closed() {
     let (net, oracle, map) = fixture();
-    let prepared = PreparedAcDcOpf::new(&net, &spec()).unwrap();
+    let prepared = PreparedAcDcOpf::new(instance(&net)).unwrap();
     let fingerprint = prepared.manifest().model_fingerprint.clone();
-    let repeated = PreparedAcDcOpf::new(&net.clone(), &spec()).unwrap();
+    let repeated = PreparedAcDcOpf::new(instance(&net)).unwrap();
     assert_eq!(fingerprint, repeated.manifest().model_fingerprint);
     let mut modified = net.clone();
     let mut owner = modified.ac_dc_equivalent().unwrap().clone();
@@ -69,7 +93,7 @@ fn preparation_identity_includes_dc_data_and_start_roundtrips_fail_closed() {
     modified.set_ac_dc_equivalent(Some(owner)).unwrap();
     assert_ne!(
         fingerprint,
-        PreparedAcDcOpf::new(&modified, &spec())
+        PreparedAcDcOpf::new(instance(&modified))
             .unwrap()
             .manifest()
             .model_fingerprint
@@ -103,23 +127,6 @@ fn preparation_identity_includes_dc_data_and_start_roundtrips_fail_closed() {
             values: bad
         })
         .is_err());
-    let mut extra = serde_json::to_value(spec()).unwrap();
-    extra["silent_projection"] = serde_json::Value::Bool(true);
-    assert!(serde_json::from_value::<AcDcOpfSpec>(extra).is_err());
-    let encoded = serde_json::to_string(&spec()).unwrap();
-    assert_eq!(
-        serde_json::from_str::<AcDcOpfSpec>(&encoded)
-            .unwrap()
-            .profile,
-        spec().profile
-    );
-    for invalid in [
-        "{}",
-        r#"{"profile":"unknown"}"#,
-        r#"{"profile":"power_models_ac_dc0101_acp_vsc_v1","silent_projection":true}"#,
-    ] {
-        assert!(serde_json::from_str::<AcDcOpfSpec>(invalid).is_err());
-    }
     assert!(prepared
         .solve(AcDcOpfStart::Flat, Some(Arc::new(AtomicBool::new(true))))
         .unwrap_err()

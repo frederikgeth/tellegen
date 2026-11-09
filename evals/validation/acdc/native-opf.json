@@ -526,13 +526,13 @@
       "bus-4-2",
       "bus-5"
     ],
-    "model_fingerprint": "sha256:3aceda75d3365ff56b82a37070ca37426bba3c69a970a33fa4c0ff0b55966266",
+    "model_fingerprint": "sha256:e219a4c6945a8d813af0feb8bd63132e5b1095d768a393fdcfbc134a9ebe49e9",
     "objective": "network_generator_cost",
     "pole_count": 2,
-    "powerio_revision": "49e8eacb45b2051de91f917815a26706b8a30a07",
+    "powerio_revision": "98d5c88fa7eed18ba537a6c278d0f934dc7d2422",
     "profile": "power_models_ac_dc0101_acp_vsc_v1",
     "reference_revision": "9ada4082ac087aed649f48fb5f977680b0fe06c7",
-    "schema": "tellegen-experimental-acdc-opf-preparation-v1",
+    "schema": "tellegen-acdc-opf-preparation-v2",
     "station_ids": [
       "ac_dc_converter_station/1",
       "ac_dc_converter_station/2",
@@ -1061,6 +1061,7 @@
       }
     ]
   },
+  "profile": "power_models_ac_dc0101_acp_vsc_v1",
   "solves": {
     "declared": {
       "base_restoration_calls": 0,
@@ -1163,7 +1164,7 @@
         "vm[5]": 1.0
       },
       "iterations": 75,
-      "model_fingerprint": "sha256:3aceda75d3365ff56b82a37070ca37426bba3c69a970a33fa4c0ff0b55966266",
+      "model_fingerprint": "sha256:e219a4c6945a8d813af0feb8bd63132e5b1095d768a393fdcfbc134a9ebe49e9",
       "point": {
         "ac_branch/1-2/pf": 2.537150574399898,
         "ac_branch/1-2/pt": -2.5210423755789777,
@@ -1264,7 +1265,7 @@
       "promoted_by": null,
       "recovery_attempts": [],
       "restoration_calls": 0,
-      "schema": "tellegen-experimental-acdc-opf-result-v1",
+      "schema": "tellegen-acdc-opf-result-v2",
       "solver": "pounce-0.15.0-feral",
       "solver_constraint_violation": 2.788880237858393e-13,
       "solver_kkt_error": 2.508878271584597e-9,
@@ -2578,7 +2579,7 @@
         "vm[5]": 1.0
       },
       "iterations": 46,
-      "model_fingerprint": "sha256:3aceda75d3365ff56b82a37070ca37426bba3c69a970a33fa4c0ff0b55966266",
+      "model_fingerprint": "sha256:e219a4c6945a8d813af0feb8bd63132e5b1095d768a393fdcfbc134a9ebe49e9",
       "point": {
         "ac_branch/1-2/pf": 2.537150574399893,
         "ac_branch/1-2/pt": -2.5210423755789724,
@@ -2679,7 +2680,7 @@
       "promoted_by": null,
       "recovery_attempts": [],
       "restoration_calls": 0,
-      "schema": "tellegen-experimental-acdc-opf-result-v1",
+      "schema": "tellegen-acdc-opf-result-v2",
       "solver": "pounce-0.15.0-feral",
       "solver_constraint_violation": 2.078337502098293e-13,
       "solver_kkt_error": 2.5062273771997267e-9,
@@ -3993,7 +3994,7 @@
         "vm[5]": 1.068471478731433
       },
       "iterations": 19,
-      "model_fingerprint": "sha256:3aceda75d3365ff56b82a37070ca37426bba3c69a970a33fa4c0ff0b55966266",
+      "model_fingerprint": "sha256:e219a4c6945a8d813af0feb8bd63132e5b1095d768a393fdcfbc134a9ebe49e9",
       "point": {
         "ac_branch/1-2/pf": 2.537150574399893,
         "ac_branch/1-2/pt": -2.5210423755789724,
@@ -4094,7 +4095,7 @@
       "promoted_by": null,
       "recovery_attempts": [],
       "restoration_calls": 0,
-      "schema": "tellegen-experimental-acdc-opf-result-v1",
+      "schema": "tellegen-acdc-opf-result-v2",
       "solver": "pounce-0.15.0-feral",
       "solver_constraint_violation": 2.220446049250313e-13,
       "solver_kkt_error": 2.5062273772012566e-9,
@@ -4102,7 +4103,7 @@
       "solver_status": "Solve_Succeeded",
       "start": {
         "kind": "point",
-        "model_fingerprint": "sha256:3aceda75d3365ff56b82a37070ca37426bba3c69a970a33fa4c0ff0b55966266",
+        "model_fingerprint": "sha256:e219a4c6945a8d813af0feb8bd63132e5b1095d768a393fdcfbc134a9ebe49e9",
         "values": {
           "ac_branch/1-2/pf": 2.537150574592271,
           "ac_branch/1-2/pt": -2.5210423757336846,
@@ -5405,8 +5406,5 @@
         ]
       }
     }
-  },
-  "spec": {
-    "profile": "power_models_ac_dc0101_acp_vsc_v1"
   }
 }

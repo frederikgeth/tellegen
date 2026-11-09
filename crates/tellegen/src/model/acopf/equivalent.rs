@@ -1,13 +1,13 @@
 //! Full VSC station equations in the pinned PowerModelsACDC 0.10.1 coordinate
 //! convention. Includes equation/derivative diagnostics and experimental OPF;
-//! canonical upstream PowerIO problem/preparation ownership remains pending.
+//! problem and numerical preparation are owned by PowerIO.
 use super::*;
+mod coordinates;
 mod derivatives;
 mod opf;
 pub use derivatives::{DerivativeCheck, DerivativeReport};
 pub use opf::{
-    AcDcOpfManifest, AcDcOpfProfile, AcDcOpfResult, AcDcOpfSpec, AcDcOpfStart, AcDcScalar,
-    PreparedAcDcOpf,
+    AcDcOpfManifest, AcDcOpfProfile, AcDcOpfResult, AcDcOpfStart, AcDcScalar, PreparedAcDcOpf,
 };
 use powerio::BalancedNetwork;
 use powerio_tx::acdc::{
@@ -23,20 +23,7 @@ pub enum EquationMode {
     Opf,
 }
 
-/// Declared versus effective parameters for the explicitly selected reference
-/// policy. Station impedances stay in source pu coordinates even when the PCC
-/// base differs; loss scaling uses the station AC base, never the PCC base.
-#[derive(Clone, Debug, serde::Serialize)]
-pub struct StationPolicy {
-    pub component: String,
-    pub converter_base_kv: f64,
-    pub pcc_base_kv: f64,
-    pub declared_current_limit_pu: f64,
-    pub effective_current_limit_pu: f64,
-    pub loss_coefficients_pu: [f64; 3],
-    pub declared_rectifier_quadratic_ohm: f64,
-    pub declared_inverter_quadratic_ohm: f64,
-}
+pub use powerio_matrix::AcDcStationPolicy as StationPolicy;
 
 #[derive(Debug, serde::Serialize)]
 pub struct EquationCheck {
@@ -135,6 +122,19 @@ impl ReferenceEquations {
         net: &BalancedNetwork,
         mode: EquationMode,
     ) -> Result<Self, String> {
+        let instance = powerio::AcDcOpfInstance::from_network(
+            net.clone(),
+            powerio::AcDcOpfProfile::PowerModelsAcDc0101AcpVscV1,
+        )
+        .map_err(|e| e.to_string())?;
+        Self::from_instance(&instance, mode)
+    }
+    pub(super) fn from_instance(
+        instance: &powerio::AcDcOpfInstance,
+        mode: EquationMode,
+    ) -> Result<Self, String> {
+        let net = instance.network();
+        validate_supported_network(net)?;
         let owner = net
             .ac_dc_equivalent()
             .ok_or("AC/DC equivalent owner missing")?;
@@ -171,333 +171,310 @@ impl ReferenceEquations {
                 ));
             }
         }
-        // Deliberate internal AC projection: every active equivalent component
-        // is assembled below. Ordinary PowerIO instance guards remain intact.
-        let mut ac = net.clone();
-        ac.set_ac_dc_equivalent(None).map_err(|e| e.to_string())?;
-        let instance = AcOpfInstance::from_network(ac).map_err(|e| e.to_string())?;
+        let coupled =
+            powerio_matrix::build_ac_dc_opf_preparation(instance).map_err(|e| e.to_string())?;
         let mut policy = Vec::new();
-        let model = compile_ac_opf_model_with(&instance, |prep, cols, rows, p| {
-            let base = owner.base_mva;
-            let vm2 = cols
-                .vm
-                .iter()
-                .map(|&v| square(variable(v)))
-                .collect::<Vec<_>>();
-            // AC terminal powers are observable expression definitions, so the
-            // oracle checks both endpoints even though AC balance eliminates them.
-            for j in 0..prep.n_branches() {
-                let f = branch_flow(prep, cols, &vm2, j);
-                for (label, expr) in [
-                    ("pf", f.p_from),
-                    ("qf", f.q_from),
-                    ("pt", f.p_to),
-                    ("qt", f.q_to),
-                ] {
-                    let name = format!("ac_branch/{}/{label}", prep.branches.identities[j]);
-                    let v = col(p, name.clone(), -INF, INF, 0.0);
-                    eq(p, name, subtract(v, expr));
-                }
-            }
-            if mode == EquationMode::Pf {
-                p.objective = constant(0.0);
-                p.obj_constant = 0.0;
-                // PF is unbounded in the reference. Retain only AC equalities;
-                // OPF inequalities must not be reported as PF requirements.
-                p.x_l.fill(-INF);
-                p.x_u.fill(INF);
-                // Remove by row role, including an OPF angle interval whose
-                // endpoints happen to coincide (it is still not a PF control).
-                for &i in rows
-                    .angle_difference
+        let model = compile_ac_opf_preparation_with(
+            net,
+            &powerio_prob::ActiveConstraints::default(),
+            instance.initial_point().is_some(),
+            coupled.ac,
+            |prep, cols, rows, p| {
+                let base = owner.base_mva;
+                let vm2 = cols
+                    .vm
                     .iter()
-                    .chain(&rows.thermal_from)
-                    .chain(&rows.thermal_to)
-                    .flatten()
-                    .chain(rows.piecewise_segments.iter().flatten())
-                {
-                    p.g_l[i] = -INF;
-                    p.g_u[i] = INF;
-                }
-                for (i, id) in prep.bus_ids.iter().enumerate() {
-                    let b = net
-                        .buses()
-                        .iter()
-                        .find(|b| b.id == *id)
-                        .ok_or("AC bus map missing")?;
-                    if matches!(b.kind, powerio_tx::BusType::Ref | powerio_tx::BusType::Pv) {
-                        setpoint(p, format!("pf/vm[{}]", id.0), variable(cols.vm[i]), b.vm);
+                    .map(|&v| square(variable(v)))
+                    .collect::<Vec<_>>();
+                // AC terminal powers are observable expression definitions, so the
+                // oracle checks both endpoints even though AC balance eliminates them.
+                for j in 0..prep.n_branches() {
+                    let f = branch_flow(prep, cols, &vm2, j);
+                    for (label, expr) in [
+                        ("pf", f.p_from),
+                        ("qf", f.q_from),
+                        ("pt", f.p_to),
+                        ("qt", f.q_to),
+                    ] {
+                        let name = format!("ac_branch/{}/{label}", prep.branches.identities[j]);
+                        let v = col(p, name.clone(), -INF, INF, 0.0);
+                        eq(p, name, subtract(v, expr));
                     }
                 }
-                for (j, identity) in prep.generators.identities.iter().enumerate() {
-                    let g = net
-                        .generators()
+                if mode == EquationMode::Pf {
+                    p.objective = constant(0.0);
+                    p.obj_constant = 0.0;
+                    // PF is unbounded in the reference. Retain only AC equalities;
+                    // OPF inequalities must not be reported as PF requirements.
+                    p.x_l.fill(-INF);
+                    p.x_u.fill(INF);
+                    // Remove by row role, including an OPF angle interval whose
+                    // endpoints happen to coincide (it is still not a PF control).
+                    for &i in rows
+                        .angle_difference
                         .iter()
-                        .find(|g| g.uid.as_deref() == Some(identity.as_str()))
-                        .ok_or("Generator UID map missing")?;
-                    let b = net
-                        .buses()
-                        .iter()
-                        .find(|b| b.id == g.bus)
-                        .ok_or("Generator bus missing")?;
-                    if b.kind != powerio_tx::BusType::Ref {
-                        setpoint(
-                            p,
-                            format!("pf/pg[{identity}]"),
-                            variable(cols.pg[j]),
-                            g.pg / base,
-                        );
-                        if b.kind == powerio_tx::BusType::Pq {
+                        .chain(&rows.thermal_from)
+                        .chain(&rows.thermal_to)
+                        .flatten()
+                        .chain(rows.piecewise_segments.iter().flatten())
+                    {
+                        p.g_l[i] = -INF;
+                        p.g_u[i] = INF;
+                    }
+                    for (i, id) in prep.bus_ids.iter().enumerate() {
+                        let b = net
+                            .buses()
+                            .iter()
+                            .find(|b| b.id == *id)
+                            .ok_or("AC bus map missing")?;
+                        if matches!(b.kind, powerio_tx::BusType::Ref | powerio_tx::BusType::Pv) {
+                            setpoint(p, format!("pf/vm[{}]", id.0), variable(cols.vm[i]), b.vm);
+                        }
+                    }
+                    for (j, identity) in prep.generators.identities.iter().enumerate() {
+                        let g = net
+                            .generators()
+                            .iter()
+                            .find(|g| g.uid.as_deref() == Some(identity.as_str()))
+                            .ok_or("Generator UID map missing")?;
+                        let b = net
+                            .buses()
+                            .iter()
+                            .find(|b| b.id == g.bus)
+                            .ok_or("Generator bus missing")?;
+                        if b.kind != powerio_tx::BusType::Ref {
                             setpoint(
                                 p,
-                                format!("pf/qg[{identity}]"),
-                                variable(cols.qg[j]),
-                                g.qg / base,
+                                format!("pf/pg[{identity}]"),
+                                variable(cols.pg[j]),
+                                g.pg / base,
                             );
-                        }
-                    }
-                }
-            }
-            let mut dcvm = Vec::new();
-            let mut kcl = Vec::new();
-            for b in &owner.buses {
-                let (lo, hi) = if mode == EquationMode::Opf {
-                    (b.voltage_limits_pu.min, b.voltage_limits_pu.max)
-                } else {
-                    (-INF, INF)
-                };
-                dcvm.push(col(
-                    p,
-                    format!("dc_bus/{}/vm", b.component),
-                    lo,
-                    hi,
-                    b.initial_voltage_pu,
-                ));
-                kcl.push(vec![constant(b.withdrawal_mw / base)]);
-            }
-            let index = |id: &powerio::ComponentId| {
-                owner
-                    .buses
-                    .iter()
-                    .position(|b| b.component == *id)
-                    .ok_or_else(|| format!("Unmapped DC bus {id}"))
-            };
-            for b in owner.branches.iter().filter(|b| b.in_service) {
-                let (f, t) = (index(&b.from)?, index(&b.to)?);
-                if b.resistance_pu <= 0.0 {
-                    return Err(format!(
-                        "{}: zero-resistance DC branches are not qualified",
-                        b.component
-                    ));
-                }
-                let limit = if mode == EquationMode::Opf {
-                    b.ratings_mw[0] / base
-                } else {
-                    INF
-                };
-                for (label, from, to) in [("pf", f, t), ("pt", t, f)] {
-                    let name = format!("dc_branch/{}/{label}", b.component);
-                    let v = col(p, name.clone(), -limit, limit, 0.0);
-                    let expected = scaled(
-                        f64::from(owner.pole_count) / b.resistance_pu,
-                        multiply(
-                            dcvm[from].clone(),
-                            subtract(dcvm[from].clone(), dcvm[to].clone()),
-                        ),
-                    );
-                    eq(p, name, subtract(v.clone(), expected));
-                    kcl[from].push(v);
-                }
-            }
-            for s in owner.stations.iter().filter(|s| s.in_service) {
-                let name = format!("station/{}", s.component);
-                let aci = prep
-                    .bus_ids
-                    .iter()
-                    .position(|b| *b == s.ac_bus)
-                    .ok_or("Station PCC omitted by AC preparation")?;
-                let dci = index(&s.dc_bus)?;
-                let pcc = net
-                    .buses()
-                    .iter()
-                    .find(|b| b.id == s.ac_bus)
-                    .ok_or("PCC missing")?;
-                let pr = s.valve_active_mw.min.abs().max(s.valve_active_mw.max.abs()) / base;
-                let qr = s
-                    .valve_reactive_mvar
-                    .min
-                    .abs()
-                    .max(s.valve_reactive_mvar.max.abs())
-                    / base;
-                let imax = s.valve_current_limit_pu.max(pr.hypot(qr));
-                let loss = [
-                    s.losses.constant_mw / base,
-                    s.losses.linear_kv / (3.0_f64.sqrt() * s.ac_base_kv),
-                    s.losses.inverter_quadratic_ohm * base / (3.0 * s.ac_base_kv.powi(2)),
-                ];
-                policy.push(StationPolicy {
-                    component: s.component.to_string(),
-                    converter_base_kv: s.ac_base_kv,
-                    pcc_base_kv: pcc.base_kv,
-                    declared_current_limit_pu: s.valve_current_limit_pu,
-                    effective_current_limit_pu: imax,
-                    loss_coefficients_pu: loss,
-                    declared_rectifier_quadratic_ohm: s.losses.rectifier_quadratic_ohm,
-                    declared_inverter_quadratic_ohm: s.losses.inverter_quadratic_ohm,
-                });
-                let mut v = BTreeMap::new();
-                for field in [
-                    "pgrid", "qgrid", "ptf_to", "qtf_to", "ppr_fr", "qpr_fr", "pconv", "qconv",
-                    "pdc", "iconv", "vmfilt", "vafilt", "vmconv", "vaconv",
-                ] {
-                    let (lo, hi) = if mode == EquationMode::Pf {
-                        if field == "iconv" {
-                            (0.0, INF)
-                        } else {
-                            (-INF, INF)
-                        }
-                    } else {
-                        match field {
-                            "pconv" => (s.valve_active_mw.min / base, s.valve_active_mw.max / base),
-                            "qconv" => (
-                                s.valve_reactive_mvar.min / base,
-                                s.valve_reactive_mvar.max / base,
-                            ),
-                            "vmconv" => (s.valve_voltage_pu.min, s.valve_voltage_pu.max),
-                            "iconv" => (0.0, imax),
-                            "pgrid" | "ptf_to" | "ppr_fr" => (-2.0 * pr, 2.0 * pr),
-                            "qgrid" | "qtf_to" | "qpr_fr" => (-2.0 * qr, 2.0 * qr),
-                            "pdc" => (-1.2 * pr, 1.2 * pr),
-                            "vmfilt" => {
-                                (s.valve_voltage_pu.min / 1.2, s.valve_voltage_pu.max * 1.2)
+                            if b.kind == powerio_tx::BusType::Pq {
+                                setpoint(
+                                    p,
+                                    format!("pf/qg[{identity}]"),
+                                    variable(cols.qg[j]),
+                                    g.qg / base,
+                                );
                             }
-                            "vafilt" | "vaconv" => (-std::f64::consts::TAU, std::f64::consts::TAU),
-                            _ => unreachable!(),
                         }
+                    }
+                }
+                let mut dcvm = Vec::new();
+                let mut kcl = Vec::new();
+                for bus in &coupled.dc_buses {
+                    let b = &bus.source;
+                    let (lo, hi) = if mode == EquationMode::Opf {
+                        (b.voltage_limits_pu.min, b.voltage_limits_pu.max)
+                    } else {
+                        (-INF, INF)
                     };
-                    v.insert(
-                        field,
-                        col(
-                            p,
-                            format!("{name}/{field}"),
-                            lo,
-                            hi,
-                            if field.starts_with("vm") { 1.0 } else { 0.0 },
+                    dcvm.push(col(
+                        p,
+                        format!("dc_bus/{}/vm", b.component),
+                        lo,
+                        hi,
+                        b.initial_voltage_pu,
+                    ));
+                    kcl.push(vec![constant(bus.withdrawal_pu)]);
+                }
+                let index = |id: &powerio::ComponentId| {
+                    owner
+                        .buses
+                        .iter()
+                        .position(|b| b.component == *id)
+                        .ok_or_else(|| format!("Unmapped DC bus {id}"))
+                };
+                for branch in &coupled.dc_branches {
+                    let b = &branch.source;
+                    let (f, t) = (index(&b.from)?, index(&b.to)?);
+                    if b.resistance_pu <= 0.0 {
+                        return Err(format!(
+                            "{}: zero-resistance DC branches are not qualified",
+                            b.component
+                        ));
+                    }
+                    let limit = if mode == EquationMode::Opf {
+                        branch.active_power_limit_pu
+                    } else {
+                        INF
+                    };
+                    for (label, from, to) in [("pf", f, t), ("pt", t, f)] {
+                        let name = format!("dc_branch/{}/{label}", b.component);
+                        let v = col(p, name.clone(), -limit, limit, 0.0);
+                        let expected = scaled(
+                            branch.conductance_pu,
+                            multiply(
+                                dcvm[from].clone(),
+                                subtract(dcvm[from].clone(), dcvm[to].clone()),
+                            ),
+                        );
+                        eq(p, name, subtract(v.clone(), expected));
+                        kcl[from].push(v);
+                    }
+                }
+                for s in owner.stations.iter().filter(|s| s.in_service) {
+                    let name = format!("station/{}", s.component);
+                    let aci = prep
+                        .bus_ids
+                        .iter()
+                        .position(|b| *b == s.ac_bus)
+                        .ok_or("Station PCC omitted by AC preparation")?;
+                    let dci = index(&s.dc_bus)?;
+                    let pcc = net
+                        .buses()
+                        .iter()
+                        .find(|b| b.id == s.ac_bus)
+                        .ok_or("PCC missing")?;
+                    let station = coupled
+                        .stations
+                        .iter()
+                        .find(|v| v.source.component == s.component)
+                        .ok_or("Station preparation missing")?;
+                    let loss = station.policy.loss_coefficients_pu;
+                    policy.push(station.policy.clone());
+                    let mut v = BTreeMap::new();
+                    for field in [
+                        "pgrid", "qgrid", "ptf_to", "qtf_to", "ppr_fr", "qpr_fr", "pconv", "qconv",
+                        "pdc", "iconv", "vmfilt", "vafilt", "vmconv", "vaconv",
+                    ] {
+                        let (lo, hi) = if mode == EquationMode::Pf {
+                            if field == "iconv" {
+                                (0.0, INF)
+                            } else {
+                                (-INF, INF)
+                            }
+                        } else {
+                            let quantity = coordinates::station_quantity(field)
+                                .ok_or("Unknown station coordinate")?;
+                            let bounds =
+                                station.bounds(quantity).ok_or("Station bounds missing")?;
+                            (bounds.min, bounds.max)
+                        };
+                        v.insert(
+                            field,
+                            col(
+                                p,
+                                format!("{name}/{field}"),
+                                lo,
+                                hi,
+                                if field.starts_with("vm") { 1.0 } else { 0.0 },
+                            ),
+                        );
+                    }
+                    let val = |key: &str| v[key].clone();
+                    series(
+                        p,
+                        &format!("{name}/transformer"),
+                        &s.transformer,
+                        s.transformer_tap_ratio,
+                        [variable(cols.vm[aci]), val("vmfilt")],
+                        [variable(cols.va[aci]), val("vafilt")],
+                        [val("pgrid"), val("qgrid"), val("ptf_to"), val("qtf_to")],
+                    )?;
+                    series(
+                        p,
+                        &format!("{name}/reactor"),
+                        &s.reactor,
+                        1.0,
+                        [val("vmfilt"), val("vmconv")],
+                        [val("vafilt"), val("vaconv")],
+                        [
+                            val("ppr_fr"),
+                            val("qpr_fr"),
+                            scaled(-1.0, val("pconv")),
+                            scaled(-1.0, val("qconv")),
+                        ],
+                    )?;
+                    eq(
+                        p,
+                        format!("{name}/filter_p"),
+                        add(val("ptf_to"), val("ppr_fr")),
+                    );
+                    eq(
+                        p,
+                        format!("{name}/filter_q"),
+                        subtract(
+                            add(val("qtf_to"), val("qpr_fr")),
+                            scaled(
+                                if s.filter_enabled {
+                                    s.filter_susceptance_pu
+                                } else {
+                                    0.0
+                                },
+                                square(val("vmfilt")),
+                            ),
                         ),
                     );
-                }
-                let val = |key: &str| v[key].clone();
-                series(
-                    p,
-                    &format!("{name}/transformer"),
-                    &s.transformer,
-                    s.transformer_tap_ratio,
-                    [variable(cols.vm[aci]), val("vmfilt")],
-                    [variable(cols.va[aci]), val("vafilt")],
-                    [val("pgrid"), val("qgrid"), val("ptf_to"), val("qtf_to")],
-                )?;
-                series(
-                    p,
-                    &format!("{name}/reactor"),
-                    &s.reactor,
-                    1.0,
-                    [val("vmfilt"), val("vmconv")],
-                    [val("vafilt"), val("vaconv")],
-                    [
-                        val("ppr_fr"),
-                        val("qpr_fr"),
-                        scaled(-1.0, val("pconv")),
-                        scaled(-1.0, val("qconv")),
-                    ],
-                )?;
-                eq(
-                    p,
-                    format!("{name}/filter_p"),
-                    add(val("ptf_to"), val("ppr_fr")),
-                );
-                eq(
-                    p,
-                    format!("{name}/filter_q"),
-                    subtract(
-                        add(val("qtf_to"), val("qpr_fr")),
-                        scaled(
-                            if s.filter_enabled {
-                                s.filter_susceptance_pu
-                            } else {
-                                0.0
-                            },
-                            square(val("vmfilt")),
+                    eq(
+                        p,
+                        format!("{name}/current"),
+                        subtract(
+                            add(square(val("pconv")), square(val("qconv"))),
+                            multiply(square(val("vmconv")), square(val("iconv"))),
                         ),
-                    ),
-                );
-                eq(
-                    p,
-                    format!("{name}/current"),
-                    subtract(
-                        add(square(val("pconv")), square(val("qconv"))),
-                        multiply(square(val("vmconv")), square(val("iconv"))),
-                    ),
-                );
-                eq(
-                    p,
-                    format!("{name}/loss"),
-                    subtract(
-                        add(val("pconv"), val("pdc")),
-                        sum(vec![
-                            constant(loss[0]),
-                            scaled(loss[1], val("iconv")),
-                            scaled(loss[2], square(val("iconv"))),
-                        ]),
-                    ),
-                );
-                p.constraints[rows.p_balance[aci]] =
-                    subtract(p.constraints[rows.p_balance[aci]].clone(), val("pgrid"));
-                p.constraints[rows.q_balance[aci]] =
-                    subtract(p.constraints[rows.q_balance[aci]].clone(), val("qgrid"));
-                kcl[dci].push(val("pdc"));
-                if mode == EquationMode::Pf {
-                    match s.dc_control {
-                        DcConverterControl::ActivePowerAtPcc => setpoint(
-                            p,
-                            format!("{name}/p_setpoint"),
-                            val("pgrid"),
-                            s.settings.pcc_withdrawal_mw / base,
+                    );
+                    eq(
+                        p,
+                        format!("{name}/loss"),
+                        subtract(
+                            add(val("pconv"), val("pdc")),
+                            sum(vec![
+                                constant(loss[0]),
+                                scaled(loss[1], val("iconv")),
+                                scaled(loss[2], square(val("iconv"))),
+                            ]),
                         ),
-                        // Reference PF selects the retained converter Vdcset.
-                        DcConverterControl::DcVoltage => setpoint(
-                            p,
-                            format!("{name}/vdc_setpoint"),
-                            dcvm[dci].clone(),
-                            s.settings.dc_voltage_target_pu,
-                        ),
-                        _ => return Err("Unsupported PF DC control".into()),
-                    }
-                    match s.ac_control {
-                        AcConverterControl::ReactivePowerAtPcc => setpoint(
-                            p,
-                            format!("{name}/q_setpoint"),
-                            val("qgrid"),
-                            s.settings.pcc_withdrawal_mvar / base,
-                        ),
-                        AcConverterControl::VoltageAtPcc => setpoint(
-                            p,
-                            format!("{name}/vac_setpoint"),
-                            variable(cols.vm[aci]),
-                            pcc.vm,
-                        ),
-                        _ => return Err("Unsupported PF AC control".into()),
+                    );
+                    p.constraints[rows.p_balance[aci]] =
+                        subtract(p.constraints[rows.p_balance[aci]].clone(), val("pgrid"));
+                    p.constraints[rows.q_balance[aci]] =
+                        subtract(p.constraints[rows.q_balance[aci]].clone(), val("qgrid"));
+                    kcl[dci].push(val("pdc"));
+                    if mode == EquationMode::Pf {
+                        match s.dc_control {
+                            DcConverterControl::ActivePowerAtPcc => setpoint(
+                                p,
+                                format!("{name}/p_setpoint"),
+                                val("pgrid"),
+                                s.settings.pcc_withdrawal_mw / base,
+                            ),
+                            // Reference PF selects the retained converter Vdcset.
+                            DcConverterControl::DcVoltage => setpoint(
+                                p,
+                                format!("{name}/vdc_setpoint"),
+                                dcvm[dci].clone(),
+                                s.settings.dc_voltage_target_pu,
+                            ),
+                            _ => return Err("Unsupported PF DC control".into()),
+                        }
+                        match s.ac_control {
+                            AcConverterControl::ReactivePowerAtPcc => setpoint(
+                                p,
+                                format!("{name}/q_setpoint"),
+                                val("qgrid"),
+                                s.settings.pcc_withdrawal_mvar / base,
+                            ),
+                            AcConverterControl::VoltageAtPcc => setpoint(
+                                p,
+                                format!("{name}/vac_setpoint"),
+                                variable(cols.vm[aci]),
+                                pcc.vm,
+                            ),
+                            _ => return Err("Unsupported PF AC control".into()),
+                        }
                     }
                 }
-            }
-            for (i, terms) in kcl.into_iter().enumerate() {
-                eq(
-                    p,
-                    format!("dc_bus/{}/balance", owner.buses[i].component),
-                    sum(terms),
-                );
-            }
-            Ok(())
-        })?;
+                for (i, terms) in kcl.into_iter().enumerate() {
+                    eq(
+                        p,
+                        format!("dc_bus/{}/balance", owner.buses[i].component),
+                        sum(terms),
+                    );
+                }
+                Ok(())
+            },
+        )?;
         if model
             .problem
             .var_names

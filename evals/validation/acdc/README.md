@@ -7,7 +7,8 @@ The implementation plan is tracked in [PowerIO #819](https://github.com/eigenerg
 
 The working branch starts from equipment/ACDC [Tellegen #358](https://github.com/eigenergy/tellegen/pull/358)
 at `e814b78549fb5fe48112bc5a72f6732dd115756f`. All PowerIO crates are pinned to
-`49e8eacb45b2051de91f917815a26706b8a30a07` using the repository's candidate-pin
+`98d5c88fa7eed18ba537a6c278d0f934dc7d2422` (separate PowerIO model branch, based
+on unchanged reader `49e8eacb`) using the repository's candidate-pin
 mechanism. Existing PRs remain draft. This candidate dependency is not a
 published PowerIO release; release packaging must wait for a published version
 containing the new owner and guards.
@@ -49,8 +50,8 @@ now qualified from reference, declared-data and independent flat starts. Coupled
 PF solves remain future work. The preparation makes an internal AC projection
 only while assembling all active equivalent equipment. Ordinary AC-only instance
 constructors still reject it. The physical-terminal/reduced-converter solvers
-remain separate. The [experimental contract](CONTRACT.md) stays on this Tellegen
-branch; it is not yet an upstream PowerIO instance/preparation API.
+remain separate. The [coupled API](CONTRACT.md) uses canonical PowerIO intent, preparation
+and stored primal results from the separate model branch.
 
 ## Explicit reference policy
 
@@ -180,8 +181,7 @@ or a comparison against a Julia automatic-differentiation implementation.
 effective bounds/parameters and a fingerprint of the full source network. It
 keeps starts separate from dispatch policy and refuses stale or incomplete
 supplied points. The native API is opt-in under `acopf`; no shipping adapter gets
-a new solve mode. See [CONTRACT.md](CONTRACT.md) for the prototype and intended
-PowerIO ownership boundary.
+a new solve mode. See [CONTRACT.md](CONTRACT.md) for the PowerIO/Tellegen ownership boundary.
 
 The pure-Rust POUNCE 0.15.0/Feral solver converges from all three case5 starts.
 [native-opf.json](native-opf.json) records preparation, starts, final coordinates,
@@ -203,8 +203,8 @@ blanket full-station/physical-model qualification.
 
 ## Remaining model work
 
-1. Move the tested experimental contract into canonical PowerIO problem,
-   preparation and stored-result APIs; retain separate reference/native policies.
+1. Review the canonical coupled intent, preparation and stored-result APIs on
+   the separate PowerIO model branch; retain explicit reference/native policies.
 2. Extend the derivative, native-solve and independent cross-feasibility gates
    whenever the model or preparation changes; case5's initial gates are complete.
 3. Qualify bypassed components, unequal-base transformations, supply filtering,

@@ -100,10 +100,11 @@ transformer-to reactive power. Point equality is recorded, not required for all
 nonconvex OPFs. Four corrupted PCC P/Q, DC-power and DC-voltage points fail the
 reference checker, with violations from 0.1 to 4.609.
 
-The versioned experimental contract requires an explicit profile, preserves
+The canonical PowerIO coupled intent requires an explicit profile, preserves
 source/effective parameters separately, binds starts to the full source/profile
 fingerprint, records solver/recovery settings, and leaves legacy AC-only guards
-intact. Canonical upstream PowerIO problem/preparation/result types are pending;
+intact. PowerIO commit `98d5c88f` now owns intent, preparation and stored primal
+results;
 see [CONTRACT.md](CONTRACT.md). Native coupled PF, general physical projections,
 other cases, duals/sensitivities and global optimality are not claimed.
 
@@ -111,3 +112,29 @@ Validation: 749 full-feature engine tests passed (7 existing ignores); all eight
 case5 equation/OPF integration tests passed with only `acopf`. Full-feature
 all-target clippy, formatting and the PowerIO pin check pass. This is scoped
 native validation, not a full JavaScript/browser/Python/package release run.
+
+
+## Canonical PowerIO migration
+
+Tellegen now pins PowerIO `98d5c88fa7eed18ba537a6c278d0f934dc7d2422` from the
+separate `codex/819-acdc-models` branch, based on unchanged reader `49e8eacb`.
+The canonical instance, physical quantity records, OPF preparation and stored
+primal result replace the Tellegen-only intent prototype. Solver expressions,
+starts/recovery, derivative checks and equation validation remain in Tellegen.
+
+Fresh `run.py /tmp/tacdc-model-live` passes with the exact git pin. All three
+starts retain the objectives, iterations and residuals shown above, including
+independent PowerModelsACDC feasibility and four detected corruptions. The
+harness provenance assertion now checks the new PowerIO revision. No
+PowerModelsACDC defect was found in this migration.
+
+Each solve also writes a PowerIO IR result (`native-{start}.pio.json`) with all
+95 typed physical quantities. Tests serialize/reload these and use them as
+canonical instance starts, rechecking native feasibility after unit conversion.
+The three local IR outputs are generated evidence, not new vendored fixtures.
+The full pinned engine suite passes 749 tests (7 existing ignores); all-target
+full-feature clippy, formatting, pin consistency and EPL guard pass.
+
+PowerIO validation and the pre-existing broad clippy failures are recorded in
+its model branch's `evals/validation/acdc/RESULTS.md`. All existing PRs remain
+draft and unchanged; no new PR or public adapter solve mode is introduced.

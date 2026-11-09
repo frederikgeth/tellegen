@@ -1,27 +1,16 @@
-//! Experimental PowerIO-facing contract. Upstream powerio-prob/matrix ownership
-//! is pending; this does not add a stored PowerIO instance or public adapter mode.
+//! Native solver adapter over canonical PowerIO coupled intent and preparation.
 use super::*;
 use serde::{Deserialize, Serialize};
 
-/// A closed, versioned selection of physics, dispatch and preparation policies.
-/// Unknown profiles fail deserialization; absence never silently selects one.
-#[derive(Clone, Copy, Debug, PartialEq, Eq, Serialize, Deserialize)]
-#[serde(rename_all = "snake_case")]
-pub enum AcDcOpfProfile {
-    PowerModelsAcDc0101AcpVscV1,
-}
-
-#[derive(Clone, Debug, Serialize, Deserialize)]
-#[serde(deny_unknown_fields)]
-pub struct AcDcOpfSpec {
-    pub profile: AcDcOpfProfile,
-}
+pub use powerio::AcDcOpfProfile;
 
 /// Starts are numerical choices, not PF dispatch constraints or observations.
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(tag = "kind", rename_all = "snake_case", deny_unknown_fields)]
 pub enum AcDcOpfStart {
     Declared,
+    /// Use the canonical instance's supplied typed operating point.
+    InstancePoint,
     Flat,
     Point {
         model_fingerprint: String,
@@ -64,12 +53,16 @@ pub struct AcDcOpfManifest {
 /// policy/bounds. The native expression DAG remains private to Tellegen.
 pub struct PreparedAcDcOpf {
     equations: ReferenceEquations,
+    instance: Arc<powerio::AcDcOpfInstance>,
     manifest: AcDcOpfManifest,
     declared: BTreeMap<String, f64>,
 }
 
 #[derive(Debug, Serialize)]
 pub struct AcDcOpfResult {
+    /// Canonical physical result, serialized through PowerIO IR by the caller.
+    #[serde(skip)]
+    pub solution: powerio::AcDcOpfSolution,
     pub schema: &'static str,
     pub model_fingerprint: String,
     pub termination: &'static str,
@@ -91,18 +84,20 @@ pub struct AcDcOpfResult {
 }
 
 impl PreparedAcDcOpf {
-    pub fn new(net: &BalancedNetwork, spec: &AcDcOpfSpec) -> Result<Self, String> {
-        match spec.profile {
-            AcDcOpfProfile::PowerModelsAcDc0101AcpVscV1 => {}
-        }
-        let equations = ReferenceEquations::powermodels_acdc_0101(net, EquationMode::Opf)?;
+    pub fn new(instance: powerio::AcDcOpfInstance) -> Result<Self, String> {
+        let net = instance.network();
+        // The caller selects InstancePoint explicitly; declared and flat starts
+        // must remain independent of any point attached to the canonical intent.
+        let source_intent = powerio::AcDcOpfInstance::from_network(net.clone(), instance.profile())
+            .map_err(|e| e.to_string())?;
+        let equations = ReferenceEquations::from_instance(&source_intent, EquationMode::Opf)?;
         let p = &equations.model.problem;
         let prep = &equations.model.preparation;
         let owner = net.ac_dc_equivalent().ok_or("Equivalent owner missing")?;
         // Hash the complete source (including all DC/station declarations), the
         // selected policy and the formulation version, not only the AC projection.
         let encoded = serde_json::to_vec(
-            &serde_json::json!({"schema":"tellegen-acdc-opf-v1","network":net,"spec":spec}),
+            &serde_json::json!({"schema":"tellegen-acdc-opf-v2","network":net,"profile":instance.profile()}),
         )
         .map_err(|e| e.to_string())?;
         let model_fingerprint = crate::content_id::content_id(&encoded);
@@ -119,10 +114,10 @@ impl PreparedAcDcOpf {
                 .collect()
         };
         let manifest = AcDcOpfManifest {
-            schema: "tellegen-experimental-acdc-opf-preparation-v1",
-            profile: spec.profile,
+            schema: "tellegen-acdc-opf-preparation-v2",
+            profile: instance.profile(),
             model_fingerprint,
-            powerio_revision: "49e8eacb45b2051de91f917815a26706b8a30a07",
+            powerio_revision: "98d5c88fa7eed18ba537a6c278d0f934dc7d2422",
             reference_revision: "9ada4082ac087aed649f48fb5f977680b0fe06c7",
             base_mva: owner.base_mva,
             pole_count: owner.pole_count,
@@ -196,9 +191,20 @@ impl PreparedAcDcOpf {
         }
         Ok(Self {
             equations,
+            instance: Arc::new(instance),
             manifest,
             declared,
         })
+    }
+    pub fn instance(&self) -> &powerio::AcDcOpfInstance {
+        &self.instance
+    }
+    pub fn operating_point(
+        &self,
+        point: &BTreeMap<String, f64>,
+    ) -> Result<powerio::AcDcOperatingPoint, String> {
+        self.equations.point_values(point)?;
+        coordinates::encode(&self.instance, point)
     }
     pub fn manifest(&self) -> &AcDcOpfManifest {
         &self.manifest
@@ -219,6 +225,12 @@ impl PreparedAcDcOpf {
                 self.equations.point_values(values)?;
                 Ok(values.clone())
             }
+            AcDcOpfStart::InstancePoint => coordinates::decode(
+                &self.instance,
+                self.instance
+                    .initial_point()
+                    .ok_or("Instance has no supplied operating point")?,
+            ),
             AcDcOpfStart::Declared => Ok(self.declared.clone()),
             AcDcOpfStart::Flat => Ok(p
                 .var_names
@@ -313,8 +325,17 @@ impl PreparedAcDcOpf {
                 validation.objective - solved.inner.final_obj()
             ));
         }
+        let solution = powerio::AcDcOpfSolution::new(
+            Arc::clone(&self.instance),
+            self.operating_point(&point)?,
+            validation.objective,
+            powerio::Termination::Converged,
+            Some("tellegen/pounce-0.15.0-feral".into()),
+        )
+        .map_err(|e| e.to_string())?;
         Ok(AcDcOpfResult {
-            schema: "tellegen-experimental-acdc-opf-result-v1",
+            solution,
+            schema: "tellegen-acdc-opf-result-v2",
             solver: "pounce-0.15.0-feral",
             solver_options,
             base_restoration_calls,

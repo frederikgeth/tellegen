@@ -1,15 +1,15 @@
 # Experimental coupled OPF contract
 
-This contract is implemented **on the Tellegen working branch**, against PowerIO
-`49e8eacb`. It is a PowerIO-facing prototype, not a new `powerio-prob` instance,
-`powerio-matrix` preparation API, or stored PowerIO IR type. Upstream ownership
-and serialization must be reviewed separately; the reader PR stays unchanged.
+The coupled intent, typed operating point/result, IR persistence and numerical
+preparation now live on PowerIO branch `codex/819-acdc-models`, based on the
+unchanged reader commit `49e8eacb`. Tellegen owns the expression DAG, derivative
+checks, solver starts/recovery and validation diagnostics. Existing PRs stay draft.
 
 ## Input and selection
 
-`PreparedAcDcOpf::new(&BalancedNetwork, &AcDcOpfSpec)` requires an explicit
-`PowerModelsAcDc0101AcpVscV1` profile. The spec has no default and rejects unknown
-profiles/fields. This closed selection fixes:
+`PreparedAcDcOpf::new(AcDcOpfInstance)` accepts canonical PowerIO intent.
+`AcDcOpfInstance::from_network(network, profile)` requires the explicit
+`PowerModelsAcDc0101AcpVscV1` profile. Stored intent rejects unknown profiles/fields. This closed selection fixes:
 
 - the polar AC/full VSC station equations and source pu coordinate convention;
 - inverter losses in both directions, reference Imax repair and auxiliary bounds;
@@ -27,7 +27,7 @@ Absent bounds serialize as null; solver infinity sentinels are not a public
 limit declaration. Source equipment is never overwritten with effective values.
 
 The model fingerprint hashes a versioned formulation tag, the complete serialized
-source network **including DC/station declarations**, and the selected spec.
+source network **including DC/station declarations**, and the selected profile.
 Source edits invalidate a supplied operating-point start even if native variable
 names happen to remain unchanged. This deliberately conservative content identity
 is not a proof that two differently serialized source cases are electrically
@@ -43,7 +43,9 @@ inequivalent. A formulation change requires a new version/fingerprint tag.
 - `Flat`: unit voltage magnitudes, zero angles/port powers/reactive generation,
   midpoint generator P bounds and 0.1 pu valve current. The nonzero current avoids
   a zero current-equation Jacobian at the cold start.
-- `Point`: an exact, finite, complete identity-named point with a matching model
+- `InstancePoint`: the complete typed point supplied on the canonical PowerIO
+  instance, converted from MW/MVAr to private solver pu coordinates.
+- `Point`: a diagnostic exact, finite, complete identity-named point with a matching model
   fingerprint. Missing/extra/nonfinite values or stale fingerprints refuse.
 
 Constructed starts are projected to variable bounds; supplied points are retained
@@ -55,6 +57,11 @@ constraints and cannot authorize an AC-only projection.
 cancellation wrapper. The result records requested starts, the complete native
 point, selected/base status, recovery attempts, total iterations, restoration
 counts, solver/options, constraint/KKT diagnostics and native validation rows.
+It also returns `solution: powerio::AcDcOpfSolution`, with the shared canonical
+instance and typed `AcDcQuantity`/identity values in MW/MVAr, pu and radians.
+PowerIO IR persists these physical values; private solver-name maps remain
+Tellegen diagnostics. The example writes `native-{start}.pio.json` alongside
+its report. Integration tests reload these and re-evaluate them as supplied starts.
 The result is returned only after a successful local solver status, finite point
 and objective, native violation <=1e-7, solver constraint violation <=1e-7, KKT
 error <=1e-6, and agreement between solver and re-evaluated native objective.
@@ -84,7 +91,7 @@ Four deliberate port-power/DC-voltage corruptions must fail reference feasibilit
 The qualification envelope here is case5, using the specified reference profile,
 from three starts. Coupled PF solves, additional controls/cases, rebasing,
 normalized cases, physical projections, LCC and directional losses remain future
-work. The canonical PowerIO `AcDcOpfInstance`, preparation and stored solution
-contracts should adopt these tested semantics before this becomes a general
-application API; the prototype's string-coordinate maps are not a replacement
-for PowerIO's typed operating-point/quantity machinery.
+work. The PowerIO preparation supplies reference station bounds/losses, DC
+power scaling and pole conductance, and the canonical AC preparation. Tellegen
+keeps an explicit checked adapter between typed physical quantities and native
+coordinates. Ordinary AC-only preparation still refuses the equivalent owner.

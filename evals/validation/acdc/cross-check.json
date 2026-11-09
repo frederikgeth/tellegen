@@ -1,6 +1,6 @@
 {
   "manifest_sha256": "c0c50ee07d24b1ba8af99d58dad407959e4e6ce81071f6f988babe120f0344f4",
-  "native_result_sha256": "6f7b528e9071469810392ae872b62aaf4adf38750735d74fef626f0b1baed56f",
+  "native_result_sha256": "ebe37e7f9d52834910685b359079600cbcfd6b163bac92f305353d524480e780",
   "negative_controls_detected": {
     "dc_bus/dc_equivalent_bus/1/vm": 4.608994569879215,
     "station/ac_dc_converter_station/1/pdc": 0.1,
