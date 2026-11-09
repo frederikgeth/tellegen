@@ -23,7 +23,7 @@ use powerio_tx::{HvdcTreatment, IndexedNetwork, NormalizeOptions};
 #[cfg(feature = "sensitivity")]
 mod ac;
 #[cfg(feature = "acopf")]
-mod acopf;
+pub(crate) mod acopf;
 #[cfg(test)]
 mod cases;
 mod dc;

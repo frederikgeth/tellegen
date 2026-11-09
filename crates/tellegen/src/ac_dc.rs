@@ -1,6 +1,13 @@
 //! Qualified steady-state AC/DC power flow and optional joint nonlinear OPF.
 //! Power flow solves resistive DC controls before AC controls; joint OPF places
 //! converter transfers and generation in the same nonlinear problem.
+/// Experimental full-station equation qualification, separate from the physical
+/// terminal solver below. Available only with the native `acopf` feature.
+#[cfg(feature = "acopf")]
+pub use crate::model::acopf::equivalent::{
+    EquationCheck, EquationMode, EquationReport, ReferenceEquations, StationPolicy,
+};
+
 use crate::{
     api::{Problem, SolveRequest, SolveResponse},
     dc_grid::{self, DcGridSolution},

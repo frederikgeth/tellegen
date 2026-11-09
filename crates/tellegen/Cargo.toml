@@ -110,3 +110,7 @@ required-features = ["acopf"]
 [[example]]
 name = "settings_schema"
 required-features = ["schema"]
+
+[[example]]
+name = "acdc_equations"
+required-features = ["acopf"]

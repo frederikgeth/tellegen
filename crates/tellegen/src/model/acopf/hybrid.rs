@@ -8,7 +8,7 @@ use crate::{
 use powerio::BalancedNetwork;
 use powerio_tx::ReactiveLimits;
 
-fn column(p: &mut NlProblemParts, name: String, lo: f64, hi: f64, start: f64) -> usize {
+pub(super) fn column(p: &mut NlProblemParts, name: String, lo: f64, hi: f64, start: f64) -> usize {
     let i = p.x0.len();
     p.x0.push(start.clamp(lo, hi));
     p.x_l.push(lo);
@@ -16,7 +16,7 @@ fn column(p: &mut NlProblemParts, name: String, lo: f64, hi: f64, start: f64) ->
     p.var_names.push(name);
     i
 }
-fn row(p: &mut NlProblemParts, name: String, e: Expr, lo: f64, hi: f64) {
+pub(super) fn row(p: &mut NlProblemParts, name: String, e: Expr, lo: f64, hi: f64) {
     p.constraints.push(e);
     p.g_l.push(lo);
     p.g_u.push(hi);

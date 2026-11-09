@@ -1,0 +1,43 @@
+# Validation results — 2026-11-09
+
+Live independent run: `python3 evals/validation/acdc/run.py /tmp/tacdc-live`.
+Julia solved the original case with the pinned environment and settings; the
+Rust example evaluated those points using native Tellegen expressions.
+
+| Mode | Native equation rows | Native bound checks | Maximum violation | Native objective |
+| --- | ---: | ---: | ---: | ---: |
+| PF | 94 | 3 | 9.08162434143378e-14 | 0 |
+| OPF | 98 | 66 | 3.141487070479343e-12 | 15693.105053824369 |
+
+Both reference solves returned `LOCALLY_SOLVED` / `FEASIBLE_POINT`. The OPF
+objective agrees to the displayed precision. Both native models have 95 named
+variables, including AC terminal-flow observables. PF has no OPF operating-limit
+checks; its three bounds enforce nonnegative AC valve currents. Maximum
+violations are below the 1e-7 gate. Full per-component rows are in
+[native-report.json](native-report.json), with independently solved values,
+starts, preprocessing snapshots and hashes in [reference.json](reference.json).
+
+Rust validation:
+
+- Full numerical features (`sensitivity,mc-pf,conic,acopf,mc-opf,schema`):
+  743 passed, 7 ignored, no failures (including existing ignored/doc tests).
+- Workspace excluding Python: 690 passed, 6 ignored, no failures.
+- Engine without default features: 152 passed, 3 ignored, no failures.
+- Case5 suite with only `acopf`, and with full numerical features: all 5 pass.
+  These include multiple mutations per test, and a fixed-angle OPF limit that
+  must not become a PF setpoint.
+- Full-feature/all-target engine clippy with warnings denied, formatting,
+  PowerIO manifest/lock agreement and EPL dependency guard pass.
+- `tellegen-wasm` with `conic,synth` checks on `wasm32-unknown-unknown`.
+
+No JavaScript/browser/Python-wheel or publication-package gates were run for
+this native working branch; this is not a full `just ci` or release claim.
+PowerIO's candidate git revision must be replaced by an appropriate published
+release before publication packaging. No new PR was opened, and the existing
+PRs remain draft.
+
+The benchmark establishes native equation feasibility at reference points.
+It does not establish native nonlinear convergence, derivative correctness,
+physical base-transformation correctness, or qualification of additional cases.
+Next work is tracked in [README.md](README.md) and
+[PowerIO #819](https://github.com/eigenergy/powerio/issues/819).

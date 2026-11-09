@@ -4,6 +4,7 @@
 //! Solver status mapping and portable solution emission belong to the next
 //! layer, while all electrical semantics and stable source/index maps live here.
 
+pub(crate) mod equivalent;
 mod hybrid;
 pub(crate) use hybrid::solve_joint_ac_dc;
 
@@ -345,19 +346,37 @@ fn branch_flow(
 ) -> BranchFlow {
     let f = prep.branches.from_bus[branch];
     let t = prep.branches.to_bus[branch];
-    let g = prep.branches.g[branch];
-    let b = prep.branches.b[branch];
-    let tap = prep.branches.tap[branch];
-    let shift = prep.branches.shift[branch];
+    polar_branch_flow(
+        [variable(columns.vm[f]), variable(columns.vm[t])],
+        [variable(columns.va[f]), variable(columns.va[t])],
+        [prep.branches.g[branch], prep.branches.b[branch]],
+        prep.branches.tap[branch],
+        prep.branches.shift[branch],
+        [
+            prep.branches.g_fr[branch],
+            prep.branches.b_fr[branch],
+            prep.branches.g_to[branch],
+            prep.branches.b_to[branch],
+        ],
+        [vm_squared[f].clone(), vm_squared[t].clone()],
+    )
+}
+
+// Shared by AC branches and full-station transformer/reactor equations.
+fn polar_branch_flow(
+    [vf, vt]: [Expr; 2],
+    [af, at]: [Expr; 2],
+    [g, b]: [f64; 2],
+    tap: f64,
+    shift: f64,
+    [g_fr, b_fr, g_to, b_to]: [f64; 4],
+    [vf_squared, vt_squared]: [Expr; 2],
+) -> BranchFlow {
     let tap_squared = tap * tap;
     let tr = tap * shift.cos();
     let ti = tap * shift.sin();
 
-    let vf = variable(columns.vm[f]);
-    let vt = variable(columns.vm[t]);
-    let vf_squared = vm_squared[f].clone();
-    let vt_squared = vm_squared[t].clone();
-    let angle = cse(subtract(variable(columns.va[f]), variable(columns.va[t])));
+    let angle = cse(subtract(af, at));
     let voltage_product = cse(multiply(vf, vt));
     let wr = cse(multiply(
         voltage_product.clone(),
@@ -366,25 +385,22 @@ fn branch_flow(
     let wi = cse(multiply(voltage_product, unary(UnaryOp::Sin, angle)));
 
     let p_from = cse(sum(vec![
-        scaled(
-            (g + prep.branches.g_fr[branch]) / tap_squared,
-            vf_squared.clone(),
-        ),
+        scaled((g + g_fr) / tap_squared, vf_squared.clone()),
         scaled((-g * tr + b * ti) / tap_squared, wr.clone()),
         scaled((-b * tr - g * ti) / tap_squared, wi.clone()),
     ]));
     let q_from = cse(sum(vec![
-        scaled(-(b + prep.branches.b_fr[branch]) / tap_squared, vf_squared),
+        scaled(-(b + b_fr) / tap_squared, vf_squared),
         scaled((b * tr + g * ti) / tap_squared, wr.clone()),
         scaled((-g * tr + b * ti) / tap_squared, wi.clone()),
     ]));
     let p_to = cse(sum(vec![
-        scaled(g + prep.branches.g_to[branch], vt_squared.clone()),
+        scaled(g + g_to, vt_squared.clone()),
         scaled((-g * tr - b * ti) / tap_squared, wr.clone()),
         scaled((b * tr - g * ti) / tap_squared, wi.clone()),
     ]));
     let q_to = cse(sum(vec![
-        scaled(-(b + prep.branches.b_to[branch]), vt_squared),
+        scaled(-(b + b_to), vt_squared),
         scaled((b * tr - g * ti) / tap_squared, wr),
         scaled((g * tr + b * ti) / tap_squared, wi),
     ]));
