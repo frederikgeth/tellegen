@@ -1,0 +1,2036 @@
+{
+  "manifest_sha256": "c0c50ee07d24b1ba8af99d58dad407959e4e6ce81071f6f988babe120f0344f4",
+  "native_result_sha256": "6f7b528e9071469810392ae872b62aaf4adf38750735d74fef626f0b1baed56f",
+  "negative_controls_detected": {
+    "dc_bus/dc_equivalent_bus/1/vm": 4.608994569879215,
+    "station/ac_dc_converter_station/1/pdc": 0.1,
+    "station/ac_dc_converter_station/1/pgrid": 0.10000000000000009,
+    "station/ac_dc_converter_station/1/qgrid": 0.10000000000000152
+  },
+  "reference_result_sha256": "01309ac291df0e77e26314c91b75f74a94cdf1318d3297ce179beedff89d1487",
+  "reference_revision": "9ada4082ac087aed649f48fb5f977680b0fe06c7",
+  "solves": {
+    "declared": {
+      "constraint_violations": {
+        "(-0_pconv_ac[1]) - ((0.0037053603565955803 0_vmc[1]²) + (-0.0037053603565955803 0_vmc[1]*0_vmf[1]) * cos(-0_vaf[1] + 0_vac[1]) + (6.08716599381522 0_vmc[1]*0_vmf[1]) * sin(-0_vaf[1] + 0_vac[1])) = 0": 6.938893903907228e-18,
+        "(-0_pconv_ac[2]) - ((0.0037053603565955803 0_vmc[2]²) + (-0.0037053603565955803 0_vmc[2]*0_vmf[2]) * cos(-0_vaf[2] + 0_vac[2]) + (6.08716599381522 0_vmc[2]*0_vmf[2]) * sin(-0_vaf[2] + 0_vac[2])) = 0": 1.1102230246251565e-16,
+        "(-0_pconv_ac[3]) - ((0.0037053603565955803 0_vmc[3]²) + (-0.0037053603565955803 0_vmc[3]*0_vmf[3]) * cos(-0_vaf[3] + 0_vac[3]) + (6.08716599381522 0_vmc[3]*0_vmf[3]) * sin(-0_vaf[3] + 0_vac[3])) = 0": 2.4868995751603507e-14,
+        "(-0_qconv_ac[1]) - ((6.08716599381522 0_vmc[1]²) + (-6.08716599381522 0_vmc[1]*0_vmf[1]) * cos(-0_vaf[1] + 0_vac[1]) + (-0.0037053603565955803 0_vmc[1]*0_vmf[1]) * sin(-0_vaf[1] + 0_vac[1])) = 0": 1.0096090630185017e-15,
+        "(-0_qconv_ac[2]) - ((6.08716599381522 0_vmc[2]²) + (-6.08716599381522 0_vmc[2]*0_vmf[2]) * cos(-0_vaf[2] + 0_vac[2]) + (-0.0037053603565955803 0_vmc[2]*0_vmf[2]) * sin(-0_vaf[2] + 0_vac[2])) = 0": 1.9290125052862095e-15,
+        "(-0_qconv_ac[3]) - ((6.08716599381522 0_vmc[3]²) + (-6.08716599381522 0_vmc[3]*0_vmf[3]) * cos(-0_vaf[3] + 0_vac[3]) + (-0.0037053603565955803 0_vmc[3]*0_vmf[3]) * sin(-0_vaf[3] + 0_vac[3])) = 0": 6.425415755018093e-14,
+        "(0_pconv_ac[1]² + 0_qconv_ac[1]²) - (0_vmc[1]²) * (0_iconv_ac[1]²) = 0": 3.469446951953614e-18,
+        "(0_pconv_ac[3]² + 0_qconv_ac[3]²) - (0_vmc[3]²) * (0_iconv_ac[3]²) = 0": 2.788880237858393e-13,
+        "-0.0008079535111671216 0_iconv_ac[2]² + 0_pconv_ac[2] - 0.0014843759094817334 0_iconv_ac[2] + 0_pconv_dc[2] = 0.01103": 5.204170427930421e-17,
+        "-0.0008079535111671216 0_iconv_ac[3]² + 0_pconv_ac[3] - 0.0014843759094817334 0_iconv_ac[3] + 0_pconv_dc[3] = 0.01103": 9.8879238130678e-17,
+        "-0.0887 0_vmf[1]² + 0_qconv_tf_to[1] + 0_qconv_pr_fr[1] = 0": 1.3877787807814457e-17,
+        "-0.0887 0_vmf[3]² + 0_qconv_tf_to[3] + 0_qconv_pr_fr[3] = 0": 3.0531133177191805e-16,
+        "-0_pg[4] + 0_p[(6, 4, 5)] + 0_p[(5, 4, 3)] + 0_p[(2, 4, 1)] + 0_pflex[3] = 0": 4.440892098500626e-16,
+        "-0_pg[5] + 0_p[(6, 5, 4)] + 0_p[(3, 5, 1)] + 0_pconv_tf_fr[3] = 0": 2.220446049250313e-16,
+        "-0_qg[2] - 0_qg[1] + 0_q[(2, 1, 4)] + 0_q[(3, 1, 5)] + 0_q[(1, 1, 2)] = 0": 2.7755575615628914e-16,
+        "-0_qg[3] + 0_q[(5, 3, 4)] + 0_q[(4, 3, 2)] + 0_qconv_tf_fr[2] + 0_qflex[2] = 0": 2.220446049250313e-16,
+        "-0_qg[4] + 0_q[(6, 4, 5)] + 0_q[(5, 4, 3)] + 0_q[(2, 4, 1)] + 0_qflex[3] = 0": 2.220446049250313e-16,
+        "-0_qg[5] + 0_q[(6, 5, 4)] + 0_q[(3, 5, 1)] + 0_qconv_tf_fr[3] = 0": 1.1102230246251565e-16,
+        "-38.46153846153846 0_vdcm[2]² + 38.46153846153846 0_vdcm[2]*0_vdcm[1] + 0_pdcgrid[(1, 2, 1)] = 0": 7.105427357601002e-15,
+        "0_p[(1, 1, 2)] - ((3.5234840209999647 0_vm[1]²) + -3.5234840209999647 * ((0_vm[1]*0_vm[2]) * cos(-0_va[2] + 0_va[1])) + 35.234840209999646 * ((0_vm[1]*0_vm[2]) * sin(-0_va[2] + 0_va[1]))) = 0": 8.881784197001252e-16,
+        "0_p[(1, 2, 1)] - ((3.5234840209999647 0_vm[2]²) + -3.5234840209999647 * ((0_vm[2]*0_vm[1]) * cos(0_va[2] - 0_va[1])) + 35.234840209999646 * ((0_vm[2]*0_vm[1]) * sin(0_va[2] - 0_va[1]))) = 0": 1.3322676295501878e-15,
+        "0_p[(2, 1, 4)] - ((3.2569046378322044 0_vm[1]²) + -3.2569046378322044 * ((0_vm[1]*0_vm[4]) * cos(-0_va[4] + 0_va[1])) + 32.56904637832204 * ((0_vm[1]*0_vm[4]) * sin(-0_va[4] + 0_va[1]))) = 0": 2.220446049250313e-16,
+        "0_p[(2, 4, 1)] - ((3.2569046378322044 0_vm[4]²) + -3.2569046378322044 * ((0_vm[4]*0_vm[1]) * cos(0_va[4] - 0_va[1])) + 32.56904637832204 * ((0_vm[4]*0_vm[1]) * sin(0_va[4] - 0_va[1]))) = 0": 4.440892098500626e-16,
+        "0_p[(3, 1, 5)] - ((15.47029702970297 0_vm[1]²) + -15.47029702970297 * ((0_vm[1]*0_vm[5]) * cos(-0_va[5] + 0_va[1])) + 154.70297029702968 * ((0_vm[1]*0_vm[5]) * sin(-0_va[5] + 0_va[1]))) = 0": 5.773159728050814e-15,
+        "0_p[(3, 5, 1)] - ((15.47029702970297 0_vm[5]²) + -15.47029702970297 * ((0_vm[5]*0_vm[1]) * cos(0_va[5] - 0_va[1])) + 154.70297029702968 * ((0_vm[5]*0_vm[1]) * sin(0_va[5] - 0_va[1]))) = 0": 1.3322676295501878e-15,
+        "0_p[(4, 2, 3)] - ((9.167583425009166 0_vm[2]²) + -9.167583425009166 * ((0_vm[2]*0_vm[3]) * cos(0_va[2] - 0_va[3])) + 91.67583425009167 * ((0_vm[2]*0_vm[3]) * sin(0_va[2] - 0_va[3]))) = 0": 1.9984014443252818e-15,
+        "0_p[(4, 3, 2)] - ((9.167583425009166 0_vm[3]²) + -9.167583425009166 * ((0_vm[3]*0_vm[2]) * cos(-0_va[2] + 0_va[3])) + 91.67583425009167 * ((0_vm[3]*0_vm[2]) * sin(-0_va[2] + 0_va[3]))) = 0": 2.220446049250313e-16,
+        "0_p[(5, 3, 4)] - ((3.3336667000033335 0_vm[3]²) + -3.3336667000033335 * ((0_vm[3]*0_vm[4]) * cos(-0_va[4] + 0_va[3])) + 33.33666700003334 * ((0_vm[3]*0_vm[4]) * sin(-0_va[4] + 0_va[3]))) = 0": 1.4432899320127035e-15,
+        "0_p[(5, 4, 3)] - ((3.3336667000033335 0_vm[4]²) + -3.3336667000033335 * ((0_vm[4]*0_vm[3]) * cos(0_va[4] - 0_va[3])) + 33.33666700003334 * ((0_vm[4]*0_vm[3]) * sin(0_va[4] - 0_va[3]))) = 0": 1.1657341758564144e-15,
+        "0_p[(6, 4, 5)] - ((3.3336667000033335 0_vm[4]²) + -3.3336667000033335 * ((0_vm[4]*0_vm[5]) * cos(-0_va[5] + 0_va[4])) + 33.33666700003334 * ((0_vm[4]*0_vm[5]) * sin(-0_va[5] + 0_va[4]))) = 0": 8.881784197001252e-16,
+        "0_p[(6, 5, 4)] - ((3.3336667000033335 0_vm[5]²) + -3.3336667000033335 * ((0_vm[5]*0_vm[4]) * cos(0_va[5] - 0_va[4])) + 33.33666700003334 * ((0_vm[5]*0_vm[4]) * sin(0_va[5] - 0_va[4]))) = 0": 1.3322676295501878e-15,
+        "0_pconv_pr_fr[1] - ((0.0037053603565955803 0_vmf[1]²) + (-0.0037053603565955803 0_vmf[1]*0_vmc[1]) * cos(0_vaf[1] - 0_vac[1]) + (6.08716599381522 0_vmf[1]*0_vmc[1]) * sin(0_vaf[1] - 0_vac[1])) = 0": 6.938893903907228e-18,
+        "0_pconv_pr_fr[3] - ((0.0037053603565955803 0_vmf[3]²) + (-0.0037053603565955803 0_vmf[3]*0_vmc[3]) * cos(0_vaf[3] - 0_vac[3]) + (6.08716599381522 0_vmf[3]*0_vmc[3]) * sin(0_vaf[3] - 0_vac[3])) = 0": 2.531308496145357e-14,
+        "0_pconv_tf_fr[1] - ((0.11934446472416312 0_vm[2]²) + (-0.11934446472416312 0_vm[2]*0_vmf[1]) * cos(0_va[2] - 0_vaf[1]) + (8.919009663719123 0_vm[2]*0_vmf[1]) * sin(0_va[2] - 0_vaf[1])) = 0": 1.3877787807814457e-17,
+        "0_pconv_tf_fr[2] - ((0.11934446472416312 0_vm[3]²) + (-0.11934446472416312 0_vm[3]*0_vmf[2]) * cos(0_va[3] - 0_vaf[2]) + (8.919009663719123 0_vm[3]*0_vmf[2]) * sin(0_va[3] - 0_vaf[2])) = 0": 1.1102230246251565e-16,
+        "0_pconv_tf_fr[3] - ((0.11934446472416312 0_vm[5]²) + (-0.11934446472416312 0_vm[5]*0_vmf[3]) * cos(0_va[5] - 0_vaf[3]) + (8.919009663719123 0_vm[5]*0_vmf[3]) * sin(0_va[5] - 0_vaf[3])) = 0": 2.6645352591003757e-15,
+        "0_pconv_tf_to[1] - ((0.11934446472416312 0_vmf[1]²) + (-0.11934446472416312 0_vmf[1]*0_vm[2]) * cos(-0_va[2] + 0_vaf[1]) + (8.919009663719123 0_vmf[1]*0_vm[2]) * sin(-0_va[2] + 0_vaf[1])) = 0": 2.0816681711721685e-17,
+        "0_pconv_tf_to[3] - ((0.11934446472416312 0_vmf[3]²) + (-0.11934446472416312 0_vmf[3]*0_vm[5]) * cos(-0_va[5] + 0_vaf[3]) + (8.919009663719123 0_vmf[3]*0_vm[5]) * sin(-0_va[5] + 0_vaf[3])) = 0": 3.1086244689504383e-15,
+        "0_q[(1, 1, 2)] - (((35.231280209999646 0_vm[1]²) - 35.234840209999646 * ((0_vm[1]*0_vm[2]) * cos(-0_va[2] + 0_va[1]))) + -3.5234840209999647 * ((0_vm[1]*0_vm[2]) * sin(-0_va[2] + 0_va[1]))) = 0": 1.3877787807814457e-15,
+        "0_q[(1, 2, 1)] - (((35.231280209999646 0_vm[2]²) - 35.234840209999646 * ((0_vm[2]*0_vm[1]) * cos(0_va[2] - 0_va[1]))) + -3.5234840209999647 * ((0_vm[2]*0_vm[1]) * sin(0_va[2] - 0_va[1]))) = 0": 3.3306690738754696e-15,
+        "0_q[(2, 1, 4)] - (((32.56575637832204 0_vm[1]²) - 32.56904637832204 * ((0_vm[1]*0_vm[4]) * cos(-0_va[4] + 0_va[1]))) + -3.2569046378322044 * ((0_vm[1]*0_vm[4]) * sin(-0_va[4] + 0_va[1]))) = 0": 6.106226635438361e-16,
+        "0_q[(2, 4, 1)] - (((32.56575637832204 0_vm[4]²) - 32.56904637832204 * ((0_vm[4]*0_vm[1]) * cos(0_va[4] - 0_va[1]))) + -3.2569046378322044 * ((0_vm[4]*0_vm[1]) * sin(0_va[4] - 0_va[1]))) = 0": 7.716050021144838e-15,
+        "0_q[(3, 1, 5)] - (((154.6873402970297 0_vm[1]²) - 154.70297029702968 * ((0_vm[1]*0_vm[5]) * cos(-0_va[5] + 0_va[1]))) + -15.47029702970297 * ((0_vm[1]*0_vm[5]) * sin(-0_va[5] + 0_va[1]))) = 0": 5.0182080713057076e-14,
+        "0_q[(3, 5, 1)] - (((154.6873402970297 0_vm[5]²) - 154.70297029702968 * ((0_vm[5]*0_vm[1]) * cos(0_va[5] - 0_va[1]))) + -15.47029702970297 * ((0_vm[5]*0_vm[1]) * sin(0_va[5] - 0_va[1]))) = 0": 3.9745984281580604e-14,
+        "0_q[(4, 2, 3)] - (((91.66657425009167 0_vm[2]²) - 91.67583425009167 * ((0_vm[2]*0_vm[3]) * cos(0_va[2] - 0_va[3]))) + -9.167583425009166 * ((0_vm[2]*0_vm[3]) * sin(0_va[2] - 0_va[3]))) = 0": 2.220446049250313e-16,
+        "0_q[(4, 3, 2)] - (((91.66657425009167 0_vm[3]²) - 91.67583425009167 * ((0_vm[3]*0_vm[2]) * cos(-0_va[2] + 0_va[3]))) + -9.167583425009166 * ((0_vm[3]*0_vm[2]) * sin(-0_va[2] + 0_va[3]))) = 0": 1.0436096431476471e-14,
+        "0_q[(5, 3, 4)] - (((33.33329700003334 0_vm[3]²) - 33.33666700003334 * ((0_vm[3]*0_vm[4]) * cos(-0_va[4] + 0_va[3]))) + -3.3336667000033335 * ((0_vm[3]*0_vm[4]) * sin(-0_va[4] + 0_va[3]))) = 0": 1.9095836023552692e-14,
+        "0_q[(5, 4, 3)] - (((33.33329700003334 0_vm[4]²) - 33.33666700003334 * ((0_vm[4]*0_vm[3]) * cos(0_va[4] - 0_va[3]))) + -3.3336667000033335 * ((0_vm[4]*0_vm[3]) * sin(0_va[4] - 0_va[3]))) = 0": 9.547918011776346e-15,
+        "0_q[(6, 4, 5)] - (((33.33329700003334 0_vm[4]²) - 33.33666700003334 * ((0_vm[4]*0_vm[5]) * cos(-0_va[5] + 0_va[4]))) + -3.3336667000033335 * ((0_vm[4]*0_vm[5]) * sin(-0_va[5] + 0_va[4]))) = 0": 9.270362255620057e-15,
+        "0_q[(6, 5, 4)] - (((33.33329700003334 0_vm[5]²) - 33.33666700003334 * ((0_vm[5]*0_vm[4]) * cos(0_va[5] - 0_va[4]))) + -3.3336667000033335 * ((0_vm[5]*0_vm[4]) * sin(0_va[5] - 0_va[4]))) = 0": 6.399394902878441e-15,
+        "0_qconv_pr_fr[1] - ((6.08716599381522 0_vmf[1]²) + (-6.08716599381522 0_vmf[1]*0_vmc[1]) * cos(0_vaf[1] - 0_vac[1]) + (-0.0037053603565955803 0_vmf[1]*0_vmc[1]) * sin(0_vaf[1] - 0_vac[1])) = 0": 5.585809592645319e-16,
+        "0_qconv_pr_fr[2] - ((6.08716599381522 0_vmf[2]²) + (-6.08716599381522 0_vmf[2]*0_vmc[2]) * cos(0_vaf[2] - 0_vac[2]) + (-0.0037053603565955803 0_vmf[2]*0_vmc[2]) * sin(0_vaf[2] - 0_vac[2])) = 0": 4.163336342344337e-17,
+        "0_qconv_pr_fr[3] - ((6.08716599381522 0_vmf[3]²) + (-6.08716599381522 0_vmf[3]*0_vmc[3]) * cos(0_vaf[3] - 0_vac[3]) + (-0.0037053603565955803 0_vmf[3]*0_vmc[3]) * sin(0_vaf[3] - 0_vac[3])) = 0": 2.78388423424758e-14,
+        "0_qconv_tf_fr[1] - ((8.919009663719123 0_vm[2]²) + (-8.919009663719123 0_vm[2]*0_vmf[1]) * cos(0_va[2] - 0_vaf[1]) + (-0.11934446472416312 0_vm[2]*0_vmf[1]) * sin(0_va[2] - 0_vaf[1])) = 0": 1.5126788710517758e-15,
+        "0_qconv_tf_fr[2] - ((8.919009663719123 0_vm[3]²) + (-8.919009663719123 0_vm[3]*0_vmf[2]) * cos(0_va[3] - 0_vaf[2]) + (-0.11934446472416312 0_vm[3]*0_vmf[2]) * sin(0_va[3] - 0_vaf[2])) = 0": 2.0816681711721685e-17,
+        "0_qconv_tf_fr[3] - ((8.919009663719123 0_vm[5]²) + (-8.919009663719123 0_vm[5]*0_vmf[3]) * cos(0_va[5] - 0_vaf[3]) + (-0.11934446472416312 0_vm[5]*0_vmf[3]) * sin(0_va[5] - 0_vaf[3])) = 0": 1.2351231148954867e-15,
+        "0_qconv_tf_to[1] - ((8.919009663719123 0_vmf[1]²) + (-8.919009663719123 0_vmf[1]*0_vm[2]) * cos(-0_va[2] + 0_vaf[1]) + (-0.11934446472416312 0_vmf[1]*0_vm[2]) * sin(-0_va[2] + 0_vaf[1])) = 0": 6.245004513516506e-16,
+        "0_qconv_tf_to[2] - ((8.919009663719123 0_vmf[2]²) + (-8.919009663719123 0_vmf[2]*0_vm[3]) * cos(-0_va[3] + 0_vaf[2]) + (-0.11934446472416312 0_vmf[2]*0_vm[3]) * sin(-0_va[3] + 0_vaf[2])) = 0": 3.00454106039183e-15,
+        "0_qconv_tf_to[3] - ((8.919009663719123 0_vmf[3]²) + (-8.919009663719123 0_vmf[3]*0_vm[5]) * cos(-0_va[5] + 0_vaf[3]) + (-0.11934446472416312 0_vmf[3]*0_vm[5]) * sin(-0_va[5] + 0_vaf[3])) = 0": 3.1558089474970075e-14,
+        "0_va[4] = 0": 1.5070348412489105e-38
+      },
+      "electrical_comparison": {
+        "ac_branch/1-2/active_loss": {
+          "absolute_difference": 3.766631451185276e-11,
+          "native": 0.016108198820920183,
+          "reference": 0.016108198858586498
+        },
+        "ac_branch/1-2/pf": {
+          "absolute_difference": 1.9237322845810922e-10,
+          "native": 2.537150574399898,
+          "reference": 2.537150574592271
+        },
+        "ac_branch/1-2/pt": {
+          "absolute_difference": 1.5470691394625646e-10,
+          "native": -2.5210423755789777,
+          "reference": -2.5210423757336846
+        },
+        "ac_branch/1-2/qf": {
+          "absolute_difference": 2.691647349450932e-9,
+          "native": -0.4677133784459763,
+          "reference": -0.4677133811376237
+        },
+        "ac_branch/1-2/qt": {
+          "absolute_difference": 3.082741617532747e-9,
+          "native": 0.6204749299046098,
+          "reference": 0.6204749329873515
+        },
+        "ac_branch/1-4/active_loss": {
+          "absolute_difference": 1.865174681370263e-11,
+          "native": 0.009534386181339505,
+          "reference": 0.009534386199991252
+        },
+        "ac_branch/1-4/pf": {
+          "absolute_difference": 1.624833600999409e-11,
+          "native": 1.8767453811025756,
+          "reference": 1.876745381118824
+        },
+        "ac_branch/1-4/pt": {
+          "absolute_difference": 2.403410803708539e-12,
+          "native": -1.867210994921236,
+          "reference": -1.8672109949188327
+        },
+        "ac_branch/1-4/qf": {
+          "absolute_difference": 6.663896101599676e-10,
+          "native": 0.33861094576089273,
+          "reference": 0.33861094642728234
+        },
+        "ac_branch/1-4/qt": {
+          "absolute_difference": 4.658854413364111e-10,
+          "native": -0.2508062251744037,
+          "reference": -0.25080622564028915
+        },
+        "ac_branch/1-5/active_loss": {
+          "absolute_difference": 1.255795467614007e-11,
+          "native": 0.004588816737161494,
+          "reference": 0.004588816749719449
+        },
+        "ac_branch/1-5/pf": {
+          "absolute_difference": 2.1829960061836573e-10,
+          "native": -2.3138959555239276,
+          "reference": -2.313895955742227
+        },
+        "ac_branch/1-5/pt": {
+          "absolute_difference": 2.308575552945058e-10,
+          "native": 2.318484772261089,
+          "reference": 2.3184847724919466
+        },
+        "ac_branch/1-5/qf": {
+          "absolute_difference": 1.9617230062607405e-9,
+          "native": 1.7041024325442495,
+          "reference": 1.7041024345059725
+        },
+        "ac_branch/1-5/qt": {
+          "absolute_difference": 1.7698731369364396e-9,
+          "native": -1.6941952889632936,
+          "reference": -1.6941952907331668
+        },
+        "ac_branch/2-3/active_loss": {
+          "absolute_difference": 2.8953506259199457e-12,
+          "native": 0.002251318524583823,
+          "reference": 0.0022513185274791736
+        },
+        "ac_branch/2-3/pf": {
+          "absolute_difference": 1.5006718090404547e-10,
+          "native": -0.5315723624280905,
+          "reference": -0.5315723622780233
+        },
+        "ac_branch/2-3/pt": {
+          "absolute_difference": 1.4717183027812553e-10,
+          "native": 0.5338236809526743,
+          "reference": 0.5338236808055025
+        },
+        "ac_branch/2-3/qf": {
+          "absolute_difference": 2.7025337523411963e-10,
+          "native": -1.4841588282097435,
+          "reference": -1.4841588279394902
+        },
+        "ac_branch/2-3/qt": {
+          "absolute_difference": 2.052424896703542e-10,
+          "native": 1.4845703957810732,
+          "reference": 1.4845703955758307
+        },
+        "ac_branch/3-4/active_loss": {
+          "absolute_difference": 3.0398794592656486e-11,
+          "native": 0.004804637694136582,
+          "reference": 0.004804637724535377
+        },
+        "ac_branch/3-4/pf": {
+          "absolute_difference": 2.184075142963593e-11,
+          "native": -0.247404855577669,
+          "reference": -0.24740485555582825
+        },
+        "ac_branch/3-4/pt": {
+          "absolute_difference": 8.558043163020557e-12,
+          "native": 0.2522094932718056,
+          "reference": 0.25220949328036363
+        },
+        "ac_branch/3-4/qf": {
+          "absolute_difference": 3.3617957306830704e-9,
+          "native": 1.372961085585124,
+          "reference": 1.3729610889469197
+        },
+        "ac_branch/3-4/qt": {
+          "absolute_difference": 3.0440119314079084e-9,
+          "native": -1.332804265248568,
+          "reference": -1.33280426829258
+        },
+        "ac_branch/4-5/active_loss": {
+          "absolute_difference": 2.7967406168727393e-11,
+          "native": 0.014985089104583071,
+          "reference": 0.014985089132550478
+        },
+        "ac_branch/4-5/pf": {
+          "absolute_difference": 2.937783349921119e-11,
+          "native": -2.384998498261149,
+          "reference": -2.3849984982317713
+        },
+        "ac_branch/4-5/pt": {
+          "absolute_difference": 1.4104273304837989e-12,
+          "native": 2.3999835873657323,
+          "reference": 2.399983587364322
+        },
+        "ac_branch/4-5/qf": {
+          "absolute_difference": 3.748401589120931e-11,
+          "native": 0.13331590609267088,
+          "reference": 0.13331590605518687
+        },
+        "ac_branch/4-5/qt": {
+          "absolute_difference": 3.3154635287191425e-10,
+          "native": 0.00887583084274386,
+          "reference": 0.008875831174290213
+        },
+        "dc_branch/dc_equivalent_branch/1/active_loss": {
+          "absolute_difference": 6.45039577307216e-14,
+          "native": 0.002193186871904118,
+          "reference": 0.002193186871968622
+        },
+        "dc_branch/dc_equivalent_branch/1/pf": {
+          "absolute_difference": 1.209587985329108e-13,
+          "native": 0.3168043919877183,
+          "reference": 0.31680439198759736
+        },
+        "dc_branch/dc_equivalent_branch/1/pt": {
+          "absolute_difference": 1.854627562636324e-13,
+          "native": -0.3146112051158142,
+          "reference": -0.31461120511562873
+        },
+        "dc_branch/dc_equivalent_branch/2/active_loss": {
+          "absolute_difference": 2.1505019986989282e-13,
+          "native": 0.010809050745311577,
+          "reference": 0.010809050745526627
+        },
+        "dc_branch/dc_equivalent_branch/2/pf": {
+          "absolute_difference": 3.109401625067676e-12,
+          "native": -0.6984416752659315,
+          "reference": -0.6984416752628221
+        },
+        "dc_branch/dc_equivalent_branch/2/pt": {
+          "absolute_difference": 2.894351425197783e-12,
+          "native": 0.7092507260112431,
+          "reference": 0.7092507260083487
+        },
+        "dc_branch/dc_equivalent_branch/3/active_loss": {
+          "absolute_difference": 3.325117958752344e-14,
+          "native": 0.0023253409753679066,
+          "reference": 0.002325340975401158
+        },
+        "dc_branch/dc_equivalent_branch/3/pf": {
+          "absolute_difference": 2.046252056686626e-12,
+          "native": -0.27531947894402425,
+          "reference": -0.275319478941978
+        },
+        "dc_branch/dc_equivalent_branch/3/pt": {
+          "absolute_difference": 2.0130008770991026e-12,
+          "native": 0.27764481991939216,
+          "reference": 0.27764481991737916
+        },
+        "dc_bus/dc_equivalent_bus/1/vm": {
+          "absolute_difference": 1.5095702465828253e-11,
+          "native": 1.0907872400326994,
+          "reference": 1.0907872400176037
+        },
+        "dc_bus/dc_equivalent_bus/2/vm": {
+          "absolute_difference": 1.5197398894883918e-11,
+          "native": 1.083235891896803,
+          "reference": 1.0832358918816056
+        },
+        "dc_bus/dc_equivalent_bus/3/vm": {
+          "absolute_difference": 1.5036638600918195e-11,
+          "native": 1.0999999999666676,
+          "reference": 1.099999999951631
+        },
+        "pg[bus-1-2]": {
+          "absolute_difference": 5.831335414541172e-12,
+          "native": 1.6999999999870736,
+          "reference": 1.6999999999812423
+        },
+        "pg[bus-1]": {
+          "absolute_difference": 3.8469227803261674e-12,
+          "native": 0.39999999999147245,
+          "reference": 0.39999999998762553
+        },
+        "pg[bus-3-2]": {
+          "absolute_difference": 1.1979883751678244e-10,
+          "native": 2.287742151749326,
+          "reference": 2.2877421516295273
+        },
+        "pg[bus-4-2]": {
+          "absolute_difference": 4.0339369922076805e-11,
+          "native": 8.941992431642945e-11,
+          "reference": 1.2975929423850625e-10
+        },
+        "pg[bus-5]": {
+          "absolute_difference": 2.2808155364373306e-10,
+          "native": 5.7198785982341285,
+          "reference": 5.71987859846221
+        },
+        "qg[bus-1-2]": {
+          "absolute_difference": 3.1767255492809454e-11,
+          "native": 1.274999999929583,
+          "reference": 1.2749999998978157
+        },
+        "qg[bus-1]": {
+          "absolute_difference": 3.17669779370533e-11,
+          "native": 0.2999999999295827,
+          "reference": 0.29999999989781573
+        },
+        "qg[bus-3-2]": {
+          "absolute_difference": 1.0790612847699776e-10,
+          "native": 3.8999999997608006,
+          "reference": 3.8999999996528945
+        },
+        "qg[bus-4-2]": {
+          "absolute_difference": 3.5473814163911044e-9,
+          "native": -0.13559458433030105,
+          "reference": -0.13559458787768247
+        },
+        "qg[bus-5]": {
+          "absolute_difference": 1.6975179484290948e-8,
+          "native": -1.7552777486586544,
+          "reference": -1.755277731683475
+        },
+        "station/ac_dc_converter_station/1/iconv": {
+          "absolute_difference": 1.0343910450405502e-9,
+          "native": 0.05044805291778984,
+          "reference": 0.05044805395218088
+        },
+        "station/ac_dc_converter_station/1/pconv": {
+          "absolute_difference": 3.5450323232488756e-12,
+          "native": 0.05259185316469403,
+          "reference": 0.05259185316823906
+        },
+        "station/ac_dc_converter_station/1/pdc": {
+          "absolute_difference": 1.9252932581537152e-12,
+          "native": -0.04148491304369406,
+          "reference": -0.041484913045619354
+        },
+        "station/ac_dc_converter_station/1/pgrid": {
+          "absolute_difference": 4.639767736680511e-12,
+          "native": 0.052614738007068146,
+          "reference": 0.052614738011707914
+        },
+        "station/ac_dc_converter_station/1/ppr_fr": {
+          "absolute_difference": 3.555461480786448e-12,
+          "native": 0.05259210766529835,
+          "reference": 0.05259210766885381
+        },
+        "station/ac_dc_converter_station/1/ptf_to": {
+          "absolute_difference": 3.555461480786448e-12,
+          "native": -0.05259210766529835,
+          "reference": -0.05259210766885381
+        },
+        "station/ac_dc_converter_station/1/qconv": {
+          "absolute_difference": 3.5562418565504572e-9,
+          "native": -0.017707464326203484,
+          "reference": -0.01770746788244534
+        },
+        "station/ac_dc_converter_station/1/qgrid": {
+          "absolute_difference": 3.3529949233779277e-9,
+          "native": -0.12241610169486625,
+          "reference": -0.12241610504786117
+        },
+        "station/ac_dc_converter_station/1/qpr_fr": {
+          "absolute_difference": 3.5391003253004705e-9,
+          "native": -0.01728937073342614,
+          "reference": -0.017289374272526466
+        },
+        "station/ac_dc_converter_station/1/qtf_to": {
+          "absolute_difference": 3.4340304350122253e-9,
+          "native": 0.12410734256979525,
+          "reference": 0.12410734600382568
+        },
+        "station/ac_dc_converter_station/1/station_loss": {
+          "absolute_difference": 2.714474478526796e-12,
+          "native": 0.011129824963374085,
+          "reference": 0.01112982496608856
+        },
+        "station/ac_dc_converter_station/1/vaconv": {
+          "absolute_difference": 4.539815398607594e-11,
+          "native": -0.025522263531197374,
+          "reference": -0.025522263576595528
+        },
+        "station/ac_dc_converter_station/1/vafilt": {
+          "absolute_difference": 4.1044195819850415e-11,
+          "native": -0.0183634205082392,
+          "reference": -0.018363420549283395
+        },
+        "station/ac_dc_converter_station/1/valve_loss": {
+          "absolute_difference": 1.6197390650951604e-12,
+          "native": 0.01110694012099997,
+          "reference": 0.011106940122619709
+        },
+        "station/ac_dc_converter_station/1/vmconv": {
+          "absolute_difference": 8.605116619264663e-12,
+          "native": 1.099999999980924,
+          "reference": 1.099999999972319
+        },
+        "station/ac_dc_converter_station/1/vmfilt": {
+          "absolute_difference": 5.39713829184052e-10,
+          "native": 1.0973883716763724,
+          "reference": 1.0973883711366585
+        },
+        "station/ac_dc_converter_station/2/iconv": {
+          "absolute_difference": 2.255170494791514e-10,
+          "native": 0.9110258249133577,
+          "reference": 0.9110258251388748
+        },
+        "station/ac_dc_converter_station/2/pconv": {
+          "absolute_difference": 3.961719841072409e-12,
+          "native": -0.9999999999912182,
+          "reference": -0.9999999999872565
+        },
+        "station/ac_dc_converter_station/2/pdc": {
+          "absolute_difference": 3.2949198924825396e-12,
+          "native": 1.0130528803817458,
+          "reference": 1.0130528803784509
+        },
+        "station/ac_dc_converter_station/2/pgrid": {
+          "absolute_difference": 5.5323523540096176e-12,
+          "native": -0.9986766736256791,
+          "reference": -0.9986766736201468
+        },
+        "station/ac_dc_converter_station/2/ppr_fr": {
+          "absolute_difference": 4.002687070681077e-12,
+          "native": -0.9999170031858522,
+          "reference": -0.9999170031818495
+        },
+        "station/ac_dc_converter_station/2/ptf_to": {
+          "absolute_difference": 4.002687070681077e-12,
+          "native": 0.9999170031858522,
+          "reference": 0.9999170031818495
+        },
+        "station/ac_dc_converter_station/2/qconv": {
+          "absolute_difference": 3.5532625453083e-9,
+          "native": -0.0652789771172538,
+          "reference": -0.06527898067051635
+        },
+        "station/ac_dc_converter_station/2/qgrid": {
+          "absolute_difference": 3.2644591890784724e-9,
+          "native": 0.05636851839460317,
+          "reference": 0.05636851513014398
+        },
+        "station/ac_dc_converter_station/2/qpr_fr": {
+          "absolute_difference": 3.4857577518865313e-9,
+          "native": 0.07106817473785648,
+          "reference": 0.07106817125209873
+        },
+        "station/ac_dc_converter_station/2/qtf_to": {
+          "absolute_difference": 3.3787738926149835e-9,
+          "native": 0.03632544406900009,
+          "reference": 0.03632544744777398
+        },
+        "station/ac_dc_converter_station/2/station_loss": {
+          "absolute_difference": 2.237432461527078e-12,
+          "native": 0.014376206756066656,
+          "reference": 0.014376206758304089
+        },
+        "station/ac_dc_converter_station/2/vaconv": {
+          "absolute_difference": 1.617758149663473e-10,
+          "native": 0.21906023197077487,
+          "reference": 0.2190602321325507
+        },
+        "station/ac_dc_converter_station/2/vafilt": {
+          "absolute_difference": 9.15653247668402e-11,
+          "native": 0.08291898627599874,
+          "reference": 0.08291898636756406
+        },
+        "station/ac_dc_converter_station/2/valve_loss": {
+          "absolute_difference": 6.66799948589869e-13,
+          "native": 0.013052880390527544,
+          "reference": 0.013052880391194344
+        },
+        "station/ac_dc_converter_station/2/vmconv": {
+          "absolute_difference": 2.261923981450309e-11,
+          "native": 1.099999999949858,
+          "reference": 1.0999999999272387
+        },
+        "station/ac_dc_converter_station/2/vmfilt": {
+          "absolute_difference": 5.480704778904055e-10,
+          "native": 1.1003413368471087,
+          "reference": 1.1003413362990382
+        },
+        "station/ac_dc_converter_station/3/iconv": {
+          "absolute_difference": 1.4082167654194677e-9,
+          "native": 0.928387563692241,
+          "reference": 0.9283875651004577
+        },
+        "station/ac_dc_converter_station/3/pconv": {
+          "absolute_difference": 7.045475314271243e-13,
+          "native": 0.9999999999984382,
+          "reference": 0.9999999999977337
+        },
+        "station/ac_dc_converter_station/3/pdc": {
+          "absolute_difference": 4.907407813448117e-12,
+          "native": -0.9868955459306352,
+          "reference": -0.9868955459257278
+        },
+        "station/ac_dc_converter_station/3/pgrid": {
+          "absolute_difference": 1.3653522756840175e-12,
+          "native": 1.0014102386073074,
+          "reference": 1.001410238605942
+        },
+        "station/ac_dc_converter_station/3/ppr_fr": {
+          "absolute_difference": 4.432010314303625e-13,
+          "native": 1.0000861903452802,
+          "reference": 1.000086190344837
+        },
+        "station/ac_dc_converter_station/3/ptf_to": {
+          "absolute_difference": 4.432010314303625e-13,
+          "native": -1.0000861903452802,
+          "reference": -1.000086190344837
+        },
+        "station/ac_dc_converter_station/3/qconv": {
+          "absolute_difference": 1.7497050308623585e-8,
+          "native": -0.2071308146896555,
+          "reference": -0.2071307971926052
+        },
+        "station/ac_dc_converter_station/3/qgrid": {
+          "absolute_difference": 1.8413506178149852e-8,
+          "native": -0.06995829053810454,
+          "reference": -0.06995827212459836
+        },
+        "station/ac_dc_converter_station/3/qpr_fr": {
+          "absolute_difference": 1.7926597206674444e-8,
+          "native": -0.06553731289787905,
+          "reference": -0.06553729497128184
+        },
+        "station/ac_dc_converter_station/3/qtf_to": {
+          "absolute_difference": 1.8482417596388245e-8,
+          "native": 0.16890883065359946,
+          "reference": 0.16890881217118187
+        },
+        "station/ac_dc_converter_station/3/station_loss": {
+          "absolute_difference": 3.5420555377640994e-12,
+          "native": 0.014514692676672158,
+          "reference": 0.014514692680214214
+        },
+        "station/ac_dc_converter_station/3/vaconv": {
+          "absolute_difference": 1.2846987085257666e-9,
+          "native": -0.17363934112550364,
+          "reference": -0.17363934241020235
+        },
+        "station/ac_dc_converter_station/3/vafilt": {
+          "absolute_difference": 2.1308838027422894e-10,
+          "native": -0.03483482457316512,
+          "reference": -0.0348348247862535
+        },
+        "station/ac_dc_converter_station/3/valve_loss": {
+          "absolute_difference": 4.202860282020993e-12,
+          "native": 0.013104454067803029,
+          "reference": 0.013104454072005889
+        },
+        "station/ac_dc_converter_station/3/vmconv": {
+          "absolute_difference": 5.493372867704238e-9,
+          "native": 1.0999999881890992,
+          "reference": 1.0999999826957263
+        },
+        "station/ac_dc_converter_station/3/vmfilt": {
+          "absolute_difference": 2.902265539006521e-9,
+          "native": 1.079539745741192,
+          "reference": 1.0795397428389264
+        },
+        "va[1]": {
+          "absolute_difference": 8.943867868538291e-11,
+          "native": 0.048909628089373325,
+          "reference": 0.048909628178812004
+        },
+        "va[2]": {
+          "absolute_difference": 2.96470261534898e-11,
+          "native": -0.013254598354838757,
+          "reference": -0.013254598384485783
+        },
+        "va[3]": {
+          "absolute_difference": 2.5098959369196372e-11,
+          "native": -0.009776889896513282,
+          "reference": -0.009776889921612242
+        },
+        "va[4]": {
+          "absolute_difference": 1.0432290329272943e-38,
+          "native": -1.5070348412489105e-38,
+          "reference": -4.638058083216162e-39
+        },
+        "va[5]": {
+          "absolute_difference": 1.1717317394133175e-10,
+          "native": 0.06273401250207036,
+          "reference": 0.06273401261924354
+        },
+        "vm[1]": {
+          "absolute_difference": 9.778167164853357e-10,
+          "native": 1.0772267931925557,
+          "reference": 1.077226792214739
+        },
+        "vm[2]": {
+          "absolute_difference": 8.966478670657807e-10,
+          "native": 1.0847966493573622,
+          "reference": 1.0847966484607143
+        },
+        "vm[3]": {
+          "absolute_difference": 8.867353518127175e-10,
+          "native": 1.0999999980414386,
+          "reference": 1.0999999971547032
+        },
+        "vm[4]": {
+          "absolute_difference": 1.006605243603076e-9,
+          "native": 1.0635387740179072,
+          "reference": 1.063538773011302
+        },
+        "vm[5]": {
+          "absolute_difference": 9.968714742569773e-10,
+          "native": 1.0684714797283046,
+          "reference": 1.068471478731433
+        }
+      },
+      "max_absolute_electrical_difference": 1.8482417596388245e-8,
+      "max_reference_violation": 2.788880237858393e-13,
+      "native_objective_difference": 0.0,
+      "native_variables": 95,
+      "oracle_objective_difference": -1.5910700312815607e-8,
+      "reconstructed_reference_only": {
+        "0_pcurt[1]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.0
+        },
+        "0_pcurt[2]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.0
+        },
+        "0_pcurt[3]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.0
+        },
+        "0_pflex[1]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 3.0
+        },
+        "0_pflex[2]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 3.0
+        },
+        "0_pflex[3]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 4.0
+        },
+        "0_phiconv[1]": {
+          "reason": "unused VSC firing angle",
+          "value": 0.0
+        },
+        "0_phiconv[2]": {
+          "reason": "unused VSC firing angle",
+          "value": 0.0
+        },
+        "0_phiconv[3]": {
+          "reason": "unused VSC firing angle",
+          "value": 0.0
+        },
+        "0_qflex[1]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.9861
+        },
+        "0_qflex[2]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.9861
+        },
+        "0_qflex[3]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 1.3147
+        }
+      },
+      "reference_evaluated_objective": 15693.105053808458,
+      "reference_variables": 107
+    },
+    "flat": {
+      "constraint_violations": {
+        "(-0_pconv_ac[1]) - ((0.0037053603565955803 0_vmc[1]²) + (-0.0037053603565955803 0_vmc[1]*0_vmf[1]) * cos(-0_vaf[1] + 0_vac[1]) + (6.08716599381522 0_vmc[1]*0_vmf[1]) * sin(-0_vaf[1] + 0_vac[1])) = 0": 1.3877787807814457e-17,
+        "(-0_pconv_ac[3]) - ((0.0037053603565955803 0_vmc[3]²) + (-0.0037053603565955803 0_vmc[3]*0_vmf[3]) * cos(-0_vaf[3] + 0_vac[3]) + (6.08716599381522 0_vmc[3]*0_vmf[3]) * sin(-0_vaf[3] + 0_vac[3])) = 0": 2.7755575615628914e-15,
+        "(-0_qconv_ac[1]) - ((6.08716599381522 0_vmc[1]²) + (-6.08716599381522 0_vmc[1]*0_vmf[1]) * cos(-0_vaf[1] + 0_vac[1]) + (-0.0037053603565955803 0_vmc[1]*0_vmf[1]) * sin(-0_vaf[1] + 0_vac[1])) = 0": 1.9845236565174673e-15,
+        "(-0_qconv_ac[2]) - ((6.08716599381522 0_vmc[2]²) + (-6.08716599381522 0_vmc[2]*0_vmf[2]) * cos(-0_vaf[2] + 0_vac[2]) + (-0.0037053603565955803 0_vmc[2]*0_vmf[2]) * sin(-0_vaf[2] + 0_vac[2])) = 0": 3.0531133177191805e-16,
+        "(-0_qconv_ac[3]) - ((6.08716599381522 0_vmc[3]²) + (-6.08716599381522 0_vmc[3]*0_vmf[3]) * cos(-0_vaf[3] + 0_vac[3]) + (-0.0037053603565955803 0_vmc[3]*0_vmf[3]) * sin(-0_vaf[3] + 0_vac[3])) = 0": 5.88418203051333e-15,
+        "(0_pconv_ac[1]² + 0_qconv_ac[1]²) - (0_vmc[1]²) * (0_iconv_ac[1]²) = 0": 3.252606517456513e-17,
+        "(0_pconv_ac[3]² + 0_qconv_ac[3]²) - (0_vmc[3]²) * (0_iconv_ac[3]²) = 0": 2.9753977059954195e-14,
+        "-0.0008079535111671216 0_iconv_ac[1]² + 0_pconv_ac[1] - 0.0014843759094817334 0_iconv_ac[1] + 0_pconv_dc[1] = 0.01103": 6.938893903907228e-18,
+        "-0.0008079535111671216 0_iconv_ac[2]² + 0_pconv_ac[2] - 0.0014843759094817334 0_iconv_ac[2] + 0_pconv_dc[2] = 0.01103": 5.377642775528102e-17,
+        "-0.0008079535111671216 0_iconv_ac[3]² + 0_pconv_ac[3] - 0.0014843759094817334 0_iconv_ac[3] + 0_pconv_dc[3] = 0.01103": 2.6020852139652106e-17,
+        "-0.0887 0_vmf[1]² + 0_qconv_tf_to[1] + 0_qconv_pr_fr[1] = 0": 2.7755575615628914e-17,
+        "-0.0887 0_vmf[2]² + 0_qconv_tf_to[2] + 0_qconv_pr_fr[2] = 0": 1.3877787807814457e-17,
+        "-0.0887 0_vmf[3]² + 0_qconv_tf_to[3] + 0_qconv_pr_fr[3] = 0": 4.163336342344337e-17,
+        "-0_pg[2] - 0_pg[1] + 0_p[(2, 1, 4)] + 0_p[(3, 1, 5)] + 0_p[(1, 1, 2)] = 0": 4.440892098500626e-16,
+        "-0_pg[5] + 0_p[(6, 5, 4)] + 0_p[(3, 5, 1)] + 0_pconv_tf_fr[3] = 0": 2.220446049250313e-16,
+        "-0_qg[2] - 0_qg[1] + 0_q[(2, 1, 4)] + 0_q[(3, 1, 5)] + 0_q[(1, 1, 2)] = 0": 1.6653345369377348e-16,
+        "-0_qg[4] + 0_q[(6, 4, 5)] + 0_q[(5, 4, 3)] + 0_q[(2, 4, 1)] + 0_qflex[3] = 0": 2.220446049250313e-16,
+        "-0_qg[5] + 0_q[(6, 5, 4)] + 0_q[(3, 5, 1)] + 0_qconv_tf_fr[3] = 0": 1.5265566588595902e-16,
+        "0_p[(1, 1, 2)] - ((3.5234840209999647 0_vm[1]²) + -3.5234840209999647 * ((0_vm[1]*0_vm[2]) * cos(-0_va[2] + 0_va[1])) + 35.234840209999646 * ((0_vm[1]*0_vm[2]) * sin(-0_va[2] + 0_va[1]))) = 0": 2.220446049250313e-15,
+        "0_p[(1, 2, 1)] - ((3.5234840209999647 0_vm[2]²) + -3.5234840209999647 * ((0_vm[2]*0_vm[1]) * cos(0_va[2] - 0_va[1])) + 35.234840209999646 * ((0_vm[2]*0_vm[1]) * sin(0_va[2] - 0_va[1]))) = 0": 1.3322676295501878e-15,
+        "0_p[(2, 1, 4)] - ((3.2569046378322044 0_vm[1]²) + -3.2569046378322044 * ((0_vm[1]*0_vm[4]) * cos(-0_va[4] + 0_va[1])) + 32.56904637832204 * ((0_vm[1]*0_vm[4]) * sin(-0_va[4] + 0_va[1]))) = 0": 1.9984014443252818e-15,
+        "0_p[(2, 4, 1)] - ((3.2569046378322044 0_vm[4]²) + -3.2569046378322044 * ((0_vm[4]*0_vm[1]) * cos(0_va[4] - 0_va[1])) + 32.56904637832204 * ((0_vm[4]*0_vm[1]) * sin(0_va[4] - 0_va[1]))) = 0": 4.440892098500626e-16,
+        "0_p[(3, 1, 5)] - ((15.47029702970297 0_vm[1]²) + -15.47029702970297 * ((0_vm[1]*0_vm[5]) * cos(-0_va[5] + 0_va[1])) + 154.70297029702968 * ((0_vm[1]*0_vm[5]) * sin(-0_va[5] + 0_va[1]))) = 0": 3.552713678800501e-15,
+        "0_p[(3, 5, 1)] - ((15.47029702970297 0_vm[5]²) + -15.47029702970297 * ((0_vm[5]*0_vm[1]) * cos(0_va[5] - 0_va[1])) + 154.70297029702968 * ((0_vm[5]*0_vm[1]) * sin(0_va[5] - 0_va[1]))) = 0": 8.43769498715119e-15,
+        "0_p[(4, 2, 3)] - ((9.167583425009166 0_vm[2]²) + -9.167583425009166 * ((0_vm[2]*0_vm[3]) * cos(0_va[2] - 0_va[3])) + 91.67583425009167 * ((0_vm[2]*0_vm[3]) * sin(0_va[2] - 0_va[3]))) = 0": 7.771561172376096e-16,
+        "0_p[(4, 3, 2)] - ((9.167583425009166 0_vm[3]²) + -9.167583425009166 * ((0_vm[3]*0_vm[2]) * cos(-0_va[2] + 0_va[3])) + 91.67583425009167 * ((0_vm[3]*0_vm[2]) * sin(-0_va[2] + 0_va[3]))) = 0": 3.3306690738754696e-16,
+        "0_p[(5, 3, 4)] - ((3.3336667000033335 0_vm[3]²) + -3.3336667000033335 * ((0_vm[3]*0_vm[4]) * cos(-0_va[4] + 0_va[3])) + 33.33666700003334 * ((0_vm[3]*0_vm[4]) * sin(-0_va[4] + 0_va[3]))) = 0": 1.3322676295501878e-15,
+        "0_p[(5, 4, 3)] - ((3.3336667000033335 0_vm[4]²) + -3.3336667000033335 * ((0_vm[4]*0_vm[3]) * cos(0_va[4] - 0_va[3])) + 33.33666700003334 * ((0_vm[4]*0_vm[3]) * sin(0_va[4] - 0_va[3]))) = 0": 1.1657341758564144e-15,
+        "0_p[(6, 4, 5)] - ((3.3336667000033335 0_vm[4]²) + -3.3336667000033335 * ((0_vm[4]*0_vm[5]) * cos(-0_va[5] + 0_va[4])) + 33.33666700003334 * ((0_vm[4]*0_vm[5]) * sin(-0_va[5] + 0_va[4]))) = 0": 8.881784197001252e-16,
+        "0_p[(6, 5, 4)] - ((3.3336667000033335 0_vm[5]²) + -3.3336667000033335 * ((0_vm[5]*0_vm[4]) * cos(0_va[5] - 0_va[4])) + 33.33666700003334 * ((0_vm[5]*0_vm[4]) * sin(0_va[5] - 0_va[4]))) = 0": 4.440892098500626e-16,
+        "0_pconv_pr_fr[1] - ((0.0037053603565955803 0_vmf[1]²) + (-0.0037053603565955803 0_vmf[1]*0_vmc[1]) * cos(0_vaf[1] - 0_vac[1]) + (6.08716599381522 0_vmf[1]*0_vmc[1]) * sin(0_vaf[1] - 0_vac[1])) = 0": 1.3877787807814457e-17,
+        "0_pconv_pr_fr[3] - ((0.0037053603565955803 0_vmf[3]²) + (-0.0037053603565955803 0_vmf[3]*0_vmc[3]) * cos(0_vaf[3] - 0_vac[3]) + (6.08716599381522 0_vmf[3]*0_vmc[3]) * sin(0_vaf[3] - 0_vac[3])) = 0": 2.6645352591003757e-15,
+        "0_pconv_tf_fr[1] - ((0.11934446472416312 0_vm[2]²) + (-0.11934446472416312 0_vm[2]*0_vmf[1]) * cos(0_va[2] - 0_vaf[1]) + (8.919009663719123 0_vm[2]*0_vmf[1]) * sin(0_va[2] - 0_vaf[1])) = 0": 3.469446951953614e-17,
+        "0_pconv_tf_fr[2] - ((0.11934446472416312 0_vm[3]²) + (-0.11934446472416312 0_vm[3]*0_vmf[2]) * cos(0_va[3] - 0_vaf[2]) + (8.919009663719123 0_vm[3]*0_vmf[2]) * sin(0_va[3] - 0_vaf[2])) = 0": 2.220446049250313e-16,
+        "0_pconv_tf_fr[3] - ((0.11934446472416312 0_vm[5]²) + (-0.11934446472416312 0_vm[5]*0_vmf[3]) * cos(0_va[5] - 0_vaf[3]) + (8.919009663719123 0_vm[5]*0_vmf[3]) * sin(0_va[5] - 0_vaf[3])) = 0": 4.440892098500626e-16,
+        "0_pconv_tf_to[1] - ((0.11934446472416312 0_vmf[1]²) + (-0.11934446472416312 0_vmf[1]*0_vm[2]) * cos(-0_va[2] + 0_vaf[1]) + (8.919009663719123 0_vmf[1]*0_vm[2]) * sin(-0_va[2] + 0_vaf[1])) = 0": 3.469446951953614e-17,
+        "0_pconv_tf_to[2] - ((0.11934446472416312 0_vmf[2]²) + (-0.11934446472416312 0_vmf[2]*0_vm[3]) * cos(-0_va[3] + 0_vaf[2]) + (8.919009663719123 0_vmf[2]*0_vm[3]) * sin(-0_va[3] + 0_vaf[2])) = 0": 1.1102230246251565e-16,
+        "0_pconv_tf_to[3] - ((0.11934446472416312 0_vmf[3]²) + (-0.11934446472416312 0_vmf[3]*0_vm[5]) * cos(-0_va[5] + 0_vaf[3]) + (8.919009663719123 0_vmf[3]*0_vm[5]) * sin(-0_va[5] + 0_vaf[3])) = 0": 2.220446049250313e-16,
+        "0_pdcgrid[(3, 1, 3)] + 0_pdcgrid[(1, 1, 2)] + 0_pconv_dc[1] = 0": 2.7755575615628914e-17,
+        "0_q[(1, 1, 2)] - (((35.231280209999646 0_vm[1]²) - 35.234840209999646 * ((0_vm[1]*0_vm[2]) * cos(-0_va[2] + 0_va[1]))) + -3.5234840209999647 * ((0_vm[1]*0_vm[2]) * sin(-0_va[2] + 0_va[1]))) = 0": 1.637578961322106e-14,
+        "0_q[(1, 2, 1)] - (((35.231280209999646 0_vm[2]²) - 35.234840209999646 * ((0_vm[2]*0_vm[1]) * cos(0_va[2] - 0_va[1]))) + -3.5234840209999647 * ((0_vm[2]*0_vm[1]) * sin(0_va[2] - 0_va[1]))) = 0": 1.1102230246251565e-15,
+        "0_q[(2, 1, 4)] - (((32.56575637832204 0_vm[1]²) - 32.56904637832204 * ((0_vm[1]*0_vm[4]) * cos(-0_va[4] + 0_va[1]))) + -3.2569046378322044 * ((0_vm[1]*0_vm[4]) * sin(-0_va[4] + 0_va[1]))) = 0": 2.0539125955565396e-15,
+        "0_q[(2, 4, 1)] - (((32.56575637832204 0_vm[4]²) - 32.56904637832204 * ((0_vm[4]*0_vm[1]) * cos(0_va[4] - 0_va[1]))) + -3.2569046378322044 * ((0_vm[4]*0_vm[1]) * sin(0_va[4] - 0_va[1]))) = 0": 1.3156142841808105e-14,
+        "0_q[(3, 1, 5)] - (((154.6873402970297 0_vm[1]²) - 154.70297029702968 * ((0_vm[1]*0_vm[5]) * cos(-0_va[5] + 0_va[1]))) + -15.47029702970297 * ((0_vm[1]*0_vm[5]) * sin(-0_va[5] + 0_va[1]))) = 0": 2.842170943040401e-14,
+        "0_q[(3, 5, 1)] - (((154.6873402970297 0_vm[5]²) - 154.70297029702968 * ((0_vm[5]*0_vm[1]) * cos(0_va[5] - 0_va[1]))) + -15.47029702970297 * ((0_vm[5]*0_vm[1]) * sin(0_va[5] - 0_va[1]))) = 0": 7.349676423018536e-14,
+        "0_q[(4, 2, 3)] + 0_q[(1, 2, 1)] + 0_qconv_tf_fr[1] + 0_qflex[1] = 0": 1.1102230246251565e-16,
+        "0_q[(4, 2, 3)] - (((91.66657425009167 0_vm[2]²) - 91.67583425009167 * ((0_vm[2]*0_vm[3]) * cos(0_va[2] - 0_va[3]))) + -9.167583425009166 * ((0_vm[2]*0_vm[3]) * sin(0_va[2] - 0_va[3]))) = 0": 6.439293542825908e-15,
+        "0_q[(4, 3, 2)] - (((91.66657425009167 0_vm[3]²) - 91.67583425009167 * ((0_vm[3]*0_vm[2]) * cos(-0_va[2] + 0_va[3]))) + -9.167583425009166 * ((0_vm[3]*0_vm[2]) * sin(-0_va[2] + 0_va[3]))) = 0": 1.532107773982716e-14,
+        "0_q[(5, 3, 4)] - (((33.33329700003334 0_vm[3]²) - 33.33666700003334 * ((0_vm[3]*0_vm[4]) * cos(-0_va[4] + 0_va[3]))) + -3.3336667000033335 * ((0_vm[3]*0_vm[4]) * sin(-0_va[4] + 0_va[3]))) = 0": 1.84297022087776e-14,
+        "0_q[(5, 4, 3)] - (((33.33329700003334 0_vm[4]²) - 33.33666700003334 * ((0_vm[4]*0_vm[3]) * cos(0_va[4] - 0_va[3]))) + -3.3336667000033335 * ((0_vm[4]*0_vm[3]) * sin(0_va[4] - 0_va[3]))) = 0": 9.769962616701378e-15,
+        "0_q[(6, 4, 5)] - (((33.33329700003334 0_vm[4]²) - 33.33666700003334 * ((0_vm[4]*0_vm[5]) * cos(-0_va[5] + 0_va[4]))) + -3.3336667000033335 * ((0_vm[4]*0_vm[5]) * sin(-0_va[5] + 0_va[4]))) = 0": 8.326672684688674e-17,
+        "0_q[(6, 5, 4)] - (((33.33329700003334 0_vm[5]²) - 33.33666700003334 * ((0_vm[5]*0_vm[4]) * cos(0_va[5] - 0_va[4]))) + -3.3336667000033335 * ((0_vm[5]*0_vm[4]) * sin(0_va[5] - 0_va[4]))) = 0": 1.682681771697503e-16,
+        "0_qconv_pr_fr[1] - ((6.08716599381522 0_vmf[1]²) + (-6.08716599381522 0_vmf[1]*0_vmc[1]) * cos(0_vaf[1] - 0_vac[1]) + (-0.0037053603565955803 0_vmf[1]*0_vmc[1]) * sin(0_vaf[1] - 0_vac[1])) = 0": 1.4641066137244252e-15,
+        "0_qconv_pr_fr[2] - ((6.08716599381522 0_vmf[2]²) + (-6.08716599381522 0_vmf[2]*0_vmc[2]) * cos(0_vaf[2] - 0_vac[2]) + (-0.0037053603565955803 0_vmf[2]*0_vmc[2]) * sin(0_vaf[2] - 0_vac[2])) = 0": 1.3461454173580023e-15,
+        "0_qconv_pr_fr[3] - ((6.08716599381522 0_vmf[3]²) + (-6.08716599381522 0_vmf[3]*0_vmc[3]) * cos(0_vaf[3] - 0_vac[3]) + (-0.0037053603565955803 0_vmf[3]*0_vmc[3]) * sin(0_vaf[3] - 0_vac[3])) = 0": 3.5388358909926865e-15,
+        "0_qconv_tf_fr[1] - ((8.919009663719123 0_vm[2]²) + (-8.919009663719123 0_vm[2]*0_vmf[1]) * cos(0_va[2] - 0_vaf[1]) + (-0.11934446472416312 0_vm[2]*0_vmf[1]) * sin(0_va[2] - 0_vaf[1])) = 0": 7.771561172376096e-16,
+        "0_qconv_tf_fr[2] - ((8.919009663719123 0_vm[3]²) + (-8.919009663719123 0_vm[3]*0_vmf[2]) * cos(0_va[3] - 0_vaf[2]) + (-0.11934446472416312 0_vm[3]*0_vmf[2]) * sin(0_va[3] - 0_vaf[2])) = 0": 1.7555401576885288e-15,
+        "0_qconv_tf_fr[3] - ((8.919009663719123 0_vm[5]²) + (-8.919009663719123 0_vm[5]*0_vmf[3]) * cos(0_va[5] - 0_vaf[3]) + (-0.11934446472416312 0_vm[5]*0_vmf[3]) * sin(0_va[5] - 0_vaf[3])) = 0": 2.7755575615628914e-17,
+        "0_qconv_tf_to[1] - ((8.919009663719123 0_vmf[1]²) + (-8.919009663719123 0_vmf[1]*0_vm[2]) * cos(-0_va[2] + 0_vaf[1]) + (-0.11934446472416312 0_vmf[1]*0_vm[2]) * sin(-0_va[2] + 0_vaf[1])) = 0": 2.3869795029440866e-15,
+        "0_qconv_tf_to[2] - ((8.919009663719123 0_vmf[2]²) + (-8.919009663719123 0_vmf[2]*0_vm[3]) * cos(-0_va[3] + 0_vaf[2]) + (-0.11934446472416312 0_vmf[2]*0_vm[3]) * sin(-0_va[3] + 0_vaf[2])) = 0": 2.8449465006019636e-16,
+        "0_qconv_tf_to[3] - ((8.919009663719123 0_vmf[3]²) + (-8.919009663719123 0_vmf[3]*0_vm[5]) * cos(-0_va[5] + 0_vaf[3]) + (-0.11934446472416312 0_vmf[3]*0_vm[5]) * sin(-0_va[5] + 0_vaf[3])) = 0": 2.498001805406602e-16,
+        "0_va[4] = 0": 1.3990563867818974e-40
+      },
+      "electrical_comparison": {
+        "ac_branch/1-2/active_loss": {
+          "absolute_difference": 3.766587042264291e-11,
+          "native": 0.016108198820920627,
+          "reference": 0.016108198858586498
+        },
+        "ac_branch/1-2/pf": {
+          "absolute_difference": 1.9237811343941758e-10,
+          "native": 2.537150574399893,
+          "reference": 2.537150574592271
+        },
+        "ac_branch/1-2/pt": {
+          "absolute_difference": 1.5471224301677466e-10,
+          "native": -2.5210423755789724,
+          "reference": -2.5210423757336846
+        },
+        "ac_branch/1-2/qf": {
+          "absolute_difference": 2.691651457276123e-9,
+          "native": -0.4677133784459722,
+          "reference": -0.4677133811376237
+        },
+        "ac_branch/1-2/qt": {
+          "absolute_difference": 3.082737287662951e-9,
+          "native": 0.6204749299046142,
+          "reference": 0.6204749329873515
+        },
+        "ac_branch/1-4/active_loss": {
+          "absolute_difference": 1.864997045686323e-11,
+          "native": 0.009534386181341281,
+          "reference": 0.009534386199991252
+        },
+        "ac_branch/1-4/pf": {
+          "absolute_difference": 1.624878009920394e-11,
+          "native": 1.8767453811025752,
+          "reference": 1.876745381118824
+        },
+        "ac_branch/1-4/pt": {
+          "absolute_difference": 2.4011903576592886e-12,
+          "native": -1.8672109949212339,
+          "reference": -1.8672109949188327
+        },
+        "ac_branch/1-4/qf": {
+          "absolute_difference": 6.66386834602406e-10,
+          "native": 0.3386109457608955,
+          "reference": 0.33861094642728234
+        },
+        "ac_branch/1-4/qt": {
+          "absolute_difference": 4.658941010760032e-10,
+          "native": -0.25080622517439505,
+          "reference": -0.25080622564028915
+        },
+        "ac_branch/1-5/active_loss": {
+          "absolute_difference": 1.255218151641202e-11,
+          "native": 0.004588816737167267,
+          "reference": 0.004588816749719449
+        },
+        "ac_branch/1-5/pf": {
+          "absolute_difference": 2.1830492968888393e-10,
+          "native": -2.3138959555239222,
+          "reference": -2.313895955742227
+        },
+        "ac_branch/1-5/pt": {
+          "absolute_difference": 2.3085711120529595e-10,
+          "native": 2.3184847722610895,
+          "reference": 2.3184847724919466
+        },
+        "ac_branch/1-5/qf": {
+          "absolute_difference": 1.961729889643493e-9,
+          "native": 1.7041024325442427,
+          "reference": 1.7041024345059725
+        },
+        "ac_branch/1-5/qt": {
+          "absolute_difference": 1.769924873329387e-9,
+          "native": -1.694195288963242,
+          "reference": -1.6941952907331668
+        },
+        "ac_branch/2-3/active_loss": {
+          "absolute_difference": 2.8924640460559203e-12,
+          "native": 0.0022513185245867096,
+          "reference": 0.0022513185274791736
+        },
+        "ac_branch/2-3/pf": {
+          "absolute_difference": 1.5006851317167502e-10,
+          "native": -0.5315723624280918,
+          "reference": -0.5315723622780233
+        },
+        "ac_branch/2-3/pt": {
+          "absolute_difference": 1.471760491256191e-10,
+          "native": 0.5338236809526785,
+          "reference": 0.5338236808055025
+        },
+        "ac_branch/2-3/qf": {
+          "absolute_difference": 2.7024649185136695e-10,
+          "native": -1.4841588282097367,
+          "reference": -1.4841588279394902
+        },
+        "ac_branch/2-3/qt": {
+          "absolute_difference": 2.0524715260705761e-10,
+          "native": 1.4845703957810779,
+          "reference": 1.4845703955758307
+        },
+        "ac_branch/3-4/active_loss": {
+          "absolute_difference": 3.03984615257491e-11,
+          "native": 0.004804637694136915,
+          "reference": 0.004804637724535377
+        },
+        "ac_branch/3-4/pf": {
+          "absolute_difference": 2.1835810937176348e-11,
+          "native": -0.24740485557766406,
+          "reference": -0.24740485555582825
+        },
+        "ac_branch/3-4/pt": {
+          "absolute_difference": 8.562650588572751e-12,
+          "native": 0.252209493271801,
+          "reference": 0.25220949328036363
+        },
+        "ac_branch/3-4/qf": {
+          "absolute_difference": 3.3617897354787374e-9,
+          "native": 1.37296108558513,
+          "reference": 1.3729610889469197
+        },
+        "ac_branch/3-4/qt": {
+          "absolute_difference": 3.044012597541723e-9,
+          "native": -1.3328042652485674,
+          "reference": -1.33280426829258
+        },
+        "ac_branch/4-5/active_loss": {
+          "absolute_difference": 2.7965629811887993e-11,
+          "native": 0.014985089104584848,
+          "reference": 0.014985089132550478
+        },
+        "ac_branch/4-5/pf": {
+          "absolute_difference": 2.937605714237179e-11,
+          "native": -2.3849984982611474,
+          "reference": -2.3849984982317713
+        },
+        "ac_branch/4-5/pt": {
+          "absolute_difference": 1.4104273304837989e-12,
+          "native": 2.3999835873657323,
+          "reference": 2.399983587364322
+        },
+        "ac_branch/4-5/qf": {
+          "absolute_difference": 3.7485958781502404e-11,
+          "native": 0.13331590609267283,
+          "reference": 0.13331590605518687
+        },
+        "ac_branch/4-5/qt": {
+          "absolute_difference": 3.3153287753995286e-10,
+          "native": 0.008875830842757336,
+          "reference": 0.008875831174290213
+        },
+        "dc_branch/dc_equivalent_branch/1/active_loss": {
+          "absolute_difference": 6.455946888195285e-14,
+          "native": 0.0021931868719040626,
+          "reference": 0.002193186871968622
+        },
+        "dc_branch/dc_equivalent_branch/1/pf": {
+          "absolute_difference": 1.1929346399597307e-13,
+          "native": 0.31680439198771665,
+          "reference": 0.31680439198759736
+        },
+        "dc_branch/dc_equivalent_branch/1/pt": {
+          "absolute_difference": 1.8385293287792592e-13,
+          "native": -0.3146112051158126,
+          "reference": -0.31461120511562873
+        },
+        "dc_branch/dc_equivalent_branch/2/active_loss": {
+          "absolute_difference": 2.149391775674303e-13,
+          "native": 0.010809050745311688,
+          "reference": 0.010809050745526627
+        },
+        "dc_branch/dc_equivalent_branch/2/pf": {
+          "absolute_difference": 3.1110669596046137e-12,
+          "native": -0.6984416752659331,
+          "reference": -0.6984416752628221
+        },
+        "dc_branch/dc_equivalent_branch/2/pt": {
+          "absolute_difference": 2.8961277820371834e-12,
+          "native": 0.7092507260112448,
+          "reference": 0.7092507260083487
+        },
+        "dc_branch/dc_equivalent_branch/3/active_loss": {
+          "absolute_difference": 3.325117958752344e-14,
+          "native": 0.0023253409753679066,
+          "reference": 0.002325340975401158
+        },
+        "dc_branch/dc_equivalent_branch/3/pf": {
+          "absolute_difference": 2.048583525038339e-12,
+          "native": -0.2753194789440266,
+          "reference": -0.275319478941978
+        },
+        "dc_branch/dc_equivalent_branch/3/pt": {
+          "absolute_difference": 2.0153323454508154e-12,
+          "native": 0.2776448199193945,
+          "reference": 0.27764481991737916
+        },
+        "dc_bus/dc_equivalent_bus/1/vm": {
+          "absolute_difference": 1.5095702465828253e-11,
+          "native": 1.0907872400326994,
+          "reference": 1.0907872400176037
+        },
+        "dc_bus/dc_equivalent_bus/2/vm": {
+          "absolute_difference": 1.5197398894883918e-11,
+          "native": 1.083235891896803,
+          "reference": 1.0832358918816056
+        },
+        "dc_bus/dc_equivalent_bus/3/vm": {
+          "absolute_difference": 1.5036638600918195e-11,
+          "native": 1.0999999999666676,
+          "reference": 1.099999999951631
+        },
+        "pg[bus-1-2]": {
+          "absolute_difference": 5.831335414541172e-12,
+          "native": 1.6999999999870736,
+          "reference": 1.6999999999812423
+        },
+        "pg[bus-1]": {
+          "absolute_difference": 3.8469227803261674e-12,
+          "native": 0.39999999999147245,
+          "reference": 0.39999999998762553
+        },
+        "pg[bus-3-2]": {
+          "absolute_difference": 1.1980771930097944e-10,
+          "native": 2.287742151749335,
+          "reference": 2.2877421516295273
+        },
+        "pg[bus-4-2]": {
+          "absolute_difference": 4.0339369922134165e-11,
+          "native": 8.941992431637209e-11,
+          "reference": 1.2975929423850625e-10
+        },
+        "pg[bus-5]": {
+          "absolute_difference": 2.2807178368111636e-10,
+          "native": 5.719878598234138,
+          "reference": 5.71987859846221
+        },
+        "qg[bus-1-2]": {
+          "absolute_difference": 3.1767255492809454e-11,
+          "native": 1.274999999929583,
+          "reference": 1.2749999998978157
+        },
+        "qg[bus-1]": {
+          "absolute_difference": 3.17669779370533e-11,
+          "native": 0.2999999999295827,
+          "reference": 0.29999999989781573
+        },
+        "qg[bus-3-2]": {
+          "absolute_difference": 1.0790612847699776e-10,
+          "native": 3.8999999997608006,
+          "reference": 3.8999999996528945
+        },
+        "qg[bus-4-2]": {
+          "absolute_difference": 3.5473926851548043e-9,
+          "native": -0.13559458433028979,
+          "reference": -0.13559458787768247
+        },
+        "qg[bus-5]": {
+          "absolute_difference": 1.7024968324008682e-8,
+          "native": -1.7552777487084432,
+          "reference": -1.755277731683475
+        },
+        "station/ac_dc_converter_station/1/iconv": {
+          "absolute_difference": 1.034391711174365e-9,
+          "native": 0.05044805291778917,
+          "reference": 0.05044805395218088
+        },
+        "station/ac_dc_converter_station/1/pconv": {
+          "absolute_difference": 3.5490083094558145e-12,
+          "native": 0.052591853164690054,
+          "reference": 0.05259185316823906
+        },
+        "station/ac_dc_converter_station/1/pdc": {
+          "absolute_difference": 1.92926230546675e-12,
+          "native": -0.04148491304369009,
+          "reference": -0.041484913045619354
+        },
+        "station/ac_dc_converter_station/1/pgrid": {
+          "absolute_difference": 4.643736783993546e-12,
+          "native": 0.05261473800706418,
+          "reference": 0.052614738011707914
+        },
+        "station/ac_dc_converter_station/1/ppr_fr": {
+          "absolute_difference": 3.559437466993387e-12,
+          "native": 0.052592107665294374,
+          "reference": 0.05259210766885381
+        },
+        "station/ac_dc_converter_station/1/ptf_to": {
+          "absolute_difference": 3.559437466993387e-12,
+          "native": -0.052592107665294374,
+          "reference": -0.05259210766885381
+        },
+        "station/ac_dc_converter_station/1/qconv": {
+          "absolute_difference": 3.556231531476328e-9,
+          "native": -0.01770746432621381,
+          "reference": -0.01770746788244534
+        },
+        "station/ac_dc_converter_station/1/qgrid": {
+          "absolute_difference": 3.3529838072698936e-9,
+          "native": -0.12241610169487736,
+          "reference": -0.12241610504786117
+        },
+        "station/ac_dc_converter_station/1/qpr_fr": {
+          "absolute_difference": 3.5390881406027752e-9,
+          "native": -0.017289370733438326,
+          "reference": -0.017289374272526466
+        },
+        "station/ac_dc_converter_station/1/qtf_to": {
+          "absolute_difference": 3.434018597259225e-9,
+          "native": 0.12410734256980709,
+          "reference": 0.12410734600382568
+        },
+        "station/ac_dc_converter_station/1/station_loss": {
+          "absolute_difference": 2.714474478526796e-12,
+          "native": 0.011129824963374085,
+          "reference": 0.01112982496608856
+        },
+        "station/ac_dc_converter_station/1/vaconv": {
+          "absolute_difference": 4.539904216449564e-11,
+          "native": -0.025522263531196486,
+          "reference": -0.025522263576595528
+        },
+        "station/ac_dc_converter_station/1/vafilt": {
+          "absolute_difference": 4.1044553172886467e-11,
+          "native": -0.01836342050823884,
+          "reference": -0.018363420549283395
+        },
+        "station/ac_dc_converter_station/1/valve_loss": {
+          "absolute_difference": 1.6197460039890643e-12,
+          "native": 0.011106940120999963,
+          "reference": 0.011106940122619709
+        },
+        "station/ac_dc_converter_station/1/vmconv": {
+          "absolute_difference": 8.605116619264663e-12,
+          "native": 1.099999999980924,
+          "reference": 1.099999999972319
+        },
+        "station/ac_dc_converter_station/1/vmfilt": {
+          "absolute_difference": 5.397118307826076e-10,
+          "native": 1.0973883716763704,
+          "reference": 1.0973883711366585
+        },
+        "station/ac_dc_converter_station/2/iconv": {
+          "absolute_difference": 2.2551627232303417e-10,
+          "native": 0.9110258249133585,
+          "reference": 0.9110258251388748
+        },
+        "station/ac_dc_converter_station/2/pconv": {
+          "absolute_difference": 3.961719841072409e-12,
+          "native": -0.9999999999912182,
+          "reference": -0.9999999999872565
+        },
+        "station/ac_dc_converter_station/2/pdc": {
+          "absolute_difference": 3.2949198924825396e-12,
+          "native": 1.0130528803817458,
+          "reference": 1.0130528803784509
+        },
+        "station/ac_dc_converter_station/2/pgrid": {
+          "absolute_difference": 5.5323523540096176e-12,
+          "native": -0.9986766736256791,
+          "reference": -0.9986766736201468
+        },
+        "station/ac_dc_converter_station/2/ppr_fr": {
+          "absolute_difference": 4.002798092983539e-12,
+          "native": -0.9999170031858523,
+          "reference": -0.9999170031818495
+        },
+        "station/ac_dc_converter_station/2/ptf_to": {
+          "absolute_difference": 4.002798092983539e-12,
+          "native": 0.9999170031858523,
+          "reference": 0.9999170031818495
+        },
+        "station/ac_dc_converter_station/2/qconv": {
+          "absolute_difference": 3.553248764665007e-9,
+          "native": -0.06527897711726759,
+          "reference": -0.06527898067051635
+        },
+        "station/ac_dc_converter_station/2/qgrid": {
+          "absolute_difference": 3.2644485725707995e-9,
+          "native": 0.05636851839459255,
+          "reference": 0.05636851513014398
+        },
+        "station/ac_dc_converter_station/2/qpr_fr": {
+          "absolute_difference": 3.485747593345856e-9,
+          "native": 0.07106817473784632,
+          "reference": 0.07106817125209873
+        },
+        "station/ac_dc_converter_station/2/qtf_to": {
+          "absolute_difference": 3.3787640671412156e-9,
+          "native": 0.036325444069009914,
+          "reference": 0.03632544744777398
+        },
+        "station/ac_dc_converter_station/2/station_loss": {
+          "absolute_difference": 2.237432461527078e-12,
+          "native": 0.014376206756066656,
+          "reference": 0.014376206758304089
+        },
+        "station/ac_dc_converter_station/2/vaconv": {
+          "absolute_difference": 1.617751210769569e-10,
+          "native": 0.21906023197077557,
+          "reference": 0.2190602321325507
+        },
+        "station/ac_dc_converter_station/2/vafilt": {
+          "absolute_difference": 9.156488067763036e-11,
+          "native": 0.08291898627599918,
+          "reference": 0.08291898636756406
+        },
+        "station/ac_dc_converter_station/2/valve_loss": {
+          "absolute_difference": 6.66799948589869e-13,
+          "native": 0.013052880390527544,
+          "reference": 0.013052880391194344
+        },
+        "station/ac_dc_converter_station/2/vmconv": {
+          "absolute_difference": 2.261923981450309e-11,
+          "native": 1.099999999949858,
+          "reference": 1.0999999999272387
+        },
+        "station/ac_dc_converter_station/2/vmfilt": {
+          "absolute_difference": 5.480687015335661e-10,
+          "native": 1.1003413368471069,
+          "reference": 1.1003413362990382
+        },
+        "station/ac_dc_converter_station/3/iconv": {
+          "absolute_difference": 1.4095736800001646e-9,
+          "native": 0.928387563690884,
+          "reference": 0.9283875651004577
+        },
+        "station/ac_dc_converter_station/3/pconv": {
+          "absolute_difference": 7.045475314271243e-13,
+          "native": 0.9999999999984382,
+          "reference": 0.9999999999977337
+        },
+        "station/ac_dc_converter_station/3/pdc": {
+          "absolute_difference": 4.91151563863923e-12,
+          "native": -0.9868955459306393,
+          "reference": -0.9868955459257278
+        },
+        "station/ac_dc_converter_station/3/pgrid": {
+          "absolute_difference": 1.3746781490908688e-12,
+          "native": 1.0014102386073167,
+          "reference": 1.001410238605942
+        },
+        "station/ac_dc_converter_station/3/ppr_fr": {
+          "absolute_difference": 4.4275694222051243e-13,
+          "native": 1.0000861903452798,
+          "reference": 1.000086190344837
+        },
+        "station/ac_dc_converter_station/3/ptf_to": {
+          "absolute_difference": 4.4275694222051243e-13,
+          "native": -1.0000861903452798,
+          "reference": -1.000086190344837
+        },
+        "station/ac_dc_converter_station/3/qconv": {
+          "absolute_difference": 1.7546210762109382e-8,
+          "native": -0.20713081473881595,
+          "reference": -0.2071307971926052
+        },
+        "station/ac_dc_converter_station/3/qgrid": {
+          "absolute_difference": 1.84633603406148e-8,
+          "native": -0.0699582905879587,
+          "reference": -0.06995827212459836
+        },
+        "station/ac_dc_converter_station/3/qpr_fr": {
+          "absolute_difference": 1.797616858145723e-8,
+          "native": -0.06553731294745042,
+          "reference": -0.06553729497128184
+        },
+        "station/ac_dc_converter_station/3/qtf_to": {
+          "absolute_difference": 1.8532986978403443e-8,
+          "native": 0.16890883070416884,
+          "reference": 0.16890881217118187
+        },
+        "station/ac_dc_converter_station/3/station_loss": {
+          "absolute_difference": 3.536837489548361e-12,
+          "native": 0.014514692676677377,
+          "reference": 0.014514692680214214
+        },
+        "station/ac_dc_converter_station/3/vaconv": {
+          "absolute_difference": 1.2873566934690217e-9,
+          "native": -0.17363934112284565,
+          "reference": -0.17363934241020235
+        },
+        "station/ac_dc_converter_station/3/vafilt": {
+          "absolute_difference": 2.1349452067331853e-10,
+          "native": -0.03483482457275898,
+          "reference": -0.0348348247862535
+        },
+        "station/ac_dc_converter_station/3/valve_loss": {
+          "absolute_difference": 4.206968107212106e-12,
+          "native": 0.01310445406779892,
+          "reference": 0.013104454072005889
+        },
+        "station/ac_dc_converter_station/3/vmconv": {
+          "absolute_difference": 5.505852218590235e-9,
+          "native": 1.0999999882015785,
+          "reference": 1.0999999826957263
+        },
+        "station/ac_dc_converter_station/3/vmfilt": {
+          "absolute_difference": 2.907475371571877e-9,
+          "native": 1.0795397457464018,
+          "reference": 1.0795397428389264
+        },
+        "va[1]": {
+          "absolute_difference": 8.943844276299018e-11,
+          "native": 0.04890962808937356,
+          "reference": 0.048909628178812004
+        },
+        "va[2]": {
+          "absolute_difference": 2.964704523544803e-11,
+          "native": -0.013254598354838738,
+          "reference": -0.013254598384485783
+        },
+        "va[3]": {
+          "absolute_difference": 2.509901661507108e-11,
+          "native": -0.009776889896513225,
+          "reference": -0.009776889921612242
+        },
+        "va[4]": {
+          "absolute_difference": 4.498152444537972e-39,
+          "native": -1.3990563867818974e-40,
+          "reference": -4.638058083216162e-39
+        },
+        "va[5]": {
+          "absolute_difference": 1.171728825077878e-10,
+          "native": 0.06273401250207065,
+          "reference": 0.06273401261924354
+        },
+        "vm[1]": {
+          "absolute_difference": 9.778136078608668e-10,
+          "native": 1.0772267931925525,
+          "reference": 1.077226792214739
+        },
+        "vm[2]": {
+          "absolute_difference": 8.966449804859167e-10,
+          "native": 1.0847966493573593,
+          "reference": 1.0847966484607143
+        },
+        "vm[3]": {
+          "absolute_difference": 8.867326872774584e-10,
+          "native": 1.099999998041436,
+          "reference": 1.0999999971547032
+        },
+        "vm[4]": {
+          "absolute_difference": 1.0066023570232119e-9,
+          "native": 1.0635387740179043,
+          "reference": 1.063538773011302
+        },
+        "vm[5]": {
+          "absolute_difference": 9.968688097217182e-10,
+          "native": 1.068471479728302,
+          "reference": 1.068471478731433
+        }
+      },
+      "max_absolute_electrical_difference": 1.8532986978403443e-8,
+      "max_reference_violation": 7.349676423018536e-14,
+      "native_objective_difference": 0.0,
+      "native_variables": 95,
+      "oracle_objective_difference": -1.587432052474469e-8,
+      "reconstructed_reference_only": {
+        "0_pcurt[1]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.0
+        },
+        "0_pcurt[2]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.0
+        },
+        "0_pcurt[3]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.0
+        },
+        "0_pflex[1]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 3.0
+        },
+        "0_pflex[2]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 3.0
+        },
+        "0_pflex[3]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 4.0
+        },
+        "0_phiconv[1]": {
+          "reason": "unused VSC firing angle",
+          "value": 0.0
+        },
+        "0_phiconv[2]": {
+          "reason": "unused VSC firing angle",
+          "value": 0.0
+        },
+        "0_phiconv[3]": {
+          "reason": "unused VSC firing angle",
+          "value": 0.0
+        },
+        "0_qflex[1]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.9861
+        },
+        "0_qflex[2]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.9861
+        },
+        "0_qflex[3]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 1.3147
+        }
+      },
+      "reference_evaluated_objective": 15693.105053808495,
+      "reference_variables": 107
+    },
+    "reference": {
+      "constraint_violations": {
+        "(-0_pconv_ac[1]) - ((0.0037053603565955803 0_vmc[1]²) + (-0.0037053603565955803 0_vmc[1]*0_vmf[1]) * cos(-0_vaf[1] + 0_vac[1]) + (6.08716599381522 0_vmc[1]*0_vmf[1]) * sin(-0_vaf[1] + 0_vac[1])) = 0": 1.3877787807814457e-17,
+        "(-0_pconv_ac[2]) - ((0.0037053603565955803 0_vmc[2]²) + (-0.0037053603565955803 0_vmc[2]*0_vmf[2]) * cos(-0_vaf[2] + 0_vac[2]) + (6.08716599381522 0_vmc[2]*0_vmf[2]) * sin(-0_vaf[2] + 0_vac[2])) = 0": 2.220446049250313e-16,
+        "(-0_pconv_ac[3]) - ((0.0037053603565955803 0_vmc[3]²) + (-0.0037053603565955803 0_vmc[3]*0_vmf[3]) * cos(-0_vaf[3] + 0_vac[3]) + (6.08716599381522 0_vmc[3]*0_vmf[3]) * sin(-0_vaf[3] + 0_vac[3])) = 0": 2.7755575615628914e-15,
+        "(-0_qconv_ac[1]) - ((6.08716599381522 0_vmc[1]²) + (-6.08716599381522 0_vmc[1]*0_vmf[1]) * cos(-0_vaf[1] + 0_vac[1]) + (-0.0037053603565955803 0_vmc[1]*0_vmf[1]) * sin(-0_vaf[1] + 0_vac[1])) = 0": 1.1830814106161824e-15,
+        "(-0_qconv_ac[2]) - ((6.08716599381522 0_vmc[2]²) + (-6.08716599381522 0_vmc[2]*0_vmf[2]) * cos(-0_vaf[2] + 0_vac[2]) + (-0.0037053603565955803 0_vmc[2]*0_vmf[2]) * sin(-0_vaf[2] + 0_vac[2])) = 0": 3.191891195797325e-16,
+        "(-0_qconv_ac[3]) - ((6.08716599381522 0_vmc[3]²) + (-6.08716599381522 0_vmc[3]*0_vmf[3]) * cos(-0_vaf[3] + 0_vac[3]) + (-0.0037053603565955803 0_vmc[3]*0_vmf[3]) * sin(-0_vaf[3] + 0_vac[3])) = 0": 6.938893903907228e-15,
+        "(0_pconv_ac[1]² + 0_qconv_ac[1]²) - (0_vmc[1]²) * (0_iconv_ac[1]²) = 0": 3.3393426912553537e-17,
+        "(0_pconv_ac[3]² + 0_qconv_ac[3]²) - (0_vmc[3]²) * (0_iconv_ac[3]²) = 0": 2.930988785010413e-14,
+        "-0.0008079535111671216 0_iconv_ac[2]² + 0_pconv_ac[2] - 0.0014843759094817334 0_iconv_ac[2] + 0_pconv_dc[2] = 0.01103": 5.377642775528102e-17,
+        "-0.0008079535111671216 0_iconv_ac[3]² + 0_pconv_ac[3] - 0.0014843759094817334 0_iconv_ac[3] + 0_pconv_dc[3] = 0.01103": 2.6020852139652106e-17,
+        "-0.0887 0_vmf[1]² + 0_qconv_tf_to[1] + 0_qconv_pr_fr[1] = 0": 2.7755575615628914e-17,
+        "-0.0887 0_vmf[2]² + 0_qconv_tf_to[2] + 0_qconv_pr_fr[2] = 0": 1.3877787807814457e-17,
+        "-0.0887 0_vmf[3]² + 0_qconv_tf_to[3] + 0_qconv_pr_fr[3] = 0": 2.7755575615628914e-17,
+        "-0_pg[2] - 0_pg[1] + 0_p[(2, 1, 4)] + 0_p[(3, 1, 5)] + 0_p[(1, 1, 2)] = 0": 4.440892098500626e-16,
+        "-0_pg[5] + 0_p[(6, 5, 4)] + 0_p[(3, 5, 1)] + 0_pconv_tf_fr[3] = 0": 2.220446049250313e-16,
+        "-0_qg[2] - 0_qg[1] + 0_q[(2, 1, 4)] + 0_q[(3, 1, 5)] + 0_q[(1, 1, 2)] = 0": 5.551115123125783e-17,
+        "-0_qg[3] + 0_q[(5, 3, 4)] + 0_q[(4, 3, 2)] + 0_qconv_tf_fr[2] + 0_qflex[2] = 0": 2.220446049250313e-16,
+        "-0_qg[5] + 0_q[(6, 5, 4)] + 0_q[(3, 5, 1)] + 0_qconv_tf_fr[3] = 0": 1.3877787807814457e-17,
+        "0_p[(1, 1, 2)] - ((3.5234840209999647 0_vm[1]²) + -3.5234840209999647 * ((0_vm[1]*0_vm[2]) * cos(-0_va[2] + 0_va[1])) + 35.234840209999646 * ((0_vm[1]*0_vm[2]) * sin(-0_va[2] + 0_va[1]))) = 0": 8.881784197001252e-16,
+        "0_p[(1, 2, 1)] - ((3.5234840209999647 0_vm[2]²) + -3.5234840209999647 * ((0_vm[2]*0_vm[1]) * cos(0_va[2] - 0_va[1])) + 35.234840209999646 * ((0_vm[2]*0_vm[1]) * sin(0_va[2] - 0_va[1]))) = 0": 1.7763568394002505e-15,
+        "0_p[(2, 1, 4)] - ((3.2569046378322044 0_vm[1]²) + -3.2569046378322044 * ((0_vm[1]*0_vm[4]) * cos(-0_va[4] + 0_va[1])) + 32.56904637832204 * ((0_vm[1]*0_vm[4]) * sin(-0_va[4] + 0_va[1]))) = 0": 1.7763568394002505e-15,
+        "0_p[(2, 4, 1)] - ((3.2569046378322044 0_vm[4]²) + -3.2569046378322044 * ((0_vm[4]*0_vm[1]) * cos(0_va[4] - 0_va[1])) + 32.56904637832204 * ((0_vm[4]*0_vm[1]) * sin(0_va[4] - 0_va[1]))) = 0": 2.220446049250313e-16,
+        "0_p[(3, 1, 5)] - ((15.47029702970297 0_vm[1]²) + -15.47029702970297 * ((0_vm[1]*0_vm[5]) * cos(-0_va[5] + 0_va[1])) + 154.70297029702968 * ((0_vm[1]*0_vm[5]) * sin(-0_va[5] + 0_va[1]))) = 0": 4.884981308350689e-15,
+        "0_p[(3, 5, 1)] - ((15.47029702970297 0_vm[5]²) + -15.47029702970297 * ((0_vm[5]*0_vm[1]) * cos(0_va[5] - 0_va[1])) + 154.70297029702968 * ((0_vm[5]*0_vm[1]) * sin(0_va[5] - 0_va[1]))) = 0": 6.217248937900877e-15,
+        "0_p[(4, 2, 3)] - ((9.167583425009166 0_vm[2]²) + -9.167583425009166 * ((0_vm[2]*0_vm[3]) * cos(0_va[2] - 0_va[3])) + 91.67583425009167 * ((0_vm[2]*0_vm[3]) * sin(0_va[2] - 0_va[3]))) = 0": 1.1102230246251565e-15,
+        "0_p[(5, 3, 4)] - ((3.3336667000033335 0_vm[3]²) + -3.3336667000033335 * ((0_vm[3]*0_vm[4]) * cos(-0_va[4] + 0_va[3])) + 33.33666700003334 * ((0_vm[3]*0_vm[4]) * sin(-0_va[4] + 0_va[3]))) = 0": 1.5265566588595902e-15,
+        "0_p[(5, 4, 3)] - ((3.3336667000033335 0_vm[4]²) + -3.3336667000033335 * ((0_vm[4]*0_vm[3]) * cos(0_va[4] - 0_va[3])) + 33.33666700003334 * ((0_vm[4]*0_vm[3]) * sin(0_va[4] - 0_va[3]))) = 0": 9.992007221626409e-16,
+        "0_p[(6, 5, 4)] - ((3.3336667000033335 0_vm[5]²) + -3.3336667000033335 * ((0_vm[5]*0_vm[4]) * cos(0_va[5] - 0_va[4])) + 33.33666700003334 * ((0_vm[5]*0_vm[4]) * sin(0_va[5] - 0_va[4]))) = 0": 4.440892098500626e-16,
+        "0_pconv_pr_fr[1] - ((0.0037053603565955803 0_vmf[1]²) + (-0.0037053603565955803 0_vmf[1]*0_vmc[1]) * cos(0_vaf[1] - 0_vac[1]) + (6.08716599381522 0_vmf[1]*0_vmc[1]) * sin(0_vaf[1] - 0_vac[1])) = 0": 2.0816681711721685e-17,
+        "0_pconv_pr_fr[2] - ((0.0037053603565955803 0_vmf[2]²) + (-0.0037053603565955803 0_vmf[2]*0_vmc[2]) * cos(0_vaf[2] - 0_vac[2]) + (6.08716599381522 0_vmf[2]*0_vmc[2]) * sin(0_vaf[2] - 0_vac[2])) = 0": 2.220446049250313e-16,
+        "0_pconv_pr_fr[3] - ((0.0037053603565955803 0_vmf[3]²) + (-0.0037053603565955803 0_vmf[3]*0_vmc[3]) * cos(0_vaf[3] - 0_vac[3]) + (6.08716599381522 0_vmf[3]*0_vmc[3]) * sin(0_vaf[3] - 0_vac[3])) = 0": 2.6645352591003757e-15,
+        "0_pconv_tf_fr[1] - ((0.11934446472416312 0_vm[2]²) + (-0.11934446472416312 0_vm[2]*0_vmf[1]) * cos(0_va[2] - 0_vaf[1]) + (8.919009663719123 0_vm[2]*0_vmf[1]) * sin(0_va[2] - 0_vaf[1])) = 0": 4.163336342344337e-17,
+        "0_pconv_tf_fr[2] - ((0.11934446472416312 0_vm[3]²) + (-0.11934446472416312 0_vm[3]*0_vmf[2]) * cos(0_va[3] - 0_vaf[2]) + (8.919009663719123 0_vm[3]*0_vmf[2]) * sin(0_va[3] - 0_vaf[2])) = 0": 2.220446049250313e-16,
+        "0_pconv_tf_fr[3] - ((0.11934446472416312 0_vm[5]²) + (-0.11934446472416312 0_vm[5]*0_vmf[3]) * cos(0_va[5] - 0_vaf[3]) + (8.919009663719123 0_vm[5]*0_vmf[3]) * sin(0_va[5] - 0_vaf[3])) = 0": 4.440892098500626e-16,
+        "0_pconv_tf_to[1] - ((0.11934446472416312 0_vmf[1]²) + (-0.11934446472416312 0_vmf[1]*0_vm[2]) * cos(-0_va[2] + 0_vaf[1]) + (8.919009663719123 0_vmf[1]*0_vm[2]) * sin(-0_va[2] + 0_vaf[1])) = 0": 4.85722573273506e-17,
+        "0_pconv_tf_to[2] - ((0.11934446472416312 0_vmf[2]²) + (-0.11934446472416312 0_vmf[2]*0_vm[3]) * cos(-0_va[3] + 0_vaf[2]) + (8.919009663719123 0_vmf[2]*0_vm[3]) * sin(-0_va[3] + 0_vaf[2])) = 0": 1.1102230246251565e-16,
+        "0_pconv_tf_to[3] - ((0.11934446472416312 0_vmf[3]²) + (-0.11934446472416312 0_vmf[3]*0_vm[5]) * cos(-0_va[5] + 0_vaf[3]) + (8.919009663719123 0_vmf[3]*0_vm[5]) * sin(-0_va[5] + 0_vaf[3])) = 0": 2.220446049250313e-16,
+        "0_pdcgrid[(3, 1, 3)] + 0_pdcgrid[(1, 1, 2)] + 0_pconv_dc[1] = 0": 2.0816681711721685e-17,
+        "0_q[(1, 1, 2)] - (((35.231280209999646 0_vm[1]²) - 35.234840209999646 * ((0_vm[1]*0_vm[2]) * cos(-0_va[2] + 0_va[1]))) + -3.5234840209999647 * ((0_vm[1]*0_vm[2]) * sin(-0_va[2] + 0_va[1]))) = 0": 8.659739592076221e-15,
+        "0_q[(1, 2, 1)] - (((35.231280209999646 0_vm[2]²) - 35.234840209999646 * ((0_vm[2]*0_vm[1]) * cos(0_va[2] - 0_va[1]))) + -3.5234840209999647 * ((0_vm[2]*0_vm[1]) * sin(0_va[2] - 0_va[1]))) = 0": 5.329070518200751e-15,
+        "0_q[(2, 1, 4)] - (((32.56575637832204 0_vm[1]²) - 32.56904637832204 * ((0_vm[1]*0_vm[4]) * cos(-0_va[4] + 0_va[1]))) + -3.2569046378322044 * ((0_vm[1]*0_vm[4]) * sin(-0_va[4] + 0_va[1]))) = 0": 8.271161533457416e-15,
+        "0_q[(2, 4, 1)] - (((32.56575637832204 0_vm[4]²) - 32.56904637832204 * ((0_vm[4]*0_vm[1]) * cos(0_va[4] - 0_va[1]))) + -3.2569046378322044 * ((0_vm[4]*0_vm[1]) * sin(0_va[4] - 0_va[1]))) = 0": 5.051514762044462e-15,
+        "0_q[(3, 1, 5)] - (((154.6873402970297 0_vm[1]²) - 154.70297029702968 * ((0_vm[1]*0_vm[5]) * cos(-0_va[5] + 0_va[1]))) + -15.47029702970297 * ((0_vm[1]*0_vm[5]) * sin(-0_va[5] + 0_va[1]))) = 0": 3.019806626980426e-14,
+        "0_q[(3, 5, 1)] - (((154.6873402970297 0_vm[5]²) - 154.70297029702968 * ((0_vm[5]*0_vm[1]) * cos(0_va[5] - 0_va[1]))) + -15.47029702970297 * ((0_vm[5]*0_vm[1]) * sin(0_va[5] - 0_va[1]))) = 0": 7.460698725481052e-14,
+        "0_q[(4, 2, 3)] - (((91.66657425009167 0_vm[2]²) - 91.67583425009167 * ((0_vm[2]*0_vm[3]) * cos(0_va[2] - 0_va[3]))) + -9.167583425009166 * ((0_vm[2]*0_vm[3]) * sin(0_va[2] - 0_va[3]))) = 0": 1.7763568394002505e-15,
+        "0_q[(4, 3, 2)] - (((91.66657425009167 0_vm[3]²) - 91.67583425009167 * ((0_vm[3]*0_vm[2]) * cos(-0_va[2] + 0_va[3]))) + -9.167583425009166 * ((0_vm[3]*0_vm[2]) * sin(-0_va[2] + 0_va[3]))) = 0": 8.881784197001252e-15,
+        "0_q[(5, 3, 4)] - (((33.33329700003334 0_vm[3]²) - 33.33666700003334 * ((0_vm[3]*0_vm[4]) * cos(-0_va[4] + 0_va[3]))) + -3.3336667000033335 * ((0_vm[3]*0_vm[4]) * sin(-0_va[4] + 0_va[3]))) = 0": 1.7985612998927536e-14,
+        "0_q[(5, 4, 3)] - (((33.33329700003334 0_vm[4]²) - 33.33666700003334 * ((0_vm[4]*0_vm[3]) * cos(0_va[4] - 0_va[3]))) + -3.3336667000033335 * ((0_vm[4]*0_vm[3]) * sin(0_va[4] - 0_va[3]))) = 0": 1.0658141036401503e-14,
+        "0_q[(6, 4, 5)] - (((33.33329700003334 0_vm[4]²) - 33.33666700003334 * ((0_vm[4]*0_vm[5]) * cos(-0_va[5] + 0_va[4]))) + -3.3336667000033335 * ((0_vm[4]*0_vm[5]) * sin(-0_va[5] + 0_va[4]))) = 0": 5.551115123125783e-17,
+        "0_q[(6, 5, 4)] - (((33.33329700003334 0_vm[5]²) - 33.33666700003334 * ((0_vm[5]*0_vm[4]) * cos(0_va[5] - 0_va[4]))) + -3.3336667000033335 * ((0_vm[5]*0_vm[4]) * sin(0_va[5] - 0_va[4]))) = 0": 3.1051550219984847e-16,
+        "0_qconv_pr_fr[1] - ((6.08716599381522 0_vmf[1]²) + (-6.08716599381522 0_vmf[1]*0_vmc[1]) * cos(0_vaf[1] - 0_vac[1]) + (-0.0037053603565955803 0_vmf[1]*0_vmc[1]) * sin(0_vaf[1] - 0_vac[1])) = 0": 2.220446049250313e-16,
+        "0_qconv_pr_fr[2] - ((6.08716599381522 0_vmf[2]²) + (-6.08716599381522 0_vmf[2]*0_vmc[2]) * cos(0_vaf[2] - 0_vac[2]) + (-0.0037053603565955803 0_vmf[2]*0_vmc[2]) * sin(0_vaf[2] - 0_vac[2])) = 0": 1.3461454173580023e-15,
+        "0_qconv_pr_fr[3] - ((6.08716599381522 0_vmf[3]²) + (-6.08716599381522 0_vmf[3]*0_vmc[3]) * cos(0_vaf[3] - 0_vac[3]) + (-0.0037053603565955803 0_vmf[3]*0_vmc[3]) * sin(0_vaf[3] - 0_vac[3])) = 0": 2.6645352591003757e-15,
+        "0_qconv_tf_fr[1] - ((8.919009663719123 0_vm[2]²) + (-8.919009663719123 0_vm[2]*0_vmf[1]) * cos(0_va[2] - 0_vaf[1]) + (-0.11934446472416312 0_vm[2]*0_vmf[1]) * sin(0_va[2] - 0_vaf[1])) = 0": 1.0408340855860843e-15,
+        "0_qconv_tf_fr[2] - ((8.919009663719123 0_vm[3]²) + (-8.919009663719123 0_vm[3]*0_vmf[2]) * cos(0_va[3] - 0_vaf[2]) + (-0.11934446472416312 0_vm[3]*0_vmf[2]) * sin(0_va[3] - 0_vaf[2])) = 0": 1.7208456881689926e-15,
+        "0_qconv_tf_fr[3] - ((8.919009663719123 0_vm[5]²) + (-8.919009663719123 0_vm[5]*0_vmf[3]) * cos(0_va[5] - 0_vaf[3]) + (-0.11934446472416312 0_vm[5]*0_vmf[3]) * sin(0_va[5] - 0_vaf[3])) = 0": 1.0547118733938987e-15,
+        "0_qconv_tf_to[1] - ((8.919009663719123 0_vmf[1]²) + (-8.919009663719123 0_vmf[1]*0_vm[2]) * cos(-0_va[2] + 0_vaf[1]) + (-0.11934446472416312 0_vmf[1]*0_vm[2]) * sin(-0_va[2] + 0_vaf[1])) = 0": 5.134781488891349e-16,
+        "0_qconv_tf_to[2] - ((8.919009663719123 0_vmf[2]²) + (-8.919009663719123 0_vmf[2]*0_vm[3]) * cos(-0_va[3] + 0_vaf[2]) + (-0.11934446472416312 0_vmf[2]*0_vm[3]) * sin(-0_va[3] + 0_vaf[2])) = 0": 2.7755575615628914e-16,
+        "0_qconv_tf_to[3] - ((8.919009663719123 0_vmf[3]²) + (-8.919009663719123 0_vmf[3]*0_vm[5]) * cos(-0_va[5] + 0_vaf[3]) + (-0.11934446472416312 0_vmf[3]*0_vm[5]) * sin(-0_va[5] + 0_vaf[3])) = 0": 4.163336342344337e-15,
+        "0_va[4] = 0": 3.5264830524668625e-38
+      },
+      "electrical_comparison": {
+        "ac_branch/1-2/active_loss": {
+          "absolute_difference": 3.766587042264291e-11,
+          "native": 0.016108198820920627,
+          "reference": 0.016108198858586498
+        },
+        "ac_branch/1-2/pf": {
+          "absolute_difference": 1.9237811343941758e-10,
+          "native": 2.537150574399893,
+          "reference": 2.537150574592271
+        },
+        "ac_branch/1-2/pt": {
+          "absolute_difference": 1.5471224301677466e-10,
+          "native": -2.5210423755789724,
+          "reference": -2.5210423757336846
+        },
+        "ac_branch/1-2/qf": {
+          "absolute_difference": 2.691643574692648e-9,
+          "native": -0.4677133784459801,
+          "reference": -0.4677133811376237
+        },
+        "ac_branch/1-2/qt": {
+          "absolute_difference": 3.0827292940571738e-9,
+          "native": 0.6204749299046222,
+          "reference": 0.6204749329873515
+        },
+        "ac_branch/1-4/active_loss": {
+          "absolute_difference": 1.864997045686323e-11,
+          "native": 0.009534386181341281,
+          "reference": 0.009534386199991252
+        },
+        "ac_branch/1-4/pf": {
+          "absolute_difference": 1.6249002143808866e-11,
+          "native": 1.876745381102575,
+          "reference": 1.876745381118824
+        },
+        "ac_branch/1-4/pt": {
+          "absolute_difference": 2.4009683130543635e-12,
+          "native": -1.8672109949212337,
+          "reference": -1.8672109949188327
+        },
+        "ac_branch/1-4/qf": {
+          "absolute_difference": 6.663806173534681e-10,
+          "native": 0.3386109457609017,
+          "reference": 0.33861094642728234
+        },
+        "ac_branch/1-4/qt": {
+          "absolute_difference": 4.659022057040829e-10,
+          "native": -0.25080622517438694,
+          "reference": -0.25080622564028915
+        },
+        "ac_branch/1-5/active_loss": {
+          "absolute_difference": 1.255218151641202e-11,
+          "native": 0.004588816737167267,
+          "reference": 0.004588816749719449
+        },
+        "ac_branch/1-5/pf": {
+          "absolute_difference": 2.1830492968888393e-10,
+          "native": -2.3138959555239222,
+          "reference": -2.313895955742227
+        },
+        "ac_branch/1-5/pt": {
+          "absolute_difference": 2.3085711120529595e-10,
+          "native": 2.3184847722610895,
+          "reference": 2.3184847724919466
+        },
+        "ac_branch/1-5/qf": {
+          "absolute_difference": 1.9617283353312587e-9,
+          "native": 1.7041024325442442,
+          "reference": 1.7041024345059725
+        },
+        "ac_branch/1-5/qt": {
+          "absolute_difference": 1.7699239851509674e-9,
+          "native": -1.6941952889632428,
+          "reference": -1.6941952907331668
+        },
+        "ac_branch/2-3/active_loss": {
+          "absolute_difference": 2.8924640460559203e-12,
+          "native": 0.0022513185245867096,
+          "reference": 0.0022513185274791736
+        },
+        "ac_branch/2-3/pf": {
+          "absolute_difference": 1.5006851317167502e-10,
+          "native": -0.5315723624280918,
+          "reference": -0.5315723622780233
+        },
+        "ac_branch/2-3/pt": {
+          "absolute_difference": 1.471760491256191e-10,
+          "native": 0.5338236809526785,
+          "reference": 0.5338236808055025
+        },
+        "ac_branch/2-3/qf": {
+          "absolute_difference": 2.702547075017492e-10,
+          "native": -1.4841588282097449,
+          "reference": -1.4841588279394902
+        },
+        "ac_branch/2-3/qt": {
+          "absolute_difference": 2.052407133135148e-10,
+          "native": 1.4845703957810714,
+          "reference": 1.4845703955758307
+        },
+        "ac_branch/3-4/active_loss": {
+          "absolute_difference": 3.039843377017348e-11,
+          "native": 0.004804637694136943,
+          "reference": 0.004804637724535377
+        },
+        "ac_branch/3-4/pf": {
+          "absolute_difference": 2.1835450114693344e-11,
+          "native": -0.2474048555776637,
+          "reference": -0.24740485555582825
+        },
+        "ac_branch/3-4/pt": {
+          "absolute_difference": 8.562983655480139e-12,
+          "native": 0.25220949327180064,
+          "reference": 0.25220949328036363
+        },
+        "ac_branch/3-4/qf": {
+          "absolute_difference": 3.3617830741405896e-9,
+          "native": 1.3729610855851366,
+          "reference": 1.3729610889469197
+        },
+        "ac_branch/3-4/qt": {
+          "absolute_difference": 3.0440063802927853e-9,
+          "native": -1.3328042652485736,
+          "reference": -1.33280426829258
+        },
+        "ac_branch/4-5/active_loss": {
+          "absolute_difference": 2.7965629811887993e-11,
+          "native": 0.014985089104584848,
+          "reference": 0.014985089132550478
+        },
+        "ac_branch/4-5/pf": {
+          "absolute_difference": 2.937605714237179e-11,
+          "native": -2.3849984982611474,
+          "reference": -2.3849984982317713
+        },
+        "ac_branch/4-5/pt": {
+          "absolute_difference": 1.4104273304837989e-12,
+          "native": 2.3999835873657323,
+          "reference": 2.399983587364322
+        },
+        "ac_branch/4-5/qf": {
+          "absolute_difference": 3.748604204822925e-11,
+          "native": 0.1333159060926729,
+          "reference": 0.13331590605518687
+        },
+        "ac_branch/4-5/qt": {
+          "absolute_difference": 3.3153296427612666e-10,
+          "native": 0.008875830842757249,
+          "reference": 0.008875831174290213
+        },
+        "dc_branch/dc_equivalent_branch/1/active_loss": {
+          "absolute_difference": 6.455946888195285e-14,
+          "native": 0.0021931868719040626,
+          "reference": 0.002193186871968622
+        },
+        "dc_branch/dc_equivalent_branch/1/pf": {
+          "absolute_difference": 1.1929346399597307e-13,
+          "native": 0.31680439198771665,
+          "reference": 0.31680439198759736
+        },
+        "dc_branch/dc_equivalent_branch/1/pt": {
+          "absolute_difference": 1.8385293287792592e-13,
+          "native": -0.3146112051158126,
+          "reference": -0.31461120511562873
+        },
+        "dc_branch/dc_equivalent_branch/2/active_loss": {
+          "absolute_difference": 2.149391775674303e-13,
+          "native": 0.010809050745311688,
+          "reference": 0.010809050745526627
+        },
+        "dc_branch/dc_equivalent_branch/2/pf": {
+          "absolute_difference": 3.1110669596046137e-12,
+          "native": -0.6984416752659331,
+          "reference": -0.6984416752628221
+        },
+        "dc_branch/dc_equivalent_branch/2/pt": {
+          "absolute_difference": 2.8961277820371834e-12,
+          "native": 0.7092507260112448,
+          "reference": 0.7092507260083487
+        },
+        "dc_branch/dc_equivalent_branch/3/active_loss": {
+          "absolute_difference": 3.325117958752344e-14,
+          "native": 0.0023253409753679066,
+          "reference": 0.002325340975401158
+        },
+        "dc_branch/dc_equivalent_branch/3/pf": {
+          "absolute_difference": 2.048583525038339e-12,
+          "native": -0.2753194789440266,
+          "reference": -0.275319478941978
+        },
+        "dc_branch/dc_equivalent_branch/3/pt": {
+          "absolute_difference": 2.0153323454508154e-12,
+          "native": 0.2776448199193945,
+          "reference": 0.27764481991737916
+        },
+        "dc_bus/dc_equivalent_bus/1/vm": {
+          "absolute_difference": 1.5095702465828253e-11,
+          "native": 1.0907872400326994,
+          "reference": 1.0907872400176037
+        },
+        "dc_bus/dc_equivalent_bus/2/vm": {
+          "absolute_difference": 1.5197398894883918e-11,
+          "native": 1.083235891896803,
+          "reference": 1.0832358918816056
+        },
+        "dc_bus/dc_equivalent_bus/3/vm": {
+          "absolute_difference": 1.5036638600918195e-11,
+          "native": 1.0999999999666676,
+          "reference": 1.099999999951631
+        },
+        "pg[bus-1-2]": {
+          "absolute_difference": 5.831335414541172e-12,
+          "native": 1.6999999999870736,
+          "reference": 1.6999999999812423
+        },
+        "pg[bus-1]": {
+          "absolute_difference": 3.8469227803261674e-12,
+          "native": 0.39999999999147245,
+          "reference": 0.39999999998762553
+        },
+        "pg[bus-3-2]": {
+          "absolute_difference": 1.198081633901893e-10,
+          "native": 2.2877421517493355,
+          "reference": 2.2877421516295273
+        },
+        "pg[bus-4-2]": {
+          "absolute_difference": 4.033936992214457e-11,
+          "native": 8.941992431636168e-11,
+          "reference": 1.2975929423850625e-10
+        },
+        "pg[bus-5]": {
+          "absolute_difference": 2.2807178368111636e-10,
+          "native": 5.719878598234138,
+          "reference": 5.71987859846221
+        },
+        "qg[bus-1-2]": {
+          "absolute_difference": 3.1767255492809454e-11,
+          "native": 1.274999999929583,
+          "reference": 1.2749999998978157
+        },
+        "qg[bus-1]": {
+          "absolute_difference": 3.17669779370533e-11,
+          "native": 0.2999999999295827,
+          "reference": 0.29999999989781573
+        },
+        "qg[bus-3-2]": {
+          "absolute_difference": 1.0790612847699776e-10,
+          "native": 3.8999999997608006,
+          "reference": 3.8999999996528945
+        },
+        "qg[bus-4-2]": {
+          "absolute_difference": 3.5473947390674e-9,
+          "native": -0.13559458433028773,
+          "reference": -0.13559458787768247
+        },
+        "qg[bus-5]": {
+          "absolute_difference": 1.70249736530792e-8,
+          "native": -1.7552777487084485,
+          "reference": -1.755277731683475
+        },
+        "station/ac_dc_converter_station/1/iconv": {
+          "absolute_difference": 1.0343917458688345e-9,
+          "native": 0.050448052917789137,
+          "reference": 0.05044805395218088
+        },
+        "station/ac_dc_converter_station/1/pconv": {
+          "absolute_difference": 3.5490083094558145e-12,
+          "native": 0.052591853164690054,
+          "reference": 0.05259185316823906
+        },
+        "station/ac_dc_converter_station/1/pdc": {
+          "absolute_difference": 1.929269244360654e-12,
+          "native": -0.041484913043690085,
+          "reference": -0.041484913045619354
+        },
+        "station/ac_dc_converter_station/1/pgrid": {
+          "absolute_difference": 4.643799234038681e-12,
+          "native": 0.052614738007064114,
+          "reference": 0.052614738011707914
+        },
+        "station/ac_dc_converter_station/1/ppr_fr": {
+          "absolute_difference": 3.559437466993387e-12,
+          "native": 0.052592107665294374,
+          "reference": 0.05259210766885381
+        },
+        "station/ac_dc_converter_station/1/ptf_to": {
+          "absolute_difference": 3.559437466993387e-12,
+          "native": -0.052592107665294374,
+          "reference": -0.05259210766885381
+        },
+        "station/ac_dc_converter_station/1/qconv": {
+          "absolute_difference": 3.556231618212502e-9,
+          "native": -0.017707464326213722,
+          "reference": -0.01770746788244534
+        },
+        "station/ac_dc_converter_station/1/qgrid": {
+          "absolute_difference": 3.352983848903257e-9,
+          "native": -0.12241610169487732,
+          "reference": -0.12241610504786117
+        },
+        "station/ac_dc_converter_station/1/qpr_fr": {
+          "absolute_difference": 3.539088230808396e-9,
+          "native": -0.017289370733438236,
+          "reference": -0.017289374272526466
+        },
+        "station/ac_dc_converter_station/1/qtf_to": {
+          "absolute_difference": 3.43401869440374e-9,
+          "native": 0.12410734256980699,
+          "reference": 0.12410734600382568
+        },
+        "station/ac_dc_converter_station/1/station_loss": {
+          "absolute_difference": 2.7145299896780273e-12,
+          "native": 0.01112982496337403,
+          "reference": 0.01112982496608856
+        },
+        "station/ac_dc_converter_station/1/vaconv": {
+          "absolute_difference": 4.539902828670783e-11,
+          "native": -0.0255222635311965,
+          "reference": -0.025522263576595528
+        },
+        "station/ac_dc_converter_station/1/vafilt": {
+          "absolute_difference": 4.104454276454561e-11,
+          "native": -0.018363420508238852,
+          "reference": -0.018363420549283395
+        },
+        "station/ac_dc_converter_station/1/valve_loss": {
+          "absolute_difference": 1.6197390650951604e-12,
+          "native": 0.01110694012099997,
+          "reference": 0.011106940122619709
+        },
+        "station/ac_dc_converter_station/1/vmconv": {
+          "absolute_difference": 8.605116619264663e-12,
+          "native": 1.099999999980924,
+          "reference": 1.099999999972319
+        },
+        "station/ac_dc_converter_station/1/vmfilt": {
+          "absolute_difference": 5.397120528272126e-10,
+          "native": 1.0973883716763706,
+          "reference": 1.0973883711366585
+        },
+        "station/ac_dc_converter_station/2/iconv": {
+          "absolute_difference": 2.2551627232303417e-10,
+          "native": 0.9110258249133585,
+          "reference": 0.9110258251388748
+        },
+        "station/ac_dc_converter_station/2/pconv": {
+          "absolute_difference": 3.961719841072409e-12,
+          "native": -0.9999999999912182,
+          "reference": -0.9999999999872565
+        },
+        "station/ac_dc_converter_station/2/pdc": {
+          "absolute_difference": 3.2949198924825396e-12,
+          "native": 1.0130528803817458,
+          "reference": 1.0130528803784509
+        },
+        "station/ac_dc_converter_station/2/pgrid": {
+          "absolute_difference": 5.5323523540096176e-12,
+          "native": -0.9986766736256791,
+          "reference": -0.9986766736201468
+        },
+        "station/ac_dc_converter_station/2/ppr_fr": {
+          "absolute_difference": 4.002798092983539e-12,
+          "native": -0.9999170031858523,
+          "reference": -0.9999170031818495
+        },
+        "station/ac_dc_converter_station/2/ptf_to": {
+          "absolute_difference": 4.002798092983539e-12,
+          "native": 0.9999170031858523,
+          "reference": 0.9999170031818495
+        },
+        "station/ac_dc_converter_station/2/qconv": {
+          "absolute_difference": 3.553248750787219e-9,
+          "native": -0.0652789771172676,
+          "reference": -0.06527898067051635
+        },
+        "station/ac_dc_converter_station/2/qgrid": {
+          "absolute_difference": 3.264448607265269e-9,
+          "native": 0.05636851839459259,
+          "reference": 0.05636851513014398
+        },
+        "station/ac_dc_converter_station/2/qpr_fr": {
+          "absolute_difference": 3.485747593345856e-9,
+          "native": 0.07106817473784632,
+          "reference": 0.07106817125209873
+        },
+        "station/ac_dc_converter_station/2/qtf_to": {
+          "absolute_difference": 3.3787640602023217e-9,
+          "native": 0.03632544406900992,
+          "reference": 0.03632544744777398
+        },
+        "station/ac_dc_converter_station/2/station_loss": {
+          "absolute_difference": 2.237432461527078e-12,
+          "native": 0.014376206756066656,
+          "reference": 0.014376206758304089
+        },
+        "station/ac_dc_converter_station/2/vaconv": {
+          "absolute_difference": 1.617751210769569e-10,
+          "native": 0.21906023197077557,
+          "reference": 0.2190602321325507
+        },
+        "station/ac_dc_converter_station/2/vafilt": {
+          "absolute_difference": 9.156489455541816e-11,
+          "native": 0.08291898627599917,
+          "reference": 0.08291898636756406
+        },
+        "station/ac_dc_converter_station/2/valve_loss": {
+          "absolute_difference": 6.66799948589869e-13,
+          "native": 0.013052880390527544,
+          "reference": 0.013052880391194344
+        },
+        "station/ac_dc_converter_station/2/vmconv": {
+          "absolute_difference": 2.261923981450309e-11,
+          "native": 1.099999999949858,
+          "reference": 1.0999999999272387
+        },
+        "station/ac_dc_converter_station/2/vmfilt": {
+          "absolute_difference": 5.480687015335661e-10,
+          "native": 1.1003413368471069,
+          "reference": 1.1003413362990382
+        },
+        "station/ac_dc_converter_station/3/iconv": {
+          "absolute_difference": 1.409574013067072e-9,
+          "native": 0.9283875636908837,
+          "reference": 0.9283875651004577
+        },
+        "station/ac_dc_converter_station/3/pconv": {
+          "absolute_difference": 7.045475314271243e-13,
+          "native": 0.9999999999984382,
+          "reference": 0.9999999999977337
+        },
+        "station/ac_dc_converter_station/3/pdc": {
+          "absolute_difference": 4.91151563863923e-12,
+          "native": -0.9868955459306393,
+          "reference": -0.9868955459257278
+        },
+        "station/ac_dc_converter_station/3/pgrid": {
+          "absolute_difference": 1.3746781490908688e-12,
+          "native": 1.0014102386073167,
+          "reference": 1.001410238605942
+        },
+        "station/ac_dc_converter_station/3/ppr_fr": {
+          "absolute_difference": 4.4275694222051243e-13,
+          "native": 1.0000861903452798,
+          "reference": 1.000086190344837
+        },
+        "station/ac_dc_converter_station/3/ptf_to": {
+          "absolute_difference": 4.4275694222051243e-13,
+          "native": -1.0000861903452798,
+          "reference": -1.000086190344837
+        },
+        "station/ac_dc_converter_station/3/qconv": {
+          "absolute_difference": 1.754620793104067e-8,
+          "native": -0.20713081473881312,
+          "reference": -0.2071307971926052
+        },
+        "station/ac_dc_converter_station/3/qgrid": {
+          "absolute_difference": 1.846336464272902e-8,
+          "native": -0.069958290587963,
+          "reference": -0.06995827212459836
+        },
+        "station/ac_dc_converter_station/3/qpr_fr": {
+          "absolute_difference": 1.7976169455757862e-8,
+          "native": -0.0655373129474513,
+          "reference": -0.06553729497128184
+        },
+        "station/ac_dc_converter_station/3/qtf_to": {
+          "absolute_difference": 1.8532987894337438e-8,
+          "native": 0.16890883070416976,
+          "reference": 0.16890881217118187
+        },
+        "station/ac_dc_converter_station/3/station_loss": {
+          "absolute_difference": 3.536837489548361e-12,
+          "native": 0.014514692676677377,
+          "reference": 0.014514692680214214
+        },
+        "station/ac_dc_converter_station/3/vaconv": {
+          "absolute_difference": 1.2873567212245973e-9,
+          "native": -0.17363934112284563,
+          "reference": -0.17363934241020235
+        },
+        "station/ac_dc_converter_station/3/vafilt": {
+          "absolute_difference": 2.1349453455110634e-10,
+          "native": -0.034834824572758966,
+          "reference": -0.0348348247862535
+        },
+        "station/ac_dc_converter_station/3/valve_loss": {
+          "absolute_difference": 4.206968107212106e-12,
+          "native": 0.01310445406779892,
+          "reference": 0.013104454072005889
+        },
+        "station/ac_dc_converter_station/3/vmconv": {
+          "absolute_difference": 5.505852218590235e-9,
+          "native": 1.0999999882015785,
+          "reference": 1.0999999826957263
+        },
+        "station/ac_dc_converter_station/3/vmfilt": {
+          "absolute_difference": 2.907475593616482e-9,
+          "native": 1.079539745746402,
+          "reference": 1.0795397428389264
+        },
+        "va[1]": {
+          "absolute_difference": 8.943842194630847e-11,
+          "native": 0.04890962808937358,
+          "reference": 0.048909628178812004
+        },
+        "va[2]": {
+          "absolute_difference": 2.9647031357660225e-11,
+          "native": -0.013254598354838752,
+          "reference": -0.013254598384485783
+        },
+        "va[3]": {
+          "absolute_difference": 2.5099006206730223e-11,
+          "native": -0.009776889896513236,
+          "reference": -0.009776889921612242
+        },
+        "va[4]": {
+          "absolute_difference": 3.0626772441452463e-38,
+          "native": -3.5264830524668625e-38,
+          "reference": -4.638058083216162e-39
+        },
+        "va[5]": {
+          "absolute_difference": 1.1717286862999998e-10,
+          "native": 0.06273401250207067,
+          "reference": 0.06273401261924354
+        },
+        "vm[1]": {
+          "absolute_difference": 9.778133858162619e-10,
+          "native": 1.0772267931925523,
+          "reference": 1.077226792214739
+        },
+        "vm[2]": {
+          "absolute_difference": 8.966449804859167e-10,
+          "native": 1.0847966493573593,
+          "reference": 1.0847966484607143
+        },
+        "vm[3]": {
+          "absolute_difference": 8.867326872774584e-10,
+          "native": 1.099999998041436,
+          "reference": 1.0999999971547032
+        },
+        "vm[4]": {
+          "absolute_difference": 1.006602134978607e-9,
+          "native": 1.063538774017904,
+          "reference": 1.063538773011302
+        },
+        "vm[5]": {
+          "absolute_difference": 9.968685876771133e-10,
+          "native": 1.0684714797283017,
+          "reference": 1.068471478731433
+        }
+      },
+      "max_absolute_electrical_difference": 1.8532987894337438e-8,
+      "max_reference_violation": 7.460698725481052e-14,
+      "native_objective_difference": 0.0,
+      "native_variables": 95,
+      "oracle_objective_difference": -1.5872501535341144e-8,
+      "reconstructed_reference_only": {
+        "0_pcurt[1]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.0
+        },
+        "0_pcurt[2]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.0
+        },
+        "0_pcurt[3]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.0
+        },
+        "0_pflex[1]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 3.0
+        },
+        "0_pflex[2]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 3.0
+        },
+        "0_pflex[3]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 4.0
+        },
+        "0_phiconv[1]": {
+          "reason": "unused VSC firing angle",
+          "value": 0.0
+        },
+        "0_phiconv[2]": {
+          "reason": "unused VSC firing angle",
+          "value": 0.0
+        },
+        "0_phiconv[3]": {
+          "reason": "unused VSC firing angle",
+          "value": 0.0
+        },
+        "0_qflex[1]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.9861
+        },
+        "0_qflex[2]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.9861
+        },
+        "0_qflex[3]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 1.3147
+        }
+      },
+      "reference_evaluated_objective": 15693.105053808496,
+      "reference_variables": 107
+    }
+  },
+  "source_sha256": "759606ec335f8706ee8631ff4833c50804dd916afb5b5e682ace4f4f886fd7f3"
+}

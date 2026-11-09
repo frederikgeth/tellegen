@@ -44,10 +44,13 @@ effective AC/DC parameters, solver options, starts, statuses, objective and
 solutions. Tests compare native effective loss/current parameters to the
 independently preprocessed reference snapshot as well as evaluating equations.
 
-This is point-feasibility qualification, **not a native coupled PF/OPF solve**.
-The diagnostic constructor makes an internal AC projection only while assembling
-all active equivalent equipment. Ordinary AC-only instance constructors still
-reject it. The existing physical-terminal/reduced-converter solvers are separate.
+The initial milestone checked point feasibility; native **case5 OPF solves** are
+now qualified from reference, declared-data and independent flat starts. Coupled
+PF solves remain future work. The preparation makes an internal AC projection
+only while assembling all active equivalent equipment. Ordinary AC-only instance
+constructors still reject it. The physical-terminal/reduced-converter solvers
+remain separate. The [experimental contract](CONTRACT.md) stays on this Tellegen
+branch; it is not yet an upstream PowerIO instance/preparation API.
 
 ## Explicit reference policy
 
@@ -93,9 +96,10 @@ julia --project=evals/validation/acdc -e 'using Pkg; Pkg.instantiate()'
 python3 evals/validation/acdc/run.py /tmp/tellegen-case5-live
 ```
 
-This independently solves the original licensed source twice and evaluates both
-points through Tellegen's native expressions. No export round trip is involved.
-Inspect generated results before replacing the checked-in reference/report.
+This solves the original source in Julia, evaluates both points and native
+derivatives, runs native OPF from three starts, then checks those native points
+in an independently instantiated Julia OPF. No export round trip is involved.
+Inspect generated results before replacing checked-in artifacts.
 
 For ordinary regressions without Julia or network access:
 
@@ -103,6 +107,7 @@ For ordinary regressions without Julia or network access:
 cargo test -p tellegen --features acopf --locked --test acdc_equations
 cargo run -p tellegen --features acopf --locked --example acdc_equations
 cargo run -p tellegen --features acopf --locked --example acdc_derivatives
+cargo run -p tellegen --features acopf --locked --example acdc_opf
 ```
 
 The threshold is `1e-7` for native constraint/bound violation and `1e-7`
@@ -169,13 +174,39 @@ entries. Maximum scaled errors are `5.150553040079598e-7` for Jacobians and
 sampled points; they are not a native solver convergence result, global proof,
 or a comparison against a Julia automatic-differentiation implementation.
 
+## Native OPF milestone
+
+`PreparedAcDcOpf` binds an explicit reference profile to immutable preparation,
+effective bounds/parameters and a fingerprint of the full source network. It
+keeps starts separate from dispatch policy and refuses stale or incomplete
+supplied points. The native API is opt-in under `acopf`; no shipping adapter gets
+a new solve mode. See [CONTRACT.md](CONTRACT.md) for the prototype and intended
+PowerIO ownership boundary.
+
+The pure-Rust POUNCE 0.15.0/Feral solver converges from all three case5 starts.
+[native-opf.json](native-opf.json) records preparation, starts, final coordinates,
+solver options/status/recovery, native residuals and KKT diagnostics.
+[cross-check.json](cross-check.json) records each solution's feasibility and
+objective in PowerModelsACDC, all terminal quantities and branch/valve/station
+loss comparisons, and four reference-validator corruption controls.
+
+All 95 native coordinates map explicitly into the 107-variable reference model.
+The remaining reference variables are fixed-demand/zero-curtailment auxiliaries
+and unused VSC firing angles; their source-based reconstruction is recorded.
+No missing native decision is supplied from the reference solution. Constraints
+and bounds, not objective equality alone, establish cross-feasibility.
+
+The largest independent reference violation is 2.789e-13, objective difference
+1.592e-8, and electrical-quantity difference 1.854e-8 in the quantity's pu/radian
+coordinates. This is local case5 agreement, not a global optimality proof or
+blanket full-station/physical-model qualification.
+
 ## Remaining model work
 
-1. Move the qualified profile/point semantics into PowerIO problem/preparation
-   contracts; keep the reference policy distinct from native/directional models.
-2. Perform native coupled OPF solves and reference cross-feasibility, limits and
-   objective checks. The case5 derivative gate below is complete; extend it when
-   the model or preparation changes.
+1. Move the tested experimental contract into canonical PowerIO problem,
+   preparation and stored-result APIs; retain separate reference/native policies.
+2. Extend the derivative, native-solve and independent cross-feasibility gates
+   whenever the model or preparation changes; case5's initial gates are complete.
 3. Qualify bypassed components, unequal-base transformations, supply filtering,
    multiple AC islands, disabled equipment, direction-dependent losses, and
    further PF controls. Droop/LCC and zero-resistance DC links explicitly refuse
@@ -183,7 +214,7 @@ or a comparison against a Julia automatic-differentiation implementation.
 4. Expand to case24/case39/case67 and external large cases. Preserve known
    reference PF infeasibility rather than treating it as a reader failure.
 5. Add the natural PowerModelsACDC JSON IR reader separately. No inference of
-   JSON support, bindings support, or native solve support from this benchmark.
+   JSON support, bindings support, or broader native solve support from case5.
 
 ## Fixture provenance
 

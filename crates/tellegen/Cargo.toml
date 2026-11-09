@@ -118,3 +118,7 @@ required-features = ["acopf"]
 [[example]]
 name = "acdc_derivatives"
 required-features = ["acopf"]
+
+[[example]]
+name = "acdc_opf"
+required-features = ["acopf"]

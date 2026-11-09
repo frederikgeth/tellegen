@@ -36,10 +36,9 @@ PowerIO's candidate git revision must be replaced by an appropriate published
 release before publication packaging. No new PR was opened, and the existing
 PRs remain draft.
 
-The benchmark establishes native equation feasibility at reference points.
-It does not establish native nonlinear convergence, derivative correctness outside the
-sampled points below,
-physical base-transformation correctness, or qualification of additional cases.
+The initial benchmark established native equation feasibility at reference
+points. The follow-ups below add derivative and native case5 OPF evidence;
+physical base transformations and additional cases remain unqualified.
 Next work is tracked in [README.md](README.md) and
 [PowerIO #819](https://github.com/eigenergy/powerio/issues/819).
 
@@ -80,3 +79,35 @@ all-target clippy with warnings denied passes, and formatting is clean.
 The checked-in [derivative-report.json](derivative-report.json) records all 174
 comparisons; the objective-gradient maximum scaled error is 1.428e-10.
 This follow-up does not rerun JavaScript/browser/Python-wheel or packaging gates.
+
+## Native OPF and independent cross-feasibility
+
+Live run: `python3 evals/validation/acdc/run.py /tmp/tacdc-opf-live`.
+POUNCE 0.15.0 with Feral converged with `Solve_Succeeded` from all three starts,
+without recovery attempts. PowerModelsACDC independently accepts each native
+point including all constraints and bounds.
+
+| Start | Iterations | Objective | Native violation | Reference violation | KKT error |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Reference | 19 | 15693.105053808496 | 7.493e-14 | 7.461e-14 | 2.506e-9 |
+| Declared | 75 | 15693.105053808458 | 2.789e-13 | 2.789e-13 | 2.509e-9 |
+| Flat | 46 | 15693.105053808495 | 7.362e-14 | 7.350e-14 | 2.506e-9 |
+
+The largest objective difference from the independently solved reference is
+1.5911e-8. All compared terminal quantities and branch/valve/station losses agree
+within 1.8533e-8 in their pu/radian coordinates; the worst entry is station 3's
+transformer-to reactive power. Point equality is recorded, not required for all
+nonconvex OPFs. Four corrupted PCC P/Q, DC-power and DC-voltage points fail the
+reference checker, with violations from 0.1 to 4.609.
+
+The versioned experimental contract requires an explicit profile, preserves
+source/effective parameters separately, binds starts to the full source/profile
+fingerprint, records solver/recovery settings, and leaves legacy AC-only guards
+intact. Canonical upstream PowerIO problem/preparation/result types are pending;
+see [CONTRACT.md](CONTRACT.md). Native coupled PF, general physical projections,
+other cases, duals/sensitivities and global optimality are not claimed.
+
+Validation: 749 full-feature engine tests passed (7 existing ignores); all eight
+case5 equation/OPF integration tests passed with only `acopf`. Full-feature
+all-target clippy, formatting and the PowerIO pin check pass. This is scoped
+native validation, not a full JavaScript/browser/Python/package release run.

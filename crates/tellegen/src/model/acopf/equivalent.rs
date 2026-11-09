@@ -1,8 +1,14 @@
 //! Full VSC station equations in the pinned PowerModelsACDC 0.10.1 coordinate
-//! convention. This is an equation qualification API, not a coupled solve API.
+//! convention. Includes equation/derivative diagnostics and experimental OPF;
+//! canonical upstream PowerIO problem/preparation ownership remains pending.
 use super::*;
 mod derivatives;
+mod opf;
 pub use derivatives::{DerivativeCheck, DerivativeReport};
+pub use opf::{
+    AcDcOpfManifest, AcDcOpfProfile, AcDcOpfResult, AcDcOpfSpec, AcDcOpfStart, AcDcScalar,
+    PreparedAcDcOpf,
+};
 use powerio::BalancedNetwork;
 use powerio_tx::acdc::{
     AcConverterControl, ConverterSeries, ConverterTechnology, DcConverterControl,

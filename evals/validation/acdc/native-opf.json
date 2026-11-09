@@ -1,0 +1,5412 @@
+{
+  "preparation": {
+    "ac_branch_ids": [
+      "1-2",
+      "1-4",
+      "1-5",
+      "2-3",
+      "3-4",
+      "4-5"
+    ],
+    "ac_bus_ids": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "base_mva": 100.0,
+    "constraints": [
+      {
+        "lower": 0.0,
+        "name": "p_balance[1]",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "p_balance[2]",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "p_balance[3]",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "p_balance[4]",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "p_balance[5]",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "q_balance[1]",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "q_balance[2]",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "q_balance[3]",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "q_balance[4]",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "q_balance[5]",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "reference_angle[4]",
+        "upper": 0.0
+      },
+      {
+        "lower": -0.5235987755982988,
+        "name": "angle_difference[1-2]",
+        "upper": 0.5235987755982988
+      },
+      {
+        "lower": -0.5235987755982988,
+        "name": "angle_difference[1-4]",
+        "upper": 0.5235987755982988
+      },
+      {
+        "lower": -0.5235987755982988,
+        "name": "angle_difference[1-5]",
+        "upper": 0.5235987755982988
+      },
+      {
+        "lower": -0.5235987755982988,
+        "name": "angle_difference[2-3]",
+        "upper": 0.5235987755982988
+      },
+      {
+        "lower": -0.5235987755982988,
+        "name": "angle_difference[3-4]",
+        "upper": 0.5235987755982988
+      },
+      {
+        "lower": -0.5235987755982988,
+        "name": "angle_difference[4-5]",
+        "upper": 0.5235987755982988
+      },
+      {
+        "lower": 0.0,
+        "name": "thermal_from[1-2]",
+        "upper": null
+      },
+      {
+        "lower": 0.0,
+        "name": "thermal_to[1-2]",
+        "upper": null
+      },
+      {
+        "lower": 0.0,
+        "name": "thermal_from[1-4]",
+        "upper": null
+      },
+      {
+        "lower": 0.0,
+        "name": "thermal_to[1-4]",
+        "upper": null
+      },
+      {
+        "lower": 0.0,
+        "name": "thermal_from[1-5]",
+        "upper": null
+      },
+      {
+        "lower": 0.0,
+        "name": "thermal_to[1-5]",
+        "upper": null
+      },
+      {
+        "lower": 0.0,
+        "name": "thermal_from[2-3]",
+        "upper": null
+      },
+      {
+        "lower": 0.0,
+        "name": "thermal_to[2-3]",
+        "upper": null
+      },
+      {
+        "lower": 0.0,
+        "name": "thermal_from[3-4]",
+        "upper": null
+      },
+      {
+        "lower": 0.0,
+        "name": "thermal_to[3-4]",
+        "upper": null
+      },
+      {
+        "lower": 0.0,
+        "name": "thermal_from[4-5]",
+        "upper": null
+      },
+      {
+        "lower": 0.0,
+        "name": "thermal_to[4-5]",
+        "upper": null
+      },
+      {
+        "lower": 0.0,
+        "name": "ac_branch/1-2/pf",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "ac_branch/1-2/qf",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "ac_branch/1-2/pt",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "ac_branch/1-2/qt",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "ac_branch/1-4/pf",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "ac_branch/1-4/qf",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "ac_branch/1-4/pt",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "ac_branch/1-4/qt",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "ac_branch/1-5/pf",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "ac_branch/1-5/qf",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "ac_branch/1-5/pt",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "ac_branch/1-5/qt",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "ac_branch/2-3/pf",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "ac_branch/2-3/qf",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "ac_branch/2-3/pt",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "ac_branch/2-3/qt",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "ac_branch/3-4/pf",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "ac_branch/3-4/qf",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "ac_branch/3-4/pt",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "ac_branch/3-4/qt",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "ac_branch/4-5/pf",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "ac_branch/4-5/qf",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "ac_branch/4-5/pt",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "ac_branch/4-5/qt",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "dc_branch/dc_equivalent_branch/1/pf",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "dc_branch/dc_equivalent_branch/1/pt",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "dc_branch/dc_equivalent_branch/2/pf",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "dc_branch/dc_equivalent_branch/2/pt",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "dc_branch/dc_equivalent_branch/3/pf",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "dc_branch/dc_equivalent_branch/3/pt",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "station/ac_dc_converter_station/1/transformer/pf",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "station/ac_dc_converter_station/1/transformer/qf",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "station/ac_dc_converter_station/1/transformer/pt",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "station/ac_dc_converter_station/1/transformer/qt",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "station/ac_dc_converter_station/1/reactor/pf",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "station/ac_dc_converter_station/1/reactor/qf",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "station/ac_dc_converter_station/1/reactor/pt",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "station/ac_dc_converter_station/1/reactor/qt",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "station/ac_dc_converter_station/1/filter_p",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "station/ac_dc_converter_station/1/filter_q",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "station/ac_dc_converter_station/1/current",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "station/ac_dc_converter_station/1/loss",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "station/ac_dc_converter_station/2/transformer/pf",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "station/ac_dc_converter_station/2/transformer/qf",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "station/ac_dc_converter_station/2/transformer/pt",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "station/ac_dc_converter_station/2/transformer/qt",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "station/ac_dc_converter_station/2/reactor/pf",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "station/ac_dc_converter_station/2/reactor/qf",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "station/ac_dc_converter_station/2/reactor/pt",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "station/ac_dc_converter_station/2/reactor/qt",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "station/ac_dc_converter_station/2/filter_p",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "station/ac_dc_converter_station/2/filter_q",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "station/ac_dc_converter_station/2/current",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "station/ac_dc_converter_station/2/loss",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "station/ac_dc_converter_station/3/transformer/pf",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "station/ac_dc_converter_station/3/transformer/qf",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "station/ac_dc_converter_station/3/transformer/pt",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "station/ac_dc_converter_station/3/transformer/qt",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "station/ac_dc_converter_station/3/reactor/pf",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "station/ac_dc_converter_station/3/reactor/qf",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "station/ac_dc_converter_station/3/reactor/pt",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "station/ac_dc_converter_station/3/reactor/qt",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "station/ac_dc_converter_station/3/filter_p",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "station/ac_dc_converter_station/3/filter_q",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "station/ac_dc_converter_station/3/current",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "station/ac_dc_converter_station/3/loss",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "dc_bus/dc_equivalent_bus/1/balance",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "dc_bus/dc_equivalent_bus/2/balance",
+        "upper": 0.0
+      },
+      {
+        "lower": 0.0,
+        "name": "dc_bus/dc_equivalent_bus/3/balance",
+        "upper": 0.0
+      }
+    ],
+    "dc_branch_ids": [
+      "dc_equivalent_branch/1",
+      "dc_equivalent_branch/2",
+      "dc_equivalent_branch/3"
+    ],
+    "dc_bus_ids": [
+      "dc_equivalent_bus/1",
+      "dc_equivalent_bus/2",
+      "dc_equivalent_bus/3"
+    ],
+    "dispatch": "free_generator_and_vsc_dispatch_no_pf_setpoints",
+    "generator_ids": [
+      "bus-1",
+      "bus-1-2",
+      "bus-3-2",
+      "bus-4-2",
+      "bus-5"
+    ],
+    "model_fingerprint": "sha256:3aceda75d3365ff56b82a37070ca37426bba3c69a970a33fa4c0ff0b55966266",
+    "objective": "network_generator_cost",
+    "pole_count": 2,
+    "powerio_revision": "49e8eacb45b2051de91f917815a26706b8a30a07",
+    "profile": "power_models_ac_dc0101_acp_vsc_v1",
+    "reference_revision": "9ada4082ac087aed649f48fb5f977680b0fe06c7",
+    "schema": "tellegen-experimental-acdc-opf-preparation-v1",
+    "station_ids": [
+      "ac_dc_converter_station/1",
+      "ac_dc_converter_station/2",
+      "ac_dc_converter_station/3"
+    ],
+    "station_policy": [
+      {
+        "component": "ac_dc_converter_station/1",
+        "converter_base_kv": 345.0,
+        "declared_current_limit_pu": 1.1,
+        "declared_inverter_quadratic_ohm": 2.885,
+        "declared_rectifier_quadratic_ohm": 2.885,
+        "effective_current_limit_pu": 1.118033988749895,
+        "loss_coefficients_pu": [
+          0.01103,
+          0.0014843759094817334,
+          0.0008079535111671218
+        ],
+        "pcc_base_kv": 230.0
+      },
+      {
+        "component": "ac_dc_converter_station/2",
+        "converter_base_kv": 345.0,
+        "declared_current_limit_pu": 1.1,
+        "declared_inverter_quadratic_ohm": 2.885,
+        "declared_rectifier_quadratic_ohm": 2.885,
+        "effective_current_limit_pu": 1.118033988749895,
+        "loss_coefficients_pu": [
+          0.01103,
+          0.0014843759094817334,
+          0.0008079535111671218
+        ],
+        "pcc_base_kv": 230.0
+      },
+      {
+        "component": "ac_dc_converter_station/3",
+        "converter_base_kv": 345.0,
+        "declared_current_limit_pu": 1.1,
+        "declared_inverter_quadratic_ohm": 2.885,
+        "declared_rectifier_quadratic_ohm": 2.885,
+        "effective_current_limit_pu": 1.118033988749895,
+        "loss_coefficients_pu": [
+          0.01103,
+          0.0014843759094817334,
+          0.0008079535111671218
+        ],
+        "pcc_base_kv": 230.0
+      }
+    ],
+    "units": "power_pu_on_base_mva; voltage_pu_source_coordinates; angle_rad; current_pu_converter_ac_base",
+    "variables": [
+      {
+        "lower": null,
+        "name": "va[1]",
+        "upper": null
+      },
+      {
+        "lower": null,
+        "name": "va[2]",
+        "upper": null
+      },
+      {
+        "lower": null,
+        "name": "va[3]",
+        "upper": null
+      },
+      {
+        "lower": null,
+        "name": "va[4]",
+        "upper": null
+      },
+      {
+        "lower": null,
+        "name": "va[5]",
+        "upper": null
+      },
+      {
+        "lower": 0.9,
+        "name": "vm[1]",
+        "upper": 1.1
+      },
+      {
+        "lower": 0.9,
+        "name": "vm[2]",
+        "upper": 1.1
+      },
+      {
+        "lower": 0.9,
+        "name": "vm[3]",
+        "upper": 1.1
+      },
+      {
+        "lower": 0.9,
+        "name": "vm[4]",
+        "upper": 1.1
+      },
+      {
+        "lower": 0.9,
+        "name": "vm[5]",
+        "upper": 1.1
+      },
+      {
+        "lower": 0.0,
+        "name": "pg[bus-1]",
+        "upper": 0.4
+      },
+      {
+        "lower": 0.0,
+        "name": "pg[bus-1-2]",
+        "upper": 1.7
+      },
+      {
+        "lower": 0.0,
+        "name": "pg[bus-3-2]",
+        "upper": 5.2
+      },
+      {
+        "lower": 0.0,
+        "name": "pg[bus-4-2]",
+        "upper": 2.0
+      },
+      {
+        "lower": 0.0,
+        "name": "pg[bus-5]",
+        "upper": 6.0
+      },
+      {
+        "lower": -0.3,
+        "name": "qg[bus-1]",
+        "upper": 0.3
+      },
+      {
+        "lower": -1.2750000000000001,
+        "name": "qg[bus-1-2]",
+        "upper": 1.2750000000000001
+      },
+      {
+        "lower": -3.9,
+        "name": "qg[bus-3-2]",
+        "upper": 3.9
+      },
+      {
+        "lower": -1.5,
+        "name": "qg[bus-4-2]",
+        "upper": 1.5
+      },
+      {
+        "lower": -4.5,
+        "name": "qg[bus-5]",
+        "upper": 4.5
+      },
+      {
+        "lower": null,
+        "name": "ac_branch/1-2/pf",
+        "upper": null
+      },
+      {
+        "lower": null,
+        "name": "ac_branch/1-2/qf",
+        "upper": null
+      },
+      {
+        "lower": null,
+        "name": "ac_branch/1-2/pt",
+        "upper": null
+      },
+      {
+        "lower": null,
+        "name": "ac_branch/1-2/qt",
+        "upper": null
+      },
+      {
+        "lower": null,
+        "name": "ac_branch/1-4/pf",
+        "upper": null
+      },
+      {
+        "lower": null,
+        "name": "ac_branch/1-4/qf",
+        "upper": null
+      },
+      {
+        "lower": null,
+        "name": "ac_branch/1-4/pt",
+        "upper": null
+      },
+      {
+        "lower": null,
+        "name": "ac_branch/1-4/qt",
+        "upper": null
+      },
+      {
+        "lower": null,
+        "name": "ac_branch/1-5/pf",
+        "upper": null
+      },
+      {
+        "lower": null,
+        "name": "ac_branch/1-5/qf",
+        "upper": null
+      },
+      {
+        "lower": null,
+        "name": "ac_branch/1-5/pt",
+        "upper": null
+      },
+      {
+        "lower": null,
+        "name": "ac_branch/1-5/qt",
+        "upper": null
+      },
+      {
+        "lower": null,
+        "name": "ac_branch/2-3/pf",
+        "upper": null
+      },
+      {
+        "lower": null,
+        "name": "ac_branch/2-3/qf",
+        "upper": null
+      },
+      {
+        "lower": null,
+        "name": "ac_branch/2-3/pt",
+        "upper": null
+      },
+      {
+        "lower": null,
+        "name": "ac_branch/2-3/qt",
+        "upper": null
+      },
+      {
+        "lower": null,
+        "name": "ac_branch/3-4/pf",
+        "upper": null
+      },
+      {
+        "lower": null,
+        "name": "ac_branch/3-4/qf",
+        "upper": null
+      },
+      {
+        "lower": null,
+        "name": "ac_branch/3-4/pt",
+        "upper": null
+      },
+      {
+        "lower": null,
+        "name": "ac_branch/3-4/qt",
+        "upper": null
+      },
+      {
+        "lower": null,
+        "name": "ac_branch/4-5/pf",
+        "upper": null
+      },
+      {
+        "lower": null,
+        "name": "ac_branch/4-5/qf",
+        "upper": null
+      },
+      {
+        "lower": null,
+        "name": "ac_branch/4-5/pt",
+        "upper": null
+      },
+      {
+        "lower": null,
+        "name": "ac_branch/4-5/qt",
+        "upper": null
+      },
+      {
+        "lower": 0.9,
+        "name": "dc_bus/dc_equivalent_bus/1/vm",
+        "upper": 1.1
+      },
+      {
+        "lower": 0.9,
+        "name": "dc_bus/dc_equivalent_bus/2/vm",
+        "upper": 1.1
+      },
+      {
+        "lower": 0.9,
+        "name": "dc_bus/dc_equivalent_bus/3/vm",
+        "upper": 1.1
+      },
+      {
+        "lower": -1.0,
+        "name": "dc_branch/dc_equivalent_branch/1/pf",
+        "upper": 1.0
+      },
+      {
+        "lower": -1.0,
+        "name": "dc_branch/dc_equivalent_branch/1/pt",
+        "upper": 1.0
+      },
+      {
+        "lower": -1.0,
+        "name": "dc_branch/dc_equivalent_branch/2/pf",
+        "upper": 1.0
+      },
+      {
+        "lower": -1.0,
+        "name": "dc_branch/dc_equivalent_branch/2/pt",
+        "upper": 1.0
+      },
+      {
+        "lower": -1.0,
+        "name": "dc_branch/dc_equivalent_branch/3/pf",
+        "upper": 1.0
+      },
+      {
+        "lower": -1.0,
+        "name": "dc_branch/dc_equivalent_branch/3/pt",
+        "upper": 1.0
+      },
+      {
+        "lower": -2.0,
+        "name": "station/ac_dc_converter_station/1/pgrid",
+        "upper": 2.0
+      },
+      {
+        "lower": -1.0,
+        "name": "station/ac_dc_converter_station/1/qgrid",
+        "upper": 1.0
+      },
+      {
+        "lower": -2.0,
+        "name": "station/ac_dc_converter_station/1/ptf_to",
+        "upper": 2.0
+      },
+      {
+        "lower": -1.0,
+        "name": "station/ac_dc_converter_station/1/qtf_to",
+        "upper": 1.0
+      },
+      {
+        "lower": -2.0,
+        "name": "station/ac_dc_converter_station/1/ppr_fr",
+        "upper": 2.0
+      },
+      {
+        "lower": -1.0,
+        "name": "station/ac_dc_converter_station/1/qpr_fr",
+        "upper": 1.0
+      },
+      {
+        "lower": -1.0,
+        "name": "station/ac_dc_converter_station/1/pconv",
+        "upper": 1.0
+      },
+      {
+        "lower": -0.5,
+        "name": "station/ac_dc_converter_station/1/qconv",
+        "upper": 0.5
+      },
+      {
+        "lower": -1.2,
+        "name": "station/ac_dc_converter_station/1/pdc",
+        "upper": 1.2
+      },
+      {
+        "lower": 0.0,
+        "name": "station/ac_dc_converter_station/1/iconv",
+        "upper": 1.118033988749895
+      },
+      {
+        "lower": 0.75,
+        "name": "station/ac_dc_converter_station/1/vmfilt",
+        "upper": 1.32
+      },
+      {
+        "lower": -6.283185307179586,
+        "name": "station/ac_dc_converter_station/1/vafilt",
+        "upper": 6.283185307179586
+      },
+      {
+        "lower": 0.9,
+        "name": "station/ac_dc_converter_station/1/vmconv",
+        "upper": 1.1
+      },
+      {
+        "lower": -6.283185307179586,
+        "name": "station/ac_dc_converter_station/1/vaconv",
+        "upper": 6.283185307179586
+      },
+      {
+        "lower": -2.0,
+        "name": "station/ac_dc_converter_station/2/pgrid",
+        "upper": 2.0
+      },
+      {
+        "lower": -1.0,
+        "name": "station/ac_dc_converter_station/2/qgrid",
+        "upper": 1.0
+      },
+      {
+        "lower": -2.0,
+        "name": "station/ac_dc_converter_station/2/ptf_to",
+        "upper": 2.0
+      },
+      {
+        "lower": -1.0,
+        "name": "station/ac_dc_converter_station/2/qtf_to",
+        "upper": 1.0
+      },
+      {
+        "lower": -2.0,
+        "name": "station/ac_dc_converter_station/2/ppr_fr",
+        "upper": 2.0
+      },
+      {
+        "lower": -1.0,
+        "name": "station/ac_dc_converter_station/2/qpr_fr",
+        "upper": 1.0
+      },
+      {
+        "lower": -1.0,
+        "name": "station/ac_dc_converter_station/2/pconv",
+        "upper": 1.0
+      },
+      {
+        "lower": -0.5,
+        "name": "station/ac_dc_converter_station/2/qconv",
+        "upper": 0.5
+      },
+      {
+        "lower": -1.2,
+        "name": "station/ac_dc_converter_station/2/pdc",
+        "upper": 1.2
+      },
+      {
+        "lower": 0.0,
+        "name": "station/ac_dc_converter_station/2/iconv",
+        "upper": 1.118033988749895
+      },
+      {
+        "lower": 0.75,
+        "name": "station/ac_dc_converter_station/2/vmfilt",
+        "upper": 1.32
+      },
+      {
+        "lower": -6.283185307179586,
+        "name": "station/ac_dc_converter_station/2/vafilt",
+        "upper": 6.283185307179586
+      },
+      {
+        "lower": 0.9,
+        "name": "station/ac_dc_converter_station/2/vmconv",
+        "upper": 1.1
+      },
+      {
+        "lower": -6.283185307179586,
+        "name": "station/ac_dc_converter_station/2/vaconv",
+        "upper": 6.283185307179586
+      },
+      {
+        "lower": -2.0,
+        "name": "station/ac_dc_converter_station/3/pgrid",
+        "upper": 2.0
+      },
+      {
+        "lower": -1.0,
+        "name": "station/ac_dc_converter_station/3/qgrid",
+        "upper": 1.0
+      },
+      {
+        "lower": -2.0,
+        "name": "station/ac_dc_converter_station/3/ptf_to",
+        "upper": 2.0
+      },
+      {
+        "lower": -1.0,
+        "name": "station/ac_dc_converter_station/3/qtf_to",
+        "upper": 1.0
+      },
+      {
+        "lower": -2.0,
+        "name": "station/ac_dc_converter_station/3/ppr_fr",
+        "upper": 2.0
+      },
+      {
+        "lower": -1.0,
+        "name": "station/ac_dc_converter_station/3/qpr_fr",
+        "upper": 1.0
+      },
+      {
+        "lower": -1.0,
+        "name": "station/ac_dc_converter_station/3/pconv",
+        "upper": 1.0
+      },
+      {
+        "lower": -0.5,
+        "name": "station/ac_dc_converter_station/3/qconv",
+        "upper": 0.5
+      },
+      {
+        "lower": -1.2,
+        "name": "station/ac_dc_converter_station/3/pdc",
+        "upper": 1.2
+      },
+      {
+        "lower": 0.0,
+        "name": "station/ac_dc_converter_station/3/iconv",
+        "upper": 1.118033988749895
+      },
+      {
+        "lower": 0.75,
+        "name": "station/ac_dc_converter_station/3/vmfilt",
+        "upper": 1.32
+      },
+      {
+        "lower": -6.283185307179586,
+        "name": "station/ac_dc_converter_station/3/vafilt",
+        "upper": 6.283185307179586
+      },
+      {
+        "lower": 0.9,
+        "name": "station/ac_dc_converter_station/3/vmconv",
+        "upper": 1.1
+      },
+      {
+        "lower": -6.283185307179586,
+        "name": "station/ac_dc_converter_station/3/vaconv",
+        "upper": 6.283185307179586
+      }
+    ]
+  },
+  "solves": {
+    "declared": {
+      "base_restoration_calls": 0,
+      "base_status": "Solve_Succeeded",
+      "initial_point": {
+        "ac_branch/1-2/pf": 0.0,
+        "ac_branch/1-2/pt": 0.0,
+        "ac_branch/1-2/qf": 0.0,
+        "ac_branch/1-2/qt": 0.0,
+        "ac_branch/1-4/pf": 0.0,
+        "ac_branch/1-4/pt": 0.0,
+        "ac_branch/1-4/qf": 0.0,
+        "ac_branch/1-4/qt": 0.0,
+        "ac_branch/1-5/pf": 0.0,
+        "ac_branch/1-5/pt": 0.0,
+        "ac_branch/1-5/qf": 0.0,
+        "ac_branch/1-5/qt": 0.0,
+        "ac_branch/2-3/pf": 0.0,
+        "ac_branch/2-3/pt": 0.0,
+        "ac_branch/2-3/qf": 0.0,
+        "ac_branch/2-3/qt": 0.0,
+        "ac_branch/3-4/pf": 0.0,
+        "ac_branch/3-4/pt": 0.0,
+        "ac_branch/3-4/qf": 0.0,
+        "ac_branch/3-4/qt": 0.0,
+        "ac_branch/4-5/pf": 0.0,
+        "ac_branch/4-5/pt": 0.0,
+        "ac_branch/4-5/qf": 0.0,
+        "ac_branch/4-5/qt": 0.0,
+        "dc_branch/dc_equivalent_branch/1/pf": 0.0,
+        "dc_branch/dc_equivalent_branch/1/pt": 0.0,
+        "dc_branch/dc_equivalent_branch/2/pf": 0.0,
+        "dc_branch/dc_equivalent_branch/2/pt": 0.0,
+        "dc_branch/dc_equivalent_branch/3/pf": 0.0,
+        "dc_branch/dc_equivalent_branch/3/pt": 0.0,
+        "dc_bus/dc_equivalent_bus/1/vm": 1.0,
+        "dc_bus/dc_equivalent_bus/2/vm": 1.0,
+        "dc_bus/dc_equivalent_bus/3/vm": 1.0,
+        "pg[bus-1-2]": 0.85,
+        "pg[bus-1]": 0.2,
+        "pg[bus-3-2]": 2.6,
+        "pg[bus-4-2]": 1.0,
+        "pg[bus-5]": 3.0,
+        "qg[bus-1-2]": 0.0,
+        "qg[bus-1]": 0.0,
+        "qg[bus-3-2]": 0.0,
+        "qg[bus-4-2]": 0.0,
+        "qg[bus-5]": 0.0,
+        "station/ac_dc_converter_station/1/iconv": 0.7211102550927979,
+        "station/ac_dc_converter_station/1/pconv": 0.6,
+        "station/ac_dc_converter_station/1/pdc": -0.5874794654834531,
+        "station/ac_dc_converter_station/1/pgrid": 0.6,
+        "station/ac_dc_converter_station/1/ppr_fr": 0.6,
+        "station/ac_dc_converter_station/1/ptf_to": -0.6,
+        "station/ac_dc_converter_station/1/qconv": 0.4,
+        "station/ac_dc_converter_station/1/qgrid": 0.4,
+        "station/ac_dc_converter_station/1/qpr_fr": 0.4,
+        "station/ac_dc_converter_station/1/qtf_to": -0.4,
+        "station/ac_dc_converter_station/1/vaconv": 0.0,
+        "station/ac_dc_converter_station/1/vafilt": 0.0,
+        "station/ac_dc_converter_station/1/vmconv": 1.0,
+        "station/ac_dc_converter_station/1/vmfilt": 1.0,
+        "station/ac_dc_converter_station/2/iconv": 0.1,
+        "station/ac_dc_converter_station/2/pconv": -0.0,
+        "station/ac_dc_converter_station/2/pdc": 0.011186517126059845,
+        "station/ac_dc_converter_station/2/pgrid": -0.0,
+        "station/ac_dc_converter_station/2/ppr_fr": -0.0,
+        "station/ac_dc_converter_station/2/ptf_to": 0.0,
+        "station/ac_dc_converter_station/2/qconv": -0.0,
+        "station/ac_dc_converter_station/2/qgrid": -0.0,
+        "station/ac_dc_converter_station/2/qpr_fr": -0.0,
+        "station/ac_dc_converter_station/2/qtf_to": 0.0,
+        "station/ac_dc_converter_station/2/vaconv": 0.0,
+        "station/ac_dc_converter_station/2/vafilt": 0.0,
+        "station/ac_dc_converter_station/2/vmconv": 1.0,
+        "station/ac_dc_converter_station/2/vmfilt": 1.0,
+        "station/ac_dc_converter_station/3/iconv": 0.35355339059327373,
+        "station/ac_dc_converter_station/3/pconv": -0.35,
+        "station/ac_dc_converter_station/3/pdc": 0.3616558003246081,
+        "station/ac_dc_converter_station/3/pgrid": -0.35,
+        "station/ac_dc_converter_station/3/ppr_fr": -0.35,
+        "station/ac_dc_converter_station/3/ptf_to": 0.35,
+        "station/ac_dc_converter_station/3/qconv": -0.05,
+        "station/ac_dc_converter_station/3/qgrid": -0.05,
+        "station/ac_dc_converter_station/3/qpr_fr": -0.05,
+        "station/ac_dc_converter_station/3/qtf_to": 0.05,
+        "station/ac_dc_converter_station/3/vaconv": 0.0,
+        "station/ac_dc_converter_station/3/vafilt": 0.0,
+        "station/ac_dc_converter_station/3/vmconv": 1.0,
+        "station/ac_dc_converter_station/3/vmfilt": 1.0,
+        "va[1]": 0.0,
+        "va[2]": 0.0,
+        "va[3]": 0.0,
+        "va[4]": 0.0,
+        "va[5]": 0.0,
+        "vm[1]": 1.0,
+        "vm[2]": 1.0,
+        "vm[3]": 1.0,
+        "vm[4]": 1.0,
+        "vm[5]": 1.0
+      },
+      "iterations": 75,
+      "model_fingerprint": "sha256:3aceda75d3365ff56b82a37070ca37426bba3c69a970a33fa4c0ff0b55966266",
+      "point": {
+        "ac_branch/1-2/pf": 2.537150574399898,
+        "ac_branch/1-2/pt": -2.5210423755789777,
+        "ac_branch/1-2/qf": -0.4677133784459763,
+        "ac_branch/1-2/qt": 0.6204749299046098,
+        "ac_branch/1-4/pf": 1.8767453811025756,
+        "ac_branch/1-4/pt": -1.867210994921236,
+        "ac_branch/1-4/qf": 0.33861094576089273,
+        "ac_branch/1-4/qt": -0.2508062251744037,
+        "ac_branch/1-5/pf": -2.3138959555239276,
+        "ac_branch/1-5/pt": 2.318484772261089,
+        "ac_branch/1-5/qf": 1.7041024325442495,
+        "ac_branch/1-5/qt": -1.6941952889632936,
+        "ac_branch/2-3/pf": -0.5315723624280905,
+        "ac_branch/2-3/pt": 0.5338236809526743,
+        "ac_branch/2-3/qf": -1.4841588282097435,
+        "ac_branch/2-3/qt": 1.4845703957810732,
+        "ac_branch/3-4/pf": -0.247404855577669,
+        "ac_branch/3-4/pt": 0.2522094932718056,
+        "ac_branch/3-4/qf": 1.372961085585124,
+        "ac_branch/3-4/qt": -1.332804265248568,
+        "ac_branch/4-5/pf": -2.384998498261149,
+        "ac_branch/4-5/pt": 2.3999835873657323,
+        "ac_branch/4-5/qf": 0.13331590609267088,
+        "ac_branch/4-5/qt": 0.00887583084274386,
+        "dc_branch/dc_equivalent_branch/1/pf": 0.3168043919877183,
+        "dc_branch/dc_equivalent_branch/1/pt": -0.3146112051158142,
+        "dc_branch/dc_equivalent_branch/2/pf": -0.6984416752659315,
+        "dc_branch/dc_equivalent_branch/2/pt": 0.7092507260112431,
+        "dc_branch/dc_equivalent_branch/3/pf": -0.27531947894402425,
+        "dc_branch/dc_equivalent_branch/3/pt": 0.27764481991939216,
+        "dc_bus/dc_equivalent_bus/1/vm": 1.0907872400326994,
+        "dc_bus/dc_equivalent_bus/2/vm": 1.083235891896803,
+        "dc_bus/dc_equivalent_bus/3/vm": 1.0999999999666676,
+        "pg[bus-1-2]": 1.6999999999870736,
+        "pg[bus-1]": 0.39999999999147245,
+        "pg[bus-3-2]": 2.287742151749326,
+        "pg[bus-4-2]": 8.941992431642945e-11,
+        "pg[bus-5]": 5.7198785982341285,
+        "qg[bus-1-2]": 1.274999999929583,
+        "qg[bus-1]": 0.2999999999295827,
+        "qg[bus-3-2]": 3.8999999997608006,
+        "qg[bus-4-2]": -0.13559458433030105,
+        "qg[bus-5]": -1.7552777486586544,
+        "station/ac_dc_converter_station/1/iconv": 0.05044805291778984,
+        "station/ac_dc_converter_station/1/pconv": 0.05259185316469403,
+        "station/ac_dc_converter_station/1/pdc": -0.04148491304369406,
+        "station/ac_dc_converter_station/1/pgrid": 0.052614738007068146,
+        "station/ac_dc_converter_station/1/ppr_fr": 0.05259210766529835,
+        "station/ac_dc_converter_station/1/ptf_to": -0.05259210766529835,
+        "station/ac_dc_converter_station/1/qconv": -0.017707464326203484,
+        "station/ac_dc_converter_station/1/qgrid": -0.12241610169486625,
+        "station/ac_dc_converter_station/1/qpr_fr": -0.01728937073342614,
+        "station/ac_dc_converter_station/1/qtf_to": 0.12410734256979525,
+        "station/ac_dc_converter_station/1/vaconv": -0.025522263531197374,
+        "station/ac_dc_converter_station/1/vafilt": -0.0183634205082392,
+        "station/ac_dc_converter_station/1/vmconv": 1.099999999980924,
+        "station/ac_dc_converter_station/1/vmfilt": 1.0973883716763724,
+        "station/ac_dc_converter_station/2/iconv": 0.9110258249133577,
+        "station/ac_dc_converter_station/2/pconv": -0.9999999999912182,
+        "station/ac_dc_converter_station/2/pdc": 1.0130528803817458,
+        "station/ac_dc_converter_station/2/pgrid": -0.9986766736256791,
+        "station/ac_dc_converter_station/2/ppr_fr": -0.9999170031858522,
+        "station/ac_dc_converter_station/2/ptf_to": 0.9999170031858522,
+        "station/ac_dc_converter_station/2/qconv": -0.0652789771172538,
+        "station/ac_dc_converter_station/2/qgrid": 0.05636851839460317,
+        "station/ac_dc_converter_station/2/qpr_fr": 0.07106817473785648,
+        "station/ac_dc_converter_station/2/qtf_to": 0.03632544406900009,
+        "station/ac_dc_converter_station/2/vaconv": 0.21906023197077487,
+        "station/ac_dc_converter_station/2/vafilt": 0.08291898627599874,
+        "station/ac_dc_converter_station/2/vmconv": 1.099999999949858,
+        "station/ac_dc_converter_station/2/vmfilt": 1.1003413368471087,
+        "station/ac_dc_converter_station/3/iconv": 0.928387563692241,
+        "station/ac_dc_converter_station/3/pconv": 0.9999999999984382,
+        "station/ac_dc_converter_station/3/pdc": -0.9868955459306352,
+        "station/ac_dc_converter_station/3/pgrid": 1.0014102386073074,
+        "station/ac_dc_converter_station/3/ppr_fr": 1.0000861903452802,
+        "station/ac_dc_converter_station/3/ptf_to": -1.0000861903452802,
+        "station/ac_dc_converter_station/3/qconv": -0.2071308146896555,
+        "station/ac_dc_converter_station/3/qgrid": -0.06995829053810454,
+        "station/ac_dc_converter_station/3/qpr_fr": -0.06553731289787905,
+        "station/ac_dc_converter_station/3/qtf_to": 0.16890883065359946,
+        "station/ac_dc_converter_station/3/vaconv": -0.17363934112550364,
+        "station/ac_dc_converter_station/3/vafilt": -0.03483482457316512,
+        "station/ac_dc_converter_station/3/vmconv": 1.0999999881890992,
+        "station/ac_dc_converter_station/3/vmfilt": 1.079539745741192,
+        "va[1]": 0.048909628089373325,
+        "va[2]": -0.013254598354838757,
+        "va[3]": -0.009776889896513282,
+        "va[4]": -1.5070348412489105e-38,
+        "va[5]": 0.06273401250207036,
+        "vm[1]": 1.0772267931925557,
+        "vm[2]": 1.0847966493573622,
+        "vm[3]": 1.0999999980414386,
+        "vm[4]": 1.0635387740179072,
+        "vm[5]": 1.0684714797283046
+      },
+      "promoted_by": null,
+      "recovery_attempts": [],
+      "restoration_calls": 0,
+      "schema": "tellegen-experimental-acdc-opf-result-v1",
+      "solver": "pounce-0.15.0-feral",
+      "solver_constraint_violation": 2.788880237858393e-13,
+      "solver_kkt_error": 2.508878271584597e-9,
+      "solver_options": "linear_solver feral\nhessian_approximation exact\nnlp_scaling_method none\nlinear_system_scaling none\ntol 1e-8\nconstr_viol_tol 1e-8\nacceptable_tol 1e-7\nmax_iter 1000\nprint_level 0\nbound_relax_factor 0\n",
+      "solver_status": "Solve_Succeeded",
+      "start": {
+        "kind": "declared"
+      },
+      "termination": "locally_solved",
+      "validation": {
+        "bounds": [
+          {
+            "lower": 0.9,
+            "name": "vm[1]",
+            "upper": 1.1,
+            "value": 1.0772267931925557,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.9,
+            "name": "vm[2]",
+            "upper": 1.1,
+            "value": 1.0847966493573622,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.9,
+            "name": "vm[3]",
+            "upper": 1.1,
+            "value": 1.0999999980414386,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.9,
+            "name": "vm[4]",
+            "upper": 1.1,
+            "value": 1.0635387740179072,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.9,
+            "name": "vm[5]",
+            "upper": 1.1,
+            "value": 1.0684714797283046,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "pg[bus-1]",
+            "upper": 0.4,
+            "value": 0.39999999999147245,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "pg[bus-1-2]",
+            "upper": 1.7,
+            "value": 1.6999999999870736,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "pg[bus-3-2]",
+            "upper": 5.2,
+            "value": 2.287742151749326,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "pg[bus-4-2]",
+            "upper": 2.0,
+            "value": 8.941992431642945e-11,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "pg[bus-5]",
+            "upper": 6.0,
+            "value": 5.7198785982341285,
+            "violation": 0.0
+          },
+          {
+            "lower": -0.3,
+            "name": "qg[bus-1]",
+            "upper": 0.3,
+            "value": 0.2999999999295827,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.2750000000000001,
+            "name": "qg[bus-1-2]",
+            "upper": 1.2750000000000001,
+            "value": 1.274999999929583,
+            "violation": 0.0
+          },
+          {
+            "lower": -3.9,
+            "name": "qg[bus-3-2]",
+            "upper": 3.9,
+            "value": 3.8999999997608006,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.5,
+            "name": "qg[bus-4-2]",
+            "upper": 1.5,
+            "value": -0.13559458433030105,
+            "violation": 0.0
+          },
+          {
+            "lower": -4.5,
+            "name": "qg[bus-5]",
+            "upper": 4.5,
+            "value": -1.7552777486586544,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.9,
+            "name": "dc_bus/dc_equivalent_bus/1/vm",
+            "upper": 1.1,
+            "value": 1.0907872400326994,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.9,
+            "name": "dc_bus/dc_equivalent_bus/2/vm",
+            "upper": 1.1,
+            "value": 1.083235891896803,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.9,
+            "name": "dc_bus/dc_equivalent_bus/3/vm",
+            "upper": 1.1,
+            "value": 1.0999999999666676,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "dc_branch/dc_equivalent_branch/1/pf",
+            "upper": 1.0,
+            "value": 0.3168043919877183,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "dc_branch/dc_equivalent_branch/1/pt",
+            "upper": 1.0,
+            "value": -0.3146112051158142,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "dc_branch/dc_equivalent_branch/2/pf",
+            "upper": 1.0,
+            "value": -0.6984416752659315,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "dc_branch/dc_equivalent_branch/2/pt",
+            "upper": 1.0,
+            "value": 0.7092507260112431,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "dc_branch/dc_equivalent_branch/3/pf",
+            "upper": 1.0,
+            "value": -0.27531947894402425,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "dc_branch/dc_equivalent_branch/3/pt",
+            "upper": 1.0,
+            "value": 0.27764481991939216,
+            "violation": 0.0
+          },
+          {
+            "lower": -2.0,
+            "name": "station/ac_dc_converter_station/1/pgrid",
+            "upper": 2.0,
+            "value": 0.052614738007068146,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "station/ac_dc_converter_station/1/qgrid",
+            "upper": 1.0,
+            "value": -0.12241610169486625,
+            "violation": 0.0
+          },
+          {
+            "lower": -2.0,
+            "name": "station/ac_dc_converter_station/1/ptf_to",
+            "upper": 2.0,
+            "value": -0.05259210766529835,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "station/ac_dc_converter_station/1/qtf_to",
+            "upper": 1.0,
+            "value": 0.12410734256979525,
+            "violation": 0.0
+          },
+          {
+            "lower": -2.0,
+            "name": "station/ac_dc_converter_station/1/ppr_fr",
+            "upper": 2.0,
+            "value": 0.05259210766529835,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "station/ac_dc_converter_station/1/qpr_fr",
+            "upper": 1.0,
+            "value": -0.01728937073342614,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "station/ac_dc_converter_station/1/pconv",
+            "upper": 1.0,
+            "value": 0.05259185316469403,
+            "violation": 0.0
+          },
+          {
+            "lower": -0.5,
+            "name": "station/ac_dc_converter_station/1/qconv",
+            "upper": 0.5,
+            "value": -0.017707464326203484,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.2,
+            "name": "station/ac_dc_converter_station/1/pdc",
+            "upper": 1.2,
+            "value": -0.04148491304369406,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/1/iconv",
+            "upper": 1.118033988749895,
+            "value": 0.05044805291778984,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.75,
+            "name": "station/ac_dc_converter_station/1/vmfilt",
+            "upper": 1.32,
+            "value": 1.0973883716763724,
+            "violation": 0.0
+          },
+          {
+            "lower": -6.283185307179586,
+            "name": "station/ac_dc_converter_station/1/vafilt",
+            "upper": 6.283185307179586,
+            "value": -0.0183634205082392,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.9,
+            "name": "station/ac_dc_converter_station/1/vmconv",
+            "upper": 1.1,
+            "value": 1.099999999980924,
+            "violation": 0.0
+          },
+          {
+            "lower": -6.283185307179586,
+            "name": "station/ac_dc_converter_station/1/vaconv",
+            "upper": 6.283185307179586,
+            "value": -0.025522263531197374,
+            "violation": 0.0
+          },
+          {
+            "lower": -2.0,
+            "name": "station/ac_dc_converter_station/2/pgrid",
+            "upper": 2.0,
+            "value": -0.9986766736256791,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "station/ac_dc_converter_station/2/qgrid",
+            "upper": 1.0,
+            "value": 0.05636851839460317,
+            "violation": 0.0
+          },
+          {
+            "lower": -2.0,
+            "name": "station/ac_dc_converter_station/2/ptf_to",
+            "upper": 2.0,
+            "value": 0.9999170031858522,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "station/ac_dc_converter_station/2/qtf_to",
+            "upper": 1.0,
+            "value": 0.03632544406900009,
+            "violation": 0.0
+          },
+          {
+            "lower": -2.0,
+            "name": "station/ac_dc_converter_station/2/ppr_fr",
+            "upper": 2.0,
+            "value": -0.9999170031858522,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "station/ac_dc_converter_station/2/qpr_fr",
+            "upper": 1.0,
+            "value": 0.07106817473785648,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "station/ac_dc_converter_station/2/pconv",
+            "upper": 1.0,
+            "value": -0.9999999999912182,
+            "violation": 0.0
+          },
+          {
+            "lower": -0.5,
+            "name": "station/ac_dc_converter_station/2/qconv",
+            "upper": 0.5,
+            "value": -0.0652789771172538,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.2,
+            "name": "station/ac_dc_converter_station/2/pdc",
+            "upper": 1.2,
+            "value": 1.0130528803817458,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/2/iconv",
+            "upper": 1.118033988749895,
+            "value": 0.9110258249133577,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.75,
+            "name": "station/ac_dc_converter_station/2/vmfilt",
+            "upper": 1.32,
+            "value": 1.1003413368471087,
+            "violation": 0.0
+          },
+          {
+            "lower": -6.283185307179586,
+            "name": "station/ac_dc_converter_station/2/vafilt",
+            "upper": 6.283185307179586,
+            "value": 0.08291898627599874,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.9,
+            "name": "station/ac_dc_converter_station/2/vmconv",
+            "upper": 1.1,
+            "value": 1.099999999949858,
+            "violation": 0.0
+          },
+          {
+            "lower": -6.283185307179586,
+            "name": "station/ac_dc_converter_station/2/vaconv",
+            "upper": 6.283185307179586,
+            "value": 0.21906023197077487,
+            "violation": 0.0
+          },
+          {
+            "lower": -2.0,
+            "name": "station/ac_dc_converter_station/3/pgrid",
+            "upper": 2.0,
+            "value": 1.0014102386073074,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "station/ac_dc_converter_station/3/qgrid",
+            "upper": 1.0,
+            "value": -0.06995829053810454,
+            "violation": 0.0
+          },
+          {
+            "lower": -2.0,
+            "name": "station/ac_dc_converter_station/3/ptf_to",
+            "upper": 2.0,
+            "value": -1.0000861903452802,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "station/ac_dc_converter_station/3/qtf_to",
+            "upper": 1.0,
+            "value": 0.16890883065359946,
+            "violation": 0.0
+          },
+          {
+            "lower": -2.0,
+            "name": "station/ac_dc_converter_station/3/ppr_fr",
+            "upper": 2.0,
+            "value": 1.0000861903452802,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "station/ac_dc_converter_station/3/qpr_fr",
+            "upper": 1.0,
+            "value": -0.06553731289787905,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "station/ac_dc_converter_station/3/pconv",
+            "upper": 1.0,
+            "value": 0.9999999999984382,
+            "violation": 0.0
+          },
+          {
+            "lower": -0.5,
+            "name": "station/ac_dc_converter_station/3/qconv",
+            "upper": 0.5,
+            "value": -0.2071308146896555,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.2,
+            "name": "station/ac_dc_converter_station/3/pdc",
+            "upper": 1.2,
+            "value": -0.9868955459306352,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/3/iconv",
+            "upper": 1.118033988749895,
+            "value": 0.928387563692241,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.75,
+            "name": "station/ac_dc_converter_station/3/vmfilt",
+            "upper": 1.32,
+            "value": 1.079539745741192,
+            "violation": 0.0
+          },
+          {
+            "lower": -6.283185307179586,
+            "name": "station/ac_dc_converter_station/3/vafilt",
+            "upper": 6.283185307179586,
+            "value": -0.03483482457316512,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.9,
+            "name": "station/ac_dc_converter_station/3/vmconv",
+            "upper": 1.1,
+            "value": 1.0999999881890992,
+            "violation": 0.0
+          },
+          {
+            "lower": -6.283185307179586,
+            "name": "station/ac_dc_converter_station/3/vaconv",
+            "upper": 6.283185307179586,
+            "value": -0.17363934112550364,
+            "violation": 0.0
+          }
+        ],
+        "equations": [
+          {
+            "lower": 0.0,
+            "name": "p_balance[1]",
+            "upper": 0.0,
+            "value": -3.9968028886505635e-15,
+            "violation": 3.9968028886505635e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "p_balance[2]",
+            "upper": 0.0,
+            "value": -4.9682480351975755e-15,
+            "violation": 4.9682480351975755e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "p_balance[3]",
+            "upper": 0.0,
+            "value": -2.220446049250313e-16,
+            "violation": 2.220446049250313e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "p_balance[4]",
+            "upper": 0.0,
+            "value": -1.7763568394002505e-15,
+            "violation": 1.7763568394002505e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "p_balance[5]",
+            "upper": 0.0,
+            "value": -2.886579864025407e-15,
+            "violation": 2.886579864025407e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "q_balance[1]",
+            "upper": 0.0,
+            "value": -4.529709940470639e-14,
+            "violation": 4.529709940470639e-14
+          },
+          {
+            "lower": 0.0,
+            "name": "q_balance[2]",
+            "upper": 0.0,
+            "value": -1.812439087700568e-14,
+            "violation": 1.812439087700568e-14
+          },
+          {
+            "lower": 0.0,
+            "name": "q_balance[3]",
+            "upper": 0.0,
+            "value": 2.9802549317281546e-14,
+            "violation": 2.9802549317281546e-14
+          },
+          {
+            "lower": 0.0,
+            "name": "q_balance[4]",
+            "upper": 0.0,
+            "value": -2.1843638009499955e-14,
+            "violation": 2.1843638009499955e-14
+          },
+          {
+            "lower": 0.0,
+            "name": "q_balance[5]",
+            "upper": 0.0,
+            "value": -3.910760604242114e-14,
+            "violation": 3.910760604242114e-14
+          },
+          {
+            "lower": 0.0,
+            "name": "reference_angle[4]",
+            "upper": 0.0,
+            "value": -1.5070348412489105e-38,
+            "violation": 1.5070348412489105e-38
+          },
+          {
+            "lower": -0.5235987755982988,
+            "name": "angle_difference[1-2]",
+            "upper": 0.5235987755982988,
+            "value": 0.06216422644421208,
+            "violation": 0.0
+          },
+          {
+            "lower": -0.5235987755982988,
+            "name": "angle_difference[1-4]",
+            "upper": 0.5235987755982988,
+            "value": 0.048909628089373325,
+            "violation": 0.0
+          },
+          {
+            "lower": -0.5235987755982988,
+            "name": "angle_difference[1-5]",
+            "upper": 0.5235987755982988,
+            "value": -0.013824384412697038,
+            "violation": 0.0
+          },
+          {
+            "lower": -0.5235987755982988,
+            "name": "angle_difference[2-3]",
+            "upper": 0.5235987755982988,
+            "value": -0.0034777084583254743,
+            "violation": 0.0
+          },
+          {
+            "lower": -0.5235987755982988,
+            "name": "angle_difference[3-4]",
+            "upper": 0.5235987755982988,
+            "value": -0.009776889896513282,
+            "violation": 0.0
+          },
+          {
+            "lower": -0.5235987755982988,
+            "name": "angle_difference[4-5]",
+            "upper": 0.5235987755982988,
+            "value": -0.06273401250207036,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "thermal_from[1-2]",
+            "upper": 1e+19,
+            "value": 9.34411115844492,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "thermal_to[1-2]",
+            "upper": 1e+19,
+            "value": 9.259356201894976,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "thermal_from[1-4]",
+            "upper": 1e+19,
+            "value": 14.51076940192106,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "thermal_to[1-4]",
+            "upper": 1e+19,
+            "value": 14.59821933785902,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "thermal_from[1-5]",
+            "upper": 1e+19,
+            "value": 9.889520406406632,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "thermal_to[1-5]",
+            "upper": 1e+19,
+            "value": 9.901930683648152,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "thermal_from[2-3]",
+            "upper": 1e+19,
+            "value": 15.662303396149742,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "thermal_to[2-3]",
+            "upper": 1e+19,
+            "value": 15.658683017624591,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "thermal_from[3-4]",
+            "upper": 1e+19,
+            "value": 16.20136869490556,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "thermal_to[3-4]",
+            "upper": 1e+19,
+            "value": 16.307623162038794,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "thermal_from[4-5]",
+            "upper": 1e+19,
+            "value": 0.05400903247475523,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "thermal_to[4-5]",
+            "upper": 1e+19,
+            "value": 1.957122696327404e-12,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/1-2/pf",
+            "upper": 0.0,
+            "value": 8.881784197001252e-16,
+            "violation": 8.881784197001252e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/1-2/qf",
+            "upper": 0.0,
+            "value": 5.717648576819556e-15,
+            "violation": 5.717648576819556e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/1-2/pt",
+            "upper": 0.0,
+            "value": -1.3322676295501878e-15,
+            "violation": 1.3322676295501878e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/1-2/qt",
+            "upper": 0.0,
+            "value": -3.774758283725532e-15,
+            "violation": 3.774758283725532e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/1-4/pf",
+            "upper": 0.0,
+            "value": 2.220446049250313e-16,
+            "violation": 2.220446049250313e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/1-4/qf",
+            "upper": 0.0,
+            "value": -6.106226635438361e-16,
+            "violation": 6.106226635438361e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/1-4/pt",
+            "upper": 0.0,
+            "value": -8.881784197001252e-16,
+            "violation": 8.881784197001252e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/1-4/qt",
+            "upper": 0.0,
+            "value": -7.716050021144838e-15,
+            "violation": 7.716050021144838e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/1-5/pf",
+            "upper": 0.0,
+            "value": -5.329070518200751e-15,
+            "violation": 5.329070518200751e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/1-5/qf",
+            "upper": 0.0,
+            "value": -5.0182080713057076e-14,
+            "violation": 5.0182080713057076e-14
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/1-5/pt",
+            "upper": 0.0,
+            "value": -1.7763568394002505e-15,
+            "violation": 1.7763568394002505e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/1-5/qt",
+            "upper": 0.0,
+            "value": -3.9745984281580604e-14,
+            "violation": 3.9745984281580604e-14
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/2-3/pf",
+            "upper": 0.0,
+            "value": -3.6637359812630166e-15,
+            "violation": 3.6637359812630166e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/2-3/qf",
+            "upper": 0.0,
+            "value": -1.4432899320127035e-14,
+            "violation": 1.4432899320127035e-14
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/2-3/pt",
+            "upper": 0.0,
+            "value": -1.6653345369377348e-15,
+            "violation": 1.6653345369377348e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/2-3/qt",
+            "upper": 0.0,
+            "value": 1.0436096431476471e-14,
+            "violation": 1.0436096431476471e-14
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/3-4/pf",
+            "upper": 0.0,
+            "value": 1.4432899320127035e-15,
+            "violation": 1.4432899320127035e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/3-4/qf",
+            "upper": 0.0,
+            "value": 1.9095836023552692e-14,
+            "violation": 1.9095836023552692e-14
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/3-4/pt",
+            "upper": 0.0,
+            "value": 7.216449660063518e-16,
+            "violation": 7.216449660063518e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/3-4/qt",
+            "upper": 0.0,
+            "value": 2.4424906541753444e-15,
+            "violation": 2.4424906541753444e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/4-5/pf",
+            "upper": 0.0,
+            "value": -1.3322676295501878e-15,
+            "violation": 1.3322676295501878e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/4-5/qf",
+            "upper": 0.0,
+            "value": -1.637578961322106e-14,
+            "violation": 1.637578961322106e-14
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/4-5/pt",
+            "upper": 0.0,
+            "value": -8.881784197001252e-16,
+            "violation": 8.881784197001252e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/4-5/qt",
+            "upper": 0.0,
+            "value": 7.060324547225605e-16,
+            "violation": 7.060324547225605e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "dc_branch/dc_equivalent_branch/1/pf",
+            "upper": 0.0,
+            "value": 5.88418203051333e-15,
+            "violation": 5.88418203051333e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "dc_branch/dc_equivalent_branch/1/pt",
+            "upper": 0.0,
+            "value": -5.828670879282072e-15,
+            "violation": 5.828670879282072e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "dc_branch/dc_equivalent_branch/2/pf",
+            "upper": 0.0,
+            "value": -1.2212453270876722e-15,
+            "violation": 1.2212453270876722e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "dc_branch/dc_equivalent_branch/2/pt",
+            "upper": 0.0,
+            "value": 1.2212453270876722e-15,
+            "violation": 1.2212453270876722e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "dc_branch/dc_equivalent_branch/3/pf",
+            "upper": 0.0,
+            "value": 3.219646771412954e-15,
+            "violation": 3.219646771412954e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "dc_branch/dc_equivalent_branch/3/pt",
+            "upper": 0.0,
+            "value": -3.2751579226442118e-15,
+            "violation": 3.2751579226442118e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/1/transformer/pf",
+            "upper": 0.0,
+            "value": 6.938893903907228e-18,
+            "violation": 6.938893903907228e-18
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/1/transformer/qf",
+            "upper": 0.0,
+            "value": -2.636779683484747e-16,
+            "violation": 2.636779683484747e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/1/transformer/pt",
+            "upper": 0.0,
+            "value": 1.3877787807814457e-17,
+            "violation": 1.3877787807814457e-17
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/1/transformer/qt",
+            "upper": 0.0,
+            "value": -6.245004513516506e-16,
+            "violation": 6.245004513516506e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/1/reactor/pf",
+            "upper": 0.0,
+            "value": -6.938893903907228e-18,
+            "violation": 6.938893903907228e-18
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/1/reactor/qf",
+            "upper": 0.0,
+            "value": -5.585809592645319e-16,
+            "violation": 5.585809592645319e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/1/reactor/pt",
+            "upper": 0.0,
+            "value": 6.938893903907228e-18,
+            "violation": 6.938893903907228e-18
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/1/reactor/qt",
+            "upper": 0.0,
+            "value": 1.214306433183765e-16,
+            "violation": 1.214306433183765e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/1/filter_p",
+            "upper": 0.0,
+            "value": 0.0,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/1/filter_q",
+            "upper": 0.0,
+            "value": -1.3877787807814457e-17,
+            "violation": 1.3877787807814457e-17
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/1/current",
+            "upper": 0.0,
+            "value": 3.469446951953614e-18,
+            "violation": 3.469446951953614e-18
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/1/loss",
+            "upper": 0.0,
+            "value": 1.734723475976807e-18,
+            "violation": 1.734723475976807e-18
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/2/transformer/pf",
+            "upper": 0.0,
+            "value": -1.1102230246251565e-16,
+            "violation": 1.1102230246251565e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/2/transformer/qf",
+            "upper": 0.0,
+            "value": -2.0816681711721685e-17,
+            "violation": 2.0816681711721685e-17
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/2/transformer/pt",
+            "upper": 0.0,
+            "value": 0.0,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/2/transformer/qt",
+            "upper": 0.0,
+            "value": -1.2281842209915794e-15,
+            "violation": 1.2281842209915794e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/2/reactor/pf",
+            "upper": 0.0,
+            "value": 2.220446049250313e-16,
+            "violation": 2.220446049250313e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/2/reactor/qf",
+            "upper": 0.0,
+            "value": 1.734723475976807e-15,
+            "violation": 1.734723475976807e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/2/reactor/pt",
+            "upper": 0.0,
+            "value": -1.1102230246251565e-16,
+            "violation": 1.1102230246251565e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/2/reactor/qt",
+            "upper": 0.0,
+            "value": -1.5265566588595902e-16,
+            "violation": 1.5265566588595902e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/2/filter_p",
+            "upper": 0.0,
+            "value": 0.0,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/2/filter_q",
+            "upper": 0.0,
+            "value": 0.0,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/2/current",
+            "upper": 0.0,
+            "value": 0.0,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/2/loss",
+            "upper": 0.0,
+            "value": 5.0306980803327406e-17,
+            "violation": 5.0306980803327406e-17
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/3/transformer/pf",
+            "upper": 0.0,
+            "value": 2.886579864025407e-15,
+            "violation": 2.886579864025407e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/3/transformer/qf",
+            "upper": 0.0,
+            "value": 5.273559366969494e-16,
+            "violation": 5.273559366969494e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/3/transformer/pt",
+            "upper": 0.0,
+            "value": -3.3306690738754696e-15,
+            "violation": 3.3306690738754696e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/3/transformer/qt",
+            "upper": 0.0,
+            "value": -3.1558089474970075e-14,
+            "violation": 3.1558089474970075e-14
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/3/reactor/pf",
+            "upper": 0.0,
+            "value": 2.5091040356528538e-14,
+            "violation": 2.5091040356528538e-14
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/3/reactor/qf",
+            "upper": 0.0,
+            "value": 2.78388423424758e-14,
+            "violation": 2.78388423424758e-14
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/3/reactor/pt",
+            "upper": 0.0,
+            "value": -2.4868995751603507e-14,
+            "violation": 2.4868995751603507e-14
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/3/reactor/qt",
+            "upper": 0.0,
+            "value": -6.425415755018093e-14,
+            "violation": 6.425415755018093e-14
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/3/filter_p",
+            "upper": 0.0,
+            "value": 0.0,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/3/filter_q",
+            "upper": 0.0,
+            "value": -3.0531133177191805e-16,
+            "violation": 3.0531133177191805e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/3/current",
+            "upper": 0.0,
+            "value": 2.788880237858393e-13,
+            "violation": 2.788880237858393e-13
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/3/loss",
+            "upper": 0.0,
+            "value": 4.85722573273506e-17,
+            "violation": 4.85722573273506e-17
+          },
+          {
+            "lower": 0.0,
+            "name": "dc_bus/dc_equivalent_bus/1/balance",
+            "upper": 0.0,
+            "value": 0.0,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "dc_bus/dc_equivalent_bus/2/balance",
+            "upper": 0.0,
+            "value": 1.1102230246251565e-16,
+            "violation": 1.1102230246251565e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "dc_bus/dc_equivalent_bus/3/balance",
+            "upper": 0.0,
+            "value": 0.0,
+            "violation": 0.0
+          }
+        ],
+        "max_violation": 2.788880237858393e-13,
+        "mode": "opf",
+        "objective": 15693.105053808458,
+        "profile": "powermodelsacdc-9ada4082-acp-source-coordinates-inverter-loss",
+        "station_policy": [
+          {
+            "component": "ac_dc_converter_station/1",
+            "converter_base_kv": 345.0,
+            "declared_current_limit_pu": 1.1,
+            "declared_inverter_quadratic_ohm": 2.885,
+            "declared_rectifier_quadratic_ohm": 2.885,
+            "effective_current_limit_pu": 1.118033988749895,
+            "loss_coefficients_pu": [
+              0.01103,
+              0.0014843759094817334,
+              0.0008079535111671218
+            ],
+            "pcc_base_kv": 230.0
+          },
+          {
+            "component": "ac_dc_converter_station/2",
+            "converter_base_kv": 345.0,
+            "declared_current_limit_pu": 1.1,
+            "declared_inverter_quadratic_ohm": 2.885,
+            "declared_rectifier_quadratic_ohm": 2.885,
+            "effective_current_limit_pu": 1.118033988749895,
+            "loss_coefficients_pu": [
+              0.01103,
+              0.0014843759094817334,
+              0.0008079535111671218
+            ],
+            "pcc_base_kv": 230.0
+          },
+          {
+            "component": "ac_dc_converter_station/3",
+            "converter_base_kv": 345.0,
+            "declared_current_limit_pu": 1.1,
+            "declared_inverter_quadratic_ohm": 2.885,
+            "declared_rectifier_quadratic_ohm": 2.885,
+            "effective_current_limit_pu": 1.118033988749895,
+            "loss_coefficients_pu": [
+              0.01103,
+              0.0014843759094817334,
+              0.0008079535111671218
+            ],
+            "pcc_base_kv": 230.0
+          }
+        ]
+      }
+    },
+    "flat": {
+      "base_restoration_calls": 0,
+      "base_status": "Solve_Succeeded",
+      "initial_point": {
+        "ac_branch/1-2/pf": 0.0,
+        "ac_branch/1-2/pt": 0.0,
+        "ac_branch/1-2/qf": 0.0,
+        "ac_branch/1-2/qt": 0.0,
+        "ac_branch/1-4/pf": 0.0,
+        "ac_branch/1-4/pt": 0.0,
+        "ac_branch/1-4/qf": 0.0,
+        "ac_branch/1-4/qt": 0.0,
+        "ac_branch/1-5/pf": 0.0,
+        "ac_branch/1-5/pt": 0.0,
+        "ac_branch/1-5/qf": 0.0,
+        "ac_branch/1-5/qt": 0.0,
+        "ac_branch/2-3/pf": 0.0,
+        "ac_branch/2-3/pt": 0.0,
+        "ac_branch/2-3/qf": 0.0,
+        "ac_branch/2-3/qt": 0.0,
+        "ac_branch/3-4/pf": 0.0,
+        "ac_branch/3-4/pt": 0.0,
+        "ac_branch/3-4/qf": 0.0,
+        "ac_branch/3-4/qt": 0.0,
+        "ac_branch/4-5/pf": 0.0,
+        "ac_branch/4-5/pt": 0.0,
+        "ac_branch/4-5/qf": 0.0,
+        "ac_branch/4-5/qt": 0.0,
+        "dc_branch/dc_equivalent_branch/1/pf": 0.0,
+        "dc_branch/dc_equivalent_branch/1/pt": 0.0,
+        "dc_branch/dc_equivalent_branch/2/pf": 0.0,
+        "dc_branch/dc_equivalent_branch/2/pt": 0.0,
+        "dc_branch/dc_equivalent_branch/3/pf": 0.0,
+        "dc_branch/dc_equivalent_branch/3/pt": 0.0,
+        "dc_bus/dc_equivalent_bus/1/vm": 1.0,
+        "dc_bus/dc_equivalent_bus/2/vm": 1.0,
+        "dc_bus/dc_equivalent_bus/3/vm": 1.0,
+        "pg[bus-1-2]": 0.85,
+        "pg[bus-1]": 0.2,
+        "pg[bus-3-2]": 2.6,
+        "pg[bus-4-2]": 1.0,
+        "pg[bus-5]": 3.0,
+        "qg[bus-1-2]": 0.0,
+        "qg[bus-1]": 0.0,
+        "qg[bus-3-2]": 0.0,
+        "qg[bus-4-2]": 0.0,
+        "qg[bus-5]": 0.0,
+        "station/ac_dc_converter_station/1/iconv": 0.1,
+        "station/ac_dc_converter_station/1/pconv": 0.0,
+        "station/ac_dc_converter_station/1/pdc": 0.0,
+        "station/ac_dc_converter_station/1/pgrid": 0.0,
+        "station/ac_dc_converter_station/1/ppr_fr": 0.0,
+        "station/ac_dc_converter_station/1/ptf_to": 0.0,
+        "station/ac_dc_converter_station/1/qconv": 0.0,
+        "station/ac_dc_converter_station/1/qgrid": 0.0,
+        "station/ac_dc_converter_station/1/qpr_fr": 0.0,
+        "station/ac_dc_converter_station/1/qtf_to": 0.0,
+        "station/ac_dc_converter_station/1/vaconv": 0.0,
+        "station/ac_dc_converter_station/1/vafilt": 0.0,
+        "station/ac_dc_converter_station/1/vmconv": 1.0,
+        "station/ac_dc_converter_station/1/vmfilt": 1.0,
+        "station/ac_dc_converter_station/2/iconv": 0.1,
+        "station/ac_dc_converter_station/2/pconv": 0.0,
+        "station/ac_dc_converter_station/2/pdc": 0.0,
+        "station/ac_dc_converter_station/2/pgrid": 0.0,
+        "station/ac_dc_converter_station/2/ppr_fr": 0.0,
+        "station/ac_dc_converter_station/2/ptf_to": 0.0,
+        "station/ac_dc_converter_station/2/qconv": 0.0,
+        "station/ac_dc_converter_station/2/qgrid": 0.0,
+        "station/ac_dc_converter_station/2/qpr_fr": 0.0,
+        "station/ac_dc_converter_station/2/qtf_to": 0.0,
+        "station/ac_dc_converter_station/2/vaconv": 0.0,
+        "station/ac_dc_converter_station/2/vafilt": 0.0,
+        "station/ac_dc_converter_station/2/vmconv": 1.0,
+        "station/ac_dc_converter_station/2/vmfilt": 1.0,
+        "station/ac_dc_converter_station/3/iconv": 0.1,
+        "station/ac_dc_converter_station/3/pconv": 0.0,
+        "station/ac_dc_converter_station/3/pdc": 0.0,
+        "station/ac_dc_converter_station/3/pgrid": 0.0,
+        "station/ac_dc_converter_station/3/ppr_fr": 0.0,
+        "station/ac_dc_converter_station/3/ptf_to": 0.0,
+        "station/ac_dc_converter_station/3/qconv": 0.0,
+        "station/ac_dc_converter_station/3/qgrid": 0.0,
+        "station/ac_dc_converter_station/3/qpr_fr": 0.0,
+        "station/ac_dc_converter_station/3/qtf_to": 0.0,
+        "station/ac_dc_converter_station/3/vaconv": 0.0,
+        "station/ac_dc_converter_station/3/vafilt": 0.0,
+        "station/ac_dc_converter_station/3/vmconv": 1.0,
+        "station/ac_dc_converter_station/3/vmfilt": 1.0,
+        "va[1]": 0.0,
+        "va[2]": 0.0,
+        "va[3]": 0.0,
+        "va[4]": 0.0,
+        "va[5]": 0.0,
+        "vm[1]": 1.0,
+        "vm[2]": 1.0,
+        "vm[3]": 1.0,
+        "vm[4]": 1.0,
+        "vm[5]": 1.0
+      },
+      "iterations": 46,
+      "model_fingerprint": "sha256:3aceda75d3365ff56b82a37070ca37426bba3c69a970a33fa4c0ff0b55966266",
+      "point": {
+        "ac_branch/1-2/pf": 2.537150574399893,
+        "ac_branch/1-2/pt": -2.5210423755789724,
+        "ac_branch/1-2/qf": -0.4677133784459722,
+        "ac_branch/1-2/qt": 0.6204749299046142,
+        "ac_branch/1-4/pf": 1.8767453811025752,
+        "ac_branch/1-4/pt": -1.8672109949212339,
+        "ac_branch/1-4/qf": 0.3386109457608955,
+        "ac_branch/1-4/qt": -0.25080622517439505,
+        "ac_branch/1-5/pf": -2.3138959555239222,
+        "ac_branch/1-5/pt": 2.3184847722610895,
+        "ac_branch/1-5/qf": 1.7041024325442427,
+        "ac_branch/1-5/qt": -1.694195288963242,
+        "ac_branch/2-3/pf": -0.5315723624280918,
+        "ac_branch/2-3/pt": 0.5338236809526785,
+        "ac_branch/2-3/qf": -1.4841588282097367,
+        "ac_branch/2-3/qt": 1.4845703957810779,
+        "ac_branch/3-4/pf": -0.24740485557766406,
+        "ac_branch/3-4/pt": 0.252209493271801,
+        "ac_branch/3-4/qf": 1.37296108558513,
+        "ac_branch/3-4/qt": -1.3328042652485674,
+        "ac_branch/4-5/pf": -2.3849984982611474,
+        "ac_branch/4-5/pt": 2.3999835873657323,
+        "ac_branch/4-5/qf": 0.13331590609267283,
+        "ac_branch/4-5/qt": 0.008875830842757336,
+        "dc_branch/dc_equivalent_branch/1/pf": 0.31680439198771665,
+        "dc_branch/dc_equivalent_branch/1/pt": -0.3146112051158126,
+        "dc_branch/dc_equivalent_branch/2/pf": -0.6984416752659331,
+        "dc_branch/dc_equivalent_branch/2/pt": 0.7092507260112448,
+        "dc_branch/dc_equivalent_branch/3/pf": -0.2753194789440266,
+        "dc_branch/dc_equivalent_branch/3/pt": 0.2776448199193945,
+        "dc_bus/dc_equivalent_bus/1/vm": 1.0907872400326994,
+        "dc_bus/dc_equivalent_bus/2/vm": 1.083235891896803,
+        "dc_bus/dc_equivalent_bus/3/vm": 1.0999999999666676,
+        "pg[bus-1-2]": 1.6999999999870736,
+        "pg[bus-1]": 0.39999999999147245,
+        "pg[bus-3-2]": 2.287742151749335,
+        "pg[bus-4-2]": 8.941992431637209e-11,
+        "pg[bus-5]": 5.719878598234138,
+        "qg[bus-1-2]": 1.274999999929583,
+        "qg[bus-1]": 0.2999999999295827,
+        "qg[bus-3-2]": 3.8999999997608006,
+        "qg[bus-4-2]": -0.13559458433028979,
+        "qg[bus-5]": -1.7552777487084432,
+        "station/ac_dc_converter_station/1/iconv": 0.05044805291778917,
+        "station/ac_dc_converter_station/1/pconv": 0.052591853164690054,
+        "station/ac_dc_converter_station/1/pdc": -0.04148491304369009,
+        "station/ac_dc_converter_station/1/pgrid": 0.05261473800706418,
+        "station/ac_dc_converter_station/1/ppr_fr": 0.052592107665294374,
+        "station/ac_dc_converter_station/1/ptf_to": -0.052592107665294374,
+        "station/ac_dc_converter_station/1/qconv": -0.01770746432621381,
+        "station/ac_dc_converter_station/1/qgrid": -0.12241610169487736,
+        "station/ac_dc_converter_station/1/qpr_fr": -0.017289370733438326,
+        "station/ac_dc_converter_station/1/qtf_to": 0.12410734256980709,
+        "station/ac_dc_converter_station/1/vaconv": -0.025522263531196486,
+        "station/ac_dc_converter_station/1/vafilt": -0.01836342050823884,
+        "station/ac_dc_converter_station/1/vmconv": 1.099999999980924,
+        "station/ac_dc_converter_station/1/vmfilt": 1.0973883716763704,
+        "station/ac_dc_converter_station/2/iconv": 0.9110258249133585,
+        "station/ac_dc_converter_station/2/pconv": -0.9999999999912182,
+        "station/ac_dc_converter_station/2/pdc": 1.0130528803817458,
+        "station/ac_dc_converter_station/2/pgrid": -0.9986766736256791,
+        "station/ac_dc_converter_station/2/ppr_fr": -0.9999170031858523,
+        "station/ac_dc_converter_station/2/ptf_to": 0.9999170031858523,
+        "station/ac_dc_converter_station/2/qconv": -0.06527897711726759,
+        "station/ac_dc_converter_station/2/qgrid": 0.05636851839459255,
+        "station/ac_dc_converter_station/2/qpr_fr": 0.07106817473784632,
+        "station/ac_dc_converter_station/2/qtf_to": 0.036325444069009914,
+        "station/ac_dc_converter_station/2/vaconv": 0.21906023197077557,
+        "station/ac_dc_converter_station/2/vafilt": 0.08291898627599918,
+        "station/ac_dc_converter_station/2/vmconv": 1.099999999949858,
+        "station/ac_dc_converter_station/2/vmfilt": 1.1003413368471069,
+        "station/ac_dc_converter_station/3/iconv": 0.928387563690884,
+        "station/ac_dc_converter_station/3/pconv": 0.9999999999984382,
+        "station/ac_dc_converter_station/3/pdc": -0.9868955459306393,
+        "station/ac_dc_converter_station/3/pgrid": 1.0014102386073167,
+        "station/ac_dc_converter_station/3/ppr_fr": 1.0000861903452798,
+        "station/ac_dc_converter_station/3/ptf_to": -1.0000861903452798,
+        "station/ac_dc_converter_station/3/qconv": -0.20713081473881595,
+        "station/ac_dc_converter_station/3/qgrid": -0.0699582905879587,
+        "station/ac_dc_converter_station/3/qpr_fr": -0.06553731294745042,
+        "station/ac_dc_converter_station/3/qtf_to": 0.16890883070416884,
+        "station/ac_dc_converter_station/3/vaconv": -0.17363934112284565,
+        "station/ac_dc_converter_station/3/vafilt": -0.03483482457275898,
+        "station/ac_dc_converter_station/3/vmconv": 1.0999999882015785,
+        "station/ac_dc_converter_station/3/vmfilt": 1.0795397457464018,
+        "va[1]": 0.04890962808937356,
+        "va[2]": -0.013254598354838738,
+        "va[3]": -0.009776889896513225,
+        "va[4]": -1.3990563867818974e-40,
+        "va[5]": 0.06273401250207065,
+        "vm[1]": 1.0772267931925525,
+        "vm[2]": 1.0847966493573593,
+        "vm[3]": 1.099999998041436,
+        "vm[4]": 1.0635387740179043,
+        "vm[5]": 1.068471479728302
+      },
+      "promoted_by": null,
+      "recovery_attempts": [],
+      "restoration_calls": 0,
+      "schema": "tellegen-experimental-acdc-opf-result-v1",
+      "solver": "pounce-0.15.0-feral",
+      "solver_constraint_violation": 2.078337502098293e-13,
+      "solver_kkt_error": 2.5062273771997267e-9,
+      "solver_options": "linear_solver feral\nhessian_approximation exact\nnlp_scaling_method none\nlinear_system_scaling none\ntol 1e-8\nconstr_viol_tol 1e-8\nacceptable_tol 1e-7\nmax_iter 1000\nprint_level 0\nbound_relax_factor 0\n",
+      "solver_status": "Solve_Succeeded",
+      "start": {
+        "kind": "flat"
+      },
+      "termination": "locally_solved",
+      "validation": {
+        "bounds": [
+          {
+            "lower": 0.9,
+            "name": "vm[1]",
+            "upper": 1.1,
+            "value": 1.0772267931925525,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.9,
+            "name": "vm[2]",
+            "upper": 1.1,
+            "value": 1.0847966493573593,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.9,
+            "name": "vm[3]",
+            "upper": 1.1,
+            "value": 1.099999998041436,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.9,
+            "name": "vm[4]",
+            "upper": 1.1,
+            "value": 1.0635387740179043,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.9,
+            "name": "vm[5]",
+            "upper": 1.1,
+            "value": 1.068471479728302,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "pg[bus-1]",
+            "upper": 0.4,
+            "value": 0.39999999999147245,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "pg[bus-1-2]",
+            "upper": 1.7,
+            "value": 1.6999999999870736,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "pg[bus-3-2]",
+            "upper": 5.2,
+            "value": 2.287742151749335,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "pg[bus-4-2]",
+            "upper": 2.0,
+            "value": 8.941992431637209e-11,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "pg[bus-5]",
+            "upper": 6.0,
+            "value": 5.719878598234138,
+            "violation": 0.0
+          },
+          {
+            "lower": -0.3,
+            "name": "qg[bus-1]",
+            "upper": 0.3,
+            "value": 0.2999999999295827,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.2750000000000001,
+            "name": "qg[bus-1-2]",
+            "upper": 1.2750000000000001,
+            "value": 1.274999999929583,
+            "violation": 0.0
+          },
+          {
+            "lower": -3.9,
+            "name": "qg[bus-3-2]",
+            "upper": 3.9,
+            "value": 3.8999999997608006,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.5,
+            "name": "qg[bus-4-2]",
+            "upper": 1.5,
+            "value": -0.13559458433028979,
+            "violation": 0.0
+          },
+          {
+            "lower": -4.5,
+            "name": "qg[bus-5]",
+            "upper": 4.5,
+            "value": -1.7552777487084432,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.9,
+            "name": "dc_bus/dc_equivalent_bus/1/vm",
+            "upper": 1.1,
+            "value": 1.0907872400326994,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.9,
+            "name": "dc_bus/dc_equivalent_bus/2/vm",
+            "upper": 1.1,
+            "value": 1.083235891896803,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.9,
+            "name": "dc_bus/dc_equivalent_bus/3/vm",
+            "upper": 1.1,
+            "value": 1.0999999999666676,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "dc_branch/dc_equivalent_branch/1/pf",
+            "upper": 1.0,
+            "value": 0.31680439198771665,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "dc_branch/dc_equivalent_branch/1/pt",
+            "upper": 1.0,
+            "value": -0.3146112051158126,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "dc_branch/dc_equivalent_branch/2/pf",
+            "upper": 1.0,
+            "value": -0.6984416752659331,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "dc_branch/dc_equivalent_branch/2/pt",
+            "upper": 1.0,
+            "value": 0.7092507260112448,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "dc_branch/dc_equivalent_branch/3/pf",
+            "upper": 1.0,
+            "value": -0.2753194789440266,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "dc_branch/dc_equivalent_branch/3/pt",
+            "upper": 1.0,
+            "value": 0.2776448199193945,
+            "violation": 0.0
+          },
+          {
+            "lower": -2.0,
+            "name": "station/ac_dc_converter_station/1/pgrid",
+            "upper": 2.0,
+            "value": 0.05261473800706418,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "station/ac_dc_converter_station/1/qgrid",
+            "upper": 1.0,
+            "value": -0.12241610169487736,
+            "violation": 0.0
+          },
+          {
+            "lower": -2.0,
+            "name": "station/ac_dc_converter_station/1/ptf_to",
+            "upper": 2.0,
+            "value": -0.052592107665294374,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "station/ac_dc_converter_station/1/qtf_to",
+            "upper": 1.0,
+            "value": 0.12410734256980709,
+            "violation": 0.0
+          },
+          {
+            "lower": -2.0,
+            "name": "station/ac_dc_converter_station/1/ppr_fr",
+            "upper": 2.0,
+            "value": 0.052592107665294374,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "station/ac_dc_converter_station/1/qpr_fr",
+            "upper": 1.0,
+            "value": -0.017289370733438326,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "station/ac_dc_converter_station/1/pconv",
+            "upper": 1.0,
+            "value": 0.052591853164690054,
+            "violation": 0.0
+          },
+          {
+            "lower": -0.5,
+            "name": "station/ac_dc_converter_station/1/qconv",
+            "upper": 0.5,
+            "value": -0.01770746432621381,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.2,
+            "name": "station/ac_dc_converter_station/1/pdc",
+            "upper": 1.2,
+            "value": -0.04148491304369009,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/1/iconv",
+            "upper": 1.118033988749895,
+            "value": 0.05044805291778917,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.75,
+            "name": "station/ac_dc_converter_station/1/vmfilt",
+            "upper": 1.32,
+            "value": 1.0973883716763704,
+            "violation": 0.0
+          },
+          {
+            "lower": -6.283185307179586,
+            "name": "station/ac_dc_converter_station/1/vafilt",
+            "upper": 6.283185307179586,
+            "value": -0.01836342050823884,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.9,
+            "name": "station/ac_dc_converter_station/1/vmconv",
+            "upper": 1.1,
+            "value": 1.099999999980924,
+            "violation": 0.0
+          },
+          {
+            "lower": -6.283185307179586,
+            "name": "station/ac_dc_converter_station/1/vaconv",
+            "upper": 6.283185307179586,
+            "value": -0.025522263531196486,
+            "violation": 0.0
+          },
+          {
+            "lower": -2.0,
+            "name": "station/ac_dc_converter_station/2/pgrid",
+            "upper": 2.0,
+            "value": -0.9986766736256791,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "station/ac_dc_converter_station/2/qgrid",
+            "upper": 1.0,
+            "value": 0.05636851839459255,
+            "violation": 0.0
+          },
+          {
+            "lower": -2.0,
+            "name": "station/ac_dc_converter_station/2/ptf_to",
+            "upper": 2.0,
+            "value": 0.9999170031858523,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "station/ac_dc_converter_station/2/qtf_to",
+            "upper": 1.0,
+            "value": 0.036325444069009914,
+            "violation": 0.0
+          },
+          {
+            "lower": -2.0,
+            "name": "station/ac_dc_converter_station/2/ppr_fr",
+            "upper": 2.0,
+            "value": -0.9999170031858523,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "station/ac_dc_converter_station/2/qpr_fr",
+            "upper": 1.0,
+            "value": 0.07106817473784632,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "station/ac_dc_converter_station/2/pconv",
+            "upper": 1.0,
+            "value": -0.9999999999912182,
+            "violation": 0.0
+          },
+          {
+            "lower": -0.5,
+            "name": "station/ac_dc_converter_station/2/qconv",
+            "upper": 0.5,
+            "value": -0.06527897711726759,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.2,
+            "name": "station/ac_dc_converter_station/2/pdc",
+            "upper": 1.2,
+            "value": 1.0130528803817458,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/2/iconv",
+            "upper": 1.118033988749895,
+            "value": 0.9110258249133585,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.75,
+            "name": "station/ac_dc_converter_station/2/vmfilt",
+            "upper": 1.32,
+            "value": 1.1003413368471069,
+            "violation": 0.0
+          },
+          {
+            "lower": -6.283185307179586,
+            "name": "station/ac_dc_converter_station/2/vafilt",
+            "upper": 6.283185307179586,
+            "value": 0.08291898627599918,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.9,
+            "name": "station/ac_dc_converter_station/2/vmconv",
+            "upper": 1.1,
+            "value": 1.099999999949858,
+            "violation": 0.0
+          },
+          {
+            "lower": -6.283185307179586,
+            "name": "station/ac_dc_converter_station/2/vaconv",
+            "upper": 6.283185307179586,
+            "value": 0.21906023197077557,
+            "violation": 0.0
+          },
+          {
+            "lower": -2.0,
+            "name": "station/ac_dc_converter_station/3/pgrid",
+            "upper": 2.0,
+            "value": 1.0014102386073167,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "station/ac_dc_converter_station/3/qgrid",
+            "upper": 1.0,
+            "value": -0.0699582905879587,
+            "violation": 0.0
+          },
+          {
+            "lower": -2.0,
+            "name": "station/ac_dc_converter_station/3/ptf_to",
+            "upper": 2.0,
+            "value": -1.0000861903452798,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "station/ac_dc_converter_station/3/qtf_to",
+            "upper": 1.0,
+            "value": 0.16890883070416884,
+            "violation": 0.0
+          },
+          {
+            "lower": -2.0,
+            "name": "station/ac_dc_converter_station/3/ppr_fr",
+            "upper": 2.0,
+            "value": 1.0000861903452798,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "station/ac_dc_converter_station/3/qpr_fr",
+            "upper": 1.0,
+            "value": -0.06553731294745042,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "station/ac_dc_converter_station/3/pconv",
+            "upper": 1.0,
+            "value": 0.9999999999984382,
+            "violation": 0.0
+          },
+          {
+            "lower": -0.5,
+            "name": "station/ac_dc_converter_station/3/qconv",
+            "upper": 0.5,
+            "value": -0.20713081473881595,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.2,
+            "name": "station/ac_dc_converter_station/3/pdc",
+            "upper": 1.2,
+            "value": -0.9868955459306393,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/3/iconv",
+            "upper": 1.118033988749895,
+            "value": 0.928387563690884,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.75,
+            "name": "station/ac_dc_converter_station/3/vmfilt",
+            "upper": 1.32,
+            "value": 1.0795397457464018,
+            "violation": 0.0
+          },
+          {
+            "lower": -6.283185307179586,
+            "name": "station/ac_dc_converter_station/3/vafilt",
+            "upper": 6.283185307179586,
+            "value": -0.03483482457275898,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.9,
+            "name": "station/ac_dc_converter_station/3/vmconv",
+            "upper": 1.1,
+            "value": 1.0999999882015785,
+            "violation": 0.0
+          },
+          {
+            "lower": -6.283185307179586,
+            "name": "station/ac_dc_converter_station/3/vaconv",
+            "upper": 6.283185307179586,
+            "value": -0.17363934112284565,
+            "violation": 0.0
+          }
+        ],
+        "equations": [
+          {
+            "lower": 0.0,
+            "name": "p_balance[1]",
+            "upper": 0.0,
+            "value": 8.43769498715119e-15,
+            "violation": 8.43769498715119e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "p_balance[2]",
+            "upper": 0.0,
+            "value": 3.3306690738754696e-16,
+            "violation": 3.3306690738754696e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "p_balance[3]",
+            "upper": 0.0,
+            "value": 1.3322676295501878e-15,
+            "violation": 1.3322676295501878e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "p_balance[4]",
+            "upper": 0.0,
+            "value": 8.881784197001252e-16,
+            "violation": 8.881784197001252e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "p_balance[5]",
+            "upper": 0.0,
+            "value": -9.547918011776346e-15,
+            "violation": 9.547918011776346e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "q_balance[1]",
+            "upper": 0.0,
+            "value": 2.531308496145357e-14,
+            "violation": 2.531308496145357e-14
+          },
+          {
+            "lower": 0.0,
+            "name": "q_balance[2]",
+            "upper": 0.0,
+            "value": 2.1635471192382738e-14,
+            "violation": 2.1635471192382738e-14
+          },
+          {
+            "lower": 0.0,
+            "name": "q_balance[3]",
+            "upper": 0.0,
+            "value": 1.9768908732231694e-14,
+            "violation": 1.9768908732231694e-14
+          },
+          {
+            "lower": 0.0,
+            "name": "q_balance[4]",
+            "upper": 0.0,
+            "value": -3.497202527569243e-15,
+            "violation": 3.497202527569243e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "q_balance[5]",
+            "upper": 0.0,
+            "value": -7.362166432045569e-14,
+            "violation": 7.362166432045569e-14
+          },
+          {
+            "lower": 0.0,
+            "name": "reference_angle[4]",
+            "upper": 0.0,
+            "value": -1.3990563867818974e-40,
+            "violation": 1.3990563867818974e-40
+          },
+          {
+            "lower": -0.5235987755982988,
+            "name": "angle_difference[1-2]",
+            "upper": 0.5235987755982988,
+            "value": 0.062164226444212295,
+            "violation": 0.0
+          },
+          {
+            "lower": -0.5235987755982988,
+            "name": "angle_difference[1-4]",
+            "upper": 0.5235987755982988,
+            "value": 0.04890962808937356,
+            "violation": 0.0
+          },
+          {
+            "lower": -0.5235987755982988,
+            "name": "angle_difference[1-5]",
+            "upper": 0.5235987755982988,
+            "value": -0.013824384412697094,
+            "violation": 0.0
+          },
+          {
+            "lower": -0.5235987755982988,
+            "name": "angle_difference[2-3]",
+            "upper": 0.5235987755982988,
+            "value": -0.0034777084583255125,
+            "violation": 0.0
+          },
+          {
+            "lower": -0.5235987755982988,
+            "name": "angle_difference[3-4]",
+            "upper": 0.5235987755982988,
+            "value": -0.009776889896513225,
+            "violation": 0.0
+          },
+          {
+            "lower": -0.5235987755982988,
+            "name": "angle_difference[4-5]",
+            "upper": 0.5235987755982988,
+            "value": -0.06273401250207065,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "thermal_from[1-2]",
+            "upper": 1e+19,
+            "value": 9.344111158444944,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "thermal_to[1-2]",
+            "upper": 1e+19,
+            "value": 9.259356201894999,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "thermal_from[1-4]",
+            "upper": 1e+19,
+            "value": 14.510769401921072,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "thermal_to[1-4]",
+            "upper": 1e+19,
+            "value": 14.598219337859033,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "thermal_from[1-5]",
+            "upper": 1e+19,
+            "value": 9.889520406406808,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "thermal_to[1-5]",
+            "upper": 1e+19,
+            "value": 9.901930683648406,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "thermal_from[2-3]",
+            "upper": 1e+19,
+            "value": 15.662303396149655,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "thermal_to[2-3]",
+            "upper": 1e+19,
+            "value": 15.658683017624545,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "thermal_from[3-4]",
+            "upper": 1e+19,
+            "value": 16.201368694905543,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "thermal_to[3-4]",
+            "upper": 1e+19,
+            "value": 16.30762316203878,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "thermal_from[4-5]",
+            "upper": 1e+19,
+            "value": 0.05400903247475905,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "thermal_to[4-5]",
+            "upper": 1e+19,
+            "value": 1.958644333418906e-12,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/1-2/pf",
+            "upper": 0.0,
+            "value": 2.220446049250313e-15,
+            "violation": 2.220446049250313e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/1-2/qf",
+            "upper": 0.0,
+            "value": 1.637578961322106e-14,
+            "violation": 1.637578961322106e-14
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/1-2/pt",
+            "upper": 0.0,
+            "value": -4.440892098500626e-16,
+            "violation": 4.440892098500626e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/1-2/qt",
+            "upper": 0.0,
+            "value": 1.1102230246251565e-15,
+            "violation": 1.1102230246251565e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/1-4/pf",
+            "upper": 0.0,
+            "value": 1.9984014443252818e-15,
+            "violation": 1.9984014443252818e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/1-4/qf",
+            "upper": 0.0,
+            "value": 9.159339953157541e-15,
+            "violation": 9.159339953157541e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/1-4/pt",
+            "upper": 0.0,
+            "value": -4.440892098500626e-16,
+            "violation": 4.440892098500626e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/1-4/qt",
+            "upper": 0.0,
+            "value": -1.3156142841808105e-14,
+            "violation": 1.3156142841808105e-14
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/1-5/pf",
+            "upper": 0.0,
+            "value": 3.9968028886505635e-15,
+            "violation": 3.9968028886505635e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/1-5/qf",
+            "upper": 0.0,
+            "value": 0.0,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/1-5/pt",
+            "upper": 0.0,
+            "value": -8.881784197001252e-15,
+            "violation": 8.881784197001252e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/1-5/qt",
+            "upper": 0.0,
+            "value": -7.349676423018536e-14,
+            "violation": 7.349676423018536e-14
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/2-3/pf",
+            "upper": 0.0,
+            "value": 7.771561172376096e-16,
+            "violation": 7.771561172376096e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/2-3/qf",
+            "upper": 0.0,
+            "value": 2.0650148258027912e-14,
+            "violation": 2.0650148258027912e-14
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/2-3/pt",
+            "upper": 0.0,
+            "value": 3.3306690738754696e-16,
+            "violation": 3.3306690738754696e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/2-3/qt",
+            "upper": 0.0,
+            "value": 1.1102230246251565e-15,
+            "violation": 1.1102230246251565e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/3-4/pf",
+            "upper": 0.0,
+            "value": 1.3322676295501878e-15,
+            "violation": 1.3322676295501878e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/3-4/qf",
+            "upper": 0.0,
+            "value": 1.84297022087776e-14,
+            "violation": 1.84297022087776e-14
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/3-4/pt",
+            "upper": 0.0,
+            "value": 7.216449660063518e-16,
+            "violation": 7.216449660063518e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/3-4/qt",
+            "upper": 0.0,
+            "value": 9.769962616701378e-15,
+            "violation": 9.769962616701378e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/4-5/pf",
+            "upper": 0.0,
+            "value": 4.440892098500626e-16,
+            "violation": 4.440892098500626e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/4-5/qf",
+            "upper": 0.0,
+            "value": -8.326672684688674e-17,
+            "violation": 8.326672684688674e-17
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/4-5/pt",
+            "upper": 0.0,
+            "value": -4.440892098500626e-16,
+            "violation": 4.440892098500626e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/4-5/qt",
+            "upper": 0.0,
+            "value": -1.682681771697503e-16,
+            "violation": 1.682681771697503e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "dc_branch/dc_equivalent_branch/1/pf",
+            "upper": 0.0,
+            "value": 4.218847493575595e-15,
+            "violation": 4.218847493575595e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "dc_branch/dc_equivalent_branch/1/pt",
+            "upper": 0.0,
+            "value": -4.218847493575595e-15,
+            "violation": 4.218847493575595e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "dc_branch/dc_equivalent_branch/2/pf",
+            "upper": 0.0,
+            "value": -2.886579864025407e-15,
+            "violation": 2.886579864025407e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "dc_branch/dc_equivalent_branch/2/pt",
+            "upper": 0.0,
+            "value": 2.9976021664879227e-15,
+            "violation": 2.9976021664879227e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "dc_branch/dc_equivalent_branch/3/pf",
+            "upper": 0.0,
+            "value": 8.881784197001252e-16,
+            "violation": 8.881784197001252e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "dc_branch/dc_equivalent_branch/3/pt",
+            "upper": 0.0,
+            "value": -9.43689570931383e-16,
+            "violation": 9.43689570931383e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/1/transformer/pf",
+            "upper": 0.0,
+            "value": -2.0816681711721685e-17,
+            "violation": 2.0816681711721685e-17
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/1/transformer/qf",
+            "upper": 0.0,
+            "value": -2.55351295663786e-15,
+            "violation": 2.55351295663786e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/1/transformer/pt",
+            "upper": 0.0,
+            "value": 4.85722573273506e-17,
+            "violation": 4.85722573273506e-17
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/1/transformer/qt",
+            "upper": 0.0,
+            "value": 2.3869795029440866e-15,
+            "violation": 2.3869795029440866e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/1/reactor/pf",
+            "upper": 0.0,
+            "value": 2.0816681711721685e-17,
+            "violation": 2.0816681711721685e-17
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/1/reactor/qf",
+            "upper": 0.0,
+            "value": 5.759281940243e-16,
+            "violation": 5.759281940243e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/1/reactor/pt",
+            "upper": 0.0,
+            "value": -2.0816681711721685e-17,
+            "violation": 2.0816681711721685e-17
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/1/reactor/qt",
+            "upper": 0.0,
+            "value": -2.8727020762175925e-15,
+            "violation": 2.8727020762175925e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/1/filter_p",
+            "upper": 0.0,
+            "value": 0.0,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/1/filter_q",
+            "upper": 0.0,
+            "value": 2.7755575615628914e-17,
+            "violation": 2.7755575615628914e-17
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/1/current",
+            "upper": 0.0,
+            "value": 3.252606517456513e-17,
+            "violation": 3.252606517456513e-17
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/1/loss",
+            "upper": 0.0,
+            "value": -5.204170427930421e-18,
+            "violation": 5.204170427930421e-18
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/2/transformer/pf",
+            "upper": 0.0,
+            "value": 2.220446049250313e-16,
+            "violation": 2.220446049250313e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/2/transformer/qf",
+            "upper": 0.0,
+            "value": -1.7555401576885288e-15,
+            "violation": 1.7555401576885288e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/2/transformer/pt",
+            "upper": 0.0,
+            "value": -2.220446049250313e-16,
+            "violation": 2.220446049250313e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/2/transformer/qt",
+            "upper": 0.0,
+            "value": -2.060851489460447e-15,
+            "violation": 2.060851489460447e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/2/reactor/pf",
+            "upper": 0.0,
+            "value": 1.1102230246251565e-16,
+            "violation": 1.1102230246251565e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/2/reactor/qf",
+            "upper": 0.0,
+            "value": 2.2343238370581275e-15,
+            "violation": 2.2343238370581275e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/2/reactor/pt",
+            "upper": 0.0,
+            "value": -1.1102230246251565e-16,
+            "violation": 1.1102230246251565e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/2/reactor/qt",
+            "upper": 0.0,
+            "value": 1.1934897514720433e-15,
+            "violation": 1.1934897514720433e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/2/filter_p",
+            "upper": 0.0,
+            "value": 0.0,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/2/filter_q",
+            "upper": 0.0,
+            "value": 1.3877787807814457e-17,
+            "violation": 1.3877787807814457e-17
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/2/current",
+            "upper": 0.0,
+            "value": 0.0,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/2/loss",
+            "upper": 0.0,
+            "value": 4.683753385137379e-17,
+            "violation": 4.683753385137379e-17
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/3/transformer/pf",
+            "upper": 0.0,
+            "value": 4.440892098500626e-16,
+            "violation": 4.440892098500626e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/3/transformer/qf",
+            "upper": 0.0,
+            "value": 1.8041124150158794e-15,
+            "violation": 1.8041124150158794e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/3/transformer/pt",
+            "upper": 0.0,
+            "value": -2.220446049250313e-16,
+            "violation": 2.220446049250313e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/3/transformer/qt",
+            "upper": 0.0,
+            "value": 2.0539125955565396e-15,
+            "violation": 2.0539125955565396e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/3/reactor/pf",
+            "upper": 0.0,
+            "value": 2.6645352591003757e-15,
+            "violation": 2.6645352591003757e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/3/reactor/qf",
+            "upper": 0.0,
+            "value": 4.427014310692812e-15,
+            "violation": 4.427014310692812e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/3/reactor/pt",
+            "upper": 0.0,
+            "value": -2.7755575615628914e-15,
+            "violation": 2.7755575615628914e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/3/reactor/qt",
+            "upper": 0.0,
+            "value": -5.88418203051333e-15,
+            "violation": 5.88418203051333e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/3/filter_p",
+            "upper": 0.0,
+            "value": 0.0,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/3/filter_q",
+            "upper": 0.0,
+            "value": -4.163336342344337e-17,
+            "violation": 4.163336342344337e-17
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/3/current",
+            "upper": 0.0,
+            "value": 2.9753977059954195e-14,
+            "violation": 2.9753977059954195e-14
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/3/loss",
+            "upper": 0.0,
+            "value": -1.0408340855860843e-17,
+            "violation": 1.0408340855860843e-17
+          },
+          {
+            "lower": 0.0,
+            "name": "dc_bus/dc_equivalent_bus/1/balance",
+            "upper": 0.0,
+            "value": -2.7755575615628914e-17,
+            "violation": 2.7755575615628914e-17
+          },
+          {
+            "lower": 0.0,
+            "name": "dc_bus/dc_equivalent_bus/2/balance",
+            "upper": 0.0,
+            "value": 5.551115123125783e-17,
+            "violation": 5.551115123125783e-17
+          },
+          {
+            "lower": 0.0,
+            "name": "dc_bus/dc_equivalent_bus/3/balance",
+            "upper": 0.0,
+            "value": 0.0,
+            "violation": 0.0
+          }
+        ],
+        "max_violation": 7.362166432045569e-14,
+        "mode": "opf",
+        "objective": 15693.105053808495,
+        "profile": "powermodelsacdc-9ada4082-acp-source-coordinates-inverter-loss",
+        "station_policy": [
+          {
+            "component": "ac_dc_converter_station/1",
+            "converter_base_kv": 345.0,
+            "declared_current_limit_pu": 1.1,
+            "declared_inverter_quadratic_ohm": 2.885,
+            "declared_rectifier_quadratic_ohm": 2.885,
+            "effective_current_limit_pu": 1.118033988749895,
+            "loss_coefficients_pu": [
+              0.01103,
+              0.0014843759094817334,
+              0.0008079535111671218
+            ],
+            "pcc_base_kv": 230.0
+          },
+          {
+            "component": "ac_dc_converter_station/2",
+            "converter_base_kv": 345.0,
+            "declared_current_limit_pu": 1.1,
+            "declared_inverter_quadratic_ohm": 2.885,
+            "declared_rectifier_quadratic_ohm": 2.885,
+            "effective_current_limit_pu": 1.118033988749895,
+            "loss_coefficients_pu": [
+              0.01103,
+              0.0014843759094817334,
+              0.0008079535111671218
+            ],
+            "pcc_base_kv": 230.0
+          },
+          {
+            "component": "ac_dc_converter_station/3",
+            "converter_base_kv": 345.0,
+            "declared_current_limit_pu": 1.1,
+            "declared_inverter_quadratic_ohm": 2.885,
+            "declared_rectifier_quadratic_ohm": 2.885,
+            "effective_current_limit_pu": 1.118033988749895,
+            "loss_coefficients_pu": [
+              0.01103,
+              0.0014843759094817334,
+              0.0008079535111671218
+            ],
+            "pcc_base_kv": 230.0
+          }
+        ]
+      }
+    },
+    "reference": {
+      "base_restoration_calls": 0,
+      "base_status": "Solve_Succeeded",
+      "initial_point": {
+        "ac_branch/1-2/pf": 2.537150574592271,
+        "ac_branch/1-2/pt": -2.5210423757336846,
+        "ac_branch/1-2/qf": -0.4677133811376237,
+        "ac_branch/1-2/qt": 0.6204749329873515,
+        "ac_branch/1-4/pf": 1.876745381118824,
+        "ac_branch/1-4/pt": -1.8672109949188327,
+        "ac_branch/1-4/qf": 0.33861094642728234,
+        "ac_branch/1-4/qt": -0.25080622564028915,
+        "ac_branch/1-5/pf": -2.313895955742227,
+        "ac_branch/1-5/pt": 2.3184847724919466,
+        "ac_branch/1-5/qf": 1.7041024345059725,
+        "ac_branch/1-5/qt": -1.6941952907331668,
+        "ac_branch/2-3/pf": -0.5315723622780233,
+        "ac_branch/2-3/pt": 0.5338236808055025,
+        "ac_branch/2-3/qf": -1.4841588279394902,
+        "ac_branch/2-3/qt": 1.4845703955758307,
+        "ac_branch/3-4/pf": -0.24740485555582825,
+        "ac_branch/3-4/pt": 0.25220949328036363,
+        "ac_branch/3-4/qf": 1.3729610889469197,
+        "ac_branch/3-4/qt": -1.33280426829258,
+        "ac_branch/4-5/pf": -2.3849984982317713,
+        "ac_branch/4-5/pt": 2.399983587364322,
+        "ac_branch/4-5/qf": 0.13331590605518687,
+        "ac_branch/4-5/qt": 0.008875831174290213,
+        "dc_branch/dc_equivalent_branch/1/pf": 0.31680439198759736,
+        "dc_branch/dc_equivalent_branch/1/pt": -0.31461120511562873,
+        "dc_branch/dc_equivalent_branch/2/pf": -0.6984416752628221,
+        "dc_branch/dc_equivalent_branch/2/pt": 0.7092507260083487,
+        "dc_branch/dc_equivalent_branch/3/pf": -0.275319478941978,
+        "dc_branch/dc_equivalent_branch/3/pt": 0.27764481991737916,
+        "dc_bus/dc_equivalent_bus/1/vm": 1.0907872400176037,
+        "dc_bus/dc_equivalent_bus/2/vm": 1.0832358918816056,
+        "dc_bus/dc_equivalent_bus/3/vm": 1.099999999951631,
+        "pg[bus-1-2]": 1.6999999999812423,
+        "pg[bus-1]": 0.39999999998762553,
+        "pg[bus-3-2]": 2.2877421516295273,
+        "pg[bus-4-2]": 1.2975929423850625e-10,
+        "pg[bus-5]": 5.71987859846221,
+        "qg[bus-1-2]": 1.2749999998978157,
+        "qg[bus-1]": 0.29999999989781573,
+        "qg[bus-3-2]": 3.8999999996528945,
+        "qg[bus-4-2]": -0.13559458787768247,
+        "qg[bus-5]": -1.755277731683475,
+        "station/ac_dc_converter_station/1/iconv": 0.05044805395218088,
+        "station/ac_dc_converter_station/1/pconv": 0.05259185316823906,
+        "station/ac_dc_converter_station/1/pdc": -0.041484913045619354,
+        "station/ac_dc_converter_station/1/pgrid": 0.052614738011707914,
+        "station/ac_dc_converter_station/1/ppr_fr": 0.05259210766885381,
+        "station/ac_dc_converter_station/1/ptf_to": -0.05259210766885381,
+        "station/ac_dc_converter_station/1/qconv": -0.01770746788244534,
+        "station/ac_dc_converter_station/1/qgrid": -0.12241610504786117,
+        "station/ac_dc_converter_station/1/qpr_fr": -0.017289374272526466,
+        "station/ac_dc_converter_station/1/qtf_to": 0.12410734600382568,
+        "station/ac_dc_converter_station/1/vaconv": -0.025522263576595528,
+        "station/ac_dc_converter_station/1/vafilt": -0.018363420549283395,
+        "station/ac_dc_converter_station/1/vmconv": 1.099999999972319,
+        "station/ac_dc_converter_station/1/vmfilt": 1.0973883711366585,
+        "station/ac_dc_converter_station/2/iconv": 0.9110258251388748,
+        "station/ac_dc_converter_station/2/pconv": -0.9999999999872565,
+        "station/ac_dc_converter_station/2/pdc": 1.0130528803784509,
+        "station/ac_dc_converter_station/2/pgrid": -0.9986766736201468,
+        "station/ac_dc_converter_station/2/ppr_fr": -0.9999170031818495,
+        "station/ac_dc_converter_station/2/ptf_to": 0.9999170031818495,
+        "station/ac_dc_converter_station/2/qconv": -0.06527898067051635,
+        "station/ac_dc_converter_station/2/qgrid": 0.05636851513014398,
+        "station/ac_dc_converter_station/2/qpr_fr": 0.07106817125209873,
+        "station/ac_dc_converter_station/2/qtf_to": 0.03632544744777398,
+        "station/ac_dc_converter_station/2/vaconv": 0.2190602321325507,
+        "station/ac_dc_converter_station/2/vafilt": 0.08291898636756406,
+        "station/ac_dc_converter_station/2/vmconv": 1.0999999999272387,
+        "station/ac_dc_converter_station/2/vmfilt": 1.1003413362990382,
+        "station/ac_dc_converter_station/3/iconv": 0.9283875651004577,
+        "station/ac_dc_converter_station/3/pconv": 0.9999999999977337,
+        "station/ac_dc_converter_station/3/pdc": -0.9868955459257278,
+        "station/ac_dc_converter_station/3/pgrid": 1.001410238605942,
+        "station/ac_dc_converter_station/3/ppr_fr": 1.000086190344837,
+        "station/ac_dc_converter_station/3/ptf_to": -1.000086190344837,
+        "station/ac_dc_converter_station/3/qconv": -0.2071307971926052,
+        "station/ac_dc_converter_station/3/qgrid": -0.06995827212459836,
+        "station/ac_dc_converter_station/3/qpr_fr": -0.06553729497128184,
+        "station/ac_dc_converter_station/3/qtf_to": 0.16890881217118187,
+        "station/ac_dc_converter_station/3/vaconv": -0.17363934241020235,
+        "station/ac_dc_converter_station/3/vafilt": -0.0348348247862535,
+        "station/ac_dc_converter_station/3/vmconv": 1.0999999826957263,
+        "station/ac_dc_converter_station/3/vmfilt": 1.0795397428389264,
+        "va[1]": 0.048909628178812004,
+        "va[2]": -0.013254598384485783,
+        "va[3]": -0.009776889921612242,
+        "va[4]": -4.638058083216162e-39,
+        "va[5]": 0.06273401261924354,
+        "vm[1]": 1.077226792214739,
+        "vm[2]": 1.0847966484607143,
+        "vm[3]": 1.0999999971547032,
+        "vm[4]": 1.063538773011302,
+        "vm[5]": 1.068471478731433
+      },
+      "iterations": 19,
+      "model_fingerprint": "sha256:3aceda75d3365ff56b82a37070ca37426bba3c69a970a33fa4c0ff0b55966266",
+      "point": {
+        "ac_branch/1-2/pf": 2.537150574399893,
+        "ac_branch/1-2/pt": -2.5210423755789724,
+        "ac_branch/1-2/qf": -0.4677133784459801,
+        "ac_branch/1-2/qt": 0.6204749299046222,
+        "ac_branch/1-4/pf": 1.876745381102575,
+        "ac_branch/1-4/pt": -1.8672109949212337,
+        "ac_branch/1-4/qf": 0.3386109457609017,
+        "ac_branch/1-4/qt": -0.25080622517438694,
+        "ac_branch/1-5/pf": -2.3138959555239222,
+        "ac_branch/1-5/pt": 2.3184847722610895,
+        "ac_branch/1-5/qf": 1.7041024325442442,
+        "ac_branch/1-5/qt": -1.6941952889632428,
+        "ac_branch/2-3/pf": -0.5315723624280918,
+        "ac_branch/2-3/pt": 0.5338236809526785,
+        "ac_branch/2-3/qf": -1.4841588282097449,
+        "ac_branch/2-3/qt": 1.4845703957810714,
+        "ac_branch/3-4/pf": -0.2474048555776637,
+        "ac_branch/3-4/pt": 0.25220949327180064,
+        "ac_branch/3-4/qf": 1.3729610855851366,
+        "ac_branch/3-4/qt": -1.3328042652485736,
+        "ac_branch/4-5/pf": -2.3849984982611474,
+        "ac_branch/4-5/pt": 2.3999835873657323,
+        "ac_branch/4-5/qf": 0.1333159060926729,
+        "ac_branch/4-5/qt": 0.008875830842757249,
+        "dc_branch/dc_equivalent_branch/1/pf": 0.31680439198771665,
+        "dc_branch/dc_equivalent_branch/1/pt": -0.3146112051158126,
+        "dc_branch/dc_equivalent_branch/2/pf": -0.6984416752659331,
+        "dc_branch/dc_equivalent_branch/2/pt": 0.7092507260112448,
+        "dc_branch/dc_equivalent_branch/3/pf": -0.2753194789440266,
+        "dc_branch/dc_equivalent_branch/3/pt": 0.2776448199193945,
+        "dc_bus/dc_equivalent_bus/1/vm": 1.0907872400326994,
+        "dc_bus/dc_equivalent_bus/2/vm": 1.083235891896803,
+        "dc_bus/dc_equivalent_bus/3/vm": 1.0999999999666676,
+        "pg[bus-1-2]": 1.6999999999870736,
+        "pg[bus-1]": 0.39999999999147245,
+        "pg[bus-3-2]": 2.2877421517493355,
+        "pg[bus-4-2]": 8.941992431636168e-11,
+        "pg[bus-5]": 5.719878598234138,
+        "qg[bus-1-2]": 1.274999999929583,
+        "qg[bus-1]": 0.2999999999295827,
+        "qg[bus-3-2]": 3.8999999997608006,
+        "qg[bus-4-2]": -0.13559458433028773,
+        "qg[bus-5]": -1.7552777487084485,
+        "station/ac_dc_converter_station/1/iconv": 0.050448052917789137,
+        "station/ac_dc_converter_station/1/pconv": 0.052591853164690054,
+        "station/ac_dc_converter_station/1/pdc": -0.041484913043690085,
+        "station/ac_dc_converter_station/1/pgrid": 0.052614738007064114,
+        "station/ac_dc_converter_station/1/ppr_fr": 0.052592107665294374,
+        "station/ac_dc_converter_station/1/ptf_to": -0.052592107665294374,
+        "station/ac_dc_converter_station/1/qconv": -0.017707464326213722,
+        "station/ac_dc_converter_station/1/qgrid": -0.12241610169487732,
+        "station/ac_dc_converter_station/1/qpr_fr": -0.017289370733438236,
+        "station/ac_dc_converter_station/1/qtf_to": 0.12410734256980699,
+        "station/ac_dc_converter_station/1/vaconv": -0.0255222635311965,
+        "station/ac_dc_converter_station/1/vafilt": -0.018363420508238852,
+        "station/ac_dc_converter_station/1/vmconv": 1.099999999980924,
+        "station/ac_dc_converter_station/1/vmfilt": 1.0973883716763706,
+        "station/ac_dc_converter_station/2/iconv": 0.9110258249133585,
+        "station/ac_dc_converter_station/2/pconv": -0.9999999999912182,
+        "station/ac_dc_converter_station/2/pdc": 1.0130528803817458,
+        "station/ac_dc_converter_station/2/pgrid": -0.9986766736256791,
+        "station/ac_dc_converter_station/2/ppr_fr": -0.9999170031858523,
+        "station/ac_dc_converter_station/2/ptf_to": 0.9999170031858523,
+        "station/ac_dc_converter_station/2/qconv": -0.0652789771172676,
+        "station/ac_dc_converter_station/2/qgrid": 0.05636851839459259,
+        "station/ac_dc_converter_station/2/qpr_fr": 0.07106817473784632,
+        "station/ac_dc_converter_station/2/qtf_to": 0.03632544406900992,
+        "station/ac_dc_converter_station/2/vaconv": 0.21906023197077557,
+        "station/ac_dc_converter_station/2/vafilt": 0.08291898627599917,
+        "station/ac_dc_converter_station/2/vmconv": 1.099999999949858,
+        "station/ac_dc_converter_station/2/vmfilt": 1.1003413368471069,
+        "station/ac_dc_converter_station/3/iconv": 0.9283875636908837,
+        "station/ac_dc_converter_station/3/pconv": 0.9999999999984382,
+        "station/ac_dc_converter_station/3/pdc": -0.9868955459306393,
+        "station/ac_dc_converter_station/3/pgrid": 1.0014102386073167,
+        "station/ac_dc_converter_station/3/ppr_fr": 1.0000861903452798,
+        "station/ac_dc_converter_station/3/ptf_to": -1.0000861903452798,
+        "station/ac_dc_converter_station/3/qconv": -0.20713081473881312,
+        "station/ac_dc_converter_station/3/qgrid": -0.069958290587963,
+        "station/ac_dc_converter_station/3/qpr_fr": -0.0655373129474513,
+        "station/ac_dc_converter_station/3/qtf_to": 0.16890883070416976,
+        "station/ac_dc_converter_station/3/vaconv": -0.17363934112284563,
+        "station/ac_dc_converter_station/3/vafilt": -0.034834824572758966,
+        "station/ac_dc_converter_station/3/vmconv": 1.0999999882015785,
+        "station/ac_dc_converter_station/3/vmfilt": 1.079539745746402,
+        "va[1]": 0.04890962808937358,
+        "va[2]": -0.013254598354838752,
+        "va[3]": -0.009776889896513236,
+        "va[4]": -3.5264830524668625e-38,
+        "va[5]": 0.06273401250207067,
+        "vm[1]": 1.0772267931925523,
+        "vm[2]": 1.0847966493573593,
+        "vm[3]": 1.099999998041436,
+        "vm[4]": 1.063538774017904,
+        "vm[5]": 1.0684714797283017
+      },
+      "promoted_by": null,
+      "recovery_attempts": [],
+      "restoration_calls": 0,
+      "schema": "tellegen-experimental-acdc-opf-result-v1",
+      "solver": "pounce-0.15.0-feral",
+      "solver_constraint_violation": 2.220446049250313e-13,
+      "solver_kkt_error": 2.5062273772012566e-9,
+      "solver_options": "linear_solver feral\nhessian_approximation exact\nnlp_scaling_method none\nlinear_system_scaling none\ntol 1e-8\nconstr_viol_tol 1e-8\nacceptable_tol 1e-7\nmax_iter 1000\nprint_level 0\nbound_relax_factor 0\n",
+      "solver_status": "Solve_Succeeded",
+      "start": {
+        "kind": "point",
+        "model_fingerprint": "sha256:3aceda75d3365ff56b82a37070ca37426bba3c69a970a33fa4c0ff0b55966266",
+        "values": {
+          "ac_branch/1-2/pf": 2.537150574592271,
+          "ac_branch/1-2/pt": -2.5210423757336846,
+          "ac_branch/1-2/qf": -0.4677133811376237,
+          "ac_branch/1-2/qt": 0.6204749329873515,
+          "ac_branch/1-4/pf": 1.876745381118824,
+          "ac_branch/1-4/pt": -1.8672109949188327,
+          "ac_branch/1-4/qf": 0.33861094642728234,
+          "ac_branch/1-4/qt": -0.25080622564028915,
+          "ac_branch/1-5/pf": -2.313895955742227,
+          "ac_branch/1-5/pt": 2.3184847724919466,
+          "ac_branch/1-5/qf": 1.7041024345059725,
+          "ac_branch/1-5/qt": -1.6941952907331668,
+          "ac_branch/2-3/pf": -0.5315723622780233,
+          "ac_branch/2-3/pt": 0.5338236808055025,
+          "ac_branch/2-3/qf": -1.4841588279394902,
+          "ac_branch/2-3/qt": 1.4845703955758307,
+          "ac_branch/3-4/pf": -0.24740485555582825,
+          "ac_branch/3-4/pt": 0.25220949328036363,
+          "ac_branch/3-4/qf": 1.3729610889469197,
+          "ac_branch/3-4/qt": -1.33280426829258,
+          "ac_branch/4-5/pf": -2.3849984982317713,
+          "ac_branch/4-5/pt": 2.399983587364322,
+          "ac_branch/4-5/qf": 0.13331590605518687,
+          "ac_branch/4-5/qt": 0.008875831174290213,
+          "dc_branch/dc_equivalent_branch/1/pf": 0.31680439198759736,
+          "dc_branch/dc_equivalent_branch/1/pt": -0.31461120511562873,
+          "dc_branch/dc_equivalent_branch/2/pf": -0.6984416752628221,
+          "dc_branch/dc_equivalent_branch/2/pt": 0.7092507260083487,
+          "dc_branch/dc_equivalent_branch/3/pf": -0.275319478941978,
+          "dc_branch/dc_equivalent_branch/3/pt": 0.27764481991737916,
+          "dc_bus/dc_equivalent_bus/1/vm": 1.0907872400176037,
+          "dc_bus/dc_equivalent_bus/2/vm": 1.0832358918816056,
+          "dc_bus/dc_equivalent_bus/3/vm": 1.099999999951631,
+          "pg[bus-1-2]": 1.6999999999812423,
+          "pg[bus-1]": 0.39999999998762553,
+          "pg[bus-3-2]": 2.2877421516295273,
+          "pg[bus-4-2]": 1.2975929423850625e-10,
+          "pg[bus-5]": 5.71987859846221,
+          "qg[bus-1-2]": 1.2749999998978157,
+          "qg[bus-1]": 0.29999999989781573,
+          "qg[bus-3-2]": 3.8999999996528945,
+          "qg[bus-4-2]": -0.13559458787768247,
+          "qg[bus-5]": -1.755277731683475,
+          "station/ac_dc_converter_station/1/iconv": 0.05044805395218088,
+          "station/ac_dc_converter_station/1/pconv": 0.05259185316823906,
+          "station/ac_dc_converter_station/1/pdc": -0.041484913045619354,
+          "station/ac_dc_converter_station/1/pgrid": 0.052614738011707914,
+          "station/ac_dc_converter_station/1/ppr_fr": 0.05259210766885381,
+          "station/ac_dc_converter_station/1/ptf_to": -0.05259210766885381,
+          "station/ac_dc_converter_station/1/qconv": -0.01770746788244534,
+          "station/ac_dc_converter_station/1/qgrid": -0.12241610504786117,
+          "station/ac_dc_converter_station/1/qpr_fr": -0.017289374272526466,
+          "station/ac_dc_converter_station/1/qtf_to": 0.12410734600382568,
+          "station/ac_dc_converter_station/1/vaconv": -0.025522263576595528,
+          "station/ac_dc_converter_station/1/vafilt": -0.018363420549283395,
+          "station/ac_dc_converter_station/1/vmconv": 1.099999999972319,
+          "station/ac_dc_converter_station/1/vmfilt": 1.0973883711366585,
+          "station/ac_dc_converter_station/2/iconv": 0.9110258251388748,
+          "station/ac_dc_converter_station/2/pconv": -0.9999999999872565,
+          "station/ac_dc_converter_station/2/pdc": 1.0130528803784509,
+          "station/ac_dc_converter_station/2/pgrid": -0.9986766736201468,
+          "station/ac_dc_converter_station/2/ppr_fr": -0.9999170031818495,
+          "station/ac_dc_converter_station/2/ptf_to": 0.9999170031818495,
+          "station/ac_dc_converter_station/2/qconv": -0.06527898067051635,
+          "station/ac_dc_converter_station/2/qgrid": 0.05636851513014398,
+          "station/ac_dc_converter_station/2/qpr_fr": 0.07106817125209873,
+          "station/ac_dc_converter_station/2/qtf_to": 0.03632544744777398,
+          "station/ac_dc_converter_station/2/vaconv": 0.2190602321325507,
+          "station/ac_dc_converter_station/2/vafilt": 0.08291898636756406,
+          "station/ac_dc_converter_station/2/vmconv": 1.0999999999272387,
+          "station/ac_dc_converter_station/2/vmfilt": 1.1003413362990382,
+          "station/ac_dc_converter_station/3/iconv": 0.9283875651004577,
+          "station/ac_dc_converter_station/3/pconv": 0.9999999999977337,
+          "station/ac_dc_converter_station/3/pdc": -0.9868955459257278,
+          "station/ac_dc_converter_station/3/pgrid": 1.001410238605942,
+          "station/ac_dc_converter_station/3/ppr_fr": 1.000086190344837,
+          "station/ac_dc_converter_station/3/ptf_to": -1.000086190344837,
+          "station/ac_dc_converter_station/3/qconv": -0.2071307971926052,
+          "station/ac_dc_converter_station/3/qgrid": -0.06995827212459836,
+          "station/ac_dc_converter_station/3/qpr_fr": -0.06553729497128184,
+          "station/ac_dc_converter_station/3/qtf_to": 0.16890881217118187,
+          "station/ac_dc_converter_station/3/vaconv": -0.17363934241020235,
+          "station/ac_dc_converter_station/3/vafilt": -0.0348348247862535,
+          "station/ac_dc_converter_station/3/vmconv": 1.0999999826957263,
+          "station/ac_dc_converter_station/3/vmfilt": 1.0795397428389264,
+          "va[1]": 0.048909628178812004,
+          "va[2]": -0.013254598384485783,
+          "va[3]": -0.009776889921612242,
+          "va[4]": -4.638058083216162e-39,
+          "va[5]": 0.06273401261924354,
+          "vm[1]": 1.077226792214739,
+          "vm[2]": 1.0847966484607143,
+          "vm[3]": 1.0999999971547032,
+          "vm[4]": 1.063538773011302,
+          "vm[5]": 1.068471478731433
+        }
+      },
+      "termination": "locally_solved",
+      "validation": {
+        "bounds": [
+          {
+            "lower": 0.9,
+            "name": "vm[1]",
+            "upper": 1.1,
+            "value": 1.0772267931925523,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.9,
+            "name": "vm[2]",
+            "upper": 1.1,
+            "value": 1.0847966493573593,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.9,
+            "name": "vm[3]",
+            "upper": 1.1,
+            "value": 1.099999998041436,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.9,
+            "name": "vm[4]",
+            "upper": 1.1,
+            "value": 1.063538774017904,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.9,
+            "name": "vm[5]",
+            "upper": 1.1,
+            "value": 1.0684714797283017,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "pg[bus-1]",
+            "upper": 0.4,
+            "value": 0.39999999999147245,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "pg[bus-1-2]",
+            "upper": 1.7,
+            "value": 1.6999999999870736,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "pg[bus-3-2]",
+            "upper": 5.2,
+            "value": 2.2877421517493355,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "pg[bus-4-2]",
+            "upper": 2.0,
+            "value": 8.941992431636168e-11,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "pg[bus-5]",
+            "upper": 6.0,
+            "value": 5.719878598234138,
+            "violation": 0.0
+          },
+          {
+            "lower": -0.3,
+            "name": "qg[bus-1]",
+            "upper": 0.3,
+            "value": 0.2999999999295827,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.2750000000000001,
+            "name": "qg[bus-1-2]",
+            "upper": 1.2750000000000001,
+            "value": 1.274999999929583,
+            "violation": 0.0
+          },
+          {
+            "lower": -3.9,
+            "name": "qg[bus-3-2]",
+            "upper": 3.9,
+            "value": 3.8999999997608006,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.5,
+            "name": "qg[bus-4-2]",
+            "upper": 1.5,
+            "value": -0.13559458433028773,
+            "violation": 0.0
+          },
+          {
+            "lower": -4.5,
+            "name": "qg[bus-5]",
+            "upper": 4.5,
+            "value": -1.7552777487084485,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.9,
+            "name": "dc_bus/dc_equivalent_bus/1/vm",
+            "upper": 1.1,
+            "value": 1.0907872400326994,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.9,
+            "name": "dc_bus/dc_equivalent_bus/2/vm",
+            "upper": 1.1,
+            "value": 1.083235891896803,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.9,
+            "name": "dc_bus/dc_equivalent_bus/3/vm",
+            "upper": 1.1,
+            "value": 1.0999999999666676,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "dc_branch/dc_equivalent_branch/1/pf",
+            "upper": 1.0,
+            "value": 0.31680439198771665,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "dc_branch/dc_equivalent_branch/1/pt",
+            "upper": 1.0,
+            "value": -0.3146112051158126,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "dc_branch/dc_equivalent_branch/2/pf",
+            "upper": 1.0,
+            "value": -0.6984416752659331,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "dc_branch/dc_equivalent_branch/2/pt",
+            "upper": 1.0,
+            "value": 0.7092507260112448,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "dc_branch/dc_equivalent_branch/3/pf",
+            "upper": 1.0,
+            "value": -0.2753194789440266,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "dc_branch/dc_equivalent_branch/3/pt",
+            "upper": 1.0,
+            "value": 0.2776448199193945,
+            "violation": 0.0
+          },
+          {
+            "lower": -2.0,
+            "name": "station/ac_dc_converter_station/1/pgrid",
+            "upper": 2.0,
+            "value": 0.052614738007064114,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "station/ac_dc_converter_station/1/qgrid",
+            "upper": 1.0,
+            "value": -0.12241610169487732,
+            "violation": 0.0
+          },
+          {
+            "lower": -2.0,
+            "name": "station/ac_dc_converter_station/1/ptf_to",
+            "upper": 2.0,
+            "value": -0.052592107665294374,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "station/ac_dc_converter_station/1/qtf_to",
+            "upper": 1.0,
+            "value": 0.12410734256980699,
+            "violation": 0.0
+          },
+          {
+            "lower": -2.0,
+            "name": "station/ac_dc_converter_station/1/ppr_fr",
+            "upper": 2.0,
+            "value": 0.052592107665294374,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "station/ac_dc_converter_station/1/qpr_fr",
+            "upper": 1.0,
+            "value": -0.017289370733438236,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "station/ac_dc_converter_station/1/pconv",
+            "upper": 1.0,
+            "value": 0.052591853164690054,
+            "violation": 0.0
+          },
+          {
+            "lower": -0.5,
+            "name": "station/ac_dc_converter_station/1/qconv",
+            "upper": 0.5,
+            "value": -0.017707464326213722,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.2,
+            "name": "station/ac_dc_converter_station/1/pdc",
+            "upper": 1.2,
+            "value": -0.041484913043690085,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/1/iconv",
+            "upper": 1.118033988749895,
+            "value": 0.050448052917789137,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.75,
+            "name": "station/ac_dc_converter_station/1/vmfilt",
+            "upper": 1.32,
+            "value": 1.0973883716763706,
+            "violation": 0.0
+          },
+          {
+            "lower": -6.283185307179586,
+            "name": "station/ac_dc_converter_station/1/vafilt",
+            "upper": 6.283185307179586,
+            "value": -0.018363420508238852,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.9,
+            "name": "station/ac_dc_converter_station/1/vmconv",
+            "upper": 1.1,
+            "value": 1.099999999980924,
+            "violation": 0.0
+          },
+          {
+            "lower": -6.283185307179586,
+            "name": "station/ac_dc_converter_station/1/vaconv",
+            "upper": 6.283185307179586,
+            "value": -0.0255222635311965,
+            "violation": 0.0
+          },
+          {
+            "lower": -2.0,
+            "name": "station/ac_dc_converter_station/2/pgrid",
+            "upper": 2.0,
+            "value": -0.9986766736256791,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "station/ac_dc_converter_station/2/qgrid",
+            "upper": 1.0,
+            "value": 0.05636851839459259,
+            "violation": 0.0
+          },
+          {
+            "lower": -2.0,
+            "name": "station/ac_dc_converter_station/2/ptf_to",
+            "upper": 2.0,
+            "value": 0.9999170031858523,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "station/ac_dc_converter_station/2/qtf_to",
+            "upper": 1.0,
+            "value": 0.03632544406900992,
+            "violation": 0.0
+          },
+          {
+            "lower": -2.0,
+            "name": "station/ac_dc_converter_station/2/ppr_fr",
+            "upper": 2.0,
+            "value": -0.9999170031858523,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "station/ac_dc_converter_station/2/qpr_fr",
+            "upper": 1.0,
+            "value": 0.07106817473784632,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "station/ac_dc_converter_station/2/pconv",
+            "upper": 1.0,
+            "value": -0.9999999999912182,
+            "violation": 0.0
+          },
+          {
+            "lower": -0.5,
+            "name": "station/ac_dc_converter_station/2/qconv",
+            "upper": 0.5,
+            "value": -0.0652789771172676,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.2,
+            "name": "station/ac_dc_converter_station/2/pdc",
+            "upper": 1.2,
+            "value": 1.0130528803817458,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/2/iconv",
+            "upper": 1.118033988749895,
+            "value": 0.9110258249133585,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.75,
+            "name": "station/ac_dc_converter_station/2/vmfilt",
+            "upper": 1.32,
+            "value": 1.1003413368471069,
+            "violation": 0.0
+          },
+          {
+            "lower": -6.283185307179586,
+            "name": "station/ac_dc_converter_station/2/vafilt",
+            "upper": 6.283185307179586,
+            "value": 0.08291898627599917,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.9,
+            "name": "station/ac_dc_converter_station/2/vmconv",
+            "upper": 1.1,
+            "value": 1.099999999949858,
+            "violation": 0.0
+          },
+          {
+            "lower": -6.283185307179586,
+            "name": "station/ac_dc_converter_station/2/vaconv",
+            "upper": 6.283185307179586,
+            "value": 0.21906023197077557,
+            "violation": 0.0
+          },
+          {
+            "lower": -2.0,
+            "name": "station/ac_dc_converter_station/3/pgrid",
+            "upper": 2.0,
+            "value": 1.0014102386073167,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "station/ac_dc_converter_station/3/qgrid",
+            "upper": 1.0,
+            "value": -0.069958290587963,
+            "violation": 0.0
+          },
+          {
+            "lower": -2.0,
+            "name": "station/ac_dc_converter_station/3/ptf_to",
+            "upper": 2.0,
+            "value": -1.0000861903452798,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "station/ac_dc_converter_station/3/qtf_to",
+            "upper": 1.0,
+            "value": 0.16890883070416976,
+            "violation": 0.0
+          },
+          {
+            "lower": -2.0,
+            "name": "station/ac_dc_converter_station/3/ppr_fr",
+            "upper": 2.0,
+            "value": 1.0000861903452798,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "station/ac_dc_converter_station/3/qpr_fr",
+            "upper": 1.0,
+            "value": -0.0655373129474513,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.0,
+            "name": "station/ac_dc_converter_station/3/pconv",
+            "upper": 1.0,
+            "value": 0.9999999999984382,
+            "violation": 0.0
+          },
+          {
+            "lower": -0.5,
+            "name": "station/ac_dc_converter_station/3/qconv",
+            "upper": 0.5,
+            "value": -0.20713081473881312,
+            "violation": 0.0
+          },
+          {
+            "lower": -1.2,
+            "name": "station/ac_dc_converter_station/3/pdc",
+            "upper": 1.2,
+            "value": -0.9868955459306393,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/3/iconv",
+            "upper": 1.118033988749895,
+            "value": 0.9283875636908837,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.75,
+            "name": "station/ac_dc_converter_station/3/vmfilt",
+            "upper": 1.32,
+            "value": 1.079539745746402,
+            "violation": 0.0
+          },
+          {
+            "lower": -6.283185307179586,
+            "name": "station/ac_dc_converter_station/3/vafilt",
+            "upper": 6.283185307179586,
+            "value": -0.034834824572758966,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.9,
+            "name": "station/ac_dc_converter_station/3/vmconv",
+            "upper": 1.1,
+            "value": 1.0999999882015785,
+            "violation": 0.0
+          },
+          {
+            "lower": -6.283185307179586,
+            "name": "station/ac_dc_converter_station/3/vaconv",
+            "upper": 6.283185307179586,
+            "value": -0.17363934112284563,
+            "violation": 0.0
+          }
+        ],
+        "equations": [
+          {
+            "lower": 0.0,
+            "name": "p_balance[1]",
+            "upper": 0.0,
+            "value": 4.884981308350689e-15,
+            "violation": 4.884981308350689e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "p_balance[2]",
+            "upper": 0.0,
+            "value": 3.95516952522712e-16,
+            "violation": 3.95516952522712e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "p_balance[3]",
+            "upper": 0.0,
+            "value": 1.2212453270876722e-15,
+            "violation": 1.2212453270876722e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "p_balance[4]",
+            "upper": 0.0,
+            "value": 1.3322676295501878e-15,
+            "violation": 1.3322676295501878e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "p_balance[5]",
+            "upper": 0.0,
+            "value": -6.8833827526759706e-15,
+            "violation": 6.8833827526759706e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "q_balance[1]",
+            "upper": 0.0,
+            "value": 5.395683899678261e-14,
+            "violation": 5.395683899678261e-14
+          },
+          {
+            "lower": 0.0,
+            "name": "q_balance[2]",
+            "upper": 0.0,
+            "value": 7.16093850883226e-15,
+            "violation": 7.16093850883226e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "q_balance[3]",
+            "upper": 0.0,
+            "value": 1.2628786905111156e-14,
+            "violation": 1.2628786905111156e-14
+          },
+          {
+            "lower": 0.0,
+            "name": "q_balance[4]",
+            "upper": 0.0,
+            "value": 5.662137425588298e-15,
+            "violation": 5.662137425588298e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "q_balance[5]",
+            "upper": 0.0,
+            "value": -7.492617637439025e-14,
+            "violation": 7.492617637439025e-14
+          },
+          {
+            "lower": 0.0,
+            "name": "reference_angle[4]",
+            "upper": 0.0,
+            "value": -3.5264830524668625e-38,
+            "violation": 3.5264830524668625e-38
+          },
+          {
+            "lower": -0.5235987755982988,
+            "name": "angle_difference[1-2]",
+            "upper": 0.5235987755982988,
+            "value": 0.06216422644421234,
+            "violation": 0.0
+          },
+          {
+            "lower": -0.5235987755982988,
+            "name": "angle_difference[1-4]",
+            "upper": 0.5235987755982988,
+            "value": 0.04890962808937358,
+            "violation": 0.0
+          },
+          {
+            "lower": -0.5235987755982988,
+            "name": "angle_difference[1-5]",
+            "upper": 0.5235987755982988,
+            "value": -0.013824384412697087,
+            "violation": 0.0
+          },
+          {
+            "lower": -0.5235987755982988,
+            "name": "angle_difference[2-3]",
+            "upper": 0.5235987755982988,
+            "value": -0.003477708458325516,
+            "violation": 0.0
+          },
+          {
+            "lower": -0.5235987755982988,
+            "name": "angle_difference[3-4]",
+            "upper": 0.5235987755982988,
+            "value": -0.009776889896513236,
+            "violation": 0.0
+          },
+          {
+            "lower": -0.5235987755982988,
+            "name": "angle_difference[4-5]",
+            "upper": 0.5235987755982988,
+            "value": -0.06273401250207067,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "thermal_from[1-2]",
+            "upper": 1e+19,
+            "value": 9.344111158444937,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "thermal_to[1-2]",
+            "upper": 1e+19,
+            "value": 9.259356201894983,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "thermal_from[1-4]",
+            "upper": 1e+19,
+            "value": 14.510769401921072,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "thermal_to[1-4]",
+            "upper": 1e+19,
+            "value": 14.598219337859033,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "thermal_from[1-5]",
+            "upper": 1e+19,
+            "value": 9.889520406406916,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "thermal_to[1-5]",
+            "upper": 1e+19,
+            "value": 9.901930683648416,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "thermal_from[2-3]",
+            "upper": 1e+19,
+            "value": 15.662303396149655,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "thermal_to[2-3]",
+            "upper": 1e+19,
+            "value": 15.658683017624545,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "thermal_from[3-4]",
+            "upper": 1e+19,
+            "value": 16.201368694905526,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "thermal_to[3-4]",
+            "upper": 1e+19,
+            "value": 16.30762316203876,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "thermal_from[4-5]",
+            "upper": 1e+19,
+            "value": 0.05400903247476084,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "thermal_to[4-5]",
+            "upper": 1e+19,
+            "value": 1.961307879343524e-12,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/1-2/pf",
+            "upper": 0.0,
+            "value": 8.881784197001252e-16,
+            "violation": 8.881784197001252e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/1-2/qf",
+            "upper": 0.0,
+            "value": 8.659739592076221e-15,
+            "violation": 8.659739592076221e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/1-2/pt",
+            "upper": 0.0,
+            "value": -8.881784197001252e-16,
+            "violation": 8.881784197001252e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/1-2/qt",
+            "upper": 0.0,
+            "value": -5.329070518200751e-15,
+            "violation": 5.329070518200751e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/1-4/pf",
+            "upper": 0.0,
+            "value": 1.7763568394002505e-15,
+            "violation": 1.7763568394002505e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/1-4/qf",
+            "upper": 0.0,
+            "value": 1.5376588891058418e-14,
+            "violation": 1.5376588891058418e-14
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/1-4/pt",
+            "upper": 0.0,
+            "value": -2.220446049250313e-16,
+            "violation": 2.220446049250313e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/1-4/qt",
+            "upper": 0.0,
+            "value": -5.051514762044462e-15,
+            "violation": 5.051514762044462e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/1-5/pf",
+            "upper": 0.0,
+            "value": 1.7763568394002505e-15,
+            "violation": 1.7763568394002505e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/1-5/qf",
+            "upper": 0.0,
+            "value": 3.019806626980426e-14,
+            "violation": 3.019806626980426e-14
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/1-5/pt",
+            "upper": 0.0,
+            "value": -6.661338147750939e-15,
+            "violation": 6.661338147750939e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/1-5/qt",
+            "upper": 0.0,
+            "value": -7.460698725481052e-14,
+            "violation": 7.460698725481052e-14
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/2-3/pf",
+            "upper": 0.0,
+            "value": 1.2212453270876722e-15,
+            "violation": 1.2212453270876722e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/2-3/qf",
+            "upper": 0.0,
+            "value": 1.2434497875801753e-14,
+            "violation": 1.2434497875801753e-14
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/2-3/pt",
+            "upper": 0.0,
+            "value": -1.1102230246251565e-16,
+            "violation": 1.1102230246251565e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/2-3/qt",
+            "upper": 0.0,
+            "value": -5.329070518200751e-15,
+            "violation": 5.329070518200751e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/3-4/pf",
+            "upper": 0.0,
+            "value": 1.5265566588595902e-15,
+            "violation": 1.5265566588595902e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/3-4/qf",
+            "upper": 0.0,
+            "value": 1.7985612998927536e-14,
+            "violation": 1.7985612998927536e-14
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/3-4/pt",
+            "upper": 0.0,
+            "value": 9.992007221626409e-16,
+            "violation": 9.992007221626409e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/3-4/qt",
+            "upper": 0.0,
+            "value": 1.0658141036401503e-14,
+            "violation": 1.0658141036401503e-14
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/4-5/pf",
+            "upper": 0.0,
+            "value": 0.0,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/4-5/qf",
+            "upper": 0.0,
+            "value": 5.551115123125783e-17,
+            "violation": 5.551115123125783e-17
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/4-5/pt",
+            "upper": 0.0,
+            "value": 0.0,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "ac_branch/4-5/qt",
+            "upper": 0.0,
+            "value": -3.1051550219984847e-16,
+            "violation": 3.1051550219984847e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "dc_branch/dc_equivalent_branch/1/pf",
+            "upper": 0.0,
+            "value": 4.218847493575595e-15,
+            "violation": 4.218847493575595e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "dc_branch/dc_equivalent_branch/1/pt",
+            "upper": 0.0,
+            "value": -4.218847493575595e-15,
+            "violation": 4.218847493575595e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "dc_branch/dc_equivalent_branch/2/pf",
+            "upper": 0.0,
+            "value": -2.886579864025407e-15,
+            "violation": 2.886579864025407e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "dc_branch/dc_equivalent_branch/2/pt",
+            "upper": 0.0,
+            "value": 2.9976021664879227e-15,
+            "violation": 2.9976021664879227e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "dc_branch/dc_equivalent_branch/3/pf",
+            "upper": 0.0,
+            "value": 8.881784197001252e-16,
+            "violation": 8.881784197001252e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "dc_branch/dc_equivalent_branch/3/pt",
+            "upper": 0.0,
+            "value": -9.43689570931383e-16,
+            "violation": 9.43689570931383e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/1/transformer/pf",
+            "upper": 0.0,
+            "value": -2.0816681711721685e-17,
+            "violation": 2.0816681711721685e-17
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/1/transformer/qf",
+            "upper": 0.0,
+            "value": -7.355227538141662e-16,
+            "violation": 7.355227538141662e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/1/transformer/pt",
+            "upper": 0.0,
+            "value": -1.3877787807814457e-17,
+            "violation": 1.3877787807814457e-17
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/1/transformer/qt",
+            "upper": 0.0,
+            "value": 5.134781488891349e-16,
+            "violation": 5.134781488891349e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/1/reactor/pf",
+            "upper": 0.0,
+            "value": -2.0816681711721685e-17,
+            "violation": 2.0816681711721685e-17
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/1/reactor/qf",
+            "upper": 0.0,
+            "value": 6.661338147750939e-16,
+            "violation": 6.661338147750939e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/1/reactor/pt",
+            "upper": 0.0,
+            "value": 2.0816681711721685e-17,
+            "violation": 2.0816681711721685e-17
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/1/reactor/qt",
+            "upper": 0.0,
+            "value": -2.949029909160572e-16,
+            "violation": 2.949029909160572e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/1/filter_p",
+            "upper": 0.0,
+            "value": 0.0,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/1/filter_q",
+            "upper": 0.0,
+            "value": -2.7755575615628914e-17,
+            "violation": 2.7755575615628914e-17
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/1/current",
+            "upper": 0.0,
+            "value": 3.3393426912553537e-17,
+            "violation": 3.3393426912553537e-17
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/1/loss",
+            "upper": 0.0,
+            "value": 1.734723475976807e-18,
+            "violation": 1.734723475976807e-18
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/2/transformer/pf",
+            "upper": 0.0,
+            "value": 2.220446049250313e-16,
+            "violation": 2.220446049250313e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/2/transformer/qf",
+            "upper": 0.0,
+            "value": -1.7208456881689926e-15,
+            "violation": 1.7208456881689926e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/2/transformer/pt",
+            "upper": 0.0,
+            "value": -2.220446049250313e-16,
+            "violation": 2.220446049250313e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/2/transformer/qt",
+            "upper": 0.0,
+            "value": -2.0539125955565396e-15,
+            "violation": 2.0539125955565396e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/2/reactor/pf",
+            "upper": 0.0,
+            "value": 2.220446049250313e-16,
+            "violation": 2.220446049250313e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/2/reactor/qf",
+            "upper": 0.0,
+            "value": 2.2343238370581275e-15,
+            "violation": 2.2343238370581275e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/2/reactor/pt",
+            "upper": 0.0,
+            "value": -2.220446049250313e-16,
+            "violation": 2.220446049250313e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/2/reactor/qt",
+            "upper": 0.0,
+            "value": 1.2073675392798577e-15,
+            "violation": 1.2073675392798577e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/2/filter_p",
+            "upper": 0.0,
+            "value": 0.0,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/2/filter_q",
+            "upper": 0.0,
+            "value": 1.3877787807814457e-17,
+            "violation": 1.3877787807814457e-17
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/2/current",
+            "upper": 0.0,
+            "value": 0.0,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/2/loss",
+            "upper": 0.0,
+            "value": 4.683753385137379e-17,
+            "violation": 4.683753385137379e-17
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/3/transformer/pf",
+            "upper": 0.0,
+            "value": 4.440892098500626e-16,
+            "violation": 4.440892098500626e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/3/transformer/qf",
+            "upper": 0.0,
+            "value": 1.0547118733938987e-15,
+            "violation": 1.0547118733938987e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/3/transformer/pt",
+            "upper": 0.0,
+            "value": -2.220446049250313e-16,
+            "violation": 2.220446049250313e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/3/transformer/qt",
+            "upper": 0.0,
+            "value": -5.828670879282072e-16,
+            "violation": 5.828670879282072e-16
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/3/reactor/pf",
+            "upper": 0.0,
+            "value": 2.6645352591003757e-15,
+            "violation": 2.6645352591003757e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/3/reactor/qf",
+            "upper": 0.0,
+            "value": 2.6645352591003757e-15,
+            "violation": 2.6645352591003757e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/3/reactor/pt",
+            "upper": 0.0,
+            "value": -2.7755575615628914e-15,
+            "violation": 2.7755575615628914e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/3/reactor/qt",
+            "upper": 0.0,
+            "value": -6.938893903907228e-15,
+            "violation": 6.938893903907228e-15
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/3/filter_p",
+            "upper": 0.0,
+            "value": 0.0,
+            "violation": 0.0
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/3/filter_q",
+            "upper": 0.0,
+            "value": -2.7755575615628914e-17,
+            "violation": 2.7755575615628914e-17
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/3/current",
+            "upper": 0.0,
+            "value": 2.930988785010413e-14,
+            "violation": 2.930988785010413e-14
+          },
+          {
+            "lower": 0.0,
+            "name": "station/ac_dc_converter_station/3/loss",
+            "upper": 0.0,
+            "value": -6.938893903907228e-18,
+            "violation": 6.938893903907228e-18
+          },
+          {
+            "lower": 0.0,
+            "name": "dc_bus/dc_equivalent_bus/1/balance",
+            "upper": 0.0,
+            "value": -2.0816681711721685e-17,
+            "violation": 2.0816681711721685e-17
+          },
+          {
+            "lower": 0.0,
+            "name": "dc_bus/dc_equivalent_bus/2/balance",
+            "upper": 0.0,
+            "value": 5.551115123125783e-17,
+            "violation": 5.551115123125783e-17
+          },
+          {
+            "lower": 0.0,
+            "name": "dc_bus/dc_equivalent_bus/3/balance",
+            "upper": 0.0,
+            "value": 0.0,
+            "violation": 0.0
+          }
+        ],
+        "max_violation": 7.492617637439025e-14,
+        "mode": "opf",
+        "objective": 15693.105053808496,
+        "profile": "powermodelsacdc-9ada4082-acp-source-coordinates-inverter-loss",
+        "station_policy": [
+          {
+            "component": "ac_dc_converter_station/1",
+            "converter_base_kv": 345.0,
+            "declared_current_limit_pu": 1.1,
+            "declared_inverter_quadratic_ohm": 2.885,
+            "declared_rectifier_quadratic_ohm": 2.885,
+            "effective_current_limit_pu": 1.118033988749895,
+            "loss_coefficients_pu": [
+              0.01103,
+              0.0014843759094817334,
+              0.0008079535111671218
+            ],
+            "pcc_base_kv": 230.0
+          },
+          {
+            "component": "ac_dc_converter_station/2",
+            "converter_base_kv": 345.0,
+            "declared_current_limit_pu": 1.1,
+            "declared_inverter_quadratic_ohm": 2.885,
+            "declared_rectifier_quadratic_ohm": 2.885,
+            "effective_current_limit_pu": 1.118033988749895,
+            "loss_coefficients_pu": [
+              0.01103,
+              0.0014843759094817334,
+              0.0008079535111671218
+            ],
+            "pcc_base_kv": 230.0
+          },
+          {
+            "component": "ac_dc_converter_station/3",
+            "converter_base_kv": 345.0,
+            "declared_current_limit_pu": 1.1,
+            "declared_inverter_quadratic_ohm": 2.885,
+            "declared_rectifier_quadratic_ohm": 2.885,
+            "effective_current_limit_pu": 1.118033988749895,
+            "loss_coefficients_pu": [
+              0.01103,
+              0.0014843759094817334,
+              0.0008079535111671218
+            ],
+            "pcc_base_kv": 230.0
+          }
+        ]
+      }
+    }
+  },
+  "spec": {
+    "profile": "power_models_ac_dc0101_acp_vsc_v1"
+  }
+}

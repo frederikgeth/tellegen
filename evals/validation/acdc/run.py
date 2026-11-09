@@ -33,9 +33,27 @@ with (out / "derivative-report.json").open("w") as report:
     subprocess.run(["cargo", "run", "-p", "tellegen", "--features", "acopf",
                     "--locked", "--example", "acdc_derivatives", "--", str(out)],
                    cwd=ROOT, stdout=report, check=True)
+with (out / "native-opf.json").open("w") as report:
+    subprocess.run(["cargo", "run", "-p", "tellegen", "--features", "acopf",
+                    "--locked", "--example", "acdc_opf", "--", str(out)],
+                   cwd=ROOT, stdout=report, check=True)
+with (out / "cross-check.log").open("w") as log:
+    subprocess.run(["julia", f"--project={HERE}", "--startup-file=no",
+                    str(HERE / "cross-check.jl"), str(out / "native-opf.json"),
+                    str(out / "cross-check.json"), str(out / "reference.json")], cwd=ROOT,
+                   stdout=log, stderr=subprocess.STDOUT, check=True)
 reports = json.loads((out / "native-report.json").read_text())
 summary = {mode: {"equations": len(r["equations"]), "bounds": len(r["bounds"]),
                   "max_violation": r["max_violation"], "objective": r["objective"]}
            for mode, r in reports.items()}
+native = json.loads((out / "native-opf.json").read_text())
+cross = json.loads((out / "cross-check.json").read_text())
+summary["native_opf"] = {
+    name: {"objective": r["validation"]["objective"], "iterations": r["iterations"],
+           "native_violation": r["validation"]["max_violation"],
+           "reference_violation": cross["solves"][name]["max_reference_violation"],
+           "oracle_objective_difference": cross["solves"][name]["oracle_objective_difference"]}
+    for name, r in native["solves"].items()
+}
 (out / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
 print(json.dumps(summary, indent=2))
