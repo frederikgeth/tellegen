@@ -29,6 +29,10 @@ with (out / "native-report.json").open("w") as report:
     subprocess.run(["cargo", "run", "-p", "tellegen", "--features", "acopf",
                     "--locked", "--example", "acdc_equations", "--", str(out)],
                    cwd=ROOT, stdout=report, check=True)
+with (out / "derivative-report.json").open("w") as report:
+    subprocess.run(["cargo", "run", "-p", "tellegen", "--features", "acopf",
+                    "--locked", "--example", "acdc_derivatives", "--", str(out)],
+                   cwd=ROOT, stdout=report, check=True)
 reports = json.loads((out / "native-report.json").read_text())
 summary = {mode: {"equations": len(r["equations"]), "bounds": len(r["bounds"]),
                   "max_violation": r["max_violation"], "objective": r["objective"]}

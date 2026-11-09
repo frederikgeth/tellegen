@@ -69,3 +69,35 @@ pub fn point(net: &BalancedNetwork, solution: &Value, map: &Value) -> BTreeMap<S
     }
     x
 }
+
+/// Two deterministic off-feasible points exercise nonzero internal angle and
+/// voltage differences. Keep voltage/current positive, without clipping to any
+/// operating bound; these points test calculus, not solver feasibility.
+#[allow(dead_code)] // Shared by the equation-only example as well.
+pub fn derivative_points(point: &BTreeMap<String, f64>) -> Vec<(String, BTreeMap<String, f64>)> {
+    let mut points = vec![("reference".into(), point.clone())];
+    for (name, sign) in [("perturbed_plus", 1.0), ("perturbed_minus", -1.0)] {
+        let changed = point
+            .iter()
+            .enumerate()
+            .map(|(i, (name, &value))| {
+                let delta = sign * 0.03 * ((i * 37 % 101) as f64 - 50.0) / 50.0;
+                let positive = name.starts_with("vm[")
+                    || name.ends_with("/vm")
+                    || name.ends_with("/vmfilt")
+                    || name.ends_with("/vmconv")
+                    || name.ends_with("/iconv");
+                (
+                    name.clone(),
+                    if positive {
+                        value * (1.0 + delta)
+                    } else {
+                        value + delta
+                    },
+                )
+            })
+            .collect();
+        points.push((name.into(), changed));
+    }
+    points
+}

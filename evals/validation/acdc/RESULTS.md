@@ -17,7 +17,7 @@ violations are below the 1e-7 gate. Full per-component rows are in
 [native-report.json](native-report.json), with independently solved values,
 starts, preprocessing snapshots and hashes in [reference.json](reference.json).
 
-Rust validation:
+Initial equation milestone (`0a9409dd`) Rust validation:
 
 - Full numerical features (`sensitivity,mc-pf,conic,acopf,mc-opf,schema`):
   743 passed, 7 ignored, no failures (including existing ignored/doc tests).
@@ -37,7 +37,46 @@ release before publication packaging. No new PR was opened, and the existing
 PRs remain draft.
 
 The benchmark establishes native equation feasibility at reference points.
-It does not establish native nonlinear convergence, derivative correctness,
+It does not establish native nonlinear convergence, derivative correctness outside the
+sampled points below,
 physical base-transformation correctness, or qualification of additional cases.
 Next work is tracked in [README.md](README.md) and
 [PowerIO #819](https://github.com/eigenergy/powerio/issues/819).
+
+## Derivative follow-up
+
+The native derivative example evaluates the same frozen independent PF/OPF
+solutions and two deterministic off-feasible perturbations of each. All six
+points pass at both finite-difference steps (`1e-5`, `3e-6`).
+
+| Point | Maximum scaled Jacobian error | Maximum scaled Hessian error |
+| --- | ---: | ---: |
+| PF reference | 5.151e-7 | 3.642e-9 |
+| PF perturbed plus | 5.965e-9 | 4.103e-9 |
+| PF perturbed minus | 1.351e-8 | 2.087e-9 |
+| OPF reference | 8.236e-8 | 4.363e-8 |
+| OPF perturbed plus | 6.225e-9 | 4.576e-8 |
+| OPF perturbed minus | 9.592e-8 | 8.674e-8 |
+
+Every dense entry is checked, including structural zeros. The worst Jacobian
+scaled error is in the disabled PF thermal row `thermal_from[1-5]`, with respect
+to `vm[1]`; it falls from 5.151e-7 to 4.636e-8 at the smaller step, consistent
+with central-difference truncation. The gate is 1e-6 scaled, not absolute: the
+largest absolute Jacobian/Hessian errors are separately retained in the report.
+The point reports contain 174 comparisons across all six points, with separate
+Hessian checks for physical equation families, the objective and the mixed
+Lagrangian. See [README.md](README.md#native-derivative-gate) for the full method.
+
+All five derivative-corruption controls are detected at both step sizes. A
+quadratic-cost mutation independently exercises nonzero objective curvature;
+case5's original objective is linear. The frozen reference suffices for ordinary
+regressions because neither source data nor native electrical equations changed.
+The updated integrated live harness was also rerun successfully at
+`/tmp/tacdc-derivative-live`; both equation and derivative reports reproduce.
+
+Follow-up validation: 747 full-feature engine tests passed (7 existing ignores),
+all 6 case5 integration tests pass with only the `acopf` feature, full-feature
+all-target clippy with warnings denied passes, and formatting is clean.
+The checked-in [derivative-report.json](derivative-report.json) records all 174
+comparisons; the objective-gradient maximum scaled error is 1.428e-10.
+This follow-up does not rerun JavaScript/browser/Python-wheel or packaging gates.

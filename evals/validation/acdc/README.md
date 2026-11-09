@@ -102,6 +102,7 @@ For ordinary regressions without Julia or network access:
 ```sh
 cargo test -p tellegen --features acopf --locked --test acdc_equations
 cargo run -p tellegen --features acopf --locked --example acdc_equations
+cargo run -p tellegen --features acopf --locked --example acdc_derivatives
 ```
 
 The threshold is `1e-7` for native constraint/bound violation and `1e-7`
@@ -116,12 +117,65 @@ susceptance, change tap or PF targets, add DC demand, substitute DC current,
 and bind a zero branch rating. Further tests cover malformed points, LCC/droop
 rejection, source immutability and continued legacy-consumer refusal.
 
+## Native derivative gate
+
+`ReferenceEquations::check_derivatives` is an exhaustive small-model diagnostic.
+It checks the objective gradient, the entire constraint Jacobian, and dense
+Lagrangian Hessians reconstructed from the backend's lower-triangular sparse
+coordinates. Entries absent from the sparse structure are checked as zeros;
+invalid, duplicate or nonfinite derivative coordinates/values fail.
+
+The six points are the independent PF and OPF reference solutions plus two
+reproducible off-feasible perturbations of each. In lexicographic native-name
+order, `delta = +/-0.03*((i*37 % 101)-50)/50`. Voltage magnitudes and AC current
+are multiplied by `1+delta`; all other variables receive an additive `delta`.
+No limit clipping or feasibility restoration is applied. Both perturbed points
+have material equation violations, so this also exercises derivatives away
+from a converged solution.
+
+Central differences use two relative steps, `1e-5` and `3e-6`, with column step
+`h=relative_step*max(1,abs(x[column]))`. Every check must satisfy
+`abs(analytic-finite)/max(1,abs(analytic),abs(finite)) <= 1e-6` at **both** steps.
+The report records absolute error separately; the scaled threshold is not an
+absolute derivative error bound.
+
+Hessians are compared with finite differences of the checked objective gradient
+and constraint Jacobian. Weights are deterministic, signed and nonuniform:
+`lambda[row]=(-1)^row*(1+(row*17 % 11))/11`. Separate checks use only one active
+equation family at a time: AC balances, AC branch observables, DC branches and
+balances, transformer, reactor, filter, valve current, converter losses, affine
+controls, and OPF thermal limits. A mixed Lagrangian uses all these weights and
+objective factor 0.7; an objective-only check uses factor 1. Inactive OPF rows
+have zero Hessian weight in PF. Their Jacobian entries are still checked:
+PF has 112 compiled expression rows, of which 94 are active; OPF has 98.
+This gives 28 comparison summaries per PF point and 30 per OPF point.
+
+The original case5 generation cost is linear. Its objective Hessian is checked
+to be zero, and a native-only quadratic-cost mutation supplies a nonzero
+objective Hessian (400 in the modified generator's pu-P coordinate). That
+mutation is not a separate PowerModelsACDC solve/parity claim.
+
+Negative controls corrupt actual case5 derivative arrays while retaining the
+function-value evaluator: dropped objective-gradient/Jacobian entries, a
+spurious Jacobian entry outside sparsity, a reversed valve-current Hessian
+cross term, and spurious objective curvature outside Hessian sparsity. Each
+must fail at both step sizes. This tests the validator's ability to detect
+incorrect derivatives, separately from the electrical equation mutations.
+
+[derivative-report.json](derivative-report.json) contains the six point reports,
+including dimensions, sparse counts, dense comparison counts and worst named
+entries. Maximum scaled errors are `5.150553040079598e-7` for Jacobians and
+`8.67399847885586e-8` for Hessians. These checks validate native calculus at the
+sampled points; they are not a native solver convergence result, global proof,
+or a comparison against a Julia automatic-differentiation implementation.
+
 ## Remaining model work
 
 1. Move the qualified profile/point semantics into PowerIO problem/preparation
    contracts; keep the reference policy distinct from native/directional models.
-2. Check Jacobians/Hessians against finite differences, then perform native
-   coupled OPF solves and reference cross-feasibility, limits and objective checks.
+2. Perform native coupled OPF solves and reference cross-feasibility, limits and
+   objective checks. The case5 derivative gate below is complete; extend it when
+   the model or preparation changes.
 3. Qualify bypassed components, unequal-base transformations, supply filtering,
    multiple AC islands, disabled equipment, direction-dependent losses, and
    further PF controls. Droop/LCC and zero-resistance DC links explicitly refuse

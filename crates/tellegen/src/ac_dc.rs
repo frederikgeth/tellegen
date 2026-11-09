@@ -5,7 +5,8 @@
 /// terminal solver below. Available only with the native `acopf` feature.
 #[cfg(feature = "acopf")]
 pub use crate::model::acopf::equivalent::{
-    EquationCheck, EquationMode, EquationReport, ReferenceEquations, StationPolicy,
+    DerivativeCheck, DerivativeReport, EquationCheck, EquationMode, EquationReport,
+    ReferenceEquations, StationPolicy,
 };
 
 use crate::{

@@ -114,3 +114,7 @@ required-features = ["schema"]
 [[example]]
 name = "acdc_equations"
 required-features = ["acopf"]
+
+[[example]]
+name = "acdc_derivatives"
+required-features = ["acopf"]

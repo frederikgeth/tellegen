@@ -1,6 +1,8 @@
 //! Full VSC station equations in the pinned PowerModelsACDC 0.10.1 coordinate
 //! convention. This is an equation qualification API, not a coupled solve API.
 use super::*;
+mod derivatives;
+pub use derivatives::{DerivativeCheck, DerivativeReport};
 use powerio::BalancedNetwork;
 use powerio_tx::acdc::{
     AcConverterControl, ConverterSeries, ConverterTechnology, DcConverterControl,
@@ -513,12 +515,11 @@ impl ReferenceEquations {
 
     /// Require exactly one finite value for every native variable; missing or
     /// extra entries are errors, never silently filled with model starts.
-    pub fn evaluate(&self, point: &BTreeMap<String, f64>) -> Result<EquationReport, String> {
+    fn point_values(&self, point: &BTreeMap<String, f64>) -> Result<Vec<f64>, String> {
         if point.len() != self.variable_names().len() {
             return Err("Point has a different variable count".into());
         }
-        let x = self
-            .variable_names()
+        self.variable_names()
             .iter()
             .map(|n| {
                 point
@@ -527,7 +528,12 @@ impl ReferenceEquations {
                     .filter(|v| v.is_finite())
                     .ok_or_else(|| format!("Missing/nonfinite variable {n}"))
             })
-            .collect::<Result<Vec<_>, _>>()?;
+            .collect()
+    }
+
+    /// Evaluate native equations and bounds at a complete finite operating point.
+    pub fn evaluate(&self, point: &BTreeMap<String, f64>) -> Result<EquationReport, String> {
+        let x = self.point_values(point)?;
         let problem = &self.model.problem;
         let mut nlp = self.model.tnlp()?;
         let mut g = vec![0.0; problem.m];

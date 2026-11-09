@@ -239,3 +239,60 @@ fn opf_dispatch_does_not_impose_pf_targets_and_loss_policy_is_explicit() {
     let bounded = mutated(&net, |e| e.branches[0].ratings_mw[0] = 0.0);
     check(&bounded, EquationMode::Opf, &x, "dc_branch/");
 }
+
+#[test]
+fn case5_sparse_derivatives_match_dense_finite_differences() {
+    let (net, oracle, map) = fixture();
+    for (label, mode) in [("pf", EquationMode::Pf), ("opf", EquationMode::Opf)] {
+        let model = ReferenceEquations::powermodels_acdc_0101(&net, mode).unwrap();
+        let x = reference::point(&net, &oracle["solves"][label]["solution"], &map);
+        for (name, point) in reference::derivative_points(&x) {
+            if name != "reference" {
+                assert!(model.evaluate(&point).unwrap().max_violation > 1e-3);
+            }
+            let report = model.check_derivatives(&point).unwrap();
+            assert!(report.passed, "{label}/{name}: {report:?}");
+            for check in &report.checks {
+                let entries = match check.name.as_str() {
+                    "objective_gradient" => report.variables,
+                    "constraint_jacobian" => report.variables * report.expression_rows,
+                    _ => report.variables * report.variables,
+                };
+                assert_eq!(
+                    check.entries, entries,
+                    "must cover structural zeros, not only stored nonzeros"
+                );
+            }
+            for family in [
+                "objective",
+                "lagrangian",
+                "ac_balance",
+                "ac_branch",
+                "dc_branch",
+                "transformer",
+                "reactor",
+                "filter",
+                "valve_current",
+                "converter_loss",
+            ] {
+                assert_eq!(
+                    report
+                        .checks
+                        .iter()
+                        .filter(|c| c.name == format!("hessian/{family}"))
+                        .count(),
+                    2,
+                    "two step sizes for {family}"
+                );
+            }
+            assert!(
+                report
+                    .checks
+                    .iter()
+                    .filter(|c| c.name == "hessian/objective")
+                    .all(|c| c.max_absolute_error < 1e-8),
+                "case5 cost is linear; objective Hessian must be zero"
+            );
+        }
+    }
+}
