@@ -193,3 +193,12 @@ The [384-case follow-up](BYPASS.md) qualifies all eight station-flag combination
 under explicit common-base conditions and isolates two unequal-base limitations
 in both native profiles and unmodified Julia. See its supported-interpretation
 table before using source per-unit declarations as physical equipment.
+
+## Physical local coordinates — 2026-11-10
+
+The separate `PhysicalCoordinatesAcpVscV1` profile now covers unequal-base ideal
+transformer bypass and DC branches with explicit from-side resistance bases.
+It retains declared current bounds. See [the contract, independent SI checks
+and reproduction commands](COORDINATES.md). Existing source profiles and their
+historical evidence below/above remain unchanged; general rebasing stays out
+of scope.

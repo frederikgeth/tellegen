@@ -1,0 +1,220 @@
+{
+  "cases_sha256": "0464b87524238c364c45c6d7a9bf0284dbf97d7c5ab9ab925e8fd69cddc34500",
+  "complete_report_sha256": "39b120daee35707b293131f523bf89c24ae83153b4e96443f635e99baf6616fc",
+  "groups": {
+    "binding": {
+      "cases": 36,
+      "current_bound_violation_ka_range": [
+        0.0,
+        0.0
+      ],
+      "directions": [
+        -1.0,
+        1.0
+      ],
+      "expected_feasible": 36,
+      "max_objective_difference": 0.0,
+      "max_other_violation": 7.275957614183426e-12,
+      "poles": [
+        1,
+        2
+      ],
+      "power_bases_mva": [
+        50.0,
+        100.0,
+        250.0
+      ],
+      "representative": {
+        "bases": {
+          "converter_kv": 200.0,
+          "dc_kv": 500.0,
+          "mva": 50.0,
+          "pcc_kv": 230.0
+        },
+        "current_bound_violation_ka": 0.0,
+        "declared_current_limit_ka": 0.26248809496813374,
+        "direction": -1.0,
+        "effective_current_limit_ka": 0.26248809496813374,
+        "expected_feasible": true,
+        "file": "physical_01.m",
+        "max_other_violation": 2.6145752229922437e-14,
+        "max_reference_violation": 2.6145752229922437e-14,
+        "native_variables": 22,
+        "negative_control_violation": 6.614399999999998,
+        "objective_difference": 0.0,
+        "physical_current_ka": 0.26248809496813374,
+        "poles": 1,
+        "reference_repaired_current_limit_ka": 0.408248290463863,
+        "reference_replacements": [
+          "physical_dc_ohms/1/from",
+          "physical_dc_ohms/1/to"
+        ],
+        "reference_variables": 23,
+        "source_coordinate_violation": 5.684341886080802e-14,
+        "source_sha256": "78e44dd5523c567c152855ba3ed8fca2586a3a290f2fb8ff91a0fd85e50d86bb"
+      },
+      "voltage_bases_kv": [
+        [
+          230.0,
+          200.0,
+          500.0
+        ],
+        [
+          230.0,
+          400.0,
+          800.0
+        ],
+        [
+          400.0,
+          345.0,
+          250.0
+        ]
+      ]
+    },
+    "violating": {
+      "cases": 36,
+      "current_bound_violation_ka_range": [
+        0.21248809496813373,
+        0.21248809496813373
+      ],
+      "directions": [
+        -1.0,
+        1.0
+      ],
+      "expected_feasible": 0,
+      "max_objective_difference": 0.0,
+      "max_other_violation": 7.275957614183426e-12,
+      "poles": [
+        1,
+        2
+      ],
+      "power_bases_mva": [
+        50.0,
+        100.0,
+        250.0
+      ],
+      "representative": {
+        "bases": {
+          "converter_kv": 200.0,
+          "dc_kv": 500.0,
+          "mva": 50.0,
+          "pcc_kv": 230.0
+        },
+        "current_bound_violation_ka": 0.21248809496813373,
+        "declared_current_limit_ka": 0.05,
+        "direction": -1.0,
+        "effective_current_limit_ka": 0.05,
+        "expected_feasible": false,
+        "file": "physical_00.m",
+        "max_other_violation": 2.6145752229922437e-14,
+        "max_reference_violation": 1.4721607059533133,
+        "native_variables": 22,
+        "negative_control_violation": 6.614399999999998,
+        "objective_difference": 0.0,
+        "physical_current_ka": 0.26248809496813374,
+        "poles": 1,
+        "reference_repaired_current_limit_ka": 0.408248290463863,
+        "reference_replacements": [
+          "physical_dc_ohms/1/from",
+          "physical_dc_ohms/1/to"
+        ],
+        "reference_variables": 23,
+        "source_coordinate_violation": 1.4721607059533133,
+        "source_sha256": "c9b91e21c149c211b6e5b6ac708d5f0b43a28dd0b8d5ecbd91cde416de4d3feb"
+      },
+      "voltage_bases_kv": [
+        [
+          230.0,
+          200.0,
+          500.0
+        ],
+        [
+          230.0,
+          400.0,
+          800.0
+        ],
+        [
+          400.0,
+          345.0,
+          250.0
+        ]
+      ]
+    },
+    "within": {
+      "cases": 36,
+      "current_bound_violation_ka_range": [
+        0.0,
+        0.0
+      ],
+      "directions": [
+        -1.0,
+        1.0
+      ],
+      "expected_feasible": 36,
+      "max_objective_difference": 0.0,
+      "max_other_violation": 7.275957614183426e-12,
+      "poles": [
+        1,
+        2
+      ],
+      "power_bases_mva": [
+        50.0,
+        100.0,
+        250.0
+      ],
+      "representative": {
+        "bases": {
+          "converter_kv": 200.0,
+          "dc_kv": 500.0,
+          "mva": 50.0,
+          "pcc_kv": 230.0
+        },
+        "current_bound_violation_ka": 0.0,
+        "declared_current_limit_ka": 0.3,
+        "direction": -1.0,
+        "effective_current_limit_ka": 0.3,
+        "expected_feasible": true,
+        "file": "physical_02.m",
+        "max_other_violation": 2.6145752229922437e-14,
+        "max_reference_violation": 2.6145752229922437e-14,
+        "native_variables": 22,
+        "negative_control_violation": 6.614399999999998,
+        "objective_difference": 0.0,
+        "physical_current_ka": 0.26248809496813374,
+        "poles": 1,
+        "reference_repaired_current_limit_ka": 0.408248290463863,
+        "reference_replacements": [
+          "physical_dc_ohms/1/from",
+          "physical_dc_ohms/1/to"
+        ],
+        "reference_variables": 23,
+        "source_coordinate_violation": 5.684341886080802e-14,
+        "source_sha256": "ca525d1096903b16d6d61619b62966f92d22ec6bb3011bd712c7aa2e1173c337"
+      },
+      "voltage_bases_kv": [
+        [
+          230.0,
+          200.0,
+          500.0
+        ],
+        [
+          230.0,
+          400.0,
+          800.0
+        ],
+        [
+          400.0,
+          345.0,
+          250.0
+        ]
+      ]
+    }
+  },
+  "julia_version": "1.12.6",
+  "manifest_sha256": "c0c50ee07d24b1ba8af99d58dad407959e4e6ce81071f6f988babe120f0344f4",
+  "powerio_revision": "ba1f9fc90de768e53aaace1c21e68b0d64759713",
+  "profile": "physical-coordinates",
+  "reference_modification": "restore_source_Imax; SI_transformer_bypass_and_DC_Ohms_with_from_side_resistance_base",
+  "reference_revision": "9ada4082ac087aed649f48fb5f977680b0fe06c7",
+  "suite": "physical"
+}

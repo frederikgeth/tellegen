@@ -324,3 +324,28 @@ source-coordinate model, not a native/reference discrepancy. The next gate is
 an explicit physical-coordinate contract and separately selected weighted
 bypass/DC formulation, before enabling general physical rebasing. See the
 [compact evidence](physical/bypass-qualification.json) and reproduction commands.
+
+## Physical local-coordinate profile — 2026-11-10
+
+PowerIO is pinned to `ba1f9fc90de768e53aaace1c21e68b0d64759713` on the existing
+model branch. `PhysicalCoordinatesAcpVscV1` records local AC port/impedance bases
+and from-side DC resistance bases, uses weighted bypass/DC equations and keeps
+declared current limits. The existing profiles retain their source equations,
+losses, bounds and fingerprints. No generic rebasing API is enabled.
+
+All 384 independent physical points pass native equations/bounds (`4.963e-14`)
+and explicitly modified Julia SI equations (`7.276e-12`). This includes all
+96 prior unequal-base witnesses. All 108 physical-current cases have expected
+outcomes: 72 feasible/binding, 36 failing only the declared current bound.
+Native checks cover 384 IR round trips, 48 correct/wrong resistance-reference
+branch reversals, 16 derivative cases and metadata corruption. Full scope,
+compact evidence and reproduction are in [COORDINATES.md](physical/COORDINATES.md).
+
+Compatibility evidence reproduces every recorded field for the previous 42/108
+physical cases and all 14 source-bypass groups. A fresh case5 pipeline retains
+the old compatibility fingerprint. All four native corpus regressions pass;
+full-feature validation is 769 passed, 7 ignored, with all-target Clippy and
+fmt/pin/EPL checks passing. PowerIO's 496 affected tests and changed-code Clippy
+pass; only its previously documented broad-matrix baseline float warnings
+remain. Native coupled PF, optimizer invariance, directional losses and physical
+pole/return topology are still separate gates. Draft PR heads are unchanged.

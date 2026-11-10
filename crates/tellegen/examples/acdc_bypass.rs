@@ -7,6 +7,13 @@ use powerio::{AcDcOpfInstance, AcDcOpfProfile};
 use tellegen::ac_dc::{EquationMode, ReferenceEquations};
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let out = std::path::PathBuf::from(std::env::args().nth(1).ok_or("missing output directory")?);
+    let selection = std::env::args()
+        .nth(2)
+        .unwrap_or_else(|| "compatibility".into());
+    if !matches!(selection.as_str(), "compatibility" | "physical-coordinates") {
+        return Err("select compatibility or physical-coordinates".into());
+    }
+    let physical = selection == "physical-coordinates";
     std::fs::create_dir_all(&out)?;
     let mut records = Vec::new();
     for (i, case) in bypass::cases().into_iter().enumerate() {
@@ -30,6 +37,19 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             native.push(r);
         }
         assert!((native[0].max_violation - native[1].max_violation).abs() < 1e-12);
+        let physical_report = if physical {
+            let intent = AcDcOpfInstance::from_network(
+                net.clone(),
+                AcDcOpfProfile::PhysicalCoordinatesAcpVscV1,
+            )?;
+            let report =
+                ReferenceEquations::from_instance(&intent, EquationMode::Opf)?.evaluate(&point)?;
+            assert!(report.max_violation < 1e-9);
+            Some(report)
+        } else {
+            None
+        };
+        let selected = physical_report.as_ref().unwrap_or(&native[0]);
         let file = format!("bypass_{i:03}.m");
         let emitted = powerio::emit(
             &powerio::PioModule::new(powerio::PioValue::BalancedNetwork(net)),
@@ -42,13 +62,14 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         assert_eq!(artifacts.len(), 1);
         std::fs::write(out.join(&file), artifacts[0].bytes())?;
         let c = &case.circuit;
-        records.push(serde_json::json!({"file":file,"profile":"compatibility","suite":"bypass","kind":case.kind,
+        records.push(serde_json::json!({"file":file,"profile":selection,"suite":"bypass","kind":case.kind,
             "bases":case.bases,"dc_to_base_kv":case.dc_to_base_kv,"elements":c.elements,
             "direction":c.direction,"poles":c.poles,"point":point,
             "declared_current_limit_ka":5.0,"effective_current_limit_ka":5.0,"physical_current_ka":c.valve_current.norm(),
-            "objective":c.objective(),"native_max_violation":native[0].max_violation,
-            "expected_feasible":case.kind=="qualified","expected_violations":case.expected_violations(),
-            "native_violations":native[0].equations.iter().filter(|v|v.violation>1e-9).map(|v|(&v.name,v.violation)).collect::<std::collections::BTreeMap<_,_>>()
+            "objective":c.objective(),"native_max_violation":selected.max_violation,
+            "source_coordinate_violation":native[0].max_violation,
+            "expected_feasible":physical || case.kind=="qualified","expected_violations":if physical {vec![]} else {case.expected_violations()},
+            "native_violations":selected.equations.iter().filter(|v|v.violation>1e-9).map(|v|(&v.name,v.violation)).collect::<std::collections::BTreeMap<_,_>>()
         }));
     }
     std::fs::write(

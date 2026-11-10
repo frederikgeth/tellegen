@@ -1,0 +1,1115 @@
+{
+  "cases_sha256": "19bd23c81aadb599684545b2365a13e8aa3f0fd3b4991b9ecad71dd4e3f11fdb",
+  "complete_report_sha256": "8efa6927db65769a385b1aef014060739832aba199ed257efe433bbb047b1423",
+  "groups": {
+    "qualified/t0-r0-f0": {
+      "cases": 36,
+      "directions": [
+        -1.0,
+        1.0
+      ],
+      "expected_feasible": 36,
+      "max_objective_difference": 1.1368683772161603e-13,
+      "max_other_violation": 7.275957614183426e-12,
+      "min_current_corruption_violation": 0.2645759999999998,
+      "poles": [
+        1,
+        2
+      ],
+      "power_bases_mva": [
+        50.0,
+        100.0,
+        250.0
+      ],
+      "reference_violation_range": [
+        5.551115123125783e-17,
+        7.275957614183426e-12
+      ],
+      "representative": {
+        "bases": {
+          "converter_kv": 200.0,
+          "dc_kv": 500.0,
+          "mva": 50.0,
+          "pcc_kv": 200.0
+        },
+        "current_bound_violation_ka": 0.0,
+        "current_equation_corruption_violation": 6.614399999999998,
+        "dc_to_base_kv": 500.0,
+        "declared_current_limit_ka": 5.0,
+        "direction": -1.0,
+        "effective_current_limit_ka": 5.0,
+        "elements": {
+          "filter": false,
+          "reactor": false,
+          "transformer": false
+        },
+        "expected_feasible": true,
+        "expected_violations": {},
+        "file": "bypass_000.m",
+        "kind": "qualified",
+        "max_other_violation": 1.7763568394002505e-15,
+        "max_reference_violation": 1.7763568394002505e-15,
+        "native_variables": 22,
+        "negative_control_violation": 6.614399999999998,
+        "objective_difference": -2.842170943040401e-14,
+        "physical_current_ka": 0.26248809496813374,
+        "poles": 1,
+        "reference_repaired_current_limit_ka": 5.0,
+        "reference_replacements": [
+          "physical_dc_ohms/1/from",
+          "physical_dc_ohms/1/to",
+          "physical_transformer_bypass/1"
+        ],
+        "reference_variables": 23,
+        "source_coordinate_violation": 5.684341886080802e-14,
+        "source_sha256": "416970daa8ef9a71e5320aedeabf1886e75c7a1fb9976d9c22ffdca888354110"
+      },
+      "voltage_bases_kv": [
+        [
+          200.0,
+          200.0,
+          500.0,
+          500.0
+        ],
+        [
+          345.0,
+          345.0,
+          250.0,
+          250.0
+        ],
+        [
+          400.0,
+          400.0,
+          800.0,
+          800.0
+        ]
+      ]
+    },
+    "qualified/t0-r0-f1": {
+      "cases": 36,
+      "directions": [
+        -1.0,
+        1.0
+      ],
+      "expected_feasible": 36,
+      "max_objective_difference": 1.1368683772161603e-13,
+      "max_other_violation": 7.275957614183426e-12,
+      "min_current_corruption_violation": 0.2645759999999998,
+      "poles": [
+        1,
+        2
+      ],
+      "power_bases_mva": [
+        50.0,
+        100.0,
+        250.0
+      ],
+      "reference_violation_range": [
+        5.551115123125783e-17,
+        7.275957614183426e-12
+      ],
+      "representative": {
+        "bases": {
+          "converter_kv": 200.0,
+          "dc_kv": 500.0,
+          "mva": 50.0,
+          "pcc_kv": 200.0
+        },
+        "current_bound_violation_ka": 0.0,
+        "current_equation_corruption_violation": 6.614399999999998,
+        "dc_to_base_kv": 500.0,
+        "declared_current_limit_ka": 5.0,
+        "direction": -1.0,
+        "effective_current_limit_ka": 5.0,
+        "elements": {
+          "filter": true,
+          "reactor": false,
+          "transformer": false
+        },
+        "expected_feasible": true,
+        "expected_violations": {},
+        "file": "bypass_192.m",
+        "kind": "qualified",
+        "max_other_violation": 1.7763568394002505e-15,
+        "max_reference_violation": 1.7763568394002505e-15,
+        "native_variables": 22,
+        "negative_control_violation": 6.614399999999998,
+        "objective_difference": -2.842170943040401e-14,
+        "physical_current_ka": 0.26248809496813374,
+        "poles": 1,
+        "reference_repaired_current_limit_ka": 5.0,
+        "reference_replacements": [
+          "physical_dc_ohms/1/from",
+          "physical_dc_ohms/1/to",
+          "physical_transformer_bypass/1"
+        ],
+        "reference_variables": 23,
+        "source_coordinate_violation": 5.684341886080802e-14,
+        "source_sha256": "dfcac38ec3cf85f2b8f2500e6fbd3106bdb6ebe1af3d34b823465742b47db8fb"
+      },
+      "voltage_bases_kv": [
+        [
+          200.0,
+          200.0,
+          500.0,
+          500.0
+        ],
+        [
+          345.0,
+          345.0,
+          250.0,
+          250.0
+        ],
+        [
+          400.0,
+          400.0,
+          800.0,
+          800.0
+        ]
+      ]
+    },
+    "qualified/t0-r1-f0": {
+      "cases": 36,
+      "directions": [
+        -1.0,
+        1.0
+      ],
+      "expected_feasible": 36,
+      "max_objective_difference": 0.0,
+      "max_other_violation": 7.275957614183426e-12,
+      "min_current_corruption_violation": 0.2645759999999998,
+      "poles": [
+        1,
+        2
+      ],
+      "power_bases_mva": [
+        50.0,
+        100.0,
+        250.0
+      ],
+      "reference_violation_range": [
+        2.2065682614424986e-15,
+        7.275957614183426e-12
+      ],
+      "representative": {
+        "bases": {
+          "converter_kv": 200.0,
+          "dc_kv": 500.0,
+          "mva": 50.0,
+          "pcc_kv": 200.0
+        },
+        "current_bound_violation_ka": 0.0,
+        "current_equation_corruption_violation": 6.614400000000002,
+        "dc_to_base_kv": 500.0,
+        "declared_current_limit_ka": 5.0,
+        "direction": -1.0,
+        "effective_current_limit_ka": 5.0,
+        "elements": {
+          "filter": false,
+          "reactor": true,
+          "transformer": false
+        },
+        "expected_feasible": true,
+        "expected_violations": {},
+        "file": "bypass_108.m",
+        "kind": "qualified",
+        "max_other_violation": 6.616929226765933e-14,
+        "max_reference_violation": 6.616929226765933e-14,
+        "native_variables": 22,
+        "negative_control_violation": 6.614400000000002,
+        "objective_difference": 0.0,
+        "physical_current_ka": 0.26248809496813374,
+        "poles": 1,
+        "reference_repaired_current_limit_ka": 5.0,
+        "reference_replacements": [
+          "physical_dc_ohms/1/from",
+          "physical_dc_ohms/1/to",
+          "physical_transformer_bypass/1"
+        ],
+        "reference_variables": 23,
+        "source_coordinate_violation": 6.616929226765933e-14,
+        "source_sha256": "2582108cb2f2d9ea945e87b4f5ec8efb3b056336c683e0a94b24a9f929c019f2"
+      },
+      "voltage_bases_kv": [
+        [
+          200.0,
+          200.0,
+          500.0,
+          500.0
+        ],
+        [
+          345.0,
+          345.0,
+          250.0,
+          250.0
+        ],
+        [
+          400.0,
+          400.0,
+          800.0,
+          800.0
+        ]
+      ]
+    },
+    "qualified/t0-r1-f1": {
+      "cases": 36,
+      "directions": [
+        -1.0,
+        1.0
+      ],
+      "expected_feasible": 36,
+      "max_objective_difference": 0.0,
+      "max_other_violation": 7.275957614183426e-12,
+      "min_current_corruption_violation": 0.2645759999999998,
+      "poles": [
+        1,
+        2
+      ],
+      "power_bases_mva": [
+        50.0,
+        100.0,
+        250.0
+      ],
+      "reference_violation_range": [
+        2.2065682614424986e-15,
+        7.275957614183426e-12
+      ],
+      "representative": {
+        "bases": {
+          "converter_kv": 200.0,
+          "dc_kv": 500.0,
+          "mva": 50.0,
+          "pcc_kv": 200.0
+        },
+        "current_bound_violation_ka": 0.0,
+        "current_equation_corruption_violation": 6.614400000000002,
+        "dc_to_base_kv": 500.0,
+        "declared_current_limit_ka": 5.0,
+        "direction": -1.0,
+        "effective_current_limit_ka": 5.0,
+        "elements": {
+          "filter": true,
+          "reactor": true,
+          "transformer": false
+        },
+        "expected_feasible": true,
+        "expected_violations": {},
+        "file": "bypass_276.m",
+        "kind": "qualified",
+        "max_other_violation": 6.616929226765933e-14,
+        "max_reference_violation": 6.616929226765933e-14,
+        "native_variables": 22,
+        "negative_control_violation": 6.614400000000002,
+        "objective_difference": 0.0,
+        "physical_current_ka": 0.26248809496813374,
+        "poles": 1,
+        "reference_repaired_current_limit_ka": 5.0,
+        "reference_replacements": [
+          "physical_dc_ohms/1/from",
+          "physical_dc_ohms/1/to",
+          "physical_transformer_bypass/1"
+        ],
+        "reference_variables": 23,
+        "source_coordinate_violation": 6.616929226765933e-14,
+        "source_sha256": "9f0aa53acf236aa97bb54bc5432beb92f78f921047e1b11b722d1672ccba7106"
+      },
+      "voltage_bases_kv": [
+        [
+          200.0,
+          200.0,
+          500.0,
+          500.0
+        ],
+        [
+          345.0,
+          345.0,
+          250.0,
+          250.0
+        ],
+        [
+          400.0,
+          400.0,
+          800.0,
+          800.0
+        ]
+      ]
+    },
+    "qualified/t1-r0-f0": {
+      "cases": 36,
+      "directions": [
+        -1.0,
+        1.0
+      ],
+      "expected_feasible": 36,
+      "max_objective_difference": 5.684341886080802e-14,
+      "max_other_violation": 7.275957614183426e-12,
+      "min_current_corruption_violation": 0.2645759999999999,
+      "poles": [
+        1,
+        2
+      ],
+      "power_bases_mva": [
+        50.0,
+        100.0,
+        250.0
+      ],
+      "reference_violation_range": [
+        2.6506574712925612e-15,
+        7.275957614183426e-12
+      ],
+      "representative": {
+        "bases": {
+          "converter_kv": 200.0,
+          "dc_kv": 500.0,
+          "mva": 50.0,
+          "pcc_kv": 230.0
+        },
+        "current_bound_violation_ka": 0.0,
+        "current_equation_corruption_violation": 6.614400000000002,
+        "dc_to_base_kv": 500.0,
+        "declared_current_limit_ka": 5.0,
+        "direction": -1.0,
+        "effective_current_limit_ka": 5.0,
+        "elements": {
+          "filter": false,
+          "reactor": false,
+          "transformer": true
+        },
+        "expected_feasible": true,
+        "expected_violations": {},
+        "file": "bypass_072.m",
+        "kind": "qualified",
+        "max_other_violation": 2.942091015256665e-14,
+        "max_reference_violation": 2.942091015256665e-14,
+        "native_variables": 22,
+        "negative_control_violation": 6.614400000000002,
+        "objective_difference": 0.0,
+        "physical_current_ka": 0.26248809496813374,
+        "poles": 1,
+        "reference_repaired_current_limit_ka": 5.0,
+        "reference_replacements": [
+          "physical_dc_ohms/1/from",
+          "physical_dc_ohms/1/to"
+        ],
+        "reference_variables": 23,
+        "source_coordinate_violation": 5.684341886080802e-14,
+        "source_sha256": "ab262511a0a0460b3826b306fa5f077b8c6b5f0a95e5551ba10610e27808a5aa"
+      },
+      "voltage_bases_kv": [
+        [
+          230.0,
+          200.0,
+          500.0,
+          500.0
+        ],
+        [
+          230.0,
+          400.0,
+          800.0,
+          800.0
+        ],
+        [
+          400.0,
+          345.0,
+          250.0,
+          250.0
+        ]
+      ]
+    },
+    "qualified/t1-r0-f1": {
+      "cases": 36,
+      "directions": [
+        -1.0,
+        1.0
+      ],
+      "expected_feasible": 36,
+      "max_objective_difference": 2.842170943040401e-14,
+      "max_other_violation": 7.275957614183426e-12,
+      "min_current_corruption_violation": 0.2645759999999998,
+      "poles": [
+        1,
+        2
+      ],
+      "power_bases_mva": [
+        50.0,
+        100.0,
+        250.0
+      ],
+      "reference_violation_range": [
+        3.4416913763379853e-15,
+        7.275957614183426e-12
+      ],
+      "representative": {
+        "bases": {
+          "converter_kv": 200.0,
+          "dc_kv": 500.0,
+          "mva": 50.0,
+          "pcc_kv": 230.0
+        },
+        "current_bound_violation_ka": 0.0,
+        "current_equation_corruption_violation": 6.614399999999998,
+        "dc_to_base_kv": 500.0,
+        "declared_current_limit_ka": 5.0,
+        "direction": -1.0,
+        "effective_current_limit_ka": 5.0,
+        "elements": {
+          "filter": true,
+          "reactor": false,
+          "transformer": true
+        },
+        "expected_feasible": true,
+        "expected_violations": {},
+        "file": "bypass_240.m",
+        "kind": "qualified",
+        "max_other_violation": 1.8762769116165146e-14,
+        "max_reference_violation": 1.8762769116165146e-14,
+        "native_variables": 22,
+        "negative_control_violation": 6.614399999999998,
+        "objective_difference": 2.842170943040401e-14,
+        "physical_current_ka": 0.26248809496813374,
+        "poles": 1,
+        "reference_repaired_current_limit_ka": 5.0,
+        "reference_replacements": [
+          "physical_dc_ohms/1/from",
+          "physical_dc_ohms/1/to"
+        ],
+        "reference_variables": 23,
+        "source_coordinate_violation": 5.684341886080802e-14,
+        "source_sha256": "9a509f7d078b6e0ef758c3bf07e5c8ded0292843211373763e97903e47e8c987"
+      },
+      "voltage_bases_kv": [
+        [
+          230.0,
+          200.0,
+          500.0,
+          500.0
+        ],
+        [
+          230.0,
+          400.0,
+          800.0,
+          800.0
+        ],
+        [
+          400.0,
+          345.0,
+          250.0,
+          250.0
+        ]
+      ]
+    },
+    "qualified/t1-r1-f0": {
+      "cases": 36,
+      "directions": [
+        -1.0,
+        1.0
+      ],
+      "expected_feasible": 36,
+      "max_objective_difference": 2.842170943040401e-14,
+      "max_other_violation": 7.275957614183426e-12,
+      "min_current_corruption_violation": 0.26457599999999964,
+      "poles": [
+        1,
+        2
+      ],
+      "power_bases_mva": [
+        50.0,
+        100.0,
+        250.0
+      ],
+      "reference_violation_range": [
+        8.0629947163402e-15,
+        7.275957614183426e-12
+      ],
+      "representative": {
+        "bases": {
+          "converter_kv": 200.0,
+          "dc_kv": 500.0,
+          "mva": 50.0,
+          "pcc_kv": 230.0
+        },
+        "current_bound_violation_ka": 0.0,
+        "current_equation_corruption_violation": 6.614399999999996,
+        "dc_to_base_kv": 500.0,
+        "declared_current_limit_ka": 5.0,
+        "direction": -1.0,
+        "effective_current_limit_ka": 5.0,
+        "elements": {
+          "filter": false,
+          "reactor": true,
+          "transformer": true
+        },
+        "expected_feasible": true,
+        "expected_violations": {},
+        "file": "bypass_156.m",
+        "kind": "qualified",
+        "max_other_violation": 4.951594689828198e-14,
+        "max_reference_violation": 4.951594689828198e-14,
+        "native_variables": 22,
+        "negative_control_violation": 6.614399999999996,
+        "objective_difference": 0.0,
+        "physical_current_ka": 0.26248809496813374,
+        "poles": 1,
+        "reference_repaired_current_limit_ka": 5.0,
+        "reference_replacements": [
+          "physical_dc_ohms/1/from",
+          "physical_dc_ohms/1/to"
+        ],
+        "reference_variables": 23,
+        "source_coordinate_violation": 5.684341886080802e-14,
+        "source_sha256": "c24c8538a710c3e91b805ec7a15fafb552acd32108063dcc95bfc13b0ffd34cf"
+      },
+      "voltage_bases_kv": [
+        [
+          230.0,
+          200.0,
+          500.0,
+          500.0
+        ],
+        [
+          230.0,
+          400.0,
+          800.0,
+          800.0
+        ],
+        [
+          400.0,
+          345.0,
+          250.0,
+          250.0
+        ]
+      ]
+    },
+    "qualified/t1-r1-f1": {
+      "cases": 36,
+      "directions": [
+        -1.0,
+        1.0
+      ],
+      "expected_feasible": 36,
+      "max_objective_difference": 0.0,
+      "max_other_violation": 7.275957614183426e-12,
+      "min_current_corruption_violation": 0.26457599999999976,
+      "poles": [
+        1,
+        2
+      ],
+      "power_bases_mva": [
+        50.0,
+        100.0,
+        250.0
+      ],
+      "reference_violation_range": [
+        4.288236432614667e-15,
+        7.275957614183426e-12
+      ],
+      "representative": {
+        "bases": {
+          "converter_kv": 200.0,
+          "dc_kv": 500.0,
+          "mva": 50.0,
+          "pcc_kv": 230.0
+        },
+        "current_bound_violation_ka": 0.0,
+        "current_equation_corruption_violation": 6.614399999999998,
+        "dc_to_base_kv": 500.0,
+        "declared_current_limit_ka": 5.0,
+        "direction": -1.0,
+        "effective_current_limit_ka": 5.0,
+        "elements": {
+          "filter": true,
+          "reactor": true,
+          "transformer": true
+        },
+        "expected_feasible": true,
+        "expected_violations": {},
+        "file": "bypass_324.m",
+        "kind": "qualified",
+        "max_other_violation": 2.6145752229922437e-14,
+        "max_reference_violation": 2.6145752229922437e-14,
+        "native_variables": 22,
+        "negative_control_violation": 6.614399999999998,
+        "objective_difference": 0.0,
+        "physical_current_ka": 0.26248809496813374,
+        "poles": 1,
+        "reference_repaired_current_limit_ka": 5.0,
+        "reference_replacements": [
+          "physical_dc_ohms/1/from",
+          "physical_dc_ohms/1/to"
+        ],
+        "reference_variables": 23,
+        "source_coordinate_violation": 5.684341886080802e-14,
+        "source_sha256": "530b23682f8ef1f47452445595793951c55778647d09941ba67a67b2ff8632ed"
+      },
+      "voltage_bases_kv": [
+        [
+          230.0,
+          200.0,
+          500.0,
+          500.0
+        ],
+        [
+          230.0,
+          400.0,
+          800.0,
+          800.0
+        ],
+        [
+          400.0,
+          345.0,
+          250.0,
+          250.0
+        ]
+      ]
+    },
+    "unequal_dc_bases/t0-r0-f0": {
+      "cases": 24,
+      "directions": [
+        -1.0,
+        1.0
+      ],
+      "expected_feasible": 24,
+      "max_objective_difference": 1.1368683772161603e-13,
+      "max_other_violation": 3.637978807091713e-12,
+      "min_current_corruption_violation": 0.2645759999999998,
+      "poles": [
+        1,
+        2
+      ],
+      "power_bases_mva": [
+        50.0,
+        100.0,
+        250.0
+      ],
+      "reference_violation_range": [
+        8.326672684688674e-17,
+        3.637978807091713e-12
+      ],
+      "representative": {
+        "bases": {
+          "converter_kv": 200.0,
+          "dc_kv": 500.0,
+          "mva": 50.0,
+          "pcc_kv": 200.0
+        },
+        "current_bound_violation_ka": 0.0,
+        "current_equation_corruption_violation": 6.614399999999998,
+        "dc_to_base_kv": 250.0,
+        "declared_current_limit_ka": 5.0,
+        "direction": -1.0,
+        "effective_current_limit_ka": 5.0,
+        "elements": {
+          "filter": false,
+          "reactor": false,
+          "transformer": false
+        },
+        "expected_feasible": true,
+        "expected_violations": {},
+        "file": "bypass_010.m",
+        "kind": "unequal_dc_bases",
+        "max_other_violation": 1.7763568394002505e-15,
+        "max_reference_violation": 1.7763568394002505e-15,
+        "native_variables": 22,
+        "negative_control_violation": 6.614399999999998,
+        "objective_difference": -2.842170943040401e-14,
+        "physical_current_ka": 0.26248809496813374,
+        "poles": 1,
+        "reference_repaired_current_limit_ka": 5.0,
+        "reference_replacements": [
+          "physical_dc_ohms/1/from",
+          "physical_dc_ohms/1/to",
+          "physical_transformer_bypass/1"
+        ],
+        "reference_variables": 23,
+        "source_coordinate_violation": 1008.7458661829326,
+        "source_sha256": "33413aaed3b169057a4ed8438a2d00fa27f9a89dda0f48b14d3bf3fb597641ee"
+      },
+      "voltage_bases_kv": [
+        [
+          200.0,
+          200.0,
+          500.0,
+          250.0
+        ],
+        [
+          200.0,
+          200.0,
+          500.0,
+          1000.0
+        ]
+      ]
+    },
+    "unequal_dc_bases/t1-r1-f1": {
+      "cases": 24,
+      "directions": [
+        -1.0,
+        1.0
+      ],
+      "expected_feasible": 24,
+      "max_objective_difference": 0.0,
+      "max_other_violation": 3.637978807091713e-12,
+      "min_current_corruption_violation": 0.2645759999999998,
+      "poles": [
+        1,
+        2
+      ],
+      "power_bases_mva": [
+        50.0,
+        100.0,
+        250.0
+      ],
+      "reference_violation_range": [
+        6.231126725708691e-15,
+        3.637978807091713e-12
+      ],
+      "representative": {
+        "bases": {
+          "converter_kv": 200.0,
+          "dc_kv": 500.0,
+          "mva": 50.0,
+          "pcc_kv": 230.0
+        },
+        "current_bound_violation_ka": 0.0,
+        "current_equation_corruption_violation": 6.614399999999998,
+        "dc_to_base_kv": 250.0,
+        "declared_current_limit_ka": 5.0,
+        "direction": -1.0,
+        "effective_current_limit_ka": 5.0,
+        "elements": {
+          "filter": true,
+          "reactor": true,
+          "transformer": true
+        },
+        "expected_feasible": true,
+        "expected_violations": {},
+        "file": "bypass_333.m",
+        "kind": "unequal_dc_bases",
+        "max_other_violation": 2.6145752229922437e-14,
+        "max_reference_violation": 2.6145752229922437e-14,
+        "native_variables": 22,
+        "negative_control_violation": 6.614399999999998,
+        "objective_difference": 0.0,
+        "physical_current_ka": 0.26248809496813374,
+        "poles": 1,
+        "reference_repaired_current_limit_ka": 5.0,
+        "reference_replacements": [
+          "physical_dc_ohms/1/from",
+          "physical_dc_ohms/1/to"
+        ],
+        "reference_variables": 23,
+        "source_coordinate_violation": 1008.7458661829326,
+        "source_sha256": "594b72be69a046ccdf597d968ecce72d532af89c7bd975aefc26b2de06da869a"
+      },
+      "voltage_bases_kv": [
+        [
+          230.0,
+          200.0,
+          500.0,
+          250.0
+        ],
+        [
+          230.0,
+          200.0,
+          500.0,
+          1000.0
+        ]
+      ]
+    },
+    "unequal_pcc_bypass/t0-r0-f0": {
+      "cases": 12,
+      "directions": [
+        -1.0,
+        1.0
+      ],
+      "expected_feasible": 12,
+      "max_objective_difference": 1.1368683772161603e-13,
+      "max_other_violation": 3.637978807091713e-12,
+      "min_current_corruption_violation": 0.2645759999999998,
+      "poles": [
+        1,
+        2
+      ],
+      "power_bases_mva": [
+        50.0,
+        100.0,
+        250.0
+      ],
+      "reference_violation_range": [
+        8.326672684688674e-17,
+        3.637978807091713e-12
+      ],
+      "representative": {
+        "bases": {
+          "converter_kv": 400.0,
+          "dc_kv": 500.0,
+          "mva": 50.0,
+          "pcc_kv": 230.0
+        },
+        "current_bound_violation_ka": 0.0,
+        "current_equation_corruption_violation": 6.614399999999998,
+        "dc_to_base_kv": 500.0,
+        "declared_current_limit_ka": 5.0,
+        "direction": -1.0,
+        "effective_current_limit_ka": 5.0,
+        "elements": {
+          "filter": false,
+          "reactor": false,
+          "transformer": false
+        },
+        "expected_feasible": true,
+        "expected_violations": {},
+        "file": "bypass_009.m",
+        "kind": "unequal_pcc_bypass",
+        "max_other_violation": 1.7763568394002505e-15,
+        "max_reference_violation": 1.7763568394002505e-15,
+        "native_variables": 22,
+        "negative_control_violation": 6.614399999999998,
+        "objective_difference": -2.842170943040401e-14,
+        "physical_current_ka": 0.26248809496813374,
+        "poles": 1,
+        "reference_repaired_current_limit_ka": 5.0,
+        "reference_replacements": [
+          "physical_dc_ohms/1/from",
+          "physical_dc_ohms/1/to",
+          "physical_transformer_bypass/1"
+        ],
+        "reference_variables": 23,
+        "source_coordinate_violation": 0.3695652173913043,
+        "source_sha256": "f3a7513e583f8294a4eb28287640f15582783c153c5ef64496c124ba95d5f258"
+      },
+      "voltage_bases_kv": [
+        [
+          230.0,
+          400.0,
+          500.0,
+          500.0
+        ]
+      ]
+    },
+    "unequal_pcc_bypass/t0-r0-f1": {
+      "cases": 12,
+      "directions": [
+        -1.0,
+        1.0
+      ],
+      "expected_feasible": 12,
+      "max_objective_difference": 1.1368683772161603e-13,
+      "max_other_violation": 3.637978807091713e-12,
+      "min_current_corruption_violation": 0.2645759999999998,
+      "poles": [
+        1,
+        2
+      ],
+      "power_bases_mva": [
+        50.0,
+        100.0,
+        250.0
+      ],
+      "reference_violation_range": [
+        8.326672684688674e-17,
+        3.637978807091713e-12
+      ],
+      "representative": {
+        "bases": {
+          "converter_kv": 400.0,
+          "dc_kv": 500.0,
+          "mva": 50.0,
+          "pcc_kv": 230.0
+        },
+        "current_bound_violation_ka": 0.0,
+        "current_equation_corruption_violation": 6.614399999999998,
+        "dc_to_base_kv": 500.0,
+        "declared_current_limit_ka": 5.0,
+        "direction": -1.0,
+        "effective_current_limit_ka": 5.0,
+        "elements": {
+          "filter": true,
+          "reactor": false,
+          "transformer": false
+        },
+        "expected_feasible": true,
+        "expected_violations": {},
+        "file": "bypass_201.m",
+        "kind": "unequal_pcc_bypass",
+        "max_other_violation": 1.7763568394002505e-15,
+        "max_reference_violation": 1.7763568394002505e-15,
+        "native_variables": 22,
+        "negative_control_violation": 6.614399999999998,
+        "objective_difference": -2.842170943040401e-14,
+        "physical_current_ka": 0.26248809496813374,
+        "poles": 1,
+        "reference_repaired_current_limit_ka": 5.0,
+        "reference_replacements": [
+          "physical_dc_ohms/1/from",
+          "physical_dc_ohms/1/to",
+          "physical_transformer_bypass/1"
+        ],
+        "reference_variables": 23,
+        "source_coordinate_violation": 0.3695652173913043,
+        "source_sha256": "f80c90e2aee3e69a847c97c042cbae5971ab5a215bbdf85a9aea1c72ba509617"
+      },
+      "voltage_bases_kv": [
+        [
+          230.0,
+          400.0,
+          500.0,
+          500.0
+        ]
+      ]
+    },
+    "unequal_pcc_bypass/t0-r1-f0": {
+      "cases": 12,
+      "directions": [
+        -1.0,
+        1.0
+      ],
+      "expected_feasible": 12,
+      "max_objective_difference": 0.0,
+      "max_other_violation": 3.637978807091713e-12,
+      "min_current_corruption_violation": 0.2645759999999998,
+      "poles": [
+        1,
+        2
+      ],
+      "power_bases_mva": [
+        50.0,
+        100.0,
+        250.0
+      ],
+      "reference_violation_range": [
+        6.1201044232461754e-15,
+        3.637978807091713e-12
+      ],
+      "representative": {
+        "bases": {
+          "converter_kv": 400.0,
+          "dc_kv": 500.0,
+          "mva": 50.0,
+          "pcc_kv": 230.0
+        },
+        "current_bound_violation_ka": 0.0,
+        "current_equation_corruption_violation": 6.614400000000002,
+        "dc_to_base_kv": 500.0,
+        "declared_current_limit_ka": 5.0,
+        "direction": -1.0,
+        "effective_current_limit_ka": 5.0,
+        "elements": {
+          "filter": false,
+          "reactor": true,
+          "transformer": false
+        },
+        "expected_feasible": true,
+        "expected_violations": {},
+        "file": "bypass_117.m",
+        "kind": "unequal_pcc_bypass",
+        "max_other_violation": 6.616929226765933e-14,
+        "max_reference_violation": 6.616929226765933e-14,
+        "native_variables": 22,
+        "negative_control_violation": 6.614400000000002,
+        "objective_difference": 0.0,
+        "physical_current_ka": 0.26248809496813374,
+        "poles": 1,
+        "reference_repaired_current_limit_ka": 5.0,
+        "reference_replacements": [
+          "physical_dc_ohms/1/from",
+          "physical_dc_ohms/1/to",
+          "physical_transformer_bypass/1"
+        ],
+        "reference_variables": 23,
+        "source_coordinate_violation": 0.37004472867419547,
+        "source_sha256": "06cc5af5b79f67e3e0355c63eddf6a5214d5e39622546b484c8d6895bc53dc5b"
+      },
+      "voltage_bases_kv": [
+        [
+          230.0,
+          400.0,
+          500.0,
+          500.0
+        ]
+      ]
+    },
+    "unequal_pcc_bypass/t0-r1-f1": {
+      "cases": 12,
+      "directions": [
+        -1.0,
+        1.0
+      ],
+      "expected_feasible": 12,
+      "max_objective_difference": 0.0,
+      "max_other_violation": 3.637978807091713e-12,
+      "min_current_corruption_violation": 0.2645759999999998,
+      "poles": [
+        1,
+        2
+      ],
+      "power_bases_mva": [
+        50.0,
+        100.0,
+        250.0
+      ],
+      "reference_violation_range": [
+        6.1201044232461754e-15,
+        3.637978807091713e-12
+      ],
+      "representative": {
+        "bases": {
+          "converter_kv": 400.0,
+          "dc_kv": 500.0,
+          "mva": 50.0,
+          "pcc_kv": 230.0
+        },
+        "current_bound_violation_ka": 0.0,
+        "current_equation_corruption_violation": 6.614400000000002,
+        "dc_to_base_kv": 500.0,
+        "declared_current_limit_ka": 5.0,
+        "direction": -1.0,
+        "effective_current_limit_ka": 5.0,
+        "elements": {
+          "filter": true,
+          "reactor": true,
+          "transformer": false
+        },
+        "expected_feasible": true,
+        "expected_violations": {},
+        "file": "bypass_285.m",
+        "kind": "unequal_pcc_bypass",
+        "max_other_violation": 6.616929226765933e-14,
+        "max_reference_violation": 6.616929226765933e-14,
+        "native_variables": 22,
+        "negative_control_violation": 6.614400000000002,
+        "objective_difference": 0.0,
+        "physical_current_ka": 0.26248809496813374,
+        "poles": 1,
+        "reference_repaired_current_limit_ka": 5.0,
+        "reference_replacements": [
+          "physical_dc_ohms/1/from",
+          "physical_dc_ohms/1/to",
+          "physical_transformer_bypass/1"
+        ],
+        "reference_variables": 23,
+        "source_coordinate_violation": 0.37004472867419547,
+        "source_sha256": "f99f665da95aa4fddccdde32efa9d06cd4f4b26efcccb47d58f33c44590e5352"
+      },
+      "voltage_bases_kv": [
+        [
+          230.0,
+          400.0,
+          500.0,
+          500.0
+        ]
+      ]
+    }
+  },
+  "julia_version": "1.12.6",
+  "manifest_sha256": "c0c50ee07d24b1ba8af99d58dad407959e4e6ce81071f6f988babe120f0344f4",
+  "native_profiles_checked": [
+    "power_models_ac_dc0101_acp_vsc_v1",
+    "declared_current_acp_vsc_v1",
+    "physical_coordinates_acp_vsc_v1"
+  ],
+  "powerio_revision": "ba1f9fc90de768e53aaace1c21e68b0d64759713",
+  "profile": "physical-coordinates",
+  "reference_modification": "restore_source_Imax; SI_transformer_bypass_and_DC_Ohms_with_from_side_resistance_base",
+  "reference_revision": "9ada4082ac087aed649f48fb5f977680b0fe06c7",
+  "suite": "bypass"
+}

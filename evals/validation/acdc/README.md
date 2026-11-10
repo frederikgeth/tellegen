@@ -288,3 +288,12 @@ Run `physical/run.py OUTPUT --suite bypass` for the
 [384-case bypass/unequal-base qualification](physical/BYPASS.md): 288 physical
 points pass, while 96 witnesses isolate unsupported unequal-base interpretations.
 Production equations, both profiles and the PowerIO pin remain unchanged.
+
+## Explicit physical local-coordinate profile
+
+The [physical-coordinate gate](physical/COORDINATES.md) adds separately selected
+weighted transformer bypass and unequal-DC-base equations. PowerIO preparation
+records local port/impedance bases and resistance reference side; source
+compatibility and declared-current equations remain unchanged. Qualification
+uses independent phase-domain physical points and explicitly modified Julia
+SI equations. This does not enable generic physical rebasing or native PF.

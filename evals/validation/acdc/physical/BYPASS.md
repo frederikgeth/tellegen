@@ -106,10 +106,9 @@ source compatibility or declared-current profiles.
 The source profiles continue to accept and evaluate declared source coordinates.
 A base field alone is not proof of a permitted physical projection, and these
 validation failures do not introduce a new runtime rejection of valid source
-cases. The next implementation gate is a separately selected physical-coordinate
-contract: explicit port bases, impedance reference side and projection provenance,
-followed by qualification of the weighted bypass/DC equations. General physical
-rebasing stays unavailable until that contract is implemented. Native coupled PF,
+cases. The follow-up [physical-coordinate profile](COORDINATES.md) implements an
+explicit local port/impedance-base contract and weighted bypass/DC equations
+under a separate selection. General physical rebasing remains unavailable. Native coupled PF,
 optimizer invariance, physical pole/return wiring and directional losses remain
 separate work. No new upstream bug report was filed.
 

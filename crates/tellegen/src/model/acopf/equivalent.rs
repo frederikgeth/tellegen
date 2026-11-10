@@ -1,5 +1,5 @@
-//! Full VSC station equations in the pinned PowerModelsACDC 0.10.1 coordinate
-//! convention. Includes equation/derivative diagnostics and experimental OPF;
+//! Full VSC station equations with explicit source or physical coordinates.
+//! Includes equation/derivative diagnostics and experimental OPF;
 //! problem and numerical preparation are owned by PowerIO.
 use super::*;
 mod coordinates;
@@ -10,8 +10,8 @@ pub use opf::{
     AcDcOpfManifest, AcDcOpfProfile, AcDcOpfResult, AcDcOpfStart, AcDcScalar, PreparedAcDcOpf,
 };
 use powerio::BalancedNetwork;
-pub use powerio::{AcDcAngleReferencePolicy, AcDcCurrentLimitPolicy};
-pub use powerio_matrix::AcDcAngleReference;
+pub use powerio::{AcDcAngleReferencePolicy, AcDcCoordinatePolicy, AcDcCurrentLimitPolicy};
+pub use powerio_matrix::{AcDcAngleReference, AcDcBranchPolicy};
 use powerio_tx::acdc::{
     AcConverterControl, ConverterSeries, ConverterTechnology, DcConverterControl,
 };
@@ -48,6 +48,8 @@ pub struct BusTypePolicy {
 pub struct EquationReport {
     pub profile: &'static str,
     pub current_limit_policy: AcDcCurrentLimitPolicy,
+    pub coordinate_policy: AcDcCoordinatePolicy,
+    pub dc_branch_policy: Vec<AcDcBranchPolicy>,
     pub mode: EquationMode,
     pub objective: f64,
     pub max_violation: f64,
@@ -75,6 +77,7 @@ pub struct ReferenceEquations {
     mode: EquationMode,
     profile: AcDcOpfProfile,
     policy: Vec<StationPolicy>,
+    dc_branch_policy: Vec<AcDcBranchPolicy>,
     bus_type_policy: Vec<BusTypePolicy>,
     angle_reference_policy: AcDcAngleReferencePolicy,
     angle_references: Vec<AcDcAngleReference>,
@@ -95,7 +98,7 @@ fn series(
     p: &mut NlProblemParts,
     name: &str,
     z: &ConverterSeries,
-    tap: f64,
+    voltage_ratios: [f64; 2],
     vm: [Expr; 2],
     va: [Expr; 2],
     flow: [Expr; 4],
@@ -111,7 +114,7 @@ fn series(
             vm,
             va,
             [z.resistance_pu / norm, -z.reactance_pu / norm],
-            tap,
+            voltage_ratios[0],
             0.0,
             [0.0; 4],
             squares,
@@ -130,7 +133,14 @@ fn series(
         eq(
             p,
             format!("{name}/vm_bypass"),
-            subtract(vm[0].clone(), vm[1].clone()),
+            subtract(
+                if voltage_ratios[1] == 1.0 {
+                    vm[0].clone()
+                } else {
+                    scaled(voltage_ratios[1], vm[0].clone())
+                },
+                vm[1].clone(),
+            ),
         );
         eq(
             p,
@@ -162,12 +172,14 @@ impl ReferenceEquations {
     ) -> Result<Self, String> {
         match instance.profile() {
             AcDcOpfProfile::PowerModelsAcDc0101AcpVscV1 => {}
-            AcDcOpfProfile::DeclaredCurrentAcpVscV1 if mode == EquationMode::Opf => {}
-            AcDcOpfProfile::DeclaredCurrentAcpVscV1 => {
-                return Err(
-                    "Declared-current profile qualifies OPF only; PF omits operating limits".into(),
-                )
-            }
+            AcDcOpfProfile::DeclaredCurrentAcpVscV1
+            | AcDcOpfProfile::PhysicalCoordinatesAcpVscV1
+                if mode == EquationMode::Opf => {}
+            AcDcOpfProfile::DeclaredCurrentAcpVscV1
+            | AcDcOpfProfile::PhysicalCoordinatesAcpVscV1 => return Err(
+                "Selected profile qualifies OPF only; PF controls/operating limits are unqualified"
+                    .into(),
+            ),
             _ => return Err("Unsupported coupled OPF profile".into()),
         }
         let net = instance.network();
@@ -247,6 +259,11 @@ impl ReferenceEquations {
             );
         }
         let angle_references = coupled.angle_references.clone();
+        let dc_branch_policy = coupled
+            .dc_branches
+            .iter()
+            .map(|b| b.policy.clone())
+            .collect();
         let mut policy = Vec::new();
         let model = compile_ac_opf_preparation_with(
             net,
@@ -376,15 +393,22 @@ impl ReferenceEquations {
                     } else {
                         INF
                     };
-                    for (label, from, to) in [("pf", f, t), ("pt", t, f)] {
+                    let vf = dcvm[f].clone();
+                    let vt = if branch.policy.coordinate_policy
+                        == AcDcCoordinatePolicy::PhysicalLocalBases
+                    {
+                        scaled(branch.policy.to_voltage_scale, dcvm[t].clone())
+                    } else {
+                        dcvm[t].clone()
+                    };
+                    for (label, from, v_from, v_to) in
+                        [("pf", f, vf.clone(), vt.clone()), ("pt", t, vt, vf)]
+                    {
                         let name = format!("dc_branch/{}/{label}", b.component);
                         let v = col(p, name.clone(), -limit, limit, 0.0);
                         let expected = scaled(
                             branch.conductance_pu,
-                            multiply(
-                                dcvm[from].clone(),
-                                subtract(dcvm[from].clone(), dcvm[to].clone()),
-                            ),
+                            multiply(v_from.clone(), subtract(v_from, v_to)),
                         );
                         eq(p, name, subtract(v.clone(), expected));
                         kcl[from].push(v);
@@ -444,7 +468,10 @@ impl ReferenceEquations {
                         p,
                         &format!("{name}/transformer"),
                         &s.transformer,
-                        s.transformer_tap_ratio,
+                        [
+                            s.transformer_tap_ratio,
+                            station.policy.transformer_bypass_voltage_ratio,
+                        ],
                         [variable(cols.vm[aci]), val("vmfilt")],
                         [variable(cols.va[aci]), val("vafilt")],
                         [val("pgrid"), val("qgrid"), val("ptf_to"), val("qtf_to")],
@@ -453,7 +480,7 @@ impl ReferenceEquations {
                         p,
                         &format!("{name}/reactor"),
                         &s.reactor,
-                        1.0,
+                        [1.0, 1.0],
                         [val("vmfilt"), val("vmconv")],
                         [val("vafilt"), val("vaconv")],
                         [
@@ -567,6 +594,7 @@ impl ReferenceEquations {
             mode,
             profile: instance.profile(),
             policy,
+            dc_branch_policy,
             bus_type_policy,
             angle_reference_policy: instance.angle_reference_policy(),
             angle_references,
@@ -709,9 +737,14 @@ impl ReferenceEquations {
                 AcDcOpfProfile::DeclaredCurrentAcpVscV1 => {
                     "acp-vsc-source-coordinates-inverter-loss-declared-current-v1"
                 }
+                AcDcOpfProfile::PhysicalCoordinatesAcpVscV1 => {
+                    "acp-vsc-physical-local-bases-inverter-loss-declared-current-v1"
+                }
                 _ => unreachable!("profile checked at construction"),
             },
             current_limit_policy: self.profile.current_limit_policy(),
+            coordinate_policy: self.profile.coordinate_policy(),
+            dc_branch_policy: self.dc_branch_policy.clone(),
             mode: self.mode,
             objective,
             max_violation,

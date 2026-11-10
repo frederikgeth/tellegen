@@ -12,9 +12,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let profile = match selection.as_str() {
         "compatibility" => powerio::AcDcOpfProfile::PowerModelsAcDc0101AcpVscV1,
         "declared-current" => powerio::AcDcOpfProfile::DeclaredCurrentAcpVscV1,
-        _ => return Err("profile must be compatibility or declared-current".into()),
+        "physical-coordinates" => powerio::AcDcOpfProfile::PhysicalCoordinatesAcpVscV1,
+        _ => return Err("unknown profile".into()),
     };
-    let declared = selection == "declared-current";
+    let declared = selection != "compatibility";
     std::fs::create_dir_all(&out)?;
     let mut cases = Vec::new();
     let mut inputs = Vec::new();

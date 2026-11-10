@@ -4,10 +4,47 @@ include("../reference-model.jl")
 out = abspath(ARGS[1])
 cases = JSON.parsefile(joinpath(out, "cases.json"))
 selection = only(unique(case["profile"] for case in cases))
-@assert selection in ("compatibility", "declared-current")
+@assert selection in ("compatibility", "declared-current", "physical-coordinates")
 suite = only(unique(get(case,"suite","physical") for case in cases))
 @assert suite in ("physical", "bypass")
 @assert length(cases) == (suite == "bypass" ? 384 : selection == "compatibility" ? 42 : 108)
+# Replace only the three equation families whose physical coordinates differ.
+# The oracle uses actual kV, MW and ohms, independently of native ratio coefficients.
+function physical_equations!(pm, data, vars)
+    replacements = []
+    for (id,s) in data["convdc"]
+        if !Bool(s["transformer"])
+            vp = vars["0_vm[$(s["busac_i"])]"]
+            vf = vars["0_vmf[$id]"]
+            original = only([c for c in all_constraints(pm.model, AffExpr, MOI.EqualTo{Float64})
+                if Set(v for (coef,v) in linear_terms(constraint_object(c).func) if coef != 0) == Set([vp,vf])])
+            delete(pm.model,original)
+            pcc_base = data["bus"][string(s["busac_i"])]["base_kv"]
+            station_base = s["basekVac"]
+            @constraint(pm.model, pcc_base*vp == station_base*vf)
+            push!(replacements, "physical_transformer_bypass/$id")
+        end
+    end
+    for (id,line) in data["branchdc"]
+        f,t = line["fbusdc"],line["tbusdc"]
+        vf,vt = vars["0_vdcm[$f]"],vars["0_vdcm[$t]"]
+        pf,pt = vars["0_pdcgrid[($id, $f, $t)]"],vars["0_pdcgrid[($id, $t, $f)]"]
+        for flow in (pf,pt)
+            original=only([c for c in all_constraints(pm.model, QuadExpr, MOI.EqualTo{Float64})
+                if coefficient(constraint_object(c).func,flow) != 0 &&
+                   Set(v for (coef,v1,v2) in quad_terms(constraint_object(c).func) if coef != 0 for v in (v1,v2)) == Set([vf,vt])])
+            delete(pm.model,original)
+        end
+        from_base,to_base = data["busdc"][string(f)]["basekVdc"],data["busdc"][string(t)]["basekVdc"]
+        mva,poles = data["baseMVA"],data["dcpol"]
+        resistance_ohm = line["r"]*from_base^2/mva
+        @constraint(pm.model, mva*pf == poles*(from_base*vf)*(from_base*vf-to_base*vt)/resistance_ohm)
+        @constraint(pm.model, mva*pt == poles*(to_base*vt)*(to_base*vt-from_base*vf)/resistance_ohm)
+        push!(replacements,"physical_dc_ohms/$id/from", "physical_dc_ohms/$id/to")
+    end
+    return sort!(replacements)
+end
+
 records = []
 for case in cases
     path = joinpath(out, case["file"])
@@ -38,7 +75,7 @@ for case in cases
     declared_pu = data["convdc"]["1"]["Imax"]
     PowerModelsACDC.process_additional_data!(data)
     repaired = data["convdc"]["1"]["Imax"] * ibase
-    if selection == "declared-current"
+    if selection != "compatibility"
         # Explicitly modified reference: undo ONLY the Imax repair, before model construction.
         # Imax is already pu in the source and is not rescaled by the preprocessor.
         data["convdc"]["1"]["Imax"] = declared_pu
@@ -46,7 +83,7 @@ for case in cases
     @assert Set(keys(data["busdc"])) == Set(["21", "22"])
     effective = data["convdc"]["1"]["Imax"] * ibase
     @assert isapprox(effective, case["effective_current_limit_ka"]; atol=1e-12)
-    if selection == "declared-current"
+    if selection != "compatibility"
         @assert isapprox(effective, declared; atol=1e-12)
     end
     pm = PM.instantiate_model(data, PM.ACPPowerModel, PowerModelsACDC.build_acdcopf;
@@ -84,15 +121,22 @@ for case in cases
     @assert data["convdc"]["1"]["islcc"] == 0
     mapped[vars["0_phiconv[1]"]] = 0.0 # Unused VSC firing angle, not an oracle solution.
     @assert Set(keys(mapped)) == Set(all_variables(pm.model))
+    source_violation = maximum(values(primal_feasibility_report(pm.model,mapped));init=0.0)
+    replacements = selection == "physical-coordinates" ? physical_equations!(pm,data,vars) : String[]
+    if selection == "physical-coordinates" && suite == "bypass"
+        @assert isapprox(source_violation,case["source_coordinate_violation"];atol=1e-9,rtol=1e-12)
+        @assert (source_violation > 1e-9) == (case["kind"] != "qualified")
+        @assert length(replacements) == (case["elements"]["transformer"] ? 2 : 3)
+    end
     violations = primal_feasibility_report(pm.model, mapped)
     worst = maximum(values(violations); init=0.0)
     current_bound = UpperBoundRef(vars["0_iconv_ac[1]"])
     expected_constraints = Dict{String,Any}()
-    if suite == "bypass" && case["kind"] == "unequal_pcc_bypass"
+    if suite == "bypass" && selection != "physical-coordinates" && case["kind"] == "unequal_pcc_bypass"
         matches = [c for c in all_constraints(pm.model, AffExpr, MOI.EqualTo{Float64})
             if Set(v for (coef,v) in linear_terms(constraint_object(c).func) if coef != 0) == Set([vars["0_vm[11]"],vars["0_vmf[1]"]])]
         expected_constraints["station/ac_dc_converter_station/31/transformer/vm_bypass"] = only(matches)
-    elseif suite == "bypass" && case["kind"] == "unequal_dc_bases"
+    elseif suite == "bypass" && selection != "physical-coordinates" && case["kind"] == "unequal_dc_bases"
         for (suffix, refname) in [("pf","0_pdcgrid[(1, 21, 22)]"),("pt","0_pdcgrid[(1, 22, 21)]")]
             matches = [c for c in all_constraints(pm.model, QuadExpr, MOI.EqualTo{Float64})
                 if coefficient(constraint_object(c).func,vars[refname]) != 0 &&
@@ -117,7 +161,7 @@ for case in cases
         @assert get(violations, current_bound, 0.0) > 0.1
     end
     current_violation_ka = get(violations, current_bound, 0.0) * ibase
-    if selection == "declared-current"
+    if selection != "compatibility"
         @assert isapprox(current_violation_ka, max(case["physical_current_ka"]-declared,0.0); atol=1e-12)
     end
     objective = value(v -> mapped[v], objective_function(pm.model))
@@ -150,6 +194,10 @@ for case in cases
         "max_reference_violation"=>worst, "max_other_violation"=>other,
         "objective_difference"=>objective-case["objective"], "negative_control_violation"=>detected,
         "native_variables"=>length(x), "reference_variables"=>length(mapped)))
+    if selection == "physical-coordinates"
+        records[end]["source_coordinate_violation"] = source_violation
+        records[end]["reference_replacements"] = replacements
+    end
     if suite == "bypass"
         records[end]["kind"] = case["kind"]
         records[end]["elements"] = case["elements"]
@@ -159,9 +207,9 @@ for case in cases
     end
 end
 output = Dict("suite"=>suite,"profile"=>selection,
-    "reference_modification"=>(selection == "declared-current" ? "restore_source_Imax_after_preprocessing_before_instantiation" : "none"),
+    "reference_modification"=>(selection == "physical-coordinates" ? "restore_source_Imax; SI_transformer_bypass_and_DC_Ohms_with_from_side_resistance_base" : selection == "declared-current" ? "restore_source_Imax_after_preprocessing_before_instantiation" : "none"),
     "reference_revision"=>"9ada4082ac087aed649f48fb5f977680b0fe06c7",
-    "powerio_revision"=>"896fef026feceb4cc2111a4914100fe313986386",
+    "powerio_revision"=>"ba1f9fc90de768e53aaace1c21e68b0d64759713",
     "manifest_sha256"=>bytes2hex(sha256(read(joinpath(@__DIR__, "..", "Manifest.toml")))),
     "cases_sha256"=>bytes2hex(sha256(read(joinpath(out, "cases.json")))),
     "julia_version"=>string(VERSION), "records"=>records)

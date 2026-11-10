@@ -168,6 +168,7 @@ the retained tap. The DC branch equation likewise needs common endpoint voltage
 bases for its tested physical interpretation. Unequal-base physical points fail
 only those expected constraints in native Tellegen and unmodified Julia. Source
 profiles continue to evaluate their declared coordinates; this is not a new
-runtime refusal of source cases or a generic physical conversion API. A separate
-physical-coordinate profile must define port/impedance bases and weighted
-bypass/DC equations before those physical projections can be enabled.
+runtime refusal of source cases or a generic physical conversion API. The separately selected
+`PhysicalCoordinatesAcpVscV1` now defines those local port/impedance bases and
+weighted equations; it does not alter either source-coordinate profile. See
+[the physical-coordinate contract and checks](physical/COORDINATES.md).

@@ -31,6 +31,8 @@ pub struct AcDcOpfManifest {
     pub schema: &'static str,
     pub profile: AcDcOpfProfile,
     pub current_limit_policy: AcDcCurrentLimitPolicy,
+    pub coordinate_policy: AcDcCoordinatePolicy,
+    pub dc_branch_policy: Vec<AcDcBranchPolicy>,
     pub model_fingerprint: String,
     pub powerio_revision: &'static str,
     pub reference_revision: &'static str,
@@ -121,17 +123,25 @@ impl PreparedAcDcOpf {
             schema: "tellegen-acdc-opf-preparation-v3",
             profile: instance.profile(),
             current_limit_policy: instance.profile().current_limit_policy(),
+            coordinate_policy: instance.profile().coordinate_policy(),
+            dc_branch_policy: equations.dc_branch_policy.clone(),
             model_fingerprint,
-            powerio_revision: "896fef026feceb4cc2111a4914100fe313986386",
+            powerio_revision: "ba1f9fc90de768e53aaace1c21e68b0d64759713",
             reference_revision: "9ada4082ac087aed649f48fb5f977680b0fe06c7",
             base_mva: owner.base_mva,
             pole_count: owner.pole_count,
             objective: "network_generator_cost",
             dispatch: "free_generator_and_vsc_dispatch_no_pf_setpoints",
-            units: concat!(
-                "power_pu_on_base_mva; voltage_pu_source_coordinates; ",
-                "angle_rad; current_pu_converter_ac_base"
-            ),
+            units: if instance.profile().coordinate_policy()
+                == AcDcCoordinatePolicy::PhysicalLocalBases
+            {
+                "power_pu_on_base_mva; voltage_pu_local_physical_bases; angle_rad; current_pu_converter_ac_base"
+            } else {
+                concat!(
+                    "power_pu_on_base_mva; voltage_pu_source_coordinates; ",
+                    "angle_rad; current_pu_converter_ac_base"
+                )
+            },
             ac_bus_ids: prep.bus_ids.iter().map(|id| id.0).collect(),
             generator_ids: prep.generators.identities.clone(),
             ac_branch_ids: prep.branches.identities.clone(),
