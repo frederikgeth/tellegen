@@ -1,0 +1,1005 @@
+{
+  "acceptance": {
+    "angle_comparison": "phase_modulo_2pi; raw_points_retained",
+    "cross_constraint_tolerance": 1e-07,
+    "electrical_coordinate_tolerance": 1e-07,
+    "native_residual_tolerance": 1e-10
+  },
+  "cases": {
+    "converter_outage": {
+      "active_coordinates_by_equipment": {
+        "branch": 46,
+        "branchdc": 12,
+        "bus": 39,
+        "busdc": 10,
+        "convdc": 9,
+        "gen": 10
+      },
+      "angle_references": [
+        {
+          "bus": 31,
+          "declared": true,
+          "island_buses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39
+          ]
+        }
+      ],
+      "bus_type_policy": [],
+      "control_count": 37,
+      "duplicate_voltage_rows_restored": [
+        0,
+        0,
+        0
+      ],
+      "equalities": 442,
+      "limit_violation_count": 31,
+      "max_electrical_difference": 3.9257486150745535e-12,
+      "max_limit_violation": 53.26743112220357,
+      "max_native_in_reference_violation": 8.51017034619872e-11,
+      "max_native_violation": 8.51017034619872e-11,
+      "max_raw_coordinate_difference": 3.9257486150745535e-12,
+      "max_reference_violation": 3.0460967082035495e-11,
+      "max_unmodified_source_violation": null,
+      "model_fingerprint": "sha256:ded29f5b93e3b20806733e2c693fd339ccde0470870874bbae0099a3a2c18028",
+      "native_current_retractions": [
+        3,
+        3,
+        3
+      ],
+      "native_iterations": [
+        6,
+        6,
+        6
+      ],
+      "phase_windings_by_start": {
+        "declared": {},
+        "flat": {},
+        "perturbed": {}
+      },
+      "reference_failed_trials": [],
+      "reference_only_variable_count": 72,
+      "reference_successful_starts": [
+        "declared",
+        "flat",
+        "perturbed"
+      ],
+      "representative_point_sha256": "d9c3430928b53285d990880774277e784b4f89f5a8c8be1d3adb4486ae42edd1",
+      "sharing_equalities": 0,
+      "source_sha256": "17b2e4310473176de400b08861da92853757a5869c756a7870e08f83f8b7be25",
+      "variables": 442
+    },
+    "dc_voltage": {
+      "active_coordinates_by_equipment": {
+        "branch": 46,
+        "branchdc": 12,
+        "bus": 39,
+        "busdc": 10,
+        "convdc": 10,
+        "gen": 10
+      },
+      "angle_references": [
+        {
+          "bus": 31,
+          "declared": true,
+          "island_buses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39
+          ]
+        }
+      ],
+      "bus_type_policy": [],
+      "control_count": 39,
+      "duplicate_voltage_rows_restored": [
+        0,
+        0
+      ],
+      "equalities": 456,
+      "limit_violation_count": 34,
+      "max_electrical_difference": 2.3803181647963356e-13,
+      "max_limit_violation": 59.898869314929456,
+      "max_native_in_reference_violation": 9.459100169806334e-14,
+      "max_native_violation": 1.3722356584366935e-13,
+      "max_raw_coordinate_difference": 2.3803181647963356e-13,
+      "max_reference_violation": 5.684341886080802e-14,
+      "max_unmodified_source_violation": null,
+      "model_fingerprint": "sha256:b3a7aebd7fe39d1bb3176ee01392f28301805391a5b4e678721672a3241214ac",
+      "native_current_retractions": [
+        3,
+        3,
+        3
+      ],
+      "native_iterations": [
+        7,
+        7,
+        7
+      ],
+      "phase_windings_by_start": {
+        "declared": {},
+        "perturbed": {}
+      },
+      "reference_failed_trials": [
+        {
+          "native_in_reference_violation": 9.214851104388799e-14,
+          "reference_violation": 3.218649812207605,
+          "start": "flat",
+          "termination": "LOCALLY_INFEASIBLE"
+        }
+      ],
+      "reference_only_variable_count": 73,
+      "reference_successful_starts": [
+        "declared",
+        "perturbed"
+      ],
+      "representative_point_sha256": "949a55ea861040085f9167d79442745319782b6fe56938be3f9159eaede3573c",
+      "sharing_equalities": 0,
+      "source_sha256": "b4e1beef04ab93464ab6e8c8aab2f03ab328bae17f0c82b3a7b4d3029f87d1c5",
+      "variables": 456
+    },
+    "opf_pg_vdc_converter_1": {
+      "active_coordinates_by_equipment": {
+        "branch": 46,
+        "branchdc": 12,
+        "bus": 39,
+        "busdc": 10,
+        "convdc": 10,
+        "gen": 10
+      },
+      "angle_references": [
+        {
+          "bus": 31,
+          "declared": true,
+          "island_buses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39
+          ]
+        }
+      ],
+      "bus_type_policy": [],
+      "control_count": 39,
+      "duplicate_voltage_rows_restored": [
+        0,
+        0,
+        0
+      ],
+      "equalities": 456,
+      "limit_violation_count": 34,
+      "max_electrical_difference": 7.51487760908276e-12,
+      "max_limit_violation": 59.88125863559245,
+      "max_native_in_reference_violation": 6.306066779870889e-14,
+      "max_native_violation": 8.848477506262498e-14,
+      "max_raw_coordinate_difference": 7.51487760908276e-12,
+      "max_reference_violation": 1.0302869668521453e-13,
+      "max_unmodified_source_violation": null,
+      "model_fingerprint": "sha256:9796fa370cf973406a31a7060375f49f7499add10a48dae9b93bfda3d889d3f6",
+      "native_current_retractions": [
+        3,
+        3,
+        3
+      ],
+      "native_iterations": [
+        7,
+        7,
+        7
+      ],
+      "phase_windings_by_start": {
+        "declared": {},
+        "flat": {},
+        "perturbed": {}
+      },
+      "reference_failed_trials": [],
+      "reference_only_variable_count": 73,
+      "reference_successful_starts": [
+        "declared",
+        "flat",
+        "perturbed"
+      ],
+      "representative_point_sha256": "c22e988f9ad3db3f87386132346e1241ff45e81bc315a227c5bfc4b75e652886",
+      "sharing_equalities": 0,
+      "source_sha256": "0ceda75e9cf8de864c2d61b877172bb2983167244a3e29df05b20b1f11e8360c",
+      "variables": 456
+    },
+    "opf_pg_vdc_converter_8": {
+      "active_coordinates_by_equipment": {
+        "branch": 46,
+        "branchdc": 12,
+        "bus": 39,
+        "busdc": 10,
+        "convdc": 10,
+        "gen": 10
+      },
+      "angle_references": [
+        {
+          "bus": 31,
+          "declared": true,
+          "island_buses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39
+          ]
+        }
+      ],
+      "bus_type_policy": [],
+      "control_count": 39,
+      "duplicate_voltage_rows_restored": [
+        0,
+        0,
+        0
+      ],
+      "equalities": 456,
+      "limit_violation_count": 30,
+      "max_electrical_difference": 4.982680934517703e-13,
+      "max_limit_violation": 5.876456502123846,
+      "max_native_in_reference_violation": 6.59472476627343e-14,
+      "max_native_violation": 7.904787935331115e-14,
+      "max_raw_coordinate_difference": 4.982680934517703e-13,
+      "max_reference_violation": 8.526512829121202e-14,
+      "max_unmodified_source_violation": null,
+      "model_fingerprint": "sha256:9d59703ed67e0aa0c99c93a2d91a0fc7731af8631e98a56e0d13489bd22a12ca",
+      "native_current_retractions": [
+        3,
+        3,
+        3
+      ],
+      "native_iterations": [
+        7,
+        7,
+        7
+      ],
+      "phase_windings_by_start": {
+        "declared": {},
+        "flat": {},
+        "perturbed": {}
+      },
+      "reference_failed_trials": [],
+      "reference_only_variable_count": 73,
+      "reference_successful_starts": [
+        "declared",
+        "flat",
+        "perturbed"
+      ],
+      "representative_point_sha256": "19197a877974448f373de6a4b7a0c465bddca3e35e9ccc04b326f03f266512d7",
+      "sharing_equalities": 0,
+      "source_sha256": "4f59876c4a37928e2d622857638e476f78505085516d1789cc31eae1af2d0525",
+      "variables": 456
+    },
+    "parallel_dc_line_outage": {
+      "active_coordinates_by_equipment": {
+        "branch": 46,
+        "branchdc": 11,
+        "bus": 39,
+        "busdc": 10,
+        "convdc": 10,
+        "gen": 10
+      },
+      "angle_references": [
+        {
+          "bus": 31,
+          "declared": true,
+          "island_buses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39
+          ]
+        }
+      ],
+      "bus_type_policy": [],
+      "control_count": 39,
+      "duplicate_voltage_rows_restored": [
+        0,
+        0,
+        0
+      ],
+      "equalities": 454,
+      "limit_violation_count": 34,
+      "max_electrical_difference": 3.369660106500305e-11,
+      "max_limit_violation": 59.87556268987825,
+      "max_native_in_reference_violation": 7.349676423018536e-14,
+      "max_native_violation": 7.505107646466058e-14,
+      "max_raw_coordinate_difference": 3.369660106500305e-11,
+      "max_reference_violation": 9.733014394441852e-11,
+      "max_unmodified_source_violation": null,
+      "model_fingerprint": "sha256:96505b582429ae270706b365ce2405f3e6807733a0f279bf6b64b385b9903df6",
+      "native_current_retractions": [
+        3,
+        3,
+        3
+      ],
+      "native_iterations": [
+        7,
+        7,
+        7
+      ],
+      "phase_windings_by_start": {
+        "declared": {},
+        "flat": {},
+        "perturbed": {}
+      },
+      "reference_failed_trials": [],
+      "reference_only_variable_count": 73,
+      "reference_successful_starts": [
+        "declared",
+        "flat",
+        "perturbed"
+      ],
+      "representative_point_sha256": "f0efaca02b7c7df067dbe0507aeaa999ddef9701ae48b3ce6087b7ad0fd014f1",
+      "sharing_equalities": 0,
+      "source_sha256": "58b9286126a6287828546716f8d20cafc74cd45f667619983c61bdd295717f66",
+      "variables": 454
+    },
+    "pcc_active": {
+      "active_coordinates_by_equipment": {
+        "branch": 46,
+        "branchdc": 12,
+        "bus": 39,
+        "busdc": 10,
+        "convdc": 10,
+        "gen": 10
+      },
+      "angle_references": [
+        {
+          "bus": 31,
+          "declared": true,
+          "island_buses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39
+          ]
+        }
+      ],
+      "bus_type_policy": [],
+      "control_count": 39,
+      "duplicate_voltage_rows_restored": [
+        0,
+        0,
+        0
+      ],
+      "equalities": 456,
+      "limit_violation_count": 33,
+      "max_electrical_difference": 4.068026804304736e-09,
+      "max_limit_violation": 60.61616691785273,
+      "max_native_in_reference_violation": 6.905587213168474e-14,
+      "max_native_violation": 9.692247004977617e-14,
+      "max_raw_coordinate_difference": 4.068026804304736e-09,
+      "max_reference_violation": 2.843725255274876e-11,
+      "max_unmodified_source_violation": null,
+      "model_fingerprint": "sha256:a15013e0b91f06dded9a3c88633b614ac61327eb0f9b8af259dad0003d0ea1ec",
+      "native_current_retractions": [
+        3,
+        3,
+        3
+      ],
+      "native_iterations": [
+        7,
+        7,
+        7
+      ],
+      "phase_windings_by_start": {
+        "declared": {},
+        "flat": {},
+        "perturbed": {}
+      },
+      "reference_failed_trials": [],
+      "reference_only_variable_count": 73,
+      "reference_successful_starts": [
+        "declared",
+        "flat",
+        "perturbed"
+      ],
+      "representative_point_sha256": "5c27f763245ed6ffb640a136909d56a5cbbccbc7333df4666215823805e75fd6",
+      "sharing_equalities": 0,
+      "source_sha256": "aa4d2a7524c4cbe98937544e17896985232eb7931ce3615f2ddda383d17cfdea",
+      "variables": 456
+    },
+    "pcc_reactive": {
+      "active_coordinates_by_equipment": {
+        "branch": 46,
+        "branchdc": 12,
+        "bus": 39,
+        "busdc": 10,
+        "convdc": 10,
+        "gen": 10
+      },
+      "angle_references": [
+        {
+          "bus": 31,
+          "declared": true,
+          "island_buses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39
+          ]
+        }
+      ],
+      "bus_type_policy": [],
+      "control_count": 39,
+      "duplicate_voltage_rows_restored": [
+        0,
+        0,
+        0
+      ],
+      "equalities": 456,
+      "limit_violation_count": 33,
+      "max_electrical_difference": 1.7644978811404144e-09,
+      "max_limit_violation": 59.868664265771365,
+      "max_native_in_reference_violation": 6.369904603786836e-14,
+      "max_native_violation": 6.572520305780927e-14,
+      "max_raw_coordinate_difference": 1.7644978811404144e-09,
+      "max_reference_violation": 1.3951950705859417e-11,
+      "max_unmodified_source_violation": null,
+      "model_fingerprint": "sha256:000dfe826fe04c74eba9f4ee1a98874c0781920edb031afdab540830a59d351f",
+      "native_current_retractions": [
+        3,
+        3,
+        3
+      ],
+      "native_iterations": [
+        7,
+        7,
+        7
+      ],
+      "phase_windings_by_start": {
+        "declared": {},
+        "flat": {},
+        "perturbed": {}
+      },
+      "reference_failed_trials": [],
+      "reference_only_variable_count": 73,
+      "reference_successful_starts": [
+        "declared",
+        "flat",
+        "perturbed"
+      ],
+      "representative_point_sha256": "9e8ff3ed41fb7f22167fabb44829b255bae44b778ec7537687f3bf5cf46576ff",
+      "sharing_equalities": 0,
+      "source_sha256": "4cd128601597fdf399dfbe8e504fc4cfbd4e47e8ff56c72d9d54367bc0ec2d51",
+      "variables": 456
+    },
+    "tight_ratings": {
+      "active_coordinates_by_equipment": {
+        "branch": 46,
+        "branchdc": 12,
+        "bus": 39,
+        "busdc": 10,
+        "convdc": 10,
+        "gen": 10
+      },
+      "angle_references": [
+        {
+          "bus": 31,
+          "declared": true,
+          "island_buses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39
+          ]
+        }
+      ],
+      "bus_type_policy": [],
+      "control_count": 39,
+      "duplicate_voltage_rows_restored": [
+        0,
+        0,
+        0
+      ],
+      "equalities": 456,
+      "limit_violation_count": 59,
+      "max_electrical_difference": 7.51487760908276e-12,
+      "max_limit_violation": 59.88125863559245,
+      "max_native_in_reference_violation": 6.306066779870889e-14,
+      "max_native_violation": 8.848477506262498e-14,
+      "max_raw_coordinate_difference": 7.51487760908276e-12,
+      "max_reference_violation": 1.0302869668521453e-13,
+      "max_unmodified_source_violation": null,
+      "model_fingerprint": "sha256:d70083d47f0ee0e4172a874d1ed3a0cbd39ec29fff2aa052847c7265bd2bd998",
+      "native_current_retractions": [
+        3,
+        3,
+        3
+      ],
+      "native_iterations": [
+        7,
+        7,
+        7
+      ],
+      "phase_windings_by_start": {
+        "declared": {},
+        "flat": {},
+        "perturbed": {}
+      },
+      "reference_failed_trials": [],
+      "reference_only_variable_count": 73,
+      "reference_successful_starts": [
+        "declared",
+        "flat",
+        "perturbed"
+      ],
+      "representative_point_sha256": "c22e988f9ad3db3f87386132346e1241ff45e81bc315a227c5bfc4b75e652886",
+      "sharing_equalities": 0,
+      "source_sha256": "f667fdc4aad0d6d79c79432155f416de9cde6f9ccb13f16222b8632fedad273a",
+      "variables": 456
+    }
+  },
+  "control_only_native_sha256": "93b0b8f4e9d0948335b64d031df3f5a928fe8046efd98bb067225cfb56fb1415",
+  "control_only_probes": [
+    {
+      "selected_converter": 1,
+      "trials": [
+        {
+          "native": {
+            "error": "PF line search stalled at residual 2.0255044089574987; no infeasibility claim",
+            "termination": "FAILED_LOCAL_TRIAL"
+          },
+          "reference_max_violation": 1.9507993333896207,
+          "reference_termination": "LOCALLY_INFEASIBLE",
+          "start": "declared"
+        },
+        {
+          "native": {
+            "error": "PF line search stalled at residual 4.074136854504097; no infeasibility claim",
+            "termination": "FAILED_LOCAL_TRIAL"
+          },
+          "reference_max_violation": 1.944047802891892,
+          "reference_termination": "LOCALLY_INFEASIBLE",
+          "start": "flat"
+        },
+        {
+          "native": {
+            "error": "PF line search stalled at residual 2.0555888576808563; no infeasibility claim",
+            "termination": "FAILED_LOCAL_TRIAL"
+          },
+          "reference_max_violation": 1.970864431060625,
+          "reference_termination": "LOCALLY_INFEASIBLE",
+          "start": "perturbed"
+        }
+      ]
+    },
+    {
+      "selected_converter": 8,
+      "trials": [
+        {
+          "native": {
+            "error": "PF line search stalled at residual 2.1680678593292626; no infeasibility claim",
+            "termination": "FAILED_LOCAL_TRIAL"
+          },
+          "reference_max_violation": 2.2702560187299685,
+          "reference_termination": "LOCALLY_INFEASIBLE",
+          "start": "declared"
+        },
+        {
+          "native": {
+            "error": "PF line search stalled at residual 4.453018740600793; no infeasibility claim",
+            "termination": "FAILED_LOCAL_TRIAL"
+          },
+          "reference_max_violation": 2.2752919683577923,
+          "reference_termination": "LOCALLY_INFEASIBLE",
+          "start": "flat"
+        },
+        {
+          "native": {
+            "error": "PF line search stalled at residual 2.3002824302457476; no infeasibility claim",
+            "termination": "FAILED_LOCAL_TRIAL"
+          },
+          "reference_max_violation": 2.2546354897864016,
+          "reference_termination": "LOCALLY_INFEASIBLE",
+          "start": "perturbed"
+        }
+      ]
+    }
+  ],
+  "control_only_reference_sha256": "01151bd809b0149d5673a852b37320b54a7ad172817f32806417a8669c5b4583",
+  "counts": {
+    "bidirectional_cross_checks": 47,
+    "cases": 8,
+    "control_only_native_trials": 6,
+    "control_only_reference_trials": 6,
+    "corruption_controls": 92,
+    "native_solves": 24,
+    "reference_failed_trials": 1,
+    "reference_solves": 23
+  },
+  "dispatch_source": {
+    "generator_pg_pu": {
+      "pg[bus-30]": {
+        "selected": 8.890444308285051,
+        "source": 5.2
+      },
+      "pg[bus-31-2]": {
+        "selected": 6.4599999999554765,
+        "source": 3.23
+      },
+      "pg[bus-32]": {
+        "selected": 7.2499999999065885,
+        "source": 3.625
+      },
+      "pg[bus-33]": {
+        "selected": 0.34205989128110714,
+        "source": 3.26
+      },
+      "pg[bus-34]": {
+        "selected": 5.079999999912464,
+        "source": 2.54
+      },
+      "pg[bus-35]": {
+        "selected": 6.869999999536501,
+        "source": 3.435
+      },
+      "pg[bus-36]": {
+        "selected": 5.799999999944956,
+        "source": 2.9
+      },
+      "pg[bus-37]": {
+        "selected": 2.6990961907736972,
+        "source": 2.82
+      },
+      "pg[bus-38]": {
+        "selected": 8.649999999910452,
+        "source": 4.325
+      },
+      "pg[bus-39-2]": {
+        "selected": 10.999999999838483,
+        "source": 5.5
+      }
+    },
+    "identity_map_sha256": "3507ea305b72e8de4636bcbece449d2769e3dab9ddf11f564fa5b6e246b9228b",
+    "kind": "fixed_generator_Pg_only_from_previously_qualified_OPF",
+    "reference_sha256": "023e0d26c001e3b44e92aeef9e877689aaac6b51cfbab806bdc2bd5dad011bbf"
+  },
+  "harness_sha256": {
+    "crates/tellegen/examples/acdc_pf.rs": "414b5ec77d2394e9715be02dd79d4d281fe74b788c5aed7ac9b0ef1011a8dc9c",
+    "crates/tellegen/tests/support/acdc_pf_case39.rs": "270f4b2f464a56bbe7d90fc727a18216aef889e3f60476e164389414697f6d0b",
+    "evals/validation/acdc/case39/identity-map.json": "3507ea305b72e8de4636bcbece449d2769e3dab9ddf11f564fa5b6e246b9228b",
+    "evals/validation/acdc/case39/reference.json": "023e0d26c001e3b44e92aeef9e877689aaac6b51cfbab806bdc2bd5dad011bbf",
+    "evals/validation/acdc/pf/case39-probes.jl": "fc6cac833ff8b9feff4a3a0e192ac8d2feaa5300893b92b6c4dcf17648223219",
+    "evals/validation/acdc/pf/check.jl": "20fcfbbbf3de74e513079779b8a3fe89733cc58494eed7bb771608edb0351e46",
+    "evals/validation/acdc/pf/mapping.jl": "c0e46c41d251e1bcf991ba95212a22333d0b635ef6de8efe367a1a8b22245d85",
+    "evals/validation/acdc/pf/run.py": "4022d79559d48df559978df9c25dcdc97cee060ca70664a9117247477eda5935",
+    "evals/validation/acdc/pf/shared-voltage.jl": "80b4cda9a021e9c76b187b82a486ba414891e0f7395d5a2c1e1e9c05bc9fe916"
+  },
+  "julia_version": "1.12.6",
+  "manifest_sha256": "c0c50ee07d24b1ba8af99d58dad407959e4e6ce81071f6f988babe120f0344f4",
+  "native_cross_check": {
+    "checks": 23,
+    "max_violation": 1.6155482507329566e-10
+  },
+  "native_report_sha256": "1c8614760b2000ae614f8e706b94519c70367ec3acf051eb3ffdc727067e266c",
+  "powerio_revision": "dbc52de6650e43efa734125e398994960d8c2a02",
+  "profile": "power_models_ac_dc0101_acp_vsc_equal_increment_v1",
+  "reference_modification": "equal_increments_from_declared_generator_Pg_at_reference_and_Qg_at_PV_reference; shared_voltage_injection_increments_only_when_explicit_profile; duplicate_Vm_rows_restored; positive_voltage_numerical_domain_with_original_bounds_restored; exact_presolve_of_affine_setpoints_fixed_load_and_unused_VSC_auxiliaries_restored_before_validation",
+  "reference_report_sha256": "41f66de4826208c2d0f2816e58318b114d3b25081af400a47aece90113ffea57",
+  "reference_revision": "9ada4082ac087aed649f48fb5f977680b0fe06c7",
+  "refusals": [
+    {
+      "case": "original_no_dc_controller",
+      "error": "BUILD.ACDC.PROFILE_INVALID: PF requires exactly one declared DC voltage controller per DC island"
+    },
+    {
+      "case": "duplicate_dc_controller",
+      "error": "BUILD.ACDC.PROFILE_INVALID: PF requires exactly one declared DC voltage controller per DC island"
+    },
+    {
+      "case": "controller_outage",
+      "error": "BUILD.ACDC.PROFILE_INVALID: PF requires exactly one declared DC voltage controller per DC island"
+    },
+    {
+      "case": "dc_split_without_local_controller",
+      "error": "BUILD.ACDC.PROFILE_INVALID: PF requires exactly one declared DC voltage controller per DC island"
+    },
+    {
+      "case": "nonpositive_voltage_target",
+      "error": "BUILD.ACDC.PROFILE_INVALID: PF DC voltage target must be positive"
+    }
+  ],
+  "scope": "source_pu_Cinv_PF_with_explicit_generator_allocation; limits_reported_after_solve; no_physical_fixed_mode_PF_or_automatic_control_switching",
+  "solver_options": {
+    "acceptable_iter": 0,
+    "bound_relax_factor": 0.0,
+    "constr_viol_tol": 1e-10,
+    "linear_solver": "mumps",
+    "max_cpu_time": 120.0,
+    "max_iter": 3000,
+    "mu_strategy": "adaptive",
+    "nlp_scaling_method": "none",
+    "print_level": 0,
+    "sb": "yes",
+    "tol": 1e-09
+  },
+  "source_case": {
+    "expected_pf_failure": "LOCALLY_INFEASIBLE",
+    "source_file": "case39_10_he.m",
+    "source_sha256": "678a3c76c36663aef7938117d77e1a9c66bd466ebcbe98405530e3a52b6f212d"
+  },
+  "source_qualification": "explicit_DC_voltage_controller_and_fixed_OPF_Pg_variant; control_only_trials_separately_reported; source_file_unchanged",
+  "suite": "case39"
+}

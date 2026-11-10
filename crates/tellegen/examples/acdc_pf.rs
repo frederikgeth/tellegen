@@ -1,6 +1,8 @@
 //! Reproduce native/reference PF control and allocation qualification.
 #[path = "../tests/support/acdc_pf_case24.rs"]
 mod case24;
+#[path = "../tests/support/acdc_pf_case39.rs"]
+mod case39;
 #[path = "../tests/support/acdc_pf.rs"]
 mod fixture;
 #[path = "../tests/support/acdc_pf_shared.rs"]
@@ -12,6 +14,7 @@ fn names() -> &'static [&'static str] {
     {
         "case5" => &fixture::CASES,
         "case24" => &case24::CASES,
+        "case39" => &case39::CASES,
         "shared" => &shared::CASES,
         _ => panic!("unknown PF suite"),
     }
@@ -19,6 +22,8 @@ fn names() -> &'static [&'static str] {
 fn instance(case: usize) -> powerio::AcDcPfInstance {
     if names() == case24::CASES {
         case24::instance(case)
+    } else if names() == case39::CASES {
+        case39::instance(case)
     } else if names() == shared::CASES {
         shared::instance(case)
     } else {
@@ -48,6 +53,25 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             out.join("refusals.json"),
             serde_json::to_string_pretty(&refusals)? + "\n",
         )?;
+    }
+    if names() == case39::CASES {
+        let refusals: Vec<_> = case39::refusals()
+            .into_iter()
+            .map(|(name, net, expected)| {
+                let error = powerio::AcDcPfInstance::from_network(net, case39::PROFILE)
+                    .unwrap_err()
+                    .to_string();
+                assert!(error.contains(expected), "{name}: {error}");
+                serde_json::json!({"case":name,"error":error})
+            })
+            .collect();
+        std::fs::write(
+            out.join("refusals.json"),
+            serde_json::to_string_pretty(&refusals)? + "\n",
+        )?;
+    }
+    if names() == case39::CASES {
+        write_control_probes(&out)?;
     }
     let mut cases = vec![];
     for (case, name) in names().iter().enumerate() {
@@ -107,30 +131,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         std::fs::write(out.join(&file), artifacts[0].bytes())?;
         let model = PreparedAcDcPf::new(instance)?;
         let mut solves = vec![];
-        let mut perturbed = model.initial_point(&AcDcPfStart::Declared)?;
-        for (i, (key, value)) in perturbed.iter_mut().enumerate() {
-            if key.starts_with("vm[")
-                || key.ends_with("/vm")
-                || key.ends_with("/vmfilt")
-                || key.ends_with("/vmconv")
-            {
-                *value *= 1.01;
-            } else if key.starts_with("va[") || key.ends_with("/vafilt") || key.ends_with("/vaconv")
-            {
-                *value += 0.01 * ((i % 3) as f64 - 1.);
-            }
-        }
-        for (start, label) in [
-            (AcDcPfStart::Declared, "declared"),
-            (AcDcPfStart::Flat, "flat"),
-            (
-                AcDcPfStart::Point {
-                    model_fingerprint: model.manifest().model_fingerprint.clone(),
-                    values: perturbed,
-                },
-                "perturbed",
-            ),
-        ] {
+        for (start, label) in starts(&model)? {
             let result = model
                 .solve(start, None)
                 .map_err(|e| format!("{name}/{label}: {e}"))?;
@@ -156,6 +157,10 @@ fn verify(out: &std::path::Path) -> Result<(), Box<dyn std::error::Error>> {
     for case in r["cases"].as_array().ok_or("reference cases missing")? {
         let model = PreparedAcDcPf::new(instance(case["case"].as_u64().unwrap() as usize))?;
         for s in case["solves"].as_array().unwrap() {
+            if s.get("point").is_none() {
+                assert_eq!(names(), case39::CASES);
+                continue;
+            }
             let point = serde_json::from_value(s["point"].clone())?;
             let result = model.evaluate(&point)?;
             assert!(result.max_violation < 1e-7);
@@ -163,12 +168,72 @@ fn verify(out: &std::path::Path) -> Result<(), Box<dyn std::error::Error>> {
             checks += 1;
         }
     }
-    assert_eq!(checks, names().len() * 3);
+    let expected = r["cases"]
+        .as_array()
+        .unwrap()
+        .iter()
+        .flat_map(|c| c["solves"].as_array().unwrap())
+        .filter(|s| s.get("point").is_some())
+        .count();
+    assert_eq!(checks, expected);
+    assert!(checks >= names().len() * 2);
     std::fs::write(
         out.join("native-cross-check.json"),
         serde_json::to_string_pretty(&serde_json::json!({"checks":checks,"max_violation":worst}))?
             + "\n",
     )?;
     println!("{checks} reference PF points pass native equations and sharing");
+    Ok(())
+}
+
+fn starts(model: &PreparedAcDcPf) -> Result<Vec<(AcDcPfStart, &'static str)>, String> {
+    let mut perturbed = model.initial_point(&AcDcPfStart::Declared)?;
+    for (i, (key, value)) in perturbed.iter_mut().enumerate() {
+        if key.starts_with("vm[")
+            || key.ends_with("/vm")
+            || key.ends_with("/vmfilt")
+            || key.ends_with("/vmconv")
+        {
+            *value *= 1.01;
+        } else if key.starts_with("va[") || key.ends_with("/vafilt") || key.ends_with("/vaconv") {
+            *value += 0.01 * ((i % 3) as f64 - 1.);
+        }
+    }
+    Ok(vec![
+        (AcDcPfStart::Declared, "declared"),
+        (AcDcPfStart::Flat, "flat"),
+        (
+            AcDcPfStart::Point {
+                model_fingerprint: model.manifest().model_fingerprint.clone(),
+                values: perturbed,
+            },
+            "perturbed",
+        ),
+    ])
+}
+fn write_control_probes(out: &std::path::Path) -> Result<(), Box<dyn std::error::Error>> {
+    let mut probes = vec![];
+    for case in [0, 1] {
+        let model = PreparedAcDcPf::new(powerio::AcDcPfInstance::from_network(
+            case39::control_only_network(case),
+            case39::PROFILE,
+        )?)?;
+        let mut trials = vec![];
+        for (start, label) in starts(&model)? {
+            let initial = model.initial_point(&start)?;
+            let result = match model.solve(start, None) {
+                Ok(r) => {
+                    serde_json::json!({"termination":"CONVERGED","point":r.point,"max_violation":r.validation.max_violation})
+                }
+                Err(e) => serde_json::json!({"termination":"FAILED_LOCAL_TRIAL","error":e}),
+            };
+            trials.push(serde_json::json!({"start":label,"initial_point":initial,"native":result}));
+        }
+        probes.push(serde_json::json!({"selected_converter":if case==0 {1}else{8},"preparation":model.manifest(),"trials":trials}));
+    }
+    std::fs::write(
+        out.join("control-only-native.json"),
+        serde_json::to_string_pretty(&probes)? + "\n",
+    )?;
     Ok(())
 }

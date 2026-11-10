@@ -120,8 +120,8 @@ CARGO_TARGET_DIR=/tmp/tacdc-shared-pf-target \
   python3 evals/validation/acdc/pf/run.py /tmp/tacdc-shared-pf-case5-recheck
 ```
 
-Next is a clearly labeled case39 variant with an explicitly selected DC-voltage
-controller. Original case67 still needs an AC-island PF reference/dispatch choice
+The follow-up [case39 study](CASE39.md) explicitly selects both a DC-voltage
+controller and fixed generator Pg dispatch; control-only failures are recorded. Original case67 still needs an AC-island PF reference/dispatch choice
 and a separately defined droop policy. Physical-unit/fixed-mode PF, saturation,
 generic rebasing, sparse performance and physical pole/return wiring remain
 separate. No new PMACDC electrical-equation bug is established by this work.

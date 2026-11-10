@@ -425,3 +425,25 @@ instances/results. Published schemas and draft PR heads stay unchanged.
 
 Next: a labeled case39 DC-voltage-controller variant. Case67's PF reference and
 droop semantics remain separate; no source control is silently repaired.
+
+
+## Case39 PF with explicit controller and fixed dispatch — 2026-11-10
+
+The [case39 study](pf/CASE39.md) explicitly selects a DC-voltage controller and
+fixed generator Pg from the previously qualified source OPF. No solved voltages,
+Qg, converter outputs or PF points seed the independent solvers. Original case39
+still refuses; selecting a controller alone produces six failed local trials in
+each solver, which does not establish infeasibility.
+
+Eight variants pass **24 native solves, 23 reference solves, 47 cross-model checks
+and 92 corruptions**. The reference `dc_voltage/flat` trial fails locally; the
+same case succeeds from declared and perturbed starts, and all 24 native points
+satisfy reference equations. Failed-trial results remain in the evidence. Maximum
+electrical difference is **4.068e-9**. Baseline rating violations remain reported;
+this is equation qualification, not operational feasibility.
+
+Full suite: **795 passed, 7 ignored**; build/lint/format/pin/EPL checks pass.
+Case5 passes 48 solves/checks and 96 corruptions with eight unchanged fingerprints;
+42 compatibility exports/records remain byte-identical. Production profiles,
+PowerIO pin dbc52de6 and draft PR heads are unchanged. Next: case67's explicit
+PF reference/dispatch and droop contract. No new PMACDC equation bug is established.
