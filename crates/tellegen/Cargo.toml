@@ -146,3 +146,11 @@ required-features = ["acopf"]
 [[example]]
 name = "acdc_losses"
 required-features = ["acopf"]
+
+[[example]]
+name = "acdc_fixed_mode"
+required-features = ["acopf"]
+
+[[example]]
+name = "acdc_fixed_boundaries"
+required-features = ["acopf"]

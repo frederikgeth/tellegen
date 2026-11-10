@@ -174,9 +174,11 @@ impl ReferenceEquations {
             AcDcOpfProfile::PowerModelsAcDc0101AcpVscV1 => {}
             AcDcOpfProfile::DeclaredCurrentAcpVscV1
             | AcDcOpfProfile::PhysicalCoordinatesAcpVscV1
+            | AcDcOpfProfile::FixedModePhysicalAcpVscV1
                 if mode == EquationMode::Opf => {}
             AcDcOpfProfile::DeclaredCurrentAcpVscV1
-            | AcDcOpfProfile::PhysicalCoordinatesAcpVscV1 => return Err(
+            | AcDcOpfProfile::PhysicalCoordinatesAcpVscV1
+            | AcDcOpfProfile::FixedModePhysicalAcpVscV1 => return Err(
                 "Selected profile qualifies OPF only; PF controls/operating limits are unqualified"
                     .into(),
             ),
@@ -739,6 +741,9 @@ impl ReferenceEquations {
                 }
                 AcDcOpfProfile::PhysicalCoordinatesAcpVscV1 => {
                     "acp-vsc-physical-local-bases-inverter-loss-declared-current-v1"
+                }
+                AcDcOpfProfile::FixedModePhysicalAcpVscV1 => {
+                    "acp-vsc-physical-local-bases-fixed-mode-loss-declared-current-v1"
                 }
                 _ => unreachable!("profile checked at construction"),
             },

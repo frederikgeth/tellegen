@@ -347,3 +347,15 @@ and a hard valve-P switch has a finite jump at nonzero Q. The next gate is an
 explicit fixed-mode physical loss policy and branch-constrained optimization,
 with automatic reversal kept separate. Existing profiles, pin and draft PR
 heads remain unchanged.
+
+
+## Fixed-mode physical OPF — 2026-11-10
+
+The [fixed-mode gate](physical/FIXED-MODES.md) adds identity-keyed rectifier/inverter
+choices in PowerIO `27aae3b3`, selected loss coefficients, valve-P sign bounds and
+mode-aware preparation fingerprints. Existing profiles and draft PR heads retain
+their behavior. All 384 local solves, 2,304 cross-formulation/base checks and 1,728
+boundary witnesses pass, including 648 off-domain sign violations and 32 derivative
+cases. The new profile uses stricter convergence near zero current; no acceptance
+threshold or physical limit is relaxed. Full Tellegen tests: 783 passed, 7 ignored.
+Native coupled PF controls are next; automatic mode reversal remains separate.

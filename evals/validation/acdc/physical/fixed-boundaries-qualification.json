@@ -1,0 +1,622 @@
+{
+  "acceptance": {
+    "other_constraint_tolerance": 1e-09,
+    "scope": "pointwise_fixed_mode; zero_uses_declared_curve; no_boundary_optimization_claim",
+    "selected_branch_tolerance": 1e-09,
+    "signed_loss_residual_mw_tolerance": 1e-10
+  },
+  "base_configurations": [
+    {
+      "converter_kv": 200.0,
+      "dc_kv": 500.0,
+      "mva": 50.0,
+      "pcc_kv": 230.0
+    },
+    {
+      "converter_kv": 345.0,
+      "dc_kv": 250.0,
+      "mva": 50.0,
+      "pcc_kv": 400.0
+    },
+    {
+      "converter_kv": 400.0,
+      "dc_kv": 800.0,
+      "mva": 50.0,
+      "pcc_kv": 230.0
+    },
+    {
+      "converter_kv": 200.0,
+      "dc_kv": 500.0,
+      "mva": 100.0,
+      "pcc_kv": 230.0
+    },
+    {
+      "converter_kv": 345.0,
+      "dc_kv": 250.0,
+      "mva": 100.0,
+      "pcc_kv": 400.0
+    },
+    {
+      "converter_kv": 400.0,
+      "dc_kv": 800.0,
+      "mva": 100.0,
+      "pcc_kv": 230.0
+    },
+    {
+      "converter_kv": 200.0,
+      "dc_kv": 500.0,
+      "mva": 250.0,
+      "pcc_kv": 230.0
+    },
+    {
+      "converter_kv": 345.0,
+      "dc_kv": 250.0,
+      "mva": 250.0,
+      "pcc_kv": 400.0
+    },
+    {
+      "converter_kv": 400.0,
+      "dc_kv": 800.0,
+      "mva": 250.0,
+      "pcc_kv": 230.0
+    }
+  ],
+  "counts": {
+    "current_corruption_controls": 1728,
+    "expected_source_loss_mismatches": 504,
+    "named_mode_witnesses": 648,
+    "off_domain_rejections": 648,
+    "optimization_solves": 0,
+    "physical_witnesses": 1728,
+    "zero_mode_boundary_witnesses": 432
+  },
+  "groups": {
+    "dc_idle/[0.3, 1.3]/inverter": {
+      "current_ka": 0.001157043630489331,
+      "dc_withdrawal_mw": -1.1102230246251565e-16,
+      "named_mode": "rectifier",
+      "pcc_mw": 0.4012993046699135,
+      "representations": 36,
+      "selected_loss_mw": 0.40081167091629427,
+      "sign_violation_mw": 0.4008116709162944,
+      "source_loss_residual_mw": 0.0,
+      "valve_mw": 0.4008116709162944
+    },
+    "dc_idle/[0.3, 1.3]/rectifier": {
+      "current_ka": 0.00115703975801811,
+      "dc_withdrawal_mw": -0.0,
+      "named_mode": "rectifier",
+      "pcc_mw": 0.40129796315545674,
+      "representations": 36,
+      "selected_loss_mw": 0.40081032945291317,
+      "sign_violation_mw": 0.0,
+      "source_loss_residual_mw": -1.3387410016346066e-06,
+      "valve_mw": 0.40081032945291317
+    },
+    "dc_idle/[1.3, 0.3]/inverter": {
+      "current_ka": 0.00115703975801811,
+      "dc_withdrawal_mw": -0.0,
+      "named_mode": "rectifier",
+      "pcc_mw": 0.40129796315545674,
+      "representations": 36,
+      "selected_loss_mw": 0.40081032945291317,
+      "sign_violation_mw": 0.40081032945291317,
+      "source_loss_residual_mw": 0.0,
+      "valve_mw": 0.40081032945291317
+    },
+    "dc_idle/[1.3, 0.3]/rectifier": {
+      "current_ka": 0.001157043630489331,
+      "dc_withdrawal_mw": -1.1102230246251565e-16,
+      "named_mode": "rectifier",
+      "pcc_mw": 0.4012993046699135,
+      "representations": 36,
+      "selected_loss_mw": 0.40081167091629427,
+      "sign_violation_mw": 0.0,
+      "source_loss_residual_mw": 1.3387499628559316e-06,
+      "valve_mw": 0.4008116709162944
+    },
+    "dc_idle/[1.3, 1.3]/inverter": {
+      "current_ka": 0.001157043630489331,
+      "dc_withdrawal_mw": -1.1102230246251565e-16,
+      "named_mode": "rectifier",
+      "pcc_mw": 0.4012993046699135,
+      "representations": 36,
+      "selected_loss_mw": 0.40081167091629427,
+      "sign_violation_mw": 0.4008116709162944,
+      "source_loss_residual_mw": 0.0,
+      "valve_mw": 0.4008116709162944
+    },
+    "dc_idle/[1.3, 1.3]/rectifier": {
+      "current_ka": 0.001157043630489331,
+      "dc_withdrawal_mw": -1.1102230246251565e-16,
+      "named_mode": "rectifier",
+      "pcc_mw": 0.4012993046699135,
+      "representations": 36,
+      "selected_loss_mw": 0.40081167091629427,
+      "sign_violation_mw": 0.0,
+      "source_loss_residual_mw": 0.0,
+      "valve_mw": 0.4008116709162944
+    },
+    "forward/[0.3, 1.3]/inverter": {
+      "current_ka": 0.26248809496813374,
+      "dc_withdrawal_mw": -85.92922871196616,
+      "named_mode": "rectifier",
+      "pcc_mw": 86.98890502759733,
+      "representations": 36,
+      "selected_loss_mw": 0.6733116664776937,
+      "sign_violation_mw": 86.60254037844385,
+      "source_loss_residual_mw": 0.0,
+      "valve_mw": 86.60254037844385
+    },
+    "forward/[0.3, 1.3]/rectifier": {
+      "current_ka": 0.26248809496813374,
+      "dc_withdrawal_mw": -85.99812871196616,
+      "named_mode": "rectifier",
+      "pcc_mw": 86.98890502759733,
+      "representations": 36,
+      "selected_loss_mw": 0.6044116664776936,
+      "sign_violation_mw": 0.0,
+      "source_loss_residual_mw": -0.06889999999999999,
+      "valve_mw": 86.60254037844385
+    },
+    "forward/[1.3, 0.3]/inverter": {
+      "current_ka": 0.26248809496813374,
+      "dc_withdrawal_mw": -85.99812871196616,
+      "named_mode": "rectifier",
+      "pcc_mw": 86.98890502759733,
+      "representations": 36,
+      "selected_loss_mw": 0.6044116664776936,
+      "sign_violation_mw": 86.60254037844385,
+      "source_loss_residual_mw": 0.0,
+      "valve_mw": 86.60254037844385
+    },
+    "forward/[1.3, 0.3]/rectifier": {
+      "current_ka": 0.26248809496813374,
+      "dc_withdrawal_mw": -85.92922871196616,
+      "named_mode": "rectifier",
+      "pcc_mw": 86.98890502759733,
+      "representations": 36,
+      "selected_loss_mw": 0.6733116664776937,
+      "sign_violation_mw": 0.0,
+      "source_loss_residual_mw": 0.06889999999999999,
+      "valve_mw": 86.60254037844385
+    },
+    "forward/[1.3, 1.3]/inverter": {
+      "current_ka": 0.26248809496813374,
+      "dc_withdrawal_mw": -85.92922871196616,
+      "named_mode": "rectifier",
+      "pcc_mw": 86.98890502759733,
+      "representations": 36,
+      "selected_loss_mw": 0.6733116664776937,
+      "sign_violation_mw": 86.60254037844385,
+      "source_loss_residual_mw": 0.0,
+      "valve_mw": 86.60254037844385
+    },
+    "forward/[1.3, 1.3]/rectifier": {
+      "current_ka": 0.26248809496813374,
+      "dc_withdrawal_mw": -85.92922871196616,
+      "named_mode": "rectifier",
+      "pcc_mw": 86.98890502759733,
+      "representations": 36,
+      "selected_loss_mw": 0.6733116664776937,
+      "sign_violation_mw": 0.0,
+      "source_loss_residual_mw": 0.0,
+      "valve_mw": 86.60254037844385
+    },
+    "near_negative/[0.3, 1.3]/inverter": {
+      "current_ka": 0.08,
+      "dc_withdrawal_mw": 0.46432001,
+      "named_mode": "inverter",
+      "pcc_mw": 0.030293147128271757,
+      "representations": 36,
+      "selected_loss_mw": 0.46432,
+      "sign_violation_mw": 0.0,
+      "source_loss_residual_mw": 0.0,
+      "valve_mw": -1.0000000001675335e-08
+    },
+    "near_negative/[0.3, 1.3]/rectifier": {
+      "current_ka": 0.08,
+      "dc_withdrawal_mw": 0.45792001,
+      "named_mode": "inverter",
+      "pcc_mw": 0.030293147128271757,
+      "representations": 36,
+      "selected_loss_mw": 0.45792,
+      "sign_violation_mw": 1.0000000001675335e-08,
+      "source_loss_residual_mw": -0.006400000000000001,
+      "valve_mw": -1.0000000001675335e-08
+    },
+    "near_negative/[1.3, 0.3]/inverter": {
+      "current_ka": 0.08,
+      "dc_withdrawal_mw": 0.45792001,
+      "named_mode": "inverter",
+      "pcc_mw": 0.030293147128271757,
+      "representations": 36,
+      "selected_loss_mw": 0.45792,
+      "sign_violation_mw": 0.0,
+      "source_loss_residual_mw": 0.0,
+      "valve_mw": -1.0000000001675335e-08
+    },
+    "near_negative/[1.3, 0.3]/rectifier": {
+      "current_ka": 0.08,
+      "dc_withdrawal_mw": 0.46432001,
+      "named_mode": "inverter",
+      "pcc_mw": 0.030293147128271757,
+      "representations": 36,
+      "selected_loss_mw": 0.46432,
+      "sign_violation_mw": 1.0000000001675335e-08,
+      "source_loss_residual_mw": 0.006400000000000001,
+      "valve_mw": -1.0000000001675335e-08
+    },
+    "near_negative/[1.3, 1.3]/inverter": {
+      "current_ka": 0.08,
+      "dc_withdrawal_mw": 0.46432001,
+      "named_mode": "inverter",
+      "pcc_mw": 0.030293147128271757,
+      "representations": 36,
+      "selected_loss_mw": 0.46432,
+      "sign_violation_mw": 0.0,
+      "source_loss_residual_mw": 0.0,
+      "valve_mw": -1.0000000001675335e-08
+    },
+    "near_negative/[1.3, 1.3]/rectifier": {
+      "current_ka": 0.08,
+      "dc_withdrawal_mw": 0.46432001,
+      "named_mode": "inverter",
+      "pcc_mw": 0.030293147128271757,
+      "representations": 36,
+      "selected_loss_mw": 0.46432,
+      "sign_violation_mw": 1.0000000001675335e-08,
+      "source_loss_residual_mw": 0.0,
+      "valve_mw": -1.0000000001675335e-08
+    },
+    "near_positive/[0.3, 1.3]/inverter": {
+      "current_ka": 0.07999999999999999,
+      "dc_withdrawal_mw": 0.46431999,
+      "named_mode": "rectifier",
+      "pcc_mw": 0.030293167128272094,
+      "representations": 36,
+      "selected_loss_mw": 0.46432,
+      "sign_violation_mw": 9.999999994736442e-09,
+      "source_loss_residual_mw": 0.0,
+      "valve_mw": 9.999999994736442e-09
+    },
+    "near_positive/[0.3, 1.3]/rectifier": {
+      "current_ka": 0.07999999999999999,
+      "dc_withdrawal_mw": 0.45791999,
+      "named_mode": "rectifier",
+      "pcc_mw": 0.030293167128272094,
+      "representations": 36,
+      "selected_loss_mw": 0.45792,
+      "sign_violation_mw": 0.0,
+      "source_loss_residual_mw": -0.006399999999999999,
+      "valve_mw": 9.999999994736442e-09
+    },
+    "near_positive/[1.3, 0.3]/inverter": {
+      "current_ka": 0.07999999999999999,
+      "dc_withdrawal_mw": 0.45791999,
+      "named_mode": "rectifier",
+      "pcc_mw": 0.030293167128272094,
+      "representations": 36,
+      "selected_loss_mw": 0.45792,
+      "sign_violation_mw": 9.999999994736442e-09,
+      "source_loss_residual_mw": 0.0,
+      "valve_mw": 9.999999994736442e-09
+    },
+    "near_positive/[1.3, 0.3]/rectifier": {
+      "current_ka": 0.07999999999999999,
+      "dc_withdrawal_mw": 0.46431999,
+      "named_mode": "rectifier",
+      "pcc_mw": 0.030293167128272094,
+      "representations": 36,
+      "selected_loss_mw": 0.46432,
+      "sign_violation_mw": 0.0,
+      "source_loss_residual_mw": 0.006399999999999999,
+      "valve_mw": 9.999999994736442e-09
+    },
+    "near_positive/[1.3, 1.3]/inverter": {
+      "current_ka": 0.07999999999999999,
+      "dc_withdrawal_mw": 0.46431999,
+      "named_mode": "rectifier",
+      "pcc_mw": 0.030293167128272094,
+      "representations": 36,
+      "selected_loss_mw": 0.46432,
+      "sign_violation_mw": 9.999999994736442e-09,
+      "source_loss_residual_mw": 0.0,
+      "valve_mw": 9.999999994736442e-09
+    },
+    "near_positive/[1.3, 1.3]/rectifier": {
+      "current_ka": 0.07999999999999999,
+      "dc_withdrawal_mw": 0.46431999,
+      "named_mode": "rectifier",
+      "pcc_mw": 0.030293167128272094,
+      "representations": 36,
+      "selected_loss_mw": 0.46432,
+      "sign_violation_mw": 0.0,
+      "source_loss_residual_mw": 0.0,
+      "valve_mw": 9.999999994736442e-09
+    },
+    "pcc_sign_trap/[0.3, 1.3]/inverter": {
+      "current_ka": 0.08000001562499848,
+      "dc_withdrawal_mw": 0.48164052226318776,
+      "named_mode": "inverter",
+      "pcc_mw": 0.012972663004400108,
+      "representations": 36,
+      "selected_loss_mw": 0.46432001418749896,
+      "sign_violation_mw": 0.0,
+      "source_loss_residual_mw": 0.0,
+      "valve_mw": -0.017320508075688783
+    },
+    "pcc_sign_trap/[0.3, 1.3]/rectifier": {
+      "current_ka": 0.08000001562499848,
+      "dc_withdrawal_mw": 0.47524051976318776,
+      "named_mode": "inverter",
+      "pcc_mw": 0.012972663004400108,
+      "representations": 36,
+      "selected_loss_mw": 0.45792001168749896,
+      "sign_violation_mw": 0.017320508075688783,
+      "source_loss_residual_mw": -0.006400002500000001,
+      "valve_mw": -0.017320508075688783
+    },
+    "pcc_sign_trap/[1.3, 0.3]/inverter": {
+      "current_ka": 0.08000001562499848,
+      "dc_withdrawal_mw": 0.47524051976318776,
+      "named_mode": "inverter",
+      "pcc_mw": 0.012972663004400108,
+      "representations": 36,
+      "selected_loss_mw": 0.45792001168749896,
+      "sign_violation_mw": 0.0,
+      "source_loss_residual_mw": 0.0,
+      "valve_mw": -0.017320508075688783
+    },
+    "pcc_sign_trap/[1.3, 0.3]/rectifier": {
+      "current_ka": 0.08000001562499848,
+      "dc_withdrawal_mw": 0.48164052226318776,
+      "named_mode": "inverter",
+      "pcc_mw": 0.012972663004400108,
+      "representations": 36,
+      "selected_loss_mw": 0.46432001418749896,
+      "sign_violation_mw": 0.017320508075688783,
+      "source_loss_residual_mw": 0.006400002500000001,
+      "valve_mw": -0.017320508075688783
+    },
+    "pcc_sign_trap/[1.3, 1.3]/inverter": {
+      "current_ka": 0.08000001562499848,
+      "dc_withdrawal_mw": 0.48164052226318776,
+      "named_mode": "inverter",
+      "pcc_mw": 0.012972663004400108,
+      "representations": 36,
+      "selected_loss_mw": 0.46432001418749896,
+      "sign_violation_mw": 0.0,
+      "source_loss_residual_mw": 0.0,
+      "valve_mw": -0.017320508075688783
+    },
+    "pcc_sign_trap/[1.3, 1.3]/rectifier": {
+      "current_ka": 0.08000001562499848,
+      "dc_withdrawal_mw": 0.48164052226318776,
+      "named_mode": "inverter",
+      "pcc_mw": 0.012972663004400108,
+      "representations": 36,
+      "selected_loss_mw": 0.46432001418749896,
+      "sign_violation_mw": 0.017320508075688783,
+      "source_loss_residual_mw": 0.0,
+      "valve_mw": -0.017320508075688783
+    },
+    "reverse/[0.3, 1.3]/inverter": {
+      "current_ka": 0.26248809496813374,
+      "dc_withdrawal_mw": 87.27585204492156,
+      "named_mode": "inverter",
+      "pcc_mw": -86.21617863913579,
+      "representations": 36,
+      "selected_loss_mw": 0.6733116664776937,
+      "sign_violation_mw": 0.0,
+      "source_loss_residual_mw": 0.0,
+      "valve_mw": -86.60254037844388
+    },
+    "reverse/[0.3, 1.3]/rectifier": {
+      "current_ka": 0.26248809496813374,
+      "dc_withdrawal_mw": 87.20695204492156,
+      "named_mode": "inverter",
+      "pcc_mw": -86.21617863913579,
+      "representations": 36,
+      "selected_loss_mw": 0.6044116664776936,
+      "sign_violation_mw": 86.60254037844388,
+      "source_loss_residual_mw": -0.0689,
+      "valve_mw": -86.60254037844388
+    },
+    "reverse/[1.3, 0.3]/inverter": {
+      "current_ka": 0.26248809496813374,
+      "dc_withdrawal_mw": 87.20695204492156,
+      "named_mode": "inverter",
+      "pcc_mw": -86.21617863913579,
+      "representations": 36,
+      "selected_loss_mw": 0.6044116664776936,
+      "sign_violation_mw": 0.0,
+      "source_loss_residual_mw": 0.0,
+      "valve_mw": -86.60254037844388
+    },
+    "reverse/[1.3, 0.3]/rectifier": {
+      "current_ka": 0.26248809496813374,
+      "dc_withdrawal_mw": 87.27585204492156,
+      "named_mode": "inverter",
+      "pcc_mw": -86.21617863913579,
+      "representations": 36,
+      "selected_loss_mw": 0.6733116664776937,
+      "sign_violation_mw": 86.60254037844388,
+      "source_loss_residual_mw": 0.0689,
+      "valve_mw": -86.60254037844388
+    },
+    "reverse/[1.3, 1.3]/inverter": {
+      "current_ka": 0.26248809496813374,
+      "dc_withdrawal_mw": 87.27585204492156,
+      "named_mode": "inverter",
+      "pcc_mw": -86.21617863913579,
+      "representations": 36,
+      "selected_loss_mw": 0.6733116664776937,
+      "sign_violation_mw": 0.0,
+      "source_loss_residual_mw": 0.0,
+      "valve_mw": -86.60254037844388
+    },
+    "reverse/[1.3, 1.3]/rectifier": {
+      "current_ka": 0.26248809496813374,
+      "dc_withdrawal_mw": 87.27585204492156,
+      "named_mode": "inverter",
+      "pcc_mw": -86.21617863913579,
+      "representations": 36,
+      "selected_loss_mw": 0.6733116664776937,
+      "sign_violation_mw": 86.60254037844388,
+      "source_loss_residual_mw": 0.0,
+      "valve_mw": -86.60254037844388
+    },
+    "zero_current/[0.3, 1.3]/inverter": {
+      "current_ka": 0.0,
+      "dc_withdrawal_mw": 0.4,
+      "named_mode": null,
+      "pcc_mw": 0.0004800000000000002,
+      "representations": 36,
+      "selected_loss_mw": 0.4,
+      "sign_violation_mw": 0.0,
+      "source_loss_residual_mw": 0.0,
+      "valve_mw": 0.0
+    },
+    "zero_current/[0.3, 1.3]/rectifier": {
+      "current_ka": 0.0,
+      "dc_withdrawal_mw": 0.4,
+      "named_mode": null,
+      "pcc_mw": 0.0004800000000000002,
+      "representations": 36,
+      "selected_loss_mw": 0.4,
+      "sign_violation_mw": 0.0,
+      "source_loss_residual_mw": -0.0,
+      "valve_mw": 0.0
+    },
+    "zero_current/[1.3, 0.3]/inverter": {
+      "current_ka": 0.0,
+      "dc_withdrawal_mw": 0.4,
+      "named_mode": null,
+      "pcc_mw": 0.0004800000000000002,
+      "representations": 36,
+      "selected_loss_mw": 0.4,
+      "sign_violation_mw": 0.0,
+      "source_loss_residual_mw": 0.0,
+      "valve_mw": 0.0
+    },
+    "zero_current/[1.3, 0.3]/rectifier": {
+      "current_ka": 0.0,
+      "dc_withdrawal_mw": 0.4,
+      "named_mode": null,
+      "pcc_mw": 0.0004800000000000002,
+      "representations": 36,
+      "selected_loss_mw": 0.4,
+      "sign_violation_mw": 0.0,
+      "source_loss_residual_mw": 0.0,
+      "valve_mw": 0.0
+    },
+    "zero_current/[1.3, 1.3]/inverter": {
+      "current_ka": 0.0,
+      "dc_withdrawal_mw": 0.4,
+      "named_mode": null,
+      "pcc_mw": 0.0004800000000000002,
+      "representations": 36,
+      "selected_loss_mw": 0.4,
+      "sign_violation_mw": 0.0,
+      "source_loss_residual_mw": 0.0,
+      "valve_mw": 0.0
+    },
+    "zero_current/[1.3, 1.3]/rectifier": {
+      "current_ka": 0.0,
+      "dc_withdrawal_mw": 0.4,
+      "named_mode": null,
+      "pcc_mw": 0.0004800000000000002,
+      "representations": 36,
+      "selected_loss_mw": 0.4,
+      "sign_violation_mw": 0.0,
+      "source_loss_residual_mw": 0.0,
+      "valve_mw": 0.0
+    },
+    "zero_valve/[0.3, 1.3]/inverter": {
+      "current_ka": 0.08,
+      "dc_withdrawal_mw": 0.46432,
+      "named_mode": null,
+      "pcc_mw": 0.030293157128271936,
+      "representations": 36,
+      "selected_loss_mw": 0.46432,
+      "sign_violation_mw": 0.0,
+      "source_loss_residual_mw": 0.0,
+      "valve_mw": -6.938893903907228e-18
+    },
+    "zero_valve/[0.3, 1.3]/rectifier": {
+      "current_ka": 0.08,
+      "dc_withdrawal_mw": 0.45792,
+      "named_mode": null,
+      "pcc_mw": 0.030293157128271936,
+      "representations": 36,
+      "selected_loss_mw": 0.45792,
+      "sign_violation_mw": 6.938893903907228e-18,
+      "source_loss_residual_mw": -0.006400000000000001,
+      "valve_mw": -6.938893903907228e-18
+    },
+    "zero_valve/[1.3, 0.3]/inverter": {
+      "current_ka": 0.08,
+      "dc_withdrawal_mw": 0.45792,
+      "named_mode": null,
+      "pcc_mw": 0.030293157128271936,
+      "representations": 36,
+      "selected_loss_mw": 0.45792,
+      "sign_violation_mw": 0.0,
+      "source_loss_residual_mw": 0.0,
+      "valve_mw": -6.938893903907228e-18
+    },
+    "zero_valve/[1.3, 0.3]/rectifier": {
+      "current_ka": 0.08,
+      "dc_withdrawal_mw": 0.46432,
+      "named_mode": null,
+      "pcc_mw": 0.030293157128271936,
+      "representations": 36,
+      "selected_loss_mw": 0.46432,
+      "sign_violation_mw": 6.938893903907228e-18,
+      "source_loss_residual_mw": 0.006400000000000001,
+      "valve_mw": -6.938893903907228e-18
+    },
+    "zero_valve/[1.3, 1.3]/inverter": {
+      "current_ka": 0.08,
+      "dc_withdrawal_mw": 0.46432,
+      "named_mode": null,
+      "pcc_mw": 0.030293157128271936,
+      "representations": 36,
+      "selected_loss_mw": 0.46432,
+      "sign_violation_mw": 0.0,
+      "source_loss_residual_mw": 0.0,
+      "valve_mw": -6.938893903907228e-18
+    },
+    "zero_valve/[1.3, 1.3]/rectifier": {
+      "current_ka": 0.08,
+      "dc_withdrawal_mw": 0.46432,
+      "named_mode": null,
+      "pcc_mw": 0.030293157128271936,
+      "representations": 36,
+      "selected_loss_mw": 0.46432,
+      "sign_violation_mw": 6.938893903907228e-18,
+      "source_loss_residual_mw": 0.0,
+      "valve_mw": -6.938893903907228e-18
+    }
+  },
+  "julia_version": "1.12.6",
+  "manifest_sha256": "c0c50ee07d24b1ba8af99d58dad407959e4e6ce81071f6f988babe120f0344f4",
+  "max_other_reference_violation": 7.275957614183426e-12,
+  "max_selected_branch_violation": 7.275957614183426e-12,
+  "max_sign_violation_difference_mw": 5.551115123125783e-17,
+  "max_signed_residual_difference_mw": 2.145505995088115e-14,
+  "native_report_sha256": "681eea6cd635fa2b063d3717fd734d1b911e6b094837b8eec3c20cb64ff06bf6",
+  "powerio_revision": "27aae3b3313b17916abd84cc33fe6a2dd459ec0b",
+  "reference_modifications": "restore_declared_Imax; SI_bypass_and_DC_rows; then_replace_only_loss_row_with_explicit_branch_in_physical_units; fixed_mode_cases_also_intersect_valve_P_sign_bounds",
+  "reference_report_sha256": "b53d8b2dbcdde4c408667fae08bfdc38435be8fa5097044aa60bb87348a0cfc0",
+  "reference_revision": "9ada4082ac087aed649f48fb5f977680b0fe06c7",
+  "reference_source_sha256": {
+    "docs/src/parser.md": "e352fda52d8ac7daed4d17390f1f99a526a4b65d29580130f4c24be68157881b",
+    "src/core/constraint_template.jl": "d71a003e333edc98828ea5fa0d1b7f85523707768afa0c443a8d2e9ffe2898bc",
+    "src/core/data.jl": "1bf53b2589d2487e70717828fdfa02fb9036114f265407bd3fe831d6d4b9e707",
+    "src/formconv/acp.jl": "820dfaf9756c80292ae72667e604230a6a849ae8020cda408144dbf7426c08a6"
+  },
+  "scope": "fixed_mode_pointwise_loss_and_sign_domain_validation; no_boundary_optimization_claim",
+  "source_files_digest_sha256": "b1fa094369cb6dd6b3acac815c802742cf92686cf07d6676362447802cd3bf2d"
+}

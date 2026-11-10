@@ -315,6 +315,9 @@ pub fn bounds(
 
 /// Independent phase-domain and per-pole DC equations, in physical units.
 pub fn physical_residual(case: Case, x: &Point) -> f64 {
+    physical_residual_with_losses(case, x, [LOSS[2]; 3])
+}
+pub fn physical_residual_with_losses(case: Case, x: &Point, quadratic: [f64; 3]) -> f64 {
     use num_complex::Complex64 as C;
     let mut residuals = vec![];
     let mut dc_kcl = [0.; 3];
@@ -344,7 +347,7 @@ pub fn physical_residual(case: Case, x: &Point) -> f64 {
         } else {
             C::new(0., 0.)
         };
-        let loss = LOSS[0] + LOSS[1] * current.norm() + LOSS[2] * current.norm_sqr();
+        let loss = LOSS[0] + LOSS[1] * current.norm() + quadratic[i] * current.norm_sqr();
         residuals.extend([
             (vf - vc - zr * current).norm(),
             (vp - turns * (vf + zt * it)).norm(),

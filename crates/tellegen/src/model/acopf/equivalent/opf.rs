@@ -93,19 +93,27 @@ impl PreparedAcDcOpf {
         let net = instance.network();
         // The caller selects InstancePoint explicitly; declared and flat starts
         // must remain independent of any point attached to the canonical intent.
-        let source_intent = powerio::AcDcOpfInstance::from_network(net.clone(), instance.profile())
-            .map_err(|e| e.to_string())?
-            .with_angle_reference_policy(instance.angle_reference_policy());
+        let source_intent = powerio::AcDcOpfInstance::from_network_with_loss_modes(
+            net.clone(),
+            instance.profile(),
+            instance.loss_modes().to_vec(),
+        )
+        .map_err(|e| e.to_string())?
+        .with_angle_reference_policy(instance.angle_reference_policy());
         let equations = ReferenceEquations::from_instance(&source_intent, EquationMode::Opf)?;
         let p = &equations.model.problem;
         let prep = &equations.model.preparation;
         let owner = net.ac_dc_equivalent().ok_or("Equivalent owner missing")?;
         // Hash the complete source (including all DC/station declarations), the
         // selected policy and the formulation version, not only the AC projection.
-        let encoded = serde_json::to_vec(
-            &serde_json::json!({"schema":"tellegen-acdc-opf-v3","network":net,"profile":instance.profile(),"angle_reference_policy":instance.angle_reference_policy(),"angle_references":equations.angle_references}),
-        )
-        .map_err(|e| e.to_string())?;
+        let mut identity = serde_json::json!({"schema":"tellegen-acdc-opf-v3","network":net,"profile":instance.profile(),"angle_reference_policy":instance.angle_reference_policy(),"angle_references":equations.angle_references});
+        // Preserve existing profile fingerprints byte-for-byte. Fixed-mode
+        // intent adds canonical station choices, including when C_rec == C_inv.
+        if !instance.loss_modes().is_empty() {
+            identity["loss_modes"] =
+                serde_json::to_value(instance.loss_modes()).map_err(|e| e.to_string())?;
+        }
+        let encoded = serde_json::to_vec(&identity).map_err(|e| e.to_string())?;
         let model_fingerprint = crate::content_id::content_id(&encoded);
         let descriptors = |names: &[String], lo: &[f64], hi: &[f64]| {
             names
@@ -126,12 +134,16 @@ impl PreparedAcDcOpf {
             coordinate_policy: instance.profile().coordinate_policy(),
             dc_branch_policy: equations.dc_branch_policy.clone(),
             model_fingerprint,
-            powerio_revision: "ba1f9fc90de768e53aaace1c21e68b0d64759713",
+            powerio_revision: "27aae3b3313b17916abd84cc33fe6a2dd459ec0b",
             reference_revision: "9ada4082ac087aed649f48fb5f977680b0fe06c7",
             base_mva: owner.base_mva,
             pole_count: owner.pole_count,
             objective: "network_generator_cost",
-            dispatch: "free_generator_and_vsc_dispatch_no_pf_setpoints",
+            dispatch: if instance.profile() == AcDcOpfProfile::FixedModePhysicalAcpVscV1 {
+                "generator_and_vsc_dispatch_with_declared_valve_power_signs_no_pf_setpoints"
+            } else {
+                "free_generator_and_vsc_dispatch_no_pf_setpoints"
+            },
             units: if instance.profile().coordinate_policy()
                 == AcDcCoordinatePolicy::PhysicalLocalBases
             {
@@ -298,7 +310,16 @@ impl PreparedAcDcOpf {
             cancel.clone(),
         )));
         let mut app = IpoptApplication::new();
-        let solver_options = format!("{POUNCE_OPTIONS}bound_relax_factor 0\n");
+        // Fixed-mode optima may lie at P=I=0, where the squared current row
+        // requires tighter convergence to control physical current error. Enforce
+        // unscaled dual accuracy too; multiplier scaling can hide a poor KKT
+        // residual at this boundary. Existing profiles retain their settings.
+        let precision = if self.instance.profile() == AcDcOpfProfile::FixedModePhysicalAcpVscV1 {
+            "tol 1e-9\ndual_inf_tol 1e-7\nconstr_viol_tol 1e-12\nacceptable_iter 0\nbound_push 1e-8\nbound_frac 1e-8\n"
+        } else {
+            ""
+        };
+        let solver_options = format!("{POUNCE_OPTIONS}bound_relax_factor 0\n{precision}");
         app.initialize_with_options_str(&solver_options)
             .map_err(|e| e.to_string())?;
         app.initialize().map_err(|e| e.to_string())?;

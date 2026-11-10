@@ -73,7 +73,7 @@ for case in cases
     violations=primal_feasibility_report(pm.model,mapped)
     other=maximum((v for (c,v) in violations if c!=row);init=0.0)
     @assert other<1e-9
-    @assert isapprox(maximum(values(violations);init=0.0),case["native_max_violation"];atol=1e-9)
+    @assert isapprox(maximum(values(violations);init=0.0),abs(case["source_loss_residual_mw"])/b["mva"];atol=1e-9)
     # Evaluate each explicitly selected branch independently in physical units.
     # Off-domain branches are witnesses, not claims about directional feasibility.
     selected=spec["selected"]=="rectifier" ? raw["LossCrec"] : raw["LossCinv"]
@@ -81,6 +81,16 @@ for case in cases
     branch=@constraint(pm.model,b["mva"]*(pc+pdc)==raw["LossA"]+raw["LossB"]*ibase*ic+selected*(ibase*ic)^2)
     branch_violation=maximum(values(primal_feasibility_report(pm.model,mapped));init=0.0)
     @assert branch_violation<1e-9
+    sign_violation=0.0
+    if get(case,"fixed_mode",false)
+        if spec["selected"]=="rectifier";set_lower_bound(pc,max(lower_bound(pc),0.0));else;set_upper_bound(pc,min(upper_bound(pc),0.0));end
+        signed_report=primal_feasibility_report(pm.model,mapped)
+        sign_bound=spec["selected"]=="rectifier" ? LowerBoundRef(pc) : UpperBoundRef(pc)
+        sign_violation=get(signed_report,sign_bound,0.0)*b["mva"]
+        @assert isapprox(sign_violation,case["sign_violation_mw"];atol=1e-12,rtol=1e-12)
+        @assert case["sign_violation_mw"]==0.0 || sign_violation>0.0
+        @assert isapprox(maximum(values(signed_report);init=0.0),case["native_max_violation"];atol=1e-9)
+    end
     @assert isapprox(value(v->mapped[v],objective_function(pm.model)),case["objective"];atol=1e-9)
     # A changed current must fail the selected loss equation even at zero current.
     corrupted=copy(mapped);corrupted[ic]+=0.01/ibase
@@ -89,15 +99,15 @@ for case in cases
     push!(records,Dict("file"=>case["file"],"source_sha256"=>bytes2hex(sha256(read(path))),
         "case"=>spec,"bases"=>b,"named_mode"=>case["named_mode"],
         "source_loss_residual_mw"=>signed,"other_reference_violation"=>other,
-        "selected_branch_violation"=>branch_violation,"current_corruption_mw"=>bad[branch]))
+        "selected_branch_violation"=>branch_violation,"sign_violation_mw"=>sign_violation,"current_corruption_mw"=>bad[branch]))
 end
 output=Dict("records"=>records,"counts"=>Dict("physical_witnesses"=>1728,"current_corruption_controls"=>1728,"optimization_solves"=>0),
-    "powerio_revision"=>"ba1f9fc90de768e53aaace1c21e68b0d64759713",
+    "powerio_revision"=>"27aae3b3313b17916abd84cc33fe6a2dd459ec0b",
     "reference_revision"=>"9ada4082ac087aed649f48fb5f977680b0fe06c7",
     "reference_source_sha256"=>Dict(rel=>bytes2hex(sha256(read(joinpath(pkgdir(PowerModelsACDC),rel)))) for rel in ("src/core/constraint_template.jl","src/core/data.jl","src/formconv/acp.jl","docs/src/parser.md")),
     "julia_version"=>string(VERSION),"manifest_sha256"=>bytes2hex(sha256(read(joinpath(@__DIR__,"..","Manifest.toml")))),
     "native_report_sha256"=>bytes2hex(sha256(read(joinpath(out,"cases.json")))),
-    "scope"=>"pointwise_loss_branch_characterization; no_directional_profile_or_optimization_qualification",
-    "reference_modifications"=>"restore_declared_Imax; SI_bypass_and_DC_rows; then_replace_only_loss_row_with_explicit_branch_in_physical_units")
+    "scope"=>all(get(c,"fixed_mode",false) for c in cases) ? "fixed_mode_pointwise_loss_and_sign_domain_validation; no_boundary_optimization_claim" : "pointwise_loss_branch_characterization; no_directional_profile_or_optimization_qualification",
+    "reference_modifications"=>"restore_declared_Imax; SI_bypass_and_DC_rows; then_replace_only_loss_row_with_explicit_branch_in_physical_units; fixed_mode_cases_also_intersect_valve_P_sign_bounds")
 open(joinpath(out,"reference.json"),"w") do io;JSON.print(io,output,2);println(io);end
 println("1728 independent loss witnesses and 1728 current-corruption controls pass")

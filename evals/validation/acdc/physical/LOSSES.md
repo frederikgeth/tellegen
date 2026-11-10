@@ -160,3 +160,6 @@ constant is insufficient.
 That production policy and branch-constrained optimization are the next gate,
 followed by native coupled PF controls. The present evidence establishes the
 contract and the reason for separation, not a new usable directional solver.
+
+The subsequent [fixed-mode implementation and OPF gate](FIXED-MODES.md) now
+qualifies the explicit branch policy above; automatic reversal remains separate.

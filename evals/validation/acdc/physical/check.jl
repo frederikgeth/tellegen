@@ -174,7 +174,7 @@ end
 output = Dict("suite"=>suite,"profile"=>selection,
     "reference_modification"=>(selection == "physical-coordinates" ? "restore_source_Imax; SI_transformer_bypass_and_DC_Ohms_with_from_side_resistance_base" : selection == "declared-current" ? "restore_source_Imax_after_preprocessing_before_instantiation" : "none"),
     "reference_revision"=>"9ada4082ac087aed649f48fb5f977680b0fe06c7",
-    "powerio_revision"=>"ba1f9fc90de768e53aaace1c21e68b0d64759713",
+    "powerio_revision"=>"27aae3b3313b17916abd84cc33fe6a2dd459ec0b",
     "manifest_sha256"=>bytes2hex(sha256(read(joinpath(@__DIR__, "..", "Manifest.toml")))),
     "cases_sha256"=>bytes2hex(sha256(read(joinpath(out, "cases.json")))),
     "julia_version"=>string(VERSION), "records"=>records)

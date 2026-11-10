@@ -85,6 +85,11 @@ fn preparation_identity_includes_dc_data_and_start_roundtrips_fail_closed() {
     let (net, oracle, map) = fixture();
     let prepared = PreparedAcDcOpf::new(instance(&net)).unwrap();
     let fingerprint = prepared.manifest().model_fingerprint.clone();
+    // Adding optional fixed-mode intent must preserve existing profile identity.
+    assert_eq!(
+        fingerprint,
+        "sha256:7c58f42f6628cd17c86fee45f95dea7b0366ec555b29eb3f39b04542660b3912"
+    );
     let repeated = PreparedAcDcOpf::new(instance(&net)).unwrap();
     assert_eq!(fingerprint, repeated.manifest().model_fingerprint);
     let alternate_policy = PreparedAcDcOpf::new(
