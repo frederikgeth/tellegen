@@ -155,7 +155,8 @@ This gate covers local OPF on three otherwise separate AC islands with a meshed
 DC grid. It does not qualify connected-AC-network interactions, outages or
 islanding, global optimality, unique dispatch, general imported-network rebasing,
 directional loss selection, explicit pole/return wiring or native coupled PF.
-Connected AC/DC networks and outage/islanding behavior remain subsequent gates.
+Connected AC/DC networks and outage/islanding behavior are now covered by the
+[subsequent connected gate](CONNECTED.md); this mesh result retains its original scope.
 
 The optimization and mesh examples explicitly require `acopf`, fixing the
 previous optimization example's missing feature gate. Default-feature

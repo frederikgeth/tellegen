@@ -397,3 +397,25 @@ unqualified.
 The optimization and mesh examples explicitly require `acopf`, fixing the
 previous optimization example's missing feature gate. Default-feature
 `cargo check -p tellegen --all-targets --locked --offline` also passes.
+
+
+## Connected AC/DC networks and outage/islanding — 2026-11-10
+
+The [connected qualification](physical/CONNECTED.md) covers eight topologies,
+both economic transfer directions, one/two poles and four physical-base
+representations: 256 native + 256 independent Julia local solves, 3,072
+cross-formulation/base checks, 1,024 native base checks and 768 corruption
+controls pass. Maximum cost difference is 1.920e-8 and maximum Julia cross
+violation in original units is 1.322e-9. Direct AC pi/station/DC physics and
+nodal/global loss balances pass. Separate AC-island references remain necessary
+even with DC connectivity; inactive equipment remains in source/IR but leaves
+optimization coordinates. Stale starts and an unsupplied load island are rejected.
+
+Initial idle-converter trials exposed numerical sensitivity. Declared idle-loss
+starts and uniform small Ipopt interior pushes qualify the final matrix without
+relaxing limits/tolerances. No confirmed upstream equation bug was found. All
+36 affected AC/DC tests, all-target Clippy, default all-target compilation and
+fmt/pin/EPL guards pass. The shared Julia helper reproduces the prior mesh report
+byte-for-byte. No production model, compatibility profile, schema, PowerIO pin or
+draft PR head changes. Directional loss semantics, native PF controls, generic
+rebasing and physical pole wiring remain separate gates.

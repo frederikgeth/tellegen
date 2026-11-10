@@ -1,0 +1,2131 @@
+{
+  "acceptance": {
+    "max_constraint_violation": 1e-07,
+    "max_phase_domain_physical_residual": 1e-06,
+    "objective_absolute_tolerance": 1e-06,
+    "objective_relative_tolerance": 1e-08,
+    "scope": "local_optima_cross_feasibility; no_global_or_primal_uniqueness_claim"
+  },
+  "base_configurations": [
+    {
+      "converter": [
+        200.0,
+        200.0,
+        200.0
+      ],
+      "dc": [
+        500.0,
+        500.0,
+        500.0
+      ],
+      "mva": 100.0,
+      "pcc": [
+        230.0,
+        230.0,
+        230.0
+      ]
+    },
+    {
+      "converter": [
+        200.0,
+        200.0,
+        200.0
+      ],
+      "dc": [
+        500.0,
+        500.0,
+        500.0
+      ],
+      "mva": 50.0,
+      "pcc": [
+        230.0,
+        230.0,
+        230.0
+      ]
+    },
+    {
+      "converter": [
+        345.0,
+        400.0,
+        200.0
+      ],
+      "dc": [
+        250.0,
+        1000.0,
+        800.0
+      ],
+      "mva": 100.0,
+      "pcc": [
+        400.0,
+        230.0,
+        345.0
+      ]
+    },
+    {
+      "converter": [
+        400.0,
+        200.0,
+        345.0
+      ],
+      "dc": [
+        800.0,
+        250.0,
+        500.0
+      ],
+      "mva": 250.0,
+      "pcc": [
+        230.0,
+        400.0,
+        200.0
+      ]
+    }
+  ],
+  "counts": {
+    "base_representations": 128,
+    "native_solves": 256,
+    "physical_networks": 32,
+    "reference_corruption_controls": 768,
+    "reference_solves": 256
+  },
+  "cross_checks": 2048,
+  "groups": {
+    "topology0/cheap0/poles1": {
+      "angle_references": [
+        {
+          "bus": 11,
+          "declared": true,
+          "island_buses": [
+            11,
+            12,
+            13
+          ]
+        }
+      ],
+      "cost_difference_from_intact": 0.0,
+      "max_native_kkt": 2.508188479113828e-09,
+      "max_native_physical_residual": 9.997634596020007e-12,
+      "max_native_reference_objective_difference": 1.4499988765237504e-08,
+      "max_native_violation": 2.4782259577804666e-13,
+      "max_reference_violation": 7.105427357601002e-12,
+      "native_iterations_range": [
+        23,
+        44
+      ],
+      "native_solves": 8,
+      "native_variable_count": 75,
+      "networks": 4,
+      "objective_range": [
+        184.69029953900312,
+        184.69029955350447
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "pg[mesh-generator-2]",
+        "pg[mesh-generator-3]",
+        "station/ac_dc_converter_station/33/vmconv"
+      ],
+      "representative_physical_dispatch": {
+        "dc_bus/dc_equivalent_bus/21/vm": 549.9999886970766,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.5441339705358,
+        "dc_bus/dc_equivalent_bus/23/vm": 549.4200320077057,
+        "pg[mesh-generator-1]": 141.59309209077622,
+        "pg[mesh-generator-2]": 7.338981533061421e-10,
+        "pg[mesh-generator-3]": 5.673175020350009e-10,
+        "station/ac_dc_converter_station/31/iconv": 0.11493347874716109,
+        "station/ac_dc_converter_station/31/pgrid": 41.593965024040564,
+        "station/ac_dc_converter_station/32/iconv": 0.05544817170817248,
+        "station/ac_dc_converter_station/32/pgrid": -20.044260160410253,
+        "station/ac_dc_converter_station/33/iconv": 0.048210741936130376,
+        "station/ac_dc_converter_station/33/pgrid": -20.040829023529636
+      },
+      "source_hashes": {
+        "connected_000.m": "2956b82c46eb1c4e6b8f118fede3793bf88676c6bb823a2fb01226bad7d11eb8",
+        "connected_001.m": "5f36ca2122fbd88c4593dbb2b993b5acce433d795b517df7ddfc15512b9f7515",
+        "connected_002.m": "9112a0f382ea4b457a92a1bb8938a401275f21fcb520fff1a6f83b32447280fc",
+        "connected_003.m": "409234e47992c482cd71d5e13db5463d28055d275276d8abb00a7653604e5727"
+      }
+    },
+    "topology0/cheap0/poles2": {
+      "angle_references": [
+        {
+          "bus": 11,
+          "declared": true,
+          "island_buses": [
+            11,
+            12,
+            13
+          ]
+        }
+      ],
+      "cost_difference_from_intact": 0.0,
+      "max_native_kkt": 2.5218546021196898e-09,
+      "max_native_physical_residual": 1.993265192391328e-11,
+      "max_native_reference_objective_difference": 1.4498169775833958e-08,
+      "max_native_violation": 6.112957362525151e-13,
+      "max_reference_violation": 2.1316282072803006e-11,
+      "native_iterations_range": [
+        21,
+        45
+      ],
+      "native_solves": 8,
+      "native_variable_count": 75,
+      "networks": 4,
+      "objective_range": [
+        184.65982675043094,
+        184.65982676492985
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "pg[mesh-generator-2]",
+        "pg[mesh-generator-3]",
+        "station/ac_dc_converter_station/33/vmconv"
+      ],
+      "representative_physical_dispatch": {
+        "dc_bus/dc_equivalent_bus/21/vm": 549.9999772154031,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.7721530320727,
+        "dc_bus/dc_equivalent_bus/23/vm": 549.7101406359307,
+        "pg[mesh-generator-1]": 141.5736372368909,
+        "pg[mesh-generator-2]": 7.335978352497992e-10,
+        "pg[mesh-generator-3]": 5.670924249168677e-10,
+        "station/ac_dc_converter_station/31/iconv": 0.11487958172884477,
+        "station/ac_dc_converter_station/31/pgrid": 41.574692840118765,
+        "station/ac_dc_converter_station/32/iconv": 0.05544790773414258,
+        "station/ac_dc_converter_station/32/pgrid": -20.044251722216455,
+        "station/ac_dc_converter_station/33/iconv": 0.04821120206658441,
+        "station/ac_dc_converter_station/33/pgrid": -20.041020296114205
+      },
+      "source_hashes": {
+        "connected_004.m": "5c4542bc9197205c2d82e41f821c4d1ebc5ae947529932c34674fa854114e718",
+        "connected_005.m": "1f2e40681d6687671ece26f30097f9ecd04d6aa9f668532a689b1d26110720d8",
+        "connected_006.m": "c339d5662c789aa3b71c158765689475aae6442b7934e773582cb3d87f83d30a",
+        "connected_007.m": "41022ca96f1b1b2ccc9dbf1dfe476998494f5aa88d5c20d2922df3dfa37874df"
+      }
+    },
+    "topology0/cheap2/poles1": {
+      "angle_references": [
+        {
+          "bus": 11,
+          "declared": true,
+          "island_buses": [
+            11,
+            12,
+            13
+          ]
+        }
+      ],
+      "cost_difference_from_intact": 0.0,
+      "max_native_kkt": 2.5067927690292824e-09,
+      "max_native_physical_residual": 5.4494980222799416e-12,
+      "max_native_reference_objective_difference": 1.4496350786430412e-08,
+      "max_native_violation": 1.3676441698772305e-13,
+      "max_reference_violation": 8.526512829121202e-12,
+      "native_iterations_range": [
+        21,
+        31
+      ],
+      "native_solves": 8,
+      "native_variable_count": 75,
+      "networks": 4,
+      "objective_range": [
+        184.601578525052,
+        184.60157853955133
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/23/vm",
+        "pg[mesh-generator-1]",
+        "pg[mesh-generator-2]",
+        "station/ac_dc_converter_station/33/vmconv"
+      ],
+      "representative_physical_dispatch": {
+        "dc_bus/dc_equivalent_bus/21/vm": 549.3364781687477,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.3779565502715,
+        "dc_bus/dc_equivalent_bus/23/vm": 549.9999908694485,
+        "pg[mesh-generator-1]": 1.0354941643524542e-09,
+        "pg[mesh-generator-2]": 7.326698430918806e-10,
+        "pg[mesh-generator-3]": 141.53644691889517,
+        "station/ac_dc_converter_station/31/iconv": 0.05555349305555185,
+        "station/ac_dc_converter_station/31/pgrid": -20.042398012457014,
+        "station/ac_dc_converter_station/32/iconv": 0.055502012729967874,
+        "station/ac_dc_converter_station/32/pgrid": -20.042983973818018,
+        "station/ac_dc_converter_station/33/iconv": 0.09992357575344696,
+        "station/ac_dc_converter_station/33/pgrid": 41.537450264529454
+      },
+      "source_hashes": {
+        "connected_008.m": "156885eba1ed016fd82ea5cf2fa3992f763bf1ef0136b5601c2c4dde67a1e672",
+        "connected_009.m": "1d1c4208bab0a026cc596bc41583b0c1e6cb53e18f3cf47c5c0075a5db6d1419",
+        "connected_010.m": "530ce5604ea1aac72692ed96c22c7a771165dd146db0f280af5ea2a3e2ca1712",
+        "connected_011.m": "7d4acdf4229b4195e4312d3d8d87e305a3f620faac4cfa86ee4e93607461ba30"
+      }
+    },
+    "topology0/cheap2/poles2": {
+      "angle_references": [
+        {
+          "bus": 11,
+          "declared": true,
+          "island_buses": [
+            11,
+            12,
+            13
+          ]
+        }
+      ],
+      "cost_difference_from_intact": 0.0,
+      "max_native_kkt": 2.5146169910418354e-09,
+      "max_native_physical_residual": 1.5914960115819584e-11,
+      "max_native_reference_objective_difference": 1.4505559420285863e-08,
+      "max_native_violation": 5.441159776136524e-13,
+      "max_reference_violation": 1.1368683772161603e-11,
+      "native_iterations_range": [
+        21,
+        31
+      ],
+      "native_solves": 8,
+      "native_variable_count": 75,
+      "networks": 4,
+      "objective_range": [
+        184.56387682569445,
+        184.56387684020063
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "pg[mesh-generator-1]",
+        "pg[mesh-generator-2]",
+        "station/ac_dc_converter_station/33/vmconv"
+      ],
+      "representative_physical_dispatch": {
+        "dc_bus/dc_equivalent_bus/21/vm": 549.6684178203193,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.689143094592,
+        "dc_bus/dc_equivalent_bus/23/vm": 549.9999816344068,
+        "pg[mesh-generator-1]": 1.034636217607054e-09,
+        "pg[mesh-generator-2]": 7.322658074388433e-10,
+        "pg[mesh-generator-3]": 141.5123732606677,
+        "station/ac_dc_converter_station/31/iconv": 0.055553836575871346,
+        "station/ac_dc_converter_station/31/pgrid": -20.042673641280196,
+        "station/ac_dc_converter_station/32/iconv": 0.05550182427599163,
+        "station/ac_dc_converter_station/32/pgrid": -20.04303664997491,
+        "station/ac_dc_converter_station/33/iconv": 0.09986645708481767,
+        "station/ac_dc_converter_station/33/pgrid": 41.513706479773724
+      },
+      "source_hashes": {
+        "connected_012.m": "6e05738563ed2f9e0f2c9a8d95f6c958a4ab619a091442459ecba39e910d5e34",
+        "connected_013.m": "8d2622b4e462cacc3e27e07fbd5ca08dc41d76129c8bcaad032d717da6f2f658",
+        "connected_014.m": "e3289af3f48fa05e900707eee8ddd16e1091b2fbdd62df0e193d3eb64b79e202",
+        "connected_015.m": "694384067dfb882025239661cbbc5d439a7e961f0402da91834c8d80b2024eaa"
+      }
+    },
+    "topology1/cheap0/poles1": {
+      "angle_references": [
+        {
+          "bus": 11,
+          "declared": true,
+          "island_buses": [
+            11,
+            12,
+            13
+          ]
+        }
+      ],
+      "cost_difference_from_intact": 1.0337339096893174,
+      "max_native_kkt": 2.505923648903336e-09,
+      "max_native_physical_residual": 7.831666030711141e-12,
+      "max_native_reference_objective_difference": 1.2090794143659878e-08,
+      "max_native_violation": 1.2156074757907476e-13,
+      "max_reference_violation": 1.1368683772161603e-11,
+      "native_iterations_range": [
+        23,
+        48
+      ],
+      "native_solves": 8,
+      "native_variable_count": 71,
+      "networks": 4,
+      "objective_range": [
+        185.72403344869244,
+        185.72403346078465
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/21/vm",
+        "pg[mesh-generator-2]",
+        "pg[mesh-generator-3]",
+        "station/ac_dc_converter_station/33/vmconv"
+      ],
+      "representative_physical_dispatch": {
+        "dc_bus/dc_equivalent_bus/21/vm": 549.999997643879,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.1011838806112,
+        "dc_bus/dc_equivalent_bus/23/vm": 548.6601921022287,
+        "pg[mesh-generator-1]": 142.25249103968804,
+        "pg[mesh-generator-2]": 7.37190793859419e-10,
+        "pg[mesh-generator-3]": 5.693394754217017e-10,
+        "station/ac_dc_converter_station/31/iconv": 0.2409807738611725,
+        "station/ac_dc_converter_station/31/pgrid": 87.25501241661297,
+        "station/ac_dc_converter_station/32/iconv": 0.09047824502615574,
+        "station/ac_dc_converter_station/32/pgrid": -32.69005734914067,
+        "station/ac_dc_converter_station/33/iconv": 0.12599796518766926,
+        "station/ac_dc_converter_station/33/pgrid": -52.37637050690553
+      },
+      "source_hashes": {
+        "connected_016.m": "742dff51c245cdeb4df11366a0e1ab5a89b8b937cc87d9b8297d3666e473f2dd",
+        "connected_017.m": "5ffd5220ab11def646cd9ee08b01bf0d6db034d8890c26da60665657a29ff50a",
+        "connected_018.m": "8f082ebc75e394da6151dcdb0719700ba1cb4404c74b4a291817bae005e04315",
+        "connected_019.m": "0c2a5ac400a681c3c330d898bda48c3eee3912776e1115907031d6c1faccdf39"
+      }
+    },
+    "topology1/cheap0/poles2": {
+      "angle_references": [
+        {
+          "bus": 11,
+          "declared": true,
+          "island_buses": [
+            11,
+            12,
+            13
+          ]
+        }
+      ],
+      "cost_difference_from_intact": 0.9156599281753017,
+      "max_native_kkt": 2.506206371280017e-09,
+      "max_native_physical_residual": 8.57625082062441e-12,
+      "max_native_reference_objective_difference": 1.2119585335312877e-08,
+      "max_native_violation": 6.517009154549669e-14,
+      "max_reference_violation": 2.2737367544323206e-11,
+      "native_iterations_range": [
+        23,
+        46
+      ],
+      "native_solves": 8,
+      "native_variable_count": 71,
+      "networks": 4,
+      "objective_range": [
+        185.57548667860624,
+        185.57548669072582
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/21/vm",
+        "pg[mesh-generator-2]",
+        "pg[mesh-generator-3]",
+        "station/ac_dc_converter_station/33/vmconv"
+      ],
+      "representative_physical_dispatch": {
+        "dc_bus/dc_equivalent_bus/21/vm": 549.9999954442625,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.563562840942,
+        "dc_bus/dc_equivalent_bus/23/vm": 549.305832538013,
+        "pg[mesh-generator-1]": 142.15780413223257,
+        "pg[mesh-generator-2]": 7.363681326946136e-10,
+        "pg[mesh-generator-3]": 5.688141513075605e-10,
+        "station/ac_dc_converter_station/31/iconv": 0.24071812215243232,
+        "station/ac_dc_converter_station/31/pgrid": 87.16107877033028,
+        "station/ac_dc_converter_station/32/iconv": 0.07912572849849005,
+        "station/ac_dc_converter_station/32/pgrid": -28.585052637202935,
+        "station/ac_dc_converter_station/33/iconv": 0.1358890403150123,
+        "station/ac_dc_converter_station/33/pgrid": -56.48801322064497
+      },
+      "source_hashes": {
+        "connected_020.m": "d15ed9650d9ba62429deca4e9ed1aa19ef71a248831ace817f1a0d41557bf5d8",
+        "connected_021.m": "9df04bceabf66391fc1e56b72b952123c86d7cbb06e3a442a0be184772072ad7",
+        "connected_022.m": "f67df1417b274e7e88b3285cd0b5bb5f22121c0ff1cda8829fa3d1cdb9cd3aff",
+        "connected_023.m": "398f6b7a24def8b5f7abab60c849db063383e2262fbc30a8e187143d1b7c3bfb"
+      }
+    },
+    "topology1/cheap2/poles1": {
+      "angle_references": [
+        {
+          "bus": 11,
+          "declared": true,
+          "island_buses": [
+            11,
+            12,
+            13
+          ]
+        }
+      ],
+      "cost_difference_from_intact": 3.321622443763772e-08,
+      "max_native_kkt": 2.506768533565534e-09,
+      "max_native_physical_residual": 8.492126137638753e-12,
+      "max_native_reference_objective_difference": 1.4493480193777941e-08,
+      "max_native_violation": 1.4998564600580712e-13,
+      "max_reference_violation": 5.6843418860808015e-12,
+      "native_iterations_range": [
+        21,
+        36
+      ],
+      "native_solves": 8,
+      "native_variable_count": 71,
+      "networks": 4,
+      "objective_range": [
+        184.60157855826822,
+        184.60157857276633
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/23/vm",
+        "pg[mesh-generator-1]",
+        "pg[mesh-generator-2]",
+        "station/ac_dc_converter_station/33/vmconv"
+      ],
+      "representative_physical_dispatch": {
+        "dc_bus/dc_equivalent_bus/21/vm": 549.3364759313909,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.3779583251229,
+        "dc_bus/dc_equivalent_bus/23/vm": 549.9999908694551,
+        "pg[mesh-generator-1]": 1.0354941846091975e-09,
+        "pg[mesh-generator-2]": 7.326698335811013e-10,
+        "pg[mesh-generator-3]": 141.53644694010057,
+        "station/ac_dc_converter_station/31/iconv": 0.05555419494906084,
+        "station/ac_dc_converter_station/31/pgrid": -20.042678750829936,
+        "station/ac_dc_converter_station/32/iconv": 0.055501305297240365,
+        "station/ac_dc_converter_station/32/pgrid": -20.042699659037226,
+        "station/ac_dc_converter_station/33/iconv": 0.09992356719335922,
+        "station/ac_dc_converter_station/33/pgrid": 41.53744670616784
+      },
+      "source_hashes": {
+        "connected_024.m": "8ab686b063aee5a37471cf02570b55cc840c01e6b886fef87c5f5f3eaf2629c3",
+        "connected_025.m": "caec5b6c63d5f8fa584b1efbb6ed96ea9ebd5cb1491ccdcddcf17815ef3a8376",
+        "connected_026.m": "3d7941a4638ec948867c0ac62e2b4693ffd4beb43f1fc3384f7c4019436bef88",
+        "connected_027.m": "b9fbd8c53682199c0b7f6a307e1c616eea9246e8fe1eb3eb92389b3f0bed8671"
+      }
+    },
+    "topology1/cheap2/poles2": {
+      "angle_references": [
+        {
+          "bus": 11,
+          "declared": true,
+          "island_buses": [
+            11,
+            12,
+            13
+          ]
+        }
+      ],
+      "cost_difference_from_intact": 9.850623428064864e-09,
+      "max_native_kkt": 2.5146168470900613e-09,
+      "max_native_physical_residual": 1.5725671218202457e-11,
+      "max_native_reference_objective_difference": 1.4541711834681337e-08,
+      "max_native_violation": 5.443305511629896e-13,
+      "max_reference_violation": 1.4210854715202004e-11,
+      "native_iterations_range": [
+        21,
+        36
+      ],
+      "native_solves": 8,
+      "native_variable_count": 71,
+      "networks": 4,
+      "objective_range": [
+        184.56387683554507,
+        184.56387685008764
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "pg[mesh-generator-1]",
+        "pg[mesh-generator-2]",
+        "station/ac_dc_converter_station/33/vmconv"
+      ],
+      "representative_physical_dispatch": {
+        "dc_bus/dc_equivalent_bus/21/vm": 549.668417129923,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.6891436285255,
+        "dc_bus/dc_equivalent_bus/23/vm": 549.9999816341457,
+        "pg[mesh-generator-1]": 1.0346362307076561e-09,
+        "pg[mesh-generator-2]": 7.322658028709167e-10,
+        "pg[mesh-generator-3]": 141.51237326697986,
+        "station/ac_dc_converter_station/31/iconv": 0.05555427223364238,
+        "station/ac_dc_converter_station/31/pgrid": -20.042845501791277,
+        "station/ac_dc_converter_station/32/iconv": 0.055501386448872626,
+        "station/ac_dc_converter_station/32/pgrid": -20.042863564297996,
+        "station/ac_dc_converter_station/33/iconv": 0.09986645415076127,
+        "station/ac_dc_converter_station/33/pgrid": 41.51370526010943
+      },
+      "source_hashes": {
+        "connected_028.m": "4fa6eff2aad222caf997c9d680433dc9e6e91851f6cdad20a3636495e4e04628",
+        "connected_029.m": "f263b0ad0fe73758748d6f7dec30b58547e6cb55072b279c9cddc742943434e2",
+        "connected_030.m": "ecd9d77f55d8d28e5b561b362e4faea3d86ef3bbde3edcc3a677b41dc2093ff9",
+        "connected_031.m": "6d5be93e5760d53820fd772d8dae9909550e2603d6c0c532104f308ee1e2a4f6"
+      }
+    },
+    "topology2/cheap0/poles1": {
+      "angle_references": [
+        {
+          "bus": 11,
+          "declared": true,
+          "island_buses": [
+            11,
+            12
+          ]
+        },
+        {
+          "bus": 13,
+          "declared": false,
+          "island_buses": [
+            13
+          ]
+        }
+      ],
+      "cost_difference_from_intact": 0.7724700380777847,
+      "max_native_kkt": 9.091959705429085e-10,
+      "max_native_physical_residual": 8.562039965909207e-12,
+      "max_native_reference_objective_difference": 4.9303423566016136e-09,
+      "max_native_violation": 1.1866549409766947e-13,
+      "max_reference_violation": 7.105427357601002e-12,
+      "native_iterations_range": [
+        33,
+        45
+      ],
+      "native_solves": 8,
+      "native_variable_count": 67,
+      "networks": 4,
+      "objective_range": [
+        185.4627695770809,
+        185.46276958201267
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/21/vm",
+        "pg[mesh-generator-2]",
+        "pg[mesh-generator-3]",
+        "station/ac_dc_converter_station/32/vmconv",
+        "station/ac_dc_converter_station/33/vmconv"
+      ],
+      "representative_physical_dispatch": {
+        "dc_bus/dc_equivalent_bus/21/vm": 549.9999992480788,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.1788377171629,
+        "dc_bus/dc_equivalent_bus/23/vm": 548.5065610824174,
+        "pg[mesh-generator-1]": 142.08594056624918,
+        "pg[mesh-generator-2]": 2.6676657925021347e-10,
+        "pg[mesh-generator-3]": 2.0637805081514652e-10,
+        "station/ac_dc_converter_station/31/iconv": 0.20932172275831326,
+        "station/ac_dc_converter_station/31/pgrid": 87.08704019719177,
+        "station/ac_dc_converter_station/32/iconv": 0.04828810766253096,
+        "station/ac_dc_converter_station/32/pgrid": -20.032989588285773,
+        "station/ac_dc_converter_station/33/iconv": 0.15636569842147208,
+        "station/ac_dc_converter_station/33/pgrid": -64.99999999979363
+      },
+      "source_hashes": {
+        "connected_032.m": "9d3db3f2f19d5aa62eebdf4b862a4bc633b58e703c9bf49c360b9ae175a37593",
+        "connected_033.m": "29a06ed1e45f372d773161507ff75e3bbe854a95894e8247bedcae47c43170b6",
+        "connected_034.m": "14c84f80d9a776bb0e01fd25995bdc28509ee43fe5927ad3c661c9764141a691",
+        "connected_035.m": "274b7b7ed85c8c6b3a0c4a2a07c49df492de13f85f281a3ee25155adc7aa4631"
+      }
+    },
+    "topology2/cheap0/poles2": {
+      "angle_references": [
+        {
+          "bus": 11,
+          "declared": true,
+          "island_buses": [
+            11,
+            12
+          ]
+        },
+        {
+          "bus": 13,
+          "declared": false,
+          "island_buses": [
+            13
+          ]
+        }
+      ],
+      "cost_difference_from_intact": 0.6371483383906593,
+      "max_native_kkt": 2.5059190566195646e-09,
+      "max_native_physical_residual": 1.3429257705865894e-11,
+      "max_native_reference_objective_difference": 1.4551886806657421e-08,
+      "max_native_violation": 8.259018469125579e-14,
+      "max_reference_violation": 1.4210854715202004e-11,
+      "native_iterations_range": [
+        34,
+        42
+      ],
+      "native_solves": 8,
+      "native_variable_count": 67,
+      "networks": 4,
+      "objective_range": [
+        185.2969750888216,
+        185.2969751033775
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/21/vm",
+        "pg[mesh-generator-2]",
+        "pg[mesh-generator-3]",
+        "station/ac_dc_converter_station/32/vmconv",
+        "station/ac_dc_converter_station/33/vmconv"
+      ],
+      "representative_physical_dispatch": {
+        "dc_bus/dc_equivalent_bus/21/vm": 549.999995832274,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.5898832099588,
+        "dc_bus/dc_equivalent_bus/23/vm": 549.2542413653853,
+        "pg[mesh-generator-1]": 141.98021320998546,
+        "pg[mesh-generator-2]": 7.34730564578558e-10,
+        "pg[mesh-generator-3]": 5.682618738673668e-10,
+        "station/ac_dc_converter_station/31/iconv": 0.2090672625012405,
+        "station/ac_dc_converter_station/31/pgrid": 86.9815661931561,
+        "station/ac_dc_converter_station/32/iconv": 0.048288634280803995,
+        "station/ac_dc_converter_station/32/pgrid": -20.03324342957046,
+        "station/ac_dc_converter_station/33/iconv": 0.15636569933202205,
+        "station/ac_dc_converter_station/33/pgrid": -64.99999999943175
+      },
+      "source_hashes": {
+        "connected_036.m": "d75d9d04a523997bc73d8006a6250b4c47f1dbff873ba019bd9bddec6134fd29",
+        "connected_037.m": "06952c408c6e7f9c64ff234ebdabd969776909dcacfa0406611e359002e15577",
+        "connected_038.m": "078375a2999e05f637b872e5da3e499e808dbd1eb5187f9d83639d4738fbea6c",
+        "connected_039.m": "d6d4e0d9a03300541176ec58a256a684f6f76c809e34b3b79a274b3c2d94a6da"
+      }
+    },
+    "topology2/cheap2/poles1": {
+      "angle_references": [
+        {
+          "bus": 11,
+          "declared": true,
+          "island_buses": [
+            11,
+            12
+          ]
+        },
+        {
+          "bus": 13,
+          "declared": false,
+          "island_buses": [
+            13
+          ]
+        }
+      ],
+      "cost_difference_from_intact": 1.6893040445002896,
+      "max_native_kkt": 2.506655179930498e-09,
+      "max_native_physical_residual": 9.374640207913001e-12,
+      "max_native_reference_objective_difference": 1.4513943824567832e-08,
+      "max_native_violation": 5.553335569175033e-13,
+      "max_reference_violation": 1.1368683772161603e-11,
+      "native_iterations_range": [
+        21,
+        33
+      ],
+      "native_solves": 8,
+      "native_variable_count": 67,
+      "networks": 4,
+      "objective_range": [
+        186.29088256955228,
+        186.2908825840703
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/23/vm",
+        "pg[mesh-generator-1]",
+        "pg[mesh-generator-2]",
+        "station/ac_dc_converter_station/31/vmconv",
+        "station/ac_dc_converter_station/32/vmconv",
+        "station/ac_dc_converter_station/33/vmconv"
+      ],
+      "representative_physical_dispatch": {
+        "dc_bus/dc_equivalent_bus/21/vm": 547.8851781950714,
+        "dc_bus/dc_equivalent_bus/22/vm": 547.9899879457319,
+        "dc_bus/dc_equivalent_bus/23/vm": 549.9999991217499,
+        "pg[mesh-generator-1]": 1.043828410105918e-09,
+        "pg[mesh-generator-2]": 7.368607016250448e-10,
+        "pg[mesh-generator-3]": 142.6136030349739,
+        "station/ac_dc_converter_station/31/iconv": 0.15200573955892854,
+        "station/ac_dc_converter_station/31/pgrid": -63.00814407983395,
+        "station/ac_dc_converter_station/32/iconv": 0.1615161306757521,
+        "station/ac_dc_converter_station/32/pgrid": -66.99192375959574,
+        "station/ac_dc_converter_station/33/iconv": 0.3190187485829839,
+        "station/ac_dc_converter_station/33/pgrid": 132.6136030349739
+      },
+      "source_hashes": {
+        "connected_040.m": "1d5608aa52e51961d717709ed16d8fdc1bf3f2f9f6414d12756f0d1131141948",
+        "connected_041.m": "aef9f22716bdd6f7766676ec1a7690f295c7a8b4ec5e27425dd502d116530582",
+        "connected_042.m": "874d9953d3357d1ba121323ddd5d67ab4e04fd6db1768913036565188cc00463",
+        "connected_043.m": "247f5a2c4271b32f382d22bb418827e981d977ad9dd1a02958f0d989390f6ab0"
+      }
+    },
+    "topology2/cheap2/poles2": {
+      "angle_references": [
+        {
+          "bus": 11,
+          "declared": true,
+          "island_buses": [
+            11,
+            12
+          ]
+        },
+        {
+          "bus": 13,
+          "declared": false,
+          "island_buses": [
+            13
+          ]
+        }
+      ],
+      "cost_difference_from_intact": 1.336149187262862,
+      "max_native_kkt": 2.509811960742712e-09,
+      "max_native_physical_residual": 1.7337242752546445e-11,
+      "max_native_reference_objective_difference": 1.4511215340462513e-08,
+      "max_native_violation": 7.309153282619718e-13,
+      "max_reference_violation": 2.2737367544323206e-11,
+      "native_iterations_range": [
+        23,
+        36
+      ],
+      "native_solves": 8,
+      "native_variable_count": 67,
+      "networks": 4,
+      "objective_range": [
+        185.9000260129573,
+        185.90002602747168
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/23/vm",
+        "pg[mesh-generator-1]",
+        "pg[mesh-generator-2]",
+        "station/ac_dc_converter_station/31/vmconv",
+        "station/ac_dc_converter_station/32/vmconv",
+        "station/ac_dc_converter_station/33/vmconv"
+      ],
+      "representative_physical_dispatch": {
+        "dc_bus/dc_equivalent_bus/21/vm": 548.9410936387003,
+        "dc_bus/dc_equivalent_bus/22/vm": 548.999495661871,
+        "dc_bus/dc_equivalent_bus/23/vm": 549.9999982303206,
+        "pg[mesh-generator-1]": 1.0407646613360782e-09,
+        "pg[mesh-generator-2]": 7.353422705165837e-10,
+        "pg[mesh-generator-3]": 142.36464291500064,
+        "station/ac_dc_converter_station/31/iconv": 0.1540831879413626,
+        "station/ac_dc_converter_station/31/pgrid": -63.86541675033085,
+        "station/ac_dc_converter_station/32/iconv": 0.15944539877725447,
+        "station/ac_dc_converter_station/32/pgrid": -66.13461285286216,
+        "station/ac_dc_converter_station/33/iconv": 0.3184198436168572,
+        "station/ac_dc_converter_station/33/pgrid": 132.36464291500062
+      },
+      "source_hashes": {
+        "connected_044.m": "bd162970e35cd8735e3aabeb279b4c77e4d2bfb1978153b3861269cd0885cebf",
+        "connected_045.m": "94df99eaae29f3b9d0b81ad693053859a9bf5e90dc8811a156c970c60181195d",
+        "connected_046.m": "cc30d15f9cdb7e1cbbde054acd91c963812c5ae105470188b6f5ea9c444e2de5",
+        "connected_047.m": "c0047bb36d18b9ee045ebfe878e2ddb9b4de25a1202def026e1dc2c2009b468b"
+      }
+    },
+    "topology3/cheap0/poles1": {
+      "angle_references": [
+        {
+          "bus": 11,
+          "declared": true,
+          "island_buses": [
+            11
+          ]
+        },
+        {
+          "bus": 12,
+          "declared": false,
+          "island_buses": [
+            12
+          ]
+        },
+        {
+          "bus": 13,
+          "declared": false,
+          "island_buses": [
+            13
+          ]
+        }
+      ],
+      "cost_difference_from_intact": 2.1343189521080888,
+      "max_native_kkt": 3.51312651617534e-09,
+      "max_native_physical_residual": 1.801083726604702e-10,
+      "max_native_reference_objective_difference": 1.2744351352012018e-08,
+      "max_native_violation": 1.493574153244026e-10,
+      "max_reference_violation": 1.1368683772161603e-11,
+      "native_iterations_range": [
+        18,
+        26
+      ],
+      "native_solves": 8,
+      "native_variable_count": 63,
+      "networks": 4,
+      "objective_range": [
+        186.8246184911112,
+        186.82461850385695
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/21/vm",
+        "pg[mesh-generator-2]",
+        "pg[mesh-generator-3]",
+        "station/ac_dc_converter_station/31/vmconv",
+        "station/ac_dc_converter_station/32/vmconv",
+        "station/ac_dc_converter_station/33/vmconv"
+      ],
+      "representative_physical_dispatch": {
+        "dc_bus/dc_equivalent_bus/21/vm": 549.9999996721117,
+        "dc_bus/dc_equivalent_bus/22/vm": 548.537268324875,
+        "dc_bus/dc_equivalent_bus/23/vm": 548.1392638848068,
+        "pg[mesh-generator-1]": 142.9533168817489,
+        "pg[mesh-generator-2]": 7.39392935610177e-10,
+        "pg[mesh-generator-3]": 5.703371039610944e-10,
+        "station/ac_dc_converter_station/31/iconv": 0.318504573132014,
+        "station/ac_dc_converter_station/31/pgrid": 132.9533168817489,
+        "station/ac_dc_converter_station/32/iconv": 0.15670240712497435,
+        "station/ac_dc_converter_station/32/pgrid": -64.99999999926061,
+        "station/ac_dc_converter_station/33/iconv": 0.15636569933491234,
+        "station/ac_dc_converter_station/33/pgrid": -64.99999999942968
+      },
+      "source_hashes": {
+        "connected_048.m": "17d4ce1e080bdf2900167f7eb3ba971dddfa20bcb912645a6ab3621e9fffaaad",
+        "connected_049.m": "90e3db027811f91586c984c538c7dcd223be0ec145b2fbafb1d0f7dda441d62c",
+        "connected_050.m": "ad5cdc8b4659bc81d9ed702c0ac363d46c88c38558c2d5180cec43ddb7e9090e",
+        "connected_051.m": "0dd2eed49e25d10dff94eab809ab0adc8689cf4aa98f728f7716568f3dce1f8e"
+      }
+    },
+    "topology3/cheap0/poles2": {
+      "angle_references": [
+        {
+          "bus": 11,
+          "declared": true,
+          "island_buses": [
+            11
+          ]
+        },
+        {
+          "bus": 12,
+          "declared": false,
+          "island_buses": [
+            12
+          ]
+        },
+        {
+          "bus": 13,
+          "declared": false,
+          "island_buses": [
+            13
+          ]
+        }
+      ],
+      "cost_difference_from_intact": 1.8475088586489221,
+      "max_native_kkt": 2.505923691991496e-09,
+      "max_native_physical_residual": 7.30437932361383e-12,
+      "max_native_reference_objective_difference": 1.4500869838229846e-08,
+      "max_native_violation": 8.195527589904827e-14,
+      "max_reference_violation": 1.1368683772161603e-11,
+      "native_iterations_range": [
+        21,
+        28
+      ],
+      "native_solves": 8,
+      "native_variable_count": 63,
+      "networks": 4,
+      "objective_range": [
+        186.50733560907986,
+        186.5073356235821
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/21/vm",
+        "pg[mesh-generator-2]",
+        "pg[mesh-generator-3]",
+        "station/ac_dc_converter_station/31/vmconv",
+        "station/ac_dc_converter_station/32/vmconv",
+        "station/ac_dc_converter_station/33/vmconv"
+      ],
+      "representative_physical_dispatch": {
+        "dc_bus/dc_equivalent_bus/21/vm": 549.9999978207435,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.2697040325659,
+        "dc_bus/dc_equivalent_bus/23/vm": 549.0711121212155,
+        "pg[mesh-generator-1]": 142.7514071371813,
+        "pg[mesh-generator-2]": 7.383169426212308e-10,
+        "pg[mesh-generator-3]": 5.695464697366543e-10,
+        "station/ac_dc_converter_station/31/iconv": 0.31802311909457204,
+        "station/ac_dc_converter_station/31/pgrid": 132.7514071371813,
+        "station/ac_dc_converter_station/32/iconv": 0.15670240713214958,
+        "station/ac_dc_converter_station/32/pgrid": -64.99999999926169,
+        "station/ac_dc_converter_station/33/iconv": 0.15636569932314384,
+        "station/ac_dc_converter_station/33/pgrid": -64.99999999943044
+      },
+      "source_hashes": {
+        "connected_052.m": "31a0e134907a10b7ea311d8bdb396db5e72f2ae2466f9ec998b197fd975a32f8",
+        "connected_053.m": "e980c59b7390fc0370335f1e864ecc889c5edfabcddbec10d87335ae14501d10",
+        "connected_054.m": "4e7f6b86212269f285aa433673c4c0cf6401c42981ecfba228c4cdd9eb21c903",
+        "connected_055.m": "15c718e6bb500dcf85621fc40567f44b585e5c31f76cc7895df97ae94bd26594"
+      }
+    },
+    "topology3/cheap2/poles1": {
+      "angle_references": [
+        {
+          "bus": 11,
+          "declared": true,
+          "island_buses": [
+            11
+          ]
+        },
+        {
+          "bus": 12,
+          "declared": false,
+          "island_buses": [
+            12
+          ]
+        },
+        {
+          "bus": 13,
+          "declared": false,
+          "island_buses": [
+            13
+          ]
+        }
+      ],
+      "cost_difference_from_intact": 1.690044708807818,
+      "max_native_kkt": 3.103265164892649e-09,
+      "max_native_physical_residual": 1.0702194686018629e-10,
+      "max_native_reference_objective_difference": 1.334390731244639e-08,
+      "max_native_violation": 8.215561564384188e-11,
+      "max_reference_violation": 7.105427357601002e-12,
+      "native_iterations_range": [
+        19,
+        26
+      ],
+      "native_solves": 8,
+      "native_variable_count": 63,
+      "networks": 4,
+      "objective_range": [
+        186.2916232338598,
+        186.2916232472052
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/23/vm",
+        "pg[mesh-generator-1]",
+        "pg[mesh-generator-2]",
+        "station/ac_dc_converter_station/31/vmconv",
+        "station/ac_dc_converter_station/32/vmconv",
+        "station/ac_dc_converter_station/33/vmconv"
+      ],
+      "representative_physical_dispatch": {
+        "dc_bus/dc_equivalent_bus/21/vm": 547.8688875408934,
+        "dc_bus/dc_equivalent_bus/22/vm": 548.0021938087863,
+        "dc_bus/dc_equivalent_bus/23/vm": 549.9999995131681,
+        "pg[mesh-generator-1]": 1.043889302236993e-09,
+        "pg[mesh-generator-2]": 7.367446382688062e-10,
+        "pg[mesh-generator-3]": 142.6140746581443,
+        "station/ac_dc_converter_station/31/iconv": 0.15679660604135587,
+        "station/ac_dc_converter_station/31/pgrid": -64.99999999895611,
+        "station/ac_dc_converter_station/32/iconv": 0.1567024071290204,
+        "station/ac_dc_converter_station/32/pgrid": -64.99999999926325,
+        "station/ac_dc_converter_station/33/iconv": 0.319019883139358,
+        "station/ac_dc_converter_station/33/pgrid": 132.6140746581443
+      },
+      "source_hashes": {
+        "connected_056.m": "5136a8ac9ffc748dbf3ea1ac7c0eafb6ec0d307553cf241120bde6c15a6af0f0",
+        "connected_057.m": "01b57e9ef0649c1484f2b31cc10c85f2f1283714f189efb7476e00b0367b8c68",
+        "connected_058.m": "0374dd925c8824fdc69f081a4c363ca92973a18e792c25b6b5e567bff721e943",
+        "connected_059.m": "adcfa3344899f1681ea0cd377a101d56a6a50f96f0743e40a38b390b2b117cac"
+      }
+    },
+    "topology3/cheap2/poles2": {
+      "angle_references": [
+        {
+          "bus": 11,
+          "declared": true,
+          "island_buses": [
+            11
+          ]
+        },
+        {
+          "bus": 12,
+          "declared": false,
+          "island_buses": [
+            12
+          ]
+        },
+        {
+          "bus": 13,
+          "declared": false,
+          "island_buses": [
+            13
+          ]
+        }
+      ],
+      "cost_difference_from_intact": 1.3363249577756733,
+      "max_native_kkt": 2.5059126130229687e-09,
+      "max_native_physical_residual": 1.0166090191887633e-11,
+      "max_native_reference_objective_difference": 1.4506156276183901e-08,
+      "max_native_violation": 1.212363542890671e-13,
+      "max_reference_violation": 2.2737367544323206e-11,
+      "native_iterations_range": [
+        22,
+        28
+      ],
+      "native_solves": 8,
+      "native_variable_count": 63,
+      "networks": 4,
+      "objective_range": [
+        185.90020178347012,
+        185.900201797977
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/23/vm",
+        "pg[mesh-generator-1]",
+        "pg[mesh-generator-2]",
+        "station/ac_dc_converter_station/31/vmconv",
+        "station/ac_dc_converter_station/32/vmconv",
+        "station/ac_dc_converter_station/33/vmconv"
+      ],
+      "representative_physical_dispatch": {
+        "dc_bus/dc_equivalent_bus/21/vm": 548.9364658411574,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.0029649917263,
+        "dc_bus/dc_equivalent_bus/23/vm": 549.9999982321916,
+        "pg[mesh-generator-1]": 1.0408372085094175e-09,
+        "pg[mesh-generator-2]": 7.353078107747508e-10,
+        "pg[mesh-generator-3]": 142.36475490934222,
+        "station/ac_dc_converter_station/31/iconv": 0.15679660604939527,
+        "station/ac_dc_converter_station/31/pgrid": -64.99999999895917,
+        "station/ac_dc_converter_station/32/iconv": 0.1567024071368935,
+        "station/ac_dc_converter_station/32/pgrid": -64.99999999926469,
+        "station/ac_dc_converter_station/33/iconv": 0.3184201130333701,
+        "station/ac_dc_converter_station/33/pgrid": 132.36475490934222
+      },
+      "source_hashes": {
+        "connected_060.m": "ea5052a7d5b129bf00a024ae993d8dee41fdc66b31015a14b079a222ff6634a8",
+        "connected_061.m": "49640e82d7c26af16dc44c0a33df5a855baf2897ebb60ba288633e42d7e2e1c9",
+        "connected_062.m": "fed68f199e0667542ac6ccbdafe98e4c405686c83acdd6e385cefa636d42684f",
+        "connected_063.m": "28ead6ab5e649e400de2827cbc7f743965878401d4abd27713778068d32e2675"
+      }
+    },
+    "topology4/cheap0/poles1": {
+      "angle_references": [
+        {
+          "bus": 11,
+          "declared": true,
+          "island_buses": [
+            11,
+            12,
+            13
+          ]
+        }
+      ],
+      "cost_difference_from_intact": 0.1484274756494699,
+      "max_native_kkt": 2.5059671381751844e-09,
+      "max_native_physical_residual": 7.622141709399548e-12,
+      "max_native_reference_objective_difference": 1.4534663250742597e-08,
+      "max_native_violation": 6.84001466577655e-14,
+      "max_reference_violation": 5.6843418860808015e-12,
+      "native_iterations_range": [
+        21,
+        26
+      ],
+      "native_solves": 8,
+      "native_variable_count": 73,
+      "networks": 4,
+      "objective_range": [
+        184.8387270146526,
+        184.83872702918725
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/21/vm",
+        "pg[mesh-generator-2]",
+        "pg[mesh-generator-3]",
+        "station/ac_dc_converter_station/33/vmconv"
+      ],
+      "representative_physical_dispatch": {
+        "dc_bus/dc_equivalent_bus/21/vm": 549.9999967299939,
+        "dc_bus/dc_equivalent_bus/22/vm": 547.9436377092911,
+        "dc_bus/dc_equivalent_bus/23/vm": 548.5049267032923,
+        "pg[mesh-generator-1]": 141.68783937090592,
+        "pg[mesh-generator-2]": 7.359878528037858e-10,
+        "pg[mesh-generator-3]": 5.680507223816354e-10,
+        "station/ac_dc_converter_station/31/iconv": 0.11519601159068035,
+        "station/ac_dc_converter_station/31/pgrid": 41.68817921302954,
+        "station/ac_dc_converter_station/32/iconv": 0.05544732074003772,
+        "station/ac_dc_converter_station/32/pgrid": -20.043314916456893,
+        "station/ac_dc_converter_station/33/iconv": 0.04821173533533582,
+        "station/ac_dc_converter_station/33/pgrid": -20.04124197208993
+      },
+      "source_hashes": {
+        "connected_064.m": "70314fecb049cb619a95bbd19a17f1b8567117929eacc8d80057790fb5405012",
+        "connected_065.m": "d9e2dcba1202e2afcadf915cda7dbbedd9c9e20fd64054143a83f3911f344cef",
+        "connected_066.m": "f0a681fd4734f51980b12561ac3f162cf3fdca5628cd2a30cc39236b81d4548f",
+        "connected_067.m": "0295b598044f65820bcb63ad052a2544e99225c9358be4799dcc2131a2a52ae7"
+      }
+    },
+    "topology4/cheap0/poles2": {
+      "angle_references": [
+        {
+          "bus": 11,
+          "declared": true,
+          "island_buses": [
+            11,
+            12,
+            13
+          ]
+        }
+      ],
+      "cost_difference_from_intact": 0.07388824959133444,
+      "max_native_kkt": 2.5065609921724755e-09,
+      "max_native_physical_residual": 6.069163688073836e-12,
+      "max_native_reference_objective_difference": 1.4525568303724867e-08,
+      "max_native_violation": 5.72111802377151e-14,
+      "max_reference_violation": 1.1368683772161603e-11,
+      "native_iterations_range": [
+        21,
+        26
+      ],
+      "native_solves": 8,
+      "native_variable_count": 73,
+      "networks": 4,
+      "objective_range": [
+        184.73371500002227,
+        184.73371501454795
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/21/vm",
+        "pg[mesh-generator-2]",
+        "pg[mesh-generator-3]",
+        "station/ac_dc_converter_station/33/vmconv"
+      ],
+      "representative_physical_dispatch": {
+        "dc_bus/dc_equivalent_bus/21/vm": 549.9999934147587,
+        "dc_bus/dc_equivalent_bus/22/vm": 548.9735390638588,
+        "dc_bus/dc_equivalent_bus/23/vm": 549.2536632786309,
+        "pg[mesh-generator-1]": 141.62080831300898,
+        "pg[mesh-generator-2]": 7.346335348219092e-10,
+        "pg[mesh-generator-3]": 5.674560369288471e-10,
+        "station/ac_dc_converter_station/31/iconv": 0.11501018296392458,
+        "station/ac_dc_converter_station/31/pgrid": 41.62148112616096,
+        "station/ac_dc_converter_station/32/iconv": 0.055447601456818624,
+        "station/ac_dc_converter_station/32/pgrid": -20.04376983155317,
+        "station/ac_dc_converter_station/33/iconv": 0.048211441087556976,
+        "station/ac_dc_converter_station/33/pgrid": -20.041119655398898
+      },
+      "source_hashes": {
+        "connected_068.m": "33ea7b92622b468d863a917d670f69158791bf8c5678b6af16ddd219d3963649",
+        "connected_069.m": "07e1b4371ca8227c7ff092c8fd29959151022b651e11e6382eb96eb8e5401a5e",
+        "connected_070.m": "f10c16de75eb29db41d939a2e248238851a921514177344172a4a7f6aea84162",
+        "connected_071.m": "5b81d74466ad7d8aa73dbffc0eec0a840168aaed8d46592775a4764555526ebc"
+      }
+    },
+    "topology4/cheap2/poles1": {
+      "angle_references": [
+        {
+          "bus": 11,
+          "declared": true,
+          "island_buses": [
+            11,
+            12,
+            13
+          ]
+        }
+      ],
+      "cost_difference_from_intact": 0.0012206866120436644,
+      "max_native_kkt": 2.506934829908252e-09,
+      "max_native_physical_residual": 5.998590690393029e-12,
+      "max_native_reference_objective_difference": 1.4502376188829658e-08,
+      "max_native_violation": 1.4173632360802836e-13,
+      "max_reference_violation": 7.105427357601002e-12,
+      "native_iterations_range": [
+        22,
+        32
+      ],
+      "native_solves": 8,
+      "native_variable_count": 73,
+      "networks": 4,
+      "objective_range": [
+        184.60279921166403,
+        184.6027992261664
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/23/vm",
+        "pg[mesh-generator-1]",
+        "pg[mesh-generator-2]",
+        "station/ac_dc_converter_station/33/vmconv"
+      ],
+      "representative_physical_dispatch": {
+        "dc_bus/dc_equivalent_bus/21/vm": 549.2534457644933,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.4402080356145,
+        "dc_bus/dc_equivalent_bus/23/vm": 549.9999910158119,
+        "pg[mesh-generator-1]": 1.0357002399562582e-09,
+        "pg[mesh-generator-2]": 7.325937675528475e-10,
+        "pg[mesh-generator-3]": 141.53722633892437,
+        "station/ac_dc_converter_station/31/iconv": 0.05555101118968673,
+        "station/ac_dc_converter_station/31/pgrid": -20.041383949854584,
+        "station/ac_dc_converter_station/32/iconv": 0.05550460296847174,
+        "station/ac_dc_converter_station/32/pgrid": -20.044066590899003,
+        "station/ac_dc_converter_station/33/iconv": 0.09992561576045876,
+        "station/ac_dc_converter_station/33/pgrid": 41.538298279521854
+      },
+      "source_hashes": {
+        "connected_072.m": "f8384f7bc08d88332a743f3766ad91fb26032126a1b0b716de3d76147834303c",
+        "connected_073.m": "7e11d0e268389dca5bff6924a959b978cdc5944b3ac2dc4ac3bb24cdc87f6929",
+        "connected_074.m": "850d2d54ff748faccca1fed73c11ff6e88f1d64aeb594309fb8c7e2027cd0d8d",
+        "connected_075.m": "4c8cfeb702d1395f899df5ee9bf292fdf5a3a14aad81bde4f63b894dd8fecba1"
+      }
+    },
+    "topology4/cheap2/poles2": {
+      "angle_references": [
+        {
+          "bus": 11,
+          "declared": true,
+          "island_buses": [
+            11,
+            12,
+            13
+          ]
+        }
+      ],
+      "cost_difference_from_intact": 0.0006081183177002458,
+      "max_native_kkt": 2.5144549391022553e-09,
+      "max_native_physical_residual": 1.615092631978114e-11,
+      "max_native_reference_objective_difference": 1.4500699307973264e-08,
+      "max_native_violation": 5.275170533666736e-13,
+      "max_reference_violation": 1.4210854715202004e-11,
+      "native_iterations_range": [
+        21,
+        35
+      ],
+      "native_solves": 8,
+      "native_variable_count": 73,
+      "networks": 4,
+      "objective_range": [
+        184.56448494401215,
+        184.56448495851575
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "pg[mesh-generator-1]",
+        "pg[mesh-generator-2]",
+        "station/ac_dc_converter_station/33/vmconv"
+      ],
+      "representative_physical_dispatch": {
+        "dc_bus/dc_equivalent_bus/21/vm": 549.6269510516564,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.7202381113725,
+        "dc_bus/dc_equivalent_bus/23/vm": 549.9999819285401,
+        "pg[mesh-generator-1]": 1.0347386666578997e-09,
+        "pg[mesh-generator-2]": 7.322279362269214e-10,
+        "pg[mesh-generator-3]": 141.51276157407392,
+        "station/ac_dc_converter_station/31/iconv": 0.055552277418442014,
+        "station/ac_dc_converter_station/31/pgrid": -20.042036841986913,
+        "station/ac_dc_converter_station/32/iconv": 0.05550342299633731,
+        "station/ac_dc_converter_station/32/pgrid": -20.04369489863414,
+        "station/ac_dc_converter_station/33/iconv": 0.09986744281635596,
+        "station/ac_dc_converter_station/33/pgrid": 41.5141162406806
+      },
+      "source_hashes": {
+        "connected_076.m": "18be3d7f434680596493f62ec025ff84f5164bd1ca2618a2d810f8f0d79a8e93",
+        "connected_077.m": "0ec630055b769f86fd078e9a045b469de7c7c6aa6c6e31fc2cd3ea11f7e790bc",
+        "connected_078.m": "e569488e0462c7bdf7301b4b53ca1a1bc69343a5f1cd3c46ea0dda2f3e08be41",
+        "connected_079.m": "80ad2156a5ae0c32f09ee8614ebaabecdec9e23c4f8f5d7a230c00fc9a9ac131"
+      }
+    },
+    "topology5/cheap0/poles1": {
+      "angle_references": [
+        {
+          "bus": 11,
+          "declared": true,
+          "island_buses": [
+            11,
+            12,
+            13
+          ]
+        }
+      ],
+      "cost_difference_from_intact": 0.6941269503417402,
+      "max_native_kkt": 2.5059164638863484e-09,
+      "max_native_physical_residual": 7.346012687037273e-11,
+      "max_native_reference_objective_difference": 1.2203742016936303e-08,
+      "max_native_violation": 3.3044639247137297e-10,
+      "max_reference_violation": 1.1368683772161603e-11,
+      "native_iterations_range": [
+        84,
+        2280
+      ],
+      "native_solves": 8,
+      "native_variable_count": 71,
+      "networks": 4,
+      "objective_range": [
+        185.38442648934486,
+        185.38442650188938
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/21/vm",
+        "pg[mesh-generator-2]",
+        "pg[mesh-generator-3]",
+        "station/ac_dc_converter_station/33/vmconv"
+      ],
+      "representative_physical_dispatch": {
+        "dc_bus/dc_equivalent_bus/21/vm": 549.9999965561279,
+        "dc_bus/dc_equivalent_bus/22/vm": 548.8775447145679,
+        "dc_bus/dc_equivalent_bus/23/vm": 500.0,
+        "pg[mesh-generator-1]": 142.03598463327188,
+        "pg[mesh-generator-2]": 7.373879581345403e-10,
+        "pg[mesh-generator-3]": 5.740765725132135e-10,
+        "station/ac_dc_converter_station/31/iconv": 0.17255434251968835,
+        "station/ac_dc_converter_station/31/pgrid": 62.46434328595043,
+        "station/ac_dc_converter_station/32/iconv": 0.16825358102476823,
+        "station/ac_dc_converter_station/32/pgrid": -60.89291870617915,
+        "station/ac_dc_converter_station/33/iconv": 0.0009638764638712033,
+        "station/ac_dc_converter_station/33/pgrid": 0.40067592129989876
+      },
+      "source_hashes": {
+        "connected_080.m": "773cd29400615b09335e147e618bf6b2410656f2c500d196685535776bb88a75",
+        "connected_081.m": "3431d3d335d07cc9e81ca77f3b14239612ce7c5997a596b0d6991b2f1648194f",
+        "connected_082.m": "da0681018ddf10432db8dd3bf50463751b3b83ce4b49b4c4193333bf7fe7a057",
+        "connected_083.m": "d9a5887773eb5663d92993e158220755063c748ac01a063072023cf063aaa236"
+      }
+    },
+    "topology5/cheap0/poles2": {
+      "angle_references": [
+        {
+          "bus": 11,
+          "declared": true,
+          "island_buses": [
+            11,
+            12,
+            13
+          ]
+        }
+      ],
+      "cost_difference_from_intact": 0.62475837117222,
+      "max_native_kkt": 2.506093874899607e-09,
+      "max_native_physical_residual": 7.297273896256229e-12,
+      "max_native_reference_objective_difference": 1.2064020893376437e-08,
+      "max_native_violation": 1.0680345496894006e-13,
+      "max_reference_violation": 1.4210854715202004e-11,
+      "native_iterations_range": [
+        30,
+        1340
+      ],
+      "native_solves": 8,
+      "native_variable_count": 71,
+      "networks": 4,
+      "objective_range": [
+        185.28458512160316,
+        185.2845851340854
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/21/vm",
+        "pg[mesh-generator-2]",
+        "pg[mesh-generator-3]",
+        "station/ac_dc_converter_station/33/vmconv"
+      ],
+      "representative_physical_dispatch": {
+        "dc_bus/dc_equivalent_bus/21/vm": 549.9999930827248,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.4393211138649,
+        "dc_bus/dc_equivalent_bus/23/vm": 500.0,
+        "pg[mesh-generator-1]": 141.9723109653034,
+        "pg[mesh-generator-2]": 7.366190336041358e-10,
+        "pg[mesh-generator-3]": 5.731780711854851e-10,
+        "station/ac_dc_converter_station/31/iconv": 0.17238422239726653,
+        "station/ac_dc_converter_station/31/pgrid": 62.40287808788425,
+        "station/ac_dc_converter_station/32/iconv": 0.16826720295430644,
+        "station/ac_dc_converter_station/32/pgrid": -60.89506118438506,
+        "station/ac_dc_converter_station/33/iconv": 0.0009638764638792267,
+        "station/ac_dc_converter_station/33/pgrid": 0.4006759212999043
+      },
+      "source_hashes": {
+        "connected_084.m": "bd190946fc084bfdcdeb62202766348ef3087a432239a40fcc12ae911d0035c8",
+        "connected_085.m": "9ea00a452a7a54ccbd8718389779758b27f93c93b84792612fa7f74bc4ddc659",
+        "connected_086.m": "666229001da8715cc5e30faa98674a2d058761f8e53f4f3e29472c127a06aaac",
+        "connected_087.m": "9eafcf2a77415e4394dfd87db77f84be776211fb7ea63efea6a875c4a26d3162"
+      }
+    },
+    "topology5/cheap2/poles1": {
+      "angle_references": [
+        {
+          "bus": 11,
+          "declared": true,
+          "island_buses": [
+            11,
+            12,
+            13
+          ]
+        }
+      ],
+      "cost_difference_from_intact": 106.41890684471855,
+      "max_native_kkt": 2.507267971969874e-09,
+      "max_native_physical_residual": 5.45257664928517e-12,
+      "max_native_reference_objective_difference": 1.2617533684533555e-08,
+      "max_native_violation": 1.1179317020715285e-13,
+      "max_reference_violation": 1.1368683772161603e-11,
+      "native_iterations_range": [
+        99,
+        2079
+      ],
+      "native_solves": 8,
+      "native_variable_count": 71,
+      "networks": 4,
+      "objective_range": [
+        291.02048536977054,
+        291.0204853944775
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "pg[mesh-generator-2]",
+        "station/ac_dc_converter_station/33/vmconv"
+      ],
+      "representative_physical_dispatch": {
+        "dc_bus/dc_equivalent_bus/21/vm": 549.999988165806,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.6269625555282,
+        "dc_bus/dc_equivalent_bus/23/vm": 500.0,
+        "pg[mesh-generator-1]": 41.023347351543876,
+        "pg[mesh-generator-2]": 3.149698099046248e-09,
+        "pg[mesh-generator-3]": 100.40067488284154,
+        "station/ac_dc_converter_station/31/iconv": 0.05814982164742549,
+        "station/ac_dc_converter_station/31/pgrid": 20.981036084668936,
+        "station/ac_dc_converter_station/32/iconv": 0.05550210494100295,
+        "station/ac_dc_converter_station/32/pgrid": -20.04207845421948,
+        "station/ac_dc_converter_station/33/iconv": 0.0009638764642918303,
+        "station/ac_dc_converter_station/33/pgrid": 0.4006759213001942
+      },
+      "source_hashes": {
+        "connected_088.m": "b4c1bbc662c06441409e6c6da19b769e6fad658a1bcf397f812baa0cc79367f2",
+        "connected_089.m": "b0aeef60b16e5e4369a886c05e440d43378fa6db0baa449cd966301510b778a6",
+        "connected_090.m": "632b13a47ad92a79607ea3aec225951934d3332f887045749dd1e178cbc6a8a1",
+        "connected_091.m": "58e0afe4699d6815b5671f56ddc790ef02f203d795d715de76183142b987233c"
+      }
+    },
+    "topology5/cheap2/poles2": {
+      "angle_references": [
+        {
+          "bus": 11,
+          "declared": true,
+          "island_buses": [
+            11,
+            12,
+            13
+          ]
+        }
+      ],
+      "cost_difference_from_intact": 106.42749587846984,
+      "max_native_kkt": 2.5274136199062722e-09,
+      "max_native_physical_residual": 1.5642598327758606e-11,
+      "max_native_reference_objective_difference": 1.9197216261090944e-08,
+      "max_native_violation": 8.31279489688086e-14,
+      "max_reference_violation": 2.2737367544323206e-11,
+      "native_iterations_range": [
+        69,
+        526
+      ],
+      "native_solves": 8,
+      "native_variable_count": 71,
+      "networks": 4,
+      "objective_range": [
+        290.9913727041643,
+        290.9913727233615
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "pg[mesh-generator-2]",
+        "station/ac_dc_converter_station/33/vmconv"
+      ],
+      "representative_physical_dispatch": {
+        "dc_bus/dc_equivalent_bus/21/vm": 549.9999761066132,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.8135265154754,
+        "dc_bus/dc_equivalent_bus/23/vm": 500.0,
+        "pg[mesh-generator-1]": 41.016355930080266,
+        "pg[mesh-generator-2]": 3.1383197340523688e-09,
+        "pg[mesh-generator-3]": 100.4006749991889,
+        "station/ac_dc_converter_station/31/iconv": 0.0581305065957767,
+        "station/ac_dc_converter_station/31/pgrid": 20.974052883959942,
+        "station/ac_dc_converter_station/32/iconv": 0.05550212259397205,
+        "station/ac_dc_converter_station/32/pgrid": -20.042086559072082,
+        "station/ac_dc_converter_station/33/iconv": 0.0009638764642926318,
+        "station/ac_dc_converter_station/33/pgrid": 0.4006759213001948
+      },
+      "source_hashes": {
+        "connected_092.m": "9b5be145387f0523d0590e31084abaf52f1aa73c1f607517f85dc1dd0814c63c",
+        "connected_093.m": "17933faef5117344059bb05009d8b823c5b4c1ca40bc0dc731eb842d78bb068e",
+        "connected_094.m": "039a11bf272c46ca8f5f62877b4a979302586baa63d0e161a9d7b0a5246dea3a",
+        "connected_095.m": "145a788fa1afa1518d4649646d25a68c144738cc77ff5f96b98193af60bbef36"
+      }
+    },
+    "topology6/cheap0/poles1": {
+      "angle_references": [
+        {
+          "bus": 11,
+          "declared": true,
+          "island_buses": [
+            11,
+            12
+          ]
+        },
+        {
+          "bus": 13,
+          "declared": false,
+          "island_buses": [
+            13
+          ]
+        }
+      ],
+      "cost_difference_from_intact": 306.7541848806276,
+      "max_native_kkt": 2.604736305704005e-09,
+      "max_native_physical_residual": 4.430093174449638e-11,
+      "max_native_reference_objective_difference": 1.2082352895959048e-08,
+      "max_native_violation": 7.522044098706715e-11,
+      "max_reference_violation": 5.6843418860808015e-12,
+      "native_iterations_range": [
+        44,
+        135
+      ],
+      "native_solves": 8,
+      "native_variable_count": 63,
+      "networks": 4,
+      "objective_range": [
+        491.44448441963067,
+        491.4444844317166
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "pg[mesh-generator-2]",
+        "station/ac_dc_converter_station/32/vmconv"
+      ],
+      "representative_physical_dispatch": {
+        "dc_bus/dc_equivalent_bus/21/vm": 549.9999621148484,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.6273107901088,
+        "dc_bus/dc_equivalent_bus/23/vm": 500.0,
+        "pg[mesh-generator-1]": 75.94933047644457,
+        "pg[mesh-generator-2]": 6.799045159125303e-10,
+        "pg[mesh-generator-3]": 65.40067592169919,
+        "station/ac_dc_converter_station/31/iconv": 0.05047256861590772,
+        "station/ac_dc_converter_station/31/pgrid": 20.949334102781915,
+        "station/ac_dc_converter_station/32/iconv": 0.04822284318564916,
+        "station/ac_dc_converter_station/32/pgrid": -20.03190045943225,
+        "station/ac_dc_converter_station/33/iconv": 0.0009638770322589293,
+        "station/ac_dc_converter_station/33/pgrid": 0.4006759216991946
+      },
+      "source_hashes": {
+        "connected_096.m": "b7dccea6383b7415b9e2e270f33e360392fe94d7f798da2f2f2a9e40f8a6c4d2",
+        "connected_097.m": "3e3d08bf4210e99130aa6e5da80b25c84b00a6a8914c72cba6b76463961d91d9",
+        "connected_098.m": "cad31d9e48247d4032eda76b265388f98455bcb6bdddf6d47a3cc9c327885625",
+        "connected_099.m": "fc69c0dd9bfe915ea2139b4cd82478a4f986f8ff2c57bad22debb259b7a1521d"
+      }
+    },
+    "topology6/cheap0/poles2": {
+      "angle_references": [
+        {
+          "bus": 11,
+          "declared": true,
+          "island_buses": [
+            11,
+            12
+          ]
+        },
+        {
+          "bus": 13,
+          "declared": false,
+          "island_buses": [
+            13
+          ]
+        }
+      ],
+      "cost_difference_from_intact": 306.7755681182663,
+      "max_native_kkt": 3.7501709374671595e-09,
+      "max_native_physical_residual": 6.011902087266208e-10,
+      "max_native_reference_objective_difference": 1.2058308129780926e-08,
+      "max_native_violation": 1.1058709503686259e-10,
+      "max_reference_violation": 2.2737367544323206e-11,
+      "native_iterations_range": [
+        40,
+        1022
+      ],
+      "native_solves": 8,
+      "native_variable_count": 63,
+      "networks": 4,
+      "objective_range": [
+        491.4353948686972,
+        491.4353948812327
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/21/vm",
+        "pg[mesh-generator-2]",
+        "station/ac_dc_converter_station/32/vmconv",
+        "station/ac_dc_converter_station/33/vmconv"
+      ],
+      "representative_physical_dispatch": {
+        "dc_bus/dc_equivalent_bus/21/vm": 549.9999996972458,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.8137372106676,
+        "dc_bus/dc_equivalent_bus/23/vm": 500.0,
+        "pg[mesh-generator-1]": 75.94235879903222,
+        "pg[mesh-generator-2]": 2.712533755640846e-12,
+        "pg[mesh-generator-3]": 65.40067592130059,
+        "station/ac_dc_converter_station/31/iconv": 0.0504557629399904,
+        "station/ac_dc_converter_station/31/pgrid": 20.94236265972967,
+        "station/ac_dc_converter_station/32/iconv": 0.04822285020220596,
+        "station/ac_dc_converter_station/32/pgrid": -20.031900671424413,
+        "station/ac_dc_converter_station/33/iconv": 0.0009638764648557362,
+        "station/ac_dc_converter_station/33/pgrid": 0.4006759213005903
+      },
+      "source_hashes": {
+        "connected_100.m": "99b830db5972e51e72704a5ec003c634f4ee018fa373be96e939917e618d3ebd",
+        "connected_101.m": "df51e26fc12a3b7de36b1ce545ba1e81b949d8a941fa2c5f7ad97471f4a94589",
+        "connected_102.m": "c8304101c37997d59691322e704c4585729db765fe3cf6ef01652c55b6cc7fbb",
+        "connected_103.m": "1927bf765a544aee199ae9ae1828e102d880695d644930746e4814c0cabd9c6f"
+      }
+    },
+    "topology6/cheap2/poles1": {
+      "angle_references": [
+        {
+          "bus": 11,
+          "declared": true,
+          "island_buses": [
+            11,
+            12
+          ]
+        },
+        {
+          "bus": 13,
+          "declared": false,
+          "island_buses": [
+            13
+          ]
+        }
+      ],
+      "cost_difference_from_intact": 387.1082217031766,
+      "max_native_kkt": 7.3753331601949425e-09,
+      "max_native_physical_residual": 6.391711439501599e-11,
+      "max_native_reference_objective_difference": 1.1924043974431697e-08,
+      "max_native_violation": 1.1869363825134371e-10,
+      "max_reference_violation": 1.1368683772161603e-11,
+      "native_iterations_range": [
+        44,
+        298
+      ],
+      "native_solves": 8,
+      "native_variable_count": 63,
+      "networks": 4,
+      "objective_range": [
+        571.7098002282286,
+        571.7098002402191
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "pg[mesh-generator-2]",
+        "station/ac_dc_converter_station/32/vmconv"
+      ],
+      "representative_physical_dispatch": {
+        "dc_bus/dc_equivalent_bus/21/vm": 549.9999890819561,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.6273377805036,
+        "dc_bus/dc_equivalent_bus/23/vm": 500.0,
+        "pg[mesh-generator-1]": 130.949330467231,
+        "pg[mesh-generator-2]": 5.6996825002908875e-09,
+        "pg[mesh-generator-3]": 10.400675923704794,
+        "station/ac_dc_converter_station/31/iconv": 0.05047252289367355,
+        "station/ac_dc_converter_station/31/pgrid": 20.949333820183487,
+        "station/ac_dc_converter_station/32/iconv": 0.04822284687874608,
+        "station/ac_dc_converter_station/32/pgrid": -20.03190018023777,
+        "station/ac_dc_converter_station/33/iconv": 0.0009638798871803416,
+        "station/ac_dc_converter_station/33/pgrid": 0.4006759237047942
+      },
+      "source_hashes": {
+        "connected_104.m": "891b85d9e5123c89d64ad135516d27d310b295aec55b75f8949b504c8c8bf235",
+        "connected_105.m": "b3710e2b37598550ce01fd612b70fd602a6274c3b642962b24e36d10c03c3c79",
+        "connected_106.m": "a7e37332fc4ff00b73acd1cd426e24bcc0c4d2d2c374f536a23d32fbda3d77c1",
+        "connected_107.m": "ef69698758d47eafc20c5ab3e3f626131a840fe22f8df712ce937c593a37b017"
+      }
+    },
+    "topology6/cheap2/poles2": {
+      "angle_references": [
+        {
+          "bus": 11,
+          "declared": true,
+          "island_buses": [
+            11,
+            12
+          ]
+        },
+        {
+          "bus": 13,
+          "declared": false,
+          "island_buses": [
+            13
+          ]
+        }
+      ],
+      "cost_difference_from_intact": 387.1143850672805,
+      "max_native_kkt": 8.914055394380602e-09,
+      "max_native_physical_residual": 8.138008111029718e-11,
+      "max_native_reference_objective_difference": 1.18257048598025e-08,
+      "max_native_violation": 1.3176085222887934e-10,
+      "max_reference_violation": 2.2737367544323206e-11,
+      "native_iterations_range": [
+        41,
+        144
+      ],
+      "native_solves": 8,
+      "native_variable_count": 63,
+      "networks": 4,
+      "objective_range": [
+        571.678261892975,
+        571.678261904808
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "pg[mesh-generator-2]",
+        "station/ac_dc_converter_station/32/vmconv"
+      ],
+      "representative_physical_dispatch": {
+        "dc_bus/dc_equivalent_bus/21/vm": 549.9999781322031,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.8137156372438,
+        "dc_bus/dc_equivalent_bus/23/vm": 500.0,
+        "pg[mesh-generator-1]": 130.94235879497057,
+        "pg[mesh-generator-2]": 5.659473173973675e-09,
+        "pg[mesh-generator-3]": 10.400675923704796,
+        "station/ac_dc_converter_station/31/iconv": 0.05045578276146057,
+        "station/ac_dc_converter_station/31/pgrid": 20.942362781256456,
+        "station/ac_dc_converter_station/32/iconv": 0.048222848583531375,
+        "station/ac_dc_converter_station/32/pgrid": -20.031900791589553,
+        "station/ac_dc_converter_station/33/iconv": 0.0009638798871803416,
+        "station/ac_dc_converter_station/33/pgrid": 0.4006759237047942
+      },
+      "source_hashes": {
+        "connected_108.m": "20405277a12496bdf1b144c6b3ea7d6b08f377567e4fe52b1a3f623ba913d757",
+        "connected_109.m": "bdc66c0ff45aac1b1b76e13d022143c7bcf2b1995fab76483caf653d9acc0a34",
+        "connected_110.m": "06725c065ea68036c9337261ebe31305253a38dcbfec5c1636aabab7b8b5c854",
+        "connected_111.m": "ed9ed4f4c6453d773ef105f48557ed37cc7ae5521c2d0b37c988936042881905"
+      }
+    },
+    "topology7/cheap0/poles1": {
+      "angle_references": [
+        {
+          "bus": 11,
+          "declared": true,
+          "island_buses": [
+            11,
+            12
+          ]
+        },
+        {
+          "bus": 13,
+          "declared": false,
+          "island_buses": [
+            13
+          ]
+        }
+      ],
+      "cost_difference_from_intact": 304.2415911836455,
+      "max_native_kkt": 4.496355802149108e-09,
+      "max_native_physical_residual": 7.883325780823881e-11,
+      "max_native_reference_objective_difference": 9.626376140658977e-09,
+      "max_native_violation": 1.3918025065784434e-10,
+      "max_reference_violation": 1.1368683772161603e-11,
+      "native_iterations_range": [
+        24,
+        41
+      ],
+      "native_solves": 8,
+      "native_variable_count": 53,
+      "networks": 4,
+      "objective_range": [
+        488.9318907226486,
+        488.93189073227575
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "pg[mesh-generator-2]",
+        "station/ac_dc_converter_station/32/vmconv"
+      ],
+      "representative_physical_dispatch": {
+        "dc_bus/dc_equivalent_bus/21/vm": 549.9999512431015,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.7101550004382,
+        "dc_bus/dc_equivalent_bus/23/vm": 549.834353390151,
+        "pg[mesh-generator-1]": 75.94623078728347,
+        "pg[mesh-generator-2]": 6.79829030683016e-10,
+        "pg[mesh-generator-3]": 65.0,
+        "station/ac_dc_converter_station/31/iconv": 0.05046512758646101,
+        "station/ac_dc_converter_station/31/pgrid": 20.946234692333213,
+        "station/ac_dc_converter_station/32/iconv": 0.04822284371097565,
+        "station/ac_dc_converter_station/32/pgrid": -20.03190072875242
+      },
+      "source_hashes": {
+        "connected_112.m": "fbc066b93adb10f2a0c7c925e619034ba5227971aca047f94baa8276c6775596",
+        "connected_113.m": "a108caeb44ebaefa93ec155984e634126ebecbd8f91757254202ae98eec09a63",
+        "connected_114.m": "e8063ad15bd5f99b8811c9783dd3ed7a119d0d53157cd997edeaf0653a0ccd12",
+        "connected_115.m": "a15ca8bb012051819d2d602d3e1c9d41a792025a8127d67b3b23d92c421aa326"
+      }
+    },
+    "topology7/cheap0/poles2": {
+      "angle_references": [
+        {
+          "bus": 11,
+          "declared": true,
+          "island_buses": [
+            11,
+            12
+          ]
+        },
+        {
+          "bus": 13,
+          "declared": false,
+          "island_buses": [
+            13
+          ]
+        }
+      ],
+      "cost_difference_from_intact": 304.2649975693398,
+      "max_native_kkt": 4.926512007402815e-09,
+      "max_native_physical_residual": 8.930507266986139e-11,
+      "max_native_reference_objective_difference": 9.634732123231515e-09,
+      "max_native_violation": 1.4238130119359482e-10,
+      "max_reference_violation": 3.410605131648481e-11,
+      "native_iterations_range": [
+        24,
+        37
+      ],
+      "native_solves": 8,
+      "native_variable_count": 53,
+      "networks": 4,
+      "objective_range": [
+        488.9248243197708,
+        488.92482432940704
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "pg[mesh-generator-2]",
+        "station/ac_dc_converter_station/32/vmconv"
+      ],
+      "representative_physical_dispatch": {
+        "dc_bus/dc_equivalent_bus/21/vm": 549.9999022460336,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.8550423015847,
+        "dc_bus/dc_equivalent_bus/23/vm": 549.9171251349198,
+        "pg[mesh-generator-1]": 75.9408108276771,
+        "pg[mesh-generator-2]": 6.796971380061108e-10,
+        "pg[mesh-generator-3]": 65.0,
+        "station/ac_dc_converter_station/31/iconv": 0.050452114025655255,
+        "station/ac_dc_converter_station/31/pgrid": 20.940815300923816,
+        "station/ac_dc_converter_station/32/iconv": 0.04822284523722318,
+        "station/ac_dc_converter_station/32/pgrid": -20.031901278574715
+      },
+      "source_hashes": {
+        "connected_116.m": "fa09fcc1e1ca80c90f7e0746a45f43e6d5e11decb6c8f61b27b51d54ebd5da22",
+        "connected_117.m": "6b1798d97c2b3d5f60eea28f83c924fa244be89f06f41ab2b26a80dbffbfe923",
+        "connected_118.m": "c6e457db50b936c288b1667375bac348dcdc302a05818343fea153e730390a45",
+        "connected_119.m": "d6063d508d276b2c62755b996b47681b42cc6745cba57e7c8b6319ee8ab08d05"
+      }
+    },
+    "topology7/cheap2/poles1": {
+      "angle_references": [
+        {
+          "bus": 11,
+          "declared": true,
+          "island_buses": [
+            11,
+            12
+          ]
+        },
+        {
+          "bus": 13,
+          "declared": false,
+          "island_buses": [
+            13
+          ]
+        }
+      ],
+      "cost_difference_from_intact": 386.67717531638516,
+      "max_native_kkt": 9.276866500481349e-10,
+      "max_native_physical_residual": 6.556430824171498e-12,
+      "max_native_reference_objective_difference": 3.312834451207891e-09,
+      "max_native_violation": 3.872901999102396e-12,
+      "max_reference_violation": 7.105427357601002e-12,
+      "native_iterations_range": [
+        22,
+        30
+      ],
+      "native_solves": 8,
+      "native_variable_count": 53,
+      "networks": 4,
+      "objective_range": [
+        571.2787538414372,
+        571.27875384475
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/21/vm",
+        "pg[mesh-generator-2]",
+        "station/ac_dc_converter_station/32/vmconv"
+      ],
+      "representative_physical_dispatch": {
+        "dc_bus/dc_equivalent_bus/21/vm": 549.9999949050581,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.7101986906033,
+        "dc_bus/dc_equivalent_bus/23/vm": 549.8343970682268,
+        "pg[mesh-generator-1]": 130.9462307807651,
+        "pg[mesh-generator-2]": 2.061216968771965e-09,
+        "pg[mesh-generator-3]": 10.0,
+        "station/ac_dc_converter_station/31/iconv": 0.05046506295918378,
+        "station/ac_dc_converter_station/31/pgrid": 20.94623431499111,
+        "station/ac_dc_converter_station/32/iconv": 0.048222849073525746,
+        "station/ac_dc_converter_station/32/pgrid": -20.031900355574507
+      },
+      "source_hashes": {
+        "connected_120.m": "cae1e90f067dd42a584accfc2afee6ad2578c71ff1a6f0eb80c0e65d8c4db6a9",
+        "connected_121.m": "405c6312f85b2dafab5227adc522bba18d7beae4686ba856cc69ce534163c1c1",
+        "connected_122.m": "9d8b37b1a012f9359261611cb255ce88d3c871479b7b2e4efd294b83c0ade1a2",
+        "connected_123.m": "fac3e03648088e8a1e5157285b614b0d72a1b513e48d0515bd34c62aeab975b2"
+      }
+    },
+    "topology7/cheap2/poles2": {
+      "angle_references": [
+        {
+          "bus": 11,
+          "declared": true,
+          "island_buses": [
+            11,
+            12
+          ]
+        },
+        {
+          "bus": 13,
+          "declared": false,
+          "island_buses": [
+            13
+          ]
+        }
+      ],
+      "cost_difference_from_intact": 386.69035834292947,
+      "max_native_kkt": 2.538900086940478e-09,
+      "max_native_physical_residual": 9.43600753089413e-12,
+      "max_native_reference_objective_difference": 9.701011549623217e-09,
+      "max_native_violation": 7.065237284109571e-12,
+      "max_reference_violation": 2.2737367544323206e-11,
+      "native_iterations_range": [
+        22,
+        28
+      ],
+      "native_solves": 8,
+      "native_variable_count": 53,
+      "networks": 4,
+      "objective_range": [
+        571.254235168624,
+        571.2542351783289
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "pg[mesh-generator-2]",
+        "station/ac_dc_converter_station/32/vmconv"
+      ],
+      "representative_physical_dispatch": {
+        "dc_bus/dc_equivalent_bus/21/vm": 549.9999718640443,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.8551119402557,
+        "dc_bus/dc_equivalent_bus/23/vm": 549.9171947647366,
+        "pg[mesh-generator-1]": 130.9408108186003,
+        "pg[mesh-generator-2]": 5.650625795671417e-09,
+        "pg[mesh-generator-3]": 10.0,
+        "station/ac_dc_converter_station/31/iconv": 0.05045206161308641,
+        "station/ac_dc_converter_station/31/pgrid": 20.940814964303048,
+        "station/ac_dc_converter_station/32/iconv": 0.048222849506025664,
+        "station/ac_dc_converter_station/32/pgrid": -20.031900945509786
+      },
+      "source_hashes": {
+        "connected_124.m": "09a06d685dd7fb3ae407ba83ba660935f4cd8356cba0454bea8d62838a7170b1",
+        "connected_125.m": "0500a975fee757ae542fdc6ef98f79c851ac1e1f4023c1f40632120a1d42990b",
+        "connected_126.m": "876d725f6f8b4beedf33225c1fb620f390a41c2a5d216a09cb392e6ac86c7ccb",
+        "connected_127.m": "ad29972e1db23db25ef1031b98409cc9c24398a691971449df67b300f7748acb"
+      }
+    }
+  },
+  "julia_version": "1.12.6",
+  "manifest_sha256": "c0c50ee07d24b1ba8af99d58dad407959e4e6ce81071f6f988babe120f0344f4",
+  "max_cross_violation": 1.3217855698854919e-09,
+  "max_physical_difference_by_quantity": {
+    "ac_branch/physical-ac-1/pf": 6.277870938653507e-07,
+    "ac_branch/physical-ac-1/pt": 6.279798656638746e-07,
+    "ac_branch/physical-ac-1/qf": 0.0002772821504377701,
+    "ac_branch/physical-ac-1/qt": 0.0002776004416522593,
+    "ac_branch/physical-ac-2/pf": 1.8120624716289058e-06,
+    "ac_branch/physical-ac-2/pt": 1.8147611058338953e-06,
+    "ac_branch/physical-ac-2/qf": 5.6724954802744865e-05,
+    "ac_branch/physical-ac-2/qt": 5.6739036033759405e-05,
+    "ac_branch/physical-ac-3/pf": 2.8582402222809833e-07,
+    "ac_branch/physical-ac-3/pt": 2.860209704635963e-07,
+    "ac_branch/physical-ac-3/qf": 9.6412204929619e-06,
+    "ac_branch/physical-ac-3/qt": 9.634560864085762e-06,
+    "dc_branch/dc_equivalent_branch/41/pf": 6.380269397254779e-07,
+    "dc_branch/dc_equivalent_branch/41/pt": 6.363940627807096e-07,
+    "dc_branch/dc_equivalent_branch/42/pf": 1.18418524763797e-06,
+    "dc_branch/dc_equivalent_branch/42/pt": 1.1832181314730406e-06,
+    "dc_branch/dc_equivalent_branch/43/pf": 5.688430775308007e-07,
+    "dc_branch/dc_equivalent_branch/43/pt": 5.695067457622827e-07,
+    "dc_bus/dc_equivalent_bus/21/vm": 9.421396498510148e-05,
+    "dc_bus/dc_equivalent_bus/22/vm": 9.424174299965671e-05,
+    "dc_bus/dc_equivalent_bus/23/vm": 1.2633629954818844,
+    "pg[mesh-generator-1]": 5.104084266349673e-09,
+    "pg[mesh-generator-2]": 5.492909583188198e-09,
+    "pg[mesh-generator-3]": 6.119094564382976e-09,
+    "qg[mesh-generator-1]": 0.00014211809676289988,
+    "qg[mesh-generator-2]": 0.0001308696666431075,
+    "qg[mesh-generator-3]": 5.0393346002763906e-05,
+    "station/ac_dc_converter_station/31/iconv": 6.961527518334343e-08,
+    "station/ac_dc_converter_station/31/pconv": 6.303350090774984e-07,
+    "station/ac_dc_converter_station/31/pdc": 6.321483994042865e-07,
+    "station/ac_dc_converter_station/31/pgrid": 6.267840930718194e-07,
+    "station/ac_dc_converter_station/31/ppr_fr": 6.29268058105481e-07,
+    "station/ac_dc_converter_station/31/ptf_to": 6.29268058105481e-07,
+    "station/ac_dc_converter_station/31/qconv": 0.00036524138212556956,
+    "station/ac_dc_converter_station/31/qgrid": 0.0003669118085607437,
+    "station/ac_dc_converter_station/31/qpr_fr": 0.0003653256746187772,
+    "station/ac_dc_converter_station/31/qtf_to": 0.00036732934327954325,
+    "station/ac_dc_converter_station/31/vaconv": 1.0560139870191554e-08,
+    "station/ac_dc_converter_station/31/vafilt": 6.691683929627851e-09,
+    "station/ac_dc_converter_station/31/vmconv": 4.7833376640937786e-05,
+    "station/ac_dc_converter_station/31/vmfilt": 4.172917249434249e-05,
+    "station/ac_dc_converter_station/32/iconv": 5.8096459240597476e-09,
+    "station/ac_dc_converter_station/32/pconv": 1.8159524657335169e-06,
+    "station/ac_dc_converter_station/32/pdc": 1.8205705920593118e-06,
+    "station/ac_dc_converter_station/32/pgrid": 1.8113528170715654e-06,
+    "station/ac_dc_converter_station/32/ppr_fr": 1.8142575406443484e-06,
+    "station/ac_dc_converter_station/32/ptf_to": 1.8142575406443484e-06,
+    "station/ac_dc_converter_station/32/qconv": 0.00035583740214734094,
+    "station/ac_dc_converter_station/32/qgrid": 0.00035585734295079385,
+    "station/ac_dc_converter_station/32/qpr_fr": 0.00035584404959559945,
+    "station/ac_dc_converter_station/32/qtf_to": 0.00035584404959559945,
+    "station/ac_dc_converter_station/32/vaconv": 1.6619056837727936e-08,
+    "station/ac_dc_converter_station/32/vafilt": 1.2425185167211361e-08,
+    "station/ac_dc_converter_station/32/vmconv": 3.0480110524422344e-06,
+    "station/ac_dc_converter_station/32/vmfilt": 8.152143323059136e-06,
+    "station/ac_dc_converter_station/33/iconv": 4.0572268600325145e-09,
+    "station/ac_dc_converter_station/33/pconv": 1.7477784339803293e-06,
+    "station/ac_dc_converter_station/33/pdc": 1.7520519577374216e-06,
+    "station/ac_dc_converter_station/33/pgrid": 1.7477784339803293e-06,
+    "station/ac_dc_converter_station/33/ppr_fr": 1.7477784339803293e-06,
+    "station/ac_dc_converter_station/33/ptf_to": 1.7477784339803293e-06,
+    "station/ac_dc_converter_station/33/qconv": 5.0214769025625664e-08,
+    "station/ac_dc_converter_station/33/qgrid": 5.0214769025625664e-08,
+    "station/ac_dc_converter_station/33/qpr_fr": 5.0214769025625664e-08,
+    "station/ac_dc_converter_station/33/qtf_to": 5.0214769025625664e-08,
+    "station/ac_dc_converter_station/33/vaconv": 2.3765499637673493e-10,
+    "station/ac_dc_converter_station/33/vafilt": 2.3765499637673493e-10,
+    "station/ac_dc_converter_station/33/vmconv": 0.0008203798580836974,
+    "station/ac_dc_converter_station/33/vmfilt": 0.0008203798580836974,
+    "va[11]": 4.80923886856767e-22,
+    "va[12]": 5.747592034255344e-09,
+    "va[13]": 2.3765499637673493e-10,
+    "vm[11]": 3.415201967982284e-05,
+    "vm[12]": 2.3030398779155803e-05,
+    "vm[13]": 0.0008203798580836974
+  },
+  "native_base_check": {
+    "checks": 1024,
+    "max_violation": 1.3217855698854919e-09
+  },
+  "native_cross_check": {
+    "checks": 1024,
+    "max_physical_residual": 3.2264182436847477e-09,
+    "max_violation": 1.1614737516142703e-10
+  },
+  "native_report_sha256": "9b6daca877b92464de084b53667a912ddbcd04fec9a638039b40e92950895330",
+  "powerio_revision": "ba1f9fc90de768e53aaace1c21e68b0d64759713",
+  "reference_modification": "restore_source_Imax; SI_transformer_bypass_and_DC_Ohms_with_from_side_resistance_base; normalized_SI_rows_for_optimization_with_original_unit_validation; exact_presolve_of_declared_constant_auxiliaries_restore_original_rows_and_bounds_for_validation; explicit_AC_component_angle_anchors; retain_redundant_AC_flow_component_bounds",
+  "reference_report_sha256": "51f2de513d33b69d2013ea6a2558c185d009216b563b31ba56e21d30243d3747",
+  "reference_revision": "9ada4082ac087aed649f48fb5f977680b0fe06c7",
+  "solver_options": {
+    "acceptable_constr_viol_tol": 1e-09,
+    "acceptable_iter": 0,
+    "bound_frac": 1e-08,
+    "bound_push": 1e-08,
+    "bound_relax_factor": 0.0,
+    "constr_viol_tol": 1e-09,
+    "linear_solver": "mumps",
+    "max_cpu_time": 120.0,
+    "max_iter": 3000,
+    "mu_strategy": "monotone",
+    "nlp_scaling_method": "none",
+    "print_level": 0,
+    "sb": "yes",
+    "tol": 1e-09
+  }
+}

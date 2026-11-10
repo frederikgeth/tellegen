@@ -138,3 +138,7 @@ required-features = ["acopf"]
 [[example]]
 name = "acdc_mesh"
 required-features = ["acopf"]
+
+[[example]]
+name = "acdc_connected"
+required-features = ["acopf"]

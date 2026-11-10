@@ -314,3 +314,17 @@ cross-formulation/base checks pass, including binding line/current limits
 and economic redispatch. The independent reference uses documented equivalent
 row normalization and constant-auxiliary presolve; original auxiliary rows
 and bounds are restored for validation. No production model or pin changes.
+
+
+## Connected AC/DC networks and outages
+
+The [connected/outage gate](physical/CONNECTED.md) adds a physical AC triangle,
+AC/DC line outages, separate AC/DC islands and a converter outage. It covers
+32 physical networks on four bases, 512 local solves, 3,072 cross-formulation/base
+checks and 768 corruption controls. Source roles and inactive declarations are
+retained; numerical references follow AC connectivity only. Native tests reject
+stale starts and an unsupplied isolated load. The report documents the explicit
+idle-loss initialization and Ipopt interior-push settings, with unchanged
+acceptance thresholds and no confirmed upstream electrical-equation bug.
+
+Run `CARGO_TARGET_DIR=/tmp/tacdc-connected-target python3 evals/validation/acdc/physical/connected.py /tmp/tacdc-connected-live`.
