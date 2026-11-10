@@ -62,6 +62,7 @@ impl PreparedAcDcPf {
                 | AcDcPfProfile::PowerModelsAcDc0101AcpVscSharedVoltageEqualIncrementV1
                 | AcDcPfProfile::PowerModelsAcDc0101AcpVscDcDroopSharedVoltageEqualIncrementV1
                 | AcDcPfProfile::PhysicalCoordinatesDcDroopSharedVoltageEqualIncrementV1
+                | AcDcPfProfile::FixedModePhysicalDcDroopSharedVoltageEqualIncrementV1
         ) {
             return Err("Unsupported coupled PF profile".into());
         }
@@ -69,11 +70,17 @@ impl PreparedAcDcPf {
         let p = &equations.model.problem;
         let rows = newton::equality_rows(p)?;
         let equalities: Vec<_> = rows.iter().map(|&i| p.con_names[i].clone()).collect();
-        let encoded=serde_json::to_vec(&serde_json::json!({"schema":"tellegen-acdc-pf-v1","network":instance.network(),"profile":instance.profile()})).map_err(|e|e.to_string())?;
+        let mut identity = serde_json::json!({"schema":"tellegen-acdc-pf-v1","network":instance.network(),"profile":instance.profile()});
+        // Omit absent modes to preserve all existing preparation fingerprints.
+        if !instance.loss_modes().is_empty() {
+            identity["loss_modes"] =
+                serde_json::to_value(instance.loss_modes()).map_err(|e| e.to_string())?;
+        }
+        let encoded = serde_json::to_vec(&identity).map_err(|e| e.to_string())?;
         let manifest = AcDcPfManifest {
             schema: "tellegen-acdc-pf-preparation-v1",
             profile: instance.profile(),
-            powerio_revision: "0ed1174cfb66975fedd0ad13af1eca5ee878354b",
+            powerio_revision: "3e41473984585c0b38560f47ba3e0c2d930b029b",
             reference_revision: "9ada4082ac087aed649f48fb5f977680b0fe06c7",
             model_fingerprint: crate::content_id::content_id(&encoded),
             variables: p.var_names.clone(),
@@ -92,12 +99,24 @@ impl PreparedAcDcPf {
         for g in limit_network.generators_mut() {
             g.cost = Some(powerio::GenCost::new(2, 0., 0., vec![0.]));
         }
-        let limit_profile = match instance.profile().coordinate_policy() {
-            AcDcCoordinatePolicy::PhysicalLocalBases => AcDcOpfProfile::PhysicalCoordinatesAcpVscV1,
-            _ => AcDcOpfProfile::DeclaredCurrentAcpVscV1,
+        let limit_profile = if instance.profile()
+            == AcDcPfProfile::FixedModePhysicalDcDroopSharedVoltageEqualIncrementV1
+        {
+            AcDcOpfProfile::FixedModePhysicalAcpVscV1
+        } else {
+            match instance.profile().coordinate_policy() {
+                AcDcCoordinatePolicy::PhysicalLocalBases => {
+                    AcDcOpfProfile::PhysicalCoordinatesAcpVscV1
+                }
+                _ => AcDcOpfProfile::DeclaredCurrentAcpVscV1,
+            }
         };
-        let adapter = powerio::AcDcOpfInstance::from_network(limit_network, limit_profile)
-            .map_err(|e| e.to_string())?;
+        let adapter = powerio::AcDcOpfInstance::from_network_with_loss_modes(
+            limit_network,
+            limit_profile,
+            instance.loss_modes().to_vec(),
+        )
+        .map_err(|e| e.to_string())?;
         let limits = ReferenceEquations::from_instance(&adapter, EquationMode::Opf)?;
         let declared = declared_start(&instance, &equations);
         Ok(Self {
@@ -164,7 +183,7 @@ impl PreparedAcDcPf {
         let validation = self.evaluate(&point)?;
         if validation.max_violation > 1e-9 {
             return Err(format!(
-                "PF post-solve validation failed: {}",
+                "PF post-solve validation failed (including selected loss-mode domain): {}",
                 validation.max_violation
             ));
         }

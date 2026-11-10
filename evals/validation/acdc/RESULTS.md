@@ -603,3 +603,13 @@ The reference uses explicit SI substitutions in pinned PMACDC; an independent
 phase-domain circuit also checks every solved point. Maximum native residual is
 4.973e-11 and maximum physical coordinate difference is 2.951e-8. Current/power
 limits remain post-solve reports; [saturation](pf/SATURATION.md) remains planned.
+
+## Connected physical and fixed loss-mode PF (2026-11-10)
+
+The [two follow-up milestones](pf/MILESTONES.md) pass 1,536 connected native/reference
+solves and 1,152 fixed-mode solves. Their 21,504 equivalent-base checks and 4,032
+reference corruptions cover AC/DC outages, explicit island references and voltage
+authority, shared reactive allocation, and fixed curves at zero/near-zero valve P.
+Both use explicit physical/control substitutions in pinned PMACDC and independent
+phase-domain checks. Existing profiles remain unchanged; proper saturation remains
+planned separately. The next checkpoint is consolidation and review.

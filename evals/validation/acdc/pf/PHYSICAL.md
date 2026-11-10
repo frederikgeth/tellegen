@@ -120,3 +120,9 @@ CARGO_TARGET_DIR=/tmp/tacdc-physical-pf-target CARGO_INCREMENTAL=0 \
   CARGO_PROFILE_DEV_DEBUG=0 CARGO_PROFILE_TEST_DEBUG=0 \
   cargo test -p tellegen --features 'acopf mc-opf conic schema' --locked --offline
 ```
+
+## Connected networks and fixed modes
+
+The separately recorded [follow-up milestones](MILESTONES.md) now qualify connected
+physical PF/outages and explicit fixed loss-mode PF. This original Cinv-only
+profile and its recorded evidence remain unchanged. Saturation stays separate.

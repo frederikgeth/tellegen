@@ -236,6 +236,17 @@ pub fn bounds(
         .collect()
 }
 pub fn physical_residual(case: Case, x: &Point) -> f64 {
+    physical_residual_with_ratings(case, x, true)
+}
+pub fn physical_residual_with_ratings(case: Case, x: &Point, ratings: bool) -> f64 {
+    physical_residual_with_losses(case, x, ratings, [LOSS[2]; 3])
+}
+pub fn physical_residual_with_losses(
+    case: Case,
+    x: &Point,
+    ratings: bool,
+    quadratic: [f64; 3],
+) -> f64 {
     let mut r = vec![];
     let mut ac = [C::new(0., 0.); 3];
     let mut dc = [0.; 3];
@@ -265,8 +276,16 @@ pub fn physical_residual(case: Case, x: &Point) -> f64 {
             r.extend([
                 (sf - pf).norm(),
                 (st - pt).norm(),
-                (pf.norm() - 45.).max(0.),
-                (pt.norm() - 45.).max(0.),
+                if ratings {
+                    (pf.norm() - 45.).max(0.)
+                } else {
+                    0.
+                },
+                if ratings {
+                    (pt.norm() - 45.).max(0.)
+                } else {
+                    0.
+                },
             ]);
             ac[i] += pf;
             ac[j] += pt;
@@ -311,7 +330,7 @@ pub fn physical_residual(case: Case, x: &Point) -> f64 {
             } else {
                 C::new(0., 0.)
             };
-            let sloss = LOSS[0] + LOSS[1] * current.norm() + LOSS[2] * current.norm_sqr();
+            let sloss = LOSS[0] + LOSS[1] * current.norm() + quadratic[i] * current.norm_sqr();
             r.extend([
                 (vf - vc - zr * current).norm(),
                 (vp - turns * (vf + zt * it)).norm(),

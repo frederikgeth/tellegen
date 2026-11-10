@@ -166,3 +166,11 @@ required-features = ["acopf"]
 [[example]]
 name = "acdc_pf_physical"
 required-features = ["acopf"]
+
+[[example]]
+name = "acdc_pf_connected"
+required-features = ["acopf"]
+
+[[example]]
+name = "acdc_pf_fixed"
+required-features = ["acopf"]

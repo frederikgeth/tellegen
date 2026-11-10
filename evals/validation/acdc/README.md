@@ -1,4 +1,9 @@
-# Native AC/DC equation and OPF qualification
+# Native AC/DC PF and OPF qualification
+
+**Current checkpoint:** [connected physical PF and fixed loss modes](pf/MILESTONES.md)
+are qualified. Next is consolidation and review; saturation and broader models
+remain separate. Sections below retain chronological evidence, including
+superseded historical "next" statements.
 
 This is the **MATPOWER-extension variant of PowerModelsACDC**, using the
 PowerIO reader from draft [PowerIO #822](https://github.com/eigenergy/powerio/pull/822).
@@ -7,13 +12,13 @@ The implementation plan is tracked in [PowerIO #819](https://github.com/eigenerg
 
 The working branch starts from equipment/ACDC [Tellegen #358](https://github.com/eigenergy/tellegen/pull/358)
 at `e814b78549fb5fe48112bc5a72f6732dd115756f`. All PowerIO crates are pinned to
-`552fc413647307322aff7c69688e6b77ff308ad3` (separate PowerIO model branch, based
+`3e41473984585c0b38560f47ba3e0c2d930b029b` (separate PowerIO model branch, based
 on unchanged reader `49e8eacb`) using the repository's candidate-pin
 mechanism. Existing PRs remain draft. This candidate dependency is not a
 published PowerIO release; release packaging must wait for a published version
 containing the new owner and guards.
 
-## What this proves
+## Initial milestone: equation checks
 
 `ReferenceEquations::powermodels_acdc_0101` assembles native `Expr` equations
 under the opt-in `acopf` feature. It extends the existing canonical polar AC
@@ -204,7 +209,7 @@ The largest independent reference violation is 2.789e-13, objective difference
 coordinates. This is local case5 agreement, not a global optimality proof or
 blanket full-station/physical-model qualification.
 
-## Remaining model work
+## Historical work list (superseded by the current checkpoint)
 
 1. Review the canonical coupled intent, preparation and stored-result APIs on
    the separate PowerIO model branch; retain explicit reference/native policies.

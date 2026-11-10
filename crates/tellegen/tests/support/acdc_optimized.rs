@@ -148,6 +148,9 @@ pub fn cost_close(a: f64, b: f64) {
 /// Direct phase-domain physical equations, independent of polar per-unit tapes.
 /// Returns the largest absolute residual in kV/kA/MW/MVAr (not a scaled KKT norm).
 pub fn physical_residual(c: &Circuit, x: &Point) -> f64 {
+    physical_residual_with_loss(c, x, LOSS[2])
+}
+pub fn physical_residual_with_loss(c: &Circuit, x: &Point, quadratic_ohm: f64) -> f64 {
     use num_complex::Complex64 as C;
     let s = |field: &str| x[&format!("station/{STATION}/{field}")];
     let voltage = |magnitude: f64, angle: f64| C::from_polar(magnitude / 3.0_f64.sqrt(), angle);
@@ -185,7 +188,7 @@ pub fn physical_residual(c: &Circuit, x: &Point) -> f64 {
     let idc = (from - to) / DC_OHM;
     let pf = x[&format!("dc_branch/{DC_BRANCH}/pf")];
     let pt = x[&format!("dc_branch/{DC_BRANCH}/pt")];
-    let loss = LOSS[0] + LOSS[1] * current.norm() + LOSS[2] * current.norm_sqr();
+    let loss = LOSS[0] + LOSS[1] * current.norm() + quadratic_ohm * current.norm_sqr();
     [
         (vf - expected_filter).norm(),
         (vp - expected_pcc).norm(),

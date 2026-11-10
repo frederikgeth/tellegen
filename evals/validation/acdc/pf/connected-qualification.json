@@ -1,0 +1,1655 @@
+{
+  "base_configurations": [
+    {
+      "converter": [
+        200.0,
+        200.0,
+        200.0
+      ],
+      "dc": [
+        500.0,
+        500.0,
+        500.0
+      ],
+      "mva": 100.0,
+      "pcc": [
+        230.0,
+        230.0,
+        230.0
+      ]
+    },
+    {
+      "converter": [
+        200.0,
+        200.0,
+        200.0
+      ],
+      "dc": [
+        500.0,
+        500.0,
+        500.0
+      ],
+      "mva": 50.0,
+      "pcc": [
+        230.0,
+        230.0,
+        230.0
+      ]
+    },
+    {
+      "converter": [
+        345.0,
+        400.0,
+        200.0
+      ],
+      "dc": [
+        250.0,
+        1000.0,
+        800.0
+      ],
+      "mva": 100.0,
+      "pcc": [
+        400.0,
+        230.0,
+        345.0
+      ]
+    },
+    {
+      "converter": [
+        400.0,
+        200.0,
+        345.0
+      ],
+      "dc": [
+        800.0,
+        250.0,
+        500.0
+      ],
+      "mva": 250.0,
+      "pcc": [
+        230.0,
+        400.0,
+        200.0
+      ]
+    }
+  ],
+  "counts": {
+    "native_equivalent_base_checks": 3072,
+    "native_solves": 768,
+    "physical_cases": 96,
+    "reference_corruptions": 2304,
+    "reference_equivalent_base_checks": 6144,
+    "reference_solves": 768,
+    "reference_to_native_checks": 3072,
+    "representations": 384
+  },
+  "groups": {
+    "topology0/direction0/poles1/control0": {
+      "max_native_residual": 4.8620378556574195e-11,
+      "max_physical_circuit_residual": 3.050390495751287e-11,
+      "max_physical_coordinate_difference": 2.927846498579356e-07,
+      "max_reference_residual": 1.2668976978602586e-08,
+      "native_iterations_range": [
+        5,
+        9
+      ],
+      "source_hashes": {
+        "connected_000.m": "9649b6823dea2fe4f4a6580d32316541dc90b2f5c6bc70212916b683548de743",
+        "connected_001.m": "43fc97e7246780f71748fe19d1d29e11ccf89f116dcd7abf936d93ff115068b1",
+        "connected_002.m": "b4906f454ede66e972c011b22aeeecba68d1d37e2560f85894ee00e935e415c5",
+        "connected_003.m": "e659df5a6a3f0a0790315ba7a22d7092c32bb22a42c8aee340d192eded3f3a4b"
+      }
+    },
+    "topology0/direction0/poles1/control1": {
+      "max_native_residual": 4.348743587456738e-13,
+      "max_physical_circuit_residual": 3.462850361378854e-12,
+      "max_physical_coordinate_difference": 3.228069900274022e-08,
+      "max_reference_residual": 1.595168441781425e-09,
+      "native_iterations_range": [
+        5,
+        9
+      ],
+      "source_hashes": {
+        "connected_004.m": "ad36ec61187cbfed2bee99c48e89ce37d3661206da268b42985ff72fcb36fdf4",
+        "connected_005.m": "8aa92dee5b86dd1abbb0cb1cfea914c68349ec8c1ef52c5aa72fdf594c85002b",
+        "connected_006.m": "44c8f3dc2d1f72c7174f237b017bb5bded84e98089c5a744c774f052caf17de5",
+        "connected_007.m": "48134c964ecaceb68de80ac3dfbce7d663c51e87f6b944c8e3835f8b567fb993"
+      }
+    },
+    "topology0/direction0/poles1/control2": {
+      "max_native_residual": 9.995069702450898e-11,
+      "max_physical_circuit_residual": 1.250536826868931e-10,
+      "max_physical_coordinate_difference": 1.5606431702508416e-09,
+      "max_reference_residual": 9.663381206337363e-11,
+      "native_iterations_range": [
+        5,
+        9
+      ],
+      "source_hashes": {
+        "connected_008.m": "3b263861e10819511a2d08170822953ec1a3b341c128a5252b240faf824573a3",
+        "connected_009.m": "e9e397039062819704410951e8246b5a025a30cbbae769c2c9f42cdb742b131d",
+        "connected_010.m": "d641fc70e0127b5df05e14c8350cdbc942875b382c47f9ff8a9db91fa7940825",
+        "connected_011.m": "5b16104553c0824f05768b1329861245ae6ba4fb23d00929b7cbac8607082a22"
+      }
+    },
+    "topology0/direction0/poles2/control0": {
+      "max_native_residual": 4.790456920034103e-11,
+      "max_physical_circuit_residual": 3.0062063949287676e-11,
+      "max_physical_coordinate_difference": 2.821434375022136e-07,
+      "max_reference_residual": 1.2185807918285718e-08,
+      "native_iterations_range": [
+        5,
+        9
+      ],
+      "source_hashes": {
+        "connected_012.m": "c5a4df327e6694d27c526bed9815b08ce773f2c05f3eee9e2c70303de5f2837b",
+        "connected_013.m": "7af028e4566abe85a7ed68e55f286d85dc41902e6006ac961bf897d17119277f",
+        "connected_014.m": "d22bad696ed9812859b2ba94aedffdeda142f93203c23de6de11f1712d4beb44",
+        "connected_015.m": "69789320784c7222c485077e895588d139b2459cd4cdd73b1e54f5a4d438a191"
+      }
+    },
+    "topology0/direction0/poles2/control1": {
+      "max_native_residual": 5.131312041939395e-13,
+      "max_physical_circuit_residual": 5.789146939605416e-12,
+      "max_physical_coordinate_difference": 6.806737573583632e-08,
+      "max_reference_residual": 2.7569058147491887e-09,
+      "native_iterations_range": [
+        5,
+        9
+      ],
+      "source_hashes": {
+        "connected_016.m": "f8a108db6418880d26db706bc5ec4517cd04d301bf6a74e205cfa787d78109f2",
+        "connected_017.m": "dd36376fb45ab2747c8c0c617e602f4656c1a698db771c55772ca4883f3c3c68",
+        "connected_018.m": "dd6e687864f0167b4c5d773a88ece2f0a0ef660fa573927e4035bba4522b09df",
+        "connected_019.m": "0fcc3c05d950cf21eea2a85ebea254c11d14ad543db71775e82f8003df3cfe6c"
+      }
+    },
+    "topology0/direction0/poles2/control2": {
+      "max_native_residual": 3.024802630591239e-13,
+      "max_physical_circuit_residual": 4.529709940470639e-12,
+      "max_physical_coordinate_difference": 2.7498074928189453e-09,
+      "max_reference_residual": 2.0605739337042905e-10,
+      "native_iterations_range": [
+        5,
+        9
+      ],
+      "source_hashes": {
+        "connected_020.m": "fde627d197ccf8b139e9c0cfce78cefc890a386d25456faa92bcdf66b78a7d95",
+        "connected_021.m": "e8a11518494f9659a103339df29b0ba627034606c754db1a8261df71d2cbe234",
+        "connected_022.m": "cf71a45775399117ad741ccf5e8c27080ea713a4cb82641e39a4cb1f28da4b4f",
+        "connected_023.m": "3fd026086f7875e8b1cd2c808ebe469b9735cf9c658ffcc81051456af6cb8f76"
+      }
+    },
+    "topology0/direction2/poles1/control0": {
+      "max_native_residual": 2.850027332190752e-11,
+      "max_physical_circuit_residual": 3.300490436508596e-11,
+      "max_physical_coordinate_difference": 5.507274636329385e-10,
+      "max_reference_residual": 2.8421709430404007e-11,
+      "native_iterations_range": [
+        5,
+        8
+      ],
+      "source_hashes": {
+        "connected_024.m": "00c71e7a8f0beb41e7dfe21cca9c9f05eb98df0528a7ecf2cd5ce29bfb63a044",
+        "connected_025.m": "65af2e38287c2676813a8ef1d9c4a26909be61b179dcdaf1fe7157c4fab07d8e",
+        "connected_026.m": "a19cd0a58509d11add63bd25b2ae43e2a6d5e1caac71d61c463788afca6e5778",
+        "connected_027.m": "f6deb3fae529ef90827e8d2ce59a272c1c5e10e821232442c30db53d20ebee20"
+      }
+    },
+    "topology0/direction2/poles1/control1": {
+      "max_native_residual": 3.4054703501595895e-13,
+      "max_physical_circuit_residual": 4.7326617721990255e-12,
+      "max_physical_coordinate_difference": 2.4411662025158876e-08,
+      "max_reference_residual": 9.421796676178928e-10,
+      "native_iterations_range": [
+        5,
+        8
+      ],
+      "source_hashes": {
+        "connected_028.m": "d53382fd2ba5e0537528848ab3ace876d1e371f04f2721eb920a09c416924805",
+        "connected_029.m": "12ab8d908743a445bab59a97c95e57fb13955809b1b2c5e833c21326c33c13ea",
+        "connected_030.m": "406c734a94f1af24a69643245dbd949c3eb31778c5185a5c330994237341fdf7",
+        "connected_031.m": "da58f455a8eac985fa0820c0f46a71d4bd3585b5bcdc02ddd260175416d48754"
+      }
+    },
+    "topology0/direction2/poles1/control2": {
+      "max_native_residual": 7.842684834891145e-13,
+      "max_physical_circuit_residual": 4.165948023030565e-12,
+      "max_physical_coordinate_difference": 1.5708438638739608e-07,
+      "max_reference_residual": 8.549250196665525e-09,
+      "native_iterations_range": [
+        5,
+        8
+      ],
+      "source_hashes": {
+        "connected_032.m": "3db790538f62d0c80a574b3bd00f6670c39832043977392920b83060fa899341",
+        "connected_033.m": "fc17a2c6a5ba1a077ac112309fbad7b78df90fc60e24f254d127e3eb46a46577",
+        "connected_034.m": "b19dd29a015da02100ec2086fc824bb018eab2033ff17ebd55c361b1e94cf978",
+        "connected_035.m": "0119bc968a42e5f5754037cd7326da425fc0f768c4dcf4675874ca7b7947aab2"
+      }
+    },
+    "topology0/direction2/poles2/control0": {
+      "max_native_residual": 2.3276857871734613e-11,
+      "max_physical_circuit_residual": 2.6946091191693e-11,
+      "max_physical_coordinate_difference": 1.2805799087800551e-08,
+      "max_reference_residual": 6.366462912410498e-10,
+      "native_iterations_range": [
+        5,
+        7
+      ],
+      "source_hashes": {
+        "connected_036.m": "1d07344db61dcfb39011fe5559b996c77c28da45f7400e488c04adb4d9ba5d1f",
+        "connected_037.m": "05ff34389f5837ef6a91cddfaad46e8c046532bbd44957561c6e788f5b509409",
+        "connected_038.m": "ed83933ab479406debe3cb5cd5532ba84deb068b6bdfdac488a474c2b8e2a991",
+        "connected_039.m": "c7bc6f672c590c026b0c2924ed5584cbe2fd863567c972bb87624ed9cb24ab2b"
+      }
+    },
+    "topology0/direction2/poles2/control1": {
+      "max_native_residual": 4.586678259421717e-13,
+      "max_physical_circuit_residual": 5.6985527407960035e-12,
+      "max_physical_coordinate_difference": 4.333742253948003e-10,
+      "max_reference_residual": 1.9895196601282805e-11,
+      "native_iterations_range": [
+        5,
+        8
+      ],
+      "source_hashes": {
+        "connected_040.m": "f356f19b13678f69f189e68194bf5a7c02d9f0872e6ec06c8ad44edd8a2e83ff",
+        "connected_041.m": "02716bb448209eb513c657d0fbae23718f77a774f06d06376f9cf88c33ba3c44",
+        "connected_042.m": "78734e9129452d128bf60ba45c5c563862bd16673d9f93bdf92db6bfc28ed5c4",
+        "connected_043.m": "06d2f96d68ec1a3f29ea0cb71dcf80ac649bcd1ae5e026d7fd401c0d440dd60b"
+      }
+    },
+    "topology0/direction2/poles2/control2": {
+      "max_native_residual": 6.704706234650359e-13,
+      "max_physical_circuit_residual": 4.700240197053063e-12,
+      "max_physical_coordinate_difference": 2.5150484361802228e-08,
+      "max_reference_residual": 1.1453948900452815e-09,
+      "native_iterations_range": [
+        5,
+        8
+      ],
+      "source_hashes": {
+        "connected_044.m": "620322cc1f4d36d048b0c16503ef51a54f878cccd3ebb9e497c234ee5a20703e",
+        "connected_045.m": "bf9a9984ef26c5061d556ff050c78bb0e2d4394bdc385c86dd3d3c83758ffeee",
+        "connected_046.m": "192e3233391bbe9cf16b70db41abc60603081e43ae634a8791e82a06fe6b4cf9",
+        "connected_047.m": "db225816c1b82d5488bf7c4c1384ec2170b755d7a9e8a9baf6ec56afa6ff5311"
+      }
+    },
+    "topology1/direction0/poles1/control0": {
+      "max_native_residual": 2.9001259727046147e-11,
+      "max_physical_circuit_residual": 1.819526473934019e-11,
+      "max_physical_coordinate_difference": 1.1449822601150572e-07,
+      "max_reference_residual": 4.927613872496295e-09,
+      "native_iterations_range": [
+        5,
+        9
+      ],
+      "source_hashes": {
+        "connected_048.m": "180f63235d6bbc4c08960dbcbc89bd2846d038ff03d5faa710266402c70b3d98",
+        "connected_049.m": "cbfcbff31a4de6984850b814a8ba09eed888beee72b34514b2f01afd08fe5c5c",
+        "connected_050.m": "1684f1d962fdf860a6e1be1d926dfd86606938eef9d43724867ff3942daab5ff",
+        "connected_051.m": "a0b5ae1c4494765c2ea4a9b29e43586c8f10a608d06589ca2a730594bd44fd20"
+      }
+    },
+    "topology1/direction0/poles1/control1": {
+      "max_native_residual": 5.17960674351059e-13,
+      "max_physical_circuit_residual": 3.462850361378854e-12,
+      "max_physical_coordinate_difference": 3.34843210936242e-08,
+      "max_reference_residual": 1.7408297026122455e-09,
+      "native_iterations_range": [
+        5,
+        9
+      ],
+      "source_hashes": {
+        "connected_052.m": "c4b263604a88f161b6877fd7fc9e3a883ad6b5721b80ad611332cf4e96c8f15a",
+        "connected_053.m": "ef59f3ccd11bce696511470534f19e58854cbc77b7ebc154dbfc1952c12d17c6",
+        "connected_054.m": "7a8af6984765a28d449aad07f1cd35a64f6da77b4568b0826680e97e3703a0ae",
+        "connected_055.m": "4487087bbf76553e7aaa25bee667058ff0eef215dca75d4c277529b6a9dd9735"
+      }
+    },
+    "topology1/direction0/poles1/control2": {
+      "max_native_residual": 2.9765079290200447e-13,
+      "max_physical_circuit_residual": 4.4093474297414555e-12,
+      "max_physical_coordinate_difference": 3.121050085042043e-08,
+      "max_reference_residual": 2.7764457399825915e-09,
+      "native_iterations_range": [
+        5,
+        9
+      ],
+      "source_hashes": {
+        "connected_056.m": "0fd05844e6fdb3b4bfeb44cc1a4d9f7c22c3b0a0cb9c4a622c9e731b895ce085",
+        "connected_057.m": "c14082f1e1cd3010fbaea40f2b724b77b6d6b345cf14879674bbbfddc653eb55",
+        "connected_058.m": "3012be44e1cd285c4ba4d7ea783d056b6c55718ecd506bebfadb9a1ccb16470e",
+        "connected_059.m": "f47408e03733d9081b0eacd0360919165b4f04fa784810fccb3e1e1ce709c56d"
+      }
+    },
+    "topology1/direction0/poles2/control0": {
+      "max_native_residual": 2.8418295494603285e-11,
+      "max_physical_circuit_residual": 1.783381775588566e-11,
+      "max_physical_coordinate_difference": 2.3620276579094934e-07,
+      "max_reference_residual": 1.0970779840135947e-08,
+      "native_iterations_range": [
+        5,
+        9
+      ],
+      "source_hashes": {
+        "connected_060.m": "b3262add158da0f0a27bbdf64eb3048056d3e1e658ac194517b01cd4f155dede",
+        "connected_061.m": "1ebb928fa8335e8ce5c1e79114095694005b2aa766795049be02035719b9d256",
+        "connected_062.m": "0cc25cf613b7694a7a97e95106007b6958830a30a2aac8c481232dbfdaa79808",
+        "connected_063.m": "ba3e283243f2aa1c8d68e03e0c99fafa86ae82f62d32c273f9b1fb441cf50a92"
+      }
+    },
+    "topology1/direction0/poles2/control1": {
+      "max_native_residual": 6.117814588257886e-13,
+      "max_physical_circuit_residual": 1.169730978745065e-11,
+      "max_physical_coordinate_difference": 1.1954615075637776e-09,
+      "max_reference_residual": 5.1159076974727213e-11,
+      "native_iterations_range": [
+        5,
+        9
+      ],
+      "source_hashes": {
+        "connected_064.m": "43eccd530c94a2bd7790b88df6fb529b628e552a1f472f22d4bc38f0aa641969",
+        "connected_065.m": "e427a3d8087602cead6b2a71659ded146acb1536e4c80af9919ec597b10a64a7",
+        "connected_066.m": "42a3a059af49039fb19c455e5ae265e1af17ba21daf3d4c90a6ba7a37b4ff866",
+        "connected_067.m": "0c5ea5d2c26bbed232c65388e4a748db1b8ce7fa0d502aa57cea75eb08985003"
+      }
+    },
+    "topology1/direction0/poles2/control2": {
+      "max_native_residual": 3.5955960431266476e-13,
+      "max_physical_circuit_residual": 4.529709940470639e-12,
+      "max_physical_coordinate_difference": 1.7323939616176176e-08,
+      "max_reference_residual": 1.2185807918285718e-09,
+      "native_iterations_range": [
+        5,
+        9
+      ],
+      "source_hashes": {
+        "connected_068.m": "0c75671cd4a4b69426d2066eadb1dcef1561e31703c6d2d9305cf24df8c920bb",
+        "connected_069.m": "219ff2e68608037bf9d6be8248f983de814f2d0dc4baa7a5fe15493ca4c61791",
+        "connected_070.m": "0043142218cf3b784eb488b178376411991c1b71d81eddb4a52033bae4d8f8a2",
+        "connected_071.m": "bb76524ee2e7f95b25b3319c942cce19031d3690733b996bc776aa04bd6d9d8f"
+      }
+    },
+    "topology1/direction2/poles1/control0": {
+      "max_native_residual": 9.456901581272881e-11,
+      "max_physical_circuit_residual": 1.0951451551166613e-10,
+      "max_physical_coordinate_difference": 1.4216084309737198e-08,
+      "max_reference_residual": 7.673861546209082e-10,
+      "native_iterations_range": [
+        5,
+        8
+      ],
+      "source_hashes": {
+        "connected_072.m": "1acc589ce3738453393979e01eeab06b7048a7b056e8e71bfeb1136326463c12",
+        "connected_073.m": "4055c9fae2c04f36da7ce1e34c7116246b3d3f24c3baf63e223b39193f8faa62",
+        "connected_074.m": "a658f3da4c00c9cf646bc086328efab6d28e0b240242f8aa61e2b8e382dd87b9",
+        "connected_075.m": "d1995776357fea30bcbef33cc9bc8af505cfc8ae00d640e6131ae3523d1b519f"
+      }
+    },
+    "topology1/direction2/poles1/control1": {
+      "max_native_residual": 1.0364101937776482e-11,
+      "max_physical_circuit_residual": 1.4089063249400624e-11,
+      "max_physical_coordinate_difference": 1.1231549024159904e-09,
+      "max_reference_residual": 4.831690603168681e-11,
+      "native_iterations_range": [
+        5,
+        8
+      ],
+      "source_hashes": {
+        "connected_076.m": "8b46e987a493983d57d0ea1543916e511040d50c28ff1718d06567a43e03caae",
+        "connected_077.m": "be3e2be2b35b537c4177b9d4d159245b2e630249f8383bbb53bc0d30d9249fe7",
+        "connected_078.m": "a9ecc3b510be910cc84d5003c9f59b70131952664f5ec8bc6111463b15311fab",
+        "connected_079.m": "e32a90213acc6e49d2760b3b287f78315147560a60423b232c9dbc3c72b2a24c"
+      }
+    },
+    "topology1/direction2/poles1/control2": {
+      "max_native_residual": 1.3633514456268259e-11,
+      "max_physical_circuit_residual": 1.9900397302263784e-11,
+      "max_physical_coordinate_difference": 1.3629033901452203e-08,
+      "max_reference_residual": 7.44648787076585e-10,
+      "native_iterations_range": [
+        5,
+        8
+      ],
+      "source_hashes": {
+        "connected_080.m": "e863b9b3dcfb62eee9d890d13285720520ea73bf58d65b03db4021a1ee8ad97a",
+        "connected_081.m": "04f2fa3944feca0ed1133e531b23d7a7e342f90318f5ae88f25e72c6490cceeb",
+        "connected_082.m": "22af1d3e80523b464acc756291ffe8a6490c8040ea80d5d1840fd6dde505a084",
+        "connected_083.m": "9772c3dcb27a5d57a884e9f08f83451dfde72c8f713e91b0e88aa512d1152b17"
+      }
+    },
+    "topology1/direction2/poles2/control0": {
+      "max_native_residual": 7.923722789016097e-11,
+      "max_physical_circuit_residual": 9.172636261656208e-11,
+      "max_physical_coordinate_difference": 1.0182887422161002e-08,
+      "max_reference_residual": 5.229594535194337e-10,
+      "native_iterations_range": [
+        5,
+        7
+      ],
+      "source_hashes": {
+        "connected_084.m": "a51fcdb70bd2c77e4d9fae90796a71519a8d1fcb0e063a638276c9780024c1a9",
+        "connected_085.m": "c98e44cf0b57cd627a933cf7e38c84877ecd9d6d8a86816ec551a40856e45172",
+        "connected_086.m": "21cc151948bc67bc13c04e905a89ed612fbda25b23af1ebeff89a6124fd87c05",
+        "connected_087.m": "c9e9b38edd7939fc8c5b4998303a69e0d2a47ddaf4775b17833f3346c1ead6ab"
+      }
+    },
+    "topology1/direction2/poles2/control1": {
+      "max_native_residual": 1.1412716258152322e-11,
+      "max_physical_circuit_residual": 1.5916528511850103e-11,
+      "max_physical_coordinate_difference": 5.956763970971224e-10,
+      "max_reference_residual": 2.8421709430404007e-11,
+      "native_iterations_range": [
+        5,
+        8
+      ],
+      "source_hashes": {
+        "connected_088.m": "8b9ec36b70aa8f2ded422bca03fe0bc973d6ecaaeb138318365d99a16e098329",
+        "connected_089.m": "b323799fe31dbd36eb0165fbdfcfa866c31c9280b3efd502bacc22bd354c7ca3",
+        "connected_090.m": "3d39447ca15eaff72a6d4893062beef697fa44bf7decaf51751db86da44de663",
+        "connected_091.m": "1154ff4e47f5e65c0413742d4b5596a9e21507ea418ed0ae42a96d9c7ca8c178"
+      }
+    },
+    "topology1/direction2/poles2/control2": {
+      "max_native_residual": 1.2938228613479374e-11,
+      "max_physical_circuit_residual": 1.8637844739766152e-11,
+      "max_physical_coordinate_difference": 8.397634587709035e-09,
+      "max_reference_residual": 4.348521542851813e-10,
+      "native_iterations_range": [
+        5,
+        8
+      ],
+      "source_hashes": {
+        "connected_092.m": "bce67d1eb44415fb6e48ec25bb4ce9ddeb32c126d71aa2325cba1b0bab0371df",
+        "connected_093.m": "56e8ff6f235b43b8547375770dd28e34b802c94f4e626ae4ad8ea117e06f2ccf",
+        "connected_094.m": "ffd78dcba692f2b8b291eb70d1431495d6f882b0708bfc4f6f8eec1c5324fe77",
+        "connected_095.m": "21af772af319a84504de17a3a57942de9eb9ae3703b836b73a41686b2e6efd8f"
+      }
+    },
+    "topology2/direction0/poles1/control0": {
+      "max_native_residual": 9.474344919713218e-12,
+      "max_physical_circuit_residual": 5.944161829418704e-12,
+      "max_physical_coordinate_difference": 1.6733359586851293e-08,
+      "max_reference_residual": 9.066525308298878e-10,
+      "native_iterations_range": [
+        4,
+        9
+      ],
+      "source_hashes": {
+        "connected_096.m": "e277b2c5f162bbb729cc4354dff84302211cef4c2a67df143a91809368dffb58",
+        "connected_097.m": "de42da28229b33bc376282ea91f83e385137daa86e4633d7a64c88a5b56875e7",
+        "connected_098.m": "ae8bec9879ba725c29f45f4384aad9d8d38ddd8d922c5515a0e565ef68a27ecb",
+        "connected_099.m": "8d2f802ddca310d387cba0e243f7bfb4adfe654d74cdee92c13611abdd9b550b"
+      }
+    },
+    "topology2/direction0/poles1/control1": {
+      "max_native_residual": 6.442693600838822e-13,
+      "max_physical_circuit_residual": 5.012879000787507e-12,
+      "max_physical_coordinate_difference": 3.351130928308521e-08,
+      "max_reference_residual": 1.957545237019076e-09,
+      "native_iterations_range": [
+        4,
+        9
+      ],
+      "source_hashes": {
+        "connected_100.m": "29ca946835e7315d01a9803df72ca952ce1e2310913764ea86d2e4fe5b4e7649",
+        "connected_101.m": "e15c119c061590a33079ece665adadedf6e8db2b43160821d7fe35d9988be9fc",
+        "connected_102.m": "dfa905798f457a2768a6e35b701ca9b88ea547d64594ca8b0f4f81e79a46469f",
+        "connected_103.m": "3d374e1c0cd079a902bc835a2600ec5274835c6710fc76c126edb89a16f6fc71"
+      }
+    },
+    "topology2/direction0/poles1/control2": {
+      "max_native_residual": 4.833841660278893e-13,
+      "max_physical_circuit_residual": 3.4922782421116853e-12,
+      "max_physical_coordinate_difference": 1.0767546854140164e-08,
+      "max_reference_residual": 7.418066161335446e-10,
+      "native_iterations_range": [
+        4,
+        9
+      ],
+      "source_hashes": {
+        "connected_104.m": "2d2ab8f51210e4415b47384e8a65353c5fddce8cd622061f88f9d3e2fb182b91",
+        "connected_105.m": "39dbd4dc8507f08b3083ab4113c7d8f21ba6a3dceb412635d36a10515629314d",
+        "connected_106.m": "0aa71d4a9bfee69201e8955f2957e3d9ab6c90429b273b9a54105354ed0f8019",
+        "connected_107.m": "d7b57be727cec73d1543cf47f2f87b0d45e9c020bf28f1bdfe416f534f5e1371"
+      }
+    },
+    "topology2/direction0/poles2/control0": {
+      "max_native_residual": 9.155405600314026e-12,
+      "max_physical_circuit_residual": 6.9539929370421305e-12,
+      "max_physical_coordinate_difference": 3.18337036731009e-08,
+      "max_reference_residual": 1.3891110484109959e-09,
+      "native_iterations_range": [
+        4,
+        9
+      ],
+      "source_hashes": {
+        "connected_108.m": "b3faa51fb78ed4baf880db94f5fda4bf52d970457d53c5fbe5975d748253559d",
+        "connected_109.m": "f394921a8bef1194771657348af59d16cb0f5280279787b60ae07ca8c3e2c160",
+        "connected_110.m": "4ea6a96e7671fda78cbc54f897bc99b00c49790f6492f5699c2377c22438af9e",
+        "connected_111.m": "fcb9fbeb979fb04edd8fad7521c7e5f101a2238f85b808e4fcd176ab783c23d2"
+      }
+    },
+    "topology2/direction0/poles2/control1": {
+      "max_native_residual": 6.737735369632958e-13,
+      "max_physical_circuit_residual": 1.1695533430611249e-11,
+      "max_physical_coordinate_difference": 9.00861607533443e-11,
+      "max_reference_residual": 1.1368683772161603e-11,
+      "native_iterations_range": [
+        4,
+        9
+      ],
+      "source_hashes": {
+        "connected_112.m": "9cebb1d1605a1a6a7a3c58ec3fbae9e5f8fab55886db67416461e1ed6624a73a",
+        "connected_113.m": "f7afc21a0b7fae52e6b32045a65828ad1cbbda99b9b6ae02a468b4b084a96981",
+        "connected_114.m": "7d8ba3081a9b74a47102517eee37bdec5fd3ccb929edb2a92e3cd4992a207956",
+        "connected_115.m": "689865b46bcd8b1d53b27c7e38a60719f22567e751a6c7c0f01c8e87990b36be"
+      }
+    },
+    "topology2/direction0/poles2/control2": {
+      "max_native_residual": 5.948852521697745e-13,
+      "max_physical_circuit_residual": 4.529709940470639e-12,
+      "max_physical_coordinate_difference": 4.872759973295615e-09,
+      "max_reference_residual": 3.765876499528531e-10,
+      "native_iterations_range": [
+        4,
+        9
+      ],
+      "source_hashes": {
+        "connected_116.m": "62a5f42a7514b6da8a64e6bb69af16e3f28e5484f1392c09b9b58f6d88f9e481",
+        "connected_117.m": "09027d31086bbebdc1efb330a1c15352d586522ca001dff2c8d32363c8fc3006",
+        "connected_118.m": "342faa177244bbdd4133ef5fb67275385136c276e936326776a128cbe5ba5753",
+        "connected_119.m": "17b7254a0f537060144891095a85639ea9594cc1166d74986a5960ea7ca27b1c"
+      }
+    },
+    "topology2/direction2/poles1/control0": {
+      "max_native_residual": 6.848663650083076e-11,
+      "max_physical_circuit_residual": 7.931012790951542e-11,
+      "max_physical_coordinate_difference": 2.9193216732892324e-09,
+      "max_reference_residual": 1.4495071809506044e-10,
+      "native_iterations_range": [
+        4,
+        8
+      ],
+      "source_hashes": {
+        "connected_120.m": "d402ed432d1dcfd50d38bca429103358ff03bb62619ee0b532b624a445bda2bc",
+        "connected_121.m": "ffd9bef7e03449ad4d2db0c4277878b88f01447831a93777c80ba21c9c2734f7",
+        "connected_122.m": "1adab5015cf5784e1d95a0a425afc3f59f1cffa9d87ced136f7921f746e7d3bf",
+        "connected_123.m": "08b5f7a92ea7a84b211f82fe5bb6424359892a993710d7efe1312c3d2c78f0bb"
+      }
+    },
+    "topology2/direction2/poles1/control1": {
+      "max_native_residual": 1.930991824772299e-12,
+      "max_physical_circuit_residual": 4.7326617721990255e-12,
+      "max_physical_coordinate_difference": 1.240607616637135e-11,
+      "max_reference_residual": 5.6843418860808015e-12,
+      "native_iterations_range": [
+        4,
+        8
+      ],
+      "source_hashes": {
+        "connected_124.m": "9951a0248a2059bbd9eea24f6daee7869043d704c7d77928a8e91337eb421094",
+        "connected_125.m": "8e3138548bd935b6a0a87428d55278cb995562bbe93e5644be78f8230694896c",
+        "connected_126.m": "852bdda347cbacee5513dbaa9c166d9c2382e9dc755f8cab679cd48f045da5d7",
+        "connected_127.m": "10a0526ed7892fd77e46f4daa38393fbce8d9cac70d051f6576fbf902ec01add"
+      }
+    },
+    "topology2/direction2/poles1/control2": {
+      "max_native_residual": 2.25224700001192e-12,
+      "max_physical_circuit_residual": 3.2875299704748784e-12,
+      "max_physical_coordinate_difference": 6.318109058156551e-08,
+      "max_reference_residual": 4.357048055680934e-09,
+      "native_iterations_range": [
+        4,
+        8
+      ],
+      "source_hashes": {
+        "connected_128.m": "b0021db378916198ce11fdc3da469a835a02087614987d220d875de1a7aba8d2",
+        "connected_129.m": "8afca06accd11ea954a85617ec9277e55f29bc733d373ef4e624e04ea9317fb5",
+        "connected_130.m": "9fdc4b836a70d3adc153df483b435afcae8653c9bf157d1a052738797466543b",
+        "connected_131.m": "cc56f45ea8c372e0b9060359ed3918d73f56615df44a2e9e45f2852aa70b7c10"
+      }
+    },
+    "topology2/direction2/poles2/control0": {
+      "max_native_residual": 2.8377716843053236e-12,
+      "max_physical_circuit_residual": 4.8937520702452275e-12,
+      "max_physical_coordinate_difference": 5.475797593135212e-10,
+      "max_reference_residual": 2.8421709430404007e-11,
+      "native_iterations_range": [
+        4,
+        8
+      ],
+      "source_hashes": {
+        "connected_132.m": "98c50c2594af292c647aaa9a3927552090f08ac0ea05eea6509e1975cd082ea2",
+        "connected_133.m": "7dac9af88793db1db17dd6bf148266365b2a8ed1e04598fb6103d6e5b1c0d543",
+        "connected_134.m": "cb8966b6dc5e12675eae3d2461aa4cac5ca372f2cbe38b16a5e9f23ec2f6b5a5",
+        "connected_135.m": "6d3d6b21c7c6162d0186aa70d0bd8742621720556b1a5d85b1538f1857f48bf4"
+      }
+    },
+    "topology2/direction2/poles2/control1": {
+      "max_native_residual": 2.03877366378169e-12,
+      "max_physical_circuit_residual": 5.6985527407960035e-12,
+      "max_physical_coordinate_difference": 1.243989800059353e-09,
+      "max_reference_residual": 7.389644451905042e-11,
+      "native_iterations_range": [
+        4,
+        8
+      ],
+      "source_hashes": {
+        "connected_136.m": "57d13e47d1d570591c4b9dfe27a6d8e68756cfeb747a67e8e30aafec24af7e1d",
+        "connected_137.m": "e1c0b334f2ff2586b1813c663510b0663ba370d3108568cd4d33b144bf71e55f",
+        "connected_138.m": "135effe0ca9e1875fb8a9bb87a33cfad8ed71eaf688e1994828cb8f814cfc3ec",
+        "connected_139.m": "f06ddbcb40e4a1573be251735ebff2ac0f31b4bb2d666db36ccf1ad8b3089867"
+      }
+    },
+    "topology2/direction2/poles2/control2": {
+      "max_native_residual": 2.187331912817392e-12,
+      "max_physical_circuit_residual": 4.700240197053063e-12,
+      "max_physical_coordinate_difference": 1.6602470509496925e-09,
+      "max_reference_residual": 1.1368683772161603e-10,
+      "native_iterations_range": [
+        4,
+        8
+      ],
+      "source_hashes": {
+        "connected_140.m": "83620601ff64bbc9f262395eedae73dc1cbda6c733a4b9647686e01bece31488",
+        "connected_141.m": "15b6fab6b652ca9c3f5e35ab857acd4351930eba4a7532b1c957e58364204a49",
+        "connected_142.m": "8ec7799865a6689557fc871feb71bacfb2d5440b1665f83b2bdce17ff9b12c84",
+        "connected_143.m": "b806cc8516e0c780e91aab9cf2dd0a41c39bbd07102dcc48201323aa6c1cb69f"
+      }
+    },
+    "topology3/direction0/poles1/control0": {
+      "max_native_residual": 9.444181547912933e-13,
+      "max_physical_circuit_residual": 4.350444415836228e-12,
+      "max_physical_coordinate_difference": 1.1082860851274745e-08,
+      "max_reference_residual": 6.252776074688882e-10,
+      "native_iterations_range": [
+        4,
+        9
+      ],
+      "source_hashes": {
+        "connected_144.m": "1c77c635bb897a0c721c8b65c7f0164a7c55bdb1c1a3cce0385362aa0c8d5ffa",
+        "connected_145.m": "2f6dad1ec7090e5702d0b29f840a989c982a3bc21ad4d74b5f68a819cd1d8be8",
+        "connected_146.m": "69e28e62d6a0f52fbca418be36e8717b9367db993bee31625f3795ac4a0e6e0e",
+        "connected_147.m": "d09d1048cbc3837fccc0bae4d5e847ff2e37919e8d213f0889c17c8267a0202a"
+      }
+    },
+    "topology3/direction0/poles1/control1": {
+      "max_native_residual": 7.726874695634933e-13,
+      "max_physical_circuit_residual": 5.012879000787507e-12,
+      "max_physical_coordinate_difference": 1.8885337738083763e-09,
+      "max_reference_residual": 1.4637180356658064e-10,
+      "native_iterations_range": [
+        4,
+        9
+      ],
+      "source_hashes": {
+        "connected_148.m": "e01558d02f7680aca4b7c86288f77491026be996f1160aca5a842d36fc5fd304",
+        "connected_149.m": "7b3f2830c9a86b625b043d0633b901b5f6a4ef49f55e3e6b6327fee221a82cdc",
+        "connected_150.m": "cad9079f5ccf99a71e105e0f63948157b49c41faddaae8924c3ac79d49c17f99",
+        "connected_151.m": "0bb76f12a89f967177af641caacf966ad16f9ed3d445d97be792eea7d99df82f"
+      }
+    },
+    "topology3/direction0/poles1/control2": {
+      "max_native_residual": 4.961656085988864e-13,
+      "max_physical_circuit_residual": 3.760276418891614e-12,
+      "max_physical_coordinate_difference": 5.839453365297231e-10,
+      "max_reference_residual": 4.973799150320701e-11,
+      "native_iterations_range": [
+        4,
+        9
+      ],
+      "source_hashes": {
+        "connected_152.m": "2fb16c75686f43481ff53f11026801e136e3cb1e3b0bd08bb49015ba74db7fff",
+        "connected_153.m": "9a1d76e934f4a89cef6ce3b100b3693f19eef4bf307587e4ba9085a583b30cec",
+        "connected_154.m": "fbb3797bb033b8f2f76877270bbe154448a82ff2785c3c135b1bda921b8339c2",
+        "connected_155.m": "25a5ede9001724d2008e4566135ac7563c6fb961c7528ede24989e5958ebd130"
+      }
+    },
+    "topology3/direction0/poles2/control0": {
+      "max_native_residual": 9.444181547912933e-13,
+      "max_physical_circuit_residual": 5.2446935683292395e-12,
+      "max_physical_coordinate_difference": 2.929642306526148e-09,
+      "max_reference_residual": 1.5916157281026244e-10,
+      "native_iterations_range": [
+        4,
+        9
+      ],
+      "source_hashes": {
+        "connected_156.m": "214b43ec78aa40964704c5feba5bcda31457875ce2aa36f85595f9fc70d3a031",
+        "connected_157.m": "81ec730297e3d7d240a23f335787c1e9b156802a619170d555c59667da32866f",
+        "connected_158.m": "16e3d0319fff055473062a54a35ed2afd54adb9fcc31d47eff920f76a619003b",
+        "connected_159.m": "24505a9d151b8cd7b6458444caf4453865c3d13951b21c4a6835cd35e5a83ace"
+      }
+    },
+    "topology3/direction0/poles2/control1": {
+      "max_native_residual": 8.174017018802715e-13,
+      "max_physical_circuit_residual": 1.1695533430611249e-11,
+      "max_physical_coordinate_difference": 1.91901179391607e-08,
+      "max_reference_residual": 2.1529444893531036e-09,
+      "native_iterations_range": [
+        4,
+        9
+      ],
+      "source_hashes": {
+        "connected_160.m": "2156e2988e88e4aad74a15768691ed99d1081b916f2a72f57c276f8f3e5fddc5",
+        "connected_161.m": "26e8704f4db773d8a684cbb04170b403b03499b84a6f325990a41c8209ceebf8",
+        "connected_162.m": "3364b94e09a77a777e34da11a90d84a84d2afa0a1e7ad7fc72e4eaf5541b1c96",
+        "connected_163.m": "b8b6aab22851abbc010841eb77333a629e91cbfb657a475402aab87a98e41343"
+      }
+    },
+    "topology3/direction0/poles2/control2": {
+      "max_native_residual": 6.828704268713182e-13,
+      "max_physical_circuit_residual": 4.529709940470639e-12,
+      "max_physical_coordinate_difference": 9.469827588759472e-08,
+      "max_reference_residual": 7.128164725145325e-09,
+      "native_iterations_range": [
+        4,
+        9
+      ],
+      "source_hashes": {
+        "connected_164.m": "443d4e8870ef4250d82083b32f0a33fc1ff4a01c70fecc4938ba76dc944fdc4a",
+        "connected_165.m": "45ae33453c9280c64ce782606a8e6c893ada820943a8264342d6249480a98c5c",
+        "connected_166.m": "8c6b56696c1254561027c55374ea54bfd610dde292ff252c4d51371ab966054b",
+        "connected_167.m": "ae7081f272fecca24bd204cf2d2a7466ca5a9fcb4944366a30bfc132d5e9bab4"
+      }
+    },
+    "topology3/direction2/poles1/control0": {
+      "max_native_residual": 6.334835087051793e-11,
+      "max_physical_circuit_residual": 7.335702878474848e-11,
+      "max_physical_coordinate_difference": 6.854884304630104e-08,
+      "max_reference_residual": 3.561240191629622e-09,
+      "native_iterations_range": [
+        4,
+        8
+      ],
+      "source_hashes": {
+        "connected_168.m": "5ebe40d9e2cb6f795b1d3786d79134f4d5d415905feffc303fd93d2db3ac9f71",
+        "connected_169.m": "761a2f0c97f015c8fc3a243ab06decdcad14c165cf0f1bc7be28d686e5868764",
+        "connected_170.m": "4341142a2dc0f1696c3f1aae98910b3013030911545ae49e1c78f5fb7d0c3edf",
+        "connected_171.m": "6453b5c112ca6434acad6bdef2d1b09d750a43cbd194c4a9bb8b952ae6a5496e"
+      }
+    },
+    "topology3/direction2/poles1/control1": {
+      "max_native_residual": 7.065389939775457e-13,
+      "max_physical_circuit_residual": 4.737345952794287e-12,
+      "max_physical_coordinate_difference": 4.168754230704508e-10,
+      "max_reference_residual": 3.410605131648481e-11,
+      "native_iterations_range": [
+        4,
+        7
+      ],
+      "source_hashes": {
+        "connected_172.m": "0ace176eb026977e70b2bd8bb2905d393556f37c8ee2c95dea4ff1fafb67bfac",
+        "connected_173.m": "c8261283a9a5a574ac6092c738c18cdf9f1b7069c0dd95a33d9e2ba47b28e4aa",
+        "connected_174.m": "9165dd08ba50ee4ed4f7f2d258ac02d3d4c904d9ed9411f6589d1d6bd157def5",
+        "connected_175.m": "906b2b083a07b74de405628b3f00c8256e19256384124917b3318bade8938577"
+      }
+    },
+    "topology3/direction2/poles1/control2": {
+      "max_native_residual": 9.239345399869592e-13,
+      "max_physical_circuit_residual": 4.884314341755013e-12,
+      "max_physical_coordinate_difference": 7.63308349860381e-09,
+      "max_reference_residual": 5.940137270954438e-10,
+      "native_iterations_range": [
+        4,
+        7
+      ],
+      "source_hashes": {
+        "connected_176.m": "c4a7a9446001fa595a3e9b876f240a181777415457dfd459495af65488f642ed",
+        "connected_177.m": "3b85c46752cb66e6d622d4010bde21576270ea5036282d70b096adbf61d4a148",
+        "connected_178.m": "28a66edd15d971a60c3731d94879ec082bfc0747297b217f186207eaf9fdd9f6",
+        "connected_179.m": "ffe5d709aa5ca8a7f3936fba86cc97fe78183ec76d9579a250601711665052bf"
+      }
+    },
+    "topology3/direction2/poles2/control0": {
+      "max_native_residual": 2.3884193234291473e-12,
+      "max_physical_circuit_residual": 4.304112621866807e-12,
+      "max_physical_coordinate_difference": 1.4261942737903155e-09,
+      "max_reference_residual": 9.094947017729282e-11,
+      "native_iterations_range": [
+        4,
+        8
+      ],
+      "source_hashes": {
+        "connected_180.m": "7d6d50b52c5762f6eca2903b334cf8c4c56e4e351718921476e7d07f301e5585",
+        "connected_181.m": "0ba0cc123ce0a3a422880560eacb2c778988d21ff4447c5cac88a306a9034963",
+        "connected_182.m": "09181b3ade06941dc77c533f24ef010edaf6ff574b9eb910bd0783a2a07a8457",
+        "connected_183.m": "204347d529ec12270f4adc76b4d69a114bf108bbeb3d0f50e6a4af74f006d3b5"
+      }
+    },
+    "topology3/direction2/poles2/control1": {
+      "max_native_residual": 7.846293059721177e-13,
+      "max_physical_circuit_residual": 5.6985527407960035e-12,
+      "max_physical_coordinate_difference": 2.1193727661739103e-08,
+      "max_reference_residual": 1.5432988220709376e-09,
+      "native_iterations_range": [
+        4,
+        7
+      ],
+      "source_hashes": {
+        "connected_184.m": "c74e60768e9cdc9f701cbe12152807449da32048ca21551201a7fa412fa1ec89",
+        "connected_185.m": "384078edc53c1311630648dd1ac12cdb28bbc67590427e262e38c7eed0ccc117",
+        "connected_186.m": "45b97d1b1b78a723a72c862900cd5b22519c0b7d54a18a27efb00c28e49c8cc4",
+        "connected_187.m": "7728ecad31dc51deaecf9b5e7a31a0f9e8d8f0ff7d0e61ce47c3e7711370905c"
+      }
+    },
+    "topology3/direction2/poles2/control2": {
+      "max_native_residual": 8.850628563372709e-13,
+      "max_physical_circuit_residual": 4.700240197053063e-12,
+      "max_physical_coordinate_difference": 2.1802293304062914e-10,
+      "max_reference_residual": 2.2737367544323206e-11,
+      "native_iterations_range": [
+        4,
+        7
+      ],
+      "source_hashes": {
+        "connected_188.m": "d6c455cb95e555aaca40b33cefb2716057e917d75a66948e2c289f2deca5a691",
+        "connected_189.m": "8764dce5972ae0fea9e2f802d8adb2efc00479d3a9cc6abc91cffd8720bb3921",
+        "connected_190.m": "cc0c5fd7fc2b390f3ab916b7276e49926993803d7b04ce4cf667eb5ba4bec849",
+        "connected_191.m": "fbc32ac0fc993863b1d80ef84452d8e595769af4109c27306e1681b8d0616880"
+      }
+    },
+    "topology4/direction0/poles1/control0": {
+      "max_native_residual": 4.823988430935344e-13,
+      "max_physical_circuit_residual": 3.967850085344983e-12,
+      "max_physical_coordinate_difference": 9.437803427658764e-09,
+      "max_reference_residual": 4.519051799434237e-10,
+      "native_iterations_range": [
+        5,
+        8
+      ],
+      "source_hashes": {
+        "connected_192.m": "d0cc6bcb9c5ac32e582ad0ae23bd1a810d06fc7ef064d515a1076eec343836a7",
+        "connected_193.m": "2f305e088f28731698c54ab194814b515322e8b4aada392149aa23c2acfd77a2",
+        "connected_194.m": "ac09588a945da357b6b494b37f748e9935e1f30065a5269da1499f6e3624873f",
+        "connected_195.m": "38e2e3e76d5545ac0a4ccca20a47ad02174eeaac79ce820e40e80161fc16351a"
+      }
+    },
+    "topology4/direction0/poles1/control1": {
+      "max_native_residual": 2.598580378654347e-11,
+      "max_physical_circuit_residual": 2.90093435384442e-11,
+      "max_physical_coordinate_difference": 5.147349213530106e-10,
+      "max_reference_residual": 2.5579538487363607e-11,
+      "native_iterations_range": [
+        5,
+        9
+      ],
+      "source_hashes": {
+        "connected_196.m": "3ac2e0323ea5a882de4f9aa1496a72de7588c76a7c08b1aa73f69a7e8ce57af0",
+        "connected_197.m": "61208264f28cfabc013e7b8aa3d67881d40af77d0af84d63c9288932eaef15a2",
+        "connected_198.m": "fd44ddaeea3db23e61cd160bf35bfea5094509895321672b48181d0411a6ba7b",
+        "connected_199.m": "b50d0fe3133e9a749ad52075a8d26bcdda42db9d017833f47cb29bac8bfe0e59"
+      }
+    },
+    "topology4/direction0/poles1/control2": {
+      "max_native_residual": 7.563255577380801e-13,
+      "max_physical_circuit_residual": 5.841663981787748e-12,
+      "max_physical_coordinate_difference": 1.5371597328339703e-09,
+      "max_reference_residual": 1.3073986337985843e-10,
+      "native_iterations_range": [
+        5,
+        7
+      ],
+      "source_hashes": {
+        "connected_200.m": "bffd02621e36e7f0a726d7e40c3360bbc2c5b97cc3966c32e741c13284db6e72",
+        "connected_201.m": "74cf98fbab546610cc8b269ef6dbf1eff0637d6032b183d179771ee8f990a74f",
+        "connected_202.m": "7410951fdd4f56390a419688f2c1297252d93655b7d7f3ba1153f09d2cfa2df1",
+        "connected_203.m": "f4681196786975a7930fbb4c5a029a227f4d8991ca2cf72aa0ad65fc3f2518e1"
+      }
+    },
+    "topology4/direction0/poles2/control0": {
+      "max_native_residual": 6.00760760582908e-11,
+      "max_physical_circuit_residual": 3.7678166142640634e-11,
+      "max_physical_coordinate_difference": 9.389795607717133e-09,
+      "max_reference_residual": 4.369837824924616e-10,
+      "native_iterations_range": [
+        5,
+        7
+      ],
+      "source_hashes": {
+        "connected_204.m": "ee1b711f87da99ef44fbf687bf7dd3ab068ddbb38514fa650ead36223c392689",
+        "connected_205.m": "5b6a6c79bfd7f1415f613dc73253de11e921a17ab19299c97f930187580222a6",
+        "connected_206.m": "8cd8d6576aea2d800faa860093583d1482f66bef883d0a8d3a76e7e25bf71128",
+        "connected_207.m": "a7eca4480d7ca57e0c224274e4d0c30c843511d85716e2902309712e777bce85"
+      }
+    },
+    "topology4/direction0/poles2/control1": {
+      "max_native_residual": 1.600247712119085e-13,
+      "max_physical_circuit_residual": 4.845901457883883e-12,
+      "max_physical_coordinate_difference": 5.640252709326887e-10,
+      "max_reference_residual": 2.9003098533930682e-11,
+      "native_iterations_range": [
+        5,
+        9
+      ],
+      "source_hashes": {
+        "connected_208.m": "d8449c5325b14e4054e26899a2794160b1153d0f2f2cc6c80822104aa8d90d80",
+        "connected_209.m": "80abf8e0bde2bad432badcd5600e28a3626939b8c4292fdee16a413bb31ea7bb",
+        "connected_210.m": "69feb8f2478530d0e1b14b72a5217fc474a7d858c3dec852093989498d151a88",
+        "connected_211.m": "ace349bd8b533f7165b5be8d5bd9186b2b2166a892eb9e42811a4555ebfe242b"
+      }
+    },
+    "topology4/direction0/poles2/control2": {
+      "max_native_residual": 5.5353360783882977e-11,
+      "max_physical_circuit_residual": 1.4569428996580314e-11,
+      "max_physical_coordinate_difference": 1.2352925438108286e-07,
+      "max_reference_residual": 1.1503686891956022e-08,
+      "native_iterations_range": [
+        5,
+        7
+      ],
+      "source_hashes": {
+        "connected_212.m": "3f797ed0638201e335262bb0174f9f046be0533e9a99ad2b127e08a2501054b1",
+        "connected_213.m": "c47a83274bfcf35341f2a2b97d938d3fd75c03618e74c26d27f673ee0083467f",
+        "connected_214.m": "e4dad498b1112f95835a0c3f5f5ad8236e116b4d4d46f75b141b84ad226117c2",
+        "connected_215.m": "eb20d0ba4dec3f43576ed47cdc7c0e0ec2ac5d3d1e57b3661c872491c52c904b"
+      }
+    },
+    "topology4/direction2/poles1/control0": {
+      "max_native_residual": 4.566861125376853e-11,
+      "max_physical_circuit_residual": 5.2886972579102576e-11,
+      "max_physical_coordinate_difference": 8.77676598065591e-10,
+      "max_reference_residual": 4.547473508864641e-11,
+      "native_iterations_range": [
+        5,
+        8
+      ],
+      "source_hashes": {
+        "connected_216.m": "bb7eb09ab89cde03fc3cb499f92cae524f4187a2a38ad1ac3a6179a57443e8e0",
+        "connected_217.m": "295925b9036b5ca3ffc132849e1b95f4da0815c933ac405c677ac95e8e926254",
+        "connected_218.m": "a1f1b33cc2ebf76b2c7b146f4c31e9a32de612ac4f6dfee649745c9e82b932df",
+        "connected_219.m": "4e4eb756d69a3f80474d9a0be5fd2288741dee27bbe270e48a2adee1fb550c44"
+      }
+    },
+    "topology4/direction2/poles1/control1": {
+      "max_native_residual": 4.4145243016657787e-13,
+      "max_physical_circuit_residual": 4.435524278939883e-12,
+      "max_physical_coordinate_difference": 3.933450898330193e-09,
+      "max_reference_residual": 1.6768808563938364e-10,
+      "native_iterations_range": [
+        5,
+        8
+      ],
+      "source_hashes": {
+        "connected_220.m": "8a1f712e53153be5093c368db79eb297d73e79598270ad0b140d9f7f002187ef",
+        "connected_221.m": "3ebc378c7f15ec2f121f737f31374b4864ba079f2b7954f7af570af6bd1fb0d6",
+        "connected_222.m": "25773cc450278e2b1b9fdd326272474d401f4ba4b86819f5df6b31fce9dad592",
+        "connected_223.m": "9b88dc127b7767ed480af5e202261c67db9e9d427c47b2468880576982031bb4"
+      }
+    },
+    "topology4/direction2/poles1/control2": {
+      "max_native_residual": 9.967192349247256e-11,
+      "max_physical_circuit_residual": 5.392234297962872e-10,
+      "max_physical_coordinate_difference": 3.871619469464349e-09,
+      "max_reference_residual": 2.870592652470805e-10,
+      "native_iterations_range": [
+        5,
+        8
+      ],
+      "source_hashes": {
+        "connected_224.m": "69590a22d81fff91acb7be23b5bbbcf383020c6aecbaffef6ca43db9f37f1323",
+        "connected_225.m": "5840478842896462c9f3c49a03f38f5fbe35b2bdfd3238972316c229b13f54c9",
+        "connected_226.m": "c5f3694f525e82ac1a9a8b321790657c1148edd484dd8c043547fa37006713c8",
+        "connected_227.m": "46c80b85ae979ddbad1a383a3f00b5514d2d2ad35b79d05d2c2d200c1f509b40"
+      }
+    },
+    "topology4/direction2/poles2/control0": {
+      "max_native_residual": 4.132299016856855e-11,
+      "max_physical_circuit_residual": 4.7837005190398685e-11,
+      "max_physical_coordinate_difference": 2.7058803198087844e-08,
+      "max_reference_residual": 1.0516032489249483e-09,
+      "native_iterations_range": [
+        5,
+        8
+      ],
+      "source_hashes": {
+        "connected_228.m": "8041b28d2b1f2b3bcd3572581e72978de00c08aa68b8b7622b1c01741329c151",
+        "connected_229.m": "34f7cad55c2540d24c3c38de313b4041ee3112b320ee3015cf9a350660d8ccf6",
+        "connected_230.m": "c8318f838f4868b712fc3a0c2f92418c5b58af4ac3db5a9eaf7e8046720ab477",
+        "connected_231.m": "49b78debe4d62c4a5dbe99d7c234c8b134c48394f553656e2b134d9c53a1d332"
+      }
+    },
+    "topology4/direction2/poles2/control1": {
+      "max_native_residual": 5.141512215978139e-13,
+      "max_physical_circuit_residual": 6.3291594187830924e-12,
+      "max_physical_coordinate_difference": 7.24635640381166e-09,
+      "max_reference_residual": 2.899014361901209e-10,
+      "native_iterations_range": [
+        5,
+        8
+      ],
+      "source_hashes": {
+        "connected_232.m": "956d8b5e290f72d834229448b869bdfc262f39a5a9ac477a1794566e8e80ce58",
+        "connected_233.m": "d94c382f5236a6afa7b68a52d8bb2e2086c81aeea4bba0c3e95ae201b23729b1",
+        "connected_234.m": "4d9807417dc0d01282a97cb413bcce421ebb2c80fbe9a75eaf6952033eb70f3c",
+        "connected_235.m": "997cb3e12dfc747a2494f1ff1cdcb8a3998cc1f8f992b25da654100ae11e33c0"
+      }
+    },
+    "topology4/direction2/poles2/control2": {
+      "max_native_residual": 1.013258921211957e-12,
+      "max_physical_circuit_residual": 5.094151642808141e-12,
+      "max_physical_coordinate_difference": 7.624603881595249e-08,
+      "max_reference_residual": 3.990408004028723e-09,
+      "native_iterations_range": [
+        5,
+        8
+      ],
+      "source_hashes": {
+        "connected_236.m": "e22c7fe287be0c48c1325b1c8e60acb0a42e08d87622c8f6e0e4c58ca8b9f68d",
+        "connected_237.m": "8b5b9b42785f2a27f4e712794649e53600e32a26ce926beaf0216dbb5a27b558",
+        "connected_238.m": "9b852145dff2fe0b291e5aaee500e44dfa724bff862c78a6cf61358786b08424",
+        "connected_239.m": "e2d9a6f7a51631f00059e94626107957d6238d900738e34a8604361d8bc0edcc"
+      }
+    },
+    "topology5/direction0/poles1/control0": {
+      "max_native_residual": 2.2006094863025183e-12,
+      "max_physical_circuit_residual": 4.967209278853971e-12,
+      "max_physical_coordinate_difference": 5.096650390612467e-08,
+      "max_reference_residual": 3.106492840743158e-09,
+      "native_iterations_range": [
+        7,
+        9
+      ],
+      "source_hashes": {
+        "connected_240.m": "36e03c696ee1a0f8bf1033da65529fdfddcdc97dd15a5d91f42cbb7b3911fb23",
+        "connected_241.m": "f3cae95b0fbf912f9ce8dde6fc6e2b290f6dce7e81fe700d44033c9663a003be",
+        "connected_242.m": "dd42b430494b515820c6cc4f44c5840248acd75edb5f85a4abec4dd97c226ba4",
+        "connected_243.m": "6ae673a5d28a80822e654fef76326bf19a58bb5424948f35de3324770eb13841"
+      }
+    },
+    "topology5/direction0/poles1/control1": {
+      "max_native_residual": 4.4294949652634585e-12,
+      "max_physical_circuit_residual": 2.164000229010199e-11,
+      "max_physical_coordinate_difference": 9.598561945267647e-10,
+      "max_reference_residual": 5.968558980384842e-11,
+      "native_iterations_range": [
+        7,
+        9
+      ],
+      "source_hashes": {
+        "connected_244.m": "cc138ce1e299d5a565ee964125bf29b0eae9221c68f6c3649075d9847c8cf557",
+        "connected_245.m": "b4f358302d8dbfdaf906010855e9dc291c8cadbf939033feb67185c468f37cfc",
+        "connected_246.m": "4291bbbd7d4f20457598ab4ac39fe061f129be70af788335feb31fb82c3fa912",
+        "connected_247.m": "eb9c057acf352fa0985417a3490c7671f26b2bef45d97e76ec3c59235ce141e8"
+      }
+    },
+    "topology5/direction0/poles1/control2": {
+      "max_native_residual": 2.2006094863025183e-12,
+      "max_physical_circuit_residual": 3.3335360641209405e-12,
+      "max_physical_coordinate_difference": 9.335339079541427e-08,
+      "max_reference_residual": 9.176659432341694e-09,
+      "native_iterations_range": [
+        7,
+        9
+      ],
+      "source_hashes": {
+        "connected_248.m": "a9a064d8cbaadc612fdb499df2f52aef9dc12e2a932df99197e5ba8292873481",
+        "connected_249.m": "65dc070cff6961d595706409cb80046c15401aaf302263ef4a09632bf924ade0",
+        "connected_250.m": "589ca90995cfdececca9ea00b1e1b8e135f94c362bfb465700902cace79e69b0",
+        "connected_251.m": "ec4b380e30ff2132a507e563360852353e4b14e5491f0ec361b4729a2d9cd6f8"
+      }
+    },
+    "topology5/direction0/poles2/control0": {
+      "max_native_residual": 2.2006094863025183e-12,
+      "max_physical_circuit_residual": 6.7057470687359455e-12,
+      "max_physical_coordinate_difference": 3.883753763034292e-09,
+      "max_reference_residual": 2.3874235921539366e-10,
+      "native_iterations_range": [
+        7,
+        9
+      ],
+      "source_hashes": {
+        "connected_252.m": "c65f28110479a8146f8f4e7d891936d6837b5f61cb31366f3ebf98e12906b630",
+        "connected_253.m": "4adce0658cbaee3f8a942bbd4a1572029b8191f942d915ef001a4e329402db3b",
+        "connected_254.m": "59d2639bd5282de566d46873bfbb9c3e55397c320911098e1bf9a2e2297a623c",
+        "connected_255.m": "edb867e2d0d1f55f0f0987f48310e1b5d13515c3d49b6d8403c121b15535a553"
+      }
+    },
+    "topology5/direction0/poles2/control1": {
+      "max_native_residual": 2.2006094863025183e-12,
+      "max_physical_circuit_residual": 1.0902480307439788e-11,
+      "max_physical_coordinate_difference": 5.69275826478588e-09,
+      "max_reference_residual": 3.694822225952521e-10,
+      "native_iterations_range": [
+        7,
+        9
+      ],
+      "source_hashes": {
+        "connected_256.m": "e139579fe553cdef6e4c79b3169accb5895a9d4b3a9021f7226edab61379ef3c",
+        "connected_257.m": "110ee045bbcfdf962c65e5d318e5f16f3259941185f31730197de8a00d73ea60",
+        "connected_258.m": "837ecbc5ebb5dac01767c3ebd26776624362dd8910cfb77727b9e0832aa30b4a",
+        "connected_259.m": "d807d0731a7ab3351ad338573e3eaab2f3c314817eaef5c08fa0c075493cd66f"
+      }
+    },
+    "topology5/direction0/poles2/control2": {
+      "max_native_residual": 2.2006094863025183e-12,
+      "max_physical_circuit_residual": 3.3163873353901505e-12,
+      "max_physical_coordinate_difference": 9.726988814406923e-08,
+      "max_reference_residual": 7.37827576813288e-09,
+      "native_iterations_range": [
+        7,
+        9
+      ],
+      "source_hashes": {
+        "connected_260.m": "8b2bb8e619ac20efeec9fe83a244cb5e54251ed1514b2dbf2399c64b634e6d6e",
+        "connected_261.m": "b26750d14f97a87fa323ee828172d45e2248c912b720822aa613b63b4d16ea79",
+        "connected_262.m": "324b96ecdf2eb4fbd14b2a91c0a43849d8d8f717c3e703be2d62447d5e41c023",
+        "connected_263.m": "ba8a7997a5d064860998e9234caddd608d2397ca0344defc20e0386c92104699"
+      }
+    },
+    "topology5/direction2/poles1/control0": {
+      "max_native_residual": 2.721496292212855e-11,
+      "max_physical_circuit_residual": 3.708899506960073e-11,
+      "max_physical_coordinate_difference": 2.2787759235143312e-08,
+      "max_reference_residual": 1.128341864387039e-09,
+      "native_iterations_range": [
+        5,
+        8
+      ],
+      "source_hashes": {
+        "connected_264.m": "1b00ee7fe59ec4bae13809700b86e4db6e261c7444adb0186e06c47b5bf14880",
+        "connected_265.m": "13f2eb2606aaf8c8d97c9cefca4d1e25c05c08eac4222c33d8cbe53bc1231e66",
+        "connected_266.m": "3c34d3d4445640a3478e11ceb61e078fcd34238e4de20e9267c6d20e21094605",
+        "connected_267.m": "49af9e7adab48ffa6cbc1aeac627cc831baf379db77097ecdac1ce5dbf04cdf8"
+      }
+    },
+    "topology5/direction2/poles1/control1": {
+      "max_native_residual": 3.520097408005185e-12,
+      "max_physical_circuit_residual": 4.8225702288511266e-12,
+      "max_physical_coordinate_difference": 6.388631845766213e-10,
+      "max_reference_residual": 3.694822225952521e-11,
+      "native_iterations_range": [
+        4,
+        7
+      ],
+      "source_hashes": {
+        "connected_268.m": "e1cf5a55deef7969aaa180078476e31fc761d8192d0dd85e88ff4894f22fc999",
+        "connected_269.m": "7c0cbf7048896642ca9d74cb8cc0e663ec806066ae22f0b8e145852b7a760417",
+        "connected_270.m": "e311385ed4992494474b167198d26b28c7f52807aa47c06f347c2583ebf0475c",
+        "connected_271.m": "3d34902bc3b88cb72eb4c5ccdc0dbcb9a97d5c959d9aadfe5cd5025ad1cf25b3"
+      }
+    },
+    "topology5/direction2/poles1/control2": {
+      "max_native_residual": 6.683355951997427e-11,
+      "max_physical_circuit_residual": 2.144356914257628e-11,
+      "max_physical_coordinate_difference": 6.872542118729896e-11,
+      "max_reference_residual": 6.925220466524884e-11,
+      "native_iterations_range": [
+        5,
+        8
+      ],
+      "source_hashes": {
+        "connected_272.m": "9a6ccff614ff652b1e7be65cdf167b1853675803f64b4a380ed1426703269003",
+        "connected_273.m": "dd21e6ab26fab06c2e254f81915c53683316f945e24eca61ae9935c06c03b716",
+        "connected_274.m": "d5b80fe119e4e2ca73b9da6e66e7dc046f03a4573fa38c6580b7237a14ab4b0c",
+        "connected_275.m": "8a60e6d52c47c7baa900067be1f52e1123a7b1fdf2124d703e986f3c06e5d609"
+      }
+    },
+    "topology5/direction2/poles2/control0": {
+      "max_native_residual": 2.721496292212855e-11,
+      "max_physical_circuit_residual": 3.708899506960073e-11,
+      "max_physical_coordinate_difference": 2.0690237079179497e-08,
+      "max_reference_residual": 1.2647660696529783e-09,
+      "native_iterations_range": [
+        5,
+        8
+      ],
+      "source_hashes": {
+        "connected_276.m": "3df2bd5c03cd4dc91bcd3519bc0d47ddb16570451e80d41ed1e10414f30b6070",
+        "connected_277.m": "fcd65d4433a1324662ec4c345bb81d5bc1d0e07e2ae40c2c491aaf2630f12131",
+        "connected_278.m": "66592e7d6ef669347f9d9b8f1b273d0bc4140e02cdf936b24debdd8cc94a3538",
+        "connected_279.m": "7e69396d081f071b6cfbe4906947b7064d4031acd997b43372c669335a4a035f"
+      }
+    },
+    "topology5/direction2/poles2/control1": {
+      "max_native_residual": 3.520097408005185e-12,
+      "max_physical_circuit_residual": 5.6507064596097775e-12,
+      "max_physical_coordinate_difference": 5.575486738962354e-09,
+      "max_reference_residual": 3.183231456205249e-10,
+      "native_iterations_range": [
+        4,
+        7
+      ],
+      "source_hashes": {
+        "connected_280.m": "d691b11745cf7da1015028d5fe441c0690a219e7a99108017cbf0fc67cb95957",
+        "connected_281.m": "c73caddee190c54a2b134d424be02cfb7eef015a10d68b98dbcc0986213795f5",
+        "connected_282.m": "b160acbf5427a0beddd535b51383b3f5b68a9b5f819ccccca4ea28bece2ee978",
+        "connected_283.m": "dcdaeeab11e1de5fd5abdb6aa23ecb33aaf6fd82d3b183e3b45836bc4256c723"
+      }
+    },
+    "topology5/direction2/poles2/control2": {
+      "max_native_residual": 8.871384182818076e-11,
+      "max_physical_circuit_residual": 2.995879586076278e-11,
+      "max_physical_coordinate_difference": 1.4701129202876473e-09,
+      "max_reference_residual": 1.4210854715202004e-10,
+      "native_iterations_range": [
+        5,
+        8
+      ],
+      "source_hashes": {
+        "connected_284.m": "b2fbbaf46d1f8b877e1de6cd2d90d1265bc76e67ced5852cc2d5150e6591dc5b",
+        "connected_285.m": "6e33d63b61e1d96c4a374ff90f049e71cbcdf6cb771c6ec29fc4b044376b5285",
+        "connected_286.m": "11e10ea2346273fff5bce03e5aa82b119fc1f7b351e1312d1858323d5a76228d",
+        "connected_287.m": "128a8be98bd775ad8be0c21e90924b0daec68a5d86ad37d357c4e2c3cb004f64"
+      }
+    },
+    "topology6/direction0/poles1/control0": {
+      "max_native_residual": 5.536430688901639e-11,
+      "max_physical_circuit_residual": 1.3851382020535485e-10,
+      "max_physical_coordinate_difference": 2.4121110442365534e-08,
+      "max_reference_residual": 1.6981971384666394e-09,
+      "native_iterations_range": [
+        4,
+        8
+      ],
+      "source_hashes": {
+        "connected_288.m": "6ceb932d7d9138c48422efa00eb56c5e7c4372f1cd33b7fb1f3c941a50068f6c",
+        "connected_289.m": "dde084aaeb709961564caf885d38cabd7fc612fe42dbded45872ae190b277a45",
+        "connected_290.m": "ca533fc4eef2ce57d9b5100b42e5da7aa4353009b70152f234774c80ca9637c6",
+        "connected_291.m": "40b7458b0adee44f9fc26446905be06977d0e80f22ac15ab22080ae856c8b2da"
+      }
+    },
+    "topology6/direction0/poles1/control1": {
+      "max_native_residual": 5.536430688901639e-11,
+      "max_physical_circuit_residual": 1.3851382020535485e-10,
+      "max_physical_coordinate_difference": 1.1131881194614834e-08,
+      "max_reference_residual": 8.72546479513403e-10,
+      "native_iterations_range": [
+        4,
+        8
+      ],
+      "source_hashes": {
+        "connected_292.m": "905d03a0d398fe8aeed6e1b1aadc7b5291829fdc5f8c01bed8027197cc3015f8",
+        "connected_293.m": "b197d122fd7bfdef8583332500acccec70faf7ddf408f2a1aa82d9b04c8b3f83",
+        "connected_294.m": "9c502cb6a2652f124a2f07fe4b0bf38d0ec3fe7f11023ca57a8c14303b9196cf",
+        "connected_295.m": "6873732cd3d7b4de7bff14cdf90f359255bb9ec30ee062bf86aacb678ee0044d"
+      }
+    },
+    "topology6/direction0/poles1/control2": {
+      "max_native_residual": 5.536430688901639e-11,
+      "max_physical_circuit_residual": 1.3851382020535485e-10,
+      "max_physical_coordinate_difference": 1.677128125265881e-08,
+      "max_reference_residual": 1.708855279503041e-09,
+      "native_iterations_range": [
+        4,
+        8
+      ],
+      "source_hashes": {
+        "connected_296.m": "3812fa113db8652c7cd9748891a4a20ae14c5b34c6ecd5ff8b80d50c2acd9bf8",
+        "connected_297.m": "a7d764bc577321bb1a5d4c421a2933556baa68ad6af4e788d94f8dc49917db8b",
+        "connected_298.m": "fc9969b1ddb6d8452a9bf12f30ae9e6a184d787db82dc7d11161081cfa59d9d7",
+        "connected_299.m": "94574bb1b060f15a356d21f0f2ef18705f6e4be1ed1b81fcb9d86921bb1d0029"
+      }
+    },
+    "topology6/direction0/poles2/control0": {
+      "max_native_residual": 5.536430688901639e-11,
+      "max_physical_circuit_residual": 1.3851382020535485e-10,
+      "max_physical_coordinate_difference": 1.5713771617242855e-08,
+      "max_reference_residual": 1.0942358130705543e-09,
+      "native_iterations_range": [
+        4,
+        8
+      ],
+      "source_hashes": {
+        "connected_300.m": "50fbedab530825b888a9e107a14aa0184ec5240cae0bf8efa8d25e9fa2152e78",
+        "connected_301.m": "099fb29e187dee7acb1d3b048c6d651d758d91ec1c66bf7f097828e29db022a2",
+        "connected_302.m": "fce4035c1b2b9fffd3ad15bea3bfd862ecfaeda34e28932c131f7860cbd6301a",
+        "connected_303.m": "58e2e549933b54404e93918daf34ca57e03d19220af69325d2e77616538d9b87"
+      }
+    },
+    "topology6/direction0/poles2/control1": {
+      "max_native_residual": 5.536430688901639e-11,
+      "max_physical_circuit_residual": 1.3851382020535485e-10,
+      "max_physical_coordinate_difference": 6.69735111813452e-08,
+      "max_reference_residual": 5.201172825763933e-09,
+      "native_iterations_range": [
+        4,
+        8
+      ],
+      "source_hashes": {
+        "connected_304.m": "17bd74b845fba781a110ef954f16f49766bb8be53a5fa43a27052d29f33b7a24",
+        "connected_305.m": "01f98654e6289804f4e065b6bc7c65a8a9a183b2f27ff04d094ef58cc57ae139",
+        "connected_306.m": "c9319e5d0d1e2964d66d6966421a36e9fa4fd9c9a73a6c49d933afac5ac954d3",
+        "connected_307.m": "ed645b9e468cd8747bae59c46936117afff6709696aecc0c63f81694d286e1d7"
+      }
+    },
+    "topology6/direction0/poles2/control2": {
+      "max_native_residual": 5.536430688901639e-11,
+      "max_physical_circuit_residual": 1.3851382020535485e-10,
+      "max_physical_coordinate_difference": 9.48007894407965e-10,
+      "max_reference_residual": 9.663381206337363e-11,
+      "native_iterations_range": [
+        4,
+        8
+      ],
+      "source_hashes": {
+        "connected_308.m": "34b5d2237f7651908810c937b1091a2897c682e785ab093b100e219f81fefdaf",
+        "connected_309.m": "ff08922039bd2a043ce6fb015d1787f8e4a3a68f672e28f716b3c9b077963ed2",
+        "connected_310.m": "164abf31082ea96903ea653c07afa335842a53aa37ba9cd8f5587484a699d003",
+        "connected_311.m": "687049b868a9f1c2c5417b461f7a561b946af2ada7387d3e9ea3bb1982da3a1b"
+      }
+    },
+    "topology6/direction2/poles1/control0": {
+      "max_native_residual": 7.349152536528791e-12,
+      "max_physical_circuit_residual": 7.557877934605273e-12,
+      "max_physical_coordinate_difference": 1.6859132756508188e-08,
+      "max_reference_residual": 1.1617373729677638e-09,
+      "native_iterations_range": [
+        4,
+        8
+      ],
+      "source_hashes": {
+        "connected_312.m": "66e9f32bd7401c1205efaa3deb18c7593abc35254c368d3d1b08b1a76bf09a61",
+        "connected_313.m": "d7dce1c88586466e25a21e8616ebf2b89af0aa50e1296b36a1af0f3c866bad1b",
+        "connected_314.m": "edfa35fa4c43a6710dffe6bc487d22db35f1774a76698be0c4aa6559dc09f551",
+        "connected_315.m": "351352e4b0d6519e2d10b0293f908d15f4138bf4521ae401cd3015da31705ff8"
+      }
+    },
+    "topology6/direction2/poles1/control1": {
+      "max_native_residual": 2.7496516348535227e-13,
+      "max_physical_circuit_residual": 5.752801313150095e-12,
+      "max_physical_coordinate_difference": 7.027438186923973e-09,
+      "max_reference_residual": 5.343281372915953e-10,
+      "native_iterations_range": [
+        4,
+        7
+      ],
+      "source_hashes": {
+        "connected_316.m": "dfa9c54299e292e75b1835cf8a20e2a852920ff2f5764c309b0e5b8e1adba88c",
+        "connected_317.m": "4f75fd4765b6a2d4aa60531617c2fbe4f7282e276c2c7582da127743cec663cb",
+        "connected_318.m": "8fa8393ea81cd7fe7460a1cde60bbb505f73148e9b5d2768b6d0af238b3c59c2",
+        "connected_319.m": "ef88aeaed781a55bb177fa22ae35b19877e6f23c9b049fc4ff718ae963adfa46"
+      }
+    },
+    "topology6/direction2/poles1/control2": {
+      "max_native_residual": 1.7399137686169297e-12,
+      "max_physical_circuit_residual": 3.59160069010141e-12,
+      "max_physical_coordinate_difference": 6.720141243476974e-08,
+      "max_reference_residual": 6.085087989049498e-09,
+      "native_iterations_range": [
+        4,
+        8
+      ],
+      "source_hashes": {
+        "connected_320.m": "6375700209d4c24e1f0cc8bc6c32aeffe2f9d9344dd5bdd5d80a21effd64d2d5",
+        "connected_321.m": "7a94d61431772db2af96c16b55a32413e9add296e238ee1872cae464960d5ea7",
+        "connected_322.m": "2f8760f6c17860c30a47cf1cdcb11e893896442457c8710becf7b525be7421f7",
+        "connected_323.m": "fb6a840cf29d15bd0edffc6d2ad884a8c38ee39fa150d9d28cbf90691ad7d355"
+      }
+    },
+    "topology6/direction2/poles2/control0": {
+      "max_native_residual": 7.2216156665749764e-12,
+      "max_physical_circuit_residual": 7.427614079347222e-12,
+      "max_physical_coordinate_difference": 8.666120265843347e-09,
+      "max_reference_residual": 6.039613253960852e-10,
+      "native_iterations_range": [
+        4,
+        8
+      ],
+      "source_hashes": {
+        "connected_324.m": "aa3d0489bcd976e807abb29056285937d4d9e0b0ed40e9b892c6a8340bcf8117",
+        "connected_325.m": "ded70cbcdc4a2a37160aa28da4f3d79a3198f00ff7fe2ae77a94f42a85730770",
+        "connected_326.m": "2a64764fa966f993f4f440cb415bd91caead56ba725cb4b797b940b7cac2938b",
+        "connected_327.m": "c8ff44a2dd0e50ddb9ac71a297c9d4806470030b7b5a58ed243e17438709493c"
+      }
+    },
+    "topology6/direction2/poles2/control1": {
+      "max_native_residual": 2.7496494664491777e-13,
+      "max_physical_circuit_residual": 5.7528128531817e-12,
+      "max_physical_coordinate_difference": 7.027551873761695e-09,
+      "max_reference_residual": 5.286437954055145e-10,
+      "native_iterations_range": [
+        4,
+        7
+      ],
+      "source_hashes": {
+        "connected_328.m": "4078a35089297ba36376e8a14dc044ef5b9129b7dcce72a2c3de69c143a5fe59",
+        "connected_329.m": "9c0160b033e734d2f332f762c4c87b5386f2bf4c1775d6bf86af38713781b82b",
+        "connected_330.m": "4199a7d859c9e4506bfaca40c6156f5dbd941728058a83f23a911c5be80e6de3",
+        "connected_331.m": "507fc3e022e5765aefb586bccb4a4b85614e4075881e352c45052f895f9c1515"
+      }
+    },
+    "topology6/direction2/poles2/control2": {
+      "max_native_residual": 1.9371518278354927e-12,
+      "max_physical_circuit_residual": 3.2531801974095367e-12,
+      "max_physical_coordinate_difference": 2.6547297693468863e-09,
+      "max_reference_residual": 2.3874235921539366e-10,
+      "native_iterations_range": [
+        4,
+        8
+      ],
+      "source_hashes": {
+        "connected_332.m": "f92152d9968ba43da9d6cf9ed1c8f81fba20785482878ed06c20e015791da1df",
+        "connected_333.m": "77685d5aac5ce8b70817758ccb0b64851afa353e80d0c4bad9fa2fadf2625610",
+        "connected_334.m": "d16ee6351ff60ff6574434c68b92575b6406020b7b49be3574465c2b5a5abe96",
+        "connected_335.m": "e0d4eb7649d23404d93e3616bc244e6ee3e5409c2dd4aa06e615bc0bd12055cb"
+      }
+    },
+    "topology7/direction0/poles1/control0": {
+      "max_native_residual": 7.1470468432366374e-12,
+      "max_physical_circuit_residual": 7.350425823560158e-12,
+      "max_physical_coordinate_difference": 4.228494887570378e-09,
+      "max_reference_residual": 2.3021584638627246e-10,
+      "native_iterations_range": [
+        4,
+        8
+      ],
+      "source_hashes": {
+        "connected_336.m": "1d3128fe61c84f996bb45bd3cab1ec8bd3223e8f85dde7f1cfaf2ca960282779",
+        "connected_337.m": "802349e393930e7077cb9d67598ce9f6370d857262d214e6470d15d1d9ab1c42",
+        "connected_338.m": "34faee6a0456456466b5c3cd15668a90ec4387ca76e2021fa79e6bfe1796aebc",
+        "connected_339.m": "756d6378a294dfe567a660e1c3b9e2d149a55cfcac655b22d04804f25070e39e"
+      }
+    },
+    "topology7/direction0/poles1/control1": {
+      "max_native_residual": 3.1950683418435766e-12,
+      "max_physical_circuit_residual": 1.574585600794265e-11,
+      "max_physical_coordinate_difference": 1.661596282787059e-07,
+      "max_reference_residual": 9.638512210585759e-09,
+      "native_iterations_range": [
+        4,
+        8
+      ],
+      "source_hashes": {
+        "connected_340.m": "30d0c31fd76db4d413281f104a421f55a80dc45684711d11976c4e1b6f016558",
+        "connected_341.m": "2e205f96846fd4cdfcda8a6d95567d3ecfd301971443bcc3e91422050946caa0",
+        "connected_342.m": "6c7ada5e383aff95348b8302d35141e03aee63e0cb1e945fd1d5efdfd368c497",
+        "connected_343.m": "333e2927dd451187047d607415966336092f05ff473bffd9866fc519b535a2e8"
+      }
+    },
+    "topology7/direction0/poles1/control2": {
+      "max_native_residual": 1.8256628847579393e-12,
+      "max_physical_circuit_residual": 3.4879087704738098e-12,
+      "max_physical_coordinate_difference": 1.6995276297393502e-09,
+      "max_reference_residual": 1.2221335055073723e-10,
+      "native_iterations_range": [
+        4,
+        8
+      ],
+      "source_hashes": {
+        "connected_344.m": "892676ffc8a1ceb21b0f940986019439e9d03bcf2e47cd597de67b828e107b26",
+        "connected_345.m": "c2cd6bc0892d51424a4efdc3e4366568071ade3e1fe52ca52ecc5071241bb641",
+        "connected_346.m": "d4df23d587a1a13c19e282365ae43221a340f4e38e9922d71dff29c98a90e21e",
+        "connected_347.m": "f2d155d1ad6208237896316502f114468ebdcc1b153c794072dbe7085fdd6eda"
+      }
+    },
+    "topology7/direction0/poles2/control0": {
+      "max_native_residual": 7.279777475277527e-12,
+      "max_physical_circuit_residual": 7.487621633828212e-12,
+      "max_physical_coordinate_difference": 1.910831226581422e-07,
+      "max_reference_residual": 1.0267342531733448e-08,
+      "native_iterations_range": [
+        4,
+        8
+      ],
+      "source_hashes": {
+        "connected_348.m": "8486e7c504019922bdfc7ba908cf482734d96e50ad47793f9151ff85a23abc73",
+        "connected_349.m": "ce0368552e28925494bc371cfa883486c9c8f0ebe1b3abd0b35288dfadd86d8b",
+        "connected_350.m": "fe889a4e7b6a5127ea557fcf22cc8dacd4d911787fec84ee8d091b5ab8a21042",
+        "connected_351.m": "6df6629aab4debaa8a5089ab0c7e6c4ee01ba5f98d12e23a2fdf75c9c27aa9cb"
+      }
+    },
+    "topology7/direction0/poles2/control1": {
+      "max_native_residual": 1.896948743917992e-12,
+      "max_physical_circuit_residual": 9.488687613412594e-12,
+      "max_physical_coordinate_difference": 1.1695779811304874e-07,
+      "max_reference_residual": 6.497202775790356e-09,
+      "native_iterations_range": [
+        4,
+        8
+      ],
+      "source_hashes": {
+        "connected_352.m": "6cb36fd0cbf02bab39502ee30f4c48de6fb669c8523b4c6f9473a5ea4af3f214",
+        "connected_353.m": "2fab38e96d9be8aba2903d4bd7e554d0642cd3158f91749c87195ad216c981bf",
+        "connected_354.m": "50a21568a56916b38a822fe580ed72504986ccb98457c3563d2776bad00ff2d3",
+        "connected_355.m": "181ca475ca44a6b56b9e6930fe38b4fa138d3e1e56f3356a2114412e0eff354c"
+      }
+    },
+    "topology7/direction0/poles2/control2": {
+      "max_native_residual": 2.0470569683794793e-12,
+      "max_physical_circuit_residual": 5.6864506584637636e-12,
+      "max_physical_coordinate_difference": 1.504020374909487e-08,
+      "max_reference_residual": 1.0231815394945443e-09,
+      "native_iterations_range": [
+        4,
+        8
+      ],
+      "source_hashes": {
+        "connected_356.m": "bde76c35060f7f2781e02dc3e34e6844580ccb62378146ec0d43e72cc609cba5",
+        "connected_357.m": "2e069eed97021502ef61c3f818e582d4c13d643d1ee3330f7173c9447ff8365e",
+        "connected_358.m": "c36d9784803a695e13c034763a897ef1860707883462438faa4de6c4d135aa3d",
+        "connected_359.m": "9d6ca57e5c082589272292803373f8757648f9a4a93cbf309d988004c167d640"
+      }
+    },
+    "topology7/direction2/poles1/control0": {
+      "max_native_residual": 7.184475236954313e-12,
+      "max_physical_circuit_residual": 7.388922806939036e-12,
+      "max_physical_coordinate_difference": 5.405382808021386e-10,
+      "max_reference_residual": 8.02891642059933e-11,
+      "native_iterations_range": [
+        4,
+        8
+      ],
+      "source_hashes": {
+        "connected_360.m": "87391b9bbff78c19c862f3a8029bd926b933505bf0adb56f8da4184e3315ff84",
+        "connected_361.m": "e8b86a02a96dab9b2efe209b5c65224eb487aab409a4ba2769fe1c54a0b412f0",
+        "connected_362.m": "226f82b3aacee881fdbb5d450a8d843ec5364a9ca74d0b61f792f4a12784b317",
+        "connected_363.m": "bf638e85b01db0af7073e963866ed9922e3c44911be29bc19e7a84507e270aa4"
+      }
+    },
+    "topology7/direction2/poles1/control1": {
+      "max_native_residual": 2.7496494664491777e-13,
+      "max_physical_circuit_residual": 5.752795543929088e-12,
+      "max_physical_coordinate_difference": 8.798707540336181e-09,
+      "max_reference_residual": 3.304023721284466e-10,
+      "native_iterations_range": [
+        6,
+        7
+      ],
+      "source_hashes": {
+        "connected_364.m": "74031aed919bb14c9d96a82f8c08e53ea152f34bbda363ef8af7b277c38e9d47",
+        "connected_365.m": "8d54a73c5d6e76d3ed0b4445da93ee47a7d9bbf1f0848652671c8586217b38a8",
+        "connected_366.m": "cb936661b88cc2c62f1c2e26cc0926261553df68b56c0b197e72af118d16bc27",
+        "connected_367.m": "be4bb2dc427ad3942887b0fb57253d8fb678531d8f1b0774e8242e7150b329d7"
+      }
+    },
+    "topology7/direction2/poles1/control2": {
+      "max_native_residual": 1.8256628847579393e-12,
+      "max_physical_circuit_residual": 6.808564260739671e-12,
+      "max_physical_coordinate_difference": 2.424798140054918e-09,
+      "max_reference_residual": 1.6200374375330284e-10,
+      "native_iterations_range": [
+        4,
+        8
+      ],
+      "source_hashes": {
+        "connected_368.m": "d83e9da097876ee60695ff37363916f3c2c946cb54599272d0deec380e72c5e6",
+        "connected_369.m": "209bc8a051f807e36eba448d6135a9c7c6d4a6527618d105cc9a425d0017264e",
+        "connected_370.m": "fe50e9b9f6daf9e0b7ed3700bcf792d9275cfe64f5c85d552bdb48055d269c03",
+        "connected_371.m": "700c202b7ae039820e095a46e7f67dadf1b42b8e82f8b30a675868965c1fbf43"
+      }
+    },
+    "topology7/direction2/poles2/control0": {
+      "max_native_residual": 7.31810792520271e-12,
+      "max_physical_circuit_residual": 7.527048428990213e-12,
+      "max_physical_coordinate_difference": 9.825384950090665e-09,
+      "max_reference_residual": 5.798028723802418e-10,
+      "native_iterations_range": [
+        4,
+        8
+      ],
+      "source_hashes": {
+        "connected_372.m": "74bd202c05b99f855c08010500c5b272eef5b15dead0529bb3eda64c9facb13f",
+        "connected_373.m": "1c2316a2c66819b16a00c96f5f71c839a2db0d4163774d399ef643714ef40474",
+        "connected_374.m": "9fc40b419534ab8628502d4fd7a117d9282f51476a67a2060aedd9f8a783eda0",
+        "connected_375.m": "ff220202e1f1470df28d6e8ae345d2802f3b9eb86b0901aca2fea2a2c58bfe51"
+      }
+    },
+    "topology7/direction2/poles2/control1": {
+      "max_native_residual": 2.7496494664491777e-13,
+      "max_physical_circuit_residual": 5.752784007076671e-12,
+      "max_physical_coordinate_difference": 2.151764988411742e-09,
+      "max_reference_residual": 1.3073986337985843e-10,
+      "native_iterations_range": [
+        6,
+        7
+      ],
+      "source_hashes": {
+        "connected_376.m": "e2d886465b816320bef9e71788eb8d08505d756e458ca8b548472c515eba50c3",
+        "connected_377.m": "1dc3dc492ca33a5781eb12067c8c9ad29f38be878967cc6ba6af79dd363f88a9",
+        "connected_378.m": "4c41a2befc4b92254c23815817ab305bb586d6a515e1c4bf33d747554ee1ca7e",
+        "connected_379.m": "21d797194a6619e02fadae41fcd2264f8bef2330b209ca72785d4cbb266cb309"
+      }
+    },
+    "topology7/direction2/poles2/control2": {
+      "max_native_residual": 1.9831757763766333e-12,
+      "max_physical_circuit_residual": 5.686892606302304e-12,
+      "max_physical_coordinate_difference": 7.511374633395462e-09,
+      "max_reference_residual": 4.945377440890297e-10,
+      "native_iterations_range": [
+        4,
+        8
+      ],
+      "source_hashes": {
+        "connected_380.m": "d336ce12e04870eaae8a26d261689363d49c67ee72b0e95c9201701ceb5b338c",
+        "connected_381.m": "0df5d8875aaedee416d985905d0d5b797c82cfd7e4ab03c6b16c5f028cf94458",
+        "connected_382.m": "363f277c54ff162bb559a575fbb5251f1ddbe0cf5197751a8c20be33c7759952",
+        "connected_383.m": "f0cf5b6568fe38cd80f87c7273a47a11506d674b999f581be60e0d4a572f6e2b"
+      }
+    }
+  },
+  "harness_sha256": {
+    "crates/tellegen/examples/acdc_pf_connected.rs": "a19d530c38e3dcaae4b7d850458a5571ce06ad1d396242c81c76e1528ef97f97",
+    "crates/tellegen/tests/acdc_pf_connected.rs": "d578226f4ab50a69807f1d60600b19c35ffd2f74c1318d6e2b994308bc2b23d7",
+    "crates/tellegen/tests/support/acdc_connected.rs": "3078b70acd0659330bf25863bdb1b9b288a9a5dd33ab8d1327f0fad2f946d3ff",
+    "crates/tellegen/tests/support/acdc_mesh.rs": "5ba2c16b9c1bf2f12fc69224cbe2e040fb5022fe0a128510f15b58c17c988a84",
+    "crates/tellegen/tests/support/acdc_optimized.rs": "9d91dc3177e3e4da3ace8e0a799f8b22a8e5c47aafad9d3cc7d9dc11aef15ab3",
+    "crates/tellegen/tests/support/acdc_pf_connected.rs": "061df0e7d444f12d589a816623b786e6f0d3d4e34b3859616806bc310a885983",
+    "crates/tellegen/tests/support/acdc_pf_fixed.rs": "5c603e7da69d197491713b421c63d62f818d8fdc0528a538e9d3d530aef7cd8a",
+    "crates/tellegen/tests/support/acdc_pf_physical.rs": "b7d49944ac03588d33e58c92cd366afd2ac707eafe7e1ab399fa2e86c26b28a0",
+    "crates/tellegen/tests/support/acdc_physical.rs": "5d07bb95376982b496a28ce126a9a45cbc621688ee106a3fdd3032748785179b",
+    "evals/validation/acdc/pf/connected.jl": "d7303d503f626edec6c61214999b3a3a6a2ef5f8d902d7357350e2ad4a30f0b9",
+    "evals/validation/acdc/pf/milestones.py": "b7934f01f3a4b54d79b8924c1eec1a45fd6b77c02ec2c2361f5f3607bc3ce7c7",
+    "evals/validation/acdc/pf/shared-voltage.jl": "80b4cda9a021e9c76b187b82a486ba414891e0f7395d5a2c1e1e9c05bc9fe916",
+    "evals/validation/acdc/physical/reference-numerics.jl": "6bc818237de39fd1878e9abd0527e491e4b123c6a509bcab2e4dabf354f163dd",
+    "evals/validation/acdc/physical/reference-physical.jl": "8ad95537e5e57fee8b5eb976060e4e184d6fe2a8aba33a48fb027bccc74f17fb"
+  },
+  "max_reference_cross_violation": 1.2668976978602586e-08,
+  "native_cross_check": {
+    "checks": 3072,
+    "max_physical_residual": 2.913606822474435e-07,
+    "max_violation": 1.89363660169084e-09
+  },
+  "powerio_revision": "3e41473984585c0b38560f47ba3e0c2d930b029b",
+  "profile": "physical_coordinates_dc_droop_shared_voltage_equal_increment_v1",
+  "reference_revision": "9ada4082ac087aed649f48fb5f977680b0fe06c7",
+  "reference_scope": "PMACDC_0.10.1_with_explicit_physical_and_control_substitutions; fixed_modes_use_smooth_selected_curve_extension_with_final_sign_check; local_roots_only",
+  "report_sha256": {
+    "native-cross-check.json": "542a20b123fa37c70d8ed46db069f637355e3d9b278d2898073ba86610d83145",
+    "native.json": "90b851be4537ad2fa3bed7b41a6a37918fd58b46a0a525897e1faf8599f0d641",
+    "reference.json": "86b7eba0b910f476e5a89083daac6332fd1c674b6b91d7904b1974532807bccd"
+  }
+}

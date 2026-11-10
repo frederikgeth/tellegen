@@ -182,12 +182,24 @@ impl ReferenceEquations {
         for g in network.generators_mut() {
             g.cost = Some(powerio::GenCost::new(2, 0., 0., vec![0.]));
         }
-        let electrical_profile = match instance.profile().coordinate_policy() {
-            AcDcCoordinatePolicy::PhysicalLocalBases => AcDcOpfProfile::PhysicalCoordinatesAcpVscV1,
-            _ => AcDcOpfProfile::PowerModelsAcDc0101AcpVscV1,
+        let electrical_profile = if instance.profile()
+            == powerio::AcDcPfProfile::FixedModePhysicalDcDroopSharedVoltageEqualIncrementV1
+        {
+            AcDcOpfProfile::FixedModePhysicalAcpVscV1
+        } else {
+            match instance.profile().coordinate_policy() {
+                AcDcCoordinatePolicy::PhysicalLocalBases => {
+                    AcDcOpfProfile::PhysicalCoordinatesAcpVscV1
+                }
+                _ => AcDcOpfProfile::PowerModelsAcDc0101AcpVscV1,
+            }
         };
-        let adapter = powerio::AcDcOpfInstance::from_network(network, electrical_profile)
-            .map_err(|e| e.to_string())?;
+        let adapter = powerio::AcDcOpfInstance::from_network_with_loss_modes(
+            network,
+            electrical_profile,
+            instance.loss_modes().to_vec(),
+        )
+        .map_err(|e| e.to_string())?;
         Self::compile(&adapter, EquationMode::Pf, Some(instance.profile()))
     }
     fn compile(
@@ -198,6 +210,7 @@ impl ReferenceEquations {
         match instance.profile() {
             AcDcOpfProfile::PowerModelsAcDc0101AcpVscV1 => {}
             AcDcOpfProfile::PhysicalCoordinatesAcpVscV1
+            | AcDcOpfProfile::FixedModePhysicalAcpVscV1
                 if mode == EquationMode::Pf
                     && pf_profile.is_some_and(|p| {
                         p.coordinate_policy() == AcDcCoordinatePolicy::PhysicalLocalBases
@@ -492,6 +505,13 @@ impl ReferenceEquations {
                         let (lo, hi) = if mode == EquationMode::Pf {
                             if field == "iconv" {
                                 (0.0, INF)
+                            } else if field == "pconv" {
+                                // Mode membership is a model domain, not an operating rating.
+                                match station.policy.loss_mode {
+                                    Some(powerio::AcDcValveLossMode::Rectifier) => (0.0, INF),
+                                    Some(powerio::AcDcValveLossMode::Inverter) => (-INF, 0.0),
+                                    _ => (-INF, INF),
+                                }
                             } else {
                                 (-INF, INF)
                             }

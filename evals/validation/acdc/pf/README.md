@@ -1,5 +1,9 @@
 # Native coupled PF: case5 controls
 
+For current support and remaining work, see [the completed physical PF milestones](MILESTONES.md).
+This page retains the original case5 evidence; its historical next-step statements
+are superseded by the current consolidation/review checkpoint.
+
 Qualified 2026-11-10 against PowerModelsACDC 0.10.1 at
 `9ada4082ac087aed649f48fb5f977680b0fe06c7`, Julia 1.12.6 and the pinned parent
 Manifest. PowerIO is pinned to `e5a7c8b82845e32de7427f39ff8e63768f5f8bd2`.

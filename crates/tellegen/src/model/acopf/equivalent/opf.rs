@@ -134,7 +134,7 @@ impl PreparedAcDcOpf {
             coordinate_policy: instance.profile().coordinate_policy(),
             dc_branch_policy: equations.dc_branch_policy.clone(),
             model_fingerprint,
-            powerio_revision: "0ed1174cfb66975fedd0ad13af1eca5ee878354b",
+            powerio_revision: "3e41473984585c0b38560f47ba3e0c2d930b029b",
             reference_revision: "9ada4082ac087aed649f48fb5f977680b0fe06c7",
             base_mva: owner.base_mva,
             pole_count: owner.pole_count,

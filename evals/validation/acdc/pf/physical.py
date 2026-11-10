@@ -8,7 +8,7 @@ from pathlib import Path
 import subprocess
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[3]
-PIN = "0ed1174cfb66975fedd0ad13af1eca5ee878354b"
+PIN = "3e41473984585c0b38560f47ba3e0c2d930b029b"
 p = argparse.ArgumentParser(description=__doc__)
 p.add_argument("output", type=Path)
 args = p.parse_args()

@@ -1,0 +1,126 @@
+{
+  "powerio_revision": "3e41473984585c0b38560f47ba3e0c2d930b029b",
+  "tests_passed": 258,
+  "frozen_reader_revision": "0ed1174cfb66975fedd0ad13af1eca5ee878354b",
+  "frozen_reader": "four_old_profiles_accepted_new_fixed_instances_results_rejected",
+  "old_instance_wire_encodings_byte_identical": 4,
+  "checks": [
+    {
+      "command": "cargo test -p powerio --test acdc_model --locked --offline",
+      "exit_code": 0,
+      "log": "/tmp/powerio-pf-milestones-check-0.log",
+      "sha256": "c572196a6aaf2690c7252b0d102c56d3232c36088fb5ed479faa9557b1d727c3"
+    },
+    {
+      "command": "cargo test -p powerio-prob -p powerio-matrix --lib --locked --offline",
+      "exit_code": 0,
+      "log": "/tmp/powerio-pf-milestones-check-1.log",
+      "sha256": "84903bc1eed6fdaf6207703e90e5e14c8d5a839dc3e492ca1141a6d5e420d89b"
+    },
+    {
+      "command": "cargo test -p powerio --lib --locked --offline",
+      "exit_code": 0,
+      "log": "/tmp/powerio-pf-milestones-check-2.log",
+      "sha256": "c0a9a992b21bb44f6ad4c5036823ba87d17577ce6d8d8d4788b3baa6469cf656"
+    },
+    {
+      "command": "cargo run -p powerio --features schema --example generate_schemas --locked --offline",
+      "exit_code": 0,
+      "log": "/tmp/powerio-pf-milestones-check-3.log",
+      "sha256": "273d19e6a51797784ded6257fe1b494122369b4941a37c40cca1cd3eca4d305b"
+    },
+    {
+      "command": "cargo clippy -p powerio-prob -p powerio --lib -- -D warnings",
+      "exit_code": 0,
+      "log": "/tmp/powerio-pf-milestones-check-4.log",
+      "sha256": "8efef08968bae52b11eccbcc46f766485075d49d26dcb5a04168d5f8ec39aaca"
+    },
+    {
+      "command": "bash scripts/ci-clippy.sh workspace",
+      "exit_code": 101,
+      "log": "/tmp/powerio-pf-milestones-check-5.log",
+      "sha256": "ee1cee1dae5f55552174b391c275ff658a3201ae6200738d9bbe1aafd23f0183"
+    },
+    {
+      "command": "bash scripts/ci-clippy.sh matrix-gridfm",
+      "exit_code": 101,
+      "log": "/tmp/powerio-pf-milestones-check-6.log",
+      "sha256": "26dc5152c53dea9901210053b7f576a07b1a724e92b582d9c0c7aa2d8afd8a06"
+    },
+    {
+      "command": "bash scripts/ci-clippy.sh no-sincal",
+      "exit_code": 101,
+      "log": "/tmp/powerio-pf-milestones-check-7.log",
+      "sha256": "038eccbdc696d2dfd52183301ce951fd0b750a94c21f7c5dc03cbcd69de490fc"
+    },
+    {
+      "command": "bash scripts/ci-clippy.sh capi-no-default",
+      "exit_code": 0,
+      "log": "/tmp/powerio-pf-milestones-check-8.log",
+      "sha256": "750392ca3c9bb3af5a77288b214cc1435998b264f48777d91af6b8fdf403b98d"
+    },
+    {
+      "command": "bash scripts/ci-clippy.sh capi-release",
+      "exit_code": 0,
+      "log": "/tmp/powerio-pf-milestones-check-9.log",
+      "sha256": "229307732e7260e07717f333fe9b37875215910fba9e860fe815d4e1dc6ed66f"
+    },
+    {
+      "command": "bash scripts/ci-clippy.sh capi-dist",
+      "exit_code": 0,
+      "log": "/tmp/powerio-pf-milestones-check-10.log",
+      "sha256": "03ccd9c304e191d46b5d9dc9b434b25e00eed16cb61333c880ede5a216556fb5"
+    },
+    {
+      "command": "bash scripts/ci-clippy.sh powerio-py",
+      "exit_code": 0,
+      "log": "/tmp/powerio-pf-milestones-check-11.log",
+      "sha256": "8993fa7a8e8e335e5fe70e9c0e408bb30be3d7ffa8dfca7cdd6c3db7aab5d0de"
+    },
+    {
+      "command": "mdbook build docs --dest-dir /tmp/powerio-pf-milestones-book",
+      "exit_code": 0,
+      "log": "/tmp/powerio-pf-milestones-check-12.log",
+      "sha256": "63083b78b5e45bbe02a5ca7dc21d0860891623ef2379373bb0aaa5ff8ede7f60"
+    },
+    {
+      "command": "mdbook test docs",
+      "exit_code": 0,
+      "log": "/tmp/powerio-pf-milestones-check-13.log",
+      "sha256": "75115e9d26d6bb0817d48a23a78257fa23eca86f71b7bc3b83cc501f60022c35"
+    },
+    {
+      "command": "RUSTDOCFLAGS=\"-D warnings\" cargo doc --workspace --no-deps --all-features --locked --offline",
+      "exit_code": 0,
+      "log": "/tmp/powerio-pf-milestones-check-14.log",
+      "sha256": "0c17adc7964968fc2a18a6b17ac498d8c26778f25296cf5ee9be2c2f55f55310"
+    },
+    {
+      "command": "cargo fmt --all -- --check",
+      "exit_code": 0,
+      "log": "/tmp/powerio-pf-milestones-check-15.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "log": "/tmp/powerio-pf-milestones-check-16.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "log": "/tmp/powerio-fixed-pf-ir-emit.log",
+      "sha256": "28b93f2fc552fe242af8ed3847b64e65b3eadf105f2e1f9d1504cc663c130d57",
+      "exit_code": 0
+    },
+    {
+      "log": "/tmp/powerio-fixed-pf-ir-frozen.log",
+      "sha256": "b3ead1bf9659379f2ee67737c9e0dcc0251a8c77a1691eb4d6733b9bcde89362",
+      "exit_code": 0
+    }
+  ],
+  "known_unrelated_lint_failures": [
+    "powerio-dist/tests/pmd_math.rs",
+    "powerio-tx/src/format/psse.rs",
+    "powerio-matrix/tests/synth_facade_parity.rs"
+  ]
+}
