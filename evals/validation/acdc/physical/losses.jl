@@ -102,7 +102,7 @@ for case in cases
         "selected_branch_violation"=>branch_violation,"sign_violation_mw"=>sign_violation,"current_corruption_mw"=>bad[branch]))
 end
 output=Dict("records"=>records,"counts"=>Dict("physical_witnesses"=>1728,"current_corruption_controls"=>1728,"optimization_solves"=>0),
-    "powerio_revision"=>"dbc52de6650e43efa734125e398994960d8c2a02",
+    "powerio_revision"=>"70025e87d918be195362ca63a48c9a68d2dfb702",
     "reference_revision"=>"9ada4082ac087aed649f48fb5f977680b0fe06c7",
     "reference_source_sha256"=>Dict(rel=>bytes2hex(sha256(read(joinpath(pkgdir(PowerModelsACDC),rel)))) for rel in ("src/core/constraint_template.jl","src/core/data.jl","src/formconv/acp.jl","docs/src/parser.md")),
     "julia_version"=>string(VERSION),"manifest_sha256"=>bytes2hex(sha256(read(joinpath(@__DIR__,"..","Manifest.toml")))),

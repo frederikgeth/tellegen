@@ -60,6 +60,7 @@ impl PreparedAcDcPf {
             instance.profile(),
             AcDcPfProfile::PowerModelsAcDc0101AcpVscEqualIncrementV1
                 | AcDcPfProfile::PowerModelsAcDc0101AcpVscSharedVoltageEqualIncrementV1
+                | AcDcPfProfile::PowerModelsAcDc0101AcpVscDcDroopSharedVoltageEqualIncrementV1
         ) {
             return Err("Unsupported coupled PF profile".into());
         }
@@ -71,7 +72,7 @@ impl PreparedAcDcPf {
         let manifest = AcDcPfManifest {
             schema: "tellegen-acdc-pf-preparation-v1",
             profile: instance.profile(),
-            powerio_revision: "dbc52de6650e43efa734125e398994960d8c2a02",
+            powerio_revision: "70025e87d918be195362ca63a48c9a68d2dfb702",
             reference_revision: "9ada4082ac087aed649f48fb5f977680b0fe06c7",
             model_fingerprint: crate::content_id::content_id(&encoded),
             variables: p.var_names.clone(),

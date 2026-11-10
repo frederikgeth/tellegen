@@ -129,7 +129,7 @@ for case in inputs
     end
     push!(cases,Dict("case"=>case["case"],"name"=>case["name"],"source_sha256"=>bytes2hex(sha256(read(path))),"islands"=>islands(data),"droop_rows"=>row_contract,"solves"=>solves))
 end
-result=Dict("scope"=>"case67_reference_PF_contract_and_native_electrical_control_residuals; no_native_droop_PF_solver", "source_sha256"=>CASE_SHA,"reference_revision"=>"9ada4082ac087aed649f48fb5f977680b0fe06c7","powerio_revision"=>"dbc52de6650e43efa734125e398994960d8c2a02","julia_version"=>string(VERSION),"manifest_sha256"=>bytes2hex(sha256(read(joinpath(@__DIR__,"../../Manifest.toml")))),"solver_options"=>options,"original_islands"=>original_islands,"cases"=>cases)
+result=Dict("scope"=>"case67_reference_PF_contract_and_native_electrical_control_residuals; no_native_droop_PF_solver", "source_sha256"=>CASE_SHA,"reference_revision"=>"9ada4082ac087aed649f48fb5f977680b0fe06c7","powerio_revision"=>"70025e87d918be195362ca63a48c9a68d2dfb702","julia_version"=>string(VERSION),"manifest_sha256"=>bytes2hex(sha256(read(joinpath(@__DIR__,"../../Manifest.toml")))),"solver_options"=>options,"original_islands"=>original_islands,"cases"=>cases)
 open(joinpath(out,"reference.json"),"w") do io;JSON.print(io,result,2);println(io);end
 @assert all(count(s->haskey(s,"native_point"),c["solves"])>=2 for c in cases) "fewer than two successful starts; trials retained in reference.json"
 println("$(sum(haskey(s,"native_point") for c in cases for s in c["solves"])) reference PF contract trials pass; failed trials retained")

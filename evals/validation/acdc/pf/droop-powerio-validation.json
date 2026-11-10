@@ -1,0 +1,21 @@
+{
+  "powerio_revision": "70025e87d918be195362ca63a48c9a68d2dfb702",
+  "frozen_reader_revision": "dbc52de6650e43efa734125e398994960d8c2a02",
+  "old_and_shared_profiles_accepted": true,
+  "new_instance_and_result_rejected": true,
+  "logs": {
+    "tests": "7dc32e19e3a9de5f8edc4ac87f151af3663bdcc7a1a7ba55aa6dae36d4d63eb8",
+    "libs": "df6c8910769231a117514972c05a70641eb1fc74985642f54ef99a5980355bab",
+    "facade": "0b88fb61223566272c17eaa08982095c3844d490859051aabf77731613c66081",
+    "lib-clippy": "bf7c34e7aec05e6d348092bbbe4b792ad8836a888c80a272ef4f084cb2e7177f"
+  },
+  "tests": {
+    "tests": 13,
+    "libs": 192,
+    "facade": 50
+  },
+  "ci_status": "tests 0\nlib-clippy 0\nclippy-workspace 101\nclippy-matrix-gridfm 101\nclippy-no-sincal 101\nclippy-capi-no-default 0\nclippy-capi-release 0\nclippy-capi-dist 0\nclippy-powerio-py 0\n",
+  "doc_status": "book-build 0\nbook-test 0\nrustdoc 0\n",
+  "frozen_log_sha256": "3582836a4fb57bf79132950206ffde30c046cbdadd8af08e1311bf5ff481e981",
+  "known_ci_failures": "workspace/no-sincal PSS/E and PMD test float comparisons; matrix-gridfm synth_facade_parity float comparisons"
+}

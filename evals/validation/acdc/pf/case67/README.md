@@ -142,7 +142,8 @@ Full Tellegen suite: **797 passed, 7 ignored**. All-target Clippy, default
 all-target compile, formatting and pin/EPL guards pass. Existing profiles,
 PowerIO pin and draft PR heads are unchanged.
 
-Next: implement the explicit native DC-power-droop PF profile and its IR rejection
-contract, prepare the droop rows, check derivatives and control/island refusals,
-then run native declared/flat/perturbed solves against this reference study.
-Keep the prior profiles unchanged. No new PMACDC equation bug is established.
+The follow-up [native droop PF implementation](../DROOP.md) now qualifies the
+opt-in profile, IR rejection, derivatives, admission rules and independent native
+solves. This page retains the preceding contract-stage evidence. Existing
+profiles remain unchanged. [Proper saturation](../SATURATION.md) is planned
+separately; no new PMACDC equation bug is established.

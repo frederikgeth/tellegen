@@ -472,3 +472,33 @@ changes. Full suite: **797 passed, 7 ignored**; lint/build/format/pin/EPL guards
 pass. Next: the opt-in native DC-power-droop/shared-voltage profile, IR rejection,
 control/island admission tests, derivatives and independent native/reference
 solves. No new PMACDC equation bug is established.
+
+
+## Native case67 DC-power-droop PF — 2026-11-10
+
+The [opt-in droop PF profile](pf/DROOP.md) implements the case67 contract with
+PowerIO **70025e87**. Withdrawal-positive DC droop replaces fixed PCC P only when
+selected; shared reactive injection allocation remains explicit. Each DC island
+needs fixed-voltage or positive-droop authority. Old profiles retain their
+refusals; zero/negative/nonfinite-inverse slopes, deadbands, valve-power droop,
+duplicate fixed-Vdc controllers and uncontrolled islands refuse.
+
+Eight variants pass **24 native + 23 reference solves, 47 cross-model checks and
+443 corruptions**. All native starts converge in five iterations. Maximum
+native residual is 3.664e-13 and electrical difference 2.782e-10. One reference
+outage/declared trial fails locally, while its native point satisfies reference
+equations; the failure is retained. Six derivative points, 11 preparation
+refusals, source retention, IR rejection and stale starts pass. Original case67
+still needs the explicitly selected bus-67 reference; source Pg is retained.
+
+Full suite: **801 passed, 7 ignored**; build/lint/format/pin/EPL pass. Old case5
+passes 48 solves/checks and 96 corruptions, with eight unchanged fingerprints.
+All 42 compatibility exports/records are unchanged. PowerIO passes 255 affected
+tests, current/frozen IR checks, changed-library Clippy and documentation checks;
+known unrelated float-comparison failures remain in three broad lint targets.
+
+We probably want [proper saturation later](pf/SATURATION.md). Track explicit
+limit-triggered control transitions, redistribution and loss of island voltage
+support as a separate policy/qualification task. Current PF reports violations
+without clipping or switching; baseline case67 has 13, tight ratings 49. This is
+not operational-feasibility evidence. No new PMACDC equation bug is established.

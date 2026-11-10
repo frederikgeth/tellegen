@@ -239,6 +239,8 @@ impl ReferenceEquations {
                     s.dc_control,
                     DcConverterControl::ActivePowerAtPcc | DcConverterControl::DcVoltage
                 )
+                && !(s.dc_control == DcConverterControl::DcPowerDroop
+                    && pf_profile.is_some_and(|profile| profile.allows_dc_power_droop()))
             {
                 return Err(format!(
                     "{}: PF droop controls are not qualified",
@@ -592,6 +594,26 @@ impl ReferenceEquations {
                                 dcvm[dci].clone(),
                                 s.settings.dc_voltage_target_pu,
                             ),
+                            DcConverterControl::DcPowerDroop
+                                if pf_profile
+                                    .is_some_and(|profile| profile.allows_dc_power_droop()) =>
+                            {
+                                setpoint(
+                                    p,
+                                    format!("{name}/dc_droop_setpoint"),
+                                    add(
+                                        val("pdc"),
+                                        scaled(
+                                            s.settings.droop.recip(),
+                                            subtract(
+                                                dcvm[dci].clone(),
+                                                constant(s.settings.dc_voltage_target_pu),
+                                            ),
+                                        ),
+                                    ),
+                                    s.settings.dc_withdrawal_target_mw / base,
+                                )
+                            }
                             _ => return Err("Unsupported PF DC control".into()),
                         }
                         match s.ac_control {

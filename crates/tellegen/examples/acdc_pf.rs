@@ -3,6 +3,8 @@
 mod case24;
 #[path = "../tests/support/acdc_pf_case39.rs"]
 mod case39;
+#[path = "../tests/support/acdc_pf_droop.rs"]
+mod case67;
 #[path = "../tests/support/acdc_pf.rs"]
 mod fixture;
 #[path = "../tests/support/acdc_pf_shared.rs"]
@@ -15,6 +17,7 @@ fn names() -> &'static [&'static str] {
         "case5" => &fixture::CASES,
         "case24" => &case24::CASES,
         "case39" => &case39::CASES,
+        "case67" => &case67::CASES,
         "shared" => &shared::CASES,
         _ => panic!("unknown PF suite"),
     }
@@ -24,6 +27,8 @@ fn instance(case: usize) -> powerio::AcDcPfInstance {
         case24::instance(case)
     } else if names() == case39::CASES {
         case39::instance(case)
+    } else if names() == case67::CASES {
+        case67::instance(case)
     } else if names() == shared::CASES {
         shared::instance(case)
     } else {
@@ -59,6 +64,22 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             .into_iter()
             .map(|(name, net, expected)| {
                 let error = powerio::AcDcPfInstance::from_network(net, case39::PROFILE)
+                    .unwrap_err()
+                    .to_string();
+                assert!(error.contains(expected), "{name}: {error}");
+                serde_json::json!({"case":name,"error":error})
+            })
+            .collect();
+        std::fs::write(
+            out.join("refusals.json"),
+            serde_json::to_string_pretty(&refusals)? + "\n",
+        )?;
+    }
+    if names() == case67::CASES {
+        let refusals: Vec<_> = case67::refusals()
+            .into_iter()
+            .map(|(name, net, expected)| {
+                let error = powerio::AcDcPfInstance::from_network(net, case67::PROFILE)
                     .unwrap_err()
                     .to_string();
                 assert!(error.contains(expected), "{name}: {error}");
@@ -158,7 +179,7 @@ fn verify(out: &std::path::Path) -> Result<(), Box<dyn std::error::Error>> {
         let model = PreparedAcDcPf::new(instance(case["case"].as_u64().unwrap() as usize))?;
         for s in case["solves"].as_array().unwrap() {
             if s.get("point").is_none() {
-                assert_eq!(names(), case39::CASES);
+                assert!(names() == case39::CASES || names() == case67::CASES);
                 continue;
             }
             let point = serde_json::from_value(s["point"].clone())?;

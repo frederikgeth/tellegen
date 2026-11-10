@@ -1,0 +1,40 @@
+{
+  "baseline_qualification_sha256": "708ad7441d9d99b866b26ff0b69638cc7df0742c7c9e2c7eab80b539f6ff6bcb",
+  "counts": {
+    "bidirectional_cross_checks": 48,
+    "cases": 8,
+    "corruption_controls": 96,
+    "native_solves": 24,
+    "reference_failed_trials": 0,
+    "reference_solves": 24
+  },
+  "harness_sha256": {
+    "crates/tellegen/examples/acdc_pf.rs": "a6e441148806a5cffe9b7e8b0896ddedecb5699777d490d5f3990a0b4004b2fe",
+    "crates/tellegen/tests/support/acdc_pf.rs": "a9514c7c18c1147853776f30346208e06e02492b39f3866adbe85a6153aac506",
+    "evals/validation/acdc/pf/case39-probes.jl": "fc6cac833ff8b9feff4a3a0e192ac8d2feaa5300893b92b6c4dcf17648223219",
+    "evals/validation/acdc/pf/check.jl": "3caf84aec20b85582bd1418cb58c1befdac47243d206c869e55082a82b050ad3",
+    "evals/validation/acdc/pf/mapping.jl": "c0e46c41d251e1bcf991ba95212a22333d0b635ef6de8efe367a1a8b22245d85",
+    "evals/validation/acdc/pf/run.py": "be6b952691a872f81d9d0bdbf5eaa33945fb2551fd60e387f48d0aa5291bc231",
+    "evals/validation/acdc/pf/shared-voltage.jl": "80b4cda9a021e9c76b187b82a486ba414891e0f7395d5a2c1e1e9c05bc9fe916"
+  },
+  "model_fingerprints": {
+    "dc_voltage": "sha256:420c55ed9a59928bec0f870ff38a81e9cbc18021d8e75387a6e3caf20216c03d",
+    "dual_voltage": "sha256:134c13217a5acf99cd1f919fb54d0419a00dccc1e9ad1f8e9b42792fa248ebd5",
+    "multiple_reference_generators": "sha256:a1efa027bc048fa0f3aa8fd164bd92f178c081ea2fb9dc3421a9f8cc699c943d",
+    "pcc_active": "sha256:a4a89a33bdf404f84378f4a31741126d62ddae71b35934fe85031217a3c93614",
+    "pcc_reactive": "sha256:99101459b3f62dd631844c130056d78993306245569a1b43e6cfd1c316c40746",
+    "pcc_voltage": "sha256:61d02470798272daee1214c577a89fb95c35b98725063765dc9a01327e198874",
+    "source": "sha256:c2f357a0cb9084f9099d0e0c69e3b4d5ea034b957587f5bdb1c97eacec332790",
+    "tight_ratings": "sha256:63f76b94600dd732cd1fd23d756a7bda07a525f28c9038c57b2423e1d7c19abf"
+  },
+  "native_cross_check": {
+    "checks": 24,
+    "max_violation": 6.393374718527411e-11
+  },
+  "native_report_sha256": "fda66bc4705211c76462eda94f278b6706c14e89223478188028cd33b715f7cb",
+  "powerio_revision": "70025e87d918be195362ca63a48c9a68d2dfb702",
+  "profile": "power_models_ac_dc0101_acp_vsc_equal_increment_v1",
+  "qualification_sha256": "836656d9aae3251a0e2ac6fc5581f3756c1c52e4931caaed88b90c8d7e8748e8",
+  "reference_report_sha256": "9dc032232d384fae7feb284b7c587c10c74772ce86d27d353c6aab5d01e6aa46",
+  "reference_revision": "9ada4082ac087aed649f48fb5f977680b0fe06c7"
+}

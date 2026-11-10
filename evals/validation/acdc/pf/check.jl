@@ -8,7 +8,7 @@ include("../physical/reference-numerics.jl")
 out=abspath(only(ARGS))
 native=JSON.parsefile(joinpath(out,"native.json"))
 suite=get(ENV,"TELLEGEN_ACDC_PF_SUITE","case5")
-@assert suite in ("case5","case24","shared","case39")
+@assert suite in ("case5","case24","shared","case39","case67")
 @assert length(native)==(suite=="case24" ? 11 : 8)
 cases=[]
 options=merge(OPTIONS,Dict("constr_viol_tol"=>1e-10,"acceptable_iter"=>0,"mu_strategy"=>"adaptive","nlp_scaling_method"=>"none"))
@@ -86,7 +86,7 @@ for case in native
             if bound===nothing;delete_lower_bound(v);else;set_lower_bound(v,bound);end
         end
         if !(status in (MOI.LOCALLY_SOLVED,MOI.ALMOST_LOCALLY_SOLVED))
-            @assert suite=="case39" "$status: $(case["name"])"
+            @assert suite in ("case39","case67") "$status: $(case["name"])"
             violation=maximum(values(primal_feasibility_report(pm.model,reference));init=0.)
             println("Failed local reference trial $(case["name"])/$(solve["start"]): $status, residual $violation");flush(stdout)
             push!(solves,Dict("start"=>solve["start"],"termination"=>string(status),"native_in_reference_violation"=>native_violation,"reference_violation"=>violation,"failed_reference_iterate"=>Dict(name(v)=>x for (v,x) in reference)))
@@ -125,10 +125,24 @@ for case in native
         active=sort!([id for (id,s) in data["convdc"] if s["status"]==1];by=x->parse(Int,x))
         p_id=first(id for id in active if data["convdc"][id]["type_dc"]==1)
         q_id=first(id for id in active if data["convdc"][id]["type_ac"]==1)
-        dc_id=data["convdc"][first(id for id in active if data["convdc"][id]["type_dc"]==2)]["busdc_i"]
+        dc_id=data["convdc"][first(id for id in active if data["convdc"][id]["type_dc"] in (2,3))]["busdc_i"]
         for key in ("0_pconv_tf_fr[$p_id]","0_qconv_tf_fr[$q_id]","0_vdcm[$dc_id]")
             bad=copy(reference);bad[vars[key]]+=0.01
             @assert maximum(values(primal_feasibility_report(pm.model,bad));init=0.)>1e-3
+        end
+        droop_corruptions=0
+        for id in active
+            c=data["convdc"][id]
+            c["type_dc"]==3 || continue
+            pdc=vars["0_pconv_dc[$id]"];vdc=vars["0_vdcm[$(c["busdc_i"])]"]
+            rows=[r for r in all_constraints(pm.model,AffExpr,MOI.EqualTo{Float64}) if Set(v for (a,v) in linear_terms(constraint_object(r).func) if a!=0)==Set([pdc,vdc])]
+            row=only(rows);obj=constraint_object(row)
+            @assert coefficient(obj.func,pdc)==1 && coefficient(obj.func,vdc)==1/c["droop"]
+            for (v,delta) in ((pdc,0.01),(vdc,0.001))
+                bad=copy(reference);bad[v]+=delta
+                @assert primal_feasibility_report(pm.model,bad)[row]>0.009
+                droop_corruptions+=1
+            end
         end
         for row in voltage_sharing
             terms=collect(linear_terms(constraint_object(row).func))
@@ -139,9 +153,9 @@ for case in native
             # opposite signs mean two withdrawals. Either perturbation keeps net Q.
             @assert primal_feasibility_report(pm.model,bad)[row]>0.019
         end
-        push!(solves,Dict("corruption_controls"=>4+length(voltage_sharing),"duplicate_voltage_rows_restored"=>length(duplicates),"start"=>solve["start"],"point"=>point,"termination"=>string(status),"native_in_reference_violation"=>native_violation,"native_in_unmodified_source_violation"=>original_violation,"reference_violation"=>reference_violation,"max_electrical_difference"=>difference,"max_raw_coordinate_difference"=>maximum(abs(v) for v in values(delta)),"phase_windings_relative_to_native"=>phase_windings,"reference_only_variables"=>extra))
+        push!(solves,Dict("corruption_controls"=>4+length(voltage_sharing)+droop_corruptions,"duplicate_voltage_rows_restored"=>length(duplicates),"start"=>solve["start"],"point"=>point,"termination"=>string(status),"native_in_reference_violation"=>native_violation,"native_in_unmodified_source_violation"=>original_violation,"reference_violation"=>reference_violation,"max_electrical_difference"=>difference,"max_raw_coordinate_difference"=>maximum(abs(v) for v in values(delta)),"phase_windings_relative_to_native"=>phase_windings,"reference_only_variables"=>extra))
     end
-    @assert count(s->haskey(s,"point"),solves)>=(suite=="case39" ? 2 : 3) "insufficient independent reference solves"
+    @assert count(s->haskey(s,"point"),solves)>=(suite in ("case39","case67") ? 2 : 3) "insufficient independent reference solves"
     push!(cases,Dict("case"=>case["case"],"name"=>case["name"],"source_sha256"=>bytes2hex(sha256(read(path))),"sharing_equalities"=>length(sharing),"solves"=>solves))
 end
 result=Dict("control_only_probes"=>control_probes,"suite"=>suite,"cases"=>cases,"solver_options"=>options,"reference_revision"=>"9ada4082ac087aed649f48fb5f977680b0fe06c7","powerio_revision"=>only(unique(c["preparation"]["powerio_revision"] for c in native)),"julia_version"=>string(VERSION),"manifest_sha256"=>bytes2hex(sha256(read(joinpath(@__DIR__,"..","Manifest.toml")))),"native_report_sha256"=>bytes2hex(sha256(read(joinpath(out,"native.json")))),"reference_modification"=>"equal_increments_from_declared_generator_Pg_at_reference_and_Qg_at_PV_reference; shared_voltage_injection_increments_only_when_explicit_profile; duplicate_Vm_rows_restored; positive_voltage_numerical_domain_with_original_bounds_restored; exact_presolve_of_affine_setpoints_fixed_load_and_unused_VSC_auxiliaries_restored_before_validation")
