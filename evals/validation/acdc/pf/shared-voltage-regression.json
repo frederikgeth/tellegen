@@ -1,0 +1,44 @@
+{
+  "acceptance": {
+    "angle_comparison": "phase_modulo_2pi; raw_points_retained",
+    "cross_constraint_tolerance": 1e-07,
+    "electrical_coordinate_tolerance": 1e-07,
+    "native_residual_tolerance": 1e-10
+  },
+  "compatibility_native_records_sha256": "52c490c81064951c4ee5ad24b685db3640908de970a6c521dc0946eea408b18e",
+  "counts": {
+    "bidirectional_cross_checks": 48,
+    "cases": 8,
+    "corruption_controls": 96,
+    "native_solves": 24,
+    "reference_solves": 24
+  },
+  "full_report_sha256": "00ad1d1d0632cad5bfc1fe79477b1727b91aedec9d6c4a973b81516055415633",
+  "harness_sha256": {
+    "crates/tellegen/examples/acdc_pf.rs": "e95d5c00c2cea3608a5589cf4d936a80f54ec2655e3b5d3af3e7f2cc496909e7",
+    "crates/tellegen/tests/support/acdc_pf.rs": "a9514c7c18c1147853776f30346208e06e02492b39f3866adbe85a6153aac506",
+    "evals/validation/acdc/pf/check.jl": "14aa31da42b32b0ca6ec03967af283b80f6797d38d0a1204019bc776c39e3f34",
+    "evals/validation/acdc/pf/mapping.jl": "c0e46c41d251e1bcf991ba95212a22333d0b635ef6de8efe367a1a8b22245d85",
+    "evals/validation/acdc/pf/run.py": "b31dfdc236a5fb3da7f384779ae2e629781c08a66a2455d9054cdc8502915322",
+    "evals/validation/acdc/pf/shared-voltage.jl": "80b4cda9a021e9c76b187b82a486ba414891e0f7395d5a2c1e1e9c05bc9fe916"
+  },
+  "max_electrical_difference": 5.743710229655363e-10,
+  "native_cross_check": {
+    "checks": 24,
+    "max_violation": 6.393374718527411e-11
+  },
+  "powerio_revision": "dbc52de6650e43efa734125e398994960d8c2a02",
+  "profile": "power_models_ac_dc0101_acp_vsc_equal_increment_v1",
+  "reference_revision": "9ada4082ac087aed649f48fb5f977680b0fe06c7",
+  "unchanged_compatibility_exports": 42,
+  "unchanged_pf_fingerprints": {
+    "dc_voltage": "sha256:420c55ed9a59928bec0f870ff38a81e9cbc18021d8e75387a6e3caf20216c03d",
+    "dual_voltage": "sha256:134c13217a5acf99cd1f919fb54d0419a00dccc1e9ad1f8e9b42792fa248ebd5",
+    "multiple_reference_generators": "sha256:a1efa027bc048fa0f3aa8fd164bd92f178c081ea2fb9dc3421a9f8cc699c943d",
+    "pcc_active": "sha256:a4a89a33bdf404f84378f4a31741126d62ddae71b35934fe85031217a3c93614",
+    "pcc_reactive": "sha256:99101459b3f62dd631844c130056d78993306245569a1b43e6cfd1c316c40746",
+    "pcc_voltage": "sha256:61d02470798272daee1214c577a89fb95c35b98725063765dc9a01327e198874",
+    "source": "sha256:c2f357a0cb9084f9099d0e0c69e3b4d5ea034b957587f5bdb1c97eacec332790",
+    "tight_ratings": "sha256:63f76b94600dd732cd1fd23d756a7bda07a525f28c9038c57b2423e1d7c19abf"
+  }
+}

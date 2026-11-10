@@ -3,6 +3,8 @@
 mod case24;
 #[path = "../tests/support/acdc_pf.rs"]
 mod fixture;
+#[path = "../tests/support/acdc_pf_shared.rs"]
+mod shared;
 fn names() -> &'static [&'static str] {
     match std::env::var("TELLEGEN_ACDC_PF_SUITE")
         .as_deref()
@@ -10,12 +12,15 @@ fn names() -> &'static [&'static str] {
     {
         "case5" => &fixture::CASES,
         "case24" => &case24::CASES,
+        "shared" => &shared::CASES,
         _ => panic!("unknown PF suite"),
     }
 }
 fn instance(case: usize) -> powerio::AcDcPfInstance {
     if names() == case24::CASES {
         case24::instance(case)
+    } else if names() == shared::CASES {
+        shared::instance(case)
     } else {
         fixture::instance(case)
     }

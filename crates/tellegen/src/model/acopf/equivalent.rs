@@ -172,7 +172,7 @@ impl ReferenceEquations {
         instance: &powerio::AcDcOpfInstance,
         mode: EquationMode,
     ) -> Result<Self, String> {
-        Self::compile(instance, mode, false)
+        Self::compile(instance, mode, None)
     }
     /// PF semantics are selected by canonical PF intent, never OPF flags.
     pub fn from_pf_instance(instance: &powerio::AcDcPfInstance) -> Result<Self, String> {
@@ -187,12 +187,12 @@ impl ReferenceEquations {
             AcDcOpfProfile::PowerModelsAcDc0101AcpVscV1,
         )
         .map_err(|e| e.to_string())?;
-        Self::compile(&adapter, EquationMode::Pf, true)
+        Self::compile(&adapter, EquationMode::Pf, Some(instance.profile()))
     }
     fn compile(
         instance: &powerio::AcDcOpfInstance,
         mode: EquationMode,
-        equal_generator_increments: bool,
+        pf_profile: Option<powerio::AcDcPfProfile>,
     ) -> Result<Self, String> {
         match instance.profile() {
             AcDcOpfProfile::PowerModelsAcDc0101AcpVscV1 => {}
@@ -380,7 +380,7 @@ impl ReferenceEquations {
                         }
                     }
                 }
-                if equal_generator_increments {
+                if pf_profile.is_some() {
                     pf::generator_sharing(net, prep, cols, p)?;
                 }
                 let mut dcvm = Vec::new();
@@ -443,6 +443,19 @@ impl ReferenceEquations {
                         kcl[from].push(v);
                     }
                 }
+                let shared_voltage =
+                    pf_profile.is_some_and(|profile| profile.shares_voltage_reactive_increments());
+                let mut voltage_buses: std::collections::BTreeSet<_> = net
+                    .buses()
+                    .iter()
+                    .filter(|b| {
+                        matches!(
+                            effective_kind(b),
+                            powerio_tx::BusType::Ref | powerio_tx::BusType::Pv
+                        )
+                    })
+                    .map(|b| b.id)
+                    .collect();
                 for s in owner.stations.iter().filter(|s| s.in_service) {
                     let name = format!("station/{}", s.component);
                     let aci = prep
@@ -588,15 +601,22 @@ impl ReferenceEquations {
                                 val("qgrid"),
                                 s.settings.pcc_withdrawal_mvar / base,
                             ),
-                            AcConverterControl::VoltageAtPcc => setpoint(
-                                p,
-                                format!("{name}/vac_setpoint"),
-                                variable(cols.vm[aci]),
-                                pcc.vm,
-                            ),
+                            AcConverterControl::VoltageAtPcc => {
+                                if !shared_voltage || voltage_buses.insert(s.ac_bus) {
+                                    setpoint(
+                                        p,
+                                        format!("{name}/vac_setpoint"),
+                                        variable(cols.vm[aci]),
+                                        pcc.vm,
+                                    );
+                                }
+                            }
                             _ => return Err("Unsupported PF AC control".into()),
                         }
                     }
+                }
+                if shared_voltage {
+                    pf::voltage_sharing(net, p)?;
                 }
                 for (i, terms) in kcl.into_iter().enumerate() {
                     eq(

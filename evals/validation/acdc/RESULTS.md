@@ -493,3 +493,26 @@ guards and 42 unchanged compatibility records pass. Existing PRs remain draft.
 Original case39 lacks a DC-voltage controller; case67 lacks an AC-island reference
 and also needs droop semantics. Next is an explicit control-policy decision for
 these source cases and shared voltage authority, not a silent source repair.
+
+
+## Shared AC-voltage PF allocation — 2026-11-10
+
+The [shared-voltage gate](pf/SHARED-VOLTAGE.md) adds a required opt-in profile at
+PowerIO `dbc52de6`, retaining old profiles and source declarations. Generators and
+voltage-controlling converters share equal reactive **injection** increments;
+converter withdrawal changes have the opposite sign. Native preparation emits
+one Vm target per bus and explicit allocation rows. Original case24 now solves
+without changing its controls. Converter-only/mixed groups, unequal declarations,
+inactive controllers, tight ratings, signs, derivatives and row permutations are
+qualified against PMACDC plus independently formed allocation rows.
+
+**48 solves, 48 bidirectional checks, 123 corruptions and three original-source
+checks pass.** Maximum electrical difference: 1.955e-10. Original case24 satisfies
+unmodified reference equations within 2.729e-13. Old case5 passes 48 solves/48
+checks/96 corruptions with eight unchanged fingerprints; 42 compatibility records
+are unchanged. Full Tellegen suite: **793 passed, 7 ignored**, all build/lint guards
+pass. Frozen e5a7c8b8 IR accepts the old PF profile and rejects the new profile in
+instances/results. Published schemas and draft PR heads stay unchanged.
+
+Next: a labeled case39 DC-voltage-controller variant. Case67's PF reference and
+droop semantics remain separate; no source control is silently repaired.

@@ -23,7 +23,7 @@ out.mkdir(parents=True, exist_ok=True)
 for stale in ("summary.json", "qualification.json"):
     (out / stale).unlink(missing_ok=True)
 # Fail if the dependency changes without revisiting this pinned qualification.
-assert "e5a7c8b82845e32de7427f39ff8e63768f5f8bd2" in (ROOT / "Cargo.lock").read_text()
+assert "dbc52de6650e43efa734125e398994960d8c2a02" in (ROOT / "Cargo.lock").read_text()
 subprocess.run(["python3", ".github/scripts/powerio-pin.py"], cwd=ROOT, check=True)
 env = os.environ.copy()
 env.setdefault("CARGO_INCREMENTAL", "0")

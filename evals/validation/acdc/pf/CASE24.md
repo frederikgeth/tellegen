@@ -138,3 +138,8 @@ reference variant for case39, and define supported droop/reference semantics for
 case67. Do not silently repair these source declarations. Physical-unit and
 fixed-mode PF, saturation, automatic reversal, generic rebasing, sparse/scaling
 work and physical pole/return wiring remain separate.
+
+
+The [new opt-in shared-voltage profile](SHARED-VOLTAGE.md) now qualifies original
+case24 with its controls unchanged. The earlier profile and explicitly edited
+variants documented here retain their semantics and refusal boundary.

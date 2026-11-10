@@ -9,7 +9,7 @@ import subprocess
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[3]
-PIN = "e5a7c8b82845e32de7427f39ff8e63768f5f8bd2"
+PIN = "dbc52de6650e43efa734125e398994960d8c2a02"
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument("output", type=Path)
 args = parser.parse_args()

@@ -137,3 +137,10 @@ reported near-idle current safeguard to the native numerical solver. The
 same 48 solves, 48 cross-checks and 96 corruption controls. The historical report
 above describes the initial numerical implementation; control/equation profiles
 remain unchanged.
+
+
+## Opt-in shared voltage authority
+
+[Shared-voltage allocation](SHARED-VOLTAGE.md) now qualifies original case24 without
+editing source controls, using a new explicit profile. This page's original
+profile still rejects overlap; its fingerprints and behavior are unchanged.

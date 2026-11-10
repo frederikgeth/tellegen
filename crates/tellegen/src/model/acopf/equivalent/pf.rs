@@ -59,6 +59,7 @@ impl PreparedAcDcPf {
         if !matches!(
             instance.profile(),
             AcDcPfProfile::PowerModelsAcDc0101AcpVscEqualIncrementV1
+                | AcDcPfProfile::PowerModelsAcDc0101AcpVscSharedVoltageEqualIncrementV1
         ) {
             return Err("Unsupported coupled PF profile".into());
         }
@@ -70,7 +71,7 @@ impl PreparedAcDcPf {
         let manifest = AcDcPfManifest {
             schema: "tellegen-acdc-pf-preparation-v1",
             profile: instance.profile(),
-            powerio_revision: "e5a7c8b82845e32de7427f39ff8e63768f5f8bd2",
+            powerio_revision: "dbc52de6650e43efa734125e398994960d8c2a02",
             reference_revision: "9ada4082ac087aed649f48fb5f977680b0fe06c7",
             model_fingerprint: crate::content_id::content_id(&encoded),
             variables: p.var_names.clone(),
@@ -312,6 +313,68 @@ pub(super) fn generator_sharing(
                     target,
                 );
             }
+        }
+    }
+    Ok(())
+}
+
+/// Complete reactive allocation in PCC injection coordinates. Existing generator
+/// sharing handles generator pairs; this adds each voltage-controlling converter.
+pub(super) fn voltage_sharing(net: &BalancedNetwork, p: &mut NlProblemParts) -> Result<(), String> {
+    let owner = net.ac_dc_equivalent().ok_or("AC/DC owner missing")?;
+    for bus in net.buses() {
+        let generator = net
+            .generators()
+            .iter()
+            .filter(|g| g.in_service && g.bus == bus.id)
+            .min_by_key(|g| g.uid.as_deref());
+        let mut stations: Vec<_> = owner
+            .stations
+            .iter()
+            .filter(|s| {
+                s.in_service
+                    && s.ac_bus == bus.id
+                    && s.ac_control == AcConverterControl::VoltageAtPcc
+            })
+            .collect();
+        stations.sort_by_key(|s| s.component.to_string());
+        let Some(first) = stations.first() else {
+            continue;
+        };
+        for (j, s) in stations.iter().enumerate() {
+            let coordinate = |name: String| {
+                p.var_names
+                    .iter()
+                    .position(|n| *n == name)
+                    .map(variable)
+                    .ok_or_else(|| format!("Missing PF sharing coordinate {name}"))
+            };
+            let q = coordinate(format!("station/{}/qgrid", s.component))?;
+            let (expression, target) = if let Some(g) = generator {
+                // Qg is injection; converter Qgrid is withdrawal.
+                (
+                    add(
+                        coordinate(format!("qg[{}]", g.uid.as_deref().unwrap_or("")))?,
+                        q,
+                    ),
+                    (g.qg + s.settings.pcc_withdrawal_mvar) / net.base_mva(),
+                )
+            } else {
+                if j == 0 {
+                    continue;
+                }
+                (
+                    subtract(q, coordinate(format!("station/{}/qgrid", first.component))?),
+                    (s.settings.pcc_withdrawal_mvar - first.settings.pcc_withdrawal_mvar)
+                        / net.base_mva(),
+                )
+            };
+            setpoint(
+                p,
+                format!("pf/share_q_voltage[{}]", s.component),
+                expression,
+                target,
+            );
         }
     }
     Ok(())
