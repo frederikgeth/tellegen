@@ -1,0 +1,1216 @@
+{
+  "schema": "acdc-review-inventory-v1",
+  "scope": "Historical implementation snapshots; consolidation documentation/gate-only changes are recorded separately in review-validation.json.",
+  "repositories": [
+    {
+      "name": "powerio",
+      "base": "49e8eacb45b2051de91f917815a26706b8a30a07",
+      "head": "3e41473984585c0b38560f47ba3e0c2d930b029b",
+      "totals": {
+        "integration_and_documentation": {
+          "files": 5,
+          "added": 698,
+          "deleted": 1
+        },
+        "evidence": {
+          "files": 2,
+          "added": 186,
+          "deleted": 0
+        },
+        "runtime_source": {
+          "files": 10,
+          "added": 1715,
+          "deleted": 1
+        },
+        "tests": {
+          "files": 1,
+          "added": 1012,
+          "deleted": 0
+        }
+      },
+      "files": [
+        {
+          "path": "CHANGELOG.md",
+          "group": "integration_and_documentation",
+          "added": 14,
+          "deleted": 0
+        },
+        {
+          "path": "docs/schema/pio-ir/2/unreleased/schema.json",
+          "group": "integration_and_documentation",
+          "added": 475,
+          "deleted": 0
+        },
+        {
+          "path": "docs/src/ir-reference.md",
+          "group": "integration_and_documentation",
+          "added": 43,
+          "deleted": 0
+        },
+        {
+          "path": "docs/src/matpower-acdc.md",
+          "group": "integration_and_documentation",
+          "added": 164,
+          "deleted": 1
+        },
+        {
+          "path": "evals/validation/acdc/RESULTS.md",
+          "group": "evidence",
+          "added": 168,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/check_legacy_ir.py",
+          "group": "evidence",
+          "added": 18,
+          "deleted": 0
+        },
+        {
+          "path": "powerio-matrix/src/acdc.rs",
+          "group": "runtime_source",
+          "added": 460,
+          "deleted": 0
+        },
+        {
+          "path": "powerio-matrix/src/lib.rs",
+          "group": "runtime_source",
+          "added": 7,
+          "deleted": 0
+        },
+        {
+          "path": "powerio-prob/src/acdc.rs",
+          "group": "runtime_source",
+          "added": 632,
+          "deleted": 0
+        },
+        {
+          "path": "powerio-prob/src/acdc_pf.rs",
+          "group": "runtime_source",
+          "added": 368,
+          "deleted": 0
+        },
+        {
+          "path": "powerio-prob/src/diagnostics.rs",
+          "group": "runtime_source",
+          "added": 2,
+          "deleted": 0
+        },
+        {
+          "path": "powerio-prob/src/lib.rs",
+          "group": "runtime_source",
+          "added": 10,
+          "deleted": 0
+        },
+        {
+          "path": "powerio/src/lib.rs",
+          "group": "runtime_source",
+          "added": 15,
+          "deleted": 0
+        },
+        {
+          "path": "powerio/src/stored/convert.rs",
+          "group": "runtime_source",
+          "added": 126,
+          "deleted": 0
+        },
+        {
+          "path": "powerio/src/stored/dto.rs",
+          "group": "runtime_source",
+          "added": 83,
+          "deleted": 1
+        },
+        {
+          "path": "powerio/src/value.rs",
+          "group": "runtime_source",
+          "added": 12,
+          "deleted": 0
+        },
+        {
+          "path": "powerio/tests/acdc_model.rs",
+          "group": "tests",
+          "added": 1012,
+          "deleted": 0
+        },
+        {
+          "path": "scripts/check-value-types.sh",
+          "group": "integration_and_documentation",
+          "added": 2,
+          "deleted": 0
+        }
+      ]
+    },
+    {
+      "name": "tellegen",
+      "base": "e814b78549fb5fe48112bc5a72f6732dd115756f",
+      "head": "2b97b10594bda49d0ca9734824bbae77d6a70141",
+      "totals": {
+        "integration_and_documentation": {
+          "files": 19,
+          "added": 1877,
+          "deleted": 21
+        },
+        "runtime_source": {
+          "files": 10,
+          "added": 2552,
+          "deleted": 24
+        },
+        "tests": {
+          "files": 38,
+          "added": 6374,
+          "deleted": 0
+        },
+        "evidence": {
+          "files": 107,
+          "added": 58623,
+          "deleted": 0
+        }
+      },
+      "files": [
+        {
+          "path": "Cargo.lock",
+          "group": "integration_and_documentation",
+          "added": 8,
+          "deleted": 16
+        },
+        {
+          "path": "Cargo.toml",
+          "group": "integration_and_documentation",
+          "added": 15,
+          "deleted": 5
+        },
+        {
+          "path": "crates/tellegen/Cargo.toml",
+          "group": "integration_and_documentation",
+          "added": 64,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/examples/acdc_bypass.rs",
+          "group": "integration_and_documentation",
+          "added": 80,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/examples/acdc_connected.rs",
+          "group": "integration_and_documentation",
+          "added": 126,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/examples/acdc_derivatives.rs",
+          "group": "integration_and_documentation",
+          "added": 41,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/examples/acdc_equations.rs",
+          "group": "integration_and_documentation",
+          "added": 54,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/examples/acdc_fixed_boundaries.rs",
+          "group": "integration_and_documentation",
+          "added": 70,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/examples/acdc_fixed_mode.rs",
+          "group": "integration_and_documentation",
+          "added": 119,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/examples/acdc_losses.rs",
+          "group": "integration_and_documentation",
+          "added": 57,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/examples/acdc_mesh.rs",
+          "group": "integration_and_documentation",
+          "added": 115,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/examples/acdc_opf.rs",
+          "group": "integration_and_documentation",
+          "added": 53,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/examples/acdc_optimized.rs",
+          "group": "integration_and_documentation",
+          "added": 128,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/examples/acdc_pf.rs",
+          "group": "integration_and_documentation",
+          "added": 260,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/examples/acdc_pf_case67_contract.rs",
+          "group": "integration_and_documentation",
+          "added": 275,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/examples/acdc_pf_connected.rs",
+          "group": "integration_and_documentation",
+          "added": 126,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/examples/acdc_pf_fixed.rs",
+          "group": "integration_and_documentation",
+          "added": 94,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/examples/acdc_pf_physical.rs",
+          "group": "integration_and_documentation",
+          "added": 105,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/examples/acdc_physical.rs",
+          "group": "integration_and_documentation",
+          "added": 87,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/src/ac_dc.rs",
+          "group": "runtime_source",
+          "added": 11,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/src/model/acopf.rs",
+          "group": "runtime_source",
+          "added": 61,
+          "deleted": 21
+        },
+        {
+          "path": "crates/tellegen/src/model/acopf/equivalent.rs",
+          "group": "runtime_source",
+          "added": 859,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/src/model/acopf/equivalent/coordinates.rs",
+          "group": "runtime_source",
+          "added": 103,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/src/model/acopf/equivalent/derivatives.rs",
+          "group": "runtime_source",
+          "added": 508,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/src/model/acopf/equivalent/opf.rs",
+          "group": "runtime_source",
+          "added": 402,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/src/model/acopf/equivalent/pf.rs",
+          "group": "runtime_source",
+          "added": 403,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/src/model/acopf/equivalent/pf/newton.rs",
+          "group": "runtime_source",
+          "added": 202,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/src/model/acopf/hybrid.rs",
+          "group": "runtime_source",
+          "added": 2,
+          "deleted": 2
+        },
+        {
+          "path": "crates/tellegen/src/model/mod.rs",
+          "group": "runtime_source",
+          "added": 1,
+          "deleted": 1
+        },
+        {
+          "path": "crates/tellegen/tests/acdc_bypass.rs",
+          "group": "tests",
+          "added": 223,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/tests/acdc_case24.rs",
+          "group": "tests",
+          "added": 116,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/tests/acdc_connected.rs",
+          "group": "tests",
+          "added": 246,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/tests/acdc_coordinates.rs",
+          "group": "tests",
+          "added": 193,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/tests/acdc_corpus.rs",
+          "group": "tests",
+          "added": 223,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/tests/acdc_equations.rs",
+          "group": "tests",
+          "added": 298,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/tests/acdc_fixed_mode.rs",
+          "group": "tests",
+          "added": 199,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/tests/acdc_losses.rs",
+          "group": "tests",
+          "added": 201,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/tests/acdc_mesh.rs",
+          "group": "tests",
+          "added": 107,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/tests/acdc_opf.rs",
+          "group": "tests",
+          "added": 163,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/tests/acdc_optimized.rs",
+          "group": "tests",
+          "added": 76,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/tests/acdc_pf.rs",
+          "group": "tests",
+          "added": 188,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/tests/acdc_pf_case24.rs",
+          "group": "tests",
+          "added": 138,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/tests/acdc_pf_case39.rs",
+          "group": "tests",
+          "added": 115,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/tests/acdc_pf_case67_contract.rs",
+          "group": "tests",
+          "added": 51,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/tests/acdc_pf_connected.rs",
+          "group": "tests",
+          "added": 115,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/tests/acdc_pf_droop.rs",
+          "group": "tests",
+          "added": 183,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/tests/acdc_pf_fixed.rs",
+          "group": "tests",
+          "added": 210,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/tests/acdc_pf_physical.rs",
+          "group": "tests",
+          "added": 177,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/tests/acdc_pf_shared.rs",
+          "group": "tests",
+          "added": 135,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/tests/acdc_physical.rs",
+          "group": "tests",
+          "added": 313,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/tests/support/acdc_bypass.rs",
+          "group": "tests",
+          "added": 96,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/tests/support/acdc_connected.rs",
+          "group": "tests",
+          "added": 366,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/tests/support/acdc_fixed_mode.rs",
+          "group": "tests",
+          "added": 65,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/tests/support/acdc_losses.rs",
+          "group": "tests",
+          "added": 107,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/tests/support/acdc_mesh.rs",
+          "group": "tests",
+          "added": 404,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/tests/support/acdc_optimized.rs",
+          "group": "tests",
+          "added": 229,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/tests/support/acdc_pf.rs",
+          "group": "tests",
+          "added": 70,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/tests/support/acdc_pf_case24.rs",
+          "group": "tests",
+          "added": 200,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/tests/support/acdc_pf_case39.rs",
+          "group": "tests",
+          "added": 124,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/tests/support/acdc_pf_case67_contract.rs",
+          "group": "tests",
+          "added": 59,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/tests/support/acdc_pf_connected.rs",
+          "group": "tests",
+          "added": 161,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/tests/support/acdc_pf_droop.rs",
+          "group": "tests",
+          "added": 76,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/tests/support/acdc_pf_fixed.rs",
+          "group": "tests",
+          "added": 123,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/tests/support/acdc_pf_physical.rs",
+          "group": "tests",
+          "added": 80,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/tests/support/acdc_pf_shared.rs",
+          "group": "tests",
+          "added": 73,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/tests/support/acdc_physical.rs",
+          "group": "tests",
+          "added": 329,
+          "deleted": 0
+        },
+        {
+          "path": "crates/tellegen/tests/support/acdc_reference.rs",
+          "group": "tests",
+          "added": 142,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/CONTRACT.md",
+          "group": "evidence",
+          "added": 174,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/LICENSE",
+          "group": "evidence",
+          "added": 31,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/Manifest.toml",
+          "group": "evidence",
+          "added": 641,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/Project.toml",
+          "group": "evidence",
+          "added": 5,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/README.md",
+          "group": "evidence",
+          "added": 509,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/RESULTS.md",
+          "group": "evidence",
+          "added": 615,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/case24/README.md",
+          "group": "evidence",
+          "added": 74,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/case24/case24_7_jb.m",
+          "group": "evidence",
+          "added": 365,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/case24/identity-map.json",
+          "group": "evidence",
+          "added": 230,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/case24/reference.json",
+          "group": "evidence",
+          "added": 2723,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/case24/summary.json",
+          "group": "evidence",
+          "added": 163,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/case39/README.md",
+          "group": "evidence",
+          "added": 48,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/case39/case39_10_he.m",
+          "group": "evidence",
+          "added": 365,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/case39/identity-map.json",
+          "group": "evidence",
+          "added": 144,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/case39/reference.json",
+          "group": "evidence",
+          "added": 972,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/case39/summary.json",
+          "group": "evidence",
+          "added": 128,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/case5_3_he.m",
+          "group": "evidence",
+          "added": 148,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/case67/README.md",
+          "group": "evidence",
+          "added": 74,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/case67/case67.m",
+          "group": "evidence",
+          "added": 329,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/case67/identity-map.json",
+          "group": "evidence",
+          "added": 236,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/case67/reference.json",
+          "group": "evidence",
+          "added": 1594,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/case67/summary.json",
+          "group": "evidence",
+          "added": 173,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/cases.json",
+          "group": "evidence",
+          "added": 20,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/cross-check.jl",
+          "group": "evidence",
+          "added": 205,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/cross-check.json",
+          "group": "evidence",
+          "added": 2040,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/derivative-report.json",
+          "group": "evidence",
+          "added": 1982,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/generate.jl",
+          "group": "evidence",
+          "added": 81,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/identity-map.json",
+          "group": "evidence",
+          "added": 39,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/native-opf.json",
+          "group": "evidence",
+          "added": 5470,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/native-report.json",
+          "group": "evidence",
+          "added": 1969,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/pf/CASE24.md",
+          "group": "evidence",
+          "added": 145,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/pf/CASE39.md",
+          "group": "evidence",
+          "added": 104,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/pf/DROOP.md",
+          "group": "evidence",
+          "added": 136,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/pf/MILESTONES.md",
+          "group": "evidence",
+          "added": 153,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/pf/PHYSICAL.md",
+          "group": "evidence",
+          "added": 128,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/pf/README.md",
+          "group": "evidence",
+          "added": 158,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/pf/SATURATION.md",
+          "group": "evidence",
+          "added": 36,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/pf/SHARED-VOLTAGE.md",
+          "group": "evidence",
+          "added": 127,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/pf/case24-qualification.json",
+          "group": "evidence",
+          "added": 1424,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/pf/case39-case5-regression.json",
+          "group": "evidence",
+          "added": 40,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/pf/case39-probes.jl",
+          "group": "evidence",
+          "added": 52,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/pf/case39-qualification.json",
+          "group": "evidence",
+          "added": 1005,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/pf/case5-recheck.json",
+          "group": "evidence",
+          "added": 1885,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/pf/case67/README.md",
+          "group": "evidence",
+          "added": 149,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/pf/case67/qualification.json",
+          "group": "evidence",
+          "added": 1733,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/pf/case67/reference.jl",
+          "group": "evidence",
+          "added": 135,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/pf/case67/run.py",
+          "group": "evidence",
+          "added": 60,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/pf/check.jl",
+          "group": "evidence",
+          "added": 163,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/pf/connected-qualification.json",
+          "group": "evidence",
+          "added": 1655,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/pf/connected.jl",
+          "group": "evidence",
+          "added": 142,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/pf/droop-case5-regression.json",
+          "group": "evidence",
+          "added": 40,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/pf/droop-powerio-validation.json",
+          "group": "evidence",
+          "added": 21,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/pf/droop-qualification.json",
+          "group": "evidence",
+          "added": 1185,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/pf/fixed-qualification.json",
+          "group": "evidence",
+          "added": 1227,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/pf/fixed.jl",
+          "group": "evidence",
+          "added": 151,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/pf/mapping.jl",
+          "group": "evidence",
+          "added": 65,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/pf/milestones-native-validation.json",
+          "group": "evidence",
+          "added": 131,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/pf/milestones-powerio-validation.json",
+          "group": "evidence",
+          "added": 126,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/pf/milestones.py",
+          "group": "evidence",
+          "added": 56,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/pf/physical-case5-regression.json",
+          "group": "evidence",
+          "added": 1978,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/pf/physical-native-validation.json",
+          "group": "evidence",
+          "added": 114,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/pf/physical-powerio-validation.json",
+          "group": "evidence",
+          "added": 124,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/pf/physical-qualification.json",
+          "group": "evidence",
+          "added": 1093,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/pf/physical.jl",
+          "group": "evidence",
+          "added": 132,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/pf/physical.py",
+          "group": "evidence",
+          "added": 50,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/pf/qualification.json",
+          "group": "evidence",
+          "added": 1825,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/pf/run.py",
+          "group": "evidence",
+          "added": 139,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/pf/shared-voltage-qualification.json",
+          "group": "evidence",
+          "added": 605,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/pf/shared-voltage-regression.json",
+          "group": "evidence",
+          "added": 44,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/pf/shared-voltage.jl",
+          "group": "evidence",
+          "added": 45,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/physical/BYPASS.md",
+          "group": "evidence",
+          "added": 127,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/physical/CONNECTED.md",
+          "group": "evidence",
+          "added": 153,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/physical/COORDINATES.md",
+          "group": "evidence",
+          "added": 117,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/physical/FIXED-MODES.md",
+          "group": "evidence",
+          "added": 151,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/physical/LOSSES.md",
+          "group": "evidence",
+          "added": 165,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/physical/MESH.md",
+          "group": "evidence",
+          "added": 163,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/physical/OPTIMIZED.md",
+          "group": "evidence",
+          "added": 130,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/physical/README.md",
+          "group": "evidence",
+          "added": 221,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/physical/bypass-qualification.json",
+          "group": "evidence",
+          "added": 1049,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/physical/check.jl",
+          "group": "evidence",
+          "added": 184,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/physical/connected-qualification.json",
+          "group": "evidence",
+          "added": 2131,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/physical/connected.jl",
+          "group": "evidence",
+          "added": 197,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/physical/connected.py",
+          "group": "evidence",
+          "added": 93,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/physical/coordinates-bypass.json",
+          "group": "evidence",
+          "added": 1115,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/physical/coordinates-current.json",
+          "group": "evidence",
+          "added": 220,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/physical/declared-current.json",
+          "group": "evidence",
+          "added": 2603,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/physical/fixed-boundaries-qualification.json",
+          "group": "evidence",
+          "added": 622,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/physical/fixed-boundaries.py",
+          "group": "evidence",
+          "added": 68,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/physical/fixed-mode-qualification.json",
+          "group": "evidence",
+          "added": 1898,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/physical/fixed-mode.jl",
+          "group": "evidence",
+          "added": 190,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/physical/fixed-mode.py",
+          "group": "evidence",
+          "added": 97,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/physical/losses-qualification.json",
+          "group": "evidence",
+          "added": 572,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/physical/losses.jl",
+          "group": "evidence",
+          "added": 113,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/physical/losses.py",
+          "group": "evidence",
+          "added": 64,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/physical/mesh-qualification.json",
+          "group": "evidence",
+          "added": 1456,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/physical/mesh.jl",
+          "group": "evidence",
+          "added": 158,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/physical/mesh.py",
+          "group": "evidence",
+          "added": 93,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/physical/optimized-qualification.json",
+          "group": "evidence",
+          "added": 1750,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/physical/optimized.jl",
+          "group": "evidence",
+          "added": 138,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/physical/optimized.py",
+          "group": "evidence",
+          "added": 84,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/physical/reference-numerics.jl",
+          "group": "evidence",
+          "added": 77,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/physical/reference-physical.jl",
+          "group": "evidence",
+          "added": 36,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/physical/run.py",
+          "group": "evidence",
+          "added": 88,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/physical/summary.json",
+          "group": "evidence",
+          "added": 933,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/reference-model.jl",
+          "group": "evidence",
+          "added": 35,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/reference.json",
+          "group": "evidence",
+          "added": 1101,
+          "deleted": 0
+        },
+        {
+          "path": "evals/validation/acdc/run.py",
+          "group": "evidence",
+          "added": 103,
+          "deleted": 0
+        }
+      ]
+    }
+  ]
+}

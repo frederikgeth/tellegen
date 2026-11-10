@@ -1,8 +1,9 @@
 # Native AC/DC PF and OPF qualification
 
 **Current checkpoint:** [connected physical PF and fixed loss modes](pf/MILESTONES.md)
-are qualified. Next is consolidation and review; saturation and broader models
-remain separate. Sections below retain chronological evidence, including
+are qualified. The [consolidation and review map](REVIEW.md) now records review
+units, the current [canonical API](CONTRACT.md), integration checks and remaining
+release gates. Saturation and broader models remain separate. Sections below retain chronological evidence, including
 superseded historical "next" statements.
 
 This is the **MATPOWER-extension variant of PowerModelsACDC**, using the

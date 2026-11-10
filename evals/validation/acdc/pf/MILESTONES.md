@@ -133,12 +133,14 @@ CARGO_TARGET_DIR=/tmp/tacdc-pf-milestones-target \
   python3 evals/validation/acdc/pf/milestones.py /tmp/tacdc-fixed-pf-live --suite fixed
 ```
 
-## Next checkpoint: consolidate and review
+## Consolidation and review checkpoint
 
 The reader, reference-compatible VSC PF/OPF, physical-base electrical models,
 connected physical PF/OPF and explicit fixed loss-mode PF/OPF now have independent
 qualification. Keep the existing PRs draft while consolidating the accumulated
-model changes into reviewable dependency/API/model/evidence units. Review the
+model changes into reviewable dependency/API/model/evidence units. The
+[current review map](../REVIEW.md) now records those units, corrected API/profile
+documentation and integration findings. Review the
 canonical intent/result and profile contracts, the release capability table,
 source-preserving refusal behavior, and the candidate PowerIO dependency before
 release. Historical "next" statements in earlier evidence pages are superseded

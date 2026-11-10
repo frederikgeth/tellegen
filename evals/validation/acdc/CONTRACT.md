@@ -1,174 +1,189 @@
-# Experimental coupled OPF contract
+# Canonical coupled VSC PF and OPF API
 
-The coupled intent, typed operating point/result, IR persistence and numerical
-preparation now live on PowerIO branch `codex/819-acdc-models`, based on the
-unchanged reader commit `49e8eacb`. Tellegen owns the expression DAG, derivative
-checks, solver starts/recovery and validation diagnostics. Existing PRs stay draft.
+This page describes the current development implementation. PowerIO owns the
+immutable source network, canonical intent, typed points/results, IR and OPF
+numerical preparation. Tellegen owns expressions, derivatives, numerical starts,
+solvers and validation diagnostics. The [review map](REVIEW.md) records dependency
+pins, evidence, integration gaps and the proposed review sequence. Existing PRs
+remain draft; these interfaces are not a published release.
 
-## Input and selection
+The input adapter is the **MATPOWER-extension variant of PowerModelsACDC**.
+PowerModelsACDC's native JSON serialization is a separate future reader.
 
-`PreparedAcDcOpf::new(AcDcOpfInstance)` accepts canonical PowerIO intent.
-`AcDcOpfInstance::from_network(network, profile)` requires the explicit
-`PowerModelsAcDc0101AcpVscV1` compatibility profile or the separate
-`DeclaredCurrentAcpVscV1` profile. Stored intent rejects unknown profiles/fields.
-The compatibility selection fixes:
+## Public surface and ownership
 
-- the polar AC/full VSC station equations and source pu coordinate convention;
-- inverter losses in both directions, reference Imax repair and auxiliary bounds;
-- generator-cost minimization with free generator/converter dispatch, without
-  PF setpoint constraints;
-- explicit AC numerical-reference policy, with DC voltages constrained by limits
-  rather than PF reference controls;
-- rejection of unsupported/mixed representations and normalized/base-mismatched
-  input, using the existing equation-model checks.
+`PreparedAcDcOpf::new(AcDcOpfInstance)` and
+`PreparedAcDcPf::new(AcDcPfInstance)` accept explicit canonical PowerIO intent.
+Both are exposed through `tellegen::ac_dc` under the native `acopf` feature.
+The legacy physical-terminal/reduced-converter API in that module is separate;
+its supported models do not extend the full-station VSC profile scope.
+Existing browser, CLI, server and Python adapters gain no new solve mode.
 
-A preparation owns immutable native expressions. Its manifest records the
-profile/revisions, base MVA/pole count, source identity maps, named variables and
-constraints with effective bounds, and declared/effective station parameters.
-Absent bounds serialize as null; solver infinity sentinels are not a public
-limit declaration. Source equipment is never overwritten with effective values.
+PowerIO's `build_ac_dc_opf_preparation` supplies the AC arrays and every active
+DC/station block. A consumer must assemble all of them. There is no standalone
+public PF matrix builder: Tellegen builds a private electrical projection and
+adds PF control/allocation equations. Replacing costs in that private projection
+does not change source declarations or make costs PF controls. Ordinary AC-only
+constructors and preparation still refuse nonempty equivalent equipment.
 
-The model fingerprint hashes a versioned formulation tag, the complete serialized
-source network **including DC/station declarations**, and the selected profile.
-The version-3 fingerprint also includes the numerical-reference policy and
-identity-keyed anchor records. Source edits invalidate a supplied operating-point start even if native variable
-names happen to remain unchanged. This deliberately conservative content identity
-is not a proof that two differently serialized source cases are electrically
-inequivalent. A formulation change requires a new version/fingerprint tag.
+Preparation rejects unsupported representations: normalized or mismatched-MVA
+owners, mixed aggregate/equivalent DC, active AC self loops, LCC, storage and
+three-winding transformers. OPF preparation qualifies polynomial generator
+costs; piecewise costs need separate auxiliary-coordinate support. No profile
+infers physical pole/return wiring or performs generic network rebasing.
 
-## Starts and results
+## Explicit OPF profiles
 
-`AcDcOpfStart` selects:
+| `AcDcOpfProfile` | Coordinates | Current policy | Quadratic valve loss |
+| --- | --- | --- | --- |
+| `PowerModelsAcDc0101AcpVscV1` | Source pu | Pinned reference Imax repair | Cinv in both directions |
+| `DeclaredCurrentAcpVscV1` | Source pu | Declared Imax | Cinv in both directions |
+| `PhysicalCoordinatesAcpVscV1` | Physical local bases | Declared Imax | Cinv in both directions |
+| `FixedModePhysicalAcpVscV1` | Physical local bases | Declared Imax | Explicit station Crec/Cinv and valve-P sign |
 
-- `Declared`: AC preparation defaults and source DC voltage guesses; approximate
-  station port powers from the retained PCC settings, AC current from apparent
-  power, and DC power from the loss balance. These are numerical guesses only.
-- `Flat`: unit voltage magnitudes, zero angles/port powers/reactive generation,
-  midpoint generator P bounds and 0.1 pu valve current. The nonzero current avoids
-  a zero current-equation Jacobian at the cold start.
-- `InstancePoint`: the complete typed point supplied on the canonical PowerIO
-  instance, converted from MW/MVAr to private solver pu coordinates.
-- `Point`: a diagnostic exact, finite, complete identity-named point with a matching model
-  fingerprint. Missing/extra/nonfinite values or stale fingerprints refuse.
+All minimize generator cost with free generator/converter dispatch. Retained PF
+controls and targets do not constrain OPF dispatch. Reference auxiliary bounds
+remain part of the selected model; the physical selection does not imply a
+complete physical hardware model. The compatibility profile is pinned to PMACDC
+0.10.1 at `9ada4082ac087aed649f48fb5f977680b0fe06c7`, including Cinv selection and
+Imax repair. Selecting declared current alone does not rebase source coordinates.
 
-Constructed starts are projected to variable bounds; supplied points are retained
-exactly. `initial_point` records the point given to POUNCE; the optimizer may
-apply its standard interior-bound initialization. Starts do not change dispatch
-constraints and cannot authorize an AC-only projection.
+`AcDcAngleReferencePolicy::Declared` is the default. The opt-in
+`LowestBusIdPerIsland` preserves declared references and adds a zero-angle
+numerical anchor at the lowest source bus ID in each uncovered active AC island.
+DC links do not synchronize AC phase. Source bus roles and PF generation/voltage
+controls remain unchanged. `align_angle_references` explicitly shifts bus and
+station internal angles together, records each shift, and rejects finite-bound
+violations instead of clipping or wrapping. Stored starts are not rotated silently.
 
-`solve(start, cancel)` uses the existing POUNCE restoration/recovery driver and
-cancellation wrapper. The result records requested starts, the complete native
-point, selected/base status, recovery attempts, total iterations, restoration
-counts, solver/options, constraint/KKT diagnostics and native validation rows.
-It also returns `solution: powerio::AcDcOpfSolution`, with the shared canonical
-instance and typed `AcDcQuantity`/identity values in MW/MVAr, pu and radians.
-PowerIO IR persists these physical values; private solver-name maps remain
-Tellegen diagnostics. The example writes `native-{start}.pio.json` alongside
-its report. Integration tests reload these and re-evaluate them as supplied starts.
-The result is returned only after a successful local solver status, finite point
-and objective, native violation <=1e-7, solver constraint violation <=1e-7, KKT
-error <=1e-6, and agreement between solver and re-evaluated native objective.
-Local failures are errors, never proofs of infeasibility. Global optimality and
-qualified dual/sensitivity results are not claimed.
+## Explicit PF profiles
 
-The API is available only with the native `acopf` feature. Existing browser,
-CLI, server and Python adapters do not acquire a new solve mode. Ordinary AC-only
-PowerIO constructors continue to reject the equivalent equipment owner.
+| `AcDcPfProfile` | Added semantics |
+| --- | --- |
+| `PowerModelsAcDc0101AcpVscEqualIncrementV1` | Source-pu/Cinv; fixed PCC P or Vdc, fixed PCC Q or bus Vm; equal generator increments |
+| `PowerModelsAcDc0101AcpVscSharedVoltageEqualIncrementV1` | Shared generator/converter voltage control with equal reactive injection increments |
+| `PowerModelsAcDc0101AcpVscDcDroopSharedVoltageEqualIncrementV1` | DC-port power/voltage droop and island-local authority checks |
+| `PhysicalCoordinatesDcDroopSharedVoltageEqualIncrementV1` | Physical local bases and declared ratings; Cinv in both directions |
+| `FixedModePhysicalDcDroopSharedVoltageEqualIncrementV1` | Explicit station Crec/Cinv selection and final valve-P mode domain |
 
-## Independent acceptance
+Every active AC island requires exactly one explicitly declared reference with
+active generation. Numerical OPF anchors do not satisfy this requirement.
+Non-reference generator Pg stays declared. Reference generators share changes
+from declared Pg equally; generators at PV/reference buses share changes from
+declared Qg equally. Effective bus roles follow the recorded reference repair;
+source roles remain immutable. Bus Vm supplies the voltage target, not retained
+generator Vg or converter Vtar.
 
-The external `cross-check.jl` instantiates the original PowerModelsACDC ACP OPF
-without solving it, maps every native coordinate, and evaluates constraints,
-variable bounds and objective at each native solution. Case5 maps 95 native
-coordinates into 107 reference variables; case24 maps 657 into 766. All reference
-variables must be accounted for: fixed-demand/zero-curtailment auxiliaries and
-unused VSC firing angles are reconstructed from source declarations and recorded.
-No reference solved value is used to fill a missing native decision variable.
+Shared voltage groups allocate equal **reactive injection** increments:
+`delta Qg = -delta Qpcc_withdrawal`. Fixed-Q converters do not participate.
+There are no rating weights or saturation. The original profile still rejects
+voltage overlap. The first two profiles require exactly one fixed-Vdc controller
+per DC island. Droop-enabled profiles require at least one fixed-Vdc or positive
+droop controller and at most one fixed-Vdc controller in each island.
 
-Native solutions must pass reference feasibility at 1e-7; objective evaluation
-must agree with native cost (1e-7 absolute, 1e-10 relative) and the independent
-reference solve (1e-7 absolute, 1e-8 relative). All terminal quantities and derived
-branch/valve/station losses are reported against the reference. Primal equality
-is not a general OPF acceptance requirement because solutions may be nonunique.
-Four deliberate port-power/DC-voltage corruptions must fail reference feasibility.
+DC-power droop uses withdrawal from the DC bus into the station:
+`Pdc_pu - Pdcset_MW/Sbase + (Vdc_pu - Vdcset_pu)/k = 0`.
+It requires a finite positive k with finite reciprocal, a positive target and
+zero deadband. Type-4 valve-power droop is unsupported. On physical local bases,
+a slope R in kV per pole per total MW has `k = R*Sbase/Vdcbase`; no additional
+pole-count multiplier applies to total power.
 
-The OPF qualification envelope includes case5, case24, case39 and case67 under
-the specified reference profile, from three starts. Case67 explicitly selects
-`LowestBusIdPerIsland`; the other fixtures retain `Declared`. Reference PF for
-case39/case67 remains explicitly unqualified. See [case67 evidence](case67/README.md). Coupled PF solves, additional controls/cases, rebasing,
-normalized cases, physical projections, LCC and directional losses remain future
-work. The PowerIO preparation supplies reference station bounds/losses, DC
-power scaling and pole conductance, and the canonical AC preparation. Tellegen
-keeps an explicit checked adapter between typed physical quantities and native
-coordinates. Ordinary AC-only preparation still refuses the equivalent owner.
+PF operating ratings are checked after solving and reported as
+`limit_violations`. They do not clip the point, switch controls or turn an
+otherwise converged electrical PF into OPF dispatch. A selected fixed-mode
+valve-P sign, in contrast, is part of the accepted root's model domain.
+[Proper saturation](pf/SATURATION.md) remains a separate future control policy.
 
-PF equation diagnostics record the pinned PowerModels parser's PQ/PV bus-role
-repair separately from source declarations. This is not a new coupled PF solver
-or an implicit network edit. Case24's bus 123 exposes the difference; reference
-reassignment without active generation remains unqualified and rejects.
+## Coordinates, signs and fixed modes
 
-## Numerical angle references
+Canonical `AcDcOperatingPoint` values contain complete `AcDcQuantity`/identity
+pairs. Powers are MW/MVAr, angles radians, voltages pu under the selected profile
+and valve RMS current pu on the station AC base. Generator powers are production;
+PCC and valve terminal powers are passive withdrawals. Valve P enters from the
+reactor. DC station power is withdrawal from the DC bus. Missing, duplicate,
+unknown and nonfinite point coordinates refuse. Row order is not identity.
 
-Canonical intent selects `AcDcAngleReferencePolicy::Declared` by default. This
-retains every declared angle reference and refuses uncovered AC islands.
-`LowestBusIdPerIsland` is opt-in: preserve declared references, then constrain
-the lowest source bus ID to zero radians in each uncovered active AC component.
-DC links do not synchronize AC phases. Preparation records each anchor's bus,
-component membership and declared/numerical origin. Source bus kinds and PF
-voltage/generation controls remain unchanged. New numerical OPF anchors do not
-qualify a PF model; the diagnostic PF constructor refuses them.
+Physical local coordinates use the PCC line-to-line bus base and the station's
+converter base for filter/valve ports and impedances. An enabled transformer tap
+includes `Vconverter/VPCC`; bypass equates physical voltages. DC branch resistance
+uses its from-node per-pole voltage base, so orientation reversal also converts
+resistance. The [coordinate specification](physical/COORDINATES.md) and
+[bypass checks](physical/BYPASS.md) distinguish this from source-pu behavior.
+Equivalent-base validation is not a generic rebase API.
 
-`align_angle_references` explicitly transforms a complete point and returns a
-shift record. It shifts bus, converter filter and converter valve angles together
-within only the components with added anchors. It rejects a rotated angle outside
-its existing bound; it does not clip or wrap angles. `Point` and `InstancePoint`
-starts remain exact unless callers perform this separate operation. Public typed
-IR persists the selected policy with the source network and physical result.
-Default-policy documents retain their previous shape; unknown policies refuse.
+Fixed-mode profiles require exactly one identity-keyed `AcDcStationLossMode` per
+active station, sorted on output. Rectifier selects Crec and valve AC withdrawal
+P >= 0; inverter selects Cinv and P <= 0. PCC/DC signs are not substitutes. At
+zero P the selected curve remains in force, including at nonzero reactive
+current. Zero current retains constant loss. Unknown, missing, duplicate or
+inactive assignments and an empty mode-sign/rating intersection refuse.
 
-The independent Julia checker derives anchors from the original source topology,
-checks manifest/alignment agreement, and re-evaluates the entire aligned reference
-point against original constraints and bounds. Native solved points are evaluated
-in that same original reference model. Electrical comparisons use the recorded
-aligned reference; original reference points are retained to recover raw angles.
+Newton evaluates the smooth selected loss curve during iteration, then checks
+the final mode domain. It does not automatically change modes. Ordinary valve-P
+ratings remain post-solve PF reports. OPF enforces the selected sign and operating
+bounds together. Automatic reversal needs a separate discrete/complementarity
+policy and derivatives through that policy are not qualified here.
 
-## Physical bases and compatibility bounds
+## Persistence, starts and solver acceptance
 
-The [independent physical-circuit qualification](physical/README.md) covers
-power/voltage/current conversion for enabled full VSC stations and symmetric
-DC branches with common endpoint bases. This does not enable automatic network
-rebasing or a general physical interpretation of imported source coordinates.
+PF and OPF each have distinct PowerIO instance/result structural types, require
+`balanced-acdc-equivalent-v1` and reject unknown fields/profiles. Only the
+unreleased IR schema changes. PF's first four profiles omit `loss_modes` and
+reject explicit arrays or null; fixed-mode PF requires a complete array. OPF's
+older profiles reject nonempty modes and omit the empty list. MATPOWER export
+preserves equipment and both source coefficients, not the chosen solver mode list.
 
-The pinned profile's current-limit repair assumes nominal voltage of 1 pu.
-It preserves MVA-base invariance but can change the effective kA limit when only
-the converter voltage base changes. A reproducible 200/400 kV witness changes
-0.408248 to 0.204124 kA and changes feasibility despite identical physical
-hardware. This is recorded reference behavior, not a correction to declarations.
-Physical limit semantics require an explicitly selected and separately qualified
-profile; callers must not infer arbitrary base-invariant feasible sets from the
-current compatibility profile.
+Preparation fingerprints include a versioned formulation, the complete source
+network and selected profile. OPF v3 includes angle policy and anchor records;
+fixed-mode identities add station modes. Absent modes are omitted to preserve
+older fingerprints. Source/profile/topology edits invalidate diagnostic starts.
+Content identity is deliberately conservative, not an electrical equivalence test.
 
+Both start enums provide `Declared`, `Flat`, `InstancePoint` and `Point`.
+Declared/flat starts are numerical guesses. OPF constructed starts are projected
+to bounds; explicit supplied starts remain exact. `InstancePoint` consumes the
+complete canonical typed guess. `Point` requires a complete finite native name
+map and matching preparation fingerprint. Explicitly supplying a typed guess
+is not a claim that it came from the same immutable source model.
 
-`DeclaredCurrentAcpVscV1` keeps those equations/losses/auxiliary bounds but
-honours the declared valve-current limit without repair. Its persisted profile
-selects `AcDcCurrentLimitPolicy::Declared`; no independent override can change
-compatibility semantics. Manifests, station policies and equation reports record
-the selection. The existing v3 fingerprint already hashes the profile, so the
-new selection has a distinct identity without changing compatibility hashes.
-Typed points remain exact, including infeasible ones. New-profile PF diagnostics
-refuse because they do not enforce OPF operating limits. This policy does not
-qualify arbitrary physical projections or enable generic rebasing. See the
-[108-case independent check](physical/README.md#declared-current-profile--2026-11-10).
+OPF uses POUNCE restoration/recovery and cancellation. Acceptance requires a
+successful local status, finite point/objective, native and solver constraint
+violations <=1e-7, KKT error <=1e-6 and objective agreement. Results include the
+canonical `AcDcOpfSolution`, starts, diagnostics and recovery provenance. They do
+not establish global optimality, qualified duals or infeasibility on failure.
 
+PF uses damped Newton with analytic Jacobians and nonnegative current retraction,
+residual tolerance 1e-10 and final native validation <=1e-9 including mode domain.
+Original rating violations above 1e-7 are returned separately. Results include
+`AcDcPfSolution`, initial/final points, iteration counts and equation checks.
+Failure of a local trial does not prove absence of a root. PowerIO serialization
+checks finite shape and semantics; producer status alone certifies neither
+feasibility nor optimality.
 
-The [bypass/unequal-base gate](physical/BYPASS.md) qualifies all eight station
-flag combinations. Physical transformer bypass requires common PCC/filter
-voltage bases because the source equation equates raw pu voltages and ignores
-the retained tap. The DC branch equation likewise needs common endpoint voltage
-bases for its tested physical interpretation. Unequal-base physical points fail
-only those expected constraints in native Tellegen and unmodified Julia. Source
-profiles continue to evaluate their declared coordinates; this is not a new
-runtime refusal of source cases or a generic physical conversion API. The separately selected
-`PhysicalCoordinatesAcpVscV1` now defines those local port/impedance bases and
-weighted equations; it does not alter either source-coordinate profile. See
-[the physical-coordinate contract and checks](physical/COORDINATES.md).
+## Qualification and its limits
+
+Independent checks map every native coordinate into the pinned PMACDC model,
+restore eliminated/duplicate equations for acceptance, and test deliberate
+corruptions. Native values are not filled from a reference solved point. OPF
+compares feasibility and objective, without demanding identical nonunique dispatch.
+PF compares locally obtained roots and controls; it does not prove uniqueness.
+
+- Source-coordinate OPF: case5, case24, case39 and case67, including explicit
+  numerical anchors for case67; see the [evidence index](README.md).
+- Source-coordinate PF: case5 and case24; [case39](pf/CASE39.md) requires an
+  explicitly selected fixed-Pg dispatch and Vdc controller; [case67](pf/DROOP.md)
+  explicitly promotes isolated bus 67 to a PF reference. Unedited originals
+  remain refused where authority/reference requirements are missing.
+- Physical OPF: local bases, bypass, mesh, connected AC/DC outages and fixed
+  modes; see [connected](physical/CONNECTED.md) and [fixed modes](physical/FIXED-MODES.md).
+- Physical PF: [base conversion](pf/PHYSICAL.md), [connected outages and fixed
+  modes](pf/MILESTONES.md), including mixed station modes and negative controls.
+
+Physical reference harnesses explicitly replace source-pu bypass/DC rows and
+loss/droop policies where needed. They are modified PMACDC studies, with separate
+phase-domain circuit checks, not equivalence claims against unmodified PMACDC.
+No new upstream equation bug was established by the latest milestones.
+
+LCC, explicit physical pole/return wiring, generic rebasing/projections, valve-power
+droop/deadbands, saturation, automatic mode reversal, larger-case sparse/performance
+work, natural JSON input and new binding/application solve modes remain separate.
