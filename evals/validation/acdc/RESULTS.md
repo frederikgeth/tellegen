@@ -232,3 +232,35 @@ reader #822 and the draft Tellegen PR heads remain unchanged.
 Fresh full pipelines for case5, case24 and case39 also pass with the new pin,
 strict declared-reference policy, unchanged tolerances and mathematical results.
 Their reference points, summaries and existing case5 reports have been refreshed.
+
+
+## Physical-unit and base-conversion gate — 2026-11-10
+
+The [physical circuit qualification](physical/README.md) adds three Rust tests
+and a reproducible independent Julia harness. Thirty-six representations of the
+same analytical circuits cover 50/100/250 MVA, three unequal PCC/converter/DC
+voltage-base triples, both power directions and one/two symmetric DC poles.
+Native PF/OPF equations, physical losses, OPF cost/bounds and canonical result
+conversions agree. Seven incorrect conversions are detected; unsupported generic
+normalization and AC-only instance construction continue to refuse.
+
+All 42 fresh MATPOWER-extension exports were independently parsed, preprocessed
+and instantiated in pinned PowerModelsACDC: 39 points pass, and three fail only
+the expected current bound. Every other constraint/bound is within 1.137e-13;
+physical objective differences are zero. All 22 native/23 reference coordinates
+per case are accounted for; 42 reference current-corruption controls fail.
+
+The six additional cases confirm a limitation in upstream current-limit repair:
+the same 0.262488 kA physical point is accepted with the 200 kV converter base
+(adjusted limit 0.408248 kA), but rejected at 400 kV (0.204124 kA). This occurs
+at all three power bases. The equations stay physically equivalent; the
+nominal-1-pu repair changes the feasible set. Native compatibility is preserved,
+and arbitrary voltage-base invariance is explicitly not qualified. This finding
+is separate from the earlier case67 angle-reference investigation.
+
+Validation: 761 full-feature Tellegen tests pass (7 ignored), all-target clippy
+with warnings denied, formatting, PowerIO pin and EPL guards pass. No production
+equations, public profiles or dependency pins changed. The four existing corpus
+solve/derivative results remain the evidence for native optimization; this new
+gate evaluates analytical points and does not claim optimality or PF solves.
+The Julia environment remains validation-only. Existing PRs remain draft.

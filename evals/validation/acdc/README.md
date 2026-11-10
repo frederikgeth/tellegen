@@ -263,4 +263,15 @@ policy. Bus 67 keeps its source PV role, while a recorded zero-angle constraint
 removes its free common phase. Native diagnostics explicitly align the reference
 bus/filter/valve angles together; the independent checker verifies that complete
 point against original equations and bounds. The strict default still refuses
-this case. No PowerModelsACDC bug was found.
+this case. No PowerModelsACDC bug was found in the angle-reference investigation.
+
+## Physical units and base conversion
+
+The [physical circuit gate](physical/README.md) independently constructs phase
+voltages/currents in kV/kA, converts the same equipment across power and voltage
+bases, and checks fresh MATPOWER-extension exports in pinned PowerModelsACDC.
+All 36 cases with current-limit repair inactive pass. Six further cases expose
+a reference preprocessing limitation: changing voltage base changes the repaired
+physical current limit. Three then fail only that bound, consistently in both
+implementations. See the reproduction and scope before treating source pu
+agreement as physical rebasing support. Runtime equations and pins are unchanged.

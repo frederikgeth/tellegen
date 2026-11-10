@@ -129,3 +129,19 @@ checks manifest/alignment agreement, and re-evaluates the entire aligned referen
 point against original constraints and bounds. Native solved points are evaluated
 in that same original reference model. Electrical comparisons use the recorded
 aligned reference; original reference points are retained to recover raw angles.
+
+## Physical bases and compatibility bounds
+
+The [independent physical-circuit qualification](physical/README.md) covers
+power/voltage/current conversion for enabled full VSC stations and symmetric
+DC branches with common endpoint bases. This does not enable automatic network
+rebasing or a general physical interpretation of imported source coordinates.
+
+The pinned profile's current-limit repair assumes nominal voltage of 1 pu.
+It preserves MVA-base invariance but can change the effective kA limit when only
+the converter voltage base changes. A reproducible 200/400 kV witness changes
+0.408248 to 0.204124 kA and changes feasibility despite identical physical
+hardware. This is recorded reference behavior, not a correction to declarations.
+Physical limit semantics require an explicitly selected and separately qualified
+profile; callers must not infer arbitrary base-invariant feasible sets from the
+current compatibility profile.
