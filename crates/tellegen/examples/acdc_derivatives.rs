@@ -1,4 +1,4 @@
-//! Reproduce dense native case5 derivative checks without Julia at runtime.
+//! Reproduce dense native AC/DC derivative checks without Julia at runtime.
 #[path = "../tests/support/acdc_reference.rs"]
 mod reference;
 use tellegen::ac_dc::{EquationMode, ReferenceEquations};
@@ -13,7 +13,12 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         let model = ReferenceEquations::powermodels_acdc_0101(&net, mode)?;
         let point = reference::point(&net, &oracle["solves"][label]["solution"], &map);
         for (name, point) in reference::derivative_points(&point) {
+            eprintln!(
+                "Checking {label}/{name}: {} variables",
+                model.variable_names().len()
+            );
             let report = model.check_derivatives(&point)?;
+            eprintln!("{label}/{name}: passed={}", report.passed);
             passed &= report.passed;
             reports.insert(format!("{label}/{name}"), serde_json::to_value(report)?);
         }

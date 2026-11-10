@@ -3,8 +3,8 @@
 include("reference-model.jl")
 @assert length(ARGS) in (2, 3) "usage: cross-check.jl NATIVE_RESULT OUTPUT [REFERENCE]"
 native = JSON.parsefile(ARGS[1])
-ids = JSON.parsefile(joinpath(@__DIR__, "identity-map.json"))
-reference_path = length(ARGS) == 3 ? ARGS[3] : joinpath(@__DIR__, "reference.json")
+ids = JSON.parsefile(joinpath(CASE_DIR, "identity-map.json"))
+reference_path = length(ARGS) == 3 ? ARGS[3] : joinpath(CASE_DIR, "reference.json")
 reference = JSON.parsefile(reference_path)
 @assert reference["source_sha256"] == CASE_SHA
 @assert reference["manifest_sha256"] == bytes2hex(sha256(read(joinpath(@__DIR__, "Manifest.toml"))))

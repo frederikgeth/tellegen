@@ -1,13 +1,13 @@
 {
   "manifest_sha256": "c0c50ee07d24b1ba8af99d58dad407959e4e6ce81071f6f988babe120f0344f4",
-  "native_result_sha256": "ebe37e7f9d52834910685b359079600cbcfd6b163bac92f305353d524480e780",
+  "native_result_sha256": "2653a9a55ce08ee59e43225b77d3b2cd2465f236d649d474a31b2c74c5ad022d",
   "negative_controls_detected": {
     "dc_bus/dc_equivalent_bus/1/vm": 4.608994569879215,
     "station/ac_dc_converter_station/1/pdc": 0.1,
     "station/ac_dc_converter_station/1/pgrid": 0.10000000000000009,
     "station/ac_dc_converter_station/1/qgrid": 0.10000000000000152
   },
-  "reference_result_sha256": "01309ac291df0e77e26314c91b75f74a94cdf1318d3297ce179beedff89d1487",
+  "reference_result_sha256": "91061464c10a0db43522091852324935242ac2b324dd409ecc48cf89261b9d13",
   "reference_revision": "9ada4082ac087aed649f48fb5f977680b0fe06c7",
   "solves": {
     "declared": {

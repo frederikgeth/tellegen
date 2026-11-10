@@ -1740,6 +1740,7 @@
             "violation": 0.0
           }
         ],
+        "bus_type_policy": [],
         "equations": [
           {
             "lower": 0.0,
@@ -3155,6 +3156,7 @@
             "violation": 0.0
           }
         ],
+        "bus_type_policy": [],
         "equations": [
           {
             "lower": 0.0,
@@ -4668,6 +4670,7 @@
             "violation": 0.0
           }
         ],
+        "bus_type_policy": [],
         "equations": [
           {
             "lower": 0.0,

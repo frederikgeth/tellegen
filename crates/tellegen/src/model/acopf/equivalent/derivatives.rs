@@ -2,7 +2,9 @@
 use super::*;
 use pounce_rs::SparsityRequest;
 
-const STEPS: [f64; 2] = [1e-5, 3e-6];
+// Fourth-order differences permit larger steps without thermal-row truncation
+// while avoiding cancellation of small marginal costs against large objectives.
+const STEPS: [f64; 2] = [1e-4, 3e-5];
 const TOLERANCE: f64 = 1e-6;
 
 /// One dense comparison. The worst entry is selected by scaled error;
@@ -29,6 +31,7 @@ pub struct DerivativeReport {
     pub jacobian_nonzeros: usize,
     pub hessian_lower_nonzeros: usize,
     pub scaled_tolerance: f64,
+    pub finite_difference_order: u8,
     pub passed: bool,
     pub checks: Vec<DerivativeCheck>,
 }
@@ -284,44 +287,58 @@ fn compare(
             .collect::<Vec<_>>();
         for column in 0..p.n {
             let h = step * x[column].abs().max(1.0);
-            let mut plus = x.to_vec();
-            let mut minus = x.to_vec();
-            plus[column] += h;
-            minus[column] -= h;
-            let fp = nlp.eval_f(&plus, true).ok_or("f+ evaluation failed")?;
-            let fm = nlp.eval_f(&minus, true).ok_or("f- evaluation failed")?;
+            let mut sample = |offset: f64| -> Result<_, String> {
+                let mut shifted = x.to_vec();
+                shifted[column] += offset * h;
+                let f = nlp
+                    .eval_f(&shifted, true)
+                    .ok_or("Objective finite difference failed")?;
+                let mut g = vec![0.0; p.m];
+                if !nlp.eval_g(&shifted, true, &mut g) {
+                    return Err("Constraint finite difference failed".into());
+                }
+                let (df, j) = s.first(nlp, p, &shifted)?;
+                Ok((f, g, df, j))
+            };
+            let (fp, gp, dfp, jp) = sample(1.0)?;
+            let (fm, gm, dfm, jm) = sample(-1.0)?;
+            let (fpp, gpp, dfpp, jpp) = sample(2.0)?;
+            let (fmm, gmm, dfmm, jmm) = sample(-2.0)?;
+            // Pair differences first: avoid multiplying the common large offset.
+            let numerator = |a: f64, b: f64, c: f64, d: f64| 8.0 * (a - b) - (c - d);
             grad.observe(
                 "objective",
                 &p.var_names[column],
                 exact.gradient[column],
-                (fp - fm) / (2.0 * h),
+                numerator(fp, fm, fpp, fmm) / (12.0 * h),
             )?;
-            let mut gp = vec![0.0; p.m];
-            let mut gm = vec![0.0; p.m];
-            if !nlp.eval_g(&plus, true, &mut gp) || !nlp.eval_g(&minus, true, &mut gm) {
-                return Err("Constraint finite difference failed".into());
-            }
             for row in 0..p.m {
                 jac.observe(
                     &p.con_names[row],
                     &p.var_names[column],
                     exact.jacobian[row * p.n + column],
-                    (gp[row] - gm[row]) / (2.0 * h),
+                    numerator(gp[row], gm[row], gpp[row], gmm[row]) / (12.0 * h),
                 )?;
             }
-            let (dfp, jp) = s.first(nlp, p, &plus)?;
-            let (dfm, jm) = s.first(nlp, p, &minus)?;
             for (block, check) in exact.hessians.iter().zip(&mut hess) {
-                for row in 0..p.n {
-                    let mut finite = block.objective * (dfp[row] - dfm[row]);
-                    for (i, &weight) in block.lambda.iter().enumerate() {
-                        finite += weight * (jp[i * p.n + row] - jm[i * p.n + row]);
-                    }
+                // Accumulate the difference of Lagrangian gradients once per
+                // block through the sparse Jacobian, then compare every dense
+                // Hessian entry (including structural zeros). This is the same
+                // weighted sum without n*m zero terms for each column/block.
+                let mut finite: Vec<_> = (0..p.n)
+                    .map(|i| block.objective * numerator(dfp[i], dfm[i], dfpp[i], dfmm[i]))
+                    .collect();
+                for &(constraint, variable) in &s.jac {
+                    let i = constraint * p.n + variable;
+                    finite[variable] +=
+                        block.lambda[constraint] * numerator(jp[i], jm[i], jpp[i], jmm[i]);
+                }
+                for (row, &difference) in finite.iter().enumerate() {
                     check.observe(
                         &p.var_names[row],
                         &p.var_names[column],
                         block.values[row * p.n + column],
-                        finite / (2.0 * h),
+                        difference / (12.0 * h),
                     )?;
                 }
             }
@@ -337,6 +354,7 @@ fn compare(
         jacobian_nonzeros: s.jac.len(),
         hessian_lower_nonzeros: s.hess.len(),
         scaled_tolerance: TOLERANCE,
+        finite_difference_order: 4,
         passed,
         checks,
     })

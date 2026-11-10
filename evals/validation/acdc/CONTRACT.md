@@ -75,9 +75,10 @@ PowerIO constructors continue to reject the equivalent equipment owner.
 ## Independent acceptance
 
 The external `cross-check.jl` instantiates the original PowerModelsACDC ACP OPF
-without solving it, maps **all 95 native coordinates**, and evaluates constraints,
-variable bounds and objective at each native solution. All 107 reference variables
-must be accounted for: nine fixed-demand/zero-curtailment auxiliaries and three
+without solving it, maps every native coordinate, and evaluates constraints,
+variable bounds and objective at each native solution. Case5 maps 95 native
+coordinates into 107 reference variables; case24 maps 657 into 766. All reference
+variables must be accounted for: fixed-demand/zero-curtailment auxiliaries and
 unused VSC firing angles are reconstructed from source declarations and recorded.
 No reference solved value is used to fill a missing native decision variable.
 
@@ -88,10 +89,15 @@ branch/valve/station losses are reported against the reference. Primal equality
 is not a general OPF acceptance requirement because solutions may be nonunique.
 Four deliberate port-power/DC-voltage corruptions must fail reference feasibility.
 
-The qualification envelope here is case5, using the specified reference profile,
+The qualification envelope here is case5 and case24, using the specified reference profile,
 from three starts. Coupled PF solves, additional controls/cases, rebasing,
 normalized cases, physical projections, LCC and directional losses remain future
 work. The PowerIO preparation supplies reference station bounds/losses, DC
 power scaling and pole conductance, and the canonical AC preparation. Tellegen
 keeps an explicit checked adapter between typed physical quantities and native
 coordinates. Ordinary AC-only preparation still refuses the equivalent owner.
+
+PF equation diagnostics record the pinned PowerModels parser's PQ/PV bus-role
+repair separately from source declarations. This is not a new coupled PF solver
+or an implicit network edit. Case24's bus 123 exposes the difference; reference
+reassignment without active generation remains unqualified and rejects.

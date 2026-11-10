@@ -34,6 +34,14 @@ pub struct EquationCheck {
     pub violation: f64,
 }
 
+/// PowerModels parser bus-role repair, kept separate from source declarations.
+#[derive(Clone, Debug, serde::Serialize)]
+pub struct BusTypePolicy {
+    pub bus_id: usize,
+    pub declared: powerio_tx::BusType,
+    pub effective: powerio_tx::BusType,
+}
+
 #[derive(Debug, serde::Serialize)]
 pub struct EquationReport {
     pub profile: &'static str,
@@ -43,6 +51,7 @@ pub struct EquationReport {
     pub equations: Vec<EquationCheck>,
     pub bounds: Vec<EquationCheck>,
     pub station_policy: Vec<StationPolicy>,
+    pub bus_type_policy: Vec<BusTypePolicy>,
 }
 
 /// Native expression model with identity-named pu variables (angles in radians).
@@ -52,6 +61,7 @@ pub struct ReferenceEquations {
     model: CanonicalAcOpfModel,
     mode: EquationMode,
     policy: Vec<StationPolicy>,
+    bus_type_policy: Vec<BusTypePolicy>,
 }
 
 fn col(p: &mut NlProblemParts, name: String, lo: f64, hi: f64, start: f64) -> Expr {
@@ -171,6 +181,36 @@ impl ReferenceEquations {
                 ));
             }
         }
+        let generator_buses: std::collections::BTreeSet<_> = net
+            .generators()
+            .iter()
+            .filter(|g| g.in_service)
+            .map(|g| g.bus)
+            .collect();
+        // The pinned PowerModels parser repairs PQ/PV roles by active-generator
+        // presence. Reference reassignment needs separate qualification.
+        if net
+            .buses()
+            .iter()
+            .any(|b| b.kind == powerio_tx::BusType::Ref && !generator_buses.contains(&b.id))
+        {
+            return Err("Reference bus without active generation needs an unqualified reference reassignment".into());
+        }
+        let effective_kind = |b: &powerio_tx::Bus| match b.kind {
+            powerio_tx::BusType::Pq if generator_buses.contains(&b.id) => powerio_tx::BusType::Pv,
+            powerio_tx::BusType::Pv if !generator_buses.contains(&b.id) => powerio_tx::BusType::Pq,
+            kind => kind,
+        };
+        let bus_type_policy = net
+            .buses()
+            .iter()
+            .filter(|b| b.kind != effective_kind(b))
+            .map(|b| BusTypePolicy {
+                bus_id: b.id.0,
+                declared: b.kind,
+                effective: effective_kind(b),
+            })
+            .collect();
         let coupled =
             powerio_matrix::build_ac_dc_opf_preparation(instance).map_err(|e| e.to_string())?;
         let mut policy = Vec::new();
@@ -227,7 +267,10 @@ impl ReferenceEquations {
                             .iter()
                             .find(|b| b.id == *id)
                             .ok_or("AC bus map missing")?;
-                        if matches!(b.kind, powerio_tx::BusType::Ref | powerio_tx::BusType::Pv) {
+                        if matches!(
+                            effective_kind(b),
+                            powerio_tx::BusType::Ref | powerio_tx::BusType::Pv
+                        ) {
                             setpoint(p, format!("pf/vm[{}]", id.0), variable(cols.vm[i]), b.vm);
                         }
                     }
@@ -242,14 +285,14 @@ impl ReferenceEquations {
                             .iter()
                             .find(|b| b.id == g.bus)
                             .ok_or("Generator bus missing")?;
-                        if b.kind != powerio_tx::BusType::Ref {
+                        if effective_kind(b) != powerio_tx::BusType::Ref {
                             setpoint(
                                 p,
                                 format!("pf/pg[{identity}]"),
                                 variable(cols.pg[j]),
                                 g.pg / base,
                             );
-                            if b.kind == powerio_tx::BusType::Pq {
+                            if effective_kind(b) == powerio_tx::BusType::Pq {
                                 setpoint(
                                     p,
                                     format!("pf/qg[{identity}]"),
@@ -489,6 +532,7 @@ impl ReferenceEquations {
             model,
             mode,
             policy,
+            bus_type_policy,
         })
     }
 
@@ -573,6 +617,7 @@ impl ReferenceEquations {
             equations,
             bounds,
             station_policy: self.policy.clone(),
+            bus_type_policy: self.bus_type_policy.clone(),
         })
     }
 }

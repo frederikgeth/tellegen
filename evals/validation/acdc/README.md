@@ -139,9 +139,12 @@ No limit clipping or feasibility restoration is applied. Both perturbed points
 have material equation violations, so this also exercises derivatives away
 from a converged solution.
 
-Central differences use two relative steps, `1e-5` and `3e-6`, with column step
+Fourth-order central differences use two relative steps, `1e-4` and `3e-5`, with column step
 `h=relative_step*max(1,abs(x[column]))`. Every check must satisfy
 `abs(analytic-finite)/max(1,abs(analytic),abs(finite)) <= 1e-6` at **both** steps.
+The stencil is `(8*(f(x+h)-f(x-h))-(f(x+2h)-f(x-2h)))/(12h)`.
+Sparse accumulation forms the finite-difference Lagrangian gradient; every dense
+Hessian entry, including structural zeros, is still compared.
 The report records absolute error separately; the scaled threshold is not an
 absolute derivative error bound.
 
@@ -211,7 +214,7 @@ blanket full-station/physical-model qualification.
    multiple AC islands, disabled equipment, direction-dependent losses, and
    further PF controls. Droop/LCC and zero-resistance DC links explicitly refuse
    where unsupported; implemented bypass equations are not oracle-qualified here.
-4. Expand to case24/case39/case67 and external large cases. Preserve known
+4. Expand beyond the case5/case24 checks to case39/case67 and external large cases. Preserve known
    reference PF infeasibility rather than treating it as a reader failure.
 5. Add the natural PowerModelsACDC JSON IR reader separately. No inference of
    JSON support, bindings support, or broader native solve support from case5.
@@ -226,3 +229,18 @@ Embedded authorship/references are retained. The upstream `LICENSE` is 31 lines 
 1,308 bytes: case data is CC-BY-4.0; its separate MIT section covers software.
 The numerical reference/report are derived validation artifacts. The source
 case is unmodified; mutation tests operate on in-memory copies.
+
+
+## Case24 extension
+
+Run `python3 evals/validation/acdc/run.py /tmp/tellegen-case24 --case case24`.
+The same pinned model and gates apply; see [case24/README.md](case24/README.md).
+Despite its name, this fixture contains 50 AC buses across three asynchronous
+areas, 65 generators, 77 AC branches and seven VSC stations. AC source IDs
+are nonconsecutive. Its reactor bypasses and disabled filters exercise different
+station equations from case5.
+
+The PF diagnostics explicitly reproduce PowerModels' parser repair of PQ/PV
+roles by active-generator presence. Bus 123 is declared PQ but becomes PV;
+`bus_type_policy` records that choice without changing the PowerIO network.
+Selecting a replacement reference bus remains unqualified and refuses.

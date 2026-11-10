@@ -24,8 +24,8 @@ output = Dict("source_sha256" => CASE_SHA, "powermodelsacdc_commit" => "9ada4082
     "powermodels" => string(pkgversion(PM)), "jump" => string(pkgversion(JuMP)), "ipopt" => string(pkgversion(Ipopt)),
     "manifest_sha256" => bytes2hex(sha256(read(joinpath(@__DIR__, "Manifest.toml")))),
     "settings" => SETTINGS, "optimizer_options" => OPTIONS, "declared_acdc" => declared,
-    "effective_acdc" => effective, "solves" => records)
-path = isempty(ARGS) ? joinpath(@__DIR__, "reference.json") : only(ARGS)
+    "effective_acdc" => effective, "effective_bus_types" => Dict(id=>b["bus_type"] for (id,b) in data["bus"]), "solves" => records)
+path = isempty(ARGS) ? joinpath(CASE_DIR, "reference.json") : only(ARGS)
 open(path, "w") do io
     JSON.print(io, output, 2)
     println(io)

@@ -5,9 +5,9 @@
 /// terminal solver below. Available only with the native `acopf` feature.
 #[cfg(feature = "acopf")]
 pub use crate::model::acopf::equivalent::{
-    AcDcOpfManifest, AcDcOpfProfile, AcDcOpfResult, AcDcOpfStart, AcDcScalar, DerivativeCheck,
-    DerivativeReport, EquationCheck, EquationMode, EquationReport, PreparedAcDcOpf,
-    ReferenceEquations, StationPolicy,
+    AcDcOpfManifest, AcDcOpfProfile, AcDcOpfResult, AcDcOpfStart, AcDcScalar, BusTypePolicy,
+    DerivativeCheck, DerivativeReport, EquationCheck, EquationMode, EquationReport,
+    PreparedAcDcOpf, ReferenceEquations, StationPolicy,
 };
 
 use crate::{

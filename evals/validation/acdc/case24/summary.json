@@ -1,0 +1,86 @@
+{
+  "opf": {
+    "equations": 747,
+    "bounds": 299,
+    "max_violation": 1.0224253388368965e-10,
+    "objective": 150228.14924867815
+  },
+  "pf": {
+    "equations": 611,
+    "bounds": 7,
+    "max_violation": 4.551914400963142e-14,
+    "objective": 0.0
+  },
+  "native_opf": {
+    "declared": {
+      "objective": 150228.14924776572,
+      "iterations": 104,
+      "native_violation": 4.043757516336566e-13,
+      "reference_violation": 1.7700207619042452e-13,
+      "oracle_objective_difference": -9.124050848186016e-07,
+      "max_absolute_electrical_difference": 0.0001962653203350373,
+      "native_variables": 657,
+      "reference_variables": 766
+    },
+    "flat": {
+      "objective": 150228.14924776583,
+      "iterations": 64,
+      "native_violation": 4.043809558040845e-13,
+      "reference_violation": 1.7700728036085245e-13,
+      "oracle_objective_difference": -9.122886694967747e-07,
+      "max_absolute_electrical_difference": 0.00019567967384717666,
+      "native_variables": 657,
+      "reference_variables": 766
+    },
+    "reference": {
+      "objective": 150228.14924776586,
+      "iterations": 21,
+      "native_violation": 4.0438073896365e-13,
+      "reference_violation": 1.7700706352041795e-13,
+      "oracle_objective_difference": -9.122304618358612e-07,
+      "max_absolute_electrical_difference": 0.00019548049937670453,
+      "native_variables": 657,
+      "reference_variables": 766
+    }
+  },
+  "provenance": {
+    "source_sha256": "fe8c31d586ef6853257a0ec9a018c2b92da030808e58e57b309deac1eb5ae4b4",
+    "manifest_sha256": "c0c50ee07d24b1ba8af99d58dad407959e4e6ce81071f6f988babe120f0344f4",
+    "powermodelsacdc_commit": "9ada4082ac087aed649f48fb5f977680b0fe06c7",
+    "julia": "1.12.6",
+    "powermodelsacdc": "0.10.1",
+    "powermodels": "0.21.7",
+    "jump": "1.32.1",
+    "ipopt": "1.16.0",
+    "powerio_revision": "98d5c88fa7eed18ba537a6c278d0f934dc7d2422"
+  },
+  "derivatives": {
+    "points": 6,
+    "checks": 174,
+    "variables": 657,
+    "finite_difference_order": 4,
+    "relative_steps": [
+      0.0001,
+      3e-05
+    ],
+    "scaled_tolerance": 1e-06,
+    "max_scaled_errors": {
+      "objective_gradient": 2.8952231838352827e-07,
+      "constraint_jacobian": 1.461453998735725e-09,
+      "hessian/": 2.6747731363130356e-08
+    }
+  },
+  "bus_type_policy": [
+    {
+      "bus_id": 123,
+      "declared": "PQ",
+      "effective": "PV"
+    }
+  ],
+  "negative_controls_detected": {
+    "dc_bus/dc_equivalent_bus/1/vm": 6.644194102660563,
+    "station/ac_dc_converter_station/1/pdc": 0.10000000000000009,
+    "station/ac_dc_converter_station/1/pgrid": 0.10000000000000009,
+    "station/ac_dc_converter_station/1/qgrid": 0.10000000000000003
+  }
+}

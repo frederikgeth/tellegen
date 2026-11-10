@@ -138,3 +138,25 @@ full-feature clippy, formatting, pin consistency and EPL guard pass.
 PowerIO validation and the pre-existing broad clippy failures are recorded in
 its model branch's `evals/validation/acdc/RESULTS.md`. All existing PRs remain
 draft and unchanged; no new PR or public adapter solve mode is introduced.
+
+## Case24 extension — 2026-11-10
+
+The same branch and PowerIO pin now qualify case24's native equations,
+derivatives and three OPF starts against the independent Julia formulation.
+See [case24 results and provenance](case24/README.md) and its machine-readable
+[summary](case24/summary.json). Maximum native/reference solved-point violations
+are 4.044e-13 / 1.771e-13; objective difference is 9.125e-7.
+
+This exposed a missing reference PF bus-role repair (PQ→PV at bus 123) and
+finite-difference truncation/cancellation in our checker. Both are addressed
+explicitly, with the same 1e-6 derivative threshold. No PowerModelsACDC defect
+was found. The six-point case5 harness was rerun as a regression: gradient,
+Jacobian and Hessian scaled errors are now <=2.004e-11, 2.914e-10 and 2.391e-8
+with the fourth-order stencil; case5 solve and independent feasibility results
+are unchanged. Earlier derivative numbers above describe the prior stencil.
+
+Final validation: 751 full-feature Tellegen tests passed, 7 ignored, no failures
+(`acopf mc-opf conic schema`); all-target clippy with those features, formatting,
+PowerIO pin consistency and EPL dependency guards passed. Case24 integration
+tests cover source preservation, recorded bus-role repair, all three native OPF
+starts and canonical physical-result serialization/reload.

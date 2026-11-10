@@ -1,4 +1,4 @@
-//! Evaluate pinned independent case5 solutions in native Tellegen equations.
+//! Evaluate pinned independent AC/DC solutions in native Tellegen equations.
 #[path = "../tests/support/acdc_reference.rs"]
 mod reference;
 use tellegen::ac_dc::{EquationMode, ReferenceEquations};

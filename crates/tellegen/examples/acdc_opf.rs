@@ -1,4 +1,4 @@
-//! Native case5 OPF from reference, declared-data and independent flat starts.
+//! Native AC/DC OPF from reference, declared-data and independent flat starts.
 #[path = "../tests/support/acdc_reference.rs"]
 mod reference;
 use tellegen::ac_dc::{AcDcOpfProfile, AcDcOpfStart, PreparedAcDcOpf};
@@ -25,7 +25,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         ("declared", AcDcOpfStart::Declared),
         ("flat", AcDcOpfStart::Flat),
     ] {
-        eprintln!("Solving case5 from {name} start");
+        eprintln!("Solving AC/DC case from {name} start");
         let solution = prepared.solve(start, None)?;
         eprintln!(
             "{name}: {} iterations; objective {}; violation {}; KKT {}",

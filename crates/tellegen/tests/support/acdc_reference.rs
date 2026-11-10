@@ -3,13 +3,15 @@ use serde_json::Value;
 use std::{collections::BTreeMap, path::Path};
 
 pub fn load(dir: &Path) -> (BalancedNetwork, Value, Value) {
-    let module =
-        powerio::parse(dir.join("case5_3_he.m")).expect("parse case5 through pinned PowerIO");
+    let read =
+        |name| serde_json::from_slice::<Value>(&std::fs::read(dir.join(name)).unwrap()).unwrap();
+    let map = read("identity-map.json");
+    let source = map["_source_file"].as_str().unwrap_or("case5_3_he.m");
+    let module = powerio::parse(dir.join(source)).expect("parse pinned case through PowerIO");
     let PioValue::BalancedNetwork(net) = module.into_value() else {
         panic!("balanced case required")
     };
-    let read = |name| serde_json::from_slice(&std::fs::read(dir.join(name)).unwrap()).unwrap();
-    (net, read("reference.json"), read("identity-map.json"))
+    (net, read("reference.json"), map)
 }
 
 // Explicit fixture identity crosswalk; never interpret native row positions as
@@ -35,13 +37,13 @@ pub fn point(net: &BalancedNetwork, solution: &Value, map: &Value) -> BTreeMap<S
             );
         }
     }
-    for g in net.generators() {
+    for g in net.generators().iter().filter(|g| g.in_service) {
         let id = g.uid.as_deref().unwrap();
         for field in ["pg", "qg"] {
             put(format!("{field}[{id}]"), "gen", id, field);
         }
     }
-    for b in net.branches() {
+    for b in net.branches().iter().filter(|b| b.in_service) {
         let id = b.uid.as_deref().unwrap();
         for field in ["pf", "qf", "pt", "qt"] {
             put(format!("ac_branch/{id}/{field}"), "branch", id, field);
@@ -52,13 +54,13 @@ pub fn point(net: &BalancedNetwork, solution: &Value, map: &Value) -> BTreeMap<S
         let id = b.component.to_string();
         put(format!("dc_bus/{id}/vm"), "busdc", &id, "vm");
     }
-    for b in &owner.branches {
+    for b in owner.branches.iter().filter(|b| b.in_service) {
         let id = b.component.to_string();
         for field in ["pf", "pt"] {
             put(format!("dc_branch/{id}/{field}"), "branchdc", &id, field);
         }
     }
-    for s in &owner.stations {
+    for s in owner.stations.iter().filter(|s| s.in_service) {
         let id = s.component.to_string();
         for field in [
             "pgrid", "qgrid", "ptf_to", "qtf_to", "ppr_fr", "qpr_fr", "pconv", "qconv", "pdc",

@@ -3,6 +3,7 @@
 import argparse
 import hashlib
 import json
+import os
 from pathlib import Path
 import shutil
 import subprocess
@@ -12,15 +13,20 @@ ROOT = HERE.parents[2]
 CASE_SHA = "759606ec335f8706ee8631ff4833c50804dd916afb5b5e682ace4f4f886fd7f3"
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument("output", type=Path)
+parser.add_argument("--case", choices=["case5", "case24"], default="case5")
 args = parser.parse_args()
+fixture = HERE if args.case == "case5" else HERE / "case24"
+source_name = "case5_3_he.m" if args.case == "case5" else "case24_7_jb.m"
+source_sha = CASE_SHA if args.case == "case5" else "fe8c31d586ef6853257a0ec9a018c2b92da030808e58e57b309deac1eb5ae4b4"
+os.environ["TELLEGEN_ACDC_CASE"] = args.case
 out = args.output.resolve()
-if out == HERE:
+if out == HERE or HERE in out.parents:
     parser.error("use a separate output directory; inspect results before replacing fixtures")
 out.mkdir(parents=True, exist_ok=True)
-assert hashlib.sha256((HERE / "case5_3_he.m").read_bytes()).hexdigest() == CASE_SHA
+assert hashlib.sha256((fixture / source_name).read_bytes()).hexdigest() == source_sha
 subprocess.run(["python3", ".github/scripts/powerio-pin.py"], cwd=ROOT, check=True)
-for name in ("case5_3_he.m", "identity-map.json"):
-    shutil.copyfile(HERE / name, out / name)
+for name in (source_name, "identity-map.json"):
+    shutil.copyfile(fixture / name, out / name)
 with (out / "julia.log").open("w") as log:
     subprocess.run(["julia", f"--project={HERE}", "--startup-file=no",
                     str(HERE / "generate.jl"), str(out / "reference.json")],
@@ -55,5 +61,27 @@ summary["native_opf"] = {
            "oracle_objective_difference": cross["solves"][name]["oracle_objective_difference"]}
     for name, r in native["solves"].items()
 }
+reference = json.loads((out / "reference.json").read_text())
+derivatives = json.loads((out / "derivative-report.json").read_text())
+assert all(r["passed"] for r in derivatives.values())
+summary["provenance"] = {key: reference[key] for key in (
+    "source_sha256", "manifest_sha256", "powermodelsacdc_commit", "julia",
+    "powermodelsacdc", "powermodels", "jump", "ipopt")}
+summary["provenance"]["powerio_revision"] = native["preparation"]["powerio_revision"]
+summary["derivatives"] = {
+    "points": len(derivatives), "checks": sum(len(r["checks"]) for r in derivatives.values()),
+    "variables": next(iter(derivatives.values()))["variables"],
+    "finite_difference_order": next(iter(derivatives.values()))["finite_difference_order"],
+    "relative_steps": sorted({c["relative_step"] for r in derivatives.values() for c in r["checks"]}, reverse=True),
+    "scaled_tolerance": next(iter(derivatives.values()))["scaled_tolerance"],
+    "max_scaled_errors": {family: max(c["max_scaled_error"] for r in derivatives.values()
+        for c in r["checks"] if c["name"].startswith(family))
+        for family in ("objective_gradient", "constraint_jacobian", "hessian/")}}
+summary["bus_type_policy"] = reports["pf"]["bus_type_policy"]
+summary["negative_controls_detected"] = cross["negative_controls_detected"]
+for name, result in summary["native_opf"].items():
+    result["max_absolute_electrical_difference"] = cross["solves"][name]["max_absolute_electrical_difference"]
+    result["native_variables"] = cross["solves"][name]["native_variables"]
+    result["reference_variables"] = cross["solves"][name]["reference_variables"]
 (out / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
 print(json.dumps(summary, indent=2))
