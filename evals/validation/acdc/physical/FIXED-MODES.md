@@ -145,3 +145,7 @@ The next development gate is native coupled PF with explicitly selected controls
 and reference setpoints, starting with case5. Automatic mode reversal requires a
 separate disjunction or justified physical boundary model. Generic imported-data
 rebasing, physical pole/return wiring, droop/deadbands and LCC remain unqualified.
+
+The initial case5 native PF gate is now [qualified separately](../pf/README.md).
+It selects source-pu/Cinv PF controls and does not extend this physical fixed-mode
+OPF profile to PF.

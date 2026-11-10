@@ -359,3 +359,22 @@ boundary witnesses pass, including 648 off-domain sign violations and 32 derivat
 cases. The new profile uses stricter convergence near zero current; no acceptance
 threshold or physical limit is relaxed. Full Tellegen tests: 783 passed, 7 ignored.
 Native coupled PF controls are next; automatic mode reversal remains separate.
+
+
+## Native coupled PF controls — 2026-11-10
+
+The [case5 PF gate](pf/README.md) adds explicit canonical PF intent/results and
+source-pu/Cinv control semantics at PowerIO `e5a7c8b8`. Native damped Newton solves
+P/Q, P/Vac, Vdc/Q and Vdc/Vac cases with explicit equal-increment generator
+allocation. Ratings are reported after solving; costs and OPF dispatch bounds do
+not enter PF. Eight case5 variants pass **24 native + 24 independent PMACDC
+solves, 48 bidirectional checks and 96 corruption controls**. Maximum electrical
+difference is 5.744e-10; phases are compared modulo 2pi with raw windings retained.
+The report documents exact reference setpoint presolve and earlier failed Ipopt
+trials. No new upstream equation bug is established.
+
+Full Tellegen suite: **787 passed, 7 ignored**; build/lint/pin/EPL guards pass.
+The 42 compatibility exports/native records and old case5 fingerprint remain
+unchanged. Next: case24/larger PF and connected control/islanding qualification.
+Physical/fixed-mode PF, saturation and droop remain separate gates. Existing PRs
+remain draft; the work stays on the two development branches.

@@ -5,10 +5,12 @@ use super::*;
 mod coordinates;
 mod derivatives;
 mod opf;
+mod pf;
 pub use derivatives::{DerivativeCheck, DerivativeReport};
 pub use opf::{
     AcDcOpfManifest, AcDcOpfProfile, AcDcOpfResult, AcDcOpfStart, AcDcScalar, PreparedAcDcOpf,
 };
+pub use pf::{AcDcPfManifest, AcDcPfResult, AcDcPfStart, PreparedAcDcPf};
 use powerio::BalancedNetwork;
 pub use powerio::{AcDcAngleReferencePolicy, AcDcCoordinatePolicy, AcDcCurrentLimitPolicy};
 pub use powerio_matrix::{AcDcAngleReference, AcDcBranchPolicy};
@@ -169,6 +171,28 @@ impl ReferenceEquations {
     pub fn from_instance(
         instance: &powerio::AcDcOpfInstance,
         mode: EquationMode,
+    ) -> Result<Self, String> {
+        Self::compile(instance, mode, false)
+    }
+    /// PF semantics are selected by canonical PF intent, never OPF flags.
+    pub fn from_pf_instance(instance: &powerio::AcDcPfInstance) -> Result<Self, String> {
+        let mut network = instance.network().clone();
+        // PF has no objective or cost auxiliaries. Retain costs in the owner,
+        // removing them only from this private equation-assembly projection.
+        for g in network.generators_mut() {
+            g.cost = Some(powerio::GenCost::new(2, 0., 0., vec![0.]));
+        }
+        let adapter = powerio::AcDcOpfInstance::from_network(
+            network,
+            AcDcOpfProfile::PowerModelsAcDc0101AcpVscV1,
+        )
+        .map_err(|e| e.to_string())?;
+        Self::compile(&adapter, EquationMode::Pf, true)
+    }
+    fn compile(
+        instance: &powerio::AcDcOpfInstance,
+        mode: EquationMode,
+        equal_generator_increments: bool,
     ) -> Result<Self, String> {
         match instance.profile() {
             AcDcOpfProfile::PowerModelsAcDc0101AcpVscV1 => {}
@@ -355,6 +379,9 @@ impl ReferenceEquations {
                             }
                         }
                     }
+                }
+                if equal_generator_increments {
+                    pf::generator_sharing(net, prep, cols, p)?;
                 }
                 let mut dcvm = Vec::new();
                 let mut kcl = Vec::new();

@@ -1,0 +1,1825 @@
+{
+  "acceptance": {
+    "angle_comparison": "phase_modulo_2pi; raw_points_retained",
+    "cross_constraint_tolerance": 1e-07,
+    "electrical_coordinate_tolerance": 1e-07,
+    "native_residual_tolerance": 1e-10
+  },
+  "cases": {
+    "dc_voltage": {
+      "controls": [
+        "pf/vm[1]",
+        "pf/vm[3]",
+        "pf/vm[4]",
+        "pf/vm[5]",
+        "pf/pg[bus-1]",
+        "pf/pg[bus-1-2]",
+        "pf/pg[bus-3-2]",
+        "pf/pg[bus-5]",
+        "pf/share_q[bus-1-2]",
+        "station/ac_dc_converter_station/1/p_setpoint",
+        "station/ac_dc_converter_station/1/q_setpoint",
+        "station/ac_dc_converter_station/2/vdc_setpoint",
+        "station/ac_dc_converter_station/2/q_setpoint",
+        "station/ac_dc_converter_station/3/p_setpoint",
+        "station/ac_dc_converter_station/3/q_setpoint"
+      ],
+      "equalities": 95,
+      "max_electrical_difference": 8.927414363313346e-12,
+      "max_native_in_reference_violation": 1.0604406242009645e-11,
+      "max_native_violation": 1.0604406242009645e-11,
+      "max_raw_coordinate_difference": 8.927414363313346e-12,
+      "max_reference_violation": 2.628453010800058e-14,
+      "model_fingerprint": "sha256:420c55ed9a59928bec0f870ff38a81e9cbc18021d8e75387a6e3caf20216c03d",
+      "native_iterations": [
+        6,
+        6,
+        7
+      ],
+      "phase_windings_by_start": {
+        "declared": {},
+        "flat": {},
+        "perturbed": {}
+      },
+      "reference_only_variables": {
+        "0_pcurt[1]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.0
+        },
+        "0_pcurt[2]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.0
+        },
+        "0_pcurt[3]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.0
+        },
+        "0_pflex[1]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 3.0
+        },
+        "0_pflex[2]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 3.0
+        },
+        "0_pflex[3]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 4.0
+        },
+        "0_phiconv[1]": {
+          "reason": "unused VSC firing angle",
+          "value": 0.0
+        },
+        "0_phiconv[2]": {
+          "reason": "unused VSC firing angle",
+          "value": 0.0
+        },
+        "0_phiconv[3]": {
+          "reason": "unused VSC firing angle",
+          "value": 0.0
+        },
+        "0_qflex[1]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.9861
+        },
+        "0_qflex[2]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.9861
+        },
+        "0_qflex[3]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 1.3147
+        }
+      },
+      "representative_limit_violations": [
+        {
+          "lower": 0.0,
+          "name": "pg[bus-4-2]",
+          "upper": 2.0,
+          "value": 3.426926721575195,
+          "violation": 1.426926721575195
+        },
+        {
+          "lower": 0.9,
+          "name": "station/ac_dc_converter_station/1/vmconv",
+          "upper": 1.1,
+          "value": 0.8747200312126663,
+          "violation": 0.02527996878733374
+        }
+      ],
+      "representative_point": {
+        "ac_branch/1-2/pf": 2.5204072556252095,
+        "ac_branch/1-2/pt": -2.502211012793322,
+        "ac_branch/1-2/qf": 0.3472654875164795,
+        "ac_branch/1-2/qt": -0.17232082737003754,
+        "ac_branch/1-4/pf": 0.6959285875343477,
+        "ac_branch/1-4/pt": -0.6944445421800292,
+        "ac_branch/1-4/qf": -0.06538842971412764,
+        "ac_branch/1-4/qt": 0.07364888325731003,
+        "ac_branch/1-5/pf": -2.1663358431595574,
+        "ac_branch/1-5/pt": 2.169373810221005,
+        "ac_branch/1-5/qf": 0.21634531797627085,
+        "ac_branch/1-5/qt": -0.21722564736178554,
+        "ac_branch/2-3/pf": -1.097788987206678,
+        "ac_branch/2-3/pt": 1.1007429965134239,
+        "ac_branch/2-3/qf": -1.2137791726299625,
+        "ac_branch/2-3/qt": 1.2250651833163437,
+        "ac_branch/3-4/pf": -1.292794782631226,
+        "ac_branch/3-4/pt": 1.2978296816929742,
+        "ac_branch/3-4/qf": 0.15133571852495306,
+        "ac_branch/3-4/qt": -0.10772672790746697,
+        "ac_branch/4-5/pf": -1.17645841793775,
+        "ac_branch/4-5/pt": 1.1806261897789947,
+        "ac_branch/4-5/qf": 0.13532308959206604,
+        "ac_branch/4-5/qt": -0.10038537117960837,
+        "dc_branch/dc_equivalent_branch/1/pf": 0.3068297530362242,
+        "dc_branch/dc_equivalent_branch/1/pt": -0.3045124485245301,
+        "dc_branch/dc_equivalent_branch/2/pf": 0.08509096137040154,
+        "dc_branch/dc_equivalent_branch/2/pt": -0.08491001917088171,
+        "dc_branch/dc_equivalent_branch/3/pf": 0.27963765524095247,
+        "dc_branch/dc_equivalent_branch/3/pt": -0.27693557036597843,
+        "dc_bus/dc_equivalent_bus/1/vm": 1.0277620820212134,
+        "dc_bus/dc_equivalent_bus/2/vm": 1.02,
+        "dc_bus/dc_equivalent_bus/3/vm": 1.0178310147101663,
+        "pg[bus-1-2]": 0.85,
+        "pg[bus-1]": 0.2,
+        "pg[bus-3-2]": 2.6,
+        "pg[bus-4-2]": 3.426926721575195,
+        "pg[bus-5]": 3.0,
+        "qg[bus-1-2]": 0.24911118788931136,
+        "qg[bus-1]": 0.24911118788931136,
+        "qg[bus-3-2]": 2.362500901841297,
+        "qg[bus-4-2]": 1.415945244941909,
+        "qg[bus-5]": -0.3676110185413939,
+        "station/ac_dc_converter_station/1/iconv": 0.7763133752836988,
+        "station/ac_dc_converter_station/1/pconv": 0.5991366723975506,
+        "station/ac_dc_converter_station/1/pdc": -0.5864674082771767,
+        "station/ac_dc_converter_station/1/pgrid": 0.6,
+        "station/ac_dc_converter_station/1/ppr_fr": 0.5991969386432151,
+        "station/ac_dc_converter_station/1/ptf_to": -0.5991969386432151,
+        "station/ac_dc_converter_station/1/qconv": 0.3196145596025176,
+        "station/ac_dc_converter_station/1/qgrid": 0.4,
+        "station/ac_dc_converter_station/1/qpr_fr": 0.4186199479800545,
+        "station/ac_dc_converter_station/1/qtf_to": -0.33998454793627625,
+        "station/ac_dc_converter_station/1/vaconv": -0.24122822517776135,
+        "station/ac_dc_converter_station/1/vafilt": -0.12147374270010829,
+        "station/ac_dc_converter_station/1/vmconv": 0.8747200312126663,
+        "station/ac_dc_converter_station/1/vmfilt": 0.9415583525578523,
+        "station/ac_dc_converter_station/2/iconv": 0.22418606347654838,
+        "station/ac_dc_converter_station/2/pconv": -0.20801810351078867,
+        "station/ac_dc_converter_station/2/pdc": 0.21942148715412854,
+        "station/ac_dc_converter_station/2/pgrid": -0.20794821388219775,
+        "station/ac_dc_converter_station/2/ppr_fr": -0.20801307757168297,
+        "station/ac_dc_converter_station/2/ptf_to": 0.20801307757168297,
+        "station/ac_dc_converter_station/2/qconv": 0.0756994509591907,
+        "station/ac_dc_converter_station/2/qgrid": 0.0,
+        "station/ac_dc_converter_station/2/qpr_fr": 0.08395606372205243,
+        "station/ac_dc_converter_station/2/qtf_to": 0.004847479727525826,
+        "station/ac_dc_converter_station/2/vaconv": 0.019037529631253967,
+        "station/ac_dc_converter_station/2/vafilt": -0.015565755947343118,
+        "station/ac_dc_converter_station/2/vmconv": 0.9874111299660897,
+        "station/ac_dc_converter_station/2/vmfilt": 1.0005835019700438,
+        "station/ac_dc_converter_station/3/iconv": 0.3487415822202371,
+        "station/ac_dc_converter_station/3/pconv": -0.35019966206911696,
+        "station/ac_dc_converter_station/3/pdc": 0.3618455895368602,
+        "station/ac_dc_converter_station/3/pgrid": -0.35,
+        "station/ac_dc_converter_station/3/ppr_fr": -0.3501875,
+        "station/ac_dc_converter_station/3/ptf_to": 0.3501875,
+        "station/ac_dc_converter_station/3/qconv": 0.005934469872428148,
+        "station/ac_dc_converter_station/3/qgrid": -0.05,
+        "station/ac_dc_converter_station/3/qpr_fr": 0.025914317017748458,
+        "station/ac_dc_converter_station/3/qtf_to": 0.06401250000000154,
+        "station/ac_dc_converter_station/3/vaconv": 0.13118416100411853,
+        "station/ac_dc_converter_station/3/vafilt": 0.07426187758335617,
+        "station/ac_dc_converter_station/3/vmconv": 1.0043251478011932,
+        "station/ac_dc_converter_station/3/vmfilt": 1.0068917928456862,
+        "va[1]": 0.021346629450769213,
+        "va[2]": -0.04957531905728545,
+        "va[3]": -0.03886526467659717,
+        "va[4]": 6.260813063214026e-30,
+        "va[5]": 0.0353601017008765,
+        "vm[1]": 1.0,
+        "vm[2]": 0.9855370081854248,
+        "vm[3]": 1.0,
+        "vm[4]": 1.0,
+        "vm[5]": 1.0
+      },
+      "sharing_equalities": 1,
+      "source_sha256": "4e56854098bc60741c0dbafb5c8bf442d5f03497c873970b88a8f23742714dad",
+      "variables": 95
+    },
+    "dual_voltage": {
+      "controls": [
+        "pf/vm[1]",
+        "pf/vm[3]",
+        "pf/vm[4]",
+        "pf/vm[5]",
+        "pf/pg[bus-1]",
+        "pf/pg[bus-1-2]",
+        "pf/pg[bus-3-2]",
+        "pf/pg[bus-5]",
+        "pf/share_q[bus-1-2]",
+        "station/ac_dc_converter_station/1/vdc_setpoint",
+        "station/ac_dc_converter_station/1/vac_setpoint",
+        "station/ac_dc_converter_station/2/p_setpoint",
+        "station/ac_dc_converter_station/2/q_setpoint",
+        "station/ac_dc_converter_station/3/p_setpoint",
+        "station/ac_dc_converter_station/3/q_setpoint"
+      ],
+      "equalities": 95,
+      "max_electrical_difference": 3.197442310920451e-14,
+      "max_native_in_reference_violation": 4.263256414560601e-14,
+      "max_native_violation": 4.263256414560601e-14,
+      "max_raw_coordinate_difference": 3.197442310920451e-14,
+      "max_reference_violation": 8.526512829121202e-14,
+      "model_fingerprint": "sha256:134c13217a5acf99cd1f919fb54d0419a00dccc1e9ad1f8e9b42792fa248ebd5",
+      "native_iterations": [
+        8,
+        7,
+        7
+      ],
+      "phase_windings_by_start": {
+        "declared": {},
+        "flat": {},
+        "perturbed": {}
+      },
+      "reference_only_variables": {
+        "0_pcurt[1]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.0
+        },
+        "0_pcurt[2]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.0
+        },
+        "0_pcurt[3]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.0
+        },
+        "0_pflex[1]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 3.0
+        },
+        "0_pflex[2]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 3.0
+        },
+        "0_pflex[3]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 4.0
+        },
+        "0_phiconv[1]": {
+          "reason": "unused VSC firing angle",
+          "value": 0.0
+        },
+        "0_phiconv[2]": {
+          "reason": "unused VSC firing angle",
+          "value": 0.0
+        },
+        "0_phiconv[3]": {
+          "reason": "unused VSC firing angle",
+          "value": 0.0
+        },
+        "0_qflex[1]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.9861
+        },
+        "0_qflex[2]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.9861
+        },
+        "0_qflex[3]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 1.3147
+        }
+      },
+      "representative_limit_violations": [
+        {
+          "lower": 0.0,
+          "name": "pg[bus-4-2]",
+          "upper": 2.0,
+          "value": 3.441197197359776,
+          "violation": 1.441197197359776
+        },
+        {
+          "lower": -1.0,
+          "name": "station/ac_dc_converter_station/1/qgrid",
+          "upper": 1.0,
+          "value": -2.693943970923684,
+          "violation": 1.693943970923684
+        },
+        {
+          "lower": -1.0,
+          "name": "station/ac_dc_converter_station/1/qtf_to",
+          "upper": 1.0,
+          "value": 3.5018166522612177,
+          "violation": 2.5018166522612177
+        },
+        {
+          "lower": -1.0,
+          "name": "station/ac_dc_converter_station/1/qpr_fr",
+          "upper": 1.0,
+          "value": -3.3498079099748397,
+          "violation": 2.3498079099748397
+        },
+        {
+          "lower": -0.5,
+          "name": "station/ac_dc_converter_station/1/qconv",
+          "upper": 0.5,
+          "value": -4.4338875682237715,
+          "violation": 3.9338875682237715
+        },
+        {
+          "lower": 0.0,
+          "name": "station/ac_dc_converter_station/1/iconv",
+          "upper": 1.1,
+          "value": 2.568847071243806,
+          "violation": 1.4688470712438058
+        },
+        {
+          "lower": 0.9,
+          "name": "station/ac_dc_converter_station/1/vmconv",
+          "upper": 1.1,
+          "value": 1.729851546803226,
+          "violation": 0.629851546803226
+        }
+      ],
+      "representative_point": {
+        "ac_branch/1-2/pf": 2.50536873942458,
+        "ac_branch/1-2/pt": -2.486984439558096,
+        "ac_branch/1-2/qf": -0.5189074051683112,
+        "ac_branch/1-2/qt": 0.6955588478331572,
+        "ac_branch/1-4/pf": 0.704100139781647,
+        "ac_branch/1-4/pt": -0.7025810725922289,
+        "ac_branch/1-4/qf": -0.06602872467160163,
+        "ac_branch/1-4/qt": 0.07463939656578596,
+        "ac_branch/1-5/pf": -2.1594688792062273,
+        "ac_branch/1-5/pt": 2.1624876026127606,
+        "ac_branch/1-5/qf": 0.21556144112361988,
+        "ac_branch/1-5/qt": -0.21663420705827902,
+        "ac_branch/2-3/pf": -0.819993107750706,
+        "ac_branch/2-3/pt": 0.8218102132477145,
+        "ac_branch/2-3/qf": 1.0122851230905268,
+        "ac_branch/2-3/qt": -1.0128201941204318,
+        "ac_branch/3-4/pf": -1.3218102132477145,
+        "ac_branch/3-4/pt": 1.327074206519594,
+        "ac_branch/3-4/qf": 0.1553941873477616,
+        "ac_branch/3-4/qt": -0.10949425462896924,
+        "ac_branch/4-5/pf": -1.1832959365675892,
+        "ac_branch/4-5/pt": 1.1875123973872392,
+        "ac_branch/4-5/qf": 0.1362527207959912,
+        "ac_branch/4-5/qt": -0.10082811259949163,
+        "dc_branch/dc_equivalent_branch/1/pf": 0.08742668096056123,
+        "dc_branch/dc_equivalent_branch/1/pt": -0.08723378228489499,
+        "dc_branch/dc_equivalent_branch/2/pf": 0.17597543933860263,
+        "dc_branch/dc_equivalent_branch/2/pt": -0.1751904496423962,
+        "dc_branch/dc_equivalent_branch/3/pf": 0.18790609730794244,
+        "dc_branch/dc_equivalent_branch/3/pt": -0.186655139894464,
+        "dc_bus/dc_equivalent_bus/1/vm": 1.015,
+        "dc_bus/dc_equivalent_bus/2/vm": 1.012760498812833,
+        "dc_bus/dc_equivalent_bus/3/vm": 1.0082427856633103,
+        "pg[bus-1-2]": 0.85,
+        "pg[bus-1]": 0.2,
+        "pg[bus-3-2]": 2.6,
+        "pg[bus-4-2]": 3.441197197359776,
+        "pg[bus-5]": 3.0,
+        "qg[bus-1-2]": -0.1846873443581465,
+        "qg[bus-1]": -0.1846873443581465,
+        "qg[bus-3-2]": 0.12867399322732975,
+        "qg[bus-4-2]": 1.416097862732808,
+        "qg[bus-5]": -0.36746231965777065,
+        "station/ac_dc_converter_station/1/iconv": 2.568847071243806,
+        "station/ac_dc_converter_station/1/pconv": 0.29550757822009577,
+        "station/ac_dc_converter_station/1/pdc": -0.27533277826850366,
+        "station/ac_dc_converter_station/1/pgrid": 0.3069775473088019,
+        "station/ac_dc_converter_station/1/ppr_fr": 0.2961674757476395,
+        "station/ac_dc_converter_station/1/ptf_to": -0.2961674757476395,
+        "station/ac_dc_converter_station/1/qconv": -4.4338875682237715,
+        "station/ac_dc_converter_station/1/qgrid": -2.693943970923684,
+        "station/ac_dc_converter_station/1/qpr_fr": -3.3498079099748397,
+        "station/ac_dc_converter_station/1/qtf_to": 3.5018166522612177,
+        "station/ac_dc_converter_station/1/vaconv": -0.1003225649623508,
+        "station/ac_dc_converter_station/1/vafilt": -0.07868768646105635,
+        "station/ac_dc_converter_station/1/vmconv": 1.729851546803226,
+        "station/ac_dc_converter_station/1/vmfilt": 1.3090989452002637,
+        "station/ac_dc_converter_station/2/iconv": 0.13291897214546147,
+        "station/ac_dc_converter_station/2/pconv": 0.09998323325468438,
+        "station/ac_dc_converter_station/2/pdc": -0.08874165705370764,
+        "station/ac_dc_converter_station/2/pgrid": 0.1,
+        "station/ac_dc_converter_station/2/ppr_fr": 0.099985,
+        "station/ac_dc_converter_station/2/ptf_to": -0.099985,
+        "station/ac_dc_converter_station/2/qconv": 0.08466112919691851,
+        "station/ac_dc_converter_station/2/qgrid": 0.0,
+        "station/ac_dc_converter_station/2/qpr_fr": 0.08756353840142052,
+        "station/ac_dc_converter_station/2/qtf_to": 0.0011209999999994833,
+        "station/ac_dc_converter_station/2/vaconv": -0.06760891881832938,
+        "station/ac_dc_converter_station/2/vafilt": -0.050950963975328875,
+        "station/ac_dc_converter_station/2/vmconv": 0.9856533982002088,
+        "station/ac_dc_converter_station/2/vmfilt": 0.9999128395015238,
+        "station/ac_dc_converter_station/3/iconv": 0.3487415822202371,
+        "station/ac_dc_converter_station/3/pconv": -0.35019966206911696,
+        "station/ac_dc_converter_station/3/pdc": 0.3618455895368602,
+        "station/ac_dc_converter_station/3/pgrid": -0.35,
+        "station/ac_dc_converter_station/3/ppr_fr": -0.3501875,
+        "station/ac_dc_converter_station/3/ptf_to": 0.3501875,
+        "station/ac_dc_converter_station/3/qconv": 0.0059344698724281735,
+        "station/ac_dc_converter_station/3/qgrid": -0.05,
+        "station/ac_dc_converter_station/3/qpr_fr": 0.02591431701774846,
+        "station/ac_dc_converter_station/3/qtf_to": 0.06401250000000154,
+        "station/ac_dc_converter_station/3/vaconv": 0.13139012581268697,
+        "station/ac_dc_converter_station/3/vafilt": 0.07446784239192462,
+        "station/ac_dc_converter_station/3/vmconv": 1.0043251478011932,
+        "station/ac_dc_converter_station/3/vmfilt": 1.0068917928456862,
+        "va[1]": 0.021597048860861175,
+        "va[2]": -0.04960069921168372,
+        "va[3]": -0.03973975196385944,
+        "va[4]": -8.89009262329148e-31,
+        "va[5]": 0.03556606650944495,
+        "vm[1]": 1.0,
+        "vm[2]": 1.01,
+        "vm[3]": 1.0,
+        "vm[4]": 1.0,
+        "vm[5]": 1.0
+      },
+      "sharing_equalities": 1,
+      "source_sha256": "483555e36616f5902b6f254898822fb80c5e16e99e4a46091704806ac017639f",
+      "variables": 95
+    },
+    "multiple_reference_generators": {
+      "controls": [
+        "pf/vm[1]",
+        "pf/vm[3]",
+        "pf/vm[4]",
+        "pf/vm[5]",
+        "pf/pg[bus-1]",
+        "pf/pg[bus-1-2]",
+        "pf/pg[bus-3-2]",
+        "pf/pg[bus-5]",
+        "pf/share_q[bus-1-2]",
+        "pf/share_q[pf-second-reference-generator]",
+        "pf/share_p[pf-second-reference-generator]",
+        "station/ac_dc_converter_station/1/p_setpoint",
+        "station/ac_dc_converter_station/1/q_setpoint",
+        "station/ac_dc_converter_station/2/vdc_setpoint",
+        "station/ac_dc_converter_station/2/q_setpoint",
+        "station/ac_dc_converter_station/3/p_setpoint",
+        "station/ac_dc_converter_station/3/q_setpoint"
+      ],
+      "equalities": 97,
+      "max_electrical_difference": 8.929190720152747e-12,
+      "max_native_in_reference_violation": 1.0604739308917033e-11,
+      "max_native_violation": 1.0604739308917033e-11,
+      "max_raw_coordinate_difference": 8.929190720152747e-12,
+      "max_reference_violation": 1.687538997430238e-14,
+      "model_fingerprint": "sha256:a1efa027bc048fa0f3aa8fd164bd92f178c081ea2fb9dc3421a9f8cc699c943d",
+      "native_iterations": [
+        6,
+        6,
+        6
+      ],
+      "phase_windings_by_start": {
+        "declared": {},
+        "flat": {},
+        "perturbed": {}
+      },
+      "reference_only_variables": {
+        "0_pcurt[1]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.0
+        },
+        "0_pcurt[2]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.0
+        },
+        "0_pcurt[3]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.0
+        },
+        "0_pflex[1]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 3.0
+        },
+        "0_pflex[2]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 3.0
+        },
+        "0_pflex[3]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 4.0
+        },
+        "0_phiconv[1]": {
+          "reason": "unused VSC firing angle",
+          "value": 0.0
+        },
+        "0_phiconv[2]": {
+          "reason": "unused VSC firing angle",
+          "value": 0.0
+        },
+        "0_phiconv[3]": {
+          "reason": "unused VSC firing angle",
+          "value": 0.0
+        },
+        "0_qflex[1]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.9861
+        },
+        "0_qflex[2]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.9861
+        },
+        "0_qflex[3]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 1.3147
+        }
+      },
+      "representative_limit_violations": [
+        {
+          "lower": 0.0,
+          "name": "pg[bus-4-2]",
+          "upper": 2.0,
+          "value": 2.0885676605437635,
+          "violation": 0.08856766054376353
+        },
+        {
+          "lower": 0.9,
+          "name": "station/ac_dc_converter_station/1/vmconv",
+          "upper": 1.1,
+          "value": 0.8747199943377507,
+          "violation": 0.025280005662249305
+        }
+      ],
+      "representative_point": {
+        "ac_branch/1-2/pf": 2.5204797491537816,
+        "ac_branch/1-2/pt": -2.502282481109194,
+        "ac_branch/1-2/qf": 0.3472646504770238,
+        "ac_branch/1-2/qt": -0.17230973795649968,
+        "ac_branch/1-4/pf": 0.6958891963751622,
+        "ac_branch/1-4/pt": -0.6944053188570138,
+        "ac_branch/1-4/qf": -0.06538533817086144,
+        "ac_branch/1-4/qt": 0.0736441133523562,
+        "ac_branch/1-5/pf": -2.1663689455289434,
+        "ac_branch/1-5/pt": 2.169407005503209,
+        "ac_branch/1-5/qf": 0.21634909742294695,
+        "ac_branch/1-5/qt": -0.2172284976802684,
+        "ac_branch/2-3/pf": -1.097717518890806,
+        "ac_branch/2-3/pt": 1.1006713836499207,
+        "ac_branch/2-3/qf": -1.2137902620435004,
+        "ac_branch/2-3/qt": 1.225074827896264,
+        "ac_branch/3-4/pf": -1.292930140722086,
+        "ac_branch/3-4/pt": 1.297966096624543,
+        "ac_branch/3-4/qf": 0.15135459137961696,
+        "ac_branch/3-4/qt": -0.1077350323550459,
+        "ac_branch/4-5/pf": -1.1764254566800019,
+        "ac_branch/4-5/pt": 1.180592994496791,
+        "ac_branch/4-5/qf": 0.13531861164278444,
+        "ac_branch/4-5/qt": -0.10038323347489483,
+        "dc_branch/dc_equivalent_branch/1/pf": 0.30678791807116307,
+        "dc_branch/dc_equivalent_branch/1/pt": -0.3043791054356915,
+        "dc_branch/dc_equivalent_branch/2/pf": 0.08516507419043426,
+        "dc_branch/dc_equivalent_branch/2/pt": -0.08497649385402584,
+        "dc_branch/dc_equivalent_branch/3/pf": 0.27967949007974613,
+        "dc_branch/dc_equivalent_branch/3/pt": -0.27686909568283435,
+        "dc_bus/dc_equivalent_bus/1/vm": 1.007913856741328,
+        "dc_bus/dc_equivalent_bus/2/vm": 1.0,
+        "dc_bus/dc_equivalent_bus/3/vm": 0.9977857080710487,
+        "pg[bus-1-2]": 0.85,
+        "pg[bus-1]": 0.2,
+        "pg[bus-3-2]": 2.6,
+        "pg[bus-4-2]": 2.0885676605437635,
+        "pg[bus-5]": 3.0,
+        "pg[pf-second-reference-generator]": 1.3385676605437635,
+        "qg[bus-1-2]": 0.24911420486455466,
+        "qg[bus-1]": 0.24911420486455466,
+        "qg[bus-3-2]": 2.362529419275881,
+        "qg[bus-4-2]": 0.6929638463200474,
+        "qg[bus-5]": -0.3676117311551632,
+        "qg[pf-second-reference-generator]": 0.7229638463200474,
+        "station/ac_dc_converter_station/1/iconv": 0.7763133990846113,
+        "station/ac_dc_converter_station/1/pconv": 0.5991366723364697,
+        "station/ac_dc_converter_station/1/pdc": -0.5864674081509091,
+        "station/ac_dc_converter_station/1/pgrid": 0.6,
+        "station/ac_dc_converter_station/1/ppr_fr": 0.5991969385858296,
+        "station/ac_dc_converter_station/1/ptf_to": -0.5991969385858296,
+        "station/ac_dc_converter_station/1/qconv": 0.3196145431294163,
+        "station/ac_dc_converter_station/1/qgrid": 0.4,
+        "station/ac_dc_converter_station/1/qpr_fr": 0.4186199375777454,
+        "station/ac_dc_converter_station/1/qtf_to": -0.3399845436476641,
+        "station/ac_dc_converter_station/1/vaconv": -0.24123152455844651,
+        "station/ac_dc_converter_station/1/vafilt": -0.12147703234069573,
+        "station/ac_dc_converter_station/1/vmconv": 0.8747199943377507,
+        "station/ac_dc_converter_station/1/vmfilt": 0.9415583159560004,
+        "station/ac_dc_converter_station/2/iconv": 0.22399788608798515,
+        "station/ac_dc_converter_station/2/pconv": -0.20781099506915177,
+        "station/ac_dc_converter_station/2/pdc": 0.21921403124525723,
+        "station/ac_dc_converter_station/2/pgrid": -0.20774124292783477,
+        "station/ac_dc_converter_station/2/ppr_fr": -0.20780597756385458,
+        "station/ac_dc_converter_station/2/ptf_to": 0.20780597756385458,
+        "station/ac_dc_converter_station/2/qconv": 0.07572279962451835,
+        "station/ac_dc_converter_station/2/qgrid": 0.0,
+        "station/ac_dc_converter_station/2/qpr_fr": 0.08396555732673847,
+        "station/ac_dc_converter_station/2/qtf_to": 0.004837835131879709,
+        "station/ac_dc_converter_station/2/vaconv": 0.01897597625831019,
+        "station/ac_dc_converter_station/2/vafilt": -0.015593009627032202,
+        "station/ac_dc_converter_station/2/vmconv": 0.9874075149432133,
+        "station/ac_dc_converter_station/2/vmfilt": 1.0005826513332226,
+        "station/ac_dc_converter_station/3/iconv": 0.3487415822202371,
+        "station/ac_dc_converter_station/3/pconv": -0.35019966206911696,
+        "station/ac_dc_converter_station/3/pdc": 0.3618455895368602,
+        "station/ac_dc_converter_station/3/pgrid": -0.35,
+        "station/ac_dc_converter_station/3/ppr_fr": -0.3501875,
+        "station/ac_dc_converter_station/3/ptf_to": 0.3501875,
+        "station/ac_dc_converter_station/3/qconv": 0.005934469872428165,
+        "station/ac_dc_converter_station/3/qgrid": -0.05,
+        "station/ac_dc_converter_station/3/qpr_fr": 0.02591431701774847,
+        "station/ac_dc_converter_station/3/qtf_to": 0.06401250000000154,
+        "station/ac_dc_converter_station/3/vaconv": 0.13118316813462555,
+        "station/ac_dc_converter_station/3/vafilt": 0.07426088471386318,
+        "station/ac_dc_converter_station/3/vmconv": 1.0043251478011932,
+        "station/ac_dc_converter_station/3/vmfilt": 1.0068917928456862,
+        "va[1]": 0.021345422286224946,
+        "va[2]": -0.049578603324778286,
+        "va[3]": -0.03886934394509505,
+        "va[4]": 9.797590813086746e-30,
+        "va[5]": 0.035359108831383504,
+        "vm[1]": 1.0,
+        "vm[2]": 0.985536972972948,
+        "vm[3]": 1.0,
+        "vm[4]": 1.0,
+        "vm[5]": 1.0
+      },
+      "sharing_equalities": 3,
+      "source_sha256": "2bf369651634c4bf93c36a2effe2c453f170ea856320c87434b81455a5798056",
+      "variables": 97
+    },
+    "pcc_active": {
+      "controls": [
+        "pf/vm[1]",
+        "pf/vm[3]",
+        "pf/vm[4]",
+        "pf/vm[5]",
+        "pf/pg[bus-1]",
+        "pf/pg[bus-1-2]",
+        "pf/pg[bus-3-2]",
+        "pf/pg[bus-5]",
+        "pf/share_q[bus-1-2]",
+        "station/ac_dc_converter_station/1/p_setpoint",
+        "station/ac_dc_converter_station/1/q_setpoint",
+        "station/ac_dc_converter_station/2/vdc_setpoint",
+        "station/ac_dc_converter_station/2/q_setpoint",
+        "station/ac_dc_converter_station/3/p_setpoint",
+        "station/ac_dc_converter_station/3/q_setpoint"
+      ],
+      "equalities": 95,
+      "max_electrical_difference": 5.387840174009284e-11,
+      "max_native_in_reference_violation": 3.328456954498904e-11,
+      "max_native_violation": 3.328456954498904e-11,
+      "max_raw_coordinate_difference": 5.387840174009284e-11,
+      "max_reference_violation": 1.9290125052862095e-14,
+      "model_fingerprint": "sha256:a4a89a33bdf404f84378f4a31741126d62ddae71b35934fe85031217a3c93614",
+      "native_iterations": [
+        6,
+        7,
+        6
+      ],
+      "phase_windings_by_start": {
+        "declared": {},
+        "flat": {},
+        "perturbed": {}
+      },
+      "reference_only_variables": {
+        "0_pcurt[1]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.0
+        },
+        "0_pcurt[2]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.0
+        },
+        "0_pcurt[3]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.0
+        },
+        "0_pflex[1]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 3.0
+        },
+        "0_pflex[2]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 3.0
+        },
+        "0_pflex[3]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 4.0
+        },
+        "0_phiconv[1]": {
+          "reason": "unused VSC firing angle",
+          "value": 0.0
+        },
+        "0_phiconv[2]": {
+          "reason": "unused VSC firing angle",
+          "value": 0.0
+        },
+        "0_phiconv[3]": {
+          "reason": "unused VSC firing angle",
+          "value": 0.0
+        },
+        "0_qflex[1]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.9861
+        },
+        "0_qflex[2]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.9861
+        },
+        "0_qflex[3]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 1.3147
+        }
+      },
+      "representative_limit_violations": [
+        {
+          "lower": 0.0,
+          "name": "pg[bus-4-2]",
+          "upper": 2.0,
+          "value": 3.4298233968143195,
+          "violation": 1.4298233968143195
+        },
+        {
+          "lower": 0.9,
+          "name": "station/ac_dc_converter_station/1/vmconv",
+          "upper": 1.1,
+          "value": 0.8802008873478495,
+          "violation": 0.019799112652150508
+        }
+      ],
+      "representative_point": {
+        "ac_branch/1-2/pf": 2.5342325024665495,
+        "ac_branch/1-2/pt": -2.515833943392046,
+        "ac_branch/1-2/qf": 0.35026982236398224,
+        "ac_branch/1-2/qt": -0.17330132651658467,
+        "ac_branch/1-4/pf": 0.6884162971452619,
+        "ac_branch/1-4/pt": -0.6869640884483071,
+        "ac_branch/1-4/qf": -0.06479797579490199,
+        "ac_branch/1-4/qt": 0.07274006276445492,
+        "ac_branch/1-5/pf": -2.1726487996118116,
+        "ac_branch/1-5/pt": 2.17570451182964,
+        "ac_branch/1-5/qf": 0.21706622666122563,
+        "ac_branch/1-5/qt": -0.21776910448291958,
+        "ac_branch/2-3/pf": -1.1841660566079542,
+        "ac_branch/2-3/pt": 1.1873372332878904,
+        "ac_branch/2-3/qf": -1.2127986734834153,
+        "ac_branch/2-3/qt": 1.2262581091726141,
+        "ac_branch/3-4/pf": -1.282008671814805,
+        "ac_branch/3-4/pt": 1.2869597140481783,
+        "ac_branch/3-4/qf": 0.14983363046002193,
+        "ac_branch/3-4/qt": -0.10706320812627641,
+        "ac_branch/4-5/pf": -1.1701722287855514,
+        "ac_branch/4-5/pt": 1.1742954881703598,
+        "ac_branch/4-5/qf": 0.13446968277184068,
+        "ac_branch/4-5/qt": -0.09997708892375043,
+        "dc_branch/dc_equivalent_branch/1/pf": 0.37698870237250603,
+        "dc_branch/dc_equivalent_branch/1/pt": -0.37336427935985644,
+        "dc_branch/dc_equivalent_branch/2/pf": 0.056308109248781935,
+        "dc_branch/dc_equivalent_branch/2/pt": -0.056225673566435444,
+        "dc_branch/dc_equivalent_branch/3/pf": 0.30903914918675546,
+        "dc_branch/dc_equivalent_branch/3/pt": -0.3056199159704247,
+        "dc_bus/dc_equivalent_bus/1/vm": 1.0097074712633562,
+        "dc_bus/dc_equivalent_bus/2/vm": 1.0,
+        "dc_bus/dc_equivalent_bus/3/vm": 0.9985359891595317,
+        "pg[bus-1-2]": 0.85,
+        "pg[bus-1]": 0.2,
+        "pg[bus-3-2]": 2.6,
+        "pg[bus-4-2]": 3.4298233968143195,
+        "pg[bus-5]": 3.0,
+        "qg[bus-1-2]": 0.25126903661515293,
+        "qg[bus-1]": 0.25126903661515293,
+        "qg[bus-3-2]": 2.362191739632636,
+        "qg[bus-4-2]": 1.4148465374100192,
+        "qg[bus-5]": -0.36774619340667003,
+        "station/ac_dc_converter_station/1/iconv": 0.8567271853620955,
+        "station/ac_dc_converter_station/1/pconv": 0.698922579660141,
+        "station/ac_dc_converter_station/1/pdc": -0.6860278515592615,
+        "station/ac_dc_converter_station/1/pgrid": 0.7,
+        "station/ac_dc_converter_station/1/ppr_fr": 0.698995977807155,
+        "station/ac_dc_converter_station/1/ptf_to": -0.698995977807155,
+        "station/ac_dc_converter_station/1/qconv": 0.2831289732556299,
+        "station/ac_dc_converter_station/1/qgrid": 0.4,
+        "station/ac_dc_converter_station/1/qpr_fr": 0.40370744916997575,
+        "station/ac_dc_converter_station/1/qtf_to": -0.3249660747880424,
+        "station/ac_dc_converter_station/1/vaconv": -0.27302789500216706,
+        "station/ac_dc_converter_station/1/vafilt": -0.13416641619684005,
+        "station/ac_dc_converter_station/1/vmconv": 0.8802008873478495,
+        "station/ac_dc_converter_station/1/vmfilt": 0.942192592530724,
+        "station/ac_dc_converter_station/2/iconv": 0.31504874643773034,
+        "station/ac_dc_converter_station/2/pconv": -0.30547832534002556,
+        "station/ac_dc_converter_station/2/pdc": 0.3170561701110745,
+        "station/ac_dc_converter_station/2/pgrid": -0.30532856147308557,
+        "station/ac_dc_converter_station/2/ppr_fr": -0.3054683997687624,
+        "station/ac_dc_converter_station/2/ptf_to": 0.3054683997687624,
+        "station/ac_dc_converter_station/2/qconv": 0.06212886905904708,
+        "station/ac_dc_converter_station/2/qgrid": 0.0,
+        "station/ac_dc_converter_station/2/qpr_fr": 0.07843459753023231,
+        "station/ac_dc_converter_station/2/qtf_to": 0.010450581963581921,
+        "station/ac_dc_converter_station/2/vaconv": 0.04635111522542262,
+        "station/ac_dc_converter_station/2/vafilt": -0.004341887696878276,
+        "station/ac_dc_converter_station/2/vmconv": 0.9894731093168748,
+        "station/ac_dc_converter_station/2/vmfilt": 1.0010433085935793,
+        "station/ac_dc_converter_station/3/iconv": 0.3487415822202373,
+        "station/ac_dc_converter_station/3/pconv": -0.35019966206911696,
+        "station/ac_dc_converter_station/3/pdc": 0.3618455895368602,
+        "station/ac_dc_converter_station/3/pgrid": -0.35,
+        "station/ac_dc_converter_station/3/ppr_fr": -0.3501875,
+        "station/ac_dc_converter_station/3/ptf_to": 0.3501875,
+        "station/ac_dc_converter_station/3/qconv": 0.005934469872430781,
+        "station/ac_dc_converter_station/3/qgrid": -0.05,
+        "station/ac_dc_converter_station/3/qpr_fr": 0.025914317017752004,
+        "station/ac_dc_converter_station/3/qtf_to": 0.06401249999999797,
+        "station/ac_dc_converter_station/3/vaconv": 0.13099480883602668,
+        "station/ac_dc_converter_station/3/vafilt": 0.07407252541526428,
+        "station/ac_dc_converter_station/3/vmconv": 1.0043251478011925,
+        "station/ac_dc_converter_station/3/vmfilt": 1.006891792845686,
+        "va[1]": 0.021116408955368385,
+        "va[2]": -0.05019909646264685,
+        "va[3]": -0.03854021256465308,
+        "va[4]": -5.4141742596613974e-30,
+        "va[5]": 0.0351707495327846,
+        "vm[1]": 1.0,
+        "vm[2]": 0.9854410547415898,
+        "vm[3]": 1.0,
+        "vm[4]": 1.0,
+        "vm[5]": 1.0
+      },
+      "sharing_equalities": 1,
+      "source_sha256": "a0cfbf70c4e4f3e48524958769b53d0b19b99c6d8c220367fbb1bdc0bec3be62",
+      "variables": 95
+    },
+    "pcc_reactive": {
+      "controls": [
+        "pf/vm[1]",
+        "pf/vm[3]",
+        "pf/vm[4]",
+        "pf/vm[5]",
+        "pf/pg[bus-1]",
+        "pf/pg[bus-1-2]",
+        "pf/pg[bus-3-2]",
+        "pf/pg[bus-5]",
+        "pf/share_q[bus-1-2]",
+        "station/ac_dc_converter_station/1/p_setpoint",
+        "station/ac_dc_converter_station/1/q_setpoint",
+        "station/ac_dc_converter_station/2/vdc_setpoint",
+        "station/ac_dc_converter_station/2/q_setpoint",
+        "station/ac_dc_converter_station/3/p_setpoint",
+        "station/ac_dc_converter_station/3/q_setpoint"
+      ],
+      "equalities": 95,
+      "max_electrical_difference": 4.597877634182623e-12,
+      "max_native_in_reference_violation": 5.399680702566911e-12,
+      "max_native_violation": 5.399680702566911e-12,
+      "max_raw_coordinate_difference": 4.597877634182623e-12,
+      "max_reference_violation": 1.8818280267396403e-14,
+      "model_fingerprint": "sha256:99101459b3f62dd631844c130056d78993306245569a1b43e6cfd1c316c40746",
+      "native_iterations": [
+        6,
+        6,
+        6
+      ],
+      "phase_windings_by_start": {
+        "declared": {},
+        "flat": {},
+        "perturbed": {}
+      },
+      "reference_only_variables": {
+        "0_pcurt[1]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.0
+        },
+        "0_pcurt[2]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.0
+        },
+        "0_pcurt[3]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.0
+        },
+        "0_pflex[1]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 3.0
+        },
+        "0_pflex[2]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 3.0
+        },
+        "0_pflex[3]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 4.0
+        },
+        "0_phiconv[1]": {
+          "reason": "unused VSC firing angle",
+          "value": 0.0
+        },
+        "0_phiconv[2]": {
+          "reason": "unused VSC firing angle",
+          "value": 0.0
+        },
+        "0_phiconv[3]": {
+          "reason": "unused VSC firing angle",
+          "value": 0.0
+        },
+        "0_qflex[1]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.9861
+        },
+        "0_qflex[2]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.9861
+        },
+        "0_qflex[3]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 1.3147
+        }
+      },
+      "representative_limit_violations": [
+        {
+          "lower": 0.0,
+          "name": "pg[bus-4-2]",
+          "upper": 2.0,
+          "value": 3.42676064483497,
+          "violation": 1.4267606448349701
+        },
+        {
+          "lower": 0.9,
+          "name": "station/ac_dc_converter_station/1/vmconv",
+          "upper": 1.1,
+          "value": 0.8944831238786524,
+          "violation": 0.005516876121347658
+        }
+      ],
+      "representative_point": {
+        "ac_branch/1-2/pf": 2.5207269107775074,
+        "ac_branch/1-2/pt": -2.5025642220806894,
+        "ac_branch/1-2/qf": 0.3273873143073867,
+        "ac_branch/1-2/qt": -0.1527821322802361,
+        "ac_branch/1-4/pf": 0.6957548949687846,
+        "ac_branch/1-4/pt": -0.694271589605119,
+        "ac_branch/1-4/qf": -0.06537479741036592,
+        "ac_branch/1-4/qt": 0.07362785104702443,
+        "ac_branch/1-5/pf": -2.166481805746292,
+        "ac_branch/1-5/pt": 2.169520182511041,
+        "ac_branch/1-5/qf": 0.2163619832366164,
+        "ac_branch/1-5/qt": -0.21723821558911693,
+        "ac_branch/2-3/pf": -1.0974357779193105,
+        "ac_branch/2-3/pt": 1.100253322514545,
+        "ac_branch/2-3/qf": -1.163317867719764,
+        "ac_branch/2-3/qt": 1.1732289912693399,
+        "ac_branch/3-4/pf": -1.2923141645317358,
+        "ac_branch/3-4/pt": 1.2973453119531162,
+        "ac_branch/3-4/qf": 0.15126871093114402,
+        "ac_branch/3-4/qt": -0.10769723671734116,
+        "ac_branch/4-5/pf": -1.176313077513027,
+        "ac_branch/4-5/pt": 1.1804798174889592,
+        "ac_branch/4-5/qf": 0.13530334462975746,
+        "ac_branch/4-5/qt": -0.10037594487044113,
+        "dc_branch/dc_equivalent_branch/1/pf": 0.3069300023839655,
+        "dc_branch/dc_equivalent_branch/1/pt": -0.30451897541783773,
+        "dc_branch/dc_equivalent_branch/2/pf": 0.0851065653872084,
+        "dc_branch/dc_equivalent_branch/2/pt": -0.08491824407293622,
+        "dc_branch/dc_equivalent_branch/3/pf": 0.2797389139555458,
+        "dc_branch/dc_equivalent_branch/3/pt": -0.27692734546392395,
+        "dc_bus/dc_equivalent_bus/1/vm": 1.007917493360864,
+        "dc_bus/dc_equivalent_bus/2/vm": 1.0,
+        "dc_bus/dc_equivalent_bus/3/vm": 0.9977872292999326,
+        "pg[bus-1-2]": 0.85,
+        "pg[bus-1]": 0.2,
+        "pg[bus-3-2]": 2.6,
+        "pg[bus-4-2]": 3.42676064483497,
+        "pg[bus-5]": 3.0,
+        "qg[bus-1-2]": 0.2391872500668186,
+        "qg[bus-1]": 0.2391872500668186,
+        "qg[bus-3-2]": 2.310597702200484,
+        "qg[bus-4-2]": 1.4159339589594406,
+        "qg[bus-5]": -0.3676141604595581,
+        "station/ac_dc_converter_station/1/iconv": 0.7336679843867281,
+        "station/ac_dc_converter_station/1/pconv": 0.5992228515163506,
+        "station/ac_dc_converter_station/1/pdc": -0.5866689163395112,
+        "station/ac_dc_converter_station/1/pgrid": 0.6,
+        "station/ac_dc_converter_station/1/ppr_fr": 0.599276678387482,
+        "station/ac_dc_converter_station/1/ptf_to": -0.599276678387482,
+        "station/ac_dc_converter_station/1/qconv": 0.26758326152627304,
+        "station/ac_dc_converter_station/1/qgrid": 0.33,
+        "station/ac_dc_converter_station/1/qpr_fr": 0.35601004542094905,
+        "station/ac_dc_converter_station/1/qtf_to": -0.2759437648244883,
+        "station/ac_dc_converter_station/1/vaconv": -0.2369932966257304,
+        "station/ac_dc_converter_station/1/vafilt": -0.12092989188637025,
+        "station/ac_dc_converter_station/1/vmconv": 0.8944831238786524,
+        "station/ac_dc_converter_station/1/vmfilt": 0.9500862157309685,
+        "station/ac_dc_converter_station/2/iconv": 0.22417782926530597,
+        "station/ac_dc_converter_station/2/pconv": -0.20800904159285644,
+        "station/ac_dc_converter_station/2/pdc": 0.21941241003062933,
+        "station/ac_dc_converter_station/2/pgrid": -0.2079391579828091,
+        "station/ac_dc_converter_station/2/ppr_fr": -0.208004016022943,
+        "station/ac_dc_converter_station/2/ptf_to": 0.208004016022943,
+        "station/ac_dc_converter_station/2/qconv": 0.07570047305462804,
+        "station/ac_dc_converter_station/2/qgrid": 0.0,
+        "station/ac_dc_converter_station/2/qpr_fr": 0.0839564793083803,
+        "station/ac_dc_converter_station/2/qtf_to": 0.00484705753267407,
+        "station/ac_dc_converter_station/2/vaconv": 0.019049499196466205,
+        "station/ac_dc_converter_station/2/vafilt": -0.015552285626044823,
+        "station/ac_dc_converter_station/2/vmconv": 0.9874109717245337,
+        "station/ac_dc_converter_station/2/vmfilt": 1.0005834647396594,
+        "station/ac_dc_converter_station/3/iconv": 0.3487415822202371,
+        "station/ac_dc_converter_station/3/pconv": -0.35019966206911696,
+        "station/ac_dc_converter_station/3/pdc": 0.3618455895368602,
+        "station/ac_dc_converter_station/3/pgrid": -0.35,
+        "station/ac_dc_converter_station/3/ppr_fr": -0.3501875,
+        "station/ac_dc_converter_station/3/ptf_to": 0.3501875,
+        "station/ac_dc_converter_station/3/qconv": 0.005934469872428161,
+        "station/ac_dc_converter_station/3/qgrid": -0.05,
+        "station/ac_dc_converter_station/3/qpr_fr": 0.025914317017748465,
+        "station/ac_dc_converter_station/3/qtf_to": 0.06401250000000154,
+        "station/ac_dc_converter_station/3/vaconv": 0.1311797830146095,
+        "station/ac_dc_converter_station/3/vafilt": 0.07425749959384714,
+        "station/ac_dc_converter_station/3/vmconv": 1.0043251478011932,
+        "station/ac_dc_converter_station/3/vmfilt": 1.0068917928456862,
+        "va[1]": 0.021341306542153337,
+        "va[2]": -0.04960615513512863,
+        "va[3]": -0.03885078037260666,
+        "va[4]": 2.6285091880996995e-30,
+        "va[5]": 0.035355723711367464,
+        "vm[1]": 1.0,
+        "vm[2]": 0.9860978797139759,
+        "vm[3]": 1.0,
+        "vm[4]": 1.0,
+        "vm[5]": 1.0
+      },
+      "sharing_equalities": 1,
+      "source_sha256": "192dee41c8bb13c0629507845d709a82640ea5b67dddeff73dfa8d500e3bc3e3",
+      "variables": 95
+    },
+    "pcc_voltage": {
+      "controls": [
+        "pf/vm[1]",
+        "pf/vm[3]",
+        "pf/vm[4]",
+        "pf/vm[5]",
+        "pf/pg[bus-1]",
+        "pf/pg[bus-1-2]",
+        "pf/pg[bus-3-2]",
+        "pf/pg[bus-5]",
+        "pf/share_q[bus-1-2]",
+        "station/ac_dc_converter_station/1/p_setpoint",
+        "station/ac_dc_converter_station/1/vac_setpoint",
+        "station/ac_dc_converter_station/2/vdc_setpoint",
+        "station/ac_dc_converter_station/2/q_setpoint",
+        "station/ac_dc_converter_station/3/p_setpoint",
+        "station/ac_dc_converter_station/3/q_setpoint"
+      ],
+      "equalities": 95,
+      "max_electrical_difference": 5.743713005212925e-10,
+      "max_native_in_reference_violation": 3.197442310920451e-14,
+      "max_native_violation": 3.197442310920451e-14,
+      "max_raw_coordinate_difference": 12.566370614395806,
+      "max_reference_violation": 6.393374718527411e-11,
+      "model_fingerprint": "sha256:61d02470798272daee1214c577a89fb95c35b98725063765dc9a01327e198874",
+      "native_iterations": [
+        8,
+        7,
+        7
+      ],
+      "phase_windings_by_start": {
+        "declared": {
+          "station/ac_dc_converter_station/3/vaconv": -2
+        },
+        "flat": {},
+        "perturbed": {}
+      },
+      "reference_only_variables": {
+        "0_pcurt[1]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.0
+        },
+        "0_pcurt[2]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.0
+        },
+        "0_pcurt[3]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.0
+        },
+        "0_pflex[1]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 3.0
+        },
+        "0_pflex[2]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 3.0
+        },
+        "0_pflex[3]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 4.0
+        },
+        "0_phiconv[1]": {
+          "reason": "unused VSC firing angle",
+          "value": 0.0
+        },
+        "0_phiconv[2]": {
+          "reason": "unused VSC firing angle",
+          "value": 0.0
+        },
+        "0_phiconv[3]": {
+          "reason": "unused VSC firing angle",
+          "value": 0.0
+        },
+        "0_qflex[1]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.9861
+        },
+        "0_qflex[2]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.9861
+        },
+        "0_qflex[3]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 1.3147
+        }
+      },
+      "representative_limit_violations": [
+        {
+          "lower": 0.0,
+          "name": "pg[bus-4-2]",
+          "upper": 2.0,
+          "value": 3.446137369547236,
+          "violation": 1.4461373695472362
+        },
+        {
+          "lower": -1.0,
+          "name": "station/ac_dc_converter_station/1/qgrid",
+          "upper": 1.0,
+          "value": -2.7289488074953905,
+          "violation": 1.7289488074953905
+        },
+        {
+          "lower": -1.0,
+          "name": "station/ac_dc_converter_station/1/qtf_to",
+          "upper": 1.0,
+          "value": 3.586887063234646,
+          "violation": 2.586887063234646
+        },
+        {
+          "lower": -1.0,
+          "name": "station/ac_dc_converter_station/1/qpr_fr",
+          "upper": 1.0,
+          "value": -3.4337622644830237,
+          "violation": 2.4337622644830237
+        },
+        {
+          "lower": -0.5,
+          "name": "station/ac_dc_converter_station/1/qconv",
+          "upper": 0.5,
+          "value": -4.588748915791097,
+          "violation": 4.088748915791097
+        },
+        {
+          "lower": 0.0,
+          "name": "station/ac_dc_converter_station/1/iconv",
+          "upper": 1.1,
+          "value": 2.6515274979232197,
+          "violation": 1.5515274979232196
+        },
+        {
+          "lower": 0.9,
+          "name": "station/ac_dc_converter_station/1/vmconv",
+          "upper": 1.1,
+          "value": 1.744747237883156,
+          "violation": 0.644747237883156
+        }
+      ],
+      "representative_point": {
+        "ac_branch/1-2/pf": 2.5443554892677107,
+        "ac_branch/1-2/pt": -2.5254148207491904,
+        "ac_branch/1-2/qf": -0.5199964184598422,
+        "ac_branch/1-2/qt": 0.7022115476450487,
+        "ac_branch/1-4/pf": 0.6829157225771683,
+        "ac_branch/1-4/pt": -0.6814866064686059,
+        "ac_branch/1-4/qf": -0.06436453590948042,
+        "ac_branch/1-4/qt": 0.07207569699509697,
+        "ac_branch/1-5/pf": -2.1772712118448787,
+        "ac_branch/1-5/pt": 2.1803399500723097,
+        "ac_branch/1-5/qf": 0.21759424923301934,
+        "ac_branch/1-5/qt": -0.2181668669586996,
+        "ac_branch/2-3/pf": -1.0745851792508097,
+        "ac_branch/2-3/pt": 1.0769751420962956,
+        "ac_branch/2-3/qf": 1.0406372598503417,
+        "ac_branch/2-3/qt": -1.0354437573954856,
+        "ac_branch/3-4/pf": -1.2881941632073914,
+        "ac_branch/3-4/pt": 1.2931932081072364,
+        "ac_branch/3-4/qf": 0.15069459306496297,
+        "ac_branch/3-4/qt": -0.10744414406649978,
+        "ac_branch/4-5/pf": -1.1655692320913944,
+        "ac_branch/4-5/pt": 1.1696600499276903,
+        "ac_branch/4-5/qf": 0.13384555328243433,
+        "ac_branch/4-5/qt": -0.09967737491947415,
+        "dc_branch/dc_equivalent_branch/1/pf": 0.2931817245343829,
+        "dc_branch/dc_equivalent_branch/1/pt": -0.2909803163768942,
+        "dc_branch/dc_equivalent_branch/2/pf": 0.09076990621063348,
+        "dc_branch/dc_equivalent_branch/2/pt": -0.09055568763792281,
+        "dc_branch/dc_equivalent_branch/3/pf": 0.27398896121765637,
+        "dc_branch/dc_equivalent_branch/3/pt": -0.27128990189893737,
+        "dc_bus/dc_equivalent_bus/1/vm": 1.0075654882257992,
+        "dc_bus/dc_equivalent_bus/2/vm": 1.0,
+        "dc_bus/dc_equivalent_bus/3/vm": 0.9976399824385235,
+        "pg[bus-1-2]": 0.85,
+        "pg[bus-1]": 0.2,
+        "pg[bus-3-2]": 2.6,
+        "pg[bus-4-2]": 3.446137369547236,
+        "pg[bus-5]": 3.0,
+        "qg[bus-1-2]": -0.1833833525681517,
+        "qg[bus-1]": -0.1833833525681517,
+        "qg[bus-3-2]": 0.10135083566947738,
+        "qg[bus-4-2]": 1.4131771062110314,
+        "qg[bus-5]": -0.36784424187817377,
+        "station/ac_dc_converter_station/1/iconv": 2.6515274979232197,
+        "station/ac_dc_converter_station/1/pconv": 0.5878169456913585,
+        "station/ac_dc_converter_station/1/pdc": -0.5671706857520393,
+        "station/ac_dc_converter_station/1/pgrid": 0.6,
+        "station/ac_dc_converter_station/1/ppr_fr": 0.5885200054985826,
+        "station/ac_dc_converter_station/1/ptf_to": -0.5885200054985826,
+        "station/ac_dc_converter_station/1/qconv": -4.588748915791097,
+        "station/ac_dc_converter_station/1/qgrid": -2.7289488074953905,
+        "station/ac_dc_converter_station/1/qpr_fr": -3.4337622644830237,
+        "station/ac_dc_converter_station/1/qtf_to": 3.586887063234646,
+        "station/ac_dc_converter_station/1/vaconv": -0.14747261300214126,
+        "station/ac_dc_converter_station/1/vafilt": -0.10513543498714938,
+        "station/ac_dc_converter_station/1/vmconv": 1.744747237883156,
+        "station/ac_dc_converter_station/1/vmfilt": 1.3138958943160561,
+        "station/ac_dc_converter_station/2/iconv": 0.20689419105925486,
+        "station/ac_dc_converter_station/2/pconv": -0.18883871679651912,
+        "station/ac_dc_converter_station/2/pdc": 0.2002104101662607,
+        "station/ac_dc_converter_station/2/pgrid": -0.18878097888890427,
+        "station/ac_dc_converter_station/2/ppr_fr": -0.1888344362758897,
+        "station/ac_dc_converter_station/2/ptf_to": 0.1888344362758897,
+        "station/ac_dc_converter_station/2/qconv": 0.07776287756838204,
+        "station/ac_dc_converter_station/2/qgrid": 0.0,
+        "station/ac_dc_converter_station/2/qpr_fr": 0.08479491685837083,
+        "station/ac_dc_converter_station/2/qtf_to": 0.003995048720710013,
+        "station/ac_dc_converter_station/2/vaconv": 0.013851859277620716,
+        "station/ac_dc_converter_station/2/vafilt": -0.01757341657345229,
+        "station/ac_dc_converter_station/2/vmconv": 0.9870901888536929,
+        "station/ac_dc_converter_station/2/vmfilt": 1.0005070055148733,
+        "station/ac_dc_converter_station/3/iconv": 0.3487415822202371,
+        "station/ac_dc_converter_station/3/pconv": -0.35019966206911696,
+        "station/ac_dc_converter_station/3/pdc": 0.3618455895368602,
+        "station/ac_dc_converter_station/3/pgrid": -0.35,
+        "station/ac_dc_converter_station/3/ppr_fr": -0.3501875,
+        "station/ac_dc_converter_station/3/ptf_to": 0.3501875,
+        "station/ac_dc_converter_station/3/qconv": 0.005934469872428178,
+        "station/ac_dc_converter_station/3/qgrid": -0.05,
+        "station/ac_dc_converter_station/3/qpr_fr": 0.025914317017748472,
+        "station/ac_dc_converter_station/3/qtf_to": 0.06401250000000154,
+        "station/ac_dc_converter_station/3/vaconv": 0.130856160763442,
+        "station/ac_dc_converter_station/3/vafilt": 0.07393387734267964,
+        "station/ac_dc_converter_station/3/vmconv": 1.0043251478011932,
+        "station/ac_dc_converter_station/3/vmfilt": 1.0068917928456862,
+        "va[1]": 0.02094783654840354,
+        "va[2]": -0.05134042754061401,
+        "va[3]": -0.038726617809631825,
+        "va[4]": 0.0,
+        "va[5]": 0.03503210146019997,
+        "vm[1]": 1.0,
+        "vm[2]": 1.01,
+        "vm[3]": 1.0,
+        "vm[4]": 1.0,
+        "vm[5]": 1.0
+      },
+      "sharing_equalities": 1,
+      "source_sha256": "af3a9a82596101f17427ba217be80d3dc0a2211288a997d3624f8d09eb2cc38a",
+      "variables": 95
+    },
+    "source": {
+      "controls": [
+        "pf/vm[1]",
+        "pf/vm[3]",
+        "pf/vm[4]",
+        "pf/vm[5]",
+        "pf/pg[bus-1]",
+        "pf/pg[bus-1-2]",
+        "pf/pg[bus-3-2]",
+        "pf/pg[bus-5]",
+        "pf/share_q[bus-1-2]",
+        "station/ac_dc_converter_station/1/p_setpoint",
+        "station/ac_dc_converter_station/1/q_setpoint",
+        "station/ac_dc_converter_station/2/vdc_setpoint",
+        "station/ac_dc_converter_station/2/q_setpoint",
+        "station/ac_dc_converter_station/3/p_setpoint",
+        "station/ac_dc_converter_station/3/q_setpoint"
+      ],
+      "equalities": 95,
+      "max_electrical_difference": 8.929190720152747e-12,
+      "max_native_in_reference_violation": 1.0604739308917033e-11,
+      "max_native_violation": 1.0604739308917033e-11,
+      "max_raw_coordinate_difference": 8.929190720152747e-12,
+      "max_reference_violation": 1.687538997430238e-14,
+      "model_fingerprint": "sha256:c2f357a0cb9084f9099d0e0c69e3b4d5ea034b957587f5bdb1c97eacec332790",
+      "native_iterations": [
+        6,
+        6,
+        7
+      ],
+      "phase_windings_by_start": {
+        "declared": {},
+        "flat": {},
+        "perturbed": {}
+      },
+      "reference_only_variables": {
+        "0_pcurt[1]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.0
+        },
+        "0_pcurt[2]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.0
+        },
+        "0_pcurt[3]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.0
+        },
+        "0_pflex[1]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 3.0
+        },
+        "0_pflex[2]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 3.0
+        },
+        "0_pflex[3]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 4.0
+        },
+        "0_phiconv[1]": {
+          "reason": "unused VSC firing angle",
+          "value": 0.0
+        },
+        "0_phiconv[2]": {
+          "reason": "unused VSC firing angle",
+          "value": 0.0
+        },
+        "0_phiconv[3]": {
+          "reason": "unused VSC firing angle",
+          "value": 0.0
+        },
+        "0_qflex[1]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.9861
+        },
+        "0_qflex[2]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.9861
+        },
+        "0_qflex[3]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 1.3147
+        }
+      },
+      "representative_limit_violations": [
+        {
+          "lower": 0.0,
+          "name": "pg[bus-4-2]",
+          "upper": 2.0,
+          "value": 3.427135321087527,
+          "violation": 1.427135321087527
+        },
+        {
+          "lower": 0.9,
+          "name": "station/ac_dc_converter_station/1/vmconv",
+          "upper": 1.1,
+          "value": 0.8747199943377507,
+          "violation": 0.025280005662249305
+        }
+      ],
+      "representative_point": {
+        "ac_branch/1-2/pf": 2.5204797491537816,
+        "ac_branch/1-2/pt": -2.502282481109194,
+        "ac_branch/1-2/qf": 0.3472646504770238,
+        "ac_branch/1-2/qt": -0.17230973795649968,
+        "ac_branch/1-4/pf": 0.6958891963751622,
+        "ac_branch/1-4/pt": -0.6944053188570138,
+        "ac_branch/1-4/qf": -0.06538533817086144,
+        "ac_branch/1-4/qt": 0.0736441133523562,
+        "ac_branch/1-5/pf": -2.1663689455289434,
+        "ac_branch/1-5/pt": 2.169407005503209,
+        "ac_branch/1-5/qf": 0.21634909742294695,
+        "ac_branch/1-5/qt": -0.2172284976802684,
+        "ac_branch/2-3/pf": -1.097717518890806,
+        "ac_branch/2-3/pt": 1.1006713836499207,
+        "ac_branch/2-3/qf": -1.2137902620435004,
+        "ac_branch/2-3/qt": 1.225074827896264,
+        "ac_branch/3-4/pf": -1.292930140722086,
+        "ac_branch/3-4/pt": 1.297966096624543,
+        "ac_branch/3-4/qf": 0.15135459137961696,
+        "ac_branch/3-4/qt": -0.1077350323550459,
+        "ac_branch/4-5/pf": -1.1764254566800019,
+        "ac_branch/4-5/pt": 1.180592994496791,
+        "ac_branch/4-5/qf": 0.13531861164278444,
+        "ac_branch/4-5/qt": -0.10038323347489483,
+        "dc_branch/dc_equivalent_branch/1/pf": 0.30678791807116307,
+        "dc_branch/dc_equivalent_branch/1/pt": -0.3043791054356915,
+        "dc_branch/dc_equivalent_branch/2/pf": 0.08516507419043426,
+        "dc_branch/dc_equivalent_branch/2/pt": -0.08497649385402584,
+        "dc_branch/dc_equivalent_branch/3/pf": 0.27967949007974613,
+        "dc_branch/dc_equivalent_branch/3/pt": -0.27686909568283435,
+        "dc_bus/dc_equivalent_bus/1/vm": 1.007913856741328,
+        "dc_bus/dc_equivalent_bus/2/vm": 1.0,
+        "dc_bus/dc_equivalent_bus/3/vm": 0.9977857080710487,
+        "pg[bus-1-2]": 0.85,
+        "pg[bus-1]": 0.2,
+        "pg[bus-3-2]": 2.6,
+        "pg[bus-4-2]": 3.427135321087527,
+        "pg[bus-5]": 3.0,
+        "qg[bus-1-2]": 0.24911420486455466,
+        "qg[bus-1]": 0.24911420486455466,
+        "qg[bus-3-2]": 2.362529419275881,
+        "qg[bus-4-2]": 1.4159276926400948,
+        "qg[bus-5]": -0.3676117311551632,
+        "station/ac_dc_converter_station/1/iconv": 0.7763133990846113,
+        "station/ac_dc_converter_station/1/pconv": 0.5991366723364697,
+        "station/ac_dc_converter_station/1/pdc": -0.5864674081509091,
+        "station/ac_dc_converter_station/1/pgrid": 0.6,
+        "station/ac_dc_converter_station/1/ppr_fr": 0.5991969385858296,
+        "station/ac_dc_converter_station/1/ptf_to": -0.5991969385858296,
+        "station/ac_dc_converter_station/1/qconv": 0.3196145431294163,
+        "station/ac_dc_converter_station/1/qgrid": 0.4,
+        "station/ac_dc_converter_station/1/qpr_fr": 0.4186199375777454,
+        "station/ac_dc_converter_station/1/qtf_to": -0.3399845436476641,
+        "station/ac_dc_converter_station/1/vaconv": -0.24123152455844651,
+        "station/ac_dc_converter_station/1/vafilt": -0.12147703234069573,
+        "station/ac_dc_converter_station/1/vmconv": 0.8747199943377507,
+        "station/ac_dc_converter_station/1/vmfilt": 0.9415583159560004,
+        "station/ac_dc_converter_station/2/iconv": 0.22399788608798515,
+        "station/ac_dc_converter_station/2/pconv": -0.20781099506915177,
+        "station/ac_dc_converter_station/2/pdc": 0.21921403124525723,
+        "station/ac_dc_converter_station/2/pgrid": -0.20774124292783477,
+        "station/ac_dc_converter_station/2/ppr_fr": -0.20780597756385458,
+        "station/ac_dc_converter_station/2/ptf_to": 0.20780597756385458,
+        "station/ac_dc_converter_station/2/qconv": 0.07572279962451835,
+        "station/ac_dc_converter_station/2/qgrid": 0.0,
+        "station/ac_dc_converter_station/2/qpr_fr": 0.08396555732673847,
+        "station/ac_dc_converter_station/2/qtf_to": 0.004837835131879709,
+        "station/ac_dc_converter_station/2/vaconv": 0.01897597625831019,
+        "station/ac_dc_converter_station/2/vafilt": -0.015593009627032202,
+        "station/ac_dc_converter_station/2/vmconv": 0.9874075149432133,
+        "station/ac_dc_converter_station/2/vmfilt": 1.0005826513332226,
+        "station/ac_dc_converter_station/3/iconv": 0.3487415822202371,
+        "station/ac_dc_converter_station/3/pconv": -0.35019966206911696,
+        "station/ac_dc_converter_station/3/pdc": 0.3618455895368602,
+        "station/ac_dc_converter_station/3/pgrid": -0.35,
+        "station/ac_dc_converter_station/3/ppr_fr": -0.3501875,
+        "station/ac_dc_converter_station/3/ptf_to": 0.3501875,
+        "station/ac_dc_converter_station/3/qconv": 0.005934469872428165,
+        "station/ac_dc_converter_station/3/qgrid": -0.05,
+        "station/ac_dc_converter_station/3/qpr_fr": 0.02591431701774847,
+        "station/ac_dc_converter_station/3/qtf_to": 0.06401250000000154,
+        "station/ac_dc_converter_station/3/vaconv": 0.13118316813462555,
+        "station/ac_dc_converter_station/3/vafilt": 0.07426088471386318,
+        "station/ac_dc_converter_station/3/vmconv": 1.0043251478011932,
+        "station/ac_dc_converter_station/3/vmfilt": 1.0068917928456862,
+        "va[1]": 0.021345422286224946,
+        "va[2]": -0.049578603324778286,
+        "va[3]": -0.03886934394509505,
+        "va[4]": 9.797590813086746e-30,
+        "va[5]": 0.035359108831383504,
+        "vm[1]": 1.0,
+        "vm[2]": 0.985536972972948,
+        "vm[3]": 1.0,
+        "vm[4]": 1.0,
+        "vm[5]": 1.0
+      },
+      "sharing_equalities": 1,
+      "source_sha256": "7cd58e62534975b5559c001af4b33e586a2c16806106516c348d6641ab2c6ae0",
+      "variables": 95
+    },
+    "tight_ratings": {
+      "controls": [
+        "pf/vm[1]",
+        "pf/vm[3]",
+        "pf/vm[4]",
+        "pf/vm[5]",
+        "pf/pg[bus-1]",
+        "pf/pg[bus-1-2]",
+        "pf/pg[bus-3-2]",
+        "pf/pg[bus-5]",
+        "pf/share_q[bus-1-2]",
+        "station/ac_dc_converter_station/1/p_setpoint",
+        "station/ac_dc_converter_station/1/q_setpoint",
+        "station/ac_dc_converter_station/2/vdc_setpoint",
+        "station/ac_dc_converter_station/2/q_setpoint",
+        "station/ac_dc_converter_station/3/p_setpoint",
+        "station/ac_dc_converter_station/3/q_setpoint"
+      ],
+      "equalities": 95,
+      "max_electrical_difference": 8.929190720152747e-12,
+      "max_native_in_reference_violation": 1.0604739308917033e-11,
+      "max_native_violation": 1.0604739308917033e-11,
+      "max_raw_coordinate_difference": 8.929190720152747e-12,
+      "max_reference_violation": 1.687538997430238e-14,
+      "model_fingerprint": "sha256:63f76b94600dd732cd1fd23d756a7bda07a525f28c9038c57b2423e1d7c19abf",
+      "native_iterations": [
+        6,
+        6,
+        7
+      ],
+      "phase_windings_by_start": {
+        "declared": {},
+        "flat": {},
+        "perturbed": {}
+      },
+      "reference_only_variables": {
+        "0_pcurt[1]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.0
+        },
+        "0_pcurt[2]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.0
+        },
+        "0_pcurt[3]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.0
+        },
+        "0_pflex[1]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 3.0
+        },
+        "0_pflex[2]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 3.0
+        },
+        "0_pflex[3]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 4.0
+        },
+        "0_phiconv[1]": {
+          "reason": "unused VSC firing angle",
+          "value": 0.0
+        },
+        "0_phiconv[2]": {
+          "reason": "unused VSC firing angle",
+          "value": 0.0
+        },
+        "0_phiconv[3]": {
+          "reason": "unused VSC firing angle",
+          "value": 0.0
+        },
+        "0_qflex[1]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.9861
+        },
+        "0_qflex[2]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 0.9861
+        },
+        "0_qflex[3]": {
+          "reason": "fixed source demand; zero curtailment",
+          "value": 1.3147
+        }
+      },
+      "representative_limit_violations": [
+        {
+          "lower": 0.0,
+          "name": "pg[bus-1]",
+          "upper": 0.01,
+          "value": 0.2,
+          "violation": 0.19
+        },
+        {
+          "lower": 0.0,
+          "name": "pg[bus-1-2]",
+          "upper": 0.01,
+          "value": 0.85,
+          "violation": 0.84
+        },
+        {
+          "lower": 0.0,
+          "name": "pg[bus-3-2]",
+          "upper": 0.01,
+          "value": 2.6,
+          "violation": 2.5900000000000003
+        },
+        {
+          "lower": 0.0,
+          "name": "pg[bus-4-2]",
+          "upper": 0.01,
+          "value": 3.427135321087527,
+          "violation": 3.4171353210875273
+        },
+        {
+          "lower": 0.0,
+          "name": "pg[bus-5]",
+          "upper": 0.01,
+          "value": 3.0,
+          "violation": 2.99
+        },
+        {
+          "lower": -0.01,
+          "name": "qg[bus-1]",
+          "upper": 0.01,
+          "value": 0.24911420486455466,
+          "violation": 0.23911420486455465
+        },
+        {
+          "lower": -0.01,
+          "name": "qg[bus-1-2]",
+          "upper": 0.01,
+          "value": 0.24911420486455466,
+          "violation": 0.23911420486455465
+        },
+        {
+          "lower": -0.01,
+          "name": "qg[bus-3-2]",
+          "upper": 0.01,
+          "value": 2.362529419275881,
+          "violation": 2.352529419275881
+        },
+        {
+          "lower": -0.01,
+          "name": "qg[bus-4-2]",
+          "upper": 0.01,
+          "value": 1.4159276926400948,
+          "violation": 1.4059276926400948
+        },
+        {
+          "lower": -0.01,
+          "name": "qg[bus-5]",
+          "upper": 0.01,
+          "value": -0.3676117311551632,
+          "violation": 0.3576117311551632
+        },
+        {
+          "lower": 0.0,
+          "name": "station/ac_dc_converter_station/1/iconv",
+          "upper": 0.01,
+          "value": 0.7763133990846113,
+          "violation": 0.7663133990846113
+        },
+        {
+          "lower": 0.9,
+          "name": "station/ac_dc_converter_station/1/vmconv",
+          "upper": 1.1,
+          "value": 0.8747199943377507,
+          "violation": 0.025280005662249305
+        },
+        {
+          "lower": 0.0,
+          "name": "station/ac_dc_converter_station/2/iconv",
+          "upper": 0.01,
+          "value": 0.22399788608798515,
+          "violation": 0.21399788608798515
+        },
+        {
+          "lower": 0.0,
+          "name": "station/ac_dc_converter_station/3/iconv",
+          "upper": 0.01,
+          "value": 0.3487415822202371,
+          "violation": 0.3387415822202371
+        },
+        {
+          "lower": 0.08726646259971647,
+          "name": "angle_difference[1-2]",
+          "upper": 0.08726646259971647,
+          "value": 0.07092402561100324,
+          "violation": 0.016342436988713238
+        }
+      ],
+      "representative_point": {
+        "ac_branch/1-2/pf": 2.5204797491537816,
+        "ac_branch/1-2/pt": -2.502282481109194,
+        "ac_branch/1-2/qf": 0.3472646504770238,
+        "ac_branch/1-2/qt": -0.17230973795649968,
+        "ac_branch/1-4/pf": 0.6958891963751622,
+        "ac_branch/1-4/pt": -0.6944053188570138,
+        "ac_branch/1-4/qf": -0.06538533817086144,
+        "ac_branch/1-4/qt": 0.0736441133523562,
+        "ac_branch/1-5/pf": -2.1663689455289434,
+        "ac_branch/1-5/pt": 2.169407005503209,
+        "ac_branch/1-5/qf": 0.21634909742294695,
+        "ac_branch/1-5/qt": -0.2172284976802684,
+        "ac_branch/2-3/pf": -1.097717518890806,
+        "ac_branch/2-3/pt": 1.1006713836499207,
+        "ac_branch/2-3/qf": -1.2137902620435004,
+        "ac_branch/2-3/qt": 1.225074827896264,
+        "ac_branch/3-4/pf": -1.292930140722086,
+        "ac_branch/3-4/pt": 1.297966096624543,
+        "ac_branch/3-4/qf": 0.15135459137961696,
+        "ac_branch/3-4/qt": -0.1077350323550459,
+        "ac_branch/4-5/pf": -1.1764254566800019,
+        "ac_branch/4-5/pt": 1.180592994496791,
+        "ac_branch/4-5/qf": 0.13531861164278444,
+        "ac_branch/4-5/qt": -0.10038323347489483,
+        "dc_branch/dc_equivalent_branch/1/pf": 0.30678791807116307,
+        "dc_branch/dc_equivalent_branch/1/pt": -0.3043791054356915,
+        "dc_branch/dc_equivalent_branch/2/pf": 0.08516507419043426,
+        "dc_branch/dc_equivalent_branch/2/pt": -0.08497649385402584,
+        "dc_branch/dc_equivalent_branch/3/pf": 0.27967949007974613,
+        "dc_branch/dc_equivalent_branch/3/pt": -0.27686909568283435,
+        "dc_bus/dc_equivalent_bus/1/vm": 1.007913856741328,
+        "dc_bus/dc_equivalent_bus/2/vm": 1.0,
+        "dc_bus/dc_equivalent_bus/3/vm": 0.9977857080710487,
+        "pg[bus-1-2]": 0.85,
+        "pg[bus-1]": 0.2,
+        "pg[bus-3-2]": 2.6,
+        "pg[bus-4-2]": 3.427135321087527,
+        "pg[bus-5]": 3.0,
+        "qg[bus-1-2]": 0.24911420486455466,
+        "qg[bus-1]": 0.24911420486455466,
+        "qg[bus-3-2]": 2.362529419275881,
+        "qg[bus-4-2]": 1.4159276926400948,
+        "qg[bus-5]": -0.3676117311551632,
+        "station/ac_dc_converter_station/1/iconv": 0.7763133990846113,
+        "station/ac_dc_converter_station/1/pconv": 0.5991366723364697,
+        "station/ac_dc_converter_station/1/pdc": -0.5864674081509091,
+        "station/ac_dc_converter_station/1/pgrid": 0.6,
+        "station/ac_dc_converter_station/1/ppr_fr": 0.5991969385858296,
+        "station/ac_dc_converter_station/1/ptf_to": -0.5991969385858296,
+        "station/ac_dc_converter_station/1/qconv": 0.3196145431294163,
+        "station/ac_dc_converter_station/1/qgrid": 0.4,
+        "station/ac_dc_converter_station/1/qpr_fr": 0.4186199375777454,
+        "station/ac_dc_converter_station/1/qtf_to": -0.3399845436476641,
+        "station/ac_dc_converter_station/1/vaconv": -0.24123152455844651,
+        "station/ac_dc_converter_station/1/vafilt": -0.12147703234069573,
+        "station/ac_dc_converter_station/1/vmconv": 0.8747199943377507,
+        "station/ac_dc_converter_station/1/vmfilt": 0.9415583159560004,
+        "station/ac_dc_converter_station/2/iconv": 0.22399788608798515,
+        "station/ac_dc_converter_station/2/pconv": -0.20781099506915177,
+        "station/ac_dc_converter_station/2/pdc": 0.21921403124525723,
+        "station/ac_dc_converter_station/2/pgrid": -0.20774124292783477,
+        "station/ac_dc_converter_station/2/ppr_fr": -0.20780597756385458,
+        "station/ac_dc_converter_station/2/ptf_to": 0.20780597756385458,
+        "station/ac_dc_converter_station/2/qconv": 0.07572279962451835,
+        "station/ac_dc_converter_station/2/qgrid": 0.0,
+        "station/ac_dc_converter_station/2/qpr_fr": 0.08396555732673847,
+        "station/ac_dc_converter_station/2/qtf_to": 0.004837835131879709,
+        "station/ac_dc_converter_station/2/vaconv": 0.01897597625831019,
+        "station/ac_dc_converter_station/2/vafilt": -0.015593009627032202,
+        "station/ac_dc_converter_station/2/vmconv": 0.9874075149432133,
+        "station/ac_dc_converter_station/2/vmfilt": 1.0005826513332226,
+        "station/ac_dc_converter_station/3/iconv": 0.3487415822202371,
+        "station/ac_dc_converter_station/3/pconv": -0.35019966206911696,
+        "station/ac_dc_converter_station/3/pdc": 0.3618455895368602,
+        "station/ac_dc_converter_station/3/pgrid": -0.35,
+        "station/ac_dc_converter_station/3/ppr_fr": -0.3501875,
+        "station/ac_dc_converter_station/3/ptf_to": 0.3501875,
+        "station/ac_dc_converter_station/3/qconv": 0.005934469872428165,
+        "station/ac_dc_converter_station/3/qgrid": -0.05,
+        "station/ac_dc_converter_station/3/qpr_fr": 0.02591431701774847,
+        "station/ac_dc_converter_station/3/qtf_to": 0.06401250000000154,
+        "station/ac_dc_converter_station/3/vaconv": 0.13118316813462555,
+        "station/ac_dc_converter_station/3/vafilt": 0.07426088471386318,
+        "station/ac_dc_converter_station/3/vmconv": 1.0043251478011932,
+        "station/ac_dc_converter_station/3/vmfilt": 1.0068917928456862,
+        "va[1]": 0.021345422286224946,
+        "va[2]": -0.049578603324778286,
+        "va[3]": -0.03886934394509505,
+        "va[4]": 9.797590813086746e-30,
+        "va[5]": 0.035359108831383504,
+        "vm[1]": 1.0,
+        "vm[2]": 0.985536972972948,
+        "vm[3]": 1.0,
+        "vm[4]": 1.0,
+        "vm[5]": 1.0
+      },
+      "sharing_equalities": 1,
+      "source_sha256": "112b6f67061610931a117aeba9d6a6c82ee34c65b99a38068d54b0f2f907c7ca",
+      "variables": 95
+    }
+  },
+  "counts": {
+    "bidirectional_cross_checks": 48,
+    "cases": 8,
+    "corruption_controls": 96,
+    "native_solves": 24,
+    "reference_solves": 24
+  },
+  "julia_version": "1.12.6",
+  "manifest_sha256": "c0c50ee07d24b1ba8af99d58dad407959e4e6ce81071f6f988babe120f0344f4",
+  "native_cross_check": {
+    "checks": 24,
+    "max_violation": 6.393374718527411e-11
+  },
+  "native_report_sha256": "26d623d2171efbacf1fc085492aaab8a6c9bf887a5a6e1fbae5ba990f492aadb",
+  "powerio_revision": "e5a7c8b82845e32de7427f39ff8e63768f5f8bd2",
+  "reference_modification": "equal_increments_from_declared_generator_Pg_at_reference_and_Qg_at_PV_reference; positive_voltage_numerical_domain_with_original_bounds_restored; exact_presolve_of_affine_setpoints_fixed_load_and_unused_VSC_auxiliaries_restored_before_validation",
+  "reference_report_sha256": "6c897345f90684f35c07344108a0a7fcc372cf05d0a0e6cccd680f68e676d1cd",
+  "reference_revision": "9ada4082ac087aed649f48fb5f977680b0fe06c7",
+  "scope": "source_pu_Cinv_PF_with_explicit_generator_allocation; limits_reported_after_solve; no_physical_fixed_mode_PF_or_automatic_control_switching",
+  "solver_options": {
+    "acceptable_iter": 0,
+    "bound_relax_factor": 0.0,
+    "constr_viol_tol": 1e-10,
+    "linear_solver": "mumps",
+    "max_cpu_time": 120.0,
+    "max_iter": 3000,
+    "mu_strategy": "adaptive",
+    "nlp_scaling_method": "none",
+    "print_level": 0,
+    "sb": "yes",
+    "tol": 1e-09
+  }
+}

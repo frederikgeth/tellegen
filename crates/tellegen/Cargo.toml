@@ -154,3 +154,7 @@ required-features = ["acopf"]
 [[example]]
 name = "acdc_fixed_boundaries"
 required-features = ["acopf"]
+
+[[example]]
+name = "acdc_pf"
+required-features = ["acopf"]

@@ -7,8 +7,9 @@
 pub use crate::model::acopf::equivalent::{
     AcDcAngleReference, AcDcAngleReferencePolicy, AcDcAngleShift, AcDcCoordinatePolicy,
     AcDcCurrentLimitPolicy, AcDcOpfManifest, AcDcOpfProfile, AcDcOpfResult, AcDcOpfStart,
-    AcDcScalar, BusTypePolicy, DerivativeCheck, DerivativeReport, EquationCheck, EquationMode,
-    EquationReport, PreparedAcDcOpf, ReferenceEquations, StationPolicy,
+    AcDcPfManifest, AcDcPfResult, AcDcPfStart, AcDcScalar, BusTypePolicy, DerivativeCheck,
+    DerivativeReport, EquationCheck, EquationMode, EquationReport, PreparedAcDcOpf, PreparedAcDcPf,
+    ReferenceEquations, StationPolicy,
 };
 
 use crate::{
