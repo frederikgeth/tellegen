@@ -231,5 +231,6 @@
     "ac_dc_converter_station/7": "7",
     "ac_dc_converter_station/8": "8",
     "ac_dc_converter_station/9": "9"
-  }
+  },
+  "_angle_reference_policy": "lowest_bus_id_per_island"
 }

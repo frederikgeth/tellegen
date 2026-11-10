@@ -23,14 +23,14 @@ not the solver's dense ordering. Parser identities were checked against source
 bus/endpoints before recording the map.
 
 `reference.json` retains independently solved PF/OPF points and provenance,
-omitting bulky starts and duplicate equipment snapshots. Its 74,497 bytes / 2,648
+omitting bulky starts and duplicate equipment snapshots. Its 75,770 bytes / 2,723
 lines are generated validation evidence, not another source case. The complete
 reference, derivative, native and cross-check reports are regenerated outside
 the repository. `summary.json` records their numerical acceptance results.
 
 ## Results, 2026-11-10
 
-PowerIO remains pinned to `98d5c88f`; PowerModelsACDC to `9ada4082` (0.10.1).
+PowerIO is pinned to `552fc413`; PowerModelsACDC to `9ada4082` (0.10.1).
 Fresh reference PF/OPF solutions satisfy native equations at 4.552e-14 and
 1.023e-10 maximum violation. There are 657 native variables; independent Julia
 checks account for all 766 reference variables, including 109 fixed-demand and
@@ -71,4 +71,4 @@ below the unchanged 1e-6 threshold. Dense structural-zero checks remain active.
 
 This adds evidence for these bypasses and three-island topology, not arbitrary
 switching, physical rebasing, directional losses, LCC, coupled PF solving, global
-optimality or dual sensitivities. Case39 and case67 native solves remain next.
+optimality or dual sensitivities. Case39 and case67 are now qualified separately; broader physical/base tests remain.

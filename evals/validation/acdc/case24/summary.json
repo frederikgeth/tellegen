@@ -52,7 +52,7 @@
     "powermodels": "0.21.7",
     "jump": "1.32.1",
     "ipopt": "1.16.0",
-    "powerio_revision": "98d5c88fa7eed18ba537a6c278d0f934dc7d2422"
+    "powerio_revision": "552fc413647307322aff7c69688e6b77ff308ad3"
   },
   "derivatives": {
     "points": 6,
@@ -77,10 +77,87 @@
       "effective": "PV"
     }
   ],
+  "reference_pf": {
+    "termination_status": "LOCALLY_SOLVED",
+    "qualified": true,
+    "max_primal_violation": 2.728928194528635e-13
+  },
   "negative_controls_detected": {
     "dc_bus/dc_equivalent_bus/1/vm": 6.644194102660563,
     "station/ac_dc_converter_station/1/pdc": 0.10000000000000009,
     "station/ac_dc_converter_station/1/pgrid": 0.10000000000000009,
     "station/ac_dc_converter_station/1/qgrid": 0.10000000000000003
-  }
+  },
+  "angle_reference_policy": "declared",
+  "angle_references": [
+    {
+      "bus": 113,
+      "declared": true,
+      "island_buses": [
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124
+      ]
+    },
+    {
+      "bus": 213,
+      "declared": true,
+      "island_buses": [
+        201,
+        202,
+        203,
+        204,
+        205,
+        206,
+        207,
+        208,
+        209,
+        210,
+        211,
+        212,
+        213,
+        214,
+        215,
+        216,
+        217,
+        218,
+        219,
+        220,
+        221,
+        222,
+        223,
+        224
+      ]
+    },
+    {
+      "bus": 302,
+      "declared": true,
+      "island_buses": [
+        301,
+        302
+      ]
+    }
+  ],
+  "reference_angle_alignment": []
 }

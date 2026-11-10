@@ -192,3 +192,43 @@ reference comparison still passes with unchanged mathematical results. Four
 new tests cover case39 reference equations/three starts/IR reload, case67 refusal
 and source preservation, and rejection of a failed OPF masquerading as a
 skippable PF result. No native runtime equations changed in this extension.
+
+## Explicit angle policy and case67 qualification — 2026-11-10
+
+Tellegen now pins PowerIO model commit **552fc413**. Coupled intent selects a
+persisted numerical-angle-reference policy: strict `Declared` by default, or
+opt-in `LowestBusIdPerIsland`. Preparation preserves declared references and
+records added anchors by source identity without changing source/PF roles.
+The version-3 native manifest/fingerprint includes that policy and anchor set.
+Reference alignment is a separate, bound-checked operation; supplied starts are
+otherwise exact. Ordinary AC-only and unqualified PF guards remain.
+
+[Case67](case67/README.md) now passes the complete native/reference OPF gate.
+Bus 67 remains source PV while its numerical angle is fixed to zero. The
+independent oracle is aligned by -0.021358541264414423 radians at bus 67 and
+converter 9's filter/valve angles; the original reference model accepts this
+point at 6.822e-13 with unchanged cost. All 739 native/859 reference coordinates
+are accounted for, without filling missing native decisions from oracle values.
+
+Reference/declared/flat native starts converge in 14/24/69 iterations. Maximum
+native/reference violation is 6.739e-11, objective difference 4.531e-8, aligned
+electrical difference 6.454e-8 and native KKT error 6.558e-9. Three derivative
+points pass all 90 summaries at two steps without relaxing tolerance. Five
+corruption controls are detected, including a bus-only angle shift. Physical
+IR reloads preserve the selected policy and feasible complete primal points.
+
+Case67's reference PF local failure remains explicit and unqualified; no
+PowerModelsACDC bug was found. The previous gap is resolved for this OPF profile,
+not a change to reference PF semantics or a global/physical-equivalence claim.
+
+Validation: 758 full-feature Tellegen tests pass (7 ignored), all-target clippy,
+formatting, PowerIO pin and EPL guards pass. PowerIO's full default workspace run
+plus the corrected IR-reference documentation test covers 3,631 passing tests;
+55 C ABI and seven focused coupled tests pass. Its changed libraries/focused
+clippy and C ABI/Python configurations pass; three broad configurations retain
+the previously documented unchanged exact-float warnings. Published IR schemas,
+reader #822 and the draft Tellegen PR heads remain unchanged.
+
+Fresh full pipelines for case5, case24 and case39 also pass with the new pin,
+strict declared-reference policy, unchanged tolerances and mathematical results.
+Their reference points, summaries and existing case5 reports have been refreshed.

@@ -87,6 +87,13 @@ fn preparation_identity_includes_dc_data_and_start_roundtrips_fail_closed() {
     let fingerprint = prepared.manifest().model_fingerprint.clone();
     let repeated = PreparedAcDcOpf::new(instance(&net)).unwrap();
     assert_eq!(fingerprint, repeated.manifest().model_fingerprint);
+    let alternate_policy = PreparedAcDcOpf::new(
+        instance(&net)
+            .with_angle_reference_policy(powerio::AcDcAngleReferencePolicy::LowestBusIdPerIsland),
+    )
+    .unwrap();
+    assert_ne!(fingerprint, alternate_policy.manifest().model_fingerprint);
+
     let mut modified = net.clone();
     let mut owner = modified.ac_dc_equivalent().unwrap().clone();
     owner.stations[0].losses.constant_mw += 0.1;
@@ -131,4 +138,21 @@ fn preparation_identity_includes_dc_data_and_start_roundtrips_fail_closed() {
         .solve(AcDcOpfStart::Flat, Some(Arc::new(AtomicBool::new(true))))
         .unwrap_err()
         .contains("cancelled"));
+}
+
+#[test]
+fn numerical_reference_never_creates_pf_dispatch_controls() {
+    use tellegen::ac_dc::{EquationMode, ReferenceEquations};
+    let (mut net, _, _) = fixture();
+    for branch in net.branches_mut() {
+        if branch.from.0 == 2 || branch.to.0 == 2 {
+            branch.in_service = false;
+        }
+    }
+    let selected = instance(&net)
+        .with_angle_reference_policy(powerio::AcDcAngleReferencePolicy::LowestBusIdPerIsland);
+    let error = ReferenceEquations::from_instance(&selected, EquationMode::Pf)
+        .err()
+        .unwrap();
+    assert!(error.contains("do not qualify PF"), "{error}");
 }

@@ -14,7 +14,7 @@ row identities, checked against the independent source parser's endpoints.
 
 ## Results, 2026-11-10
 
-PowerIO remains at `98d5c88f`, PowerModelsACDC at `9ada4082` (0.10.1), with the
+PowerIO is at `552fc413`, PowerModelsACDC at `9ada4082` (0.10.1), with the
 shared pinned Julia environment and unchanged tolerances. The independently
 solved OPF point satisfies all 555 native rows and 233 bounds with maximum
 violation 4.564e-10; the objective is 138063.51729486606.

@@ -9,7 +9,9 @@ pub use derivatives::{DerivativeCheck, DerivativeReport};
 pub use opf::{
     AcDcOpfManifest, AcDcOpfProfile, AcDcOpfResult, AcDcOpfStart, AcDcScalar, PreparedAcDcOpf,
 };
+pub use powerio::AcDcAngleReferencePolicy;
 use powerio::BalancedNetwork;
+pub use powerio_matrix::AcDcAngleReference;
 use powerio_tx::acdc::{
     AcConverterControl, ConverterSeries, ConverterTechnology, DcConverterControl,
 };
@@ -52,6 +54,16 @@ pub struct EquationReport {
     pub bounds: Vec<EquationCheck>,
     pub station_policy: Vec<StationPolicy>,
     pub bus_type_policy: Vec<BusTypePolicy>,
+    pub angle_reference_policy: AcDcAngleReferencePolicy,
+    pub angle_references: Vec<AcDcAngleReference>,
+}
+
+/// Recorded coordinate transformation, not an edit to source equipment.
+#[derive(Clone, Debug, serde::Serialize)]
+pub struct AcDcAngleShift {
+    pub anchor_bus: usize,
+    pub shift_radians: f64,
+    pub variables: Vec<String>,
 }
 
 /// Native expression model with identity-named pu variables (angles in radians).
@@ -62,6 +74,9 @@ pub struct ReferenceEquations {
     mode: EquationMode,
     policy: Vec<StationPolicy>,
     bus_type_policy: Vec<BusTypePolicy>,
+    angle_reference_policy: AcDcAngleReferencePolicy,
+    angle_references: Vec<AcDcAngleReference>,
+    station_buses: BTreeMap<String, powerio::BusId>,
 }
 
 fn col(p: &mut NlProblemParts, name: String, lo: f64, hi: f64, start: f64) -> Expr {
@@ -139,7 +154,7 @@ impl ReferenceEquations {
         .map_err(|e| e.to_string())?;
         Self::from_instance(&instance, mode)
     }
-    pub(super) fn from_instance(
+    pub fn from_instance(
         instance: &powerio::AcDcOpfInstance,
         mode: EquationMode,
     ) -> Result<Self, String> {
@@ -213,6 +228,13 @@ impl ReferenceEquations {
             .collect();
         let coupled =
             powerio_matrix::build_ac_dc_opf_preparation(instance).map_err(|e| e.to_string())?;
+        if mode == EquationMode::Pf && coupled.angle_references.iter().any(|r| !r.declared) {
+            return Err(
+                "Numerical OPF angle references do not qualify PF reference/dispatch controls"
+                    .into(),
+            );
+        }
+        let angle_references = coupled.angle_references.clone();
         let mut policy = Vec::new();
         let model = compile_ac_opf_preparation_with(
             net,
@@ -533,6 +555,14 @@ impl ReferenceEquations {
             mode,
             policy,
             bus_type_policy,
+            angle_reference_policy: instance.angle_reference_policy(),
+            angle_references,
+            station_buses: owner
+                .stations
+                .iter()
+                .filter(|s| s.in_service)
+                .map(|s| (s.component.to_string(), s.ac_bus))
+                .collect(),
         })
     }
 
@@ -556,6 +586,55 @@ impl ReferenceEquations {
                     .ok_or_else(|| format!("Missing/nonfinite variable {n}"))
             })
             .collect()
+    }
+
+    /// Explicitly align only added numerical references. All bus, filter and
+    /// valve angles in that AC island receive the same shift. Supplied starts
+    /// are never silently changed; callers opt into this operation and retain
+    /// its shift record. Reject rotations outside any original angle bound.
+    pub fn align_angle_references(
+        &self,
+        point: &BTreeMap<String, f64>,
+    ) -> Result<(BTreeMap<String, f64>, Vec<AcDcAngleShift>), String> {
+        self.point_values(point)?;
+        let mut aligned = point.clone();
+        let mut shifts = Vec::new();
+        for reference in self.angle_references.iter().filter(|r| !r.declared) {
+            let shift = -point[&format!("va[{}]", reference.bus.0)];
+            let mut variables: Vec<_> = reference
+                .island_buses
+                .iter()
+                .map(|b| format!("va[{}]", b.0))
+                .collect();
+            for (station, bus) in &self.station_buses {
+                if reference.island_buses.contains(bus) {
+                    variables.extend([
+                        format!("station/{station}/vafilt"),
+                        format!("station/{station}/vaconv"),
+                    ]);
+                }
+            }
+            variables.sort();
+            for name in &variables {
+                let value = aligned.get_mut(name).ok_or("Angle coordinate missing")?;
+                *value += shift;
+                let p = &self.model.problem;
+                let column = p
+                    .var_names
+                    .iter()
+                    .position(|v| v == name)
+                    .ok_or("Angle column missing")?;
+                if !value.is_finite() || *value < p.x_l[column] || *value > p.x_u[column] {
+                    return Err(format!("Angle alignment exceeds original bounds at {name}"));
+                }
+            }
+            shifts.push(AcDcAngleShift {
+                anchor_bus: reference.bus.0,
+                shift_radians: shift,
+                variables,
+            });
+        }
+        Ok((aligned, shifts))
     }
 
     /// Evaluate native equations and bounds at a complete finite operating point.
@@ -618,6 +697,8 @@ impl ReferenceEquations {
             bounds,
             station_policy: self.policy.clone(),
             bus_type_policy: self.bus_type_policy.clone(),
+            angle_reference_policy: self.angle_reference_policy,
+            angle_references: self.angle_references.clone(),
         })
     }
 }

@@ -125,3 +125,18 @@ pub fn qualified(oracle: &Value, mode: &str) -> bool {
         status => panic!("Unqualified reference status: {status}"),
     }
 }
+
+#[allow(dead_code)]
+pub fn instance(net: BalancedNetwork, map: &Value) -> powerio::AcDcOpfInstance {
+    let policy = match map["_angle_reference_policy"].as_str() {
+        None | Some("declared") => powerio::AcDcAngleReferencePolicy::Declared,
+        Some("lowest_bus_id_per_island") => powerio::AcDcAngleReferencePolicy::LowestBusIdPerIsland,
+        _ => panic!("Unknown fixture angle-reference policy"),
+    };
+    powerio::AcDcOpfInstance::from_network(
+        net,
+        powerio::AcDcOpfProfile::PowerModelsAcDc0101AcpVscV1,
+    )
+    .unwrap()
+    .with_angle_reference_policy(policy)
+}

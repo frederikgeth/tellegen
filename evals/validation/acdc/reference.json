@@ -485,9 +485,24 @@
   },
   "solves": {
     "opf": {
+      "ac_angle_gauge": [
+        {
+          "buses": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "reference_buses": [
+            4
+          ]
+        }
+      ],
       "max_primal_violation": 3.141487070479343e-12,
       "objective": 15693.105053824369,
       "primal_status": "FEASIBLE_POINT",
+      "qualified": true,
       "solution": {
         "baseMVA": 100.0,
         "branch": {
@@ -786,6 +801,7 @@
       "max_primal_violation": 9.122979820768961e-14,
       "objective": 0.0,
       "primal_status": "FEASIBLE_POINT",
+      "qualified": true,
       "solution": {
         "baseMVA": 100.0,
         "branch": {

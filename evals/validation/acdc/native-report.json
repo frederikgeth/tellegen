@@ -1,5 +1,19 @@
 {
   "opf": {
+    "angle_reference_policy": "declared",
+    "angle_references": [
+      {
+        "bus": 4,
+        "declared": true,
+        "island_buses": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      }
+    ],
     "bounds": [
       {
         "lower": 0.9,
@@ -1157,6 +1171,7 @@
     "mode": "opf",
     "objective": 15693.105053824369,
     "profile": "powermodelsacdc-9ada4082-acp-source-coordinates-inverter-loss",
+    "reference_angle_alignment": [],
     "station_policy": [
       {
         "component": "ac_dc_converter_station/1",
@@ -1203,6 +1218,20 @@
     ]
   },
   "pf": {
+    "angle_reference_policy": "declared",
+    "angle_references": [
+      {
+        "bus": 4,
+        "declared": true,
+        "island_buses": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      }
+    ],
     "bounds": [
       {
         "lower": 0.0,
@@ -1891,6 +1920,7 @@
     "mode": "pf",
     "objective": 0.0,
     "profile": "powermodelsacdc-9ada4082-acp-source-coordinates-inverter-loss",
+    "reference_angle_alignment": [],
     "station_policy": [
       {
         "component": "ac_dc_converter_station/1",

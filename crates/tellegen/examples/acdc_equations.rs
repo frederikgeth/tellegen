@@ -13,8 +13,14 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             eprintln!("Skipping {label}: reference solve is explicitly unqualified");
             continue;
         }
-        let model = ReferenceEquations::powermodels_acdc_0101(&net, mode)?;
+        let model =
+            ReferenceEquations::from_instance(&reference::instance(net.clone(), &map), mode)?;
         let point = reference::point(&net, &oracle["solves"][label]["solution"], &map);
+        let (point, shifts) = model.align_angle_references(&point)?;
+        eprintln!(
+            "{label} angle alignment: {}",
+            serde_json::to_string(&shifts)?
+        );
         let report = model.evaluate(&point)?;
         if report.max_violation > 1e-7 {
             return Err(format!(
@@ -39,7 +45,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         {
             return Err("Objective mismatch".into());
         }
-        reports.insert(label.into(), serde_json::to_value(report)?);
+        let mut report = serde_json::to_value(report)?;
+        report["reference_angle_alignment"] = serde_json::to_value(shifts)?;
+        reports.insert(label.into(), report);
     }
     println!("{}", serde_json::to_string_pretty(&reports)?);
     Ok(())

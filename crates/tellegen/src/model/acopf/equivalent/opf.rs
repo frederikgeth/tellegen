@@ -47,6 +47,8 @@ pub struct AcDcOpfManifest {
     pub variables: Vec<AcDcScalar>,
     pub constraints: Vec<AcDcScalar>,
     pub station_policy: Vec<StationPolicy>,
+    pub angle_reference_policy: AcDcAngleReferencePolicy,
+    pub angle_references: Vec<AcDcAngleReference>,
 }
 
 /// Immutable preparation keeps source declarations separate from effective
@@ -89,7 +91,8 @@ impl PreparedAcDcOpf {
         // The caller selects InstancePoint explicitly; declared and flat starts
         // must remain independent of any point attached to the canonical intent.
         let source_intent = powerio::AcDcOpfInstance::from_network(net.clone(), instance.profile())
-            .map_err(|e| e.to_string())?;
+            .map_err(|e| e.to_string())?
+            .with_angle_reference_policy(instance.angle_reference_policy());
         let equations = ReferenceEquations::from_instance(&source_intent, EquationMode::Opf)?;
         let p = &equations.model.problem;
         let prep = &equations.model.preparation;
@@ -97,7 +100,7 @@ impl PreparedAcDcOpf {
         // Hash the complete source (including all DC/station declarations), the
         // selected policy and the formulation version, not only the AC projection.
         let encoded = serde_json::to_vec(
-            &serde_json::json!({"schema":"tellegen-acdc-opf-v2","network":net,"profile":instance.profile()}),
+            &serde_json::json!({"schema":"tellegen-acdc-opf-v3","network":net,"profile":instance.profile(),"angle_reference_policy":instance.angle_reference_policy(),"angle_references":equations.angle_references}),
         )
         .map_err(|e| e.to_string())?;
         let model_fingerprint = crate::content_id::content_id(&encoded);
@@ -114,10 +117,10 @@ impl PreparedAcDcOpf {
                 .collect()
         };
         let manifest = AcDcOpfManifest {
-            schema: "tellegen-acdc-opf-preparation-v2",
+            schema: "tellegen-acdc-opf-preparation-v3",
             profile: instance.profile(),
             model_fingerprint,
-            powerio_revision: "98d5c88fa7eed18ba537a6c278d0f934dc7d2422",
+            powerio_revision: "552fc413647307322aff7c69688e6b77ff308ad3",
             reference_revision: "9ada4082ac087aed649f48fb5f977680b0fe06c7",
             base_mva: owner.base_mva,
             pole_count: owner.pole_count,
@@ -150,6 +153,8 @@ impl PreparedAcDcOpf {
             variables: descriptors(&p.var_names, &p.x_l, &p.x_u),
             constraints: descriptors(&p.con_names, &p.g_l, &p.g_u),
             station_policy: equations.policy.clone(),
+            angle_reference_policy: instance.angle_reference_policy(),
+            angle_references: equations.angle_references.clone(),
         };
         let mut declared: BTreeMap<_, _> = p
             .var_names
@@ -211,6 +216,12 @@ impl PreparedAcDcOpf {
     }
     pub fn evaluate(&self, point: &BTreeMap<String, f64>) -> Result<EquationReport, String> {
         self.equations.evaluate(point)
+    }
+    pub fn align_angle_references(
+        &self,
+        point: &BTreeMap<String, f64>,
+    ) -> Result<(BTreeMap<String, f64>, Vec<AcDcAngleShift>), String> {
+        self.equations.align_angle_references(point)
     }
     pub fn initial_point(&self, start: &AcDcOpfStart) -> Result<BTreeMap<String, f64>, String> {
         let p = &self.equations.model.problem;
@@ -335,7 +346,7 @@ impl PreparedAcDcOpf {
         .map_err(|e| e.to_string())?;
         Ok(AcDcOpfResult {
             solution,
-            schema: "tellegen-acdc-opf-result-v2",
+            schema: "tellegen-acdc-opf-result-v3",
             solver: "pounce-0.15.0-feral",
             solver_options,
             base_restoration_calls,

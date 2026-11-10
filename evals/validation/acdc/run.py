@@ -92,6 +92,9 @@ summary["bus_type_policy"] = reports["opf"]["bus_type_policy"]
 summary["reference_pf"] = {k: reference["solves"]["pf"][k] for k in (
     "termination_status", "qualified", "max_primal_violation")}
 summary["negative_controls_detected"] = cross["negative_controls_detected"]
+summary["angle_reference_policy"] = native["preparation"]["angle_reference_policy"]
+summary["angle_references"] = native["preparation"]["angle_references"]
+summary["reference_angle_alignment"] = cross["reference_angle_alignment"]
 for name, result in summary["native_opf"].items():
     result["max_absolute_electrical_difference"] = cross["solves"][name]["max_absolute_electrical_difference"]
     result["native_variables"] = cross["solves"][name]["native_variables"]

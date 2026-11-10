@@ -7,7 +7,7 @@ The implementation plan is tracked in [PowerIO #819](https://github.com/eigenerg
 
 The working branch starts from equipment/ACDC [Tellegen #358](https://github.com/eigenergy/tellegen/pull/358)
 at `e814b78549fb5fe48112bc5a72f6732dd115756f`. All PowerIO crates are pinned to
-`98d5c88fa7eed18ba537a6c278d0f934dc7d2422` (separate PowerIO model branch, based
+`552fc413647307322aff7c69688e6b77ff308ad3` (separate PowerIO model branch, based
 on unchanged reader `49e8eacb`) using the repository's candidate-pin
 mechanism. Existing PRs remain draft. This candidate dependency is not a
 published PowerIO release; release packaging must wait for a published version
@@ -215,8 +215,7 @@ blanket full-station/physical-model qualification.
    further PF controls. Droop/LCC and zero-resistance DC links explicitly refuse
    where unsupported. Case24 qualifies its bypasses, disabled filters and three
    AC islands; arbitrary switching and physical projections remain unqualified.
-4. Resolve the explicit case67 angle-reference policy gap below, then expand
-   to external large cases. Preserve known reference PF local failures rather
+4. Extend the qualified case5/24/39/67 corpus to external large cases. Preserve known reference PF local failures rather
    than treating them as reader failures.
 5. Add the natural PowerModelsACDC JSON IR reader separately. No inference of
    JSON support, bindings support, or broader native solve support from case5.
@@ -259,9 +258,9 @@ physical IR round trips. Its failed reference PF supplies no accepted point.
 Only explicitly recorded known PF failures may be skipped; OPF failures and
 unexpected reference outcomes still stop the harness.
 
-[Case67](case67/README.md) reproduces a native preparation refusal: singleton
-AC bus 67 has no declared angle reference. Independent phase-shift probes
-confirm the reference model's free common angle. The runner exits nonzero,
-records a failure and removes any previous success summary. Case67 native
-qualification requires the documented canonical angle-reference policy; no
-source modification or PowerModelsACDC bug is implied by this difference.
+[Case67](case67/README.md) selects the explicit canonical numerical-reference
+policy. Bus 67 keeps its source PV role, while a recorded zero-angle constraint
+removes its free common phase. Native diagnostics explicitly align the reference
+bus/filter/valve angles together; the independent checker verifies that complete
+point against original equations and bounds. The strict default still refuses
+this case. No PowerModelsACDC bug was found.

@@ -70,13 +70,85 @@
   "settings": {
     "conv_losses_mp": true
   },
-  "source_sha256": "fe8c31d586ef6853257a0ec9a018c2b92da030808e58e57b309deac1eb5ae4b4",
   "solves": {
     "opf": {
-      "termination_status": "LOCALLY_SOLVED",
-      "primal_status": "FEASIBLE_POINT",
-      "objective": 150228.14924867812,
+      "ac_angle_gauge": [
+        {
+          "buses": [
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            117,
+            118,
+            119,
+            120,
+            121,
+            122,
+            123,
+            124
+          ],
+          "reference_buses": [
+            113
+          ]
+        },
+        {
+          "buses": [
+            201,
+            202,
+            203,
+            204,
+            205,
+            206,
+            207,
+            208,
+            209,
+            210,
+            211,
+            212,
+            213,
+            214,
+            215,
+            216,
+            217,
+            218,
+            219,
+            220,
+            221,
+            222,
+            223,
+            224
+          ],
+          "reference_buses": [
+            213
+          ]
+        },
+        {
+          "buses": [
+            301,
+            302
+          ],
+          "reference_buses": [
+            302
+          ]
+        }
+      ],
       "max_primal_violation": 4.003495451820882e-11,
+      "objective": 150228.14924867812,
+      "primal_status": "FEASIBLE_POINT",
+      "qualified": true,
       "solution": {
         "baseMVA": 100,
         "branch": {
@@ -1356,13 +1428,14 @@
         "multiinfrastructure": false,
         "multinetwork": false,
         "per_unit": true
-      }
+      },
+      "termination_status": "LOCALLY_SOLVED"
     },
     "pf": {
-      "termination_status": "LOCALLY_SOLVED",
-      "primal_status": "FEASIBLE_POINT",
-      "objective": 0.0,
       "max_primal_violation": 2.728928194528635e-13,
+      "objective": 0.0,
+      "primal_status": "FEASIBLE_POINT",
+      "qualified": true,
       "solution": {
         "baseMVA": 100,
         "branch": {
@@ -2642,7 +2715,9 @@
         "multiinfrastructure": false,
         "multinetwork": false,
         "per_unit": true
-      }
+      },
+      "termination_status": "LOCALLY_SOLVED"
     }
-  }
+  },
+  "source_sha256": "fe8c31d586ef6853257a0ec9a018c2b92da030808e58e57b309deac1eb5ae4b4"
 }

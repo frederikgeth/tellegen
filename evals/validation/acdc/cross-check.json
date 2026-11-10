@@ -1,16 +1,18 @@
 {
   "manifest_sha256": "c0c50ee07d24b1ba8af99d58dad407959e4e6ce81071f6f988babe120f0344f4",
-  "native_result_sha256": "2653a9a55ce08ee59e43225b77d3b2cd2465f236d649d474a31b2c74c5ad022d",
+  "native_result_sha256": "bdcdb5c053dcd65726c7cecfb1ec01f5ba9069d0f028ab07ba146c0c06e77a5c",
   "negative_controls_detected": {
     "dc_bus/dc_equivalent_bus/1/vm": 4.608994569879215,
     "station/ac_dc_converter_station/1/pdc": 0.1,
     "station/ac_dc_converter_station/1/pgrid": 0.10000000000000009,
     "station/ac_dc_converter_station/1/qgrid": 0.10000000000000152
   },
-  "reference_result_sha256": "91061464c10a0db43522091852324935242ac2b324dd409ecc48cf89261b9d13",
+  "reference_angle_alignment": [],
+  "reference_result_sha256": "b0c9354813b72a75b398ce35fbcd096ca5de43cefb0fc439a8a8a35d8fcc634d",
   "reference_revision": "9ada4082ac087aed649f48fb5f977680b0fe06c7",
   "solves": {
     "declared": {
+      "aligned_reference_violation": 3.141487070479343e-12,
       "constraint_violations": {
         "(-0_pconv_ac[1]) - ((0.0037053603565955803 0_vmc[1]²) + (-0.0037053603565955803 0_vmc[1]*0_vmf[1]) * cos(-0_vaf[1] + 0_vac[1]) + (6.08716599381522 0_vmc[1]*0_vmf[1]) * sin(-0_vaf[1] + 0_vac[1])) = 0": 6.938893903907228e-18,
         "(-0_pconv_ac[2]) - ((0.0037053603565955803 0_vmc[2]²) + (-0.0037053603565955803 0_vmc[2]*0_vmf[2]) * cos(-0_vaf[2] + 0_vac[2]) + (6.08716599381522 0_vmc[2]*0_vmf[2]) * sin(-0_vaf[2] + 0_vac[2])) = 0": 1.1102230246251565e-16,
@@ -684,6 +686,7 @@
       "reference_variables": 107
     },
     "flat": {
+      "aligned_reference_violation": 3.141487070479343e-12,
       "constraint_violations": {
         "(-0_pconv_ac[1]) - ((0.0037053603565955803 0_vmc[1]²) + (-0.0037053603565955803 0_vmc[1]*0_vmf[1]) * cos(-0_vaf[1] + 0_vac[1]) + (6.08716599381522 0_vmc[1]*0_vmf[1]) * sin(-0_vaf[1] + 0_vac[1])) = 0": 1.3877787807814457e-17,
         "(-0_pconv_ac[3]) - ((0.0037053603565955803 0_vmc[3]²) + (-0.0037053603565955803 0_vmc[3]*0_vmf[3]) * cos(-0_vaf[3] + 0_vac[3]) + (6.08716599381522 0_vmc[3]*0_vmf[3]) * sin(-0_vaf[3] + 0_vac[3])) = 0": 2.7755575615628914e-15,
@@ -1359,6 +1362,7 @@
       "reference_variables": 107
     },
     "reference": {
+      "aligned_reference_violation": 3.141487070479343e-12,
       "constraint_violations": {
         "(-0_pconv_ac[1]) - ((0.0037053603565955803 0_vmc[1]²) + (-0.0037053603565955803 0_vmc[1]*0_vmf[1]) * cos(-0_vaf[1] + 0_vac[1]) + (6.08716599381522 0_vmc[1]*0_vmf[1]) * sin(-0_vaf[1] + 0_vac[1])) = 0": 1.3877787807814457e-17,
         "(-0_pconv_ac[2]) - ((0.0037053603565955803 0_vmc[2]²) + (-0.0037053603565955803 0_vmc[2]*0_vmf[2]) * cos(-0_vaf[2] + 0_vac[2]) + (6.08716599381522 0_vmc[2]*0_vmf[2]) * sin(-0_vaf[2] + 0_vac[2])) = 0": 2.220446049250313e-16,

@@ -1,18 +1,16 @@
 //! Native AC/DC OPF from reference, declared-data and independent flat starts.
 #[path = "../tests/support/acdc_reference.rs"]
 mod reference;
-use tellegen::ac_dc::{AcDcOpfProfile, AcDcOpfStart, PreparedAcDcOpf};
+use tellegen::ac_dc::{AcDcOpfStart, PreparedAcDcOpf};
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let dir = std::env::args()
         .nth(1)
         .unwrap_or_else(|| "evals/validation/acdc".into());
     let (net, oracle, map) = reference::load(std::path::Path::new(&dir));
-    let instance = powerio::AcDcOpfInstance::from_network(
-        net.clone(),
-        AcDcOpfProfile::PowerModelsAcDc0101AcpVscV1,
-    )?;
+    let instance = reference::instance(net.clone(), &map);
     let prepared = PreparedAcDcOpf::new(instance)?;
     let point = reference::point(&net, &oracle["solves"]["opf"]["solution"], &map);
+    let (point, shifts) = prepared.align_angle_references(&point)?;
     let mut solutions = serde_json::Map::new();
     for (name, start) in [
         (
@@ -48,7 +46,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!(
         "{}",
         serde_json::to_string_pretty(
-            &serde_json::json!({"profile":prepared.instance().profile(),"preparation":prepared.manifest(),"solves":solutions})
+            &serde_json::json!({"profile":prepared.instance().profile(),"preparation":prepared.manifest(),"solves":solutions,"reference_angle_alignment":shifts})
         )?
     );
     Ok(())

@@ -9,13 +9,55 @@ reference = JSON.parsefile(reference_path)
 @assert reference["source_sha256"] == CASE_SHA
 @assert reference["manifest_sha256"] == bytes2hex(sha256(read(joinpath(@__DIR__, "Manifest.toml"))))
 @assert native["preparation"]["reference_revision"] == "9ada4082ac087aed649f48fb5f977680b0fe06c7"
-@assert native["preparation"]["powerio_revision"] == "98d5c88fa7eed18ba537a6c278d0f934dc7d2422"
+@assert native["preparation"]["powerio_revision"] == "552fc413647307322aff7c69688e6b77ff308ad3"
 data = source_case()
 PowerModelsACDC.process_additional_data!(data)
 pm = PM.instantiate_model(data, PM.ACPPowerModel, PowerModelsACDC.build_acdcopf;
     ref_extensions=REFS, setting=deepcopy(SETTINGS))
 vars = Dict(name(v) => v for v in all_variables(pm.model))
 @assert length(vars) == length(all_variables(pm.model))
+
+# Independently derive the expected angle references from source AC components.
+# The selected policy is explicit; the native manifest cannot invent its anchors.
+policy = native["preparation"]["angle_reference_policy"]
+@assert policy in ("declared", "lowest_bus_id_per_island")
+source_to_native = Dict(parse(Int, v) => parse(Int, k) for (k,v) in ids["bus"])
+expected_references = []
+angle_alignment = []
+comparison_solution = deepcopy(reference["solves"]["opf"]["solution"])
+for component in sort!(collect(PM.calc_connected_components(data; edges=["branch", "switch"])); by=minimum)
+    refs = sort!([i for i in component if data["bus"][string(i)]["bus_type"] == 3])
+    declared = !isempty(refs)
+    if !declared
+        @assert policy == "lowest_bus_id_per_island" "uncovered AC island needs explicit policy"
+        refs = [argmin(i -> source_to_native[i], collect(component))]
+    end
+    for bus in refs
+        push!(expected_references, Dict("bus"=>source_to_native[bus],
+            "island_buses"=>sort!([source_to_native[i] for i in component]), "declared"=>declared))
+        if !declared
+            shift = -comparison_solution["bus"][string(bus)]["va"]
+            variables = []
+            for i in component
+                comparison_solution["bus"][string(i)]["va"] += shift
+                push!(variables, "va[$(source_to_native[i])]")
+            end
+            for (native_id, source_id) in ids["convdc"]
+                if data["convdc"][source_id]["busac_i"] in component
+                    for field in ("vafilt", "vaconv")
+                        comparison_solution["convdc"][source_id][field] += shift
+                        push!(variables, "station/$native_id/$field")
+                    end
+                end
+            end
+            push!(angle_alignment, Dict("anchor_bus"=>source_to_native[bus],
+                "shift_radians"=>shift, "variables"=>sort!(variables)))
+        end
+    end
+end
+sort!(expected_references; by=r -> r["bus"])
+@assert expected_references == native["preparation"]["angle_references"]
+@assert angle_alignment == native["reference_angle_alignment"]
 
 function native_point(result)
     x = result["point"]
@@ -82,7 +124,7 @@ end
 
 function electrical_comparison(result)
     x = result["point"]
-    source = reference["solves"]["opf"]["solution"]
+    source = comparison_solution
     compared = Dict{String,Any}()
     put(name, actual, expected) = (compared[name] = Dict("native"=>actual, "reference"=>expected, "absolute_difference"=>abs(actual-expected)))
     for (table, fields) in [("bus", ("vm", "va")), ("gen", ("pg", "qg")),
@@ -119,7 +161,13 @@ for (label, result) in native["solves"]
     @assert isapprox(objective, native_objective; atol=1e-7, rtol=1e-10)
     @assert isapprox(objective, oracle_objective; atol=1e-7, rtol=1e-8)
     compared = electrical_comparison(result)
-    records[label] = Dict("electrical_comparison"=>compared,
+    aligned_oracle = Dict("point"=>Dict(k=>compared[k]["reference"] for k in keys(result["point"])))
+    aligned_point, _ = native_point(aligned_oracle)
+    aligned_violation = maximum(values(primal_feasibility_report(pm.model, aligned_point)); init=0.0)
+    @assert isfinite(aligned_violation) && aligned_violation <= 1e-7
+    @assert isapprox(value(v -> aligned_point[v], objective_function(pm.model)), oracle_objective; atol=1e-7, rtol=1e-10)
+
+    records[label] = Dict("aligned_reference_violation"=>aligned_violation, "electrical_comparison"=>compared,
         "max_absolute_electrical_difference"=>maximum(v["absolute_difference"] for v in values(compared)),"max_reference_violation"=>worst, "reference_evaluated_objective"=>objective,
         "native_objective_difference"=>objective-native_objective,
         "oracle_objective_difference"=>objective-oracle_objective,
@@ -137,7 +185,17 @@ for key in ("station/ac_dc_converter_station/1/pgrid", "station/ac_dc_converter_
     @assert violation > 1e-3 "reference checker did not detect $key corruption"
     negative_controls[key] = violation
 end
-output = Dict("negative_controls_detected"=>negative_controls, "source_sha256"=>CASE_SHA, "native_result_sha256"=>bytes2hex(sha256(read(ARGS[1]))),
+# Rotating only a bus must not pass the original station equations.
+for alignment in angle_alignment
+    key = "va[$(alignment["anchor_bus"])]"
+    corrupted = deepcopy(first(values(native["solves"])))
+    corrupted["point"][key] += 0.05
+    point, _ = native_point(corrupted)
+    violation = maximum(values(primal_feasibility_report(pm.model, point)); init=0.0)
+    @assert violation > 1e-3
+    negative_controls[key] = violation
+end
+output = Dict("reference_angle_alignment"=>angle_alignment, "negative_controls_detected"=>negative_controls, "source_sha256"=>CASE_SHA, "native_result_sha256"=>bytes2hex(sha256(read(ARGS[1]))),
     "reference_result_sha256"=>bytes2hex(sha256(read(reference_path))),
     "manifest_sha256"=>reference["manifest_sha256"],
     "reference_revision"=>native["preparation"]["reference_revision"], "solves"=>records)

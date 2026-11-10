@@ -15,7 +15,7 @@ checks, solver starts/recovery and validation diagnostics. Existing PRs stay dra
 - inverter losses in both directions, reference Imax repair and auxiliary bounds;
 - generator-cost minimization with free generator/converter dispatch, without
   PF setpoint constraints;
-- canonical AC reference-angle handling, with DC voltages constrained by limits
+- explicit AC numerical-reference policy, with DC voltages constrained by limits
   rather than PF reference controls;
 - rejection of unsupported/mixed representations and normalized/base-mismatched
   input, using the existing equation-model checks.
@@ -28,7 +28,8 @@ limit declaration. Source equipment is never overwritten with effective values.
 
 The model fingerprint hashes a versioned formulation tag, the complete serialized
 source network **including DC/station declarations**, and the selected profile.
-Source edits invalidate a supplied operating-point start even if native variable
+The version-3 fingerprint also includes the numerical-reference policy and
+identity-keyed anchor records. Source edits invalidate a supplied operating-point start even if native variable
 names happen to remain unchanged. This deliberately conservative content identity
 is not a proof that two differently serialized source cases are electrically
 inequivalent. A formulation change requires a new version/fingerprint tag.
@@ -89,10 +90,10 @@ branch/valve/station losses are reported against the reference. Primal equality
 is not a general OPF acceptance requirement because solutions may be nonunique.
 Four deliberate port-power/DC-voltage corruptions must fail reference feasibility.
 
-The OPF qualification envelope is case5, case24 and case39 under the specified
-reference profile, from three starts. Case39 PF is explicitly unqualified; case67
-native preparation still rejects its AC island without a declared reference
-(see [the angle-reference gap](case67/README.md)). Coupled PF solves, additional controls/cases, rebasing,
+The OPF qualification envelope includes case5, case24, case39 and case67 under
+the specified reference profile, from three starts. Case67 explicitly selects
+`LowestBusIdPerIsland`; the other fixtures retain `Declared`. Reference PF for
+case39/case67 remains explicitly unqualified. See [case67 evidence](case67/README.md). Coupled PF solves, additional controls/cases, rebasing,
 normalized cases, physical projections, LCC and directional losses remain future
 work. The PowerIO preparation supplies reference station bounds/losses, DC
 power scaling and pole conductance, and the canonical AC preparation. Tellegen
@@ -103,3 +104,28 @@ PF equation diagnostics record the pinned PowerModels parser's PQ/PV bus-role
 repair separately from source declarations. This is not a new coupled PF solver
 or an implicit network edit. Case24's bus 123 exposes the difference; reference
 reassignment without active generation remains unqualified and rejects.
+
+## Numerical angle references
+
+Canonical intent selects `AcDcAngleReferencePolicy::Declared` by default. This
+retains every declared angle reference and refuses uncovered AC islands.
+`LowestBusIdPerIsland` is opt-in: preserve declared references, then constrain
+the lowest source bus ID to zero radians in each uncovered active AC component.
+DC links do not synchronize AC phases. Preparation records each anchor's bus,
+component membership and declared/numerical origin. Source bus kinds and PF
+voltage/generation controls remain unchanged. New numerical OPF anchors do not
+qualify a PF model; the diagnostic PF constructor refuses them.
+
+`align_angle_references` explicitly transforms a complete point and returns a
+shift record. It shifts bus, converter filter and converter valve angles together
+within only the components with added anchors. It rejects a rotated angle outside
+its existing bound; it does not clip or wrap angles. `Point` and `InstancePoint`
+starts remain exact unless callers perform this separate operation. Public typed
+IR persists the selected policy with the source network and physical result.
+Default-policy documents retain their previous shape; unknown policies refuse.
+
+The independent Julia checker derives anchors from the original source topology,
+checks manifest/alignment agreement, and re-evaluates the entire aligned reference
+point against original constraints and bounds. Native solved points are evaluated
+in that same original reference model. Electrical comparisons use the recorded
+aligned reference; original reference points are retained to recover raw angles.

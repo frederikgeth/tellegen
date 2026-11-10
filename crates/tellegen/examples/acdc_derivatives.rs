@@ -14,8 +14,14 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             eprintln!("Skipping {label}: reference solve is explicitly unqualified");
             continue;
         }
-        let model = ReferenceEquations::powermodels_acdc_0101(&net, mode)?;
+        let model =
+            ReferenceEquations::from_instance(&reference::instance(net.clone(), &map), mode)?;
         let point = reference::point(&net, &oracle["solves"][label]["solution"], &map);
+        let (point, shifts) = model.align_angle_references(&point)?;
+        eprintln!(
+            "{label} angle alignment: {}",
+            serde_json::to_string(&shifts)?
+        );
         for (name, point) in reference::derivative_points(&point) {
             eprintln!(
                 "Checking {label}/{name}: {} variables",
