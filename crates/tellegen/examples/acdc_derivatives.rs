@@ -10,6 +10,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mut reports = serde_json::Map::new();
     let mut passed = true;
     for (label, mode) in [("pf", EquationMode::Pf), ("opf", EquationMode::Opf)] {
+        if !reference::qualified(&oracle, label) {
+            eprintln!("Skipping {label}: reference solve is explicitly unqualified");
+            continue;
+        }
         let model = ReferenceEquations::powermodels_acdc_0101(&net, mode)?;
         let point = reference::point(&net, &oracle["solves"][label]["solution"], &map);
         for (name, point) in reference::derivative_points(&point) {

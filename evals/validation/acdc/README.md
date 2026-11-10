@@ -1,4 +1,4 @@
-# Case5 native AC/DC equation qualification
+# Native AC/DC equation and OPF qualification
 
 This is the **MATPOWER-extension variant of PowerModelsACDC**, using the
 PowerIO reader from draft [PowerIO #822](https://github.com/eigenergy/powerio/pull/822).
@@ -173,8 +173,8 @@ incorrect derivatives, separately from the electrical equation mutations.
 
 [derivative-report.json](derivative-report.json) contains the six point reports,
 including dimensions, sparse counts, dense comparison counts and worst named
-entries. Maximum scaled errors are `5.150553040079598e-7` for Jacobians and
-`8.67399847885586e-8` for Hessians. These checks validate native calculus at the
+entries. Maximum scaled case5 errors are `2.9133484686526554e-10` for Jacobians and
+`2.3908678491862956e-8` for Hessians. These checks validate native calculus at the
 sampled points; they are not a native solver convergence result, global proof,
 or a comparison against a Julia automatic-differentiation implementation.
 
@@ -213,9 +213,11 @@ blanket full-station/physical-model qualification.
 3. Qualify bypassed components, unequal-base transformations, supply filtering,
    multiple AC islands, disabled equipment, direction-dependent losses, and
    further PF controls. Droop/LCC and zero-resistance DC links explicitly refuse
-   where unsupported; implemented bypass equations are not oracle-qualified here.
-4. Expand beyond the case5/case24 checks to case39/case67 and external large cases. Preserve known
-   reference PF infeasibility rather than treating it as a reader failure.
+   where unsupported. Case24 qualifies its bypasses, disabled filters and three
+   AC islands; arbitrary switching and physical projections remain unqualified.
+4. Resolve the explicit case67 angle-reference policy gap below, then expand
+   to external large cases. Preserve known reference PF local failures rather
+   than treating them as reader failures.
 5. Add the natural PowerModelsACDC JSON IR reader separately. No inference of
    JSON support, bindings support, or broader native solve support from case5.
 
@@ -244,3 +246,22 @@ The PF diagnostics explicitly reproduce PowerModels' parser repair of PQ/PV
 roles by active-generator presence. Bus 123 is declared PQ but becomes PV;
 `bus_type_policy` records that choice without changing the PowerIO network.
 Selecting a replacement reference bus remains unqualified and refuses.
+
+## Case39 and case67 extension
+
+`cases.json` pins the source filenames/hashes and known reference PF local
+failures. Use `--case case39` or `--case case67` with the same runner. Canonical
+DC table names and PGLib aliases are accepted; ambiguous dual tables refuse.
+
+[Case39](case39/README.md) passes native OPF equations, three derivative points,
+three native starts, complete independent feasibility/objective checks and
+physical IR round trips. Its failed reference PF supplies no accepted point.
+Only explicitly recorded known PF failures may be skipped; OPF failures and
+unexpected reference outcomes still stop the harness.
+
+[Case67](case67/README.md) reproduces a native preparation refusal: singleton
+AC bus 67 has no declared angle reference. Independent phase-shift probes
+confirm the reference model's free common angle. The runner exits nonzero,
+records a failure and removes any previous success summary. Case67 native
+qualification requires the documented canonical angle-reference policy; no
+source modification or PowerModelsACDC bug is implied by this difference.

@@ -103,3 +103,25 @@ pub fn derivative_points(point: &BTreeMap<String, f64>) -> Vec<(String, BTreeMap
     }
     points
 }
+
+/// A failed reference PF is evidence of a local solver outcome, not a feasible
+/// point or proof of infeasibility. OPF failure always invalidates the harness.
+#[allow(dead_code)]
+pub fn qualified(oracle: &Value, mode: &str) -> bool {
+    let solve = &oracle["solves"][mode];
+    match solve["termination_status"]
+        .as_str()
+        .expect("reference status")
+    {
+        "LOCALLY_SOLVED" | "OPTIMAL" => {
+            assert_ne!(solve["qualified"], false);
+            true
+        }
+        "LOCALLY_INFEASIBLE" => {
+            assert_eq!(mode, "pf", "OPF reference must solve");
+            assert_eq!(solve["qualified"], false, "failure must be explicit");
+            false
+        }
+        status => panic!("Unqualified reference status: {status}"),
+    }
+}

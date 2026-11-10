@@ -9,6 +9,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let (net, oracle, map) = reference::load(std::path::Path::new(&dir));
     let mut reports = serde_json::Map::new();
     for (label, mode) in [("pf", EquationMode::Pf), ("opf", EquationMode::Opf)] {
+        if !reference::qualified(&oracle, label) {
+            eprintln!("Skipping {label}: reference solve is explicitly unqualified");
+            continue;
+        }
         let model = ReferenceEquations::powermodels_acdc_0101(&net, mode)?;
         let point = reference::point(&net, &oracle["solves"][label]["solution"], &map);
         let report = model.evaluate(&point)?;

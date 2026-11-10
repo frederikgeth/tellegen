@@ -160,3 +160,35 @@ Final validation: 751 full-feature Tellegen tests passed, 7 ignored, no failures
 PowerIO pin consistency and EPL dependency guards passed. Case24 integration
 tests cover source preservation, recorded bus-role repair, all three native OPF
 starts and canonical physical-result serialization/reload.
+
+## Case39 qualification and case67 reference gap — 2026-11-10
+
+[Case39](case39/README.md) now passes original-source OPF equations, three
+OPF derivative points at both steps, three native starts, independent reference
+feasibility/objective checks, four corruption controls and physical IR reloads.
+The native objective is approximately 138063.517292759; the largest reference
+violation is 5.508e-12 and objective difference 2.110e-6. All 456 native and
+529 reference variables are accounted for. Its failed PF remains explicit
+(`LOCALLY_INFEASIBLE`, violation 0.4694775713833841), with no PF acceptance claim.
+
+[Case67](case67/README.md) remains **unqualified natively**. Original-source
+reference OPF succeeds (122253.02388749263, violation 6.822e-13); PF again returns
+`LOCALLY_INFEASIBLE` (0.5991975989165781). Native canonical preparation refuses
+singleton AC bus 67 because it has no declared reference. Shifting its bus and
+converter-9 internal angles by +/-0.05 rad preserves all reference constraints,
+bounds and objective at the solved point. This confirms a free phase in the
+reference, not a PowerModelsACDC bug. The documented next step is explicit
+canonical numerical-angle-reference policy and gauge-aware comparison; source
+bus roles, model semantics and PowerIO pin remain unchanged here.
+
+The runner accepts canonical DC table names as well as PGLib aliases, records
+known PF failures separately, refuses failed OPF references and removes stale
+success summaries before reruns. Full reports are at the requested output path;
+compact accepted case39 evidence and case67 refusal/gauge evidence are vendored.
+
+Validation: 755 full-feature Tellegen tests passed (7 ignored, no failures);
+all-target clippy passed with `acopf mc-opf conic schema`. The fresh case5 full
+reference comparison still passes with unchanged mathematical results. Four
+new tests cover case39 reference equations/three starts/IR reload, case67 refusal
+and source preservation, and rejection of a failed OPF masquerading as a
+skippable PF result. No native runtime equations changed in this extension.

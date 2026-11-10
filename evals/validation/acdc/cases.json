@@ -1,0 +1,20 @@
+{
+  "case5": {
+    "source_file": "case5_3_he.m",
+    "source_sha256": "759606ec335f8706ee8631ff4833c50804dd916afb5b5e682ace4f4f886fd7f3"
+  },
+  "case24": {
+    "source_file": "case24_7_jb.m",
+    "source_sha256": "fe8c31d586ef6853257a0ec9a018c2b92da030808e58e57b309deac1eb5ae4b4"
+  },
+  "case39": {
+    "source_file": "case39_10_he.m",
+    "source_sha256": "678a3c76c36663aef7938117d77e1a9c66bd466ebcbe98405530e3a52b6f212d",
+    "expected_pf_failure": "LOCALLY_INFEASIBLE"
+  },
+  "case67": {
+    "source_file": "case67.m",
+    "source_sha256": "1f7637a093a5c9968f5571b323875a57f60f319a665600e0b5e11d9463c9cbf1",
+    "expected_pf_failure": "LOCALLY_INFEASIBLE"
+  }
+}

@@ -89,8 +89,10 @@ branch/valve/station losses are reported against the reference. Primal equality
 is not a general OPF acceptance requirement because solutions may be nonunique.
 Four deliberate port-power/DC-voltage corruptions must fail reference feasibility.
 
-The qualification envelope here is case5 and case24, using the specified reference profile,
-from three starts. Coupled PF solves, additional controls/cases, rebasing,
+The OPF qualification envelope is case5, case24 and case39 under the specified
+reference profile, from three starts. Case39 PF is explicitly unqualified; case67
+native preparation still rejects its AC island without a declared reference
+(see [the angle-reference gap](case67/README.md)). Coupled PF solves, additional controls/cases, rebasing,
 normalized cases, physical projections, LCC and directional losses remain future
 work. The PowerIO preparation supplies reference station bounds/losses, DC
 power scaling and pole conductance, and the canonical AC preparation. Tellegen

@@ -1,0 +1,79 @@
+{
+  "opf": {
+    "equations": 555,
+    "bounds": 233,
+    "max_violation": 4.5638942625103596e-10,
+    "objective": 138063.51729486606
+  },
+  "native_opf": {
+    "declared": {
+      "objective": 138063.51729275903,
+      "iterations": 147,
+      "native_violation": 1.493805079633148e-13,
+      "reference_violation": 6.59472476627343e-14,
+      "oracle_objective_difference": -2.10703001357615e-06,
+      "max_absolute_electrical_difference": 2.113226786393252e-06,
+      "native_variables": 456,
+      "reference_variables": 529
+    },
+    "flat": {
+      "objective": 138063.5172927591,
+      "iterations": 95,
+      "native_violation": 1.6427137428109972e-13,
+      "reference_violation": 7.327471962526033e-14,
+      "oracle_objective_difference": -2.1069427020847797e-06,
+      "max_absolute_electrical_difference": 2.1132267990497944e-06,
+      "native_variables": 456,
+      "reference_variables": 529
+    },
+    "reference": {
+      "objective": 138063.51729275694,
+      "iterations": 18,
+      "native_violation": 5.507816425165402e-12,
+      "reference_violation": 5.507816425165402e-12,
+      "oracle_objective_difference": -2.1091254893690348e-06,
+      "max_absolute_electrical_difference": 2.097543669143942e-06,
+      "native_variables": 456,
+      "reference_variables": 529
+    }
+  },
+  "provenance": {
+    "source_sha256": "678a3c76c36663aef7938117d77e1a9c66bd466ebcbe98405530e3a52b6f212d",
+    "manifest_sha256": "c0c50ee07d24b1ba8af99d58dad407959e4e6ce81071f6f988babe120f0344f4",
+    "powermodelsacdc_commit": "9ada4082ac087aed649f48fb5f977680b0fe06c7",
+    "julia": "1.12.6",
+    "powermodelsacdc": "0.10.1",
+    "powermodels": "0.21.7",
+    "jump": "1.32.1",
+    "ipopt": "1.16.0",
+    "powerio_revision": "98d5c88fa7eed18ba537a6c278d0f934dc7d2422"
+  },
+  "derivatives": {
+    "points": 3,
+    "checks": 90,
+    "variables": 456,
+    "finite_difference_order": 4,
+    "relative_steps": [
+      0.0001,
+      3e-05
+    ],
+    "scaled_tolerance": 1e-06,
+    "max_scaled_errors": {
+      "objective_gradient": 7.645434418513348e-11,
+      "constraint_jacobian": 3.913557811152657e-10,
+      "hessian/": 3.991223577316983e-08
+    }
+  },
+  "bus_type_policy": [],
+  "reference_pf": {
+    "termination_status": "LOCALLY_INFEASIBLE",
+    "qualified": false,
+    "max_primal_violation": 0.4694775713833841
+  },
+  "negative_controls_detected": {
+    "dc_bus/dc_equivalent_bus/1/vm": 23.96767507785995,
+    "station/ac_dc_converter_station/1/pdc": 0.10000000000000009,
+    "station/ac_dc_converter_station/1/pgrid": 0.09999999999999987,
+    "station/ac_dc_converter_station/1/qgrid": 0.10000000000000031
+  }
+}
