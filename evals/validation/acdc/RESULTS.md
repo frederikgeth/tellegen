@@ -538,3 +538,28 @@ Case5 passes 48 solves/checks and 96 corruptions with eight unchanged fingerprin
 42 compatibility exports/records remain byte-identical. Production profiles,
 PowerIO pin dbc52de6 and draft PR heads are unchanged. Next: case67's explicit
 PF reference/dispatch and droop contract. No new PMACDC equation bug is established.
+
+
+## Case67 PF reference/dispatch and droop contract — 2026-11-10
+
+The [case67 contract study](pf/case67/README.md) explicitly promotes isolated
+bus 67 from PV to reference, retains source generation dispatch and converter
+controls, and selects shared reactive-injection increments. Type-3 DC droop uses
+withdrawal-positive Pdc, Pdcset/baseMVA and the retained pu-voltage/pu-power slope.
+Changing converter 9's PCC withdrawal from 800 to 810 MW makes its island's
+generator supply 810 MW, demonstrating the selected PF dispatch semantics.
+
+Eight variants include target/slope changes, a grid controlled only by droop,
+a DC-line outage and tight ratings. **23 reference solves and 23 native
+electrical/control residual checks pass**, with 492 scalar droop witnesses,
+351 reference corruptions and 328 native corruptions. One outage declared-start
+trial reaches the iteration limit; flat and perturbed starts succeed. Failed
+iterates remain recorded. Maximum electrical residual is 1.037e-12; maximum
+native control residual is 3.730e-14. Rating violations remain separate.
+
+This is a contract gate, **not native droop PF solver qualification**. Both
+existing PF profiles still refuse droop. No production profile, pin or schema
+changes. Full suite: **797 passed, 7 ignored**; lint/build/format/pin/EPL guards
+pass. Next: the opt-in native DC-power-droop/shared-voltage profile, IR rejection,
+control/island admission tests, derivatives and independent native/reference
+solves. No new PMACDC equation bug is established.

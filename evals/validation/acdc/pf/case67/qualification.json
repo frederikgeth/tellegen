@@ -1,0 +1,1733 @@
+{
+  "cases": [
+    {
+      "case": 0,
+      "droop_rows": [
+        {
+          "converter": "2",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": 5.0,
+          "vdc_target_pu": 0.9947
+        },
+        {
+          "converter": "3",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": -5.171051,
+          "vdc_target_pu": 1.0022
+        },
+        {
+          "converter": "4",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": -5.608855,
+          "vdc_target_pu": 0.9972
+        },
+        {
+          "converter": "5",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": 11.038969999999999,
+          "vdc_target_pu": 0.9921
+        },
+        {
+          "converter": "6",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": 0.5131034,
+          "vdc_target_pu": 0.9963
+        },
+        {
+          "converter": "7",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": -5.1646220000000005,
+          "vdc_target_pu": 0.9957
+        },
+        {
+          "converter": "8",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": 11.11644,
+          "vdc_target_pu": 0.99
+        }
+      ],
+      "islands": [
+        {
+          "buses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66
+          ],
+          "references": [
+            1
+          ]
+        },
+        {
+          "buses": [
+            67
+          ],
+          "references": [
+            67
+          ]
+        }
+      ],
+      "name": "reference_67_source_dispatch",
+      "solves": [
+        {
+          "droop_scalar_witnesses": 21,
+          "duplicate_voltage_rows_restored": 1,
+          "max_electrical_difference_between_starts": 0.0,
+          "max_reference_residual": 2.2737367544323206e-13,
+          "negative_controls": 15,
+          "point_sha256": "2371e1678f11adc39cf596968c258550f13c391b06f4ca05202932894f518c0a",
+          "start": "declared",
+          "termination": "LOCALLY_SOLVED"
+        },
+        {
+          "droop_scalar_witnesses": 21,
+          "duplicate_voltage_rows_restored": 1,
+          "max_electrical_difference_between_starts": 6.146194664324867e-13,
+          "max_reference_residual": 4.547473508864641e-13,
+          "negative_controls": 15,
+          "point_sha256": "54eb30f2e6828d08d80b3e0d7bb4d8779be54ea4bf1bb3b23a9bebfdd6ed7057",
+          "start": "flat",
+          "termination": "LOCALLY_SOLVED"
+        },
+        {
+          "droop_scalar_witnesses": 21,
+          "duplicate_voltage_rows_restored": 1,
+          "max_electrical_difference_between_starts": 3.097966327914037e-12,
+          "max_reference_residual": 2.2737367544323206e-13,
+          "negative_controls": 15,
+          "point_sha256": "f852b2f7731e6997729f9232f97f5d3a3c7ff5ddac0ed3ba34a6b49c6bd404e7",
+          "start": "perturbed",
+          "termination": "LOCALLY_SOLVED"
+        }
+      ],
+      "source_sha256": "cd46026e369434a289735cd2b6ff73c6fbe0139a2588b4077a59516a8531b6a4"
+    },
+    {
+      "case": 1,
+      "droop_rows": [
+        {
+          "converter": "2",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": 5.25,
+          "vdc_target_pu": 0.9947
+        },
+        {
+          "converter": "3",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": -5.171051,
+          "vdc_target_pu": 1.0022
+        },
+        {
+          "converter": "4",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": -5.608855,
+          "vdc_target_pu": 0.9972
+        },
+        {
+          "converter": "5",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": 11.038969999999999,
+          "vdc_target_pu": 0.9921
+        },
+        {
+          "converter": "6",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": 0.5131034,
+          "vdc_target_pu": 0.9963
+        },
+        {
+          "converter": "7",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": -5.1646220000000005,
+          "vdc_target_pu": 0.9957
+        },
+        {
+          "converter": "8",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": 11.11644,
+          "vdc_target_pu": 0.99
+        }
+      ],
+      "islands": [
+        {
+          "buses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66
+          ],
+          "references": [
+            1
+          ]
+        },
+        {
+          "buses": [
+            67
+          ],
+          "references": [
+            67
+          ]
+        }
+      ],
+      "name": "droop_power_target",
+      "solves": [
+        {
+          "droop_scalar_witnesses": 21,
+          "duplicate_voltage_rows_restored": 1,
+          "max_electrical_difference_between_starts": 0.0,
+          "max_reference_residual": 6.821210263296962e-13,
+          "negative_controls": 15,
+          "point_sha256": "34e009a0bf68eb37ec86f1efc6cd53dbb28c788155dff9b770ec929495ddafbe",
+          "start": "declared",
+          "termination": "LOCALLY_SOLVED"
+        },
+        {
+          "droop_scalar_witnesses": 21,
+          "duplicate_voltage_rows_restored": 1,
+          "max_electrical_difference_between_starts": 5.950795411990839e-13,
+          "max_reference_residual": 2.2737367544323206e-13,
+          "negative_controls": 15,
+          "point_sha256": "5b42614b449abedec7f54e88ba706b8613f67b537f813b50e8f517c11f44ae1d",
+          "start": "flat",
+          "termination": "LOCALLY_SOLVED"
+        },
+        {
+          "droop_scalar_witnesses": 21,
+          "duplicate_voltage_rows_restored": 1,
+          "max_electrical_difference_between_starts": 3.0890845437170356e-12,
+          "max_reference_residual": 4.583000645652646e-13,
+          "negative_controls": 15,
+          "point_sha256": "c8752e2cb963918694f8e7eeb62df77d32383d39007c9ea6aacde5ae9d5aa19d",
+          "start": "perturbed",
+          "termination": "LOCALLY_SOLVED"
+        }
+      ],
+      "source_sha256": "df8ac9359cda7a7bfc439e7e739c96644468f1d1a6bff0746025ff4462dfdb8d"
+    },
+    {
+      "case": 2,
+      "droop_rows": [
+        {
+          "converter": "2",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": 5.0,
+          "vdc_target_pu": 0.9967
+        },
+        {
+          "converter": "3",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": -5.171051,
+          "vdc_target_pu": 1.0022
+        },
+        {
+          "converter": "4",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": -5.608855,
+          "vdc_target_pu": 0.9972
+        },
+        {
+          "converter": "5",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": 11.038969999999999,
+          "vdc_target_pu": 0.9921
+        },
+        {
+          "converter": "6",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": 0.5131034,
+          "vdc_target_pu": 0.9963
+        },
+        {
+          "converter": "7",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": -5.1646220000000005,
+          "vdc_target_pu": 0.9957
+        },
+        {
+          "converter": "8",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": 11.11644,
+          "vdc_target_pu": 0.99
+        }
+      ],
+      "islands": [
+        {
+          "buses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66
+          ],
+          "references": [
+            1
+          ]
+        },
+        {
+          "buses": [
+            67
+          ],
+          "references": [
+            67
+          ]
+        }
+      ],
+      "name": "droop_voltage_target",
+      "solves": [
+        {
+          "droop_scalar_witnesses": 21,
+          "duplicate_voltage_rows_restored": 1,
+          "max_electrical_difference_between_starts": 0.0,
+          "max_reference_residual": 4.547473508864641e-13,
+          "negative_controls": 15,
+          "point_sha256": "88282f6a10243d869ea300af238b3200972f0ce4a98be104a582f05871dd17ee",
+          "start": "declared",
+          "termination": "LOCALLY_SOLVED"
+        },
+        {
+          "droop_scalar_witnesses": 21,
+          "duplicate_voltage_rows_restored": 1,
+          "max_electrical_difference_between_starts": 7.93765053686002e-12,
+          "max_reference_residual": 4.547473508864641e-13,
+          "negative_controls": 15,
+          "point_sha256": "ea178d459bb26ae74af9be727b0b672694a69f5edada39d854a3d253628567b4",
+          "start": "flat",
+          "termination": "LOCALLY_SOLVED"
+        },
+        {
+          "droop_scalar_witnesses": 21,
+          "duplicate_voltage_rows_restored": 1,
+          "max_electrical_difference_between_starts": 4.447997525858227e-12,
+          "max_reference_residual": 6.039613253960852e-13,
+          "negative_controls": 15,
+          "point_sha256": "589a91a39a43c38bfd95ab656070703e1575e8f6da7d140227f1cffd9fd43bd3",
+          "start": "perturbed",
+          "termination": "LOCALLY_SOLVED"
+        }
+      ],
+      "source_sha256": "cbfc11afd8b4522842136da9e72f908a4ef91b70c6556505491ed20086127592"
+    },
+    {
+      "case": 3,
+      "droop_rows": [
+        {
+          "converter": "2",
+          "dPdc_dVdc": -100.0,
+          "droop_pu_voltage_per_pu_power": 0.01,
+          "pdc_target_pu": 5.0,
+          "vdc_target_pu": 0.9947
+        },
+        {
+          "converter": "3",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": -5.171051,
+          "vdc_target_pu": 1.0022
+        },
+        {
+          "converter": "4",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": -5.608855,
+          "vdc_target_pu": 0.9972
+        },
+        {
+          "converter": "5",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": 11.038969999999999,
+          "vdc_target_pu": 0.9921
+        },
+        {
+          "converter": "6",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": 0.5131034,
+          "vdc_target_pu": 0.9963
+        },
+        {
+          "converter": "7",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": -5.1646220000000005,
+          "vdc_target_pu": 0.9957
+        },
+        {
+          "converter": "8",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": 11.11644,
+          "vdc_target_pu": 0.99
+        }
+      ],
+      "islands": [
+        {
+          "buses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66
+          ],
+          "references": [
+            1
+          ]
+        },
+        {
+          "buses": [
+            67
+          ],
+          "references": [
+            67
+          ]
+        }
+      ],
+      "name": "droop_coefficient",
+      "solves": [
+        {
+          "droop_scalar_witnesses": 21,
+          "duplicate_voltage_rows_restored": 1,
+          "max_electrical_difference_between_starts": 0.0,
+          "max_reference_residual": 4.547473508864641e-13,
+          "negative_controls": 15,
+          "point_sha256": "05c3e7365605c1616044fe0e2f402a8ebd63042dbae790dd007b6ad4c4496ea5",
+          "start": "declared",
+          "termination": "LOCALLY_SOLVED"
+        },
+        {
+          "droop_scalar_witnesses": 21,
+          "duplicate_voltage_rows_restored": 1,
+          "max_electrical_difference_between_starts": 1.936228954946273e-12,
+          "max_reference_residual": 4.547473508864641e-13,
+          "negative_controls": 15,
+          "point_sha256": "47bb7dde2e8766f1ce8bc8a47f1af7affaee9cdcf8fe35e3e12817860a28ec2f",
+          "start": "flat",
+          "termination": "LOCALLY_SOLVED"
+        },
+        {
+          "droop_scalar_witnesses": 21,
+          "duplicate_voltage_rows_restored": 1,
+          "max_electrical_difference_between_starts": 2.6405544417684723e-12,
+          "max_reference_residual": 4.547473508864641e-13,
+          "negative_controls": 15,
+          "point_sha256": "6eaa15b213df654de107d7b4a770accc8d55afa81268a151b643c529bbd47d61",
+          "start": "perturbed",
+          "termination": "LOCALLY_SOLVED"
+        }
+      ],
+      "source_sha256": "e30a45c8983071693015f3ae244f79dbb8d27017b894f47c0f504ae76457ec63"
+    },
+    {
+      "case": 4,
+      "droop_rows": [
+        {
+          "converter": "1",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": -4.659871,
+          "vdc_target_pu": 0.9999
+        },
+        {
+          "converter": "2",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": 5.0,
+          "vdc_target_pu": 0.9947
+        },
+        {
+          "converter": "3",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": -5.171051,
+          "vdc_target_pu": 1.0022
+        },
+        {
+          "converter": "4",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": -5.608855,
+          "vdc_target_pu": 0.9972
+        },
+        {
+          "converter": "5",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": 11.038969999999999,
+          "vdc_target_pu": 0.9921
+        },
+        {
+          "converter": "6",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": 0.5131034,
+          "vdc_target_pu": 0.9963
+        },
+        {
+          "converter": "7",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": -5.1646220000000005,
+          "vdc_target_pu": 0.9957
+        },
+        {
+          "converter": "8",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": 11.11644,
+          "vdc_target_pu": 0.99
+        }
+      ],
+      "islands": [
+        {
+          "buses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66
+          ],
+          "references": [
+            1
+          ]
+        },
+        {
+          "buses": [
+            67
+          ],
+          "references": [
+            67
+          ]
+        }
+      ],
+      "name": "droop_only_dc_grid",
+      "solves": [
+        {
+          "droop_scalar_witnesses": 24,
+          "duplicate_voltage_rows_restored": 1,
+          "max_electrical_difference_between_starts": 0.0,
+          "max_reference_residual": 4.547473508864641e-13,
+          "negative_controls": 17,
+          "point_sha256": "4f2817f6dee641ff2f02fc2bf0857caffbaf1afafd96a31262f1def9cb18c2e5",
+          "start": "declared",
+          "termination": "LOCALLY_SOLVED"
+        },
+        {
+          "droop_scalar_witnesses": 24,
+          "duplicate_voltage_rows_restored": 1,
+          "max_electrical_difference_between_starts": 1.021405182655144e-12,
+          "max_reference_residual": 1.0373923942097463e-12,
+          "negative_controls": 17,
+          "point_sha256": "794b8462e212f664ac44ae2460d207349679aa6a1b6b1b1f0772785fc4527708",
+          "start": "flat",
+          "termination": "LOCALLY_SOLVED"
+        },
+        {
+          "droop_scalar_witnesses": 24,
+          "duplicate_voltage_rows_restored": 1,
+          "max_electrical_difference_between_starts": 2.8688162956314045e-12,
+          "max_reference_residual": 4.547473508864641e-13,
+          "negative_controls": 17,
+          "point_sha256": "984c3ebf940e7490879c869239e2d666ad628ed819faa2e92662d8625a3cbbeb",
+          "start": "perturbed",
+          "termination": "LOCALLY_SOLVED"
+        }
+      ],
+      "source_sha256": "f39b31c5ac2d7ed3d442901ac8f1c72cbc35c332b943986fc6e8d96a7377d605"
+    },
+    {
+      "case": 5,
+      "droop_rows": [
+        {
+          "converter": "2",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": 5.0,
+          "vdc_target_pu": 0.9947
+        },
+        {
+          "converter": "3",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": -5.171051,
+          "vdc_target_pu": 1.0022
+        },
+        {
+          "converter": "4",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": -5.608855,
+          "vdc_target_pu": 0.9972
+        },
+        {
+          "converter": "5",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": 11.038969999999999,
+          "vdc_target_pu": 0.9921
+        },
+        {
+          "converter": "6",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": 0.5131034,
+          "vdc_target_pu": 0.9963
+        },
+        {
+          "converter": "7",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": -5.1646220000000005,
+          "vdc_target_pu": 0.9957
+        },
+        {
+          "converter": "8",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": 11.11644,
+          "vdc_target_pu": 0.99
+        }
+      ],
+      "islands": [
+        {
+          "buses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66
+          ],
+          "references": [
+            1
+          ]
+        },
+        {
+          "buses": [
+            67
+          ],
+          "references": [
+            67
+          ]
+        }
+      ],
+      "name": "dc_line_outage",
+      "solves": [
+        {
+          "duplicate_voltage_rows_restored": 1,
+          "max_reference_residual": 4.379544815524014,
+          "start": "declared",
+          "termination": "ITERATION_LIMIT"
+        },
+        {
+          "droop_scalar_witnesses": 21,
+          "duplicate_voltage_rows_restored": 1,
+          "max_electrical_difference_between_starts": 0.0,
+          "max_reference_residual": 4.547473508864641e-13,
+          "negative_controls": 15,
+          "point_sha256": "883e049d5b0ad7736b4f701ead0dad0c5ae45e62c15ef81e64680ce0976cf609",
+          "start": "flat",
+          "termination": "LOCALLY_SOLVED"
+        },
+        {
+          "droop_scalar_witnesses": 21,
+          "duplicate_voltage_rows_restored": 1,
+          "max_electrical_difference_between_starts": 9.414691248821327e-13,
+          "max_reference_residual": 2.2737367544323206e-13,
+          "negative_controls": 15,
+          "point_sha256": "9b20a9c775a9784af05a840ec9a29f27cf2879823254f5e065e73b5e4634d83d",
+          "start": "perturbed",
+          "termination": "LOCALLY_SOLVED"
+        }
+      ],
+      "source_sha256": "cb6e95ddcf4f282b875ba17cbb280d8a70ed8a51090df61d81a3eacee73dd8b1"
+    },
+    {
+      "case": 6,
+      "droop_rows": [
+        {
+          "converter": "2",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": 5.0,
+          "vdc_target_pu": 0.9947
+        },
+        {
+          "converter": "3",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": -5.171051,
+          "vdc_target_pu": 1.0022
+        },
+        {
+          "converter": "4",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": -5.608855,
+          "vdc_target_pu": 0.9972
+        },
+        {
+          "converter": "5",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": 11.038969999999999,
+          "vdc_target_pu": 0.9921
+        },
+        {
+          "converter": "6",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": 0.5131034,
+          "vdc_target_pu": 0.9963
+        },
+        {
+          "converter": "7",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": -5.1646220000000005,
+          "vdc_target_pu": 0.9957
+        },
+        {
+          "converter": "8",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": 11.11644,
+          "vdc_target_pu": 0.99
+        }
+      ],
+      "islands": [
+        {
+          "buses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66
+          ],
+          "references": [
+            1
+          ]
+        },
+        {
+          "buses": [
+            67
+          ],
+          "references": [
+            67
+          ]
+        }
+      ],
+      "name": "pcc_active_at_67",
+      "solves": [
+        {
+          "droop_scalar_witnesses": 21,
+          "duplicate_voltage_rows_restored": 1,
+          "max_electrical_difference_between_starts": 0.0,
+          "max_reference_residual": 2.2737367544323206e-13,
+          "negative_controls": 15,
+          "point_sha256": "37bfcb5ff83bd2fad10891fe76d1774bf92bca927ee20fc16164194709fa630e",
+          "start": "declared",
+          "termination": "LOCALLY_SOLVED"
+        },
+        {
+          "droop_scalar_witnesses": 21,
+          "duplicate_voltage_rows_restored": 1,
+          "max_electrical_difference_between_starts": 9.050538096744276e-13,
+          "max_reference_residual": 2.2737367544323206e-13,
+          "negative_controls": 15,
+          "point_sha256": "bf79ec88c4dee1b79ae5742ae715cd28d5f2104c5d19477f8e78cb2696304a02",
+          "start": "flat",
+          "termination": "LOCALLY_SOLVED"
+        },
+        {
+          "droop_scalar_witnesses": 21,
+          "duplicate_voltage_rows_restored": 1,
+          "max_electrical_difference_between_starts": 6.012967901369848e-13,
+          "max_reference_residual": 4.547473508864641e-13,
+          "negative_controls": 15,
+          "point_sha256": "c0b0e7555e492b1d9e5db867d1c9d2d163fef4f5babd99c309ab2dcbbd89ad40",
+          "start": "perturbed",
+          "termination": "LOCALLY_SOLVED"
+        }
+      ],
+      "source_sha256": "da5336e079f8c19a98ce673a7e374494569215403b8fbc967ff1a96c9a8c09ef"
+    },
+    {
+      "case": 7,
+      "droop_rows": [
+        {
+          "converter": "2",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": 5.0,
+          "vdc_target_pu": 0.9947
+        },
+        {
+          "converter": "3",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": -5.171051,
+          "vdc_target_pu": 1.0022
+        },
+        {
+          "converter": "4",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": -5.608855,
+          "vdc_target_pu": 0.9972
+        },
+        {
+          "converter": "5",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": 11.038969999999999,
+          "vdc_target_pu": 0.9921
+        },
+        {
+          "converter": "6",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": 0.5131034,
+          "vdc_target_pu": 0.9963
+        },
+        {
+          "converter": "7",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": -5.1646220000000005,
+          "vdc_target_pu": 0.9957
+        },
+        {
+          "converter": "8",
+          "dPdc_dVdc": -200.0,
+          "droop_pu_voltage_per_pu_power": 0.005,
+          "pdc_target_pu": 11.11644,
+          "vdc_target_pu": 0.99
+        }
+      ],
+      "islands": [
+        {
+          "buses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66
+          ],
+          "references": [
+            1
+          ]
+        },
+        {
+          "buses": [
+            67
+          ],
+          "references": [
+            67
+          ]
+        }
+      ],
+      "name": "tight_ratings",
+      "solves": [
+        {
+          "droop_scalar_witnesses": 21,
+          "duplicate_voltage_rows_restored": 1,
+          "max_electrical_difference_between_starts": 0.0,
+          "max_reference_residual": 2.2737367544323206e-13,
+          "negative_controls": 15,
+          "point_sha256": "2371e1678f11adc39cf596968c258550f13c391b06f4ca05202932894f518c0a",
+          "start": "declared",
+          "termination": "LOCALLY_SOLVED"
+        },
+        {
+          "droop_scalar_witnesses": 21,
+          "duplicate_voltage_rows_restored": 1,
+          "max_electrical_difference_between_starts": 6.146194664324867e-13,
+          "max_reference_residual": 4.547473508864641e-13,
+          "negative_controls": 15,
+          "point_sha256": "54eb30f2e6828d08d80b3e0d7bb4d8779be54ea4bf1bb3b23a9bebfdd6ed7057",
+          "start": "flat",
+          "termination": "LOCALLY_SOLVED"
+        },
+        {
+          "droop_scalar_witnesses": 21,
+          "duplicate_voltage_rows_restored": 1,
+          "max_electrical_difference_between_starts": 3.097966327914037e-12,
+          "max_reference_residual": 2.2737367544323206e-13,
+          "negative_controls": 15,
+          "point_sha256": "f852b2f7731e6997729f9232f97f5d3a3c7ff5ddac0ed3ba34a6b49c6bd404e7",
+          "start": "perturbed",
+          "termination": "LOCALLY_SOLVED"
+        }
+      ],
+      "source_sha256": "8ff551f122af3e73ac6bd26f7078d46145d62105b74666e2e73c0eba6cdd0f17"
+    }
+  ],
+  "counts": {
+    "droop_scalar_witnesses": 492,
+    "native_electrical_and_control_checks": 23,
+    "native_negative_controls": 328,
+    "native_pf_solves": 0,
+    "reference_failed_trials": 1,
+    "reference_negative_controls": 351,
+    "reference_solves": 23,
+    "reference_trials": 24
+  },
+  "harness_sha256": {
+    "crates/tellegen/examples/acdc_pf_case67_contract.rs": "d653d7aa35c2166322958ad39a1c9991d459cdf87955c31585c3d0aaeb9a213e",
+    "crates/tellegen/tests/support/acdc_pf_case67_contract.rs": "192daddb0709ee2f09cc946d3c187e128736e2350f753f318af209fd4ce31275",
+    "evals/validation/acdc/case67/identity-map.json": "512993ace457ec8677a59f9e825ebe516a564d365267e890c5e11a81c10ff1ec",
+    "evals/validation/acdc/pf/case67/reference.jl": "bfac21b97022a0dfd6bdc9a9d58f27d0b853b6225fbc2182d8e90c21a86829b3",
+    "evals/validation/acdc/pf/case67/run.py": "dec1036682166593751a880ed752e87f09fdc9f23069698bd08d3c73aa693c51",
+    "evals/validation/acdc/pf/mapping.jl": "c0e46c41d251e1bcf991ba95212a22333d0b635ef6de8efe367a1a8b22245d85",
+    "evals/validation/acdc/pf/shared-voltage.jl": "80b4cda9a021e9c76b187b82a486ba414891e0f7395d5a2c1e1e9c05bc9fe916",
+    "evals/validation/acdc/physical/reference-numerics.jl": "6bc818237de39fd1878e9abd0527e491e4b123c6a509bcab2e4dabf354f163dd",
+    "evals/validation/acdc/reference-model.jl": "aab0c3fa2d84049610bdc1f2af0f04017d3070bf929a946bb871de1aabfcfe38"
+  },
+  "julia_version": "1.12.6",
+  "manifest_sha256": "c0c50ee07d24b1ba8af99d58dad407959e4e6ce81071f6f988babe120f0344f4",
+  "native_checks": [
+    {
+      "case": "reference_67_source_dispatch",
+      "control_rows": 59,
+      "generator_67_mw": 800.0,
+      "max_control_residual": 2.220446049250313e-14,
+      "max_native_electrical_residual": 2.682298827494378e-13,
+      "negative_controls": 14,
+      "rating_violations": 13,
+      "start": "declared"
+    },
+    {
+      "case": "reference_67_source_dispatch",
+      "control_rows": 59,
+      "generator_67_mw": 800.0,
+      "max_control_residual": 3.4638958368304884e-14,
+      "max_native_electrical_residual": 4.2810199829546036e-13,
+      "negative_controls": 14,
+      "rating_violations": 13,
+      "start": "flat"
+    },
+    {
+      "case": "reference_67_source_dispatch",
+      "control_rows": 59,
+      "generator_67_mw": 800.0,
+      "max_control_residual": 3.4638958368304884e-14,
+      "max_native_electrical_residual": 3.2729374765949615e-13,
+      "negative_controls": 14,
+      "rating_violations": 13,
+      "start": "perturbed"
+    },
+    {
+      "case": "droop_power_target",
+      "control_rows": 59,
+      "generator_67_mw": 800.0,
+      "max_control_residual": 2.6645352591003757e-14,
+      "max_native_electrical_residual": 4.60964599824365e-13,
+      "negative_controls": 14,
+      "rating_violations": 13,
+      "start": "declared"
+    },
+    {
+      "case": "droop_power_target",
+      "control_rows": 59,
+      "generator_67_mw": 800.0,
+      "max_control_residual": 1.7763568394002505e-14,
+      "max_native_electrical_residual": 2.744471316873387e-13,
+      "negative_controls": 14,
+      "rating_violations": 13,
+      "start": "flat"
+    },
+    {
+      "case": "droop_power_target",
+      "control_rows": 59,
+      "generator_67_mw": 800.0,
+      "max_control_residual": 3.019806626980426e-14,
+      "max_native_electrical_residual": 4.583000645652646e-13,
+      "negative_controls": 14,
+      "rating_violations": 13,
+      "start": "perturbed"
+    },
+    {
+      "case": "droop_voltage_target",
+      "control_rows": 59,
+      "generator_67_mw": 800.0,
+      "max_control_residual": 3.4638958368304884e-14,
+      "max_native_electrical_residual": 4.0945025148175773e-13,
+      "negative_controls": 14,
+      "rating_violations": 13,
+      "start": "declared"
+    },
+    {
+      "case": "droop_voltage_target",
+      "control_rows": 59,
+      "generator_67_mw": 800.0,
+      "max_control_residual": 2.4868995751603507e-14,
+      "max_native_electrical_residual": 3.6348701826227625e-13,
+      "negative_controls": 14,
+      "rating_violations": 13,
+      "start": "flat"
+    },
+    {
+      "case": "droop_voltage_target",
+      "control_rows": 59,
+      "generator_67_mw": 800.0,
+      "max_control_residual": 1.509903313490213e-14,
+      "max_native_electrical_residual": 6.039613253960852e-13,
+      "negative_controls": 14,
+      "rating_violations": 13,
+      "start": "perturbed"
+    },
+    {
+      "case": "droop_coefficient",
+      "control_rows": 59,
+      "generator_67_mw": 800.0,
+      "max_control_residual": 3.108624468950438e-14,
+      "max_native_electrical_residual": 2.602362769721367e-13,
+      "negative_controls": 14,
+      "rating_violations": 13,
+      "start": "declared"
+    },
+    {
+      "case": "droop_coefficient",
+      "control_rows": 59,
+      "generator_67_mw": 800.0,
+      "max_control_residual": 1.5987211554602254e-14,
+      "max_native_electrical_residual": 2.3092638912203256e-13,
+      "negative_controls": 14,
+      "rating_violations": 13,
+      "start": "flat"
+    },
+    {
+      "case": "droop_coefficient",
+      "control_rows": 59,
+      "generator_67_mw": 800.0,
+      "max_control_residual": 1.3489209749195652e-14,
+      "max_native_electrical_residual": 3.268496584496461e-13,
+      "negative_controls": 14,
+      "rating_violations": 13,
+      "start": "perturbed"
+    },
+    {
+      "case": "droop_only_dc_grid",
+      "control_rows": 59,
+      "generator_67_mw": 800.0,
+      "max_control_residual": 3.375077994860476e-14,
+      "max_native_electrical_residual": 3.348432642269472e-13,
+      "negative_controls": 16,
+      "rating_violations": 13,
+      "start": "declared"
+    },
+    {
+      "case": "droop_only_dc_grid",
+      "control_rows": 59,
+      "generator_67_mw": 800.0,
+      "max_control_residual": 2.5757174171303632e-14,
+      "max_native_electrical_residual": 1.0373923942097463e-12,
+      "negative_controls": 16,
+      "rating_violations": 13,
+      "start": "flat"
+    },
+    {
+      "case": "droop_only_dc_grid",
+      "control_rows": 59,
+      "generator_67_mw": 800.0,
+      "max_control_residual": 3.730349362740526e-14,
+      "max_native_electrical_residual": 3.1397107136399427e-13,
+      "negative_controls": 16,
+      "rating_violations": 13,
+      "start": "perturbed"
+    },
+    {
+      "case": "dc_line_outage",
+      "control_rows": 59,
+      "generator_67_mw": 800.0,
+      "max_control_residual": 2.398081733190338e-14,
+      "max_native_electrical_residual": 3.7703173916270316e-13,
+      "negative_controls": 14,
+      "rating_violations": 46,
+      "start": "flat"
+    },
+    {
+      "case": "dc_line_outage",
+      "control_rows": 59,
+      "generator_67_mw": 800.0,
+      "max_control_residual": 2.5757174171303632e-14,
+      "max_native_electrical_residual": 3.219646771412954e-13,
+      "negative_controls": 14,
+      "rating_violations": 46,
+      "start": "perturbed"
+    },
+    {
+      "case": "pcc_active_at_67",
+      "control_rows": 59,
+      "generator_67_mw": 810.0,
+      "max_control_residual": 2.6645352591003757e-14,
+      "max_native_electrical_residual": 2.255973186038318e-13,
+      "negative_controls": 14,
+      "rating_violations": 15,
+      "start": "declared"
+    },
+    {
+      "case": "pcc_active_at_67",
+      "control_rows": 59,
+      "generator_67_mw": 810.0,
+      "max_control_residual": 2.7533531010703882e-14,
+      "max_native_electrical_residual": 2.8954616482224083e-13,
+      "negative_controls": 14,
+      "rating_violations": 15,
+      "start": "flat"
+    },
+    {
+      "case": "pcc_active_at_67",
+      "control_rows": 59,
+      "generator_67_mw": 810.0,
+      "max_control_residual": 3.108624468950438e-14,
+      "max_native_electrical_residual": 3.517186542012496e-13,
+      "negative_controls": 14,
+      "rating_violations": 15,
+      "start": "perturbed"
+    },
+    {
+      "case": "tight_ratings",
+      "control_rows": 59,
+      "generator_67_mw": 800.0,
+      "max_control_residual": 2.220446049250313e-14,
+      "max_native_electrical_residual": 2.682298827494378e-13,
+      "negative_controls": 14,
+      "rating_violations": 49,
+      "start": "declared"
+    },
+    {
+      "case": "tight_ratings",
+      "control_rows": 59,
+      "generator_67_mw": 800.0,
+      "max_control_residual": 3.4638958368304884e-14,
+      "max_native_electrical_residual": 4.2810199829546036e-13,
+      "negative_controls": 14,
+      "rating_violations": 49,
+      "start": "flat"
+    },
+    {
+      "case": "tight_ratings",
+      "control_rows": 59,
+      "generator_67_mw": 800.0,
+      "max_control_residual": 3.4638958368304884e-14,
+      "max_native_electrical_residual": 3.2729374765949615e-13,
+      "negative_controls": 14,
+      "rating_violations": 49,
+      "start": "perturbed"
+    }
+  ],
+  "original_islands": [
+    {
+      "buses": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66
+      ],
+      "references": [
+        1
+      ]
+    },
+    {
+      "buses": [
+        67
+      ],
+      "references": []
+    }
+  ],
+  "powerio_revision": "dbc52de6650e43efa734125e398994960d8c2a02",
+  "reference_revision": "9ada4082ac087aed649f48fb5f977680b0fe06c7",
+  "report_sha256": {
+    "inputs.json": "ff124a1b04f25b545337a3ec7cf74af610192da9eeb1c6a867163d54779ac054",
+    "native-checks.json": "56bf109fdf2c94cda8878be3f8e6405b233e34b97bb3fb7b3536e55f05373686",
+    "reference.json": "59a1af32d4a928b32cd287f8a6e54ba13158726887562a7c34236327b1e589da"
+  },
+  "scope": "case67_reference_PF_contract_and_native_electrical_control_residuals; no_native_droop_PF_solver",
+  "solver_options": {
+    "acceptable_iter": 0,
+    "bound_relax_factor": 0.0,
+    "constr_viol_tol": 1e-10,
+    "linear_solver": "mumps",
+    "max_cpu_time": 120.0,
+    "max_iter": 3000,
+    "mu_strategy": "adaptive",
+    "nlp_scaling_method": "none",
+    "print_level": 0,
+    "sb": "yes",
+    "tol": 1e-09
+  },
+  "source_sha256": "1f7637a093a5c9968f5571b323875a57f60f319a665600e0b5e11d9463c9cbf1"
+}

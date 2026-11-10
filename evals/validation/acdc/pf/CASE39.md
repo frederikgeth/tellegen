@@ -97,7 +97,8 @@ CARGO_TARGET_DIR=/tmp/tacdc-case39-pf-target \
   python3 evals/validation/acdc/pf/run.py /tmp/tacdc-case39-pf-live --suite case39
 ```
 
-Case67 remains a separate next gate: define its AC-island PF reference/dispatch
-and droop contract before numerical qualification. Physical-unit/fixed-mode PF,
+The follow-up [case67 contract gate](case67/README.md) selects and checks its
+AC-island PF reference/dispatch and droop equations. Native droop PF qualification
+remains the next implementation gate. Physical-unit/fixed-mode PF,
 saturation, automatic control switching, generic rebasing and physical pole/return
 wiring are not established by this study.
