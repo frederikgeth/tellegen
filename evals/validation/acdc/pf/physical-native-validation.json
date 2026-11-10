@@ -1,0 +1,114 @@
+{
+  "case5_regression_counts": {
+    "bidirectional_cross_checks": 48,
+    "cases": 8,
+    "corruption_controls": 96,
+    "native_solves": 24,
+    "reference_failed_trials": 0,
+    "reference_solves": 24
+  },
+  "checks": [
+    {
+      "command": "cargo test -p tellegen --features 'acopf mc-opf conic schema' --locked --offline",
+      "exit_code": 0,
+      "log": "/tmp/tacdc-physical-pf-check-0.log",
+      "sha256": "41224af5a2c6b13d84fd83263f10167b52d46fa8f7e4fa3b9976114d49382bca"
+    },
+    {
+      "command": "cargo clippy -p tellegen --all-targets --features 'acopf mc-opf conic schema' --locked --offline -- -D warnings",
+      "exit_code": 0,
+      "log": "/tmp/tacdc-physical-pf-check-1.log",
+      "sha256": "81949eeaec5a71f4010b66db1d92763c3323a1ecd56cf0ea8c89cb959fd33b87"
+    },
+    {
+      "command": "cargo check -p tellegen --all-targets --locked --offline",
+      "exit_code": 0,
+      "log": "/tmp/tacdc-physical-pf-check-2.log",
+      "sha256": "b5c570dad4853e88dda0835a7c9f298e68de78a5d25d4521941c6a2b727726c9"
+    },
+    {
+      "command": "cargo fmt --all -- --check",
+      "exit_code": 0,
+      "log": "/tmp/tacdc-physical-pf-check-3.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": "python3 .github/scripts/powerio-pin.py",
+      "exit_code": 0,
+      "log": "/tmp/tacdc-physical-pf-check-4.log",
+      "sha256": "af9d33d7007240e9b570af91688487936e3f13a40ab5c6c25714dc0232d10175"
+    },
+    {
+      "command": "bash scripts/epl-guard.sh",
+      "exit_code": 0,
+      "log": "/tmp/tacdc-physical-pf-check-5.log",
+      "sha256": "094c65c9d303d655c3626a5757c2635775649a17042c941694f7f4461482bc53"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "log": "/tmp/tacdc-physical-pf-check-6.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": "cargo test -p tellegen --features 'acopf mc-opf conic schema' --test acdc_pf_physical --locked --offline",
+      "exit_code": 0,
+      "log": "/tmp/tacdc-physical-pf-final-focused.log",
+      "sha256": "2c44604988039caf5f14f868b9c96ad6faf14b62494826757d9d3df74c4fe06b"
+    }
+  ],
+  "compatibility_exports_and_records_sha256": {
+    "cases.json": "52c490c81064951c4ee5ad24b685db3640908de970a6c521dc0946eea408b18e",
+    "physical_00.m": "530b23682f8ef1f47452445595793951c55778647d09941ba67a67b2ff8632ed",
+    "physical_01.m": "0530853e1e2c6348a5f937ffc6d777c4d53c9edc7a6528842b4a7465f69bb3c8",
+    "physical_02.m": "b61445ae7366ad478d2f77304a5ae776f61744d8f74559ec48381d65e9b0212c",
+    "physical_03.m": "047b74307065acd20f96f2ca5ea01d56ff295463ea9ba8943f5e33940e590fa8",
+    "physical_04.m": "001d3486380ecded8922f4eb3638ae52f517ec74bacfebab3bd7acf34019f931",
+    "physical_05.m": "e73e8921dc22eaa0f0617d7cd77d5d9f217d3d9ed3fc8c158586347e0a153e84",
+    "physical_06.m": "2957b3c6a7e90c6b4a8f19c43bff50b76e199a1bdb1dfc669a30a119d4fb07a3",
+    "physical_07.m": "4b899cd995d3cac5c10546044bdced8e612dc8954b81c2a53be27fcb11ac13b4",
+    "physical_08.m": "6a3b5aec8ec5d696e9ac2d1ca2c5084e1052539bfe8c13e4c9810d8aa9598ae8",
+    "physical_09.m": "a71baf17e99dec5e266d13bc821502af24296abe82727a6035631e3e043a6920",
+    "physical_10.m": "3a369d08ee64c08be7e8fbeb9a32835fa0f809c7ba0ddbc17818f8a91766e167",
+    "physical_11.m": "f30611ace932e5a4648ef83f8e24e75de190d7046acf3f4e14043bc933fc94c8",
+    "physical_12.m": "b5fdd7f1064bce60ba9e9f2e0b59edbc27e75f8804c1eb30a1a77639d7c7d9e3",
+    "physical_13.m": "2f7df698e9f1dd361471b55b8574ed3321393a1abcdb611353be7bc09feaf7d5",
+    "physical_14.m": "ebb4c216736269e8aca61f220dd10c6ea319761d9a4866266fbf3c24920c3fe1",
+    "physical_15.m": "4d9ac4296ea936114fdb073f06aee21cb3e1bf25d98df67092a13530ce533842",
+    "physical_16.m": "c9457003c69804ffd70aec4d66f5a9e970837f2f618031886e07a63f09d06fce",
+    "physical_17.m": "54c5100f7079c5fee8fc622657c063aff779356904f024830996d68a57964d43",
+    "physical_18.m": "b68cd7ab405feaf040593bb35cd3e0de49c402153ba6ae77e5ced055fb0af396",
+    "physical_19.m": "638fc43d50e119ac1346f42dee3bb364ea3b70a52d679cb1b5e480b1362846cc",
+    "physical_20.m": "b5b9652ab114c022c61466dd4404e9ea502a8c11cc2c045062d71ca168609925",
+    "physical_21.m": "4603a40a630dddbe0afe7bc531eeed96d839b72aa1f724cb7ddb23eebf65cd7b",
+    "physical_22.m": "4d265353ff5b75f179c5b420d3d8619e46d32ee6644fc492f1065974e2e72440",
+    "physical_23.m": "a875e62f238b15f293bc5f3f9350661057e6acc77d8d4a84f4ac5dac3d7a52af",
+    "physical_24.m": "0b04cb0fb7b8df9586dc2f6f6e061b0526731800c5840f1cade1654e56f70f1d",
+    "physical_25.m": "16b37eed852750aca97fc0979d6fe8349208dbbf7c2264084a05d800fa4fd76b",
+    "physical_26.m": "6547e6a508036da00611bd80ba5db2570612fe02be7351705ab4562bc32a4bf9",
+    "physical_27.m": "40e22fd2eb983469bbafd0fe0353ddd22165d02e1ec315414d591e230f10805f",
+    "physical_28.m": "d9fcfce27a8367d8eddaa56a638de9341f25d21af5f2080b3c7fa0a81b8744f5",
+    "physical_29.m": "2cff54a8c37264de343090c510372fa5276aedea815a10809cabd5f49c585e0f",
+    "physical_30.m": "1ab2c977372cbc1e4f6f4f392e31a1b140dec6ec9cca41503843f5eaab6aed0b",
+    "physical_31.m": "9b4d0c93684c194865f1d15e4696b1ea27c32c847b4b6915b3880a895ce77eeb",
+    "physical_32.m": "31bc814f50eea6909dc0dd77aee8421e7f352146767d6b0e119ecf454713f0ec",
+    "physical_33.m": "a901ac86e032164c3dfef98f850a9739a91a2519547dcbfd7822e51ea5cd4cd0",
+    "physical_34.m": "7a9ac2153289081677732db22981b5e1850a0df0b51e4d868bbb3ee986ea280e",
+    "physical_35.m": "c33f4e1302d740d36d19ffc2691df0a4d9132c35930f4cae7b4e3952e6d6189a",
+    "physical_36.m": "5cc1efb82df34d241e5642f77dfdaeae68a29eaa0ed2267f1840d53f97ea8cee",
+    "physical_37.m": "90a0769ccef27839215372271784c53771f9298e2e5244a0f7b586c5aa019a7d",
+    "physical_38.m": "2c9e8eca3eadfe1038727d4ae4eb7d137a7ea3569024c479c8b60a6dd5b4c469",
+    "physical_39.m": "45135a8868baedb760c38bcbc2d5993d3cbe3fc7ebaf478ef1a9fc0c845fa33d",
+    "physical_40.m": "45a1aeadb4a1ae5580b1b993d98b26a20c1a921b71e34a416b578084dc7eee7d",
+    "physical_41.m": "c60d062fe1a614ae4050ba674c4d35e178b34c5168e97b98b892fbce0bbe6e15"
+  },
+  "current_limit_cases": 48,
+  "derivative_points": 6,
+  "final_physical_tests_passed": 4,
+  "physical_test_source_sha256": "f26fbe850dfc5e75afbc5110a4ac8f68bc9cb9113b9779db1ad77d53d7aa5fd4",
+  "powerio_revision": "0ed1174cfb66975fedd0ad13af1eca5ee878354b",
+  "shared_voltage_physical_cases": 8,
+  "tests_ignored": 7,
+  "tests_passed": 805,
+  "unchanged_case5_fingerprints": 8
+}

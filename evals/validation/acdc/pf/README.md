@@ -144,3 +144,11 @@ remain unchanged.
 [Shared-voltage allocation](SHARED-VOLTAGE.md) now qualifies original case24 without
 editing source controls, using a new explicit profile. This page's original
 profile still rejects overlap; its fingerprints and behavior are unchanged.
+
+## Opt-in physical-coordinate PF
+
+[Physical-coordinate PF](PHYSICAL.md) now adds explicit local voltage/impedance
+bases and physical droop scaling. Its 256 representations pass 512 native and
+512 independent reference solves, with 8,192 equivalent-base checks. Existing
+source profiles remain unchanged. Saturation and fixed loss-mode PF remain
+separate follow-ups.

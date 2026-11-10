@@ -127,3 +127,10 @@ continues to report operating-limit violations after solving; it does not clip,
 saturate, switch controls or assert operational feasibility. Generic rebasing,
 physical/fixed-mode PF, valve-power droop and physical pole/return wiring remain
 separate. No new PMACDC equation bug is established by this work.
+
+## Physical-coordinate follow-up
+
+The separately selected [physical PF profile](PHYSICAL.md) now qualifies local
+voltage/impedance bases and physical droop scaling. This source-pu profile and
+its historical evidence remain unchanged. Fixed loss-mode PF and saturation
+remain separate follow-ups.

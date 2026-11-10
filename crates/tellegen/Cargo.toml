@@ -162,3 +162,7 @@ required-features = ["acopf"]
 [[example]]
 name = "acdc_pf_case67_contract"
 required-features = ["acopf"]
+
+[[example]]
+name = "acdc_pf_physical"
+required-features = ["acopf"]

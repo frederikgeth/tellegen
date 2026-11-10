@@ -61,6 +61,7 @@ impl PreparedAcDcPf {
             AcDcPfProfile::PowerModelsAcDc0101AcpVscEqualIncrementV1
                 | AcDcPfProfile::PowerModelsAcDc0101AcpVscSharedVoltageEqualIncrementV1
                 | AcDcPfProfile::PowerModelsAcDc0101AcpVscDcDroopSharedVoltageEqualIncrementV1
+                | AcDcPfProfile::PhysicalCoordinatesDcDroopSharedVoltageEqualIncrementV1
         ) {
             return Err("Unsupported coupled PF profile".into());
         }
@@ -72,7 +73,7 @@ impl PreparedAcDcPf {
         let manifest = AcDcPfManifest {
             schema: "tellegen-acdc-pf-preparation-v1",
             profile: instance.profile(),
-            powerio_revision: "70025e87d918be195362ca63a48c9a68d2dfb702",
+            powerio_revision: "0ed1174cfb66975fedd0ad13af1eca5ee878354b",
             reference_revision: "9ada4082ac087aed649f48fb5f977680b0fe06c7",
             model_fingerprint: crate::content_id::content_id(&encoded),
             variables: p.var_names.clone(),
@@ -91,11 +92,12 @@ impl PreparedAcDcPf {
         for g in limit_network.generators_mut() {
             g.cost = Some(powerio::GenCost::new(2, 0., 0., vec![0.]));
         }
-        let adapter = powerio::AcDcOpfInstance::from_network(
-            limit_network,
-            AcDcOpfProfile::DeclaredCurrentAcpVscV1,
-        )
-        .map_err(|e| e.to_string())?;
+        let limit_profile = match instance.profile().coordinate_policy() {
+            AcDcCoordinatePolicy::PhysicalLocalBases => AcDcOpfProfile::PhysicalCoordinatesAcpVscV1,
+            _ => AcDcOpfProfile::DeclaredCurrentAcpVscV1,
+        };
+        let adapter = powerio::AcDcOpfInstance::from_network(limit_network, limit_profile)
+            .map_err(|e| e.to_string())?;
         let limits = ReferenceEquations::from_instance(&adapter, EquationMode::Opf)?;
         let declared = declared_start(&instance, &equations);
         Ok(Self {

@@ -8,7 +8,7 @@ from pathlib import Path
 import subprocess
 HERE=Path(__file__).resolve().parent
 ROOT=HERE.parents[3]
-PIN="70025e87d918be195362ca63a48c9a68d2dfb702"
+PIN="0ed1174cfb66975fedd0ad13af1eca5ee878354b"
 p=argparse.ArgumentParser(description=__doc__)
 p.add_argument("output",type=Path)
 p.add_argument("--suite",choices=["case5","case24","shared","case39","case67"],default="case5")

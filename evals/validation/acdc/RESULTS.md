@@ -593,3 +593,13 @@ limit-triggered control transitions, redistribution and loss of island voltage
 support as a separate policy/qualification task. Current PF reports violations
 without clipping or switching; baseline case67 has 13, tight ratings 49. This is
 not operational-feasibility evidence. No new PMACDC equation bug is established.
+
+## Physical-coordinate PF (2026-11-10)
+
+The [physical PF contract](pf/PHYSICAL.md) qualifies explicit local bases for
+fixed DC voltage and DC-power droop: 512 native plus 512 reference solves across
+256 representations, 8,192 equivalent-base checks, and 1,536 rejected corruptions.
+The reference uses explicit SI substitutions in pinned PMACDC; an independent
+phase-domain circuit also checks every solved point. Maximum native residual is
+4.973e-11 and maximum physical coordinate difference is 2.951e-8. Current/power
+limits remain post-solve reports; [saturation](pf/SATURATION.md) remains planned.

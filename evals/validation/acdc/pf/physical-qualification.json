@@ -1,0 +1,1093 @@
+{
+  "base_configurations": [
+    {
+      "converter_kv": 200.0,
+      "dc_from_kv": 500.0,
+      "dc_to_kv": 500.0,
+      "mva": 100.0,
+      "pcc_kv": 230.0
+    },
+    {
+      "converter_kv": 200.0,
+      "dc_from_kv": 500.0,
+      "dc_to_kv": 500.0,
+      "mva": 50.0,
+      "pcc_kv": 230.0
+    },
+    {
+      "converter_kv": 345.0,
+      "dc_from_kv": 250.0,
+      "dc_to_kv": 1000.0,
+      "mva": 100.0,
+      "pcc_kv": 400.0
+    },
+    {
+      "converter_kv": 400.0,
+      "dc_from_kv": 800.0,
+      "dc_to_kv": 250.0,
+      "mva": 250.0,
+      "pcc_kv": 230.0
+    }
+  ],
+  "counts": {
+    "native_equivalent_base_checks": 2048,
+    "native_solves": 512,
+    "physical_cases": 64,
+    "reference_corruptions": 1536,
+    "reference_equivalent_base_checks": 4096,
+    "reference_solves": 512,
+    "reference_to_native_checks": 2048,
+    "representations": 256
+  },
+  "groups": {
+    "mask0/direction-1/poles1/droopfalse": {
+      "max_native_residual": 6.590283874174929e-13,
+      "max_physical_circuit_residual": 8.810729923425242e-13,
+      "max_physical_coordinate_difference": 3.723243935382925e-12,
+      "max_reference_residual": 2.8421709430404007e-12,
+      "native_iterations_range": [
+        1,
+        5
+      ],
+      "source_hashes": {
+        "physical_pf_000.m": "79d21e8f0d2bf650e0289c460d7d79fa8ff6f6a237e31b190d399427e1b861e4",
+        "physical_pf_001.m": "29fa05e976ca576ba27ff75e8ef747b1e1113a370e309021f7ffb1ad56ebcdbe",
+        "physical_pf_002.m": "7d6ff86ec1e1455cc6cb2b5e854b7eb295d27fc4faf82d6b2f694faba30c35ff",
+        "physical_pf_003.m": "fa575de5d471b51fa4ef2da26ac57ec3ecdc911f0b4e4410847ede6437b1507d"
+      }
+    },
+    "mask0/direction-1/poles1/drooptrue": {
+      "max_native_residual": 6.59916565837193e-13,
+      "max_physical_circuit_residual": 6.59383658785373e-12,
+      "max_physical_coordinate_difference": 3.737454790098127e-12,
+      "max_reference_residual": 5.6843418860808015e-12,
+      "native_iterations_range": [
+        1,
+        5
+      ],
+      "source_hashes": {
+        "physical_pf_004.m": "64d7b9df237556ad1cd9091ef01494bf9af417c5c922f1d7d1f6a9c199a0cc9e",
+        "physical_pf_005.m": "0e3046ddb13e8c44cae4dd3067c51c41eb94844e16ca2dff26783b5cf049f709",
+        "physical_pf_006.m": "4624f565aff0b5eedac4e4bab5f7eebc320d712154e0e8553b442e8d844dcd28",
+        "physical_pf_007.m": "35fafc0c8e7af5c00a7b4706a5e539b3e761994cfa1e2c150b344917c972d062"
+      }
+    },
+    "mask0/direction-1/poles2/droopfalse": {
+      "max_native_residual": 6.568079413682426e-13,
+      "max_physical_circuit_residual": 8.810729923425242e-13,
+      "max_physical_coordinate_difference": 3.680611371237319e-12,
+      "max_reference_residual": 2.6200375202733994e-11,
+      "native_iterations_range": [
+        1,
+        5
+      ],
+      "source_hashes": {
+        "physical_pf_008.m": "c301e0d9785c73febcb4f872aa4360951de2645f9bf2dfd2c5a4d5106f90b577",
+        "physical_pf_009.m": "fdc58b459b83b767b017dbe0d7e3a34f60fd0252bcda11be6527da67b1f83099",
+        "physical_pf_010.m": "6105da2d8e44bbe3a98bf2c7ea2dc806a1f4d20071a2b778e8a12e90985d91ec",
+        "physical_pf_011.m": "f23b2bdde3bd8ca0afd1a174288aababa34d5381eb628d58e706361a2364815c"
+      }
+    },
+    "mask0/direction-1/poles2/drooptrue": {
+      "max_native_residual": 6.568079413682426e-13,
+      "max_physical_circuit_residual": 6.565414878423326e-12,
+      "max_physical_coordinate_difference": 3.694822225952521e-12,
+      "max_reference_residual": 7.105427357601002e-12,
+      "native_iterations_range": [
+        1,
+        5
+      ],
+      "source_hashes": {
+        "physical_pf_012.m": "74fad5b9e0a846adf3705ff6902699114c416d0d89b5c28147986c5bdb125c52",
+        "physical_pf_013.m": "6ef7bf88bc8812aee20ff9819452a333412c2e032c4ec2a94ac47a24d0615603",
+        "physical_pf_014.m": "912d5e66485402bf03cc711b68798806acef9e7fc7e500fc5264b81a9ed0fb80",
+        "physical_pf_015.m": "fb0206101e60494efc4a5baaa2eb650b9f66e9d104490064f6980db56b4c20ea"
+      }
+    },
+    "mask0/direction1/poles1/droopfalse": {
+      "max_native_residual": 6.87894186057747e-13,
+      "max_physical_circuit_residual": 1.8474111129762605e-12,
+      "max_physical_coordinate_difference": 2.6005864128819667e-12,
+      "max_reference_residual": 3.552713678800501e-12,
+      "native_iterations_range": [
+        1,
+        5
+      ],
+      "source_hashes": {
+        "physical_pf_016.m": "948746cb22ec8797ace012295f8c753870e7eae599a15e11f09ab574bb8ac7aa",
+        "physical_pf_017.m": "9593948bf6f09ef37f76a24032d53d253853d3a11371269f59b7015c4ec3ee23",
+        "physical_pf_018.m": "8b19417e711f4680ecaa91cdc2398a4d75e8d4ecc7237991c54b39ec221c3ff1",
+        "physical_pf_019.m": "e9283d98d94ab2f10aa86a125d584117c2f693933051de19f8c416c47d79e438"
+      }
+    },
+    "mask0/direction1/poles1/drooptrue": {
+      "max_native_residual": 6.87894186057747e-13,
+      "max_physical_circuit_residual": 1.8474111129762605e-12,
+      "max_physical_coordinate_difference": 2.4726887204451486e-12,
+      "max_reference_residual": 3.552713678800501e-12,
+      "native_iterations_range": [
+        1,
+        5
+      ],
+      "source_hashes": {
+        "physical_pf_020.m": "1d70ed5eba6c32a0fd6d3795aba16269fafccc16a98d9effde45f36a4ec3c62f",
+        "physical_pf_021.m": "1eb0ebd9184333506696f6795bfdc4935f2e8cc0d60bc4e0d274a938650db88d",
+        "physical_pf_022.m": "fb5e8395c6a00cc56a76c0d3a504c1efc0cbf6b8cce89f1ca5cf589371303e0d",
+        "physical_pf_023.m": "efcc7483461a1ef2a3bb3ff09b16ff83efe07d7ba55886e193595e743df94361"
+      }
+    },
+    "mask0/direction1/poles2/droopfalse": {
+      "max_native_residual": 6.896705428971472e-13,
+      "max_physical_circuit_residual": 4.675371201301459e-12,
+      "max_physical_coordinate_difference": 9.137579581874888e-12,
+      "max_reference_residual": 2.920552688578937e-11,
+      "native_iterations_range": [
+        1,
+        5
+      ],
+      "source_hashes": {
+        "physical_pf_024.m": "b612f185d68c04f30990a9a610e6bbdb8c905576db58ebc13f78ca394f338615",
+        "physical_pf_025.m": "58945d96e22c420f4ed145cddfe51f792abd3249b0447e636f33a476ea82b344",
+        "physical_pf_026.m": "16cdd1f539cdad8ff2c9afcaa7342d47c4d626a6c3a15fffd246530d032f324d",
+        "physical_pf_027.m": "01ba37f5002e500eebaa1c1c8f331c37584e9bbb5610266425dc23e96154db79"
+      }
+    },
+    "mask0/direction1/poles2/drooptrue": {
+      "max_native_residual": 6.910028105266974e-13,
+      "max_physical_circuit_residual": 4.703792910731863e-12,
+      "max_physical_coordinate_difference": 1.1795009413617663e-11,
+      "max_reference_residual": 1.4210854715202004e-11,
+      "native_iterations_range": [
+        1,
+        5
+      ],
+      "source_hashes": {
+        "physical_pf_028.m": "33c67842347d1aeed83904504b099edb24031f6aa9097def1f43bff4d0c9d4c5",
+        "physical_pf_029.m": "d45d1c5313db3e7f50ab915d46966ebf7dcf030972526ab494c367836a2658a0",
+        "physical_pf_030.m": "f1bdceb58745b08d79a279cbfa8645fcb61b7702ea5682672d26005a7bd09725",
+        "physical_pf_031.m": "bf99949b0e69d1d98a053411e00c896821172e3d2af62fc34f1231ad02b0246e"
+      }
+    },
+    "mask1/direction-1/poles1/droopfalse": {
+      "max_native_residual": 3.1731617333718987e-11,
+      "max_physical_circuit_residual": 3.287723871417529e-11,
+      "max_physical_coordinate_difference": 3.111466639893479e-11,
+      "max_reference_residual": 1.0658141036401503e-11,
+      "native_iterations_range": [
+        3,
+        7
+      ],
+      "source_hashes": {
+        "physical_pf_032.m": "9908d5566ac0fe5c66c2eb2d2a2ebc8c70a5d940c020a09857b7787c01efe69a",
+        "physical_pf_033.m": "c5602b020c1d1e153af877b648dc1832813ca1d26284d965e40cacfa19d647f0",
+        "physical_pf_034.m": "bf1becb151ec80c3cad3fe3158f211af6261b8bc8369810bf181e13f6394b11a",
+        "physical_pf_035.m": "65e925656a6cef37840c8742e94cd5e7566560eed32af0e11b9a1bc82850b867"
+      }
+    },
+    "mask1/direction-1/poles1/drooptrue": {
+      "max_native_residual": 3.1731506311416524e-11,
+      "max_physical_circuit_residual": 3.4061358686739606e-11,
+      "max_physical_coordinate_difference": 3.2301272767654154e-11,
+      "max_reference_residual": 7.105427357601002e-12,
+      "native_iterations_range": [
+        3,
+        7
+      ],
+      "source_hashes": {
+        "physical_pf_036.m": "aa8e0deae81421205b3157b54fb18cec1d128f837f35af2efd50122d6ea97285",
+        "physical_pf_037.m": "9e84194700fdca2a8f3c37aff8fe1b72f7ba64a6ca901b702d25a3be6c112a17",
+        "physical_pf_038.m": "1cfa8faf749a9beafdea5ef1ad39ae102de8a8ee3074bc12402a2c7e12bfc4cf",
+        "physical_pf_039.m": "289f7e853e467f1b25e59d8ce9570d43ba2a7ea61e4b7a33554ff47aeaa25954"
+      }
+    },
+    "mask1/direction-1/poles2/droopfalse": {
+      "max_native_residual": 3.1715186032954534e-11,
+      "max_physical_circuit_residual": 3.329507294937359e-11,
+      "max_physical_coordinate_difference": 1.751914169290103e-09,
+      "max_reference_residual": 4.476419235288631e-10,
+      "native_iterations_range": [
+        3,
+        7
+      ],
+      "source_hashes": {
+        "physical_pf_040.m": "e412b4e0037ea2e21b396ffbe1cf35f3e4bf0e238a68b6422556127d02835c50",
+        "physical_pf_041.m": "93ff0ba67d16a2dd6e6503ca80f1a518a113d08362c439a170667997a8fe5917",
+        "physical_pf_042.m": "286277ec2fbdd8fbd76e324399ea498d77464de887d9947523e42c0c4dc9b097",
+        "physical_pf_043.m": "49b46b5a0a1bee319bdbe6b172d95d3f7af6ab96a7182df1b9e84a4d3e2d8aab"
+      }
+    },
+    "mask1/direction-1/poles2/drooptrue": {
+      "max_native_residual": 3.171551909986192e-11,
+      "max_physical_circuit_residual": 3.235182948036514e-11,
+      "max_physical_coordinate_difference": 3.0592417488151114e-11,
+      "max_reference_residual": 7.105427357601002e-12,
+      "native_iterations_range": [
+        3,
+        7
+      ],
+      "source_hashes": {
+        "physical_pf_044.m": "4a4a70e369185f865239ce6ef9c0c987ebb416206d98cbba4e4a12cc2258d352",
+        "physical_pf_045.m": "9fdc5c3f2da26be9032acf039091091fcf93c4614852aad85894db5d712bb477",
+        "physical_pf_046.m": "d8eba1e80d7e2e126de507cbd0ad4528cb46a2c4c4bb94fd8baad6fbdfc14723",
+        "physical_pf_047.m": "2ba7155ddd2616536a069e6326f011e9a66cb8babe8b657ff66837e969b24f99"
+      }
+    },
+    "mask1/direction1/poles1/droopfalse": {
+      "max_native_residual": 4.9720005890208085e-11,
+      "max_physical_circuit_residual": 2.9792806109639894e-11,
+      "max_physical_coordinate_difference": 3.580097995836695e-09,
+      "max_reference_residual": 6.039613253960852e-10,
+      "native_iterations_range": [
+        3,
+        7
+      ],
+      "source_hashes": {
+        "physical_pf_048.m": "592f4f72a7dac60be6c881d4b6df10769f8979e6384964981884188b6acdce47",
+        "physical_pf_049.m": "34a5ae58af39472fc22f8004555473a9d189971848ef47c1b5b37b8210580152",
+        "physical_pf_050.m": "4111b9ebe831ebbad1bd5824d8e07ddba9bcca086a2adce01913c5dd8883d68a",
+        "physical_pf_051.m": "12ed583362596c5a8a0ac8210d9e3df3b43d390e651862f3407500e30f0840df"
+      }
+    },
+    "mask1/direction1/poles1/drooptrue": {
+      "max_native_residual": 4.9720005890208085e-11,
+      "max_physical_circuit_residual": 2.959474297590535e-11,
+      "max_physical_coordinate_difference": 2.7456537043946128e-11,
+      "max_reference_residual": 3.552713678800501e-12,
+      "native_iterations_range": [
+        3,
+        7
+      ],
+      "source_hashes": {
+        "physical_pf_052.m": "1ff1ca9f324798552a87edb826e9777a36f2c34016150fb00872719d82cefe86",
+        "physical_pf_053.m": "a7c4dbb0654be62dd9f35594795223f3f941a940372c03bb2c56af9f71480fb6",
+        "physical_pf_054.m": "7bae4fbba1cfbf8dc2792b6e7e98f19ba6e4f11f414538ed9bbbc987d7fc67a2",
+        "physical_pf_055.m": "99485820d1e2112117d6020936161fb29afc095d62eceed3009fb0443a9af7e9"
+      }
+    },
+    "mask1/direction1/poles2/droopfalse": {
+      "max_native_residual": 4.971389966357265e-11,
+      "max_physical_circuit_residual": 3.030838592064343e-11,
+      "max_physical_coordinate_difference": 2.950640975996066e-08,
+      "max_reference_residual": 4.9666937229631e-09,
+      "native_iterations_range": [
+        3,
+        7
+      ],
+      "source_hashes": {
+        "physical_pf_056.m": "58134e074feffb80e44b8ddb749b5e1a64473c7b4e1c829ebe68d3c9ea8ea3e9",
+        "physical_pf_057.m": "7bc56c2b345136029fff87a96b8fe914cf960f8049a6fa2fb0e2f55e879bd7b9",
+        "physical_pf_058.m": "afba98f1e83e6fc240eaa00edb0c15ea43585dd4f4f1192b133d95dff2cd0c9d",
+        "physical_pf_059.m": "5f6900365e13d3b5e6a17daeb0aca7a42f798ff43ef907fed3ef01e77f8e629a"
+      }
+    },
+    "mask1/direction1/poles2/drooptrue": {
+      "max_native_residual": 4.9713788641270185e-11,
+      "max_physical_circuit_residual": 3.0768821531828975e-11,
+      "max_physical_coordinate_difference": 2.8354207870506798e-11,
+      "max_reference_residual": 7.105427357601002e-12,
+      "native_iterations_range": [
+        3,
+        7
+      ],
+      "source_hashes": {
+        "physical_pf_060.m": "f1162e49363a91830f0769a76d7e5e8482e0d5d2184811b7cdb03b1c4555ffff",
+        "physical_pf_061.m": "61b0aac7581ebd9bfac7b905c134db8ba77ae983886fa3c3bd0903bf47f80ca5",
+        "physical_pf_062.m": "f575b6f7d95eca97a7e338cf5de0c858fbacef593246f2c31f01f014caf4b895",
+        "physical_pf_063.m": "f40898025a95af9fb7e0cf4b770fd4fb8a4aa96f95e78319212a203066ea06f2"
+      }
+    },
+    "mask2/direction-1/poles1/droopfalse": {
+      "max_native_residual": 6.652456363553938e-13,
+      "max_physical_circuit_residual": 2.421296224769543e-12,
+      "max_physical_coordinate_difference": 4.646949491871055e-12,
+      "max_reference_residual": 2.8421709430404007e-12,
+      "native_iterations_range": [
+        3,
+        5
+      ],
+      "source_hashes": {
+        "physical_pf_064.m": "cc9aff5baec3aad932324bee7a59cb3d154e7de39b51587b7c593f9d3815aa25",
+        "physical_pf_065.m": "1ba118830bb95f0faccb217850bfc95ad0608263e2673b9499badf79a1da5097",
+        "physical_pf_066.m": "b5a27a090314f32c23f34e65bb3a90f2df8b2c3794941ccad493a4ee8f03cc67",
+        "physical_pf_067.m": "c9f8ba4688b4bff906215869d4e3c345cc6af20142a6d06366751d98228c69f5"
+      }
+    },
+    "mask2/direction-1/poles1/drooptrue": {
+      "max_native_residual": 6.656897255652439e-13,
+      "max_physical_circuit_residual": 6.59383658785373e-12,
+      "max_physical_coordinate_difference": 5.474731779031572e-12,
+      "max_reference_residual": 3.552713678800501e-12,
+      "native_iterations_range": [
+        3,
+        5
+      ],
+      "source_hashes": {
+        "physical_pf_068.m": "a445baa4052cb6be1a8db350fea63aaf2d06aa4686f115b142ec260791e3fba8",
+        "physical_pf_069.m": "0a5a9653e829ec2861b6015f1e4d604142fe3b42f8ba1f09758c56f42cd7e207",
+        "physical_pf_070.m": "e5251e919225f541df8c13a33744f83d8a7932e38c419dbc306221b22bf52267",
+        "physical_pf_071.m": "af742bbca63da884bdc6a4a3751e64d295ba01e31c9b155f8c2225e3070da6b0"
+      }
+    },
+    "mask2/direction-1/poles2/droopfalse": {
+      "max_native_residual": 6.634692795159935e-13,
+      "max_physical_circuit_residual": 3.6300320330283287e-12,
+      "max_physical_coordinate_difference": 4.476419235288631e-12,
+      "max_reference_residual": 2.546141075754349e-11,
+      "native_iterations_range": [
+        3,
+        5
+      ],
+      "source_hashes": {
+        "physical_pf_072.m": "a973b64d61ffa6294047f9f8b2bce812b38c976e1e649223ef2363094f38ec90",
+        "physical_pf_073.m": "1d6e9a90efea9c74a76e321cbe7a0959554a1d28eebed9b8d0e95fb2b23e5852",
+        "physical_pf_074.m": "a120bd8f2d1d037e4999d08fe3591d43b50d5acaf8263fb6d6024fe65f0f37b8",
+        "physical_pf_075.m": "8491dd81c2e535b28cbe5ea3a8ec5cc7c7fc4afbb5b705b6b5cea911cc6feb25"
+      }
+    },
+    "mask2/direction-1/poles2/drooptrue": {
+      "max_native_residual": 6.625811010962934e-13,
+      "max_physical_circuit_residual": 6.565414878423326e-12,
+      "max_physical_coordinate_difference": 4.249045559845399e-12,
+      "max_reference_residual": 1.4210854715202004e-11,
+      "native_iterations_range": [
+        3,
+        5
+      ],
+      "source_hashes": {
+        "physical_pf_076.m": "0a8fc813622f40c7a32d62d88609eb65906b97b2417d770708f2307a8bbd147b",
+        "physical_pf_077.m": "f7c739835b2a23786aed5db116d83daeafbb320d4039c6e1ef0d771b7d57a89b",
+        "physical_pf_078.m": "5c62f0591f9c07be8ab8358e95432dc8c33b672a917e68177a18d5a8f3f7b2df",
+        "physical_pf_079.m": "2f87acd281f15eef184c566419e716aef679ee958511f60cd7c0c1d2b2c04b84"
+      }
+    },
+    "mask2/direction1/poles1/droopfalse": {
+      "max_native_residual": 6.967759702547482e-13,
+      "max_physical_circuit_residual": 2.9714282146999565e-12,
+      "max_physical_coordinate_difference": 3.6628478028433165e-12,
+      "max_reference_residual": 3.552713678800501e-12,
+      "native_iterations_range": [
+        3,
+        5
+      ],
+      "source_hashes": {
+        "physical_pf_080.m": "9680fe16d3bd169789399185ae6c8765fa9db3193877f11b2636bc862410fc2e",
+        "physical_pf_081.m": "38f45a5bc380f0c3861fdc17023354004ce2fffffba0a01f3375fa64c7cb88bf",
+        "physical_pf_082.m": "be79ead1a4119f89593829403df209f3c730ee31c55b9f2f6f29e5fb0c430e1b",
+        "physical_pf_083.m": "fe1891edfa37acdd6ee2171056f8217f33f492170336d1e852c27a6ab28b9889"
+      }
+    },
+    "mask2/direction1/poles1/drooptrue": {
+      "max_native_residual": 6.976641486744484e-13,
+      "max_physical_circuit_residual": 3.865352482534945e-12,
+      "max_physical_coordinate_difference": 2.7284841053187847e-12,
+      "max_reference_residual": 3.552713678800501e-12,
+      "native_iterations_range": [
+        3,
+        5
+      ],
+      "source_hashes": {
+        "physical_pf_084.m": "6df741dbd0f99f6cebfb7e0b5d7340e57ed32549703e6638a06fc19a6d903a7d",
+        "physical_pf_085.m": "44230c50b2950fe5784c36a350a8fcbbb6a27d939fa3bb19aa567b3e42187147",
+        "physical_pf_086.m": "4905a0a8d7cc06ca749f95ea8e788eb5d8d20a7380bc95179d487bb7faf5b4fb",
+        "physical_pf_087.m": "901fb82a2718e8c240761adb7dd1ef6727ed9540a85e177d18728b206da8d9b4"
+      }
+    },
+    "mask2/direction1/poles2/droopfalse": {
+      "max_native_residual": 6.994405055138486e-13,
+      "max_physical_circuit_residual": 4.675371201301459e-12,
+      "max_physical_coordinate_difference": 1.0203393685515039e-11,
+      "max_reference_residual": 3.513744850636158e-11,
+      "native_iterations_range": [
+        3,
+        5
+      ],
+      "source_hashes": {
+        "physical_pf_088.m": "f3c7569b810321fb8be9bb15189822bf8470b5be4e791ac1c6a878c2931a1541",
+        "physical_pf_089.m": "981fb990b0e256477d2f583bfd98241d196782b7f1038b145b5abcadced3300d",
+        "physical_pf_090.m": "8b6e01b4099c20451163c061347dc93c18b380ad21ee8fb6607e00affd03af80",
+        "physical_pf_091.m": "361f415dad6b5189aea2c4cf985765864fcf67c0ef2e8f5bb8eb6d98a6ed2603"
+      }
+    },
+    "mask2/direction1/poles2/drooptrue": {
+      "max_native_residual": 6.994405055138486e-13,
+      "max_physical_circuit_residual": 4.703792910731863e-12,
+      "max_physical_coordinate_difference": 4.703792910731863e-12,
+      "max_reference_residual": 5.6843418860808015e-12,
+      "native_iterations_range": [
+        3,
+        5
+      ],
+      "source_hashes": {
+        "physical_pf_092.m": "25f2c242a5c3387f63881ed7c5942f39654c344f30f537e01996554c2f49ea2f",
+        "physical_pf_093.m": "672fbe1665a83b1e70cb3f748972818d5b8a5daf64fd5ffbce462f9daced37ff",
+        "physical_pf_094.m": "fbe22d03456849b86629031093126632ef1dd0933b461680e06b253714b38734",
+        "physical_pf_095.m": "83538cd62652b35ce105ca81956738ddd3728d674fc152e84a84199600aa0c43"
+      }
+    },
+    "mask3/direction-1/poles1/droopfalse": {
+      "max_native_residual": 2.7239765998388066e-11,
+      "max_physical_circuit_residual": 1.0261128417904213e-10,
+      "max_physical_coordinate_difference": 1.0013678775067092e-09,
+      "max_reference_residual": 1.5631940186722204e-10,
+      "native_iterations_range": [
+        3,
+        7
+      ],
+      "source_hashes": {
+        "physical_pf_096.m": "b9ecc9d442ec912304478f56b84c63a0ca605776db47396ff0c495a5761d00c6",
+        "physical_pf_097.m": "a225147e7edf20700849ff7f7d9447cb84fa526ee706866866da0a59e7f7d268",
+        "physical_pf_098.m": "8357f40aa99c322911eaa6a33d64c043457fbbcbf10186e83cf1f4d77664983b",
+        "physical_pf_099.m": "956d4d83e3ef6ea8e903ec3eb6ae020e7b6b3d0beacaac753d76f2c06de99e8e"
+      }
+    },
+    "mask3/direction-1/poles1/drooptrue": {
+      "max_native_residual": 2.7239765998388066e-11,
+      "max_physical_circuit_residual": 1.0409850721189492e-10,
+      "max_physical_coordinate_difference": 7.555343017884297e-10,
+      "max_reference_residual": 1.7763568394002505e-10,
+      "native_iterations_range": [
+        3,
+        7
+      ],
+      "source_hashes": {
+        "physical_pf_100.m": "b6c8de0fb0ad5fbe55de9dfa7ead83129d7eb96a951e2fbba2cc80cdfeb5623c",
+        "physical_pf_101.m": "e53662f689a765bdab81ef4774de777097866f2612b0f95f3589298937199b0a",
+        "physical_pf_102.m": "9d61e02b091a0fae9ab0b3ef71ed4b89f182930b44ded092e1161ded9f76fadd",
+        "physical_pf_103.m": "59199f439967fefa6933fe5022f4b439a3de6afd39ef65cbfcf76c0420b320df"
+      }
+    },
+    "mask3/direction-1/poles2/droopfalse": {
+      "max_native_residual": 2.7223334697623613e-11,
+      "max_physical_circuit_residual": 1.0170691153404338e-10,
+      "max_physical_coordinate_difference": 1.2794032500096364e-10,
+      "max_reference_residual": 2.8421709430404007e-11,
+      "native_iterations_range": [
+        3,
+        7
+      ],
+      "source_hashes": {
+        "physical_pf_104.m": "d8c99966532d129db99fbd3ef439678e54ff801f74c694aae217cead7bf57541",
+        "physical_pf_105.m": "e3b4773177439c9d8eb01e9301f5db98a16fa167f4073f9ad2c75cfcd30f6f65",
+        "physical_pf_106.m": "1b9fbd6aff4a7baf7031ecdf88743d4303ca5ab02e38dfedf1a0c3b5b3d3d00d",
+        "physical_pf_107.m": "78fa60e622dd0545bdfb218b63f67bc8138a1b8e09ba57f4551df1f73385b614"
+      }
+    },
+    "mask3/direction-1/poles2/drooptrue": {
+      "max_native_residual": 2.7223334697623613e-11,
+      "max_physical_circuit_residual": 1.0202269249054841e-10,
+      "max_physical_coordinate_difference": 9.793765798349341e-11,
+      "max_reference_residual": 2.2737367544323206e-11,
+      "native_iterations_range": [
+        3,
+        7
+      ],
+      "source_hashes": {
+        "physical_pf_108.m": "12be0e14462e7a8e1635bced9e32334fb2aaf2cbae4ea9274b3d6919ac775455",
+        "physical_pf_109.m": "606eaeb3bc5438a4048b43e9dbaca51aa5e8f42eb8dafcae10f9fea4dd6d1897",
+        "physical_pf_110.m": "23d588ea8b621e69a3eb3aee9b9fbdf1295ef3bceb447bab8a8281a3a007d9cb",
+        "physical_pf_111.m": "e694d3618895becdeec88210b04869436b93e114c4a08eed28b71b45db8815b6"
+      }
+    },
+    "mask3/direction1/poles1/droopfalse": {
+      "max_native_residual": 4.696953936900172e-11,
+      "max_physical_circuit_residual": 9.55807082353975e-11,
+      "max_physical_coordinate_difference": 1.316166731157864e-09,
+      "max_reference_residual": 3.552713678800501e-10,
+      "native_iterations_range": [
+        3,
+        7
+      ],
+      "source_hashes": {
+        "physical_pf_112.m": "41e713bfcb9f2929d883f8abd18f5b4d3f18db0c25f312641a2143ce46fb0060",
+        "physical_pf_113.m": "48d486e9a9a85d52991556514e3ced442434720405be2bf73a038931b4a2a797",
+        "physical_pf_114.m": "027754b0b51441036b3ff8f32566858953bdd2e3262badc4dbe3ea17d8962086",
+        "physical_pf_115.m": "a7894eb649401bdfe6d5d4f491d8982facd80af7d67b170166eb03197d5aa526"
+      }
+    },
+    "mask3/direction1/poles1/drooptrue": {
+      "max_native_residual": 4.69693173243968e-11,
+      "max_physical_circuit_residual": 9.293614979599846e-11,
+      "max_physical_coordinate_difference": 1.4745324961040751e-09,
+      "max_reference_residual": 2.3092638912203256e-10,
+      "native_iterations_range": [
+        3,
+        7
+      ],
+      "source_hashes": {
+        "physical_pf_116.m": "34f988ea66e377a49dbd804a96fce913c54c7e2b89a50dffef6ff636dea9b1fc",
+        "physical_pf_117.m": "9e8c0cbfc098e100fe7cfec0533e66e217902619e6cf11fcf282a937482c7140",
+        "physical_pf_118.m": "2941384f92b24683ea624f32589ff6a51f98cfc077d7644b566faa12bd44ecaa",
+        "physical_pf_119.m": "2bbe6797558740aae9479f0e55a6157806ed7f405ecaece5dbb4f94c8f785bab"
+      }
+    },
+    "mask3/direction1/poles2/droopfalse": {
+      "max_native_residual": 4.69639882538786e-11,
+      "max_physical_circuit_residual": 9.571007934062262e-11,
+      "max_physical_coordinate_difference": 8.952895313996123e-09,
+      "max_reference_residual": 1.4068746168049984e-09,
+      "native_iterations_range": [
+        3,
+        7
+      ],
+      "source_hashes": {
+        "physical_pf_120.m": "eaf4ff976f6432d85efa4693feca21efc21f38af28a5d567852a2dc203cb3b5c",
+        "physical_pf_121.m": "e7cec147509ccdd713250b713580c247c833a19c33f15bc80e10fc0da5b0ca3b",
+        "physical_pf_122.m": "4cde57cd9b3d571aa7d79dff86d7625c0c29a3ef51f474061b9d47ffe14265ce",
+        "physical_pf_123.m": "27820aa831776bd03bc102e61ee298054cdf89bdb0ddfe831b7525a2114d18fa"
+      }
+    },
+    "mask3/direction1/poles2/drooptrue": {
+      "max_native_residual": 4.696376620927367e-11,
+      "max_physical_circuit_residual": 9.761526931944508e-11,
+      "max_physical_coordinate_difference": 1.7807053609431023e-09,
+      "max_reference_residual": 2.7711166694643907e-10,
+      "native_iterations_range": [
+        3,
+        7
+      ],
+      "source_hashes": {
+        "physical_pf_124.m": "aef3bfe52b557b82a791a6b277ce228394f00acddc4af24d75e53dbda7ff8677",
+        "physical_pf_125.m": "c37ed61f8ffa92ef3429fb5eee128ff7a77f621d098b6b62d8b5b7f7102a2262",
+        "physical_pf_126.m": "bd74a1c49bc82868d5d2c3514d0f78df25fcd2fd635260a42b20f81633a309a8",
+        "physical_pf_127.m": "cec357a34b756369e66b175f8a35a5c4548a41efc5427dfea795527fc99e7f22"
+      }
+    },
+    "mask4/direction-1/poles1/droopfalse": {
+      "max_native_residual": 6.73683331342545e-13,
+      "max_physical_circuit_residual": 8.810729923425242e-13,
+      "max_physical_coordinate_difference": 3.723243935382925e-12,
+      "max_reference_residual": 2.8421709430404007e-12,
+      "native_iterations_range": [
+        3,
+        5
+      ],
+      "source_hashes": {
+        "physical_pf_128.m": "0d11f5ccebd3e7030f9cd4bc03954502dfc685ca515984efc69f90a9d93e1ec2",
+        "physical_pf_129.m": "486d5cd571cd8cbd214a5a251c750ea0111dda5af53e79b4891cea128057fd0e",
+        "physical_pf_130.m": "c8df645d89a17200c9322b3c491238e8b85c0b11edb5e034b39ba674114a1654",
+        "physical_pf_131.m": "384315136f8a2e916879e4d837b09d71c8706e7a19fb77c6a35833a6aa103827"
+      }
+    },
+    "mask4/direction-1/poles1/drooptrue": {
+      "max_native_residual": 6.73683331342545e-13,
+      "max_physical_circuit_residual": 6.59383658785373e-12,
+      "max_physical_coordinate_difference": 3.709033080667723e-12,
+      "max_reference_residual": 5.6843418860808015e-12,
+      "native_iterations_range": [
+        3,
+        5
+      ],
+      "source_hashes": {
+        "physical_pf_132.m": "3d795ad8cab8b23aeee8d3b8e5133d2c6e226d5d7f92bd21913e34b1c8e422c4",
+        "physical_pf_133.m": "ffffd5484bbd0a5b5b523cf185b39915fb173b40db2b813cc39f81f897249293",
+        "physical_pf_134.m": "2c6fdc75d7f58d02331f255aaf72d0593d5d456796f9e13818cf8fca4c678535",
+        "physical_pf_135.m": "dc67444b7bac4308f2e08fab37afb87b0811d6ae5d1abab6e254862899ad9896"
+      }
+    },
+    "mask4/direction-1/poles2/droopfalse": {
+      "max_native_residual": 6.719069745031447e-13,
+      "max_physical_circuit_residual": 8.810729923425242e-13,
+      "max_physical_coordinate_difference": 3.680611371237319e-12,
+      "max_reference_residual": 2.62385668747811e-11,
+      "native_iterations_range": [
+        3,
+        5
+      ],
+      "source_hashes": {
+        "physical_pf_136.m": "72d4fceea227b16544b73d217613b5d7aeabefcee1272f107554d65238ac704b",
+        "physical_pf_137.m": "a344076e216003bcc1c23f1ab5b73607404da5ccebbc1c3858e66736031ca869",
+        "physical_pf_138.m": "89c14d0210f139119c6ff407743133aafd6c150eeac8ab18cb6ec83fe9c359f3",
+        "physical_pf_139.m": "3582210a00c3df20c77cfdbc60679f41c3ed58eb06ef20566a0e617a5754b77d"
+      }
+    },
+    "mask4/direction-1/poles2/drooptrue": {
+      "max_native_residual": 6.710187960834446e-13,
+      "max_physical_circuit_residual": 6.565414878423326e-12,
+      "max_physical_coordinate_difference": 3.680611371237319e-12,
+      "max_reference_residual": 5.6843418860808015e-12,
+      "native_iterations_range": [
+        3,
+        5
+      ],
+      "source_hashes": {
+        "physical_pf_140.m": "08afc2ce6931633dbbcd803a4116c39acfd7e7d7faed7ac7014368af1cf6ba7d",
+        "physical_pf_141.m": "c83969dac02c11658a70bd7948cc9a564f97d0c1a2c89e562946c8fc17762f99",
+        "physical_pf_142.m": "373137a6d08a53da102d57157e616e6b9273d0b2fb751bce61626e28df486077",
+        "physical_pf_143.m": "4ea6745bd0b146155d15f12e76b0dd3f84d6be9c7eb464467a10815b4a3db49a"
+      }
+    },
+    "mask4/direction1/poles1/droopfalse": {
+      "max_native_residual": 7.016609515630989e-13,
+      "max_physical_circuit_residual": 1.8474111129762605e-12,
+      "max_physical_coordinate_difference": 2.5863755581667647e-12,
+      "max_reference_residual": 3.552713678800501e-12,
+      "native_iterations_range": [
+        3,
+        5
+      ],
+      "source_hashes": {
+        "physical_pf_144.m": "a8e4b746467b5bbf5d82c0d4e280dc39d89d4c93a0561fff29c258b09672d87e",
+        "physical_pf_145.m": "e0fa8c34e60b01dbf34ce1ab2f7e3d9934143285c3720604037eab9ce2d352a5",
+        "physical_pf_146.m": "f7726374a6b6427388bd8f8c155dbd17dba397d4b4def9b59091adf0d7b9898d",
+        "physical_pf_147.m": "9d9e6994802fb2e8c5c3000f960474749291c923839506a0ee3115e8faab85a6"
+      }
+    },
+    "mask4/direction1/poles1/drooptrue": {
+      "max_native_residual": 7.025491299827991e-13,
+      "max_physical_circuit_residual": 1.8474111129762605e-12,
+      "max_physical_coordinate_difference": 2.3590018827235326e-12,
+      "max_reference_residual": 3.552713678800501e-12,
+      "native_iterations_range": [
+        3,
+        5
+      ],
+      "source_hashes": {
+        "physical_pf_148.m": "0e7e0a2e168ce2ecc12d974b9d0d9ab4f36fe39a822eb5061b32e7cfcfbb0e03",
+        "physical_pf_149.m": "f39effa76a841fa4e8ab82b2b62327624e205361c1ff014805b7d8b8bd510329",
+        "physical_pf_150.m": "5eaff71bb83b783976519013ef6b306447675b1c05e4e6b777c8ef5818ae7432",
+        "physical_pf_151.m": "77ad12b9216015d5b37ac906ca0debb133347006aa7e3af4954e6026b56bf24d"
+      }
+    },
+    "mask4/direction1/poles2/droopfalse": {
+      "max_native_residual": 7.047695760320494e-13,
+      "max_physical_circuit_residual": 4.675371201301459e-12,
+      "max_physical_coordinate_difference": 9.094947017729282e-12,
+      "max_reference_residual": 2.916156205401421e-11,
+      "native_iterations_range": [
+        3,
+        5
+      ],
+      "source_hashes": {
+        "physical_pf_152.m": "472544b9616a71498f5373cbffbb130c163699c89b1a85ce639578ffe73f8483",
+        "physical_pf_153.m": "0dae55097c1af397af73e0bdd57877f3821948845a84c8b081ca1e4cd5c99091",
+        "physical_pf_154.m": "88e5ad507908cb00e037abc36e8994a5cd14a74ea7bf31efb34e2460787e9b07",
+        "physical_pf_155.m": "1de3395f488af48bebaf5aa61ae81c4731f669b36ca6165680d815b25245cb61"
+      }
+    },
+    "mask4/direction1/poles2/drooptrue": {
+      "max_native_residual": 7.047695760320494e-13,
+      "max_physical_circuit_residual": 4.703792910731863e-12,
+      "max_physical_coordinate_difference": 2.9416469260468148e-12,
+      "max_reference_residual": 1.4210854715202004e-11,
+      "native_iterations_range": [
+        3,
+        5
+      ],
+      "source_hashes": {
+        "physical_pf_156.m": "60894dbfd960aebb4c729a4b97f0c7928ed871f9a5bdfa06b301a4c84f57d508",
+        "physical_pf_157.m": "29e7dacb0a216e9fe3b1374b694e03ac246b8673f2b3c974a4314753d5b76eec",
+        "physical_pf_158.m": "9b291b9dddc33cd7ace5566a6fd7d85dc250e10d824d780d796628768e7a0902",
+        "physical_pf_159.m": "af463439d57bef18b58f08a480c4463ac2605c7eeceb817dc33c8a1cf105f7ff"
+      }
+    },
+    "mask5/direction-1/poles1/droopfalse": {
+      "max_native_residual": 2.992406322732677e-11,
+      "max_physical_circuit_residual": 3.425877213584101e-11,
+      "max_physical_coordinate_difference": 1.7001866581267677e-10,
+      "max_reference_residual": 3.126388037344441e-11,
+      "native_iterations_range": [
+        3,
+        7
+      ],
+      "source_hashes": {
+        "physical_pf_160.m": "9e85b61c718bec8405a7eab30627d5c49bec6c9522db65f51399ca86c6df6daf",
+        "physical_pf_161.m": "3abef571ff42796958e0e8a1e05e9d27e0293d4163e65310f095d9009baab8b5",
+        "physical_pf_162.m": "bfc81d7d7a8cfb57f0a402f40d5142ffe0a01cc4c3d8e1d59b1f26afd00be69f",
+        "physical_pf_163.m": "e12394fb1de7bf74273d63387ec4985fe7c88ef11fe72a8caee855d1d38db7c0"
+      }
+    },
+    "mask5/direction-1/poles1/drooptrue": {
+      "max_native_residual": 2.9923841182721844e-11,
+      "max_physical_circuit_residual": 3.257901051204221e-11,
+      "max_physical_coordinate_difference": 3.165112616443366e-11,
+      "max_reference_residual": 3.552713678800501e-12,
+      "native_iterations_range": [
+        3,
+        7
+      ],
+      "source_hashes": {
+        "physical_pf_164.m": "75b0f4867ad2f1aa71016e179150105d7ae19a65e6068395f45d4b918b8c6792",
+        "physical_pf_165.m": "c5f0a52ed4de633ff525bea953d2bcb19b09251015bca94f32d4d7dcfcc736f0",
+        "physical_pf_166.m": "443f0fe0f1e2411da6539322d9d6ced89535c528159d66af8683f4f6c45e5ab8",
+        "physical_pf_167.m": "01a38e94a2683f433657dbbf9ab007ad054bbdad37dc8b74e38ae2618fe49262"
+      }
+    },
+    "mask5/direction-1/poles2/droopfalse": {
+      "max_native_residual": 2.9907964993469704e-11,
+      "max_physical_circuit_residual": 3.444930454193789e-11,
+      "max_physical_coordinate_difference": 2.9822899705322925e-10,
+      "max_reference_residual": 7.815970093361102e-11,
+      "native_iterations_range": [
+        3,
+        7
+      ],
+      "source_hashes": {
+        "physical_pf_168.m": "19922c8a6edaadc536029b7037d29576f6926b06a51d31e9951eaa15353107d1",
+        "physical_pf_169.m": "f2c171702d0b8f8ef0d578c48b8147d883f340e84f501ad10892ac85228bed02",
+        "physical_pf_170.m": "7d47252edb892047fbd4747de4b4a404e8fcf4d105d351637b757f7617d963ff",
+        "physical_pf_171.m": "0b820f4a7be541c4ddad99fef9a40a6a89ac91c7bc384233b9e5cbfd03886221"
+      }
+    },
+    "mask5/direction-1/poles2/drooptrue": {
+      "max_native_residual": 2.990818703807463e-11,
+      "max_physical_circuit_residual": 3.422767200949555e-11,
+      "max_physical_coordinate_difference": 3.324629460621509e-11,
+      "max_reference_residual": 1.4210854715202004e-11,
+      "native_iterations_range": [
+        3,
+        7
+      ],
+      "source_hashes": {
+        "physical_pf_172.m": "59f693760ab6db2a3c7ea8dd8f1b52a95a7b382a58c09425abecc75cc51f1acf",
+        "physical_pf_173.m": "db15170e1834d38a6085992049a563b4a242e69def61a7f60c17e651743696e0",
+        "physical_pf_174.m": "fb5db13d8facccd09d52170516016263e580e711e900e760746ae684a0c32897",
+        "physical_pf_175.m": "ddbcfc6ebabeafa87b9b1c80ab54eaed5ae2c9bd84cb25ebfc561994355d18de"
+      }
+    },
+    "mask5/direction1/poles1/droopfalse": {
+      "max_native_residual": 4.773481609987584e-11,
+      "max_physical_circuit_residual": 2.924759361017149e-11,
+      "max_physical_coordinate_difference": 2.7398527890909463e-11,
+      "max_reference_residual": 1.2323475573339238e-11,
+      "native_iterations_range": [
+        3,
+        7
+      ],
+      "source_hashes": {
+        "physical_pf_176.m": "ab4ee41d1e3be7fdfbfb45ec991c01c685b5cab9dc16ba89a0585d3f18d7be4a",
+        "physical_pf_177.m": "1439ffe62ecf035d2e87a23f61e1f81e4cdf93e815c4e38981e7fac24408f12d",
+        "physical_pf_178.m": "1661a65ba482493b01283648119dda3bd07396a3636c6bcba4a58819ea158f8d",
+        "physical_pf_179.m": "325b815733f45cbd9a7bcd1d50a9a7a97500b431d1811cd58b55fe84a4685de1"
+      }
+    },
+    "mask5/direction1/poles1/drooptrue": {
+      "max_native_residual": 4.773470507757338e-11,
+      "max_physical_circuit_residual": 2.973107137466179e-11,
+      "max_physical_coordinate_difference": 1.4619956800743239e-08,
+      "max_reference_residual": 2.4940050025179517e-09,
+      "native_iterations_range": [
+        3,
+        7
+      ],
+      "source_hashes": {
+        "physical_pf_180.m": "0d9fdb16030555037d6aeb095acbde615c64f6bc84b8d2fbbf43e6ecd0b55691",
+        "physical_pf_181.m": "55063cae5680db0d4d98a459095f6e6a75a1b4335011420b7e91b0d09d86d22b",
+        "physical_pf_182.m": "1b5600ad444f04b44108e7c41f87d19112f345097e82b656340ca968e2306880",
+        "physical_pf_183.m": "515173c448f67f480cfa4bf1e8f9def8035f94a663f586a41d529a78dc9ebeee"
+      }
+    },
+    "mask5/direction1/poles2/droopfalse": {
+      "max_native_residual": 4.772882089554287e-11,
+      "max_physical_circuit_residual": 3.118238977496181e-11,
+      "max_physical_coordinate_difference": 3.441757989719463e-11,
+      "max_reference_residual": 3.463529463232362e-11,
+      "native_iterations_range": [
+        3,
+        7
+      ],
+      "source_hashes": {
+        "physical_pf_184.m": "53a01d3e77cd560912687150fabc06eabdd8d79ee270478db6b47f2fd14ec6e0",
+        "physical_pf_185.m": "1bee0aa6f407658dc006196db59a2b4c9832a47440b90368301b9cfadfb362a4",
+        "physical_pf_186.m": "9318de43fb6fe7cdb78e9cb019e385f3cbb9dcdfc7c2323b650c75a457d5597e",
+        "physical_pf_187.m": "5227e642c0c19e4cc894ece2af82a37244aba67a31f34f16fbe05ef0bcf626a5"
+      }
+    },
+    "mask5/direction1/poles2/drooptrue": {
+      "max_native_residual": 4.772882089554287e-11,
+      "max_physical_circuit_residual": 3.002546639790954e-11,
+      "max_physical_coordinate_difference": 2.1229169533398817e-09,
+      "max_reference_residual": 3.694822225952521e-10,
+      "native_iterations_range": [
+        3,
+        7
+      ],
+      "source_hashes": {
+        "physical_pf_188.m": "ca4fa01569723c64fd71fb922f4fcaec8080bfeb3b486b61c87990f2eb39d081",
+        "physical_pf_189.m": "d36a5458fd8ac465a6a86fa18df706b9c436cb300a169bcae09fc9625dff2b47",
+        "physical_pf_190.m": "a5058a670548ce1cc9908d0b5561ae127bea8b53da3a10ad9ef0e547b5f7d49c",
+        "physical_pf_191.m": "002f11327e00cb28b0cd4006c50b5aaea8fa1adbb46873e7a35314de11d0ebad"
+      }
+    },
+    "mask6/direction-1/poles1/droopfalse": {
+      "max_native_residual": 6.794564910705958e-13,
+      "max_physical_circuit_residual": 5.019998256806339e-12,
+      "max_physical_coordinate_difference": 6.057376822354854e-12,
+      "max_reference_residual": 2.8421709430404007e-12,
+      "native_iterations_range": [
+        3,
+        5
+      ],
+      "source_hashes": {
+        "physical_pf_192.m": "d342b42c33a6288a220de37572767d9934f3c5f5a0f69786a73f9f72511eec60",
+        "physical_pf_193.m": "01b798e7b788a89a1e8a4fb4617b8fb7fb44437854fc7ea0dd3d20f06444d1fa",
+        "physical_pf_194.m": "4f1b4d89e93f724c488178b4603a7619c18a2777117fe45fc63669d1362bb1f3",
+        "physical_pf_195.m": "3540307c0f4ff76e69faa228b2e856765caf4470a7c0ae98d17ed9ea175ec1e8"
+      }
+    },
+    "mask6/direction-1/poles1/drooptrue": {
+      "max_native_residual": 6.790124018607457e-13,
+      "max_physical_circuit_residual": 6.59383658785373e-12,
+      "max_physical_coordinate_difference": 3.993250174971763e-12,
+      "max_reference_residual": 3.552713678800501e-12,
+      "native_iterations_range": [
+        3,
+        5
+      ],
+      "source_hashes": {
+        "physical_pf_196.m": "33d4f7b4c303e3656eb5665a42ae18245cbcb919c38e71f91056c2226e265021",
+        "physical_pf_197.m": "c234679ece7cabeadb25b4674634f4aa9b405a989a4d9923233ebf7583f76458",
+        "physical_pf_198.m": "7d64bb5284178d7dbd6d578b192c095ea872d2dfbcea29358468ad05ade733c7",
+        "physical_pf_199.m": "df5dc07f6bee6ef6e72ed2118eb82864605cd7b94493bc1a0035bce54c5e83f8"
+      }
+    },
+    "mask6/direction-1/poles2/droopfalse": {
+      "max_native_residual": 6.767919558114954e-13,
+      "max_physical_circuit_residual": 3.648664622521146e-12,
+      "max_physical_coordinate_difference": 3.851141627819743e-12,
+      "max_reference_residual": 2.5500046518800445e-11,
+      "native_iterations_range": [
+        3,
+        5
+      ],
+      "source_hashes": {
+        "physical_pf_200.m": "45e4018d348badef4474081727d352c2f1fad4cd8f75c80209348da55ea62d49",
+        "physical_pf_201.m": "3918b4b4c55526f38eaa21242845f69e6b3eed9fde24f6d23a73f4a30f49e648",
+        "physical_pf_202.m": "e1a0bfbf3d8360bc3c7fd0169f25b49d72033b64bb98efa3afcdc5418a724b32",
+        "physical_pf_203.m": "9aada6fb78cb561f536a68150be514404865fc2491fa3324ec10a6ba02071bbe"
+      }
+    },
+    "mask6/direction-1/poles2/drooptrue": {
+      "max_native_residual": 6.772360450213455e-13,
+      "max_physical_circuit_residual": 6.565414878423326e-12,
+      "max_physical_coordinate_difference": 4.853006885241484e-12,
+      "max_reference_residual": 5.6843418860808015e-12,
+      "native_iterations_range": [
+        3,
+        5
+      ],
+      "source_hashes": {
+        "physical_pf_204.m": "d7cd9ecb13cef79451987a551d75b8907f07637f281477d7ba7702de6985a1d6",
+        "physical_pf_205.m": "5dec192c8192aa93c099b2762886f26ed7ac299175281e30f7ccf5704c5b367d",
+        "physical_pf_206.m": "30dee94f84e3f83b343cc9249281dfe39fa1a2ef29f387d74d83ce8562d8e7c0",
+        "physical_pf_207.m": "2b84c107614234372c625877d706bbe96126114e240c2b3cbd464eeab1e5f755"
+      }
+    },
+    "mask6/direction1/poles1/droopfalse": {
+      "max_native_residual": 7.114309141798003e-13,
+      "max_physical_circuit_residual": 5.181060135378623e-12,
+      "max_physical_coordinate_difference": 6.977529665164184e-12,
+      "max_reference_residual": 3.552713678800501e-12,
+      "native_iterations_range": [
+        3,
+        5
+      ],
+      "source_hashes": {
+        "physical_pf_208.m": "af5d861c95b0f240c0798a2bff41dc295fbd98a7dc52582261daf05d039a6bb7",
+        "physical_pf_209.m": "50e6f5402e26ddb732fafa434ed0feb6d4eee8577bc7c446c23be043153f09d7",
+        "physical_pf_210.m": "9e89d46045539fe51cb3e9db78c7b121ea5c11d1888dcf029b0efe1595fd0f00",
+        "physical_pf_211.m": "1149e83b9bac3553b79036b316a765385827c3a27472f326544c6f5f8be393e9"
+      }
+    },
+    "mask6/direction1/poles1/drooptrue": {
+      "max_native_residual": 7.123190925995004e-13,
+      "max_physical_circuit_residual": 4.625771005012172e-12,
+      "max_physical_coordinate_difference": 6.977529665164184e-12,
+      "max_reference_residual": 3.552713678800501e-12,
+      "native_iterations_range": [
+        3,
+        5
+      ],
+      "source_hashes": {
+        "physical_pf_212.m": "6f8a84749622a71efa9e7513673e9185102b6bffcea1cac14ba3e67fb1d13eba",
+        "physical_pf_213.m": "7cba1ed26aa69bf38e1d1a155b1067ac9a6729ed064db30c29fe36ca419bd19c",
+        "physical_pf_214.m": "f7b354ab3ee86c20de4bed8bebce688f6a06865fc7c05f53c7ee7967471b1a6e",
+        "physical_pf_215.m": "10fd81aca334cdd614afcd6c019454457b2b663471a61fd2fca899f878f73168"
+      }
+    },
+    "mask6/direction1/poles2/droopfalse": {
+      "max_native_residual": 7.145395386487507e-13,
+      "max_physical_circuit_residual": 4.675371201301459e-12,
+      "max_physical_coordinate_difference": 9.734435479913373e-12,
+      "max_reference_residual": 3.50852680242042e-11,
+      "native_iterations_range": [
+        3,
+        5
+      ],
+      "source_hashes": {
+        "physical_pf_216.m": "0d44f18469398f31eee23c06e3e109c70de08665b29a58322b4b176225733217",
+        "physical_pf_217.m": "252c026310513a616dd7967563fe2056a423a6da92fc37d272586e9fabf4301a",
+        "physical_pf_218.m": "3fda993be32abc9a88d339d3413d98d2124cda0c3750e0518425f1d5fed78f43",
+        "physical_pf_219.m": "7a3f18ffd4606ee2c9d93b589937bb013d2cc6da1e6eabf4f6868af35f1ee320"
+      }
+    },
+    "mask6/direction1/poles2/drooptrue": {
+      "max_native_residual": 7.136513602290506e-13,
+      "max_physical_circuit_residual": 5.253578280586149e-12,
+      "max_physical_coordinate_difference": 7.119638212316204e-12,
+      "max_reference_residual": 7.105427357601002e-12,
+      "native_iterations_range": [
+        3,
+        5
+      ],
+      "source_hashes": {
+        "physical_pf_220.m": "8c8055cf6dd9d40cbb2f3960ee8deae80773380fae861ed00b4e1291e811c9f5",
+        "physical_pf_221.m": "e86210869f2e1080bc4310ed143fbdaad103c51c95b124f974c58c7d5616adab",
+        "physical_pf_222.m": "50c87c24290edb232abc87c7a40d0c30b702cbbad376a75b60006f0712bbd8a3",
+        "physical_pf_223.m": "2893157e215b06d8dfa0576864429412a318439d5ed96135cd082e9d244ed715"
+      }
+    },
+    "mask7/direction-1/poles1/droopfalse": {
+      "max_native_residual": 2.5491053712300982e-11,
+      "max_physical_circuit_residual": 1.0397613065315058e-10,
+      "max_physical_coordinate_difference": 1.4764083289264818e-09,
+      "max_reference_residual": 3.765876499528531e-10,
+      "native_iterations_range": [
+        3,
+        7
+      ],
+      "source_hashes": {
+        "physical_pf_224.m": "f5e9c3e3a1e17b11a331e6c225e2a870138e48fe6d6e4c00b731665f2e9d3453",
+        "physical_pf_225.m": "aa7bfc111a0bd609e7e65ac1aa8dd1f559a27f677b4be2032c0b993e8119ff5e",
+        "physical_pf_226.m": "289b192fcfea54cf40b8ff781f3dc72195dc77b1f83b229bd55ed5dac4990f2a",
+        "physical_pf_227.m": "1dc46ea5bbf292006d34f0cdde033f8268046e13dd0e056bcebd274980649ff8"
+      }
+    },
+    "mask7/direction-1/poles1/drooptrue": {
+      "max_native_residual": 2.5491053712300982e-11,
+      "max_physical_circuit_residual": 1.0517109410452989e-10,
+      "max_physical_coordinate_difference": 3.977021378887002e-09,
+      "max_reference_residual": 1.0125233984581428e-09,
+      "native_iterations_range": [
+        3,
+        7
+      ],
+      "source_hashes": {
+        "physical_pf_228.m": "ea68ee20403c4e31613e011f110e2eef9f2d66c55269230bcdb0f89fb0181189",
+        "physical_pf_229.m": "27606feabc3a88fceb207dc34f841d32cbabf42e462c0d1b4c474b963a431c73",
+        "physical_pf_230.m": "a26e428a2cfac4adb23ea52075449b802083d27c761a923308971af1e34b6133",
+        "physical_pf_231.m": "1ee737da29b99b73b4534e239525142c821570a3442970d1d71b15b7d08555de"
+      }
+    },
+    "mask7/direction-1/poles2/droopfalse": {
+      "max_native_residual": 2.5474511389234067e-11,
+      "max_physical_circuit_residual": 1.0252529107500468e-10,
+      "max_physical_coordinate_difference": 7.010214631009148e-10,
+      "max_reference_residual": 1.1368683772161603e-10,
+      "native_iterations_range": [
+        3,
+        7
+      ],
+      "source_hashes": {
+        "physical_pf_232.m": "a157df47db2e6c918bb49f396a0c3e58a5c6621dd6f65c205dff12f54266a5e6",
+        "physical_pf_233.m": "04ea33a3d22d3e19db8e8f005739f11e9790f63a104a95e986d81855079c2e75",
+        "physical_pf_234.m": "c0435b7d1f2cc889e14d2a0bb6470bb2d4d7d94eee1e80306003733c96291896",
+        "physical_pf_235.m": "379b2d25811bc91badf5b8206ef6ed3d5553447043c7b48f4cb8344e75feb94b"
+      }
+    },
+    "mask7/direction-1/poles2/drooptrue": {
+      "max_native_residual": 2.5474733433838992e-11,
+      "max_physical_circuit_residual": 1.0426504806661014e-10,
+      "max_physical_coordinate_difference": 2.815312427628669e-10,
+      "max_reference_residual": 4.547473508864641e-11,
+      "native_iterations_range": [
+        3,
+        7
+      ],
+      "source_hashes": {
+        "physical_pf_236.m": "8fdb882004e75a426488725b48fb2eb616c805562e0d4007a9dc94bd64084d82",
+        "physical_pf_237.m": "152c3144fab6d6440a714428eb716e97bc761838d547f98280eed0cbffb36487",
+        "physical_pf_238.m": "722c6fc45c616266c9640ab4d635dc1c67f40eee3ac4da3b1dfa2181ef2f5c26",
+        "physical_pf_239.m": "4cd9a9a857eb118990d2f5f5967c22fba33f691e01ae1f75649fb158ce9d2f5c"
+      }
+    },
+    "mask7/direction1/poles1/droopfalse": {
+      "max_native_residual": 4.499678407654528e-11,
+      "max_physical_circuit_residual": 9.496708078135979e-11,
+      "max_physical_coordinate_difference": 3.4090419376298087e-10,
+      "max_reference_residual": 5.3290705182007514e-11,
+      "native_iterations_range": [
+        3,
+        7
+      ],
+      "source_hashes": {
+        "physical_pf_240.m": "eb58f5c872c7054733a985f94bf072d616888da9c72733a3b0b45dd18d6e1ce8",
+        "physical_pf_241.m": "d33e12103eee6abf433bd643889807ef4df6cc4c5b055e1c383c616cf5c56697",
+        "physical_pf_242.m": "b6b47a973eace17bdbd1874924c7514002ab6f042d68244d881ccea15845a835",
+        "physical_pf_243.m": "3ca70372e817b0b4e7a7f451f4ffb98ed849dfdbc143ca8043cf2edf93f18b1b"
+      }
+    },
+    "mask7/direction1/poles1/drooptrue": {
+      "max_native_residual": 4.499678407654528e-11,
+      "max_physical_circuit_residual": 9.811086743719662e-11,
+      "max_physical_coordinate_difference": 3.218005417693348e-09,
+      "max_reference_residual": 5.080380560684716e-10,
+      "native_iterations_range": [
+        3,
+        7
+      ],
+      "source_hashes": {
+        "physical_pf_244.m": "7b6ba075b674ca3976d7f72654cd68fb51a2d6d831dd4f967d777e4dd4442dac",
+        "physical_pf_245.m": "fd275d70c63ca9a4637fc7c840db07eae1434e04ec9848b4ac2aadca893449b3",
+        "physical_pf_246.m": "dde23ec25125761f2012e61d03678dea5682839d74303388aec9b8813f88a94b",
+        "physical_pf_247.m": "53e172b50afcad66bb0d02de01a257dc7bdf18d09ac37d8476f8d23ab71086c2"
+      }
+    },
+    "mask7/direction1/poles2/droopfalse": {
+      "max_native_residual": 4.4991566028329544e-11,
+      "max_physical_circuit_residual": 9.093492092860728e-11,
+      "max_physical_coordinate_difference": 8.776055437920149e-10,
+      "max_reference_residual": 1.5631940186722204e-10,
+      "native_iterations_range": [
+        3,
+        7
+      ],
+      "source_hashes": {
+        "physical_pf_248.m": "b674052fe7211cff045ce64bd4cb0a8c698a73ce46d45ac4e3b18a4a1472a896",
+        "physical_pf_249.m": "74a4868c6393f78c2d6e18088861be72f66d6a9d71e8d7261257ad5d7c9d6606",
+        "physical_pf_250.m": "b23b7270823731399b5465278df2351a13836c5896b73f547c355055de2364cf",
+        "physical_pf_251.m": "2cb86138210152474313f807a4b4d72f962954bea3e45d64a0c77ae1716c5d1f"
+      }
+    },
+    "mask7/direction1/poles2/drooptrue": {
+      "max_native_residual": 4.499134398372462e-11,
+      "max_physical_circuit_residual": 9.143723434801e-11,
+      "max_physical_coordinate_difference": 3.1296849556383677e-09,
+      "max_reference_residual": 5.044853423896711e-10,
+      "native_iterations_range": [
+        3,
+        7
+      ],
+      "source_hashes": {
+        "physical_pf_252.m": "407620ad9999809068a9b3ff47c26fc9092547f36607e1ab7bbcb45cdcf68010",
+        "physical_pf_253.m": "514038f459581a4881752b225f4758694bcab432474bb2925ac8b017d6725c2a",
+        "physical_pf_254.m": "763bee951110d1bc96a0e474bc7db9b2d293dfcc9cfcc02f38767bd56808150e",
+        "physical_pf_255.m": "a35c2bace7781cdf65bed68663b607e8abc9af9eb66f96c71edc8d2d25961de8"
+      }
+    }
+  },
+  "harness_sha256": {
+    "crates/tellegen/examples/acdc_pf_physical.rs": "c4fa019989521442228602d493c441503f3367b7a44352e93d89856a73e65f4a",
+    "crates/tellegen/tests/support/acdc_optimized.rs": "150ec98cc83a14908a05b45c0d9b40bbf05f3e069dbd59c2e8afaaa893d62ae3",
+    "crates/tellegen/tests/support/acdc_pf_physical.rs": "b7d49944ac03588d33e58c92cd366afd2ac707eafe7e1ab399fa2e86c26b28a0",
+    "crates/tellegen/tests/support/acdc_physical.rs": "5d07bb95376982b496a28ce126a9a45cbc621688ee106a3fdd3032748785179b",
+    "evals/validation/acdc/pf/physical.jl": "eef6ba19e2690fb460591b04aa1de7a18e15637d4b40753e5ba0ae14b6ee5b57",
+    "evals/validation/acdc/pf/physical.py": "6e1724bdfc21cad6c130891d600ad58d9edb68d5fea0db72557f8eab5fc74f0f",
+    "evals/validation/acdc/physical/reference-numerics.jl": "6bc818237de39fd1878e9abd0527e491e4b123c6a509bcab2e4dabf354f163dd",
+    "evals/validation/acdc/physical/reference-physical.jl": "8ad95537e5e57fee8b5eb976060e4e184d6fe2a8aba33a48fb027bccc74f17fb"
+  },
+  "max_reference_cross_violation": 4.9666937229631e-09,
+  "native_cross_check": {
+    "checks": 2048,
+    "max_physical_residual": 7.702577044774903e-09,
+    "max_violation": 1.280550776527889e-09
+  },
+  "powerio_revision": "0ed1174cfb66975fedd0ad13af1eca5ee878354b",
+  "profile": "physical_coordinates_dc_droop_shared_voltage_equal_increment_v1",
+  "reference_revision": "9ada4082ac087aed649f48fb5f977680b0fe06c7",
+  "reference_scope": "PMACDC_0.10.1_with_explicit_physical_DC_line_transformer_bypass_and_droop_substitutions; local_roots_only",
+  "report_sha256": {
+    "native-cross-check.json": "413302bfb527f7a98f525252d89604eae3c76ee3a2ae7a1d9f162363625b11d3",
+    "native.json": "352c8fc14752e65837f805dc7732624482f5286c8a2bba13c3b9c11cb33294c7",
+    "reference.json": "f8b7bf1e8c9ea81dc2f4654d7281ed1ea13f46d7fd5169ac29d9c1e4eb914bfb"
+  }
+}

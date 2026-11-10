@@ -182,11 +182,12 @@ impl ReferenceEquations {
         for g in network.generators_mut() {
             g.cost = Some(powerio::GenCost::new(2, 0., 0., vec![0.]));
         }
-        let adapter = powerio::AcDcOpfInstance::from_network(
-            network,
-            AcDcOpfProfile::PowerModelsAcDc0101AcpVscV1,
-        )
-        .map_err(|e| e.to_string())?;
+        let electrical_profile = match instance.profile().coordinate_policy() {
+            AcDcCoordinatePolicy::PhysicalLocalBases => AcDcOpfProfile::PhysicalCoordinatesAcpVscV1,
+            _ => AcDcOpfProfile::PowerModelsAcDc0101AcpVscV1,
+        };
+        let adapter = powerio::AcDcOpfInstance::from_network(network, electrical_profile)
+            .map_err(|e| e.to_string())?;
         Self::compile(&adapter, EquationMode::Pf, Some(instance.profile()))
     }
     fn compile(
@@ -196,6 +197,11 @@ impl ReferenceEquations {
     ) -> Result<Self, String> {
         match instance.profile() {
             AcDcOpfProfile::PowerModelsAcDc0101AcpVscV1 => {}
+            AcDcOpfProfile::PhysicalCoordinatesAcpVscV1
+                if mode == EquationMode::Pf
+                    && pf_profile.is_some_and(|p| {
+                        p.coordinate_policy() == AcDcCoordinatePolicy::PhysicalLocalBases
+                    }) => {}
             AcDcOpfProfile::DeclaredCurrentAcpVscV1
             | AcDcOpfProfile::PhysicalCoordinatesAcpVscV1
             | AcDcOpfProfile::FixedModePhysicalAcpVscV1

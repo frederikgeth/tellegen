@@ -1,0 +1,124 @@
+{
+  "powerio_revision": "0ed1174cfb66975fedd0ad13af1eca5ee878354b",
+  "affected_tests_passed": 256,
+  "frozen_reader_revision": "70025e87d918be195362ca63a48c9a68d2dfb702",
+  "frozen_reader": "accepts_three_prior_profiles_rejects_physical_instances_and_results",
+  "known_unrelated_lint_failures": [
+    "powerio-tx/src/format/psse.rs",
+    "powerio-dist/tests/pmd_math.rs",
+    "powerio-matrix/tests/synth_facade_parity.rs"
+  ],
+  "checks": [
+    {
+      "command": "cargo test -p powerio-prob -p powerio-matrix --lib --locked --offline",
+      "exit_code": 0,
+      "log": "/tmp/powerio-physical-pf-check-0.log",
+      "sha256": "5ff392f16c0750b1e47c0ddc22021597f1ad19d8e064a689bd5949776437ac2d"
+    },
+    {
+      "command": "cargo test -p powerio --lib --locked --offline",
+      "exit_code": 0,
+      "log": "/tmp/powerio-physical-pf-check-1.log",
+      "sha256": "9fcbb3fddc1c3bfdc90149e5b2fbfaef34bf7a75aefe6e995fd0187e6ab0b745"
+    },
+    {
+      "command": "cargo run -p powerio --features schema --example generate_schemas --locked --offline",
+      "exit_code": 0,
+      "log": "/tmp/powerio-physical-pf-check-2.log",
+      "sha256": "247422e8387b5f8ff7f833d24e214b8c4d9070fd6cd436d550a65766e3ed25c5"
+    },
+    {
+      "command": "cargo clippy -p powerio-prob -p powerio --lib -- -D warnings",
+      "exit_code": 0,
+      "log": "/tmp/powerio-physical-pf-check-3.log",
+      "sha256": "54e5f747ce336f4f5ef752bb0fab16684925946bf7c5b18807eda0662fd861f4"
+    },
+    {
+      "command": "bash scripts/ci-clippy.sh workspace",
+      "exit_code": 101,
+      "log": "/tmp/powerio-physical-pf-check-4.log",
+      "sha256": "c4e5cccf8b40557eb68141a4f22b9eb3d7cc671bf61200906f7b3aa71fe4a3ab"
+    },
+    {
+      "command": "bash scripts/ci-clippy.sh matrix-gridfm",
+      "exit_code": 101,
+      "log": "/tmp/powerio-physical-pf-check-5.log",
+      "sha256": "15c07f810c636d6d3b93bd04d179e23ae9820b3b4f3eae8ceeb35fa237b4b04a"
+    },
+    {
+      "command": "bash scripts/ci-clippy.sh no-sincal",
+      "exit_code": 101,
+      "log": "/tmp/powerio-physical-pf-check-6.log",
+      "sha256": "5a122b88210e42601c40371d63aff5cf0d4384f46bb760104887484e33eb3ce0"
+    },
+    {
+      "command": "bash scripts/ci-clippy.sh capi-no-default",
+      "exit_code": 0,
+      "log": "/tmp/powerio-physical-pf-check-7.log",
+      "sha256": "72d2e0eac1e9f64d39c30cdcf52f29feb76c921ce2728f1d8f7b1a8e19133bea"
+    },
+    {
+      "command": "bash scripts/ci-clippy.sh capi-release",
+      "exit_code": 0,
+      "log": "/tmp/powerio-physical-pf-check-8.log",
+      "sha256": "83ca3d1a7b3f239517278f559ca188bcc8f05a1db4812d3799012b836c40ebb4"
+    },
+    {
+      "command": "bash scripts/ci-clippy.sh capi-dist",
+      "exit_code": 0,
+      "log": "/tmp/powerio-physical-pf-check-9.log",
+      "sha256": "6a5e5b249f549956d5d4cca36ce581a927b516ff91cf1073c9a11195595cb672"
+    },
+    {
+      "command": "bash scripts/ci-clippy.sh powerio-py",
+      "exit_code": 0,
+      "log": "/tmp/powerio-physical-pf-check-10.log",
+      "sha256": "ee7a30633966a03046ac87b4deb2e9598cc7a6db53e0aa07534497aada945964"
+    },
+    {
+      "command": "mdbook build docs --dest-dir /tmp/powerio-physical-pf-book",
+      "exit_code": 0,
+      "log": "/tmp/powerio-physical-pf-check-11.log",
+      "sha256": "067840f3ba176d9d2774d917f3ab33ee2eecdeb4c30f0e8e424015d761cb184c"
+    },
+    {
+      "command": "mdbook test docs",
+      "exit_code": 0,
+      "log": "/tmp/powerio-physical-pf-check-12.log",
+      "sha256": "75115e9d26d6bb0817d48a23a78257fa23eca86f71b7bc3b83cc501f60022c35"
+    },
+    {
+      "command": "RUSTDOCFLAGS=\"-D warnings\" cargo doc --workspace --no-deps --all-features --locked --offline",
+      "exit_code": 0,
+      "log": "/tmp/powerio-physical-pf-check-13.log",
+      "sha256": "f66fed9f9a013744477849753659e7d73acfde29bbc0de43cbb22ea6539310e0"
+    },
+    {
+      "command": "cargo fmt --all -- --check",
+      "exit_code": 0,
+      "log": "/tmp/powerio-physical-pf-check-14.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "log": "/tmp/powerio-physical-pf-check-15.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "log": "/tmp/powerio-physical-pf-tests.log",
+      "sha256": "e8d38351856d31d910185bb1e26a489a07e22c738868fefe117d54a6ef3e5b5b",
+      "exit_code": 0
+    },
+    {
+      "log": "/tmp/powerio-physical-pf-ir-emit.log",
+      "sha256": "d76a7a573ab00815a6cf6a6ab39021eb1cbe519e21ce33124c982342af072b2a",
+      "exit_code": 0
+    },
+    {
+      "log": "/tmp/powerio-physical-pf-ir-frozen.log",
+      "sha256": "771ec34c534a9b88f9516604a87929cf461d1f27275b6b5d6e6affb1ce5770cf",
+      "exit_code": 0
+    }
+  ]
+}

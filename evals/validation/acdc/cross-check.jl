@@ -9,7 +9,7 @@ reference = JSON.parsefile(reference_path)
 @assert reference["source_sha256"] == CASE_SHA
 @assert reference["manifest_sha256"] == bytes2hex(sha256(read(joinpath(@__DIR__, "Manifest.toml"))))
 @assert native["preparation"]["reference_revision"] == "9ada4082ac087aed649f48fb5f977680b0fe06c7"
-@assert native["preparation"]["powerio_revision"] == "70025e87d918be195362ca63a48c9a68d2dfb702"
+@assert native["preparation"]["powerio_revision"] == "0ed1174cfb66975fedd0ad13af1eca5ee878354b"
 data = source_case()
 PowerModelsACDC.process_additional_data!(data)
 pm = PM.instantiate_model(data, PM.ACPPowerModel, PowerModelsACDC.build_acdcopf;
