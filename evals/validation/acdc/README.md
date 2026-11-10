@@ -275,3 +275,10 @@ a reference preprocessing limitation: changing voltage base changes the repaired
 physical current limit. Three then fail only that bound, consistently in both
 implementations. See the reproduction and scope before treating source pu
 agreement as physical rebasing support. Runtime equations and pins are unchanged.
+
+
+The separately selected `DeclaredCurrentAcpVscV1` profile now honours declared
+physical current limits. Run the physical harness with `--profile declared-current`
+for 108 feasible/binding/violating cases, checked against a Julia model with only
+Imax repair undone. Compatibility remains unchanged; see the
+[policy contract and evidence](physical/README.md#declared-current-profile--2026-11-10).

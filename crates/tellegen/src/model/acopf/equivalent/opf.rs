@@ -30,6 +30,7 @@ pub struct AcDcScalar {
 pub struct AcDcOpfManifest {
     pub schema: &'static str,
     pub profile: AcDcOpfProfile,
+    pub current_limit_policy: AcDcCurrentLimitPolicy,
     pub model_fingerprint: String,
     pub powerio_revision: &'static str,
     pub reference_revision: &'static str,
@@ -119,8 +120,9 @@ impl PreparedAcDcOpf {
         let manifest = AcDcOpfManifest {
             schema: "tellegen-acdc-opf-preparation-v3",
             profile: instance.profile(),
+            current_limit_policy: instance.profile().current_limit_policy(),
             model_fingerprint,
-            powerio_revision: "552fc413647307322aff7c69688e6b77ff308ad3",
+            powerio_revision: "896fef026feceb4cc2111a4914100fe313986386",
             reference_revision: "9ada4082ac087aed649f48fb5f977680b0fe06c7",
             base_mva: owner.base_mva,
             pole_count: owner.pole_count,

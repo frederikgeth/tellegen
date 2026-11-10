@@ -9,7 +9,9 @@ checks, solver starts/recovery and validation diagnostics. Existing PRs stay dra
 
 `PreparedAcDcOpf::new(AcDcOpfInstance)` accepts canonical PowerIO intent.
 `AcDcOpfInstance::from_network(network, profile)` requires the explicit
-`PowerModelsAcDc0101AcpVscV1` profile. Stored intent rejects unknown profiles/fields. This closed selection fixes:
+`PowerModelsAcDc0101AcpVscV1` compatibility profile or the separate
+`DeclaredCurrentAcpVscV1` profile. Stored intent rejects unknown profiles/fields.
+The compatibility selection fixes:
 
 - the polar AC/full VSC station equations and source pu coordinate convention;
 - inverter losses in both directions, reference Imax repair and auxiliary bounds;
@@ -145,3 +147,15 @@ hardware. This is recorded reference behavior, not a correction to declarations.
 Physical limit semantics require an explicitly selected and separately qualified
 profile; callers must not infer arbitrary base-invariant feasible sets from the
 current compatibility profile.
+
+
+`DeclaredCurrentAcpVscV1` keeps those equations/losses/auxiliary bounds but
+honours the declared valve-current limit without repair. Its persisted profile
+selects `AcDcCurrentLimitPolicy::Declared`; no independent override can change
+compatibility semantics. Manifests, station policies and equation reports record
+the selection. The existing v3 fingerprint already hashes the profile, so the
+new selection has a distinct identity without changing compatibility hashes.
+Typed points remain exact, including infeasible ones. New-profile PF diagnostics
+refuse because they do not enforce OPF operating limits. This policy does not
+qualify arbitrary physical projections or enable generic rebasing. See the
+[108-case independent check](physical/README.md#declared-current-profile--2026-11-10).

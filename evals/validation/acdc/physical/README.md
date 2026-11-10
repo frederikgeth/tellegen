@@ -99,7 +99,9 @@ The compatibility profile deliberately retains that preprocessing behavior and
 records declared/effective limits. A physically invariant limit policy needs a
 separately selected profile and an explicit physical/nominal voltage contract;
 changing the existing profile silently would break benchmark equivalence.
-No upstream issue was filed and no runtime equations or dependency pins changed.
+No upstream issue was filed. The original physical-circuit gate changed no
+runtime equations or pins; the declared-current follow-up below adds the
+separately selected policy.
 
 ## Reproduce and scope
 
@@ -125,3 +127,60 @@ direction-dependent loss selection, arbitrary imported coordinate projections,
 native coupled PF solves, derivatives under a new physical profile, or OPF
 optimum invariance. Existing source-profile solve/derivative evidence remains
 in the parent corpus. Natural PowerModelsACDC JSON IR is still a future adapter.
+
+
+## Declared-current profile — 2026-11-10
+
+Select `AcDcOpfProfile::DeclaredCurrentAcpVscV1` explicitly to honour the
+source valve-current limit. The stored token is `declared_current_acp_vsc_v1`.
+PowerIO revision `896fef026feceb4cc2111a4914100fe313986386` derives
+`AcDcCurrentLimitPolicy::Declared` from that profile and records it beside
+station declarations/effective bounds. The compatibility profile remains
+`PowerModelsAcDc0101AcpVscV1`; its repair cannot be overridden beneath that token.
+
+The new selection changes only the current upper bound. Equations, inverter
+loss selection, P/Q ratings and auxiliary bounds are retained. Limits use the
+station AC RMS current base `S/(sqrt(3)*V_converter)` kA. A low or zero declared
+limit remains low or zero even if the P/Q rating box is much larger; preparation
+never repairs a potentially infeasible model. This is a qualified current-bound
+policy, not a complete new physical equipment formulation.
+
+```sh
+CARGO_TARGET_DIR=/tmp/tacdc-current-target \
+  python3 evals/validation/acdc/physical/run.py /tmp/tacdc-declared-current-live \
+  --profile declared-current
+```
+
+Each of the 36 physical representations is checked with limits of 0.05 kA,
+exactly the analytical current magnitude, and 0.3 kA. Thus **108 cases** comprise
+36 strictly feasible, 36 binding and 36 violating current bounds. The declared
+and effective physical limits agree across all nine bases. The violating cases
+exceed the limit by `0.212488094968134 kA`, independent of representation.
+
+The independent Julia check restores **only the source Imax** after ordinary
+reference preprocessing and before model instantiation. It records both the
+reference-repaired and selected limits. This explicitly modified reference is
+not called unmodified PowerModelsACDC equivalence. Source voltage/power bases,
+identities and all 22 native/23 reference coordinates are checked. All other
+constraints/bounds are within `1.137e-13`; objective differences are zero. All
+108 sqrt(3) current-corruption controls fail. Full pinned results and hashes are
+in [declared-current.json](declared-current.json).
+
+Native regressions also compare every equation and bound between profiles,
+allowing only the current upper bound to differ. Typed operating-point/IR
+round trips retain feasible **and infeasible** supplied points and their policy;
+they never clip a point to make it pass. Different profiles have different model
+fingerprints and reject each other's diagnostic starts. The profile is OPF-only:
+PF diagnostics omit operating limits and therefore refuse this selection.
+PowerIO additionally tests zero current limits, nested solution persistence,
+unknown profile/override refusal and the old AC-only/normalization guards.
+A frozen 552fc413 profile decoder accepts the old token and rejects the new one.
+
+Compatibility checks with the new pin reproduce every field and source hash of
+the previous 42 circuit records. The fresh case5 full pipeline passes and its
+fingerprint remains `sha256:7c58f42f6628cd17c86fee45f95dea7b0366ec555b29eb3f39b04542660b3912`.
+The full Tellegen suite passes 762 tests (7 ignored), including case5/24/39/67
+native solve/derivative regressions; all-target Clippy, pin/EPL/fmt guards pass.
+PowerIO's affected suites pass 493 tests; its previously documented broad Clippy
+baseline warnings remain. No native optimum-invariance or new PF-solve claim is
+made. Bypass/unequal-base semantics remain the next physical qualification gate.

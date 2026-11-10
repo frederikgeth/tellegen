@@ -264,3 +264,35 @@ equations, public profiles or dependency pins changed. The four existing corpus
 solve/derivative results remain the evidence for native optimization; this new
 gate evaluates analytical points and does not claim optimality or PF solves.
 The Julia environment remains validation-only. Existing PRs remain draft.
+
+
+## Declared-current policy — 2026-11-10
+
+PowerIO **896fef02** adds a separate `DeclaredCurrentAcpVscV1` profile; the
+reference compatibility profile remains unchanged. Tellegen records the derived
+current-limit policy, distinguishes profile fingerprints and refuses applying
+this OPF limit policy to PF diagnostics. The new profile honours declared limits,
+including zero or undersized values, without increasing them to fit P/Q ratings.
+
+[108 physical cases](physical/declared-current.json) pass the expected acceptance
+checks: 36 strictly within the current limit, 36 at it and 36 exceeding it by
+0.212488094968134 kA. Limits/violations are invariant across all tested power and
+voltage bases, both flow directions and pole counts. Native and explicitly
+modified Julia models agree; the sole Julia modification restores source Imax
+after preprocessing. Every other constraint/bound is within 1.137e-13, objective
+differences are zero, and all 108 corruption controls are detected. Typed IR
+round trips preserve the policy and exact supplied points, including infeasible
+points. Profiles reject each other's fingerprinted starts.
+
+All prior 42 compatibility-circuit records and source hashes reproduce exactly.
+A fresh full case5 pipeline passes with unchanged model fingerprint. The full
+Tellegen suite passes **762** tests (7 ignored), including all four corpus cases;
+all-target Clippy with warnings denied, pin/EPL/fmt guards pass. PowerIO affected
+problem/matrix/facade/schema suites pass 493 tests; its full Clippy matrix retains
+only the previously documented baseline failures. Frozen 552fc413 profile decoding
+rejects the new token and still accepts compatibility. Only the unreleased schema
+changed. PR #300/#358/#822 remain draft at their previous heads.
+
+This qualifies declared-current bound semantics, not a full physical equipment
+profile, arbitrary rebasing, optimum invariance or native coupled PF. The next
+physical gate is bypass and unequal-base semantics; see [scope/reproduction](physical/README.md).

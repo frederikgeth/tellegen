@@ -80,11 +80,11 @@ opt-level = 3
 lto = "thin"
 
 [patch.crates-io]
-powerio = { git = "https://github.com/eigenergy/powerio.git", rev = "552fc413647307322aff7c69688e6b77ff308ad3" }
-powerio-core = { git = "https://github.com/eigenergy/powerio.git", rev = "552fc413647307322aff7c69688e6b77ff308ad3" }
-powerio-dist = { git = "https://github.com/eigenergy/powerio.git", rev = "552fc413647307322aff7c69688e6b77ff308ad3" }
-powerio-matrix = { git = "https://github.com/eigenergy/powerio.git", rev = "552fc413647307322aff7c69688e6b77ff308ad3" }
-powerio-prob = { git = "https://github.com/eigenergy/powerio.git", rev = "552fc413647307322aff7c69688e6b77ff308ad3" }
-powerio-synth = { git = "https://github.com/eigenergy/powerio.git", rev = "552fc413647307322aff7c69688e6b77ff308ad3" }
-powerio-tnd = { git = "https://github.com/eigenergy/powerio.git", rev = "552fc413647307322aff7c69688e6b77ff308ad3" }
-powerio-tx = { git = "https://github.com/eigenergy/powerio.git", rev = "552fc413647307322aff7c69688e6b77ff308ad3" }
+powerio = { git = "https://github.com/eigenergy/powerio.git", rev = "896fef026feceb4cc2111a4914100fe313986386" }
+powerio-core = { git = "https://github.com/eigenergy/powerio.git", rev = "896fef026feceb4cc2111a4914100fe313986386" }
+powerio-dist = { git = "https://github.com/eigenergy/powerio.git", rev = "896fef026feceb4cc2111a4914100fe313986386" }
+powerio-matrix = { git = "https://github.com/eigenergy/powerio.git", rev = "896fef026feceb4cc2111a4914100fe313986386" }
+powerio-prob = { git = "https://github.com/eigenergy/powerio.git", rev = "896fef026feceb4cc2111a4914100fe313986386" }
+powerio-synth = { git = "https://github.com/eigenergy/powerio.git", rev = "896fef026feceb4cc2111a4914100fe313986386" }
+powerio-tnd = { git = "https://github.com/eigenergy/powerio.git", rev = "896fef026feceb4cc2111a4914100fe313986386" }
+powerio-tx = { git = "https://github.com/eigenergy/powerio.git", rev = "896fef026feceb4cc2111a4914100fe313986386" }

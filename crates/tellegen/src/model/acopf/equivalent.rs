@@ -9,8 +9,8 @@ pub use derivatives::{DerivativeCheck, DerivativeReport};
 pub use opf::{
     AcDcOpfManifest, AcDcOpfProfile, AcDcOpfResult, AcDcOpfStart, AcDcScalar, PreparedAcDcOpf,
 };
-pub use powerio::AcDcAngleReferencePolicy;
 use powerio::BalancedNetwork;
+pub use powerio::{AcDcAngleReferencePolicy, AcDcCurrentLimitPolicy};
 pub use powerio_matrix::AcDcAngleReference;
 use powerio_tx::acdc::{
     AcConverterControl, ConverterSeries, ConverterTechnology, DcConverterControl,
@@ -47,6 +47,7 @@ pub struct BusTypePolicy {
 #[derive(Debug, serde::Serialize)]
 pub struct EquationReport {
     pub profile: &'static str,
+    pub current_limit_policy: AcDcCurrentLimitPolicy,
     pub mode: EquationMode,
     pub objective: f64,
     pub max_violation: f64,
@@ -72,6 +73,7 @@ pub struct AcDcAngleShift {
 pub struct ReferenceEquations {
     model: CanonicalAcOpfModel,
     mode: EquationMode,
+    profile: AcDcOpfProfile,
     policy: Vec<StationPolicy>,
     bus_type_policy: Vec<BusTypePolicy>,
     angle_reference_policy: AcDcAngleReferencePolicy,
@@ -158,6 +160,16 @@ impl ReferenceEquations {
         instance: &powerio::AcDcOpfInstance,
         mode: EquationMode,
     ) -> Result<Self, String> {
+        match instance.profile() {
+            AcDcOpfProfile::PowerModelsAcDc0101AcpVscV1 => {}
+            AcDcOpfProfile::DeclaredCurrentAcpVscV1 if mode == EquationMode::Opf => {}
+            AcDcOpfProfile::DeclaredCurrentAcpVscV1 => {
+                return Err(
+                    "Declared-current profile qualifies OPF only; PF omits operating limits".into(),
+                )
+            }
+            _ => return Err("Unsupported coupled OPF profile".into()),
+        }
         let net = instance.network();
         validate_supported_network(net)?;
         let owner = net
@@ -553,6 +565,7 @@ impl ReferenceEquations {
         Ok(Self {
             model,
             mode,
+            profile: instance.profile(),
             policy,
             bus_type_policy,
             angle_reference_policy: instance.angle_reference_policy(),
@@ -689,7 +702,16 @@ impl ReferenceEquations {
             .map(|v| v.violation)
             .fold(0.0, f64::max);
         Ok(EquationReport {
-            profile: "powermodelsacdc-9ada4082-acp-source-coordinates-inverter-loss",
+            profile: match self.profile {
+                AcDcOpfProfile::PowerModelsAcDc0101AcpVscV1 => {
+                    "powermodelsacdc-9ada4082-acp-source-coordinates-inverter-loss"
+                }
+                AcDcOpfProfile::DeclaredCurrentAcpVscV1 => {
+                    "acp-vsc-source-coordinates-inverter-loss-declared-current-v1"
+                }
+                _ => unreachable!("profile checked at construction"),
+            },
+            current_limit_policy: self.profile.current_limit_policy(),
             mode: self.mode,
             objective,
             max_violation,

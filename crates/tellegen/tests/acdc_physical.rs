@@ -201,3 +201,113 @@ fn incorrect_unit_conversions_are_detected_and_generic_transforms_refuse() {
         .any(|v| v.name.ends_with("/current") && v.violation > 1e-3));
     assert_eq!(serde_json::to_value(&net).unwrap(), original);
 }
+
+#[test]
+fn declared_current_policy_is_base_invariant_and_only_changes_the_current_bound() {
+    use powerio::{
+        AcDcCurrentLimitPolicy, Destination, EmittedOutput, PioModule, PioValue, Source,
+    };
+    use tellegen::ac_dc::AcDcOpfStart;
+    for direction in [-1.0, 1.0] {
+        for poles in [1, 2] {
+            let c = Circuit::new(direction, poles);
+            for limit in [0.05, c.valve_current.norm(), 0.3] {
+                for b in bases() {
+                    let net = c.network(b, limit);
+                    let source = serde_json::to_value(&net).unwrap();
+                    let instance = powerio::AcDcOpfInstance::from_network(
+                        net.clone(),
+                        AcDcOpfProfile::DeclaredCurrentAcpVscV1,
+                    )
+                    .unwrap();
+                    assert!(
+                        ReferenceEquations::from_instance(&instance, EquationMode::Pf).is_err()
+                    );
+                    let prepared = PreparedAcDcOpf::new(instance.clone()).unwrap();
+                    let compat = PreparedAcDcOpf::new(intent(net)).unwrap();
+                    let point = c.point(b);
+                    let r = prepared.evaluate(&point).unwrap();
+                    let old = compat.evaluate(&point).unwrap();
+                    assert_eq!(r.current_limit_policy, AcDcCurrentLimitPolicy::Declared);
+                    assert_eq!(
+                        prepared.manifest().current_limit_policy,
+                        AcDcCurrentLimitPolicy::Declared
+                    );
+                    assert_ne!(
+                        prepared.manifest().model_fingerprint,
+                        compat.manifest().model_fingerprint
+                    );
+                    close(
+                        r.station_policy[0].effective_current_limit_pu * b.current_ka(),
+                        limit,
+                    );
+                    close(r.objective, c.objective());
+                    assert!(r.equations.iter().all(|e| e.violation < 1e-9));
+                    for (new, old) in r
+                        .equations
+                        .iter()
+                        .chain(&r.bounds)
+                        .zip(old.equations.iter().chain(&old.bounds))
+                    {
+                        assert_eq!(new.name, old.name);
+                        close(new.value, old.value);
+                        close(new.lower, old.lower);
+                        if !new.name.ends_with("/iconv") {
+                            close(new.upper, old.upper);
+                        }
+                    }
+                    let current = r
+                        .bounds
+                        .iter()
+                        .find(|v| v.name.ends_with("/iconv"))
+                        .unwrap();
+                    close(
+                        current.violation * b.current_ka(),
+                        (c.valve_current.norm() - limit).max(0.0),
+                    );
+                    if limit >= c.valve_current.norm() {
+                        assert!(r.max_violation < 1e-9);
+                    } else {
+                        assert!(r.max_violation > 0.1);
+                    }
+                    assert!(prepared
+                        .initial_point(&AcDcOpfStart::Point {
+                            model_fingerprint: compat.manifest().model_fingerprint.clone(),
+                            values: point.clone()
+                        })
+                        .is_err());
+                    // Typed physical result -> persisted intent -> exact supplied start.
+                    // This preserves infeasible points too; serialization is not a solve.
+                    let instance = instance
+                        .with_initial_point(prepared.operating_point(&point).unwrap())
+                        .unwrap();
+                    let module = PioModule::new(PioValue::from(instance));
+                    let emitted =
+                        powerio::serialize(&module, Destination::memory("x.json").unwrap())
+                            .unwrap();
+                    let EmittedOutput::Memory { artifacts } = emitted.output() else {
+                        panic!()
+                    };
+                    let restored = powerio::deserialize(
+                        Source::from_memory("x.json", artifacts[0].bytes().to_vec()).unwrap(),
+                    )
+                    .unwrap();
+                    let PioValue::AcDcOpfInstance(restored) = restored.value() else {
+                        panic!()
+                    };
+                    let rebuilt = PreparedAcDcOpf::new(restored.clone()).unwrap();
+                    assert_eq!(
+                        rebuilt.manifest().model_fingerprint,
+                        prepared.manifest().model_fingerprint
+                    );
+                    let x = rebuilt.initial_point(&AcDcOpfStart::InstancePoint).unwrap();
+                    for (key, value) in &point {
+                        close(x[key], *value);
+                    }
+                    close(rebuilt.evaluate(&x).unwrap().max_violation, r.max_violation);
+                    assert_eq!(serde_json::to_value(restored.network()).unwrap(), source);
+                }
+            }
+        }
+    }
+}

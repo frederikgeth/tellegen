@@ -10,6 +10,7 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[3]
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument("output", type=Path)
+parser.add_argument("--profile", choices=["compatibility", "declared-current"], default="compatibility")
 args = parser.parse_args()
 out = args.output.resolve()
 if out == ROOT or ROOT in out.parents:
@@ -17,7 +18,7 @@ if out == ROOT or ROOT in out.parents:
 out.mkdir(parents=True, exist_ok=True)
 (out / "summary.json").unlink(missing_ok=True)
 # Fail if the dependency changes without revisiting this pinned qualification.
-assert "552fc413647307322aff7c69688e6b77ff308ad3" in (ROOT / "Cargo.lock").read_text()
+assert "896fef026feceb4cc2111a4914100fe313986386" in (ROOT / "Cargo.lock").read_text()
 subprocess.run(["python3", ".github/scripts/powerio-pin.py"], cwd=ROOT, check=True)
 env = os.environ.copy()
 env.setdefault("CARGO_INCREMENTAL", "0")
@@ -25,7 +26,7 @@ env.setdefault("CARGO_PROFILE_DEV_DEBUG", "0")
 env.setdefault("CARGO_PROFILE_TEST_DEBUG", "0")
 with (out / "native.log").open("w") as log:
     subprocess.run(["cargo", "run", "-p", "tellegen", "--features", "acopf",
-                    "--locked", "--offline", "--example", "acdc_physical", "--", str(out)],
+                    "--locked", "--offline", "--example", "acdc_physical", "--", str(out), args.profile],
                    cwd=ROOT, env=env, stdout=log, stderr=subprocess.STDOUT, check=True)
 with (out / "julia.log").open("w") as log:
     subprocess.run(["julia", f"--project={HERE.parent}", "--startup-file=no",
