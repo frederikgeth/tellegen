@@ -3,9 +3,9 @@
 This page describes the current development implementation. PowerIO owns the
 immutable source network, canonical intent, typed points/results, IR and OPF
 numerical preparation. Tellegen owns expressions, derivatives, numerical starts,
-solvers and validation diagnostics. The [review map](REVIEW.md) records dependency
-pins, evidence, integration gaps and the proposed review sequence. Existing PRs
-remain draft; these interfaces are not a published release.
+solvers and validation diagnostics. These interfaces are not a published release.
+Review dependencies and release planning are tracked in
+[PowerIO #819](https://github.com/eigenergy/powerio/issues/819).
 
 The input adapter is the **MATPOWER-extension variant of PowerModelsACDC**.
 PowerModelsACDC's native JSON serialization is a separate future reader.
