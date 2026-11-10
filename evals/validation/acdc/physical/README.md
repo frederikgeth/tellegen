@@ -202,3 +202,11 @@ It retains declared current bounds. See [the contract, independent SI checks
 and reproduction commands](COORDINATES.md). Existing source profiles and their
 historical evidence below/above remain unchanged; general rebasing stays out
 of scope.
+
+## Optimized physical-base equivalence
+
+The [local optimization gate](OPTIMIZED.md) checks 128 explicitly equivalent
+network representations with 256 native and 256 modified-reference Julia
+solves. Both solvers' points pass cross-feasibility, physical bounds and cost
+checks on every equivalent base. This covers single-converter synthetic
+networks; it does not enable general rebasing or qualify global optimality.

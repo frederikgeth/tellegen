@@ -98,8 +98,10 @@ pin and EPL guards pass. PowerIO has 496 affected tests passing and changed-code
 Clippy clean; its three broad Clippy configurations retain previously documented
 baseline float-comparison warnings. The C ABI configurations and Python pass.
 
-These qualify analytical primal points, coordinate conversion and derivatives.
-They do not qualify base-invariant optimized solutions or new PF controls.
+These initially qualify analytical primal points, coordinate conversion and
+derivatives. The follow-up [optimized-base gate](OPTIMIZED.md) separately
+qualifies local optimized solutions for explicitly converted synthetic networks;
+new PF controls remain unqualified.
 Existing PRs remain draft, and no upstream bug report was filed.
 
 ## Reproduce

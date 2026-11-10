@@ -297,3 +297,11 @@ records local port/impedance bases and resistance reference side; source
 compatibility and declared-current equations remain unchanged. Qualification
 uses independent phase-domain physical points and explicitly modified Julia
 SI equations. This does not enable generic physical rebasing or native PF.
+
+## Optimized physical-base equivalence
+
+The [local optimization gate](physical/OPTIMIZED.md) checks 128 explicitly equivalent
+network representations with 256 native and 256 modified-reference Julia
+solves. Both solvers' points pass cross-feasibility, physical bounds and cost
+checks on every equivalent base. This covers single-converter synthetic
+networks; it does not enable general rebasing or qualify global optimality.

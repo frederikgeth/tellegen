@@ -1,0 +1,1750 @@
+{
+  "acceptance": {
+    "max_constraint_violation": 1e-07,
+    "max_phase_domain_physical_residual": 1e-06,
+    "objective_absolute_tolerance": 1e-06,
+    "objective_relative_tolerance": 1e-08,
+    "scope": "local_optima_cross_feasibility; no_global_or_primal_uniqueness_claim"
+  },
+  "base_configurations": [
+    {
+      "converter_kv": 200.0,
+      "dc_from_kv": 500.0,
+      "dc_to_kv": 500.0,
+      "mva": 100.0,
+      "pcc_kv": 230.0
+    },
+    {
+      "converter_kv": 200.0,
+      "dc_from_kv": 500.0,
+      "dc_to_kv": 500.0,
+      "mva": 50.0,
+      "pcc_kv": 230.0
+    },
+    {
+      "converter_kv": 345.0,
+      "dc_from_kv": 250.0,
+      "dc_to_kv": 1000.0,
+      "mva": 100.0,
+      "pcc_kv": 400.0
+    },
+    {
+      "converter_kv": 400.0,
+      "dc_from_kv": 800.0,
+      "dc_to_kv": 250.0,
+      "mva": 250.0,
+      "pcc_kv": 230.0
+    }
+  ],
+  "counts": {
+    "base_representations": 128,
+    "native_solves": 256,
+    "physical_networks": 32,
+    "reference_corruption_controls": 512,
+    "reference_solves": 256
+  },
+  "cross_checks": 2048,
+  "groups": {
+    "mask0/direction-1/poles1": {
+      "max_native_kkt": 3.3824067519240795e-09,
+      "max_native_physical_residual": 1.7213608316524187e-10,
+      "max_native_reference_objective_difference": 3.956643013225403e-09,
+      "max_native_violation": 4.318412294423979e-11,
+      "max_reference_violation": 3.637978807091713e-12,
+      "native_iterations_range": [
+        9,
+        11
+      ],
+      "native_solves": 8,
+      "networks": 4,
+      "objective_range": [
+        -244.13082112904794,
+        -244.1308211250913
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/22/vm",
+        "station/ac_dc_converter_station/31/vmconv"
+      ],
+      "representative_physical_point": {
+        "dc_branch/dc_equivalent_branch/41/pf": -87.32696972526878,
+        "dc_branch/dc_equivalent_branch/41/pt": 87.58053501892824,
+        "dc_bus/dc_equivalent_bus/21/vm": 548.4076259514026,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.9999993173566,
+        "pg[physical-generator]": -86.72434882814044,
+        "qg[physical-generator]": 1.7936539166160103e-19,
+        "station/ac_dc_converter_station/31/iconv": 0.20862635969080467,
+        "station/ac_dc_converter_station/31/pconv": -86.72434882814044,
+        "station/ac_dc_converter_station/31/pdc": 87.32696972526878,
+        "station/ac_dc_converter_station/31/pgrid": -86.72434882814044,
+        "station/ac_dc_converter_station/31/ppr_fr": -86.72434882814044,
+        "station/ac_dc_converter_station/31/ptf_to": 86.72434882814044,
+        "station/ac_dc_converter_station/31/qconv": 1.7936539166160103e-19,
+        "station/ac_dc_converter_station/31/qgrid": 1.7936539166160103e-19,
+        "station/ac_dc_converter_station/31/qpr_fr": 1.7936539166160103e-19,
+        "station/ac_dc_converter_station/31/qtf_to": -1.7936539166160103e-19,
+        "station/ac_dc_converter_station/31/vaconv": 0.0,
+        "station/ac_dc_converter_station/31/vafilt": 0.0,
+        "station/ac_dc_converter_station/31/vmconv": 239.99999911357995,
+        "station/ac_dc_converter_station/31/vmfilt": 239.99999911357995,
+        "va[11]": 0.0,
+        "vm[11]": 239.99999911357995
+      },
+      "source_hashes": {
+        "optimized_000.m": "7e1b8722aba02b977a9d316b741e82c058e45a5f808c9b2ff7cdca0bdacb122f",
+        "optimized_001.m": "a23f8248bf7de464e265270218f9e54e751eedc65474e0829b84ba038be8fa16",
+        "optimized_002.m": "5ca2babc950a1075350d34e0af9149a1f434b907415ce588f5d36b34e4d0e228",
+        "optimized_003.m": "617b1612ad038c49fdda92c325927bbab25ae9656088bbda78aef7a6a0d4879d"
+      }
+    },
+    "mask0/direction-1/poles2": {
+      "max_native_kkt": 2.5059128012416537e-09,
+      "max_native_physical_residual": 1.0487610779819079e-11,
+      "max_native_reference_objective_difference": 4.788290652868454e-09,
+      "max_native_violation": 1.0191847366058937e-13,
+      "max_reference_violation": 1.4551915228366852e-11,
+      "native_iterations_range": [
+        11,
+        12
+      ],
+      "native_solves": 8,
+      "networks": 4,
+      "objective_range": [
+        -244.06437738752956,
+        -244.06437738274127
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/22/vm",
+        "station/ac_dc_converter_station/31/vmconv"
+      ],
+      "representative_physical_point": {
+        "dc_branch/dc_equivalent_branch/41/pf": -87.30185156363453,
+        "dc_branch/dc_equivalent_branch/41/pt": 87.4281935319249,
+        "dc_bus/dc_equivalent_bus/21/vm": 549.2051961756918,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.9999979380525,
+        "pg[physical-generator]": -86.69930551172392,
+        "qg[physical-generator]": -8.174312278033124e-24,
+        "station/ac_dc_converter_station/31/iconv": 0.20856611482817272,
+        "station/ac_dc_converter_station/31/pconv": -86.69930551172392,
+        "station/ac_dc_converter_station/31/pdc": 87.30185156363453,
+        "station/ac_dc_converter_station/31/pgrid": -86.69930551172392,
+        "station/ac_dc_converter_station/31/ppr_fr": -86.69930551172392,
+        "station/ac_dc_converter_station/31/ptf_to": 86.69930551172392,
+        "station/ac_dc_converter_station/31/qconv": -8.174312278033124e-24,
+        "station/ac_dc_converter_station/31/qgrid": -8.174312278033124e-24,
+        "station/ac_dc_converter_station/31/qpr_fr": -8.174312278033124e-24,
+        "station/ac_dc_converter_station/31/qtf_to": 8.174312278033124e-24,
+        "station/ac_dc_converter_station/31/vaconv": 0.0,
+        "station/ac_dc_converter_station/31/vafilt": 0.0,
+        "station/ac_dc_converter_station/31/vmconv": 239.99999912251306,
+        "station/ac_dc_converter_station/31/vmfilt": 239.99999912251306,
+        "va[11]": 0.0,
+        "vm[11]": 239.99999912251306
+      },
+      "source_hashes": {
+        "optimized_004.m": "1a912670ed185bc0ee4f4e491a72e0b86dcccfe0b215ca69ebec9ffe75fa013c",
+        "optimized_005.m": "66a4300a36810ada58178c7a4c8f6acaaacba9368f4bbb7cc04376e22d34bfa1",
+        "optimized_006.m": "689b77eab918bd2c89b7a5347a3900ba1c0e2a388cdcc0f9a87d36dd38406a6e",
+        "optimized_007.m": "380b12748a0ab65b636153126b7a5fd47d16549d259611a5ff2c64b44ea2b2f7"
+      }
+    },
+    "mask0/direction1/poles1": {
+      "max_native_kkt": 3.234508030873329e-09,
+      "max_native_physical_residual": 1.1380052455933765e-10,
+      "max_native_reference_objective_difference": 4.028493094665464e-09,
+      "max_native_violation": 2.7219115850130038e-11,
+      "max_reference_violation": 7.275957614183426e-12,
+      "native_iterations_range": [
+        10,
+        11
+      ],
+      "native_solves": 8,
+      "networks": 4,
+      "objective_range": [
+        275.396128635292,
+        275.3961286393205
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/21/vm",
+        "station/ac_dc_converter_station/31/vmconv"
+      ],
+      "representative_physical_point": {
+        "dc_branch/dc_equivalent_branch/41/pf": 85.8776762542832,
+        "dc_branch/dc_equivalent_branch/41/pt": -85.63387541808486,
+        "dc_bus/dc_equivalent_bus/21/vm": 549.9999993962062,
+        "dc_bus/dc_equivalent_bus/22/vm": 548.4385870989616,
+        "pg[physical-generator]": 86.47956599050298,
+        "qg[physical-generator]": 2.618802120554601e-20,
+        "station/ac_dc_converter_station/31/iconv": 0.20803750353930114,
+        "station/ac_dc_converter_station/31/pconv": 86.47956599050298,
+        "station/ac_dc_converter_station/31/pdc": -85.8776762542832,
+        "station/ac_dc_converter_station/31/pgrid": 86.47956599050298,
+        "station/ac_dc_converter_station/31/ppr_fr": 86.47956599050298,
+        "station/ac_dc_converter_station/31/ptf_to": -86.47956599050298,
+        "station/ac_dc_converter_station/31/qconv": 2.618802120554601e-20,
+        "station/ac_dc_converter_station/31/qgrid": 2.618802120554601e-20,
+        "station/ac_dc_converter_station/31/qpr_fr": 2.618802120554601e-20,
+        "station/ac_dc_converter_station/31/qtf_to": -2.618802120554601e-20,
+        "station/ac_dc_converter_station/31/vaconv": 0.0,
+        "station/ac_dc_converter_station/31/vafilt": 0.0,
+        "station/ac_dc_converter_station/31/vmconv": 239.99999929993137,
+        "station/ac_dc_converter_station/31/vmfilt": 239.99999929993137,
+        "va[11]": 0.0,
+        "vm[11]": 239.99999929993137
+      },
+      "source_hashes": {
+        "optimized_008.m": "bb86f37ca94e25342664fe8c91c8d6db527e5c57af6227460db2313bb49f9381",
+        "optimized_009.m": "f11c362c716bb5c94f43f9b8e2aed993d6594ba2bd4b2af88e669b85b03e8f7a",
+        "optimized_010.m": "7b9ab20ff93aee11b9d959ea883213b1df1990d2011ce377af6ad85560eb9208",
+        "optimized_011.m": "81ed04bee20644fda71811b7e6f12807a9febc4d1ef79be4685ca0da50fcf9ea"
+      }
+    },
+    "mask0/direction1/poles2": {
+      "max_native_kkt": 2.5059098375596094e-09,
+      "max_native_physical_residual": 1.1652900866465643e-11,
+      "max_native_reference_objective_difference": 4.7217554310918786e-09,
+      "max_native_violation": 5.911937606128959e-14,
+      "max_reference_violation": 1.4551915228366852e-11,
+      "native_iterations_range": [
+        11,
+        12
+      ],
+      "native_solves": 8,
+      "networks": 4,
+      "objective_range": [
+        275.4828796902387,
+        275.48287969496045
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/21/vm",
+        "station/ac_dc_converter_station/31/vmconv"
+      ],
+      "representative_physical_point": {
+        "dc_branch/dc_equivalent_branch/41/pf": 85.90352587996199,
+        "dc_branch/dc_equivalent_branch/41/pt": -85.78155206502552,
+        "dc_bus/dc_equivalent_bus/21/vm": 549.9999983213118,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.2190571745649,
+        "pg[physical-generator]": 86.5054930169199,
+        "qg[physical-generator]": 6.441552436114561e-24,
+        "station/ac_dc_converter_station/31/iconv": 0.20809987426706725,
+        "station/ac_dc_converter_station/31/pconv": 86.5054930169199,
+        "station/ac_dc_converter_station/31/pdc": -85.90352587996199,
+        "station/ac_dc_converter_station/31/pgrid": 86.5054930169199,
+        "station/ac_dc_converter_station/31/ppr_fr": 86.5054930169199,
+        "station/ac_dc_converter_station/31/ptf_to": -86.5054930169199,
+        "station/ac_dc_converter_station/31/qconv": 6.441552436114561e-24,
+        "station/ac_dc_converter_station/31/qgrid": 6.441552436114561e-24,
+        "station/ac_dc_converter_station/31/qpr_fr": 6.441552436114561e-24,
+        "station/ac_dc_converter_station/31/qtf_to": -6.441552436114561e-24,
+        "station/ac_dc_converter_station/31/vaconv": 0.0,
+        "station/ac_dc_converter_station/31/vafilt": 0.0,
+        "station/ac_dc_converter_station/31/vmconv": 239.99999930612094,
+        "station/ac_dc_converter_station/31/vmfilt": 239.99999930612094,
+        "va[11]": 0.0,
+        "vm[11]": 239.99999930612094
+      },
+      "source_hashes": {
+        "optimized_012.m": "40f97237885cd4090739e785298c21ba2fcac3fa4de488d4ba4b0d162d9b0e16",
+        "optimized_013.m": "b35b508d65322522a1743d46cfe030f6aa777dd9ff4d0119106df4bfde2ba907",
+        "optimized_014.m": "37bd39d9902c9203d1dd5afe5e84cc7ab5fe055673abb770dbaa17691e18ff59",
+        "optimized_015.m": "4cd48631f2d69eae20fb7f6347687199bfc24ae117eba80958fc644b5283a92f"
+      }
+    },
+    "mask1/direction-1/poles1": {
+      "max_native_kkt": 3.3853776364715436e-09,
+      "max_native_physical_residual": 1.6655121726216748e-10,
+      "max_native_reference_objective_difference": 3.922565383618348e-09,
+      "max_native_violation": 8.872014234384551e-12,
+      "max_reference_violation": 3.637978807091713e-12,
+      "native_iterations_range": [
+        10,
+        11
+      ],
+      "native_solves": 8,
+      "networks": 4,
+      "objective_range": [
+        -243.7150577831033,
+        -243.71505777918048
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/22/vm",
+        "station/ac_dc_converter_station/31/vmconv"
+      ],
+      "representative_physical_point": {
+        "dc_branch/dc_equivalent_branch/41/pf": -87.32696972526777,
+        "dc_branch/dc_equivalent_branch/41/pt": 87.58053501892824,
+        "dc_bus/dc_equivalent_bus/21/vm": 548.4076259502594,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.9999993162166,
+        "pg[physical-generator]": -86.56765898065414,
+        "qg[physical-generator]": 1.0445989701377734,
+        "station/ac_dc_converter_station/31/iconv": 0.20862635926695483,
+        "station/ac_dc_converter_station/31/pconv": -86.7243488286657,
+        "station/ac_dc_converter_station/31/pdc": 87.32696972526777,
+        "station/ac_dc_converter_station/31/pgrid": -86.56765898065414,
+        "station/ac_dc_converter_station/31/ppr_fr": -86.7243488286657,
+        "station/ac_dc_converter_station/31/ptf_to": 86.7243488286657,
+        "station/ac_dc_converter_station/31/qconv": -1.660542580084992e-08,
+        "station/ac_dc_converter_station/31/qgrid": 1.0445989701377734,
+        "station/ac_dc_converter_station/31/qpr_fr": -1.660542580084992e-08,
+        "station/ac_dc_converter_station/31/qtf_to": 1.660542580084992e-08,
+        "station/ac_dc_converter_station/31/vaconv": 0.012066264728436771,
+        "station/ac_dc_converter_station/31/vafilt": 0.012066264728436771,
+        "station/ac_dc_converter_station/31/vmconv": 239.99999960399134,
+        "station/ac_dc_converter_station/31/vmfilt": 239.99999960399134,
+        "va[11]": 4.829846139164769e-24,
+        "vm[11]": 275.5213915273174
+      },
+      "source_hashes": {
+        "optimized_016.m": "d256ccdf3b3b03263c4384cf5967e2f796184ac62fbe6433db205c29208825fc",
+        "optimized_017.m": "4af052be2d2b5ed68c2bbf021b5ac2825cc15b3e1b6904cc1d39877bc3dbe388",
+        "optimized_018.m": "8c456f03ff8d1ede63879b045cf52053e321a8957274d0de3d16295a78cf5312",
+        "optimized_019.m": "d53fc2e5d52d1f630b63a6b6b18237b08480d14ffc20dd9083a2debaff964683"
+      }
+    },
+    "mask1/direction-1/poles2": {
+      "max_native_kkt": 2.5059128099734272e-09,
+      "max_native_physical_residual": 8.185452315956354e-12,
+      "max_native_reference_objective_difference": 4.784936891155667e-09,
+      "max_native_violation": 8.948397578478762e-14,
+      "max_reference_violation": 7.275957614183426e-12,
+      "native_iterations_range": [
+        11,
+        13
+      ],
+      "native_solves": 8,
+      "networks": 4,
+      "objective_range": [
+        -243.64883846743462,
+        -243.64883846264868
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/22/vm",
+        "station/ac_dc_converter_station/31/vmconv"
+      ],
+      "representative_physical_point": {
+        "dc_branch/dc_equivalent_branch/41/pf": -87.30185156363132,
+        "dc_branch/dc_equivalent_branch/41/pt": 87.4281935319249,
+        "dc_bus/dc_equivalent_bus/21/vm": 549.2051961686943,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.9999979310652,
+        "pg[physical-generator]": -86.5427061455464,
+        "qg[physical-generator]": 1.0439957616245004,
+        "station/ac_dc_converter_station/31/iconv": 0.20856611441200304,
+        "station/ac_dc_converter_station/31/pconv": -86.69930551223771,
+        "station/ac_dc_converter_station/31/pdc": 87.30185156363132,
+        "station/ac_dc_converter_station/31/pgrid": -86.5427061455464,
+        "station/ac_dc_converter_station/31/ppr_fr": -86.69930551223771,
+        "station/ac_dc_converter_station/31/ptf_to": 86.69930551223771,
+        "station/ac_dc_converter_station/31/qconv": -1.6316398787124027e-08,
+        "station/ac_dc_converter_station/31/qgrid": 1.0439957616245004,
+        "station/ac_dc_converter_station/31/qpr_fr": -1.6316398787124027e-08,
+        "station/ac_dc_converter_station/31/qtf_to": 1.6316398787124027e-08,
+        "station/ac_dc_converter_station/31/vaconv": 0.012062774397298814,
+        "station/ac_dc_converter_station/31/vafilt": 0.012062774397298814,
+        "station/ac_dc_converter_station/31/vmconv": 239.9999996028277,
+        "station/ac_dc_converter_station/31/vmfilt": 239.9999996028277,
+        "va[11]": 7.946341811558664e-36,
+        "vm[11]": 275.5215239329941
+      },
+      "source_hashes": {
+        "optimized_020.m": "bfc21427d229b54d74d0f95836952a35c3cabb24f80c8aa6a98816b7ab5104fa",
+        "optimized_021.m": "f9e43d734f9bcfd94cb6d571acc2dd9c7b953fd60db6952add1305a3e9c3c056",
+        "optimized_022.m": "ef46e72eed2144ac02cb3aad73f1eb7a97af0f5a43657f44b61206d482912558",
+        "optimized_023.m": "e4b2250e3def57211ae3df51634243ee9dac0027868a7a26da4122cfa3fffa55"
+      }
+    },
+    "mask1/direction1/poles1": {
+      "max_native_kkt": 3.2317569325003194e-09,
+      "max_native_physical_residual": 1.1284839729341911e-10,
+      "max_native_reference_objective_difference": 4.009166332252789e-09,
+      "max_native_violation": 5.644373857194296e-12,
+      "max_reference_violation": 7.275957614183426e-12,
+      "native_iterations_range": [
+        11,
+        11
+      ],
+      "native_solves": 8,
+      "networks": 4,
+      "objective_range": [
+        275.9174932330369,
+        275.91749323704613
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/21/vm",
+        "station/ac_dc_converter_station/31/vmconv"
+      ],
+      "representative_physical_point": {
+        "dc_branch/dc_equivalent_branch/41/pf": 85.87767625428197,
+        "dc_branch/dc_equivalent_branch/41/pt": -85.63387541808486,
+        "dc_bus/dc_equivalent_bus/21/vm": 549.999999397606,
+        "dc_bus/dc_equivalent_bus/22/vm": 548.4385871003653,
+        "pg[physical-generator]": 86.63537255994804,
+        "qg[physical-generator]": 1.0387104520598145,
+        "station/ac_dc_converter_station/31/iconv": 0.20803750320419864,
+        "station/ac_dc_converter_station/31/pconv": 86.47956599008612,
+        "station/ac_dc_converter_station/31/pdc": -85.87767625428197,
+        "station/ac_dc_converter_station/31/pgrid": 86.63537255994804,
+        "station/ac_dc_converter_station/31/ppr_fr": 86.47956599008612,
+        "station/ac_dc_converter_station/31/ptf_to": -86.47956599008612,
+        "station/ac_dc_converter_station/31/qconv": -1.3685608510439486e-08,
+        "station/ac_dc_converter_station/31/qgrid": 1.0387104520598145,
+        "station/ac_dc_converter_station/31/qpr_fr": -1.3685608510439486e-08,
+        "station/ac_dc_converter_station/31/qtf_to": 1.3685608510439486e-08,
+        "station/ac_dc_converter_station/31/vaconv": -0.011988875547017849,
+        "station/ac_dc_converter_station/31/vafilt": -0.011988875547017849,
+        "station/ac_dc_converter_station/31/vmconv": 239.99999968622697,
+        "station/ac_dc_converter_station/31/vmfilt": 239.99999968622697,
+        "va[11]": 5.2448375755280935e-24,
+        "vm[11]": 276.5171292428982
+      },
+      "source_hashes": {
+        "optimized_024.m": "2615893ef130b4265370489329c8bdcc604078f6f594c860e0b05c836f1ed439",
+        "optimized_025.m": "2326c8ccd3a3ac69cdc538e67eb2535e7963d3a84fe1199dbe4e744be5e42dd2",
+        "optimized_026.m": "cf64242d16368252fc10aed8d247297106745bca12483ea3fce322b01db5fbc4",
+        "optimized_027.m": "f4fcba0677207ab88c6d1ec534289280bbdead67dbfdafa78243c4cb53fde4c0"
+      }
+    },
+    "mask1/direction1/poles2": {
+      "max_native_kkt": 2.5059098689735873e-09,
+      "max_native_physical_residual": 8.15703060652595e-12,
+      "max_native_reference_objective_difference": 4.720959623227827e-09,
+      "max_native_violation": 1.1435297153639112e-13,
+      "max_reference_violation": 7.275957614183426e-12,
+      "native_iterations_range": [
+        12,
+        12
+      ],
+      "native_solves": 8,
+      "networks": 4,
+      "objective_range": [
+        276.0045731477419,
+        276.0045731524656
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/21/vm",
+        "station/ac_dc_converter_station/31/vmconv"
+      ],
+      "representative_physical_point": {
+        "dc_branch/dc_equivalent_branch/41/pf": 85.90352587995918,
+        "dc_branch/dc_equivalent_branch/41/pt": -85.78155206502552,
+        "dc_bus/dc_equivalent_bus/21/vm": 549.9999983276523,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.2190571809145,
+        "pg[physical-generator]": 86.66139302362423,
+        "qg[physical-generator]": 1.0393333672843197,
+        "station/ac_dc_converter_station/31/iconv": 0.2080998739369478,
+        "station/ac_dc_converter_station/31/pconv": 86.50549301650739,
+        "station/ac_dc_converter_station/31/pdc": -85.90352587995918,
+        "station/ac_dc_converter_station/31/pgrid": 86.66139302362423,
+        "station/ac_dc_converter_station/31/ppr_fr": 86.50549301650739,
+        "station/ac_dc_converter_station/31/ptf_to": -86.50549301650739,
+        "station/ac_dc_converter_station/31/qconv": -1.3495646859437381e-08,
+        "station/ac_dc_converter_station/31/qgrid": 1.0393333672843197,
+        "station/ac_dc_converter_station/31/qpr_fr": -1.3495646859437381e-08,
+        "station/ac_dc_converter_station/31/qtf_to": 1.3495646859437381e-08,
+        "station/ac_dc_converter_station/31/vaconv": -0.01199246306474826,
+        "station/ac_dc_converter_station/31/vafilt": -0.01199246306474826,
+        "station/ac_dc_converter_station/31/vmconv": 239.9999996857007,
+        "station/ac_dc_converter_station/31/vmfilt": 239.9999996857007,
+        "va[11]": -1.1049646897729503e-36,
+        "vm[11]": 276.5172902288599
+      },
+      "source_hashes": {
+        "optimized_028.m": "e21772307eafb8870a8786fbb996b13c8a70be1a449ba7844111262efb1a8f67",
+        "optimized_029.m": "092e1d924a5fc8997556f4c9078a86fcffe570a3f52077055253099a777d1f6c",
+        "optimized_030.m": "0f32b25e77f0f130a09f30680c11d73b5b8077964840429b2dc57d62b02e3aa2",
+        "optimized_031.m": "f0751cf3fc3fa2ba5426ca9e9438184ae02c1e4b45ec6b2c99c69c34e5348f6d"
+      }
+    },
+    "mask2/direction-1/poles1": {
+      "max_native_kkt": 3.3841371427386738e-09,
+      "max_native_physical_residual": 1.7207923974638106e-10,
+      "max_native_reference_objective_difference": 3.93956156585773e-09,
+      "max_native_violation": 1.482058920032614e-11,
+      "max_reference_violation": 7.275957614183426e-12,
+      "native_iterations_range": [
+        10,
+        11
+      ],
+      "native_solves": 8,
+      "networks": 4,
+      "objective_range": [
+        -243.8883044454318,
+        -243.8883044414908
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/22/vm",
+        "station/ac_dc_converter_station/31/vmconv"
+      ],
+      "representative_physical_point": {
+        "dc_branch/dc_equivalent_branch/41/pf": -87.32696972526817,
+        "dc_branch/dc_equivalent_branch/41/pt": 87.58053501892824,
+        "dc_bus/dc_equivalent_bus/21/vm": 548.4076259507362,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.9999993166921,
+        "pg[physical-generator]": -86.63294641710264,
+        "qg[physical-generator]": 0.5222994892394577,
+        "station/ac_dc_converter_station/31/iconv": 0.20862635937219184,
+        "station/ac_dc_converter_station/31/pconv": -86.72434882853543,
+        "station/ac_dc_converter_station/31/pdc": 87.32696972526817,
+        "station/ac_dc_converter_station/31/pgrid": -86.63294641710264,
+        "station/ac_dc_converter_station/31/ppr_fr": -86.63294641710264,
+        "station/ac_dc_converter_station/31/ptf_to": 86.63294641710264,
+        "station/ac_dc_converter_station/31/qconv": -4.659687340960347e-09,
+        "station/ac_dc_converter_station/31/qgrid": 0.5222994892394577,
+        "station/ac_dc_converter_station/31/qpr_fr": 0.5222994892394577,
+        "station/ac_dc_converter_station/31/qtf_to": -0.5222994892394577,
+        "station/ac_dc_converter_station/31/vaconv": 0.006028805293593406,
+        "station/ac_dc_converter_station/31/vafilt": 0.0,
+        "station/ac_dc_converter_station/31/vmconv": 239.9999994823308,
+        "station/ac_dc_converter_station/31/vmfilt": 239.7514105126088,
+        "va[11]": 0.0,
+        "vm[11]": 239.75141051260886
+      },
+      "source_hashes": {
+        "optimized_032.m": "7fe965de04517e973b5dbba11443560d16eaddbdf1e441a22ac74902cf82cd83",
+        "optimized_033.m": "b63e34c34e40e3f858f2d115f606a766d5aaa493882de3be16b3e8b795be9e82",
+        "optimized_034.m": "3ef5518329a6e3e3030f08f15a023bf8ff82f622851e9a117ba1b14212ce4bef",
+        "optimized_035.m": "02bd7d597438f8591e40bdb934647306bf72d40b83b22cfdc1cd4461ce648fdd"
+      }
+    },
+    "mask2/direction-1/poles2": {
+      "max_native_kkt": 2.5059128011859575e-09,
+      "max_native_physical_residual": 5.4001247917767614e-12,
+      "max_native_reference_objective_difference": 4.769475481225527e-09,
+      "max_native_violation": 9.547918011776346e-14,
+      "max_reference_violation": 1.4551915228366852e-11,
+      "native_iterations_range": [
+        11,
+        12
+      ],
+      "native_solves": 8,
+      "networks": 4,
+      "objective_range": [
+        -243.82199160520153,
+        -243.82199160043206
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/22/vm",
+        "station/ac_dc_converter_station/31/vmconv"
+      ],
+      "representative_physical_point": {
+        "dc_branch/dc_equivalent_branch/41/pf": -87.30185156363265,
+        "dc_branch/dc_equivalent_branch/41/pt": 87.4281935319249,
+        "dc_bus/dc_equivalent_bus/21/vm": 549.2051961716161,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.9999979339829,
+        "pg[physical-generator]": -86.60795588145402,
+        "qg[physical-generator]": 0.5219978849280589,
+        "station/ac_dc_converter_station/31/iconv": 0.20856611451369916,
+        "station/ac_dc_converter_station/31/pconv": -86.69930551211273,
+        "station/ac_dc_converter_station/31/pdc": 87.30185156363265,
+        "station/ac_dc_converter_station/31/pgrid": -86.60795588145402,
+        "station/ac_dc_converter_station/31/ppr_fr": -86.60795588145402,
+        "station/ac_dc_converter_station/31/ptf_to": 86.60795588145402,
+        "station/ac_dc_converter_station/31/qconv": -4.548602427677871e-09,
+        "station/ac_dc_converter_station/31/qgrid": 0.5219978849280589,
+        "station/ac_dc_converter_station/31/qpr_fr": 0.5219978849280589,
+        "station/ac_dc_converter_station/31/qtf_to": -0.5219978849280589,
+        "station/ac_dc_converter_station/31/vaconv": 0.0060270625664705845,
+        "station/ac_dc_converter_station/31/vafilt": 0.0,
+        "station/ac_dc_converter_station/31/vmconv": 239.99999948545852,
+        "station/ac_dc_converter_station/31/vmfilt": 239.75148104144446,
+        "va[11]": 0.0,
+        "vm[11]": 239.75148104144446
+      },
+      "source_hashes": {
+        "optimized_036.m": "77f4f1999b90685e243b2fcd8d365bca3cc8e7229493a5d85f505defdd2d2d02",
+        "optimized_037.m": "2c4138ac98b041e5a720ebc4fcfe9e040495ed9fbe49efc3842dfaf1768af487",
+        "optimized_038.m": "e15cfffb4268e0edbae70d09f97b20001b4edaa0da0fe3cdfc7ab9f1d6375e3e",
+        "optimized_039.m": "e90a4e0d6fbea93d7ea2cb6e40a4e7f9a8913f21d1e5f645a21114f6e7810ea5"
+      }
+    },
+    "mask2/direction1/poles1": {
+      "max_native_kkt": 3.232900812497833e-09,
+      "max_native_physical_residual": 1.1050360626541078e-10,
+      "max_native_reference_objective_difference": 4.025253019790398e-09,
+      "max_native_violation": 9.393374966748524e-12,
+      "max_reference_violation": 3.637978807091713e-12,
+      "native_iterations_range": [
+        10,
+        11
+      ],
+      "native_solves": 8,
+      "networks": 4,
+      "objective_range": [
+        275.7002461832955,
+        275.7002461873238
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/21/vm",
+        "station/ac_dc_converter_station/31/vmconv"
+      ],
+      "representative_physical_point": {
+        "dc_branch/dc_equivalent_branch/41/pf": 85.87767625428249,
+        "dc_branch/dc_equivalent_branch/41/pt": -85.63387541808486,
+        "dc_bus/dc_equivalent_bus/21/vm": 549.999999397023,
+        "dc_bus/dc_equivalent_bus/22/vm": 548.4385870997806,
+        "pg[physical-generator]": 86.57045315601506,
+        "qg[physical-generator]": 0.5193552295276236,
+        "station/ac_dc_converter_station/31/iconv": 0.2080375032872131,
+        "station/ac_dc_converter_station/31/pconv": 86.47956599018961,
+        "station/ac_dc_converter_station/31/pdc": -85.87767625428249,
+        "station/ac_dc_converter_station/31/pgrid": 86.57045315601506,
+        "station/ac_dc_converter_station/31/ppr_fr": 86.57045315601506,
+        "station/ac_dc_converter_station/31/ptf_to": -86.57045315601506,
+        "station/ac_dc_converter_station/31/qconv": -3.757359732640318e-09,
+        "station/ac_dc_converter_station/31/qgrid": 0.5193552295276236,
+        "station/ac_dc_converter_station/31/qpr_fr": 0.5193552295276236,
+        "station/ac_dc_converter_station/31/qtf_to": -0.5193552295276236,
+        "station/ac_dc_converter_station/31/vaconv": -0.0059991484836763725,
+        "station/ac_dc_converter_station/31/vafilt": 0.0,
+        "station/ac_dc_converter_station/31/vmconv": 239.99999959059517,
+        "station/ac_dc_converter_station/31/vmfilt": 240.25655503605088,
+        "va[11]": 0.0,
+        "vm[11]": 240.25655503605088
+      },
+      "source_hashes": {
+        "optimized_040.m": "03951dc28aa90cc8a9af0e59dff55894ed1b85be5f702c12322c3717a3541d34",
+        "optimized_041.m": "a2a09c06f7144933c474f17bdfe8eb887fed834b1f585a0413a09aa53aa678d6",
+        "optimized_042.m": "454a02dae84c5b2ce6143196849418188fa14b30276d3d42790356d313eb345b",
+        "optimized_043.m": "79eb3e9d97b7b947519dd7df1e914238ee0d687ce843fdfed146648211a6d314"
+      }
+    },
+    "mask2/direction1/poles2": {
+      "max_native_kkt": 2.5059098568182827e-09,
+      "max_native_physical_residual": 8.412825991399586e-12,
+      "max_native_reference_objective_difference": 4.73312411486404e-09,
+      "max_native_violation": 6.838973831690964e-14,
+      "max_reference_violation": 1.4551915228366852e-11,
+      "native_iterations_range": [
+        11,
+        12
+      ],
+      "native_solves": 8,
+      "networks": 4,
+      "objective_range": [
+        275.78718905892947,
+        275.787189063665
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/21/vm",
+        "station/ac_dc_converter_station/31/vmconv"
+      ],
+      "representative_physical_point": {
+        "dc_branch/dc_equivalent_branch/41/pf": 85.90352587996034,
+        "dc_branch/dc_equivalent_branch/41/pt": -85.78155206502552,
+        "dc_bus/dc_equivalent_bus/21/vm": 549.999998325016,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.2190571782745,
+        "pg[physical-generator]": 86.59643468749691,
+        "qg[physical-generator]": 0.5196666871009186,
+        "station/ac_dc_converter_station/31/iconv": 0.20809987401765867,
+        "station/ac_dc_converter_station/31/pconv": 86.50549301660871,
+        "station/ac_dc_converter_station/31/pdc": -85.90352587996034,
+        "station/ac_dc_converter_station/31/pgrid": 86.59643468749691,
+        "station/ac_dc_converter_station/31/ppr_fr": 86.59643468749691,
+        "station/ac_dc_converter_station/31/ptf_to": -86.59643468749691,
+        "station/ac_dc_converter_station/31/qconv": -3.6903801019846196e-09,
+        "station/ac_dc_converter_station/31/qgrid": 0.5196666871009186,
+        "station/ac_dc_converter_station/31/qpr_fr": 0.5196666871009186,
+        "station/ac_dc_converter_station/31/qtf_to": -0.5196666871009186,
+        "station/ac_dc_converter_station/31/vaconv": -0.0060009451277443435,
+        "station/ac_dc_converter_station/31/vafilt": 0.0,
+        "station/ac_dc_converter_station/31/vmconv": 239.99999959289858,
+        "station/ac_dc_converter_station/31/vmfilt": 240.2566332501932,
+        "va[11]": 0.0,
+        "vm[11]": 240.2566332501932
+      },
+      "source_hashes": {
+        "optimized_044.m": "3c5ae59484091d9ab8c5a9af6f50f8e49e2d50ff412c2ecfdc6f1701d39ae558",
+        "optimized_045.m": "fd1f18f9e312e26b58d35f0f5f61620633e47a296da55a8bd7c6316e37048ac9",
+        "optimized_046.m": "0c502be0ab670f8b1d40f9978b83643ffb29b244d4b9caa65110ee7be5750882",
+        "optimized_047.m": "e5007983b9961029dcfdf18bae76216a4acd88615bdedc621fdad3da38c677a7"
+      }
+    },
+    "mask3/direction-1/poles1": {
+      "max_native_kkt": 3.387120043725006e-09,
+      "max_native_physical_residual": 1.7203660718223546e-10,
+      "max_native_reference_objective_difference": 3.923616986867273e-09,
+      "max_native_violation": 5.140776693224325e-12,
+      "max_reference_violation": 7.275957614183426e-12,
+      "native_iterations_range": [
+        10,
+        11
+      ],
+      "native_solves": 8,
+      "networks": 4,
+      "objective_range": [
+        -243.4724838121753,
+        -243.47248380825073
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/22/vm",
+        "station/ac_dc_converter_station/31/vmconv"
+      ],
+      "representative_physical_point": {
+        "dc_branch/dc_equivalent_branch/41/pf": -87.32696972526716,
+        "dc_branch/dc_equivalent_branch/41/pt": 87.58053501892826,
+        "dc_bus/dc_equivalent_bus/21/vm": 548.4076259495947,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.9999993155539,
+        "pg[physical-generator]": -86.47625656961326,
+        "qg[physical-generator]": 1.5668984582923202,
+        "station/ac_dc_converter_station/31/iconv": 0.20862635918418013,
+        "station/ac_dc_converter_station/31/pconv": -86.7243488287679,
+        "station/ac_dc_converter_station/31/pdc": 87.32696972526716,
+        "station/ac_dc_converter_station/31/pgrid": -86.47625656961326,
+        "station/ac_dc_converter_station/31/ppr_fr": -86.63294641750062,
+        "station/ac_dc_converter_station/31/ptf_to": 86.63294641750062,
+        "station/ac_dc_converter_station/31/qconv": -2.058132625412289e-08,
+        "station/ac_dc_converter_station/31/qgrid": 1.5668984582923202,
+        "station/ac_dc_converter_station/31/qpr_fr": 0.5222994723765425,
+        "station/ac_dc_converter_station/31/qtf_to": -0.5222994723765425,
+        "station/ac_dc_converter_station/31/vaconv": 0.0181174243321261,
+        "station/ac_dc_converter_station/31/vafilt": 0.012088619049603002,
+        "station/ac_dc_converter_station/31/vmconv": 239.99999969964554,
+        "station/ac_dc_converter_station/31/vmfilt": 239.7514107298742,
+        "va[11]": 1.8758104228057296e-25,
+        "vm[11]": 275.25562058989345
+      },
+      "source_hashes": {
+        "optimized_048.m": "e7f0b1825ae75c18cd1dccb6e6fba8ff75e3d31607713102cafbf0b837fe8304",
+        "optimized_049.m": "bf6f6a0bef39f4909477047361ef2cee3a7e073b9cfe72a1acfbb96c9d180ebc",
+        "optimized_050.m": "59489d2957ed51d116789cd488e8f9c80a29ea7e69ee0358d1a4bfa9fe076c0b",
+        "optimized_051.m": "be0335e258be3fef070684b393f61d4949236101b91e924a87e6602f86f3382b"
+      }
+    },
+    "mask3/direction-1/poles2": {
+      "max_native_kkt": 2.5059128388413515e-09,
+      "max_native_physical_residual": 5.8693939834755734e-12,
+      "max_native_reference_objective_difference": 4.76052264275495e-09,
+      "max_native_violation": 6.683542608243442e-14,
+      "max_reference_violation": 1.4551915228366852e-11,
+      "native_iterations_range": [
+        11,
+        12
+      ],
+      "native_solves": 8,
+      "networks": 4,
+      "objective_range": [
+        -243.40639546392782,
+        -243.4063954591637
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/22/vm",
+        "station/ac_dc_converter_station/31/vmconv"
+      ],
+      "representative_physical_point": {
+        "dc_branch/dc_equivalent_branch/41/pf": -87.30185156362944,
+        "dc_branch/dc_equivalent_branch/41/pt": 87.42819353192492,
+        "dc_bus/dc_equivalent_bus/21/vm": 549.2051961645889,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.9999979269658,
+        "pg[physical-generator]": -86.45135651527634,
+        "qg[physical-generator]": 1.56599364534665,
+        "station/ac_dc_converter_station/31/iconv": 0.2085661143286887,
+        "station/ac_dc_converter_station/31/pconv": -86.69930551233934,
+        "station/ac_dc_converter_station/31/pdc": 87.30185156362944,
+        "station/ac_dc_converter_station/31/pgrid": -86.45135651527634,
+        "station/ac_dc_converter_station/31/ppr_fr": -86.6079558818425,
+        "station/ac_dc_converter_station/31/ptf_to": 86.6079558818425,
+        "station/ac_dc_converter_station/31/qconv": -2.0309511097664567e-08,
+        "station/ac_dc_converter_station/31/qgrid": 1.56599364534665,
+        "station/ac_dc_converter_station/31/qpr_fr": 0.5219978682406209,
+        "station/ac_dc_converter_station/31/qtf_to": -0.5219978682406209,
+        "station/ac_dc_converter_station/31/vaconv": 0.018112178721567715,
+        "station/ac_dc_converter_station/31/vafilt": 0.01208511616600179,
+        "station/ac_dc_converter_station/31/vmconv": 239.99999969898,
+        "station/ac_dc_converter_station/31/vmfilt": 239.7514812549157,
+        "va[11]": -1.3988382774785221e-36,
+        "vm[11]": 275.2558224665409
+      },
+      "source_hashes": {
+        "optimized_052.m": "915caa4893bb26bf38c6b797b925ce191d456ce3e3a90862a8847767ada61e82",
+        "optimized_053.m": "6365022055093ff370ec6d2198d9940c2ef1497c03e017505714ff0e075bb3dc",
+        "optimized_054.m": "b85de7ce4fc01d2f1835004c9d15b763532fef25061e746a7d3d96196d2e468c",
+        "optimized_055.m": "0e593bb59be94f75b98e16ebf493416f09ee429dc8db0472204a07c35dafbcff"
+      }
+    },
+    "mask3/direction1/poles1": {
+      "max_native_kkt": 3.2301612527730456e-09,
+      "max_native_physical_residual": 1.098925395126571e-10,
+      "max_native_reference_objective_difference": 3.994955477537587e-09,
+      "max_native_violation": 3.2929214910382143e-12,
+      "max_reference_violation": 7.275957614183426e-12,
+      "native_iterations_range": [
+        10,
+        12
+      ],
+      "native_solves": 8,
+      "networks": 4,
+      "objective_range": [
+        276.22166742433086,
+        276.2216674283263
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/21/vm",
+        "station/ac_dc_converter_station/31/vmconv"
+      ],
+      "representative_physical_point": {
+        "dc_branch/dc_equivalent_branch/41/pf": 85.87767625428124,
+        "dc_branch/dc_equivalent_branch/41/pt": -85.63387541808486,
+        "dc_bus/dc_equivalent_bus/21/vm": 549.9999993984211,
+        "dc_bus/dc_equivalent_bus/22/vm": 548.4385871011829,
+        "pg[physical-generator]": 86.72625972546241,
+        "qg[physical-generator]": 1.5580656802526116,
+        "station/ac_dc_converter_station/31/iconv": 0.20803750313837346,
+        "station/ac_dc_converter_station/31/pconv": 86.47956599000374,
+        "station/ac_dc_converter_station/31/pdc": -85.87767625428124,
+        "station/ac_dc_converter_station/31/pgrid": 86.72625972546241,
+        "station/ac_dc_converter_station/31/ppr_fr": 86.57045315569928,
+        "station/ac_dc_converter_station/31/ptf_to": -86.57045315569928,
+        "station/ac_dc_converter_station/31/qconv": -1.7378855515932734e-08,
+        "station/ac_dc_converter_station/31/qgrid": 1.5580656802526116,
+        "station/ac_dc_converter_station/31/qpr_fr": 0.5193552151659163,
+        "station/ac_dc_converter_station/31/qtf_to": -0.5193552151659163,
+        "station/ac_dc_converter_station/31/vaconv": -0.017963395534514714,
+        "station/ac_dc_converter_station/31/vafilt": -0.011964247059223278,
+        "station/ac_dc_converter_station/31/vmconv": 239.99999976203114,
+        "station/ac_dc_converter_station/31/vmfilt": 240.25655520707048,
+        "va[11]": 1.1995833257185757e-24,
+        "vm[11]": 276.8319874753887
+      },
+      "source_hashes": {
+        "optimized_056.m": "0eb63badfefcd7a8d36e7c225bbcca213cd10134f411ad537026710c25bd8d3d",
+        "optimized_057.m": "54ab6a702d0ffca49a094f8e817baa8ab7cf50a0608a69920b0ba6bac2ad8db5",
+        "optimized_058.m": "b3fc6b29cbdbe0c7ce9c59d73df514cfbda0e23df9fa02f5e60797268fa88809",
+        "optimized_059.m": "2ee548764baf5c4bb95029f8ad4dba56c913597abb848dcdf95e686b0cf9b219"
+      }
+    },
+    "mask3/direction1/poles2": {
+      "max_native_kkt": 2.50590979071199e-09,
+      "max_native_physical_residual": 7.361222742474638e-12,
+      "max_native_reference_objective_difference": 4.726189217763022e-09,
+      "max_native_violation": 7.657069422961627e-14,
+      "max_reference_violation": 1.4551915228366852e-11,
+      "native_iterations_range": [
+        11,
+        13
+      ],
+      "native_solves": 8,
+      "networks": 4,
+      "objective_range": [
+        276.3089392276697,
+        276.30893923239864
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/21/vm",
+        "station/ac_dc_converter_station/31/vmconv"
+      ],
+      "representative_physical_point": {
+        "dc_branch/dc_equivalent_branch/41/pf": 85.90352587995753,
+        "dc_branch/dc_equivalent_branch/41/pt": -85.78155206502552,
+        "dc_bus/dc_equivalent_bus/21/vm": 549.9999983313301,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.2190571845975,
+        "pg[physical-generator]": 86.75233469420252,
+        "qg[physical-generator]": 1.559000052982882,
+        "station/ac_dc_converter_station/31/iconv": 0.20809987387080517,
+        "station/ac_dc_converter_station/31/pconv": 86.50549301642366,
+        "station/ac_dc_converter_station/31/pdc": -85.90352587995753,
+        "station/ac_dc_converter_station/31/pgrid": 86.75233469420252,
+        "station/ac_dc_converter_station/31/ppr_fr": 86.59643468718419,
+        "station/ac_dc_converter_station/31/ptf_to": -86.59643468718419,
+        "station/ac_dc_converter_station/31/qconv": -1.7200094585832082e-08,
+        "station/ac_dc_converter_station/31/qgrid": 1.559000052982882,
+        "station/ac_dc_converter_station/31/qpr_fr": 0.5196666728608921,
+        "station/ac_dc_converter_station/31/qtf_to": -0.5196666728608921,
+        "station/ac_dc_converter_station/31/vaconv": -0.017968764575121393,
+        "station/ac_dc_converter_station/31/vafilt": -0.011967819455655069,
+        "station/ac_dc_converter_station/31/vmconv": 239.99999976175022,
+        "station/ac_dc_converter_station/31/vmfilt": 240.25663341863273,
+        "va[11]": 6.700317799687039e-37,
+        "vm[11]": 276.8322502634163
+      },
+      "source_hashes": {
+        "optimized_060.m": "9b506524f0b3e1464360b0437ae600fcdeba9d6f53c8679ccca3dba42c62ab68",
+        "optimized_061.m": "9b19b443d2dd2f020629204475e324e3557ecd31352257232fecd1e5ecd0c719",
+        "optimized_062.m": "dfc75af7c55ec10ab65e8f9ae5b1f3e45af1d217fe74308e27c91bdabc59a96b",
+        "optimized_063.m": "67c06ef42b755e4e3ac2fd50dbe3353e3d2033526158fb7b4988eef9fbb211e1"
+      }
+    },
+    "mask4/direction-1/poles1": {
+      "max_native_kkt": 3.3824067519372006e-09,
+      "max_native_physical_residual": 1.7213608316524187e-10,
+      "max_native_reference_objective_difference": 3.9460132938984316e-09,
+      "max_native_violation": 4.3377745839734416e-11,
+      "max_reference_violation": 3.637978807091713e-12,
+      "native_iterations_range": [
+        9,
+        11
+      ],
+      "native_solves": 8,
+      "networks": 4,
+      "objective_range": [
+        -244.13082112903746,
+        -244.1308211250914
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/22/vm",
+        "station/ac_dc_converter_station/31/vmconv"
+      ],
+      "representative_physical_point": {
+        "dc_branch/dc_equivalent_branch/41/pf": -87.3269697252688,
+        "dc_branch/dc_equivalent_branch/41/pt": 87.58053501892824,
+        "dc_bus/dc_equivalent_bus/21/vm": 548.4076259514026,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.9999993173565,
+        "pg[physical-generator]": -86.72434882814048,
+        "qg[physical-generator]": -5.75999992699683,
+        "station/ac_dc_converter_station/31/iconv": 0.20862635969077908,
+        "station/ac_dc_converter_station/31/pconv": -86.72434882814048,
+        "station/ac_dc_converter_station/31/pdc": 87.3269697252688,
+        "station/ac_dc_converter_station/31/pgrid": -86.72434882814048,
+        "station/ac_dc_converter_station/31/ppr_fr": -86.72434882814048,
+        "station/ac_dc_converter_station/31/ptf_to": 86.72434882814048,
+        "station/ac_dc_converter_station/31/qconv": 3.0414463206820785e-08,
+        "station/ac_dc_converter_station/31/qgrid": -5.75999992699683,
+        "station/ac_dc_converter_station/31/qpr_fr": 3.0414463206820785e-08,
+        "station/ac_dc_converter_station/31/qtf_to": 5.75999992699683,
+        "station/ac_dc_converter_station/31/vaconv": 0.0,
+        "station/ac_dc_converter_station/31/vafilt": 0.0,
+        "station/ac_dc_converter_station/31/vmconv": 239.9999991136017,
+        "station/ac_dc_converter_station/31/vmfilt": 239.9999991136017,
+        "va[11]": 0.0,
+        "vm[11]": 239.9999991136017
+      },
+      "source_hashes": {
+        "optimized_064.m": "0f5d229a832ab5f85f6483fec07806bc60d4f6303685cf471ef3fd6e8e49a71e",
+        "optimized_065.m": "dfa0348fbea718ae9b042a5f25ecbe7f778a5d5f7bdc6a0fcf95fdd52245bc18",
+        "optimized_066.m": "28064cf0adfbab3b79fb2695867d279e22ae28ebf044f7d7aacd6482a0ad383f",
+        "optimized_067.m": "e91ad0e1380574d196d2043c7fa82fd2e0c2f1ef26d976cd988a6c7465dde1b1"
+      }
+    },
+    "mask4/direction-1/poles2": {
+      "max_native_kkt": 2.505912801188211e-09,
+      "max_native_physical_residual": 1.0487610779819079e-11,
+      "max_native_reference_objective_difference": 4.78306105833326e-09,
+      "max_native_violation": 1.0191847366058937e-13,
+      "max_reference_violation": 1.4551915228366852e-11,
+      "native_iterations_range": [
+        11,
+        11
+      ],
+      "native_solves": 8,
+      "networks": 4,
+      "objective_range": [
+        -244.06437738752433,
+        -244.06437738274127
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/22/vm",
+        "station/ac_dc_converter_station/31/vmconv"
+      ],
+      "representative_physical_point": {
+        "dc_branch/dc_equivalent_branch/41/pf": -87.30185156363453,
+        "dc_branch/dc_equivalent_branch/41/pt": 87.4281935319249,
+        "dc_bus/dc_equivalent_bus/21/vm": 549.2051961756918,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.9999979380525,
+        "pg[physical-generator]": -86.69930551172392,
+        "qg[physical-generator]": -5.759999927945443,
+        "station/ac_dc_converter_station/31/iconv": 0.20856611482817272,
+        "station/ac_dc_converter_station/31/pconv": -86.69930551172392,
+        "station/ac_dc_converter_station/31/pdc": 87.30185156363453,
+        "station/ac_dc_converter_station/31/pgrid": -86.69930551172392,
+        "station/ac_dc_converter_station/31/ppr_fr": -86.69930551172392,
+        "station/ac_dc_converter_station/31/ptf_to": 86.69930551172392,
+        "station/ac_dc_converter_station/31/qconv": 2.993518452449594e-08,
+        "station/ac_dc_converter_station/31/qgrid": -5.759999927945443,
+        "station/ac_dc_converter_station/31/qpr_fr": 2.993518452449594e-08,
+        "station/ac_dc_converter_station/31/qtf_to": 5.759999927945443,
+        "station/ac_dc_converter_station/31/vaconv": 0.0,
+        "station/ac_dc_converter_station/31/vafilt": 0.0,
+        "station/ac_dc_converter_station/31/vmconv": 239.99999912251306,
+        "station/ac_dc_converter_station/31/vmfilt": 239.99999912251306,
+        "va[11]": 0.0,
+        "vm[11]": 239.99999912251306
+      },
+      "source_hashes": {
+        "optimized_068.m": "8a3886fc442c5273553b16caf071cc37bd4e43a63e06dd2b91bd88cb74d8028a",
+        "optimized_069.m": "a3be6913ee73c0e273cb5c9d1349fcd222f2a832849f6e1dbda00eeff04c4689",
+        "optimized_070.m": "e17c68d6c9b137dd2117701016fd9fa72b5b696fbb4c79d41013631bf81ce6b5",
+        "optimized_071.m": "47bec59a2e263fe329457eb58a84263ab1b7ddb823446949b455987c4e7d5c9e"
+      }
+    },
+    "mask4/direction1/poles1": {
+      "max_native_kkt": 3.2345080308997384e-09,
+      "max_native_physical_residual": 1.1380052455933765e-10,
+      "max_native_reference_objective_difference": 4.034234279970406e-09,
+      "max_native_violation": 2.7339908115209255e-11,
+      "max_reference_violation": 3.637978807091713e-12,
+      "native_iterations_range": [
+        10,
+        11
+      ],
+      "native_solves": 8,
+      "networks": 4,
+      "objective_range": [
+        275.3961286352862,
+        275.39612863932047
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/21/vm",
+        "station/ac_dc_converter_station/31/vmconv"
+      ],
+      "representative_physical_point": {
+        "dc_branch/dc_equivalent_branch/41/pf": 85.8776762542832,
+        "dc_branch/dc_equivalent_branch/41/pt": -85.63387541808486,
+        "dc_bus/dc_equivalent_bus/21/vm": 549.9999993962062,
+        "dc_bus/dc_equivalent_bus/22/vm": 548.4385870989616,
+        "pg[physical-generator]": 86.47956599050296,
+        "qg[physical-generator]": -5.75999994251335,
+        "station/ac_dc_converter_station/31/iconv": 0.20803750353928513,
+        "station/ac_dc_converter_station/31/pconv": 86.47956599050296,
+        "station/ac_dc_converter_station/31/pdc": -85.8776762542832,
+        "station/ac_dc_converter_station/31/pgrid": 86.47956599050296,
+        "station/ac_dc_converter_station/31/ppr_fr": 86.47956599050296,
+        "station/ac_dc_converter_station/31/ptf_to": -86.47956599050296,
+        "station/ac_dc_converter_station/31/qconv": 2.3857960819031694e-08,
+        "station/ac_dc_converter_station/31/qgrid": -5.75999994251335,
+        "station/ac_dc_converter_station/31/qpr_fr": 2.3857960819031694e-08,
+        "station/ac_dc_converter_station/31/qtf_to": 5.75999994251335,
+        "station/ac_dc_converter_station/31/vaconv": 0.0,
+        "station/ac_dc_converter_station/31/vafilt": 0.0,
+        "station/ac_dc_converter_station/31/vmconv": 239.999999299945,
+        "station/ac_dc_converter_station/31/vmfilt": 239.999999299945,
+        "va[11]": 0.0,
+        "vm[11]": 239.99999929994496
+      },
+      "source_hashes": {
+        "optimized_072.m": "36210e0adc011dd100ebcb86c65f5382d3070b10658352249f6ad7b783265b78",
+        "optimized_073.m": "55c18b71c581eeefaf23685ad0975e7b8b947df2f70a7693e5d589e636de2e31",
+        "optimized_074.m": "b4c3712da7b37fb4c7b330a6917b44f5e6560c326f53adcd1f0a87accd588b1b",
+        "optimized_075.m": "dee1b6c4e7859ddd302bbb93ec021eabf80b91c7133a9b523aa325b27b0b302e"
+      }
+    },
+    "mask4/direction1/poles2": {
+      "max_native_kkt": 2.505909837462175e-09,
+      "max_native_physical_residual": 1.1652900866465643e-11,
+      "max_native_reference_objective_difference": 4.724881819129223e-09,
+      "max_native_violation": 5.911937606128959e-14,
+      "max_reference_violation": 1.4551915228366852e-11,
+      "native_iterations_range": [
+        11,
+        12
+      ],
+      "native_solves": 8,
+      "networks": 4,
+      "objective_range": [
+        275.48287969023556,
+        275.48287969496045
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/21/vm",
+        "station/ac_dc_converter_station/31/vmconv"
+      ],
+      "representative_physical_point": {
+        "dc_branch/dc_equivalent_branch/41/pf": 85.90352587996199,
+        "dc_branch/dc_equivalent_branch/41/pt": -85.78155206502552,
+        "dc_bus/dc_equivalent_bus/21/vm": 549.9999983213118,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.2190571745649,
+        "pg[physical-generator]": 86.5054930169199,
+        "qg[physical-generator]": -5.759999943128058,
+        "station/ac_dc_converter_station/31/iconv": 0.20809987426706725,
+        "station/ac_dc_converter_station/31/pconv": 86.5054930169199,
+        "station/ac_dc_converter_station/31/pdc": -85.90352587996199,
+        "station/ac_dc_converter_station/31/pgrid": 86.5054930169199,
+        "station/ac_dc_converter_station/31/ppr_fr": 86.5054930169199,
+        "station/ac_dc_converter_station/31/ptf_to": -86.5054930169199,
+        "station/ac_dc_converter_station/31/qconv": 2.3565746174190723e-08,
+        "station/ac_dc_converter_station/31/qgrid": -5.759999943128058,
+        "station/ac_dc_converter_station/31/qpr_fr": 2.3565746174190723e-08,
+        "station/ac_dc_converter_station/31/qtf_to": 5.759999943128058,
+        "station/ac_dc_converter_station/31/vaconv": 0.0,
+        "station/ac_dc_converter_station/31/vafilt": 0.0,
+        "station/ac_dc_converter_station/31/vmconv": 239.99999930612094,
+        "station/ac_dc_converter_station/31/vmfilt": 239.99999930612094,
+        "va[11]": 0.0,
+        "vm[11]": 239.99999930612094
+      },
+      "source_hashes": {
+        "optimized_076.m": "07ab89e7c956f18339366041e6a75172d5ac143b7e3191f229d2b34233b1574a",
+        "optimized_077.m": "a72919c4d47bc69360d87e97ee42f853a4593fdeab6a63dc7220e1bbe1c9281a",
+        "optimized_078.m": "f30ae44372dd3b15a159d9c635845572c5760140e66e684827a2e65fa6a69762",
+        "optimized_079.m": "18bb17efe58fc998c6230cc93e39c3f38e0654a1837586a55b89c70accf03daf"
+      }
+    },
+    "mask5/direction-1/poles1": {
+      "max_native_kkt": 3.385376234015156e-09,
+      "max_native_physical_residual": 1.6643753042444587e-10,
+      "max_native_reference_objective_difference": 3.910258783434983e-09,
+      "max_native_violation": 9.041656312547275e-12,
+      "max_reference_violation": 7.275957614183426e-12,
+      "native_iterations_range": [
+        10,
+        11
+      ],
+      "native_solves": 8,
+      "networks": 4,
+      "objective_range": [
+        -243.71423051542664,
+        -243.71423051151515
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/22/vm",
+        "station/ac_dc_converter_station/31/vmconv"
+      ],
+      "representative_physical_point": {
+        "dc_branch/dc_equivalent_branch/41/pf": -87.32696972526777,
+        "dc_branch/dc_equivalent_branch/41/pt": 87.58053501892826,
+        "dc_bus/dc_equivalent_bus/21/vm": 548.4076259502601,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.9999993162173,
+        "pg[physical-generator]": -86.5673472429609,
+        "qg[physical-generator]": -1.552016899465825,
+        "station/ac_dc_converter_station/31/iconv": 0.2087646092255665,
+        "station/ac_dc_converter_station/31/pconv": -86.72417703812532,
+        "station/ac_dc_converter_station/31/pdc": 87.32696972526777,
+        "station/ac_dc_converter_station/31/pgrid": -86.5673472429609,
+        "station/ac_dc_converter_station/31/ppr_fr": -86.72417703812532,
+        "station/ac_dc_converter_station/31/ptf_to": 86.72417703812532,
+        "station/ac_dc_converter_station/31/qconv": 3.1624511137294045,
+        "station/ac_dc_converter_station/31/qgrid": -1.552016899465825,
+        "station/ac_dc_converter_station/31/qpr_fr": 3.1624511137294045,
+        "station/ac_dc_converter_station/31/qtf_to": 2.597548867228754,
+        "station/ac_dc_converter_station/31/vaconv": 0.012016377676942334,
+        "station/ac_dc_converter_station/31/vafilt": 0.012016377676942334,
+        "station/ac_dc_converter_station/31/vmconv": 239.9999996034729,
+        "station/ac_dc_converter_station/31/vmfilt": 239.9999996034729,
+        "va[11]": 2.2638598217957037e-24,
+        "vm[11]": 275.42164710392615
+      },
+      "source_hashes": {
+        "optimized_080.m": "5439182ed62e34c540d7b393b767470062017e317c6282a3a1be36f08f4a7ef4",
+        "optimized_081.m": "9440350778e715086a13fe15423b185ebf25fab93b39ea777ff0315b6200c7cf",
+        "optimized_082.m": "6cf0805da76bf928250bc71b5e23317439f6477c5a8f35bf614454fbe94da3d7",
+        "optimized_083.m": "706e06868c1addd5c809e60c0001310aa0fb83ddcca5244015ff0540c1c66be5"
+      }
+    },
+    "mask5/direction-1/poles2": {
+      "max_native_kkt": 2.50591277356105e-09,
+      "max_native_physical_residual": 1.7337242752546445e-11,
+      "max_native_reference_objective_difference": 4.76686068395793e-09,
+      "max_native_violation": 1.652011860642233e-13,
+      "max_reference_violation": 2.1827872842550278e-11,
+      "native_iterations_range": [
+        11,
+        12
+      ],
+      "native_solves": 8,
+      "networks": 4,
+      "objective_range": [
+        -243.64801109412736,
+        -243.64801108936004
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/22/vm",
+        "station/ac_dc_converter_station/31/vmconv"
+      ],
+      "representative_physical_point": {
+        "dc_branch/dc_equivalent_branch/41/pf": -87.30185156363133,
+        "dc_branch/dc_equivalent_branch/41/pt": 87.42819353192492,
+        "dc_bus/dc_equivalent_bus/21/vm": 549.2051961686975,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.9999979310686,
+        "pg[physical-generator]": -86.54239437977705,
+        "qg[physical-generator]": -1.5528537512794478,
+        "station/ac_dc_converter_station/31/iconv": 0.208704383888829,
+        "station/ac_dc_converter_station/31/pconv": -86.69913371909841,
+        "station/ac_dc_converter_station/31/pdc": 87.30185156363133,
+        "station/ac_dc_converter_station/31/pgrid": -86.54239437977705,
+        "station/ac_dc_converter_station/31/ppr_fr": -86.69913371909841,
+        "station/ac_dc_converter_station/31/ptf_to": 86.69913371909841,
+        "station/ac_dc_converter_station/31/qconv": 3.1622173008238392,
+        "station/ac_dc_converter_station/31/qgrid": -1.5528537512794478,
+        "station/ac_dc_converter_station/31/qpr_fr": 3.1622173008238392,
+        "station/ac_dc_converter_station/31/qtf_to": 2.597782680087761,
+        "station/ac_dc_converter_station/31/vaconv": 0.012012881615333572,
+        "station/ac_dc_converter_station/31/vafilt": 0.012012881615333572,
+        "station/ac_dc_converter_station/31/vmconv": 239.99999960232503,
+        "station/ac_dc_converter_station/31/vmfilt": 239.99999960232503,
+        "va[11]": -3.0844971765576824e-35,
+        "vm[11]": 275.42177057926835
+      },
+      "source_hashes": {
+        "optimized_084.m": "f65360fd24bf6a2449a8b6673939f2e7a6ea0941cd85573fff17897273fc72a8",
+        "optimized_085.m": "564d3fe9c463c74887d769c6afebec5c97b1331ea84fb80ba136765d57c649c1",
+        "optimized_086.m": "0ab66c4851e28c6de16eb202324e619e9cea8322a3937a8229e9d7df4308fce1",
+        "optimized_087.m": "37d66aedeb4f61ac3ea7ed16cdf38ba9091075b842e9310ddbd1e15efbc7f1f2"
+      }
+    },
+    "mask5/direction1/poles1": {
+      "max_native_kkt": 3.231757460743793e-09,
+      "max_native_physical_residual": 1.1900169738510158e-10,
+      "max_native_reference_objective_difference": 4.010928478237474e-09,
+      "max_native_violation": 5.754507981237111e-12,
+      "max_reference_violation": 7.275957614183426e-12,
+      "native_iterations_range": [
+        11,
+        11
+      ],
+      "native_solves": 8,
+      "networks": 4,
+      "objective_range": [
+        275.9185449492047,
+        275.9185449532171
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/21/vm",
+        "station/ac_dc_converter_station/31/vmconv"
+      ],
+      "representative_physical_point": {
+        "dc_branch/dc_equivalent_branch/41/pf": 85.87767625428198,
+        "dc_branch/dc_equivalent_branch/41/pt": -85.63387541808486,
+        "dc_bus/dc_equivalent_bus/21/vm": 549.9999993976056,
+        "dc_bus/dc_equivalent_bus/22/vm": 548.438587100365,
+        "pg[physical-generator]": 86.63568682946351,
+        "qg[physical-generator]": -1.5789785874660869,
+        "station/ac_dc_converter_station/31/iconv": 0.20817512049974793,
+        "station/ac_dc_converter_station/31/pconv": 86.47973678366535,
+        "station/ac_dc_converter_station/31/pdc": -85.87767625428198,
+        "station/ac_dc_converter_station/31/pgrid": 86.63568682946351,
+        "station/ac_dc_converter_station/31/ppr_fr": 86.47973678366535,
+        "station/ac_dc_converter_station/31/ptf_to": -86.47973678366535,
+        "station/ac_dc_converter_station/31/qconv": 3.1413544254624517,
+        "station/ac_dc_converter_station/31/qgrid": -1.5789785874660869,
+        "station/ac_dc_converter_station/31/qpr_fr": 3.1413544254624517,
+        "station/ac_dc_converter_station/31/qtf_to": 2.618645559451432,
+        "station/ac_dc_converter_station/31/vaconv": -0.01204772178227481,
+        "station/ac_dc_converter_station/31/vafilt": -0.01204772178227481,
+        "station/ac_dc_converter_station/31/vmconv": 239.99999968581758,
+        "station/ac_dc_converter_station/31/vmfilt": 239.99999968581758,
+        "va[11]": 3.8452323933332754e-24,
+        "vm[11]": 276.41693709748785
+      },
+      "source_hashes": {
+        "optimized_088.m": "7453aea3fda389ca68718c61e27414ca6d5541e6ad715b021f2df994716f9ef9",
+        "optimized_089.m": "c7df28031a844c903127197aaef4736172ff1e5f3a36882a49bb40deaa4453b4",
+        "optimized_090.m": "49e8551a7bca4914e25c506e7e2c9206f9193e80bddc61409c3759a0d4cadf6e",
+        "optimized_091.m": "38239e57ff140ec78212aa29e14cd1e0099cbb223f10894a3fb781c49cd04cb1"
+      }
+    },
+    "mask5/direction1/poles2": {
+      "max_native_kkt": 2.5059098760774417e-09,
+      "max_native_physical_residual": 8.341771717823576e-12,
+      "max_native_reference_objective_difference": 4.715445811598329e-09,
+      "max_native_violation": 1.1790568521519162e-13,
+      "max_reference_violation": 7.275957614183426e-12,
+      "native_iterations_range": [
+        12,
+        12
+      ],
+      "native_solves": 8,
+      "networks": 4,
+      "objective_range": [
+        276.0056248005542,
+        276.0056248052711
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/21/vm",
+        "station/ac_dc_converter_station/31/vmconv"
+      ],
+      "representative_physical_point": {
+        "dc_branch/dc_equivalent_branch/41/pf": 85.90352587995918,
+        "dc_branch/dc_equivalent_branch/41/pt": -85.78155206502552,
+        "dc_bus/dc_equivalent_bus/21/vm": 549.9999983276512,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.2190571809133,
+        "pg[physical-generator]": 86.66170726443224,
+        "qg[physical-generator]": -1.5781167721208313,
+        "station/ac_dc_converter_station/31/iconv": 0.2082374710019343,
+        "station/ac_dc_converter_station/31/pconv": 86.50566380728858,
+        "station/ac_dc_converter_station/31/pdc": -85.90352587995918,
+        "station/ac_dc_converter_station/31/pgrid": 86.66170726443224,
+        "station/ac_dc_converter_station/31/ppr_fr": 86.50566380728858,
+        "station/ac_dc_converter_station/31/ptf_to": -86.50566380728858,
+        "station/ac_dc_converter_station/31/qconv": 3.141593498481969,
+        "station/ac_dc_converter_station/31/qgrid": -1.5781167721208313,
+        "station/ac_dc_converter_station/31/qpr_fr": 3.141593498481969,
+        "station/ac_dc_converter_station/31/qtf_to": 2.6184064864125594,
+        "station/ac_dc_converter_station/31/vaconv": -0.012051305193343593,
+        "station/ac_dc_converter_station/31/vafilt": -0.012051305193343593,
+        "station/ac_dc_converter_station/31/vmconv": 239.99999968530267,
+        "station/ac_dc_converter_station/31/vmfilt": 239.99999968530267,
+        "va[11]": -2.2334392665623463e-36,
+        "vm[11]": 276.41710728904906
+      },
+      "source_hashes": {
+        "optimized_092.m": "bbf1e8c7852747aa747c8fd8f0fe7d9442b4469559dc7651d9d44e64da3cb744",
+        "optimized_093.m": "66ab8780ef4f099cf4c9f45bb29e4d7b82a20552057b137538a9a5c612b5657e",
+        "optimized_094.m": "5f5ebc2170457ede63b53abb8f139aae85a6384763e94174d2ae15a662cb59ef",
+        "optimized_095.m": "656e31b2ecc4ea09fb7543740d31ee6bb0b533ce27347b28bc962262b145ef8a"
+      }
+    },
+    "mask6/direction-1/poles1": {
+      "max_native_kkt": 3.3841371427431625e-09,
+      "max_native_physical_residual": 1.7207923974638106e-10,
+      "max_native_reference_objective_difference": 3.934104597647092e-09,
+      "max_native_violation": 1.4851675445015644e-11,
+      "max_reference_violation": 7.275957614183426e-12,
+      "native_iterations_range": [
+        10,
+        11
+      ],
+      "native_solves": 8,
+      "networks": 4,
+      "objective_range": [
+        -243.88830444542737,
+        -243.8883044414908
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/22/vm",
+        "station/ac_dc_converter_station/31/vmconv"
+      ],
+      "representative_physical_point": {
+        "dc_branch/dc_equivalent_branch/41/pf": -87.32696972526817,
+        "dc_branch/dc_equivalent_branch/41/pt": 87.58053501892824,
+        "dc_bus/dc_equivalent_bus/21/vm": 548.4076259507362,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.999999316692,
+        "pg[physical-generator]": -86.63294641710372,
+        "qg[physical-generator]": -5.2257743773725345,
+        "station/ac_dc_converter_station/31/iconv": 0.2086263593721843,
+        "station/ac_dc_converter_station/31/pconv": -86.72434882853543,
+        "station/ac_dc_converter_station/31/pdc": 87.32696972526817,
+        "station/ac_dc_converter_station/31/pgrid": -86.63294641710372,
+        "station/ac_dc_converter_station/31/ppr_fr": -86.63294641710372,
+        "station/ac_dc_converter_station/31/ptf_to": 86.63294641710372,
+        "station/ac_dc_converter_station/31/qconv": 1.3009884097228091e-08,
+        "station/ac_dc_converter_station/31/qgrid": -5.2257743773725345,
+        "station/ac_dc_converter_station/31/qpr_fr": 0.5222995069061737,
+        "station/ac_dc_converter_station/31/qtf_to": 5.2257743773725345,
+        "station/ac_dc_converter_station/31/vaconv": 0.006028805293800131,
+        "station/ac_dc_converter_station/31/vafilt": 0.0,
+        "station/ac_dc_converter_station/31/vmconv": 239.99999948233827,
+        "station/ac_dc_converter_station/31/vmfilt": 239.7514105129107,
+        "va[11]": 0.0,
+        "vm[11]": 239.7514105129107
+      },
+      "source_hashes": {
+        "optimized_096.m": "9a92568a15ece02832382be036df67a4caedbda17a6940219825921ed11f82d1",
+        "optimized_097.m": "9601408dd0e95425810844cf7373918a592135653cedf82d158b94fa6daa10b4",
+        "optimized_098.m": "01e2540e02dfad9c7a42ac364c1359e25bb0a6033adecdaf5e066524f0eb1828",
+        "optimized_099.m": "666c8e1fe6b79e8c6c29f7ded38e530de4563c8c30952e17a91a166e21d55c8e"
+      }
+    },
+    "mask6/direction-1/poles2": {
+      "max_native_kkt": 2.5059128012447767e-09,
+      "max_native_physical_residual": 5.4001247917767614e-12,
+      "max_native_reference_objective_difference": 4.77322714687034e-09,
+      "max_native_violation": 1.0541437095619202e-13,
+      "max_reference_violation": 1.4551915228366852e-11,
+      "native_iterations_range": [
+        11,
+        12
+      ],
+      "native_solves": 8,
+      "networks": 4,
+      "objective_range": [
+        -243.8219916052062,
+        -243.8219916004329
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/22/vm",
+        "station/ac_dc_converter_station/31/vmconv"
+      ],
+      "representative_physical_point": {
+        "dc_branch/dc_equivalent_branch/41/pf": -87.30185156363265,
+        "dc_branch/dc_equivalent_branch/41/pt": 87.4281935319249,
+        "dc_bus/dc_equivalent_bus/21/vm": 549.2051961716161,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.9999979339829,
+        "pg[physical-generator]": -86.607955881454,
+        "qg[physical-generator]": -5.226079363739443,
+        "station/ac_dc_converter_station/31/iconv": 0.20856611451369916,
+        "station/ac_dc_converter_station/31/pconv": -86.69930551211273,
+        "station/ac_dc_converter_station/31/pdc": 87.30185156363265,
+        "station/ac_dc_converter_station/31/pgrid": -86.607955881454,
+        "station/ac_dc_converter_station/31/ppr_fr": -86.607955881454,
+        "station/ac_dc_converter_station/31/ptf_to": 86.607955881454,
+        "station/ac_dc_converter_station/31/qconv": 1.2948751105959205e-08,
+        "station/ac_dc_converter_station/31/qgrid": -5.226079363739443,
+        "station/ac_dc_converter_station/31/qpr_fr": 0.5219979024311666,
+        "station/ac_dc_converter_station/31/qtf_to": 5.226079363739443,
+        "station/ac_dc_converter_station/31/vaconv": 0.006027062566676126,
+        "station/ac_dc_converter_station/31/vafilt": 0.0,
+        "station/ac_dc_converter_station/31/vmconv": 239.99999948545852,
+        "station/ac_dc_converter_station/31/vmfilt": 239.75148104173644,
+        "va[11]": 0.0,
+        "vm[11]": 239.75148104173647
+      },
+      "source_hashes": {
+        "optimized_100.m": "be732a7e4013b1f6f168ccdb7dbc1cd35b2b8aebc5f947e3cf5969e177960a51",
+        "optimized_101.m": "b31cf3e827c21139ec824b32c5e7296c874cf4a9fa954772d32051591122cbca",
+        "optimized_102.m": "b7829bd6e2c274ca829983131bb467379ad030ff1f018eed8bd4e5ba6618ad43",
+        "optimized_103.m": "431a740b7b158c29a83ceb1fdcdabec185476c9c9ec99a084fcffbaad42c6ce5"
+      }
+    },
+    "mask6/direction1/poles1": {
+      "max_native_kkt": 3.2329008124528022e-09,
+      "max_native_physical_residual": 1.106172931031324e-10,
+      "max_native_reference_objective_difference": 4.022808752779383e-09,
+      "max_native_violation": 9.412914891981927e-12,
+      "max_reference_violation": 3.637978807091713e-12,
+      "native_iterations_range": [
+        10,
+        11
+      ],
+      "native_solves": 8,
+      "networks": 4,
+      "objective_range": [
+        275.7002461833003,
+        275.7002461873231
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/21/vm",
+        "station/ac_dc_converter_station/31/vmconv"
+      ],
+      "representative_physical_point": {
+        "dc_branch/dc_equivalent_branch/41/pf": 85.87767625428249,
+        "dc_branch/dc_equivalent_branch/41/pt": -85.63387541808486,
+        "dc_bus/dc_equivalent_bus/21/vm": 549.999999397023,
+        "dc_bus/dc_equivalent_bus/22/vm": 548.4385870997806,
+        "pg[physical-generator]": 86.57045315601574,
+        "qg[physical-generator]": -5.252965980304405,
+        "station/ac_dc_converter_station/31/iconv": 0.20803750328720833,
+        "station/ac_dc_converter_station/31/pconv": 86.47956599018961,
+        "station/ac_dc_converter_station/31/pdc": -85.87767625428249,
+        "station/ac_dc_converter_station/31/pgrid": 86.57045315601574,
+        "station/ac_dc_converter_station/31/ppr_fr": 86.57045315601574,
+        "station/ac_dc_converter_station/31/ptf_to": -86.57045315601574,
+        "station/ac_dc_converter_station/31/qconv": 1.0186519782828683e-08,
+        "station/ac_dc_converter_station/31/qgrid": -5.252965980304405,
+        "station/ac_dc_converter_station/31/qpr_fr": 0.5193552434771213,
+        "station/ac_dc_converter_station/31/qtf_to": 5.252965980304405,
+        "station/ac_dc_converter_station/31/vaconv": -0.0059991484835013745,
+        "station/ac_dc_converter_station/31/vafilt": 0.0,
+        "station/ac_dc_converter_station/31/vmconv": 239.99999959059988,
+        "station/ac_dc_converter_station/31/vmfilt": 240.25655503628758,
+        "va[11]": 0.0,
+        "vm[11]": 240.25655503628758
+      },
+      "source_hashes": {
+        "optimized_104.m": "e9f0cbcbd178c93a5bc279bf787b669ab0067efe3ac339a068bb4a9908f283c9",
+        "optimized_105.m": "71ad19fe3397ac00245f3e90a5dc0fe02df4ee765961addcd885b98536c4f7f7",
+        "optimized_106.m": "4b2904aba13bbc5f7e86fcd50755f96fb94e802e0ac2f3af01d46ad3e3f3cdc3",
+        "optimized_107.m": "74c8b625371f72bf6451ff16505eb405b157dcd90d58c040d6051bb380dbfa91"
+      }
+    },
+    "mask6/direction1/poles2": {
+      "max_native_kkt": 2.5059098567940505e-09,
+      "max_native_physical_residual": 8.412825991399586e-12,
+      "max_native_reference_objective_difference": 4.724597602034919e-09,
+      "max_native_violation": 7.457749695571891e-14,
+      "max_reference_violation": 1.4551915228366852e-11,
+      "native_iterations_range": [
+        11,
+        12
+      ],
+      "native_solves": 8,
+      "networks": 4,
+      "objective_range": [
+        275.7871890589404,
+        275.78718906366737
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/21/vm",
+        "station/ac_dc_converter_station/31/vmconv"
+      ],
+      "representative_physical_point": {
+        "dc_branch/dc_equivalent_branch/41/pf": 85.90352587996034,
+        "dc_branch/dc_equivalent_branch/41/pt": -85.78155206502552,
+        "dc_bus/dc_equivalent_bus/21/vm": 549.999998325016,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.2190571782745,
+        "pg[physical-generator]": 86.59643468749726,
+        "qg[physical-generator]": -5.25265828113975,
+        "station/ac_dc_converter_station/31/iconv": 0.2080998740176587,
+        "station/ac_dc_converter_station/31/pconv": 86.50549301660871,
+        "station/ac_dc_converter_station/31/pdc": -85.90352587996034,
+        "station/ac_dc_converter_station/31/pgrid": 86.59643468749726,
+        "station/ac_dc_converter_station/31/ppr_fr": 86.59643468749726,
+        "station/ac_dc_converter_station/31/ptf_to": -86.59643468749726,
+        "station/ac_dc_converter_station/31/qconv": 1.0151805417153414e-08,
+        "station/ac_dc_converter_station/31/qgrid": -5.25265828113975,
+        "station/ac_dc_converter_station/31/qpr_fr": 0.5196667009431066,
+        "station/ac_dc_converter_station/31/qtf_to": 5.25265828113975,
+        "station/ac_dc_converter_station/31/vaconv": -0.006000945127570572,
+        "station/ac_dc_converter_station/31/vafilt": 0.0,
+        "station/ac_dc_converter_station/31/vmconv": 239.99999959289858,
+        "station/ac_dc_converter_station/31/vmfilt": 240.25663325042365,
+        "va[11]": 0.0,
+        "vm[11]": 240.25663325042368
+      },
+      "source_hashes": {
+        "optimized_108.m": "628db7a9bca3e12b1e6b528106a83d52bd27f13cd3322c685996101df41416e3",
+        "optimized_109.m": "4d024c2708dac347b985a3cff8bdcd38ccbc97f8ae8a0be60ef938a31529f615",
+        "optimized_110.m": "8cb8fd520870fb20d4cad9c317e52f931571d1c0bec72a9347507ac7fcad511f",
+        "optimized_111.m": "ac39cf78fb33bbf702b6d0a5712ddaab0c23831abbdf21489c4cdec389ed5712"
+      }
+    },
+    "mask7/direction-1/poles1": {
+      "max_native_kkt": 3.3871165279242976e-09,
+      "max_native_physical_residual": 1.6557066828681855e-10,
+      "max_native_reference_objective_difference": 3.929244485334493e-09,
+      "max_native_violation": 5.2167159481086856e-12,
+      "max_reference_violation": 7.275957614183426e-12,
+      "native_iterations_range": [
+        10,
+        11
+      ],
+      "native_solves": 8,
+      "networks": 4,
+      "objective_range": [
+        -243.4717488046219,
+        -243.47174880069215
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/22/vm",
+        "station/ac_dc_converter_station/31/vmconv"
+      ],
+      "representative_physical_point": {
+        "dc_branch/dc_equivalent_branch/41/pf": -87.32696972526715,
+        "dc_branch/dc_equivalent_branch/41/pt": 87.58053501892824,
+        "dc_bus/dc_equivalent_bus/21/vm": 548.4076259495961,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.9999993155552,
+        "pg[physical-generator]": -86.47597963626593,
+        "qg[physical-generator]": -1.785227840825266,
+        "station/ac_dc_converter_station/31/iconv": 0.20870577764172246,
+        "station/ac_dc_converter_station/31/pconv": -86.72425014881064,
+        "station/ac_dc_converter_station/31/pdc": 87.32696972526715,
+        "station/ac_dc_converter_station/31/pgrid": -86.47597963626593,
+        "station/ac_dc_converter_station/31/ppr_fr": -86.63277813540589,
+        "station/ac_dc_converter_station/31/ptf_to": 86.63277813540589,
+        "station/ac_dc_converter_station/31/qconv": 2.396743079045214,
+        "station/ac_dc_converter_station/31/qgrid": -1.785227840825266,
+        "station/ac_dc_converter_station/31/qpr_fr": 2.919440298502534,
+        "station/ac_dc_converter_station/31/qtf_to": 2.8305511684250004,
+        "station/ac_dc_converter_station/31/vaconv": 0.018077035790536527,
+        "station/ac_dc_converter_station/31/vafilt": 0.012020089782942214,
+        "station/ac_dc_converter_station/31/vmconv": 239.99999969919412,
+        "station/ac_dc_converter_station/31/vmfilt": 239.7913982388123,
+        "va[11]": -1.3350018567113729e-24,
+        "vm[11]": 275.1728158988107
+      },
+      "source_hashes": {
+        "optimized_112.m": "da7e18447ed0cd6e926114e43cf9208497f938f0dd54b47685d0d3fbd7898d71",
+        "optimized_113.m": "1e8aafe5b1732f69fb233c1767cf6da7709bb16c1162eb7afac25b4f3bc111d0",
+        "optimized_114.m": "c98775abbc42e86d10bedad5be7315e34e5d59f2ca9a7b605abe4f83436f17c9",
+        "optimized_115.m": "b79f505f9eaa7354f658f543ab12803d0b867bc8af8c1963f3cee195467e87a1"
+      }
+    },
+    "mask7/direction-1/poles2": {
+      "max_native_kkt": 2.5059127708465476e-09,
+      "max_native_physical_residual": 6.810184445070106e-12,
+      "max_native_reference_objective_difference": 4.794742380909156e-09,
+      "max_native_violation": 9.348077867343818e-14,
+      "max_reference_violation": 7.275957614183426e-12,
+      "native_iterations_range": [
+        11,
+        12
+      ],
+      "native_solves": 8,
+      "networks": 4,
+      "objective_range": [
+        -243.4056601927305,
+        -243.40566018793353
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/22/vm",
+        "station/ac_dc_converter_station/31/vmconv"
+      ],
+      "representative_physical_point": {
+        "dc_branch/dc_equivalent_branch/41/pf": -87.30185156362943,
+        "dc_branch/dc_equivalent_branch/41/pt": 87.4281935319249,
+        "dc_bus/dc_equivalent_bus/21/vm": 549.2051961645972,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.9999979269741,
+        "pg[physical-generator]": -86.45107949297909,
+        "qg[physical-generator]": -1.7862700182393543,
+        "station/ac_dc_converter_station/31/iconv": 0.20864554682293343,
+        "station/ac_dc_converter_station/31/pconv": -86.69920682738163,
+        "station/ac_dc_converter_station/31/pdc": 87.30185156362943,
+        "station/ac_dc_converter_station/31/pgrid": -86.45107949297909,
+        "station/ac_dc_converter_station/31/ppr_fr": -86.6077876025422,
+        "station/ac_dc_converter_station/31/ptf_to": 86.6077876025422,
+        "station/ac_dc_converter_station/31/qconv": 2.3966084217143506,
+        "station/ac_dc_converter_station/31/qgrid": -1.7862700182393543,
+        "station/ac_dc_converter_station/31/qpr_fr": 2.9190039922233177,
+        "station/ac_dc_converter_station/31/qtf_to": 2.8309907486617956,
+        "station/ac_dc_converter_station/31/vaconv": 0.018071786053212538,
+        "station/ac_dc_converter_station/31/vafilt": 0.012016584071767663,
+        "station/ac_dc_converter_station/31/vmconv": 239.99999969853403,
+        "station/ac_dc_converter_station/31/vmfilt": 239.791466505485,
+        "va[11]": -1.692711865184094e-35,
+        "vm[11]": 275.17300995412177
+      },
+      "source_hashes": {
+        "optimized_116.m": "3550fec28507868fe133fbdd4e85ebb92520f6b78feec93d4b2617a84039aeb9",
+        "optimized_117.m": "dc79d464d7a4f789824c9ea905f57ab9a1893b734c7478446ff02cc7cb93866f",
+        "optimized_118.m": "3a6dbef8e67e2790923836188f151c7d24843c0bfc169e6e393b9e3b9ef16e7f",
+        "optimized_119.m": "f8e6d04392a94e4bdd9de1a42338aa6c82b0da6cb234761a3da370321458b97c"
+      }
+    },
+    "mask7/direction1/poles1": {
+      "max_native_kkt": 3.2301635294478894e-09,
+      "max_native_physical_residual": 1.0382450454926584e-10,
+      "max_native_reference_objective_difference": 4.018659183202544e-09,
+      "max_native_violation": 3.341327214911871e-12,
+      "max_reference_violation": 1.0913936421275139e-11,
+      "native_iterations_range": [
+        10,
+        11
+      ],
+      "native_solves": 8,
+      "networks": 4,
+      "objective_range": [
+        276.2226126510311,
+        276.22261265505085
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/21/vm",
+        "station/ac_dc_converter_station/31/vmconv"
+      ],
+      "representative_physical_point": {
+        "dc_branch/dc_equivalent_branch/41/pf": 85.8776762542812,
+        "dc_branch/dc_equivalent_branch/41/pt": -85.63387541808483,
+        "dc_bus/dc_equivalent_bus/21/vm": 549.99999939842,
+        "dc_bus/dc_equivalent_bus/22/vm": 548.4385871011816,
+        "pg[physical-generator]": 86.72654214356334,
+        "qg[physical-generator]": -1.8338304967201928,
+        "station/ac_dc_converter_station/31/iconv": 0.20811658560444918,
+        "station/ac_dc_converter_station/31/pconv": 86.47966413136902,
+        "station/ac_dc_converter_station/31/pdc": -85.8776762542812,
+        "station/ac_dc_converter_station/31/pgrid": 86.72654214356334,
+        "station/ac_dc_converter_station/31/ppr_fr": 86.5706204090971,
+        "station/ac_dc_converter_station/31/ptf_to": -86.5706204090971,
+        "station/ac_dc_converter_station/31/qconv": 2.381167457565264,
+        "station/ac_dc_converter_station/31/qgrid": -1.8338304967201928,
+        "station/ac_dc_converter_station/31/qpr_fr": 2.90091761600978,
+        "station/ac_dc_converter_station/31/qtf_to": 2.873308726494747,
+        "station/ac_dc_converter_station/31/vaconv": -0.01800560440495123,
+        "station/ac_dc_converter_station/31/vafilt": -0.012036341522659467,
+        "station/ac_dc_converter_station/31/vmconv": 239.99999976167382,
+        "station/ac_dc_converter_station/31/vmfilt": 240.2961993562863,
+        "va[11]": -2.848227049808247e-24,
+        "vm[11]": 276.7478354814226
+      },
+      "source_hashes": {
+        "optimized_120.m": "02b4b391210bc0aecf305684062da2ae9350f6f2e0a6bc162f9ca85d0eecff0c",
+        "optimized_121.m": "0be1cbb16d94766a7aea26ff1a7648f0fa96374073b320b8841523cb9bf7501c",
+        "optimized_122.m": "7b040d12a8e12eed4c06ca8b1cb3e95e760a398ad5c324d6b78898297c131f1f",
+        "optimized_123.m": "9a94a3a5bb2ca8cdfffc4eed181a205a3a11fcc55de509a4b75fa4f81c696a53"
+      }
+    },
+    "mask7/direction1/poles2": {
+      "max_native_kkt": 2.5059097812687817e-09,
+      "max_native_physical_residual": 8.142819751810748e-12,
+      "max_native_reference_objective_difference": 4.695664301834768e-09,
+      "max_native_violation": 1.5587531265737198e-13,
+      "max_reference_violation": 1.4551915228366852e-11,
+      "native_iterations_range": [
+        11,
+        12
+      ],
+      "native_solves": 8,
+      "networks": 4,
+      "objective_range": [
+        276.30988418006166,
+        276.3098841847606
+      ],
+      "reference_solves": 8,
+      "representative_binding_variable_bounds": [
+        "dc_bus/dc_equivalent_bus/21/vm",
+        "station/ac_dc_converter_station/31/vmconv"
+      ],
+      "representative_physical_point": {
+        "dc_branch/dc_equivalent_branch/41/pf": 85.9035258799575,
+        "dc_branch/dc_equivalent_branch/41/pt": -85.7815520650255,
+        "dc_bus/dc_equivalent_bus/21/vm": 549.9999983313248,
+        "dc_bus/dc_equivalent_bus/22/vm": 549.2190571845922,
+        "pg[physical-generator]": 86.75261702152946,
+        "qg[physical-generator]": -1.8327632871002026,
+        "station/ac_dc_converter_station/31/iconv": 0.20817894178917767,
+        "station/ac_dc_converter_station/31/pconv": 86.50559115255572,
+        "station/ac_dc_converter_station/31/pdc": -85.9035258799575,
+        "station/ac_dc_converter_station/31/pgrid": 86.75261702152946,
+        "station/ac_dc_converter_station/31/ppr_fr": 86.59660194334485,
+        "station/ac_dc_converter_station/31/ptf_to": -86.59660194334485,
+        "station/ac_dc_converter_station/31/qconv": 2.381304740537771,
+        "station/ac_dc_converter_station/31/qgrid": -1.8327632871002026,
+        "station/ac_dc_converter_station/31/qpr_fr": 2.901366402189911,
+        "station/ac_dc_converter_station/31/qtf_to": 2.872863808330969,
+        "station/ac_dc_converter_station/31/vaconv": -0.018010968620271312,
+        "station/ac_dc_converter_station/31/vafilt": -0.012039911103987175,
+        "station/ac_dc_converter_station/31/vmconv": 239.9999997613974,
+        "station/ac_dc_converter_station/31/vmfilt": 240.29627984055182,
+        "va[11]": 7.817037432968212e-37,
+        "vm[11]": 276.74810606391907
+      },
+      "source_hashes": {
+        "optimized_124.m": "4da30191c17929c67b6a37766682e17267363e504082debdeafcd6338bc2176e",
+        "optimized_125.m": "a2832a0fec951c96ac1264b2b9144333876458b980c12b15eefb84cfd6e4e55b",
+        "optimized_126.m": "ce5a38830a7841685dc63fdc9c928f597d7386ae7637121c2bb352c35fa29754",
+        "optimized_127.m": "17898b31eb5978845e94544ae3213f6455800b160fd92ffd29299f3adb4245cc"
+      }
+    }
+  },
+  "julia_version": "1.12.6",
+  "manifest_sha256": "c0c50ee07d24b1ba8af99d58dad407959e4e6ce81071f6f988babe120f0344f4",
+  "max_cross_violation": 1.7462298274040222e-10,
+  "max_physical_difference_by_quantity": {
+    "dc_branch/dc_equivalent_branch/41/pf": 9.154632607533131e-10,
+    "dc_branch/dc_equivalent_branch/41/pt": 0.0,
+    "dc_bus/dc_equivalent_bus/21/vm": 1.9760537952606683e-06,
+    "dc_bus/dc_equivalent_bus/22/vm": 1.9732023019969347e-06,
+    "pg[physical-generator]": 1.8069385987473652e-09,
+    "qg[physical-generator]": 6.953540765408661e-08,
+    "station/ac_dc_converter_station/31/iconv": 7.287579706360958e-10,
+    "station/ac_dc_converter_station/31/pconv": 1.8047074945570785e-09,
+    "station/ac_dc_converter_station/31/pdc": 9.154632607533131e-10,
+    "station/ac_dc_converter_station/31/pgrid": 1.8069385987473652e-09,
+    "station/ac_dc_converter_station/31/ppr_fr": 1.8047074945570785e-09,
+    "station/ac_dc_converter_station/31/ptf_to": 1.8047074945570785e-09,
+    "station/ac_dc_converter_station/31/qconv": 3.430495754130902e-08,
+    "station/ac_dc_converter_station/31/qgrid": 6.953540765408661e-08,
+    "station/ac_dc_converter_station/31/qpr_fr": 3.430495754130902e-08,
+    "station/ac_dc_converter_station/31/qtf_to": 6.953540765408661e-08,
+    "station/ac_dc_converter_station/31/vaconv": 4.254135238523915e-11,
+    "station/ac_dc_converter_station/31/vafilt": 3.7586444373571837e-11,
+    "station/ac_dc_converter_station/31/vmconv": 8.441994623353821e-07,
+    "station/ac_dc_converter_station/31/vmfilt": 8.441994623353821e-07,
+    "va[11]": 3.858636634318268e-23,
+    "vm[11]": 8.441994907570916e-07
+  },
+  "native_cross_check": {
+    "checks": 1024,
+    "max_physical_residual": 2.3021584638627246e-11,
+    "max_violation": 5.833111771380572e-13
+  },
+  "native_report_sha256": "91dcb9b3892d75a5d138e2f79527966a66a2f56ef0444a289eba1708c835c613",
+  "powerio_revision": "ba1f9fc90de768e53aaace1c21e68b0d64759713",
+  "reference_modification": "restore_source_Imax; SI_transformer_bypass_and_DC_Ohms_with_from_side_resistance_base",
+  "reference_report_sha256": "3197306c493c9a787f4aa96c07fc5069478a00050f74f6b7d1a7c458da3c3fad",
+  "reference_revision": "9ada4082ac087aed649f48fb5f977680b0fe06c7"
+}

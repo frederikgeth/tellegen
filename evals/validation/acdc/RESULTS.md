@@ -349,3 +349,22 @@ fmt/pin/EPL checks passing. PowerIO's 496 affected tests and changed-code Clippy
 pass; only its previously documented broad-matrix baseline float warnings
 remain. Native coupled PF, optimizer invariance, directional losses and physical
 pole/return topology are still separate gates. Draft PR heads are unchanged.
+
+## Optimized physical-base equivalence — 2026-11-10
+
+The [optimization follow-up](physical/OPTIMIZED.md) qualifies 32 synthetic
+physical networks represented on four combinations of MVA/local voltage bases.
+All eight station flag combinations, both directions and one/two poles pass.
+There are 256 native and 256 independently initialized modified-reference Julia
+local solves, 3,072 cross-formulation/base checks, 512 corruption controls and
+direct phase-domain checks of both solvers' points. Maximum native–Julia cost
+difference is 4.795e-9; largest Julia cross violation is 1.747e-10. Physical
+variable bounds are identical across bases and match independently parsed Julia
+bounds. Global optimality and primal uniqueness are not inferred.
+
+All 30 affected AC/DC regression tests pass, including two new optimization
+regressions and the four existing corpus cases. All-target numerical-feature
+Clippy, fmt/pin/EPL guards pass. The extracted physical-reference helper
+reproduces the prior 384-point evidence exactly. No production model, profile,
+PowerIO pin, schema or draft PR head changed. Multi-converter/meshed physical
+networks remain the next validation gate; no general rebasing API is enabled.
