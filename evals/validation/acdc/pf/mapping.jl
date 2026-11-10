@@ -52,6 +52,7 @@ function native_point(result,pm,data,ids,vars)
         end
     end
     for (id, conv) in data["convdc"]
+        conv["status"] == 1 || continue
         @assert conv["islcc"] == 0
         name = "0_phiconv[$id]"
         @assert haskey(vars, name) && !haskey(mapped, vars[name])

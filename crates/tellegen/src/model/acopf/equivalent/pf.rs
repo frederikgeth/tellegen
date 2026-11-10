@@ -44,6 +44,8 @@ pub struct AcDcPfResult {
     pub model_fingerprint: String,
     pub solver: &'static str,
     pub iterations: usize,
+    /// Accepted steps retracted to the nonnegative valve-current equality.
+    pub current_retractions: usize,
     pub residual_tolerance: f64,
     pub initial_point: BTreeMap<String, f64>,
     pub point: BTreeMap<String, f64>,
@@ -152,7 +154,7 @@ impl PreparedAcDcPf {
     ) -> Result<AcDcPfResult, String> {
         let initial_point = self.initial_point(&start)?;
         let initial = self.equations.point_values(&initial_point)?;
-        let (x, iterations) =
+        let (x, iterations, current_retractions) =
             newton::solve(&self.equations.model.problem, initial, cancel.as_deref())?;
         let point: BTreeMap<_, _> = self.manifest.variables.iter().cloned().zip(x).collect();
         let validation = self.evaluate(&point)?;
@@ -190,14 +192,15 @@ impl PreparedAcDcPf {
             Arc::clone(&self.instance),
             typed,
             powerio::Termination::Converged,
-            Some("tellegen/acdc-damped-newton-v1".into()),
+            Some("tellegen/acdc-damped-newton-v2".into()),
         )
         .map_err(|e| e.to_string())?;
         Ok(AcDcPfResult {
             solution,
             model_fingerprint: self.manifest.model_fingerprint.clone(),
-            solver: "analytic_jacobian_damped_newton_dense_scaled_pivoting_v1",
+            solver: "analytic_jacobian_damped_newton_current_retraction_v2",
             iterations,
+            current_retractions,
             residual_tolerance: newton::TOLERANCE,
             initial_point,
             point,

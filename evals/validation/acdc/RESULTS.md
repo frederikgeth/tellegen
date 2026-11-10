@@ -469,3 +469,27 @@ The 42 compatibility exports/native records and old case5 fingerprint remain
 unchanged. Next: case24/larger PF and connected control/islanding qualification.
 Physical/fixed-mode PF, saturation and droop remain separate gates. Existing PRs
 remain draft; the work stays on the two development branches.
+
+
+## Case24 PF controls and static islands — 2026-11-10
+
+The [case24 PF gate](pf/CASE24.md) retains the existing control policy and PowerIO
+pin. **Unmodified case24 is rejected** for overlapping generator/converter voltage
+control at bus 215. An explicit variant puts converter 6 on its retained PCC Q
+setting. Eleven positive control/outage/island variants pass **66 solves,
+66 bidirectional checks and 132 corruption controls**; the three baseline points
+also satisfy unmodified original PMACDC equations (maximum violation 2.729e-13).
+Nine case24 control refusals, two larger-source refusals, inactive-coordinate
+exclusion and stale post-outage starts are checked. Maximum electrical difference
+is 2.105e-9.
+
+A native Newton stall near an isolated converter's idle point was resolved with
+an exact nonnegative-current retraction candidate, preserving all equations and
+acceptance thresholds. Its use is reported. No new PMACDC equation bug is
+established. The case5 rerun passes all 48 solves/48 checks/96 corruptions with
+unchanged fingerprints. Full suite: **790 passed, 7 ignored**; lint/build/pin/EPL
+guards and 42 unchanged compatibility records pass. Existing PRs remain draft.
+
+Original case39 lacks a DC-voltage controller; case67 lacks an AC-island reference
+and also needs droop semantics. Next is an explicit control-policy decision for
+these source cases and shared voltage authority, not a silent source repair.

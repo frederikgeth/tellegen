@@ -126,3 +126,14 @@ CARGO_TARGET_DIR=/tmp/tacdc-native-pf-target CARGO_INCREMENTAL=0 \
   CARGO_PROFILE_DEV_DEBUG=0 CARGO_PROFILE_TEST_DEBUG=0 \
   cargo test -p tellegen --features 'acopf mc-opf conic schema' --locked --offline
 ```
+
+
+## Follow-up: case24 and static islands
+
+The [case24 gate](CASE24.md) now qualifies explicitly selected control/outage
+variants, records the original source's voltage-control overlap, and adds a
+reported near-idle current safeguard to the native numerical solver. The
+[case5 rerun](case5-recheck.json) retains all eight PF fingerprints and passes the
+same 48 solves, 48 cross-checks and 96 corruption controls. The historical report
+above describes the initial numerical implementation; control/equation profiles
+remain unchanged.

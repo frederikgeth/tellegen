@@ -75,7 +75,7 @@ pub(super) fn solve(
     p: &NlProblem,
     mut x: Vec<f64>,
     cancel: Option<&AtomicBool>,
-) -> Result<(Vec<f64>, usize), String> {
+) -> Result<(Vec<f64>, usize, usize), String> {
     let rows = equality_rows(p)?;
     let mut nlp = NlTnlp::try_new(p.clone())?;
     let info = nlp
@@ -106,6 +106,27 @@ pub(super) fn solve(
     if !domain(&x) {
         return Err("PF start needs positive voltage magnitudes and nonnegative current".into());
     }
+    // The squared current equality has an unwanted negative-current root.
+    // A Newton step towards it can pin the line search at I=0 near idle.
+    // Retraction to I=hypot(Pvalve,Qvalve)/Vvalve preserves that equality and
+    // the physical root; every candidate still passes the full residual test.
+    let currents: Vec<_> = p
+        .var_names
+        .iter()
+        .enumerate()
+        .filter_map(|(i, n)| {
+            n.strip_suffix("/iconv").map(|prefix| {
+                let col = |field| {
+                    p.var_names
+                        .iter()
+                        .position(|v| v == &format!("{prefix}/{field}"))
+                        .ok_or_else(|| format!("Missing PF valve coordinate {prefix}/{field}"))
+                };
+                Ok((i, col("pconv")?, col("qconv")?, col("vmconv")?))
+            })
+        })
+        .collect::<Result<_, String>>()?;
+    let mut current_retractions = 0;
     for iteration in 0..=60 {
         if cancel.is_some_and(|c| c.load(Ordering::Relaxed)) {
             return Err("AC/DC PF cancelled".into());
@@ -136,7 +157,7 @@ pub(super) fn solve(
         // Even a supplied converged point must have a nonsingular control Jacobian.
         let direction = linear(jac, g.iter().map(|v| -v).collect())?;
         if error < TOLERANCE {
-            return Ok((x, iteration));
+            return Ok((x, iteration, current_retractions));
         }
         if iteration == 60 {
             break;
@@ -144,7 +165,7 @@ pub(super) fn solve(
         let mut alpha = 1.;
         let mut accepted = None;
         for _ in 0..30 {
-            let trial: Vec<_> = x
+            let mut trial: Vec<_> = x
                 .iter()
                 .zip(&direction)
                 .map(|(a, d)| a + alpha * d)
@@ -152,6 +173,20 @@ pub(super) fn solve(
             if domain(&trial) {
                 if let Ok(g) = residual(&mut nlp, p, &rows, &trial) {
                     if norm(&g) < (1. - 1e-4 * alpha) * error {
+                        accepted = Some(trial);
+                        break;
+                    }
+                }
+            }
+            // Prefer the ordinary Newton candidate; use the exact current
+            // relation only when that candidate was inadmissible or rejected.
+            for &(i, pc, qc, vm) in &currents {
+                trial[i] = trial[pc].hypot(trial[qc]) / trial[vm];
+            }
+            if domain(&trial) {
+                if let Ok(g) = residual(&mut nlp, p, &rows, &trial) {
+                    if norm(&g) < (1. - 1e-4 * alpha) * error {
+                        current_retractions += 1;
                         accepted = Some(trial);
                         break;
                     }

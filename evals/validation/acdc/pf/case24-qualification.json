@@ -1,0 +1,1424 @@
+{
+  "acceptance": {
+    "angle_comparison": "phase_modulo_2pi; raw_points_retained",
+    "cross_constraint_tolerance": 1e-07,
+    "electrical_coordinate_tolerance": 1e-07,
+    "native_residual_tolerance": 1e-10
+  },
+  "cases": {
+    "ac_island": {
+      "active_coordinates_by_equipment": {
+        "branch": 76,
+        "branchdc": 7,
+        "bus": 50,
+        "busdc": 7,
+        "convdc": 7,
+        "gen": 65
+      },
+      "angle_references": [
+        {
+          "bus": 107,
+          "declared": true,
+          "island_buses": [
+            107
+          ]
+        },
+        {
+          "bus": 113,
+          "declared": true,
+          "island_buses": [
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            117,
+            118,
+            119,
+            120,
+            121,
+            122,
+            123,
+            124
+          ]
+        },
+        {
+          "bus": 213,
+          "declared": true,
+          "island_buses": [
+            201,
+            202,
+            203,
+            204,
+            205,
+            206,
+            207,
+            208,
+            209,
+            210,
+            211,
+            212,
+            213,
+            214,
+            215,
+            216,
+            217,
+            218,
+            219,
+            220,
+            221,
+            222,
+            223,
+            224
+          ]
+        },
+        {
+          "bus": 302,
+          "declared": true,
+          "island_buses": [
+            301,
+            302
+          ]
+        }
+      ],
+      "bus_type_policy": [
+        {
+          "bus_id": 123,
+          "declared": "PQ",
+          "effective": "PV"
+        }
+      ],
+      "control_count": 140,
+      "equalities": 653,
+      "limit_violation_count": 26,
+      "max_electrical_difference": 1.199040866595169e-14,
+      "max_limit_violation": 1.0464835876801315,
+      "max_native_in_reference_violation": 2.728928194528635e-13,
+      "max_native_violation": 4.551914400963142e-14,
+      "max_raw_coordinate_difference": 1.199040866595169e-14,
+      "max_reference_violation": 2.728928194528635e-13,
+      "max_unmodified_source_violation": null,
+      "model_fingerprint": "sha256:b98d28fde237f41fa15b6a7f2c1b4845b9d75d216a464c7650595977d1c13429",
+      "native_current_retractions": [
+        0,
+        1,
+        0
+      ],
+      "native_iterations": [
+        6,
+        6,
+        6
+      ],
+      "phase_windings_by_start": {
+        "declared": {},
+        "flat": {},
+        "perturbed": {}
+      },
+      "reference_only_variable_count": 109,
+      "representative_point_sha256": "4b6f4c9f24bf791cce69ff804a513b2b236c7012a930388734dfc6891f53b94b",
+      "sharing_equalities": 47,
+      "source_sha256": "8cdebbf8eb44dcc61970f661c7dcd1e9203523dec402f648784e71d2ff34714c",
+      "variables": 653
+    },
+    "ac_line_outage": {
+      "active_coordinates_by_equipment": {
+        "branch": 76,
+        "branchdc": 7,
+        "bus": 50,
+        "busdc": 7,
+        "convdc": 7,
+        "gen": 65
+      },
+      "angle_references": [
+        {
+          "bus": 113,
+          "declared": true,
+          "island_buses": [
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            117,
+            118,
+            119,
+            120,
+            121,
+            122,
+            123,
+            124
+          ]
+        },
+        {
+          "bus": 213,
+          "declared": true,
+          "island_buses": [
+            201,
+            202,
+            203,
+            204,
+            205,
+            206,
+            207,
+            208,
+            209,
+            210,
+            211,
+            212,
+            213,
+            214,
+            215,
+            216,
+            217,
+            218,
+            219,
+            220,
+            221,
+            222,
+            223,
+            224
+          ]
+        },
+        {
+          "bus": 302,
+          "declared": true,
+          "island_buses": [
+            301,
+            302
+          ]
+        }
+      ],
+      "bus_type_policy": [
+        {
+          "bus_id": 123,
+          "declared": "PQ",
+          "effective": "PV"
+        }
+      ],
+      "control_count": 141,
+      "equalities": 653,
+      "limit_violation_count": 27,
+      "max_electrical_difference": 3.574918139293004e-14,
+      "max_limit_violation": 1.0464835876801315,
+      "max_native_in_reference_violation": 2.728928194528635e-13,
+      "max_native_violation": 4.551914400963142e-14,
+      "max_raw_coordinate_difference": 3.574918139293004e-14,
+      "max_reference_violation": 2.728928194528635e-13,
+      "max_unmodified_source_violation": null,
+      "model_fingerprint": "sha256:e9db2906d04cb8a48bebe84332d7023b82656655ad9f95e71d90ecda4d21c657",
+      "native_current_retractions": [
+        0,
+        1,
+        0
+      ],
+      "native_iterations": [
+        6,
+        6,
+        6
+      ],
+      "phase_windings_by_start": {
+        "declared": {},
+        "flat": {},
+        "perturbed": {}
+      },
+      "reference_only_variable_count": 109,
+      "representative_point_sha256": "24346fad858618efcbfb257f24533812b62cd04b399c372297b2834a854de05d",
+      "sharing_equalities": 46,
+      "source_sha256": "655ea0abf6777cc6ca7e1c0b71d10344d74552cd57c107ea5f5d9c2718dd476f",
+      "variables": 653
+    },
+    "combined_islands": {
+      "active_coordinates_by_equipment": {
+        "branch": 76,
+        "branchdc": 6,
+        "bus": 50,
+        "busdc": 7,
+        "convdc": 7,
+        "gen": 65
+      },
+      "angle_references": [
+        {
+          "bus": 107,
+          "declared": true,
+          "island_buses": [
+            107
+          ]
+        },
+        {
+          "bus": 113,
+          "declared": true,
+          "island_buses": [
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            117,
+            118,
+            119,
+            120,
+            121,
+            122,
+            123,
+            124
+          ]
+        },
+        {
+          "bus": 213,
+          "declared": true,
+          "island_buses": [
+            201,
+            202,
+            203,
+            204,
+            205,
+            206,
+            207,
+            208,
+            209,
+            210,
+            211,
+            212,
+            213,
+            214,
+            215,
+            216,
+            217,
+            218,
+            219,
+            220,
+            221,
+            222,
+            223,
+            224
+          ]
+        },
+        {
+          "bus": 302,
+          "declared": true,
+          "island_buses": [
+            301,
+            302
+          ]
+        }
+      ],
+      "bus_type_policy": [
+        {
+          "bus_id": 123,
+          "declared": "PQ",
+          "effective": "PV"
+        }
+      ],
+      "control_count": 140,
+      "equalities": 651,
+      "limit_violation_count": 31,
+      "max_electrical_difference": 2.104749286316321e-09,
+      "max_limit_violation": 1.0464835876801315,
+      "max_native_in_reference_violation": 5.7504689622263697e-11,
+      "max_native_violation": 5.7504689622263697e-11,
+      "max_raw_coordinate_difference": 2.104749286316321e-09,
+      "max_reference_violation": 1.929366497295526e-12,
+      "max_unmodified_source_violation": null,
+      "model_fingerprint": "sha256:458913b63c160bb96d1a5bfca7f2edbe9a27d7e6384dfef4138e9508dd78537e",
+      "native_current_retractions": [
+        1,
+        1,
+        1
+      ],
+      "native_iterations": [
+        6,
+        6,
+        6
+      ],
+      "phase_windings_by_start": {
+        "declared": {},
+        "flat": {},
+        "perturbed": {}
+      },
+      "reference_only_variable_count": 109,
+      "representative_point_sha256": "13681f1229e2b62e021f195814a9272f7f4d376ef29f20ce778633b6248d39be",
+      "sharing_equalities": 47,
+      "source_sha256": "50fed586e79a68b2190ee440fb2a343a3289bf0b5816708673c8f0180f2ea86c",
+      "variables": 651
+    },
+    "converter_outage": {
+      "active_coordinates_by_equipment": {
+        "branch": 77,
+        "branchdc": 7,
+        "bus": 50,
+        "busdc": 7,
+        "convdc": 6,
+        "gen": 65
+      },
+      "angle_references": [
+        {
+          "bus": 113,
+          "declared": true,
+          "island_buses": [
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            117,
+            118,
+            119,
+            120,
+            121,
+            122,
+            123,
+            124
+          ]
+        },
+        {
+          "bus": 213,
+          "declared": true,
+          "island_buses": [
+            201,
+            202,
+            203,
+            204,
+            205,
+            206,
+            207,
+            208,
+            209,
+            210,
+            211,
+            212,
+            213,
+            214,
+            215,
+            216,
+            217,
+            218,
+            219,
+            220,
+            221,
+            222,
+            223,
+            224
+          ]
+        },
+        {
+          "bus": 302,
+          "declared": true,
+          "island_buses": [
+            301,
+            302
+          ]
+        }
+      ],
+      "bus_type_policy": [
+        {
+          "bus_id": 123,
+          "declared": "PQ",
+          "effective": "PV"
+        }
+      ],
+      "control_count": 139,
+      "equalities": 643,
+      "limit_violation_count": 29,
+      "max_electrical_difference": 5.613209896893068e-11,
+      "max_limit_violation": 1.0464835876801315,
+      "max_native_in_reference_violation": 2.728928194528635e-13,
+      "max_native_violation": 4.551914400963142e-14,
+      "max_raw_coordinate_difference": 5.613209896893068e-11,
+      "max_reference_violation": 9.595513272842027e-11,
+      "max_unmodified_source_violation": null,
+      "model_fingerprint": "sha256:5150d609f638a28ad9772107902a61a6b75e23a03def548b52ec875b36e239f9",
+      "native_current_retractions": [
+        0,
+        1,
+        0
+      ],
+      "native_iterations": [
+        6,
+        6,
+        6
+      ],
+      "phase_windings_by_start": {
+        "declared": {},
+        "flat": {},
+        "perturbed": {}
+      },
+      "reference_only_variable_count": 108,
+      "representative_point_sha256": "f9c7649bee855c3a4c55a21b29e382072e700de3ea3eacee024a6fe451efe402",
+      "sharing_equalities": 46,
+      "source_sha256": "5d8beff696edd0487387731e9ef3dc1bdff448294291b2b88bb96b5dff7b66a6",
+      "variables": 643
+    },
+    "dc_island": {
+      "active_coordinates_by_equipment": {
+        "branch": 77,
+        "branchdc": 6,
+        "bus": 50,
+        "busdc": 7,
+        "convdc": 7,
+        "gen": 65
+      },
+      "angle_references": [
+        {
+          "bus": 113,
+          "declared": true,
+          "island_buses": [
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            117,
+            118,
+            119,
+            120,
+            121,
+            122,
+            123,
+            124
+          ]
+        },
+        {
+          "bus": 213,
+          "declared": true,
+          "island_buses": [
+            201,
+            202,
+            203,
+            204,
+            205,
+            206,
+            207,
+            208,
+            209,
+            210,
+            211,
+            212,
+            213,
+            214,
+            215,
+            216,
+            217,
+            218,
+            219,
+            220,
+            221,
+            222,
+            223,
+            224
+          ]
+        },
+        {
+          "bus": 302,
+          "declared": true,
+          "island_buses": [
+            301,
+            302
+          ]
+        }
+      ],
+      "bus_type_policy": [
+        {
+          "bus_id": 123,
+          "declared": "PQ",
+          "effective": "PV"
+        }
+      ],
+      "control_count": 141,
+      "equalities": 655,
+      "limit_violation_count": 32,
+      "max_electrical_difference": 1.6986865906953863e-10,
+      "max_limit_violation": 1.0464835876801315,
+      "max_native_in_reference_violation": 4.642792742056909e-12,
+      "max_native_violation": 4.642792742056909e-12,
+      "max_raw_coordinate_difference": 1.6986865906953863e-10,
+      "max_reference_violation": 2.728928194528635e-13,
+      "max_unmodified_source_violation": null,
+      "model_fingerprint": "sha256:91e872448f1e073cd1fad32d2ed8bde600d9085961333aeb23f950e6f6520982",
+      "native_current_retractions": [
+        1,
+        1,
+        1
+      ],
+      "native_iterations": [
+        6,
+        6,
+        6
+      ],
+      "phase_windings_by_start": {
+        "declared": {},
+        "flat": {},
+        "perturbed": {}
+      },
+      "reference_only_variable_count": 109,
+      "representative_point_sha256": "5b8ab364b38e5c565482f3167bf733a49311bc89f7dca9f5e41858666eff63cf",
+      "sharing_equalities": 46,
+      "source_sha256": "a4b71b87620ca97e909d56ee7d509b2250d5192d2ff7f863a45abf4ea04f849d",
+      "variables": 655
+    },
+    "dc_voltage": {
+      "active_coordinates_by_equipment": {
+        "branch": 77,
+        "branchdc": 7,
+        "bus": 50,
+        "busdc": 7,
+        "convdc": 7,
+        "gen": 65
+      },
+      "angle_references": [
+        {
+          "bus": 113,
+          "declared": true,
+          "island_buses": [
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            117,
+            118,
+            119,
+            120,
+            121,
+            122,
+            123,
+            124
+          ]
+        },
+        {
+          "bus": 213,
+          "declared": true,
+          "island_buses": [
+            201,
+            202,
+            203,
+            204,
+            205,
+            206,
+            207,
+            208,
+            209,
+            210,
+            211,
+            212,
+            213,
+            214,
+            215,
+            216,
+            217,
+            218,
+            219,
+            220,
+            221,
+            222,
+            223,
+            224
+          ]
+        },
+        {
+          "bus": 302,
+          "declared": true,
+          "island_buses": [
+            301,
+            302
+          ]
+        }
+      ],
+      "bus_type_policy": [
+        {
+          "bus_id": 123,
+          "declared": "PQ",
+          "effective": "PV"
+        }
+      ],
+      "control_count": 141,
+      "equalities": 657,
+      "limit_violation_count": 29,
+      "max_electrical_difference": 2.19824158875781e-14,
+      "max_limit_violation": 1.0464835876801315,
+      "max_native_in_reference_violation": 2.728928194528635e-13,
+      "max_native_violation": 4.551914400963142e-14,
+      "max_raw_coordinate_difference": 2.19824158875781e-14,
+      "max_reference_violation": 2.728928194528635e-13,
+      "max_unmodified_source_violation": null,
+      "model_fingerprint": "sha256:97ac90ae6300cfdadfb842388508a77707baddac80abab9bc4085c146a7991bc",
+      "native_current_retractions": [
+        0,
+        1,
+        0
+      ],
+      "native_iterations": [
+        6,
+        6,
+        6
+      ],
+      "phase_windings_by_start": {
+        "declared": {},
+        "flat": {},
+        "perturbed": {}
+      },
+      "reference_only_variable_count": 109,
+      "representative_point_sha256": "f118cf8591dac3238b54bad466732c96c4cf9c1fc900b3d72d276707b9896130",
+      "sharing_equalities": 46,
+      "source_sha256": "2618d8b5adff9e6578c96637b0d92f07954b328a45503060641c287cb64f3b0c",
+      "variables": 657
+    },
+    "declared_q_at_215": {
+      "active_coordinates_by_equipment": {
+        "branch": 77,
+        "branchdc": 7,
+        "bus": 50,
+        "busdc": 7,
+        "convdc": 7,
+        "gen": 65
+      },
+      "angle_references": [
+        {
+          "bus": 113,
+          "declared": true,
+          "island_buses": [
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            117,
+            118,
+            119,
+            120,
+            121,
+            122,
+            123,
+            124
+          ]
+        },
+        {
+          "bus": 213,
+          "declared": true,
+          "island_buses": [
+            201,
+            202,
+            203,
+            204,
+            205,
+            206,
+            207,
+            208,
+            209,
+            210,
+            211,
+            212,
+            213,
+            214,
+            215,
+            216,
+            217,
+            218,
+            219,
+            220,
+            221,
+            222,
+            223,
+            224
+          ]
+        },
+        {
+          "bus": 302,
+          "declared": true,
+          "island_buses": [
+            301,
+            302
+          ]
+        }
+      ],
+      "bus_type_policy": [
+        {
+          "bus_id": 123,
+          "declared": "PQ",
+          "effective": "PV"
+        }
+      ],
+      "control_count": 141,
+      "equalities": 657,
+      "limit_violation_count": 29,
+      "max_electrical_difference": 1.3877787807814457e-14,
+      "max_limit_violation": 1.0464835876801315,
+      "max_native_in_reference_violation": 2.728928194528635e-13,
+      "max_native_violation": 4.551914400963142e-14,
+      "max_raw_coordinate_difference": 1.3877787807814457e-14,
+      "max_reference_violation": 2.728928194528635e-13,
+      "max_unmodified_source_violation": 2.728928194528635e-13,
+      "model_fingerprint": "sha256:711ac2e9c0e6d939e7fb16bbd7700243eaf96f5f99fb00a04449230842048d83",
+      "native_current_retractions": [
+        0,
+        1,
+        0
+      ],
+      "native_iterations": [
+        6,
+        6,
+        6
+      ],
+      "phase_windings_by_start": {
+        "declared": {},
+        "flat": {},
+        "perturbed": {}
+      },
+      "reference_only_variable_count": 109,
+      "representative_point_sha256": "c056be6c6733afd098b2e694c3faf2fb5172b825564f7c5c98eb81cd88b5f34f",
+      "sharing_equalities": 46,
+      "source_sha256": "0a7049148347c790b68ab742b5879f73fc86e9a53a7a01d0b5c8f201699c0e76",
+      "variables": 657
+    },
+    "pcc_active": {
+      "active_coordinates_by_equipment": {
+        "branch": 77,
+        "branchdc": 7,
+        "bus": 50,
+        "busdc": 7,
+        "convdc": 7,
+        "gen": 65
+      },
+      "angle_references": [
+        {
+          "bus": 113,
+          "declared": true,
+          "island_buses": [
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            117,
+            118,
+            119,
+            120,
+            121,
+            122,
+            123,
+            124
+          ]
+        },
+        {
+          "bus": 213,
+          "declared": true,
+          "island_buses": [
+            201,
+            202,
+            203,
+            204,
+            205,
+            206,
+            207,
+            208,
+            209,
+            210,
+            211,
+            212,
+            213,
+            214,
+            215,
+            216,
+            217,
+            218,
+            219,
+            220,
+            221,
+            222,
+            223,
+            224
+          ]
+        },
+        {
+          "bus": 302,
+          "declared": true,
+          "island_buses": [
+            301,
+            302
+          ]
+        }
+      ],
+      "bus_type_policy": [
+        {
+          "bus_id": 123,
+          "declared": "PQ",
+          "effective": "PV"
+        }
+      ],
+      "control_count": 141,
+      "equalities": 657,
+      "limit_violation_count": 29,
+      "max_electrical_difference": 2.042810365310288e-14,
+      "max_limit_violation": 1.0464835876801315,
+      "max_native_in_reference_violation": 2.728928194528635e-13,
+      "max_native_violation": 4.551914400963142e-14,
+      "max_raw_coordinate_difference": 2.042810365310288e-14,
+      "max_reference_violation": 2.728928194528635e-13,
+      "max_unmodified_source_violation": null,
+      "model_fingerprint": "sha256:68d7b36845115ca02f5fdf193c12ed8bba1b835f4c69d211e0545dfd17f36a67",
+      "native_current_retractions": [
+        0,
+        1,
+        0
+      ],
+      "native_iterations": [
+        6,
+        6,
+        6
+      ],
+      "phase_windings_by_start": {
+        "declared": {},
+        "flat": {},
+        "perturbed": {}
+      },
+      "reference_only_variable_count": 109,
+      "representative_point_sha256": "0b857c60234e2053895a1acbd22e70fc9dac78cb3ee08b4e6db632c5e26e885f",
+      "sharing_equalities": 46,
+      "source_sha256": "2e88689e9b936af01af1f5b92d46839ece6740a5ab5082f1cb856c8a07d4b597",
+      "variables": 657
+    },
+    "pcc_reactive": {
+      "active_coordinates_by_equipment": {
+        "branch": 77,
+        "branchdc": 7,
+        "bus": 50,
+        "busdc": 7,
+        "convdc": 7,
+        "gen": 65
+      },
+      "angle_references": [
+        {
+          "bus": 113,
+          "declared": true,
+          "island_buses": [
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            117,
+            118,
+            119,
+            120,
+            121,
+            122,
+            123,
+            124
+          ]
+        },
+        {
+          "bus": 213,
+          "declared": true,
+          "island_buses": [
+            201,
+            202,
+            203,
+            204,
+            205,
+            206,
+            207,
+            208,
+            209,
+            210,
+            211,
+            212,
+            213,
+            214,
+            215,
+            216,
+            217,
+            218,
+            219,
+            220,
+            221,
+            222,
+            223,
+            224
+          ]
+        },
+        {
+          "bus": 302,
+          "declared": true,
+          "island_buses": [
+            301,
+            302
+          ]
+        }
+      ],
+      "bus_type_policy": [
+        {
+          "bus_id": 123,
+          "declared": "PQ",
+          "effective": "PV"
+        }
+      ],
+      "control_count": 141,
+      "equalities": 657,
+      "limit_violation_count": 29,
+      "max_electrical_difference": 1.5987211554602254e-14,
+      "max_limit_violation": 1.0464835876801315,
+      "max_native_in_reference_violation": 2.728928194528635e-13,
+      "max_native_violation": 4.551914400963142e-14,
+      "max_raw_coordinate_difference": 1.5987211554602254e-14,
+      "max_reference_violation": 2.728928194528635e-13,
+      "max_unmodified_source_violation": null,
+      "model_fingerprint": "sha256:db14ae5e08e365a3c3646503ea15bab610a4307d0b022d10b882db0ce8dcae22",
+      "native_current_retractions": [
+        0,
+        1,
+        0
+      ],
+      "native_iterations": [
+        6,
+        6,
+        6
+      ],
+      "phase_windings_by_start": {
+        "declared": {},
+        "flat": {},
+        "perturbed": {}
+      },
+      "reference_only_variable_count": 109,
+      "representative_point_sha256": "facb2b4c1efa8d428e1258176caa16bd879dfe0b6e571c0baa2e7cde0e474d85",
+      "sharing_equalities": 46,
+      "source_sha256": "43e597ccc594e0642ebe5ba122a2a0cf23efabd4ccded853f62aeec0c7669ead",
+      "variables": 657
+    },
+    "pcc_voltage": {
+      "active_coordinates_by_equipment": {
+        "branch": 77,
+        "branchdc": 7,
+        "bus": 50,
+        "busdc": 7,
+        "convdc": 7,
+        "gen": 65
+      },
+      "angle_references": [
+        {
+          "bus": 113,
+          "declared": true,
+          "island_buses": [
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            117,
+            118,
+            119,
+            120,
+            121,
+            122,
+            123,
+            124
+          ]
+        },
+        {
+          "bus": 213,
+          "declared": true,
+          "island_buses": [
+            201,
+            202,
+            203,
+            204,
+            205,
+            206,
+            207,
+            208,
+            209,
+            210,
+            211,
+            212,
+            213,
+            214,
+            215,
+            216,
+            217,
+            218,
+            219,
+            220,
+            221,
+            222,
+            223,
+            224
+          ]
+        },
+        {
+          "bus": 302,
+          "declared": true,
+          "island_buses": [
+            301,
+            302
+          ]
+        }
+      ],
+      "bus_type_policy": [
+        {
+          "bus_id": 123,
+          "declared": "PQ",
+          "effective": "PV"
+        }
+      ],
+      "control_count": 141,
+      "equalities": 657,
+      "limit_violation_count": 29,
+      "max_electrical_difference": 1.992850329202156e-14,
+      "max_limit_violation": 1.0464835876801315,
+      "max_native_in_reference_violation": 2.728928194528635e-13,
+      "max_native_violation": 4.551914400963142e-14,
+      "max_raw_coordinate_difference": 1.992850329202156e-14,
+      "max_reference_violation": 2.728928194528635e-13,
+      "max_unmodified_source_violation": null,
+      "model_fingerprint": "sha256:ff9251007be8826ec9f87fde0a4b16763923e722959d6fb3b6229c07a374923a",
+      "native_current_retractions": [
+        0,
+        1,
+        0
+      ],
+      "native_iterations": [
+        6,
+        6,
+        6
+      ],
+      "phase_windings_by_start": {
+        "declared": {},
+        "flat": {},
+        "perturbed": {}
+      },
+      "reference_only_variable_count": 109,
+      "representative_point_sha256": "7369c601dbafe99035921f7e6fdf6f60bcb573e3720fbad7f6b231901fab2196",
+      "sharing_equalities": 46,
+      "source_sha256": "a4bdf14ad25e492b558e58dce4e26f3f337c672aae1455d7c833c0cdd5b2f2c6",
+      "variables": 657
+    },
+    "tight_ratings": {
+      "active_coordinates_by_equipment": {
+        "branch": 77,
+        "branchdc": 7,
+        "bus": 50,
+        "busdc": 7,
+        "convdc": 7,
+        "gen": 65
+      },
+      "angle_references": [
+        {
+          "bus": 113,
+          "declared": true,
+          "island_buses": [
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            117,
+            118,
+            119,
+            120,
+            121,
+            122,
+            123,
+            124
+          ]
+        },
+        {
+          "bus": 213,
+          "declared": true,
+          "island_buses": [
+            201,
+            202,
+            203,
+            204,
+            205,
+            206,
+            207,
+            208,
+            209,
+            210,
+            211,
+            212,
+            213,
+            214,
+            215,
+            216,
+            217,
+            218,
+            219,
+            220,
+            221,
+            222,
+            223,
+            224
+          ]
+        },
+        {
+          "bus": 302,
+          "declared": true,
+          "island_buses": [
+            301,
+            302
+          ]
+        }
+      ],
+      "bus_type_policy": [
+        {
+          "bus_id": 123,
+          "declared": "PQ",
+          "effective": "PV"
+        }
+      ],
+      "control_count": 141,
+      "equalities": 657,
+      "limit_violation_count": 139,
+      "max_electrical_difference": 1.3877787807814457e-14,
+      "max_limit_violation": 3.99,
+      "max_native_in_reference_violation": 2.728928194528635e-13,
+      "max_native_violation": 4.551914400963142e-14,
+      "max_raw_coordinate_difference": 1.3877787807814457e-14,
+      "max_reference_violation": 2.728928194528635e-13,
+      "max_unmodified_source_violation": null,
+      "model_fingerprint": "sha256:6a5945ef4746cfbfcef7e9360a37050a35aa6bc79f7bb4dfc928d0d4817f3041",
+      "native_current_retractions": [
+        0,
+        1,
+        0
+      ],
+      "native_iterations": [
+        6,
+        6,
+        6
+      ],
+      "phase_windings_by_start": {
+        "declared": {},
+        "flat": {},
+        "perturbed": {}
+      },
+      "reference_only_variable_count": 109,
+      "representative_point_sha256": "c056be6c6733afd098b2e694c3faf2fb5172b825564f7c5c98eb81cd88b5f34f",
+      "sharing_equalities": 46,
+      "source_sha256": "e590b37cc914410a3c830eb6ba1f748a3b3082038f7de4b0b2bea317a095250e",
+      "variables": 657
+    }
+  },
+  "counts": {
+    "bidirectional_cross_checks": 66,
+    "cases": 11,
+    "corruption_controls": 132,
+    "native_solves": 33,
+    "reference_solves": 33,
+    "unmodified_source_point_checks": 3
+  },
+  "harness_sha256": {
+    "crates/tellegen/examples/acdc_pf.rs": "1a724823048ebc0a072e891d0b462d27ae4b1560d14e4237ba69e3550587ef39",
+    "crates/tellegen/tests/support/acdc_pf_case24.rs": "612e92788a704ac0b7525b25574632d618f46dbcf1631f9cb0c99454cf84d7ed",
+    "evals/validation/acdc/pf/check.jl": "13933ce1edc2730f4d202807f1ddd05eccc8c51ecea9600f66e3c9b903a56298",
+    "evals/validation/acdc/pf/mapping.jl": "c0e46c41d251e1bcf991ba95212a22333d0b635ef6de8efe367a1a8b22245d85",
+    "evals/validation/acdc/pf/run.py": "3b0fb1dda45dd0f062423e89dc31a73c5eb627112e920b5a5fa8efbba72d6c65"
+  },
+  "julia_version": "1.12.6",
+  "larger_source_specs": {
+    "case39": {
+      "expected_pf_failure": "LOCALLY_INFEASIBLE",
+      "source_file": "case39_10_he.m",
+      "source_sha256": "678a3c76c36663aef7938117d77e1a9c66bd466ebcbe98405530e3a52b6f212d"
+    },
+    "case67": {
+      "expected_pf_failure": "LOCALLY_INFEASIBLE",
+      "source_file": "case67.m",
+      "source_sha256": "1f7637a093a5c9968f5571b323875a57f60f319a665600e0b5e11d9463c9cbf1"
+    }
+  },
+  "manifest_sha256": "c0c50ee07d24b1ba8af99d58dad407959e4e6ce81071f6f988babe120f0344f4",
+  "native_cross_check": {
+    "checks": 33,
+    "max_violation": 9.595513272842027e-11
+  },
+  "native_report_sha256": "2508117983be44d7a209173236d5bc4b3d06e86c494e30b5f6febcf5da6fd551",
+  "powerio_revision": "e5a7c8b82845e32de7427f39ff8e63768f5f8bd2",
+  "reference_modification": "equal_increments_from_declared_generator_Pg_at_reference_and_Qg_at_PV_reference; positive_voltage_numerical_domain_with_original_bounds_restored; exact_presolve_of_affine_setpoints_fixed_load_and_unused_VSC_auxiliaries_restored_before_validation",
+  "reference_report_sha256": "c2a5ed2069ad15c8c2b7d1fc9d622d278b3e3d30e03a343e3aea6f7ff1ff812a",
+  "reference_revision": "9ada4082ac087aed649f48fb5f977680b0fe06c7",
+  "refusals": [
+    {
+      "case": "original_overlapping_voltage",
+      "error": "BUILD.ACDC.PROFILE_INVALID: PF overlapping AC voltage controllers require an explicit sharing model"
+    },
+    {
+      "case": "ac_split_missing_reference",
+      "error": "BUILD.ACDC.PROFILE_INVALID: PF requires exactly one declared AC reference per AC island"
+    },
+    {
+      "case": "duplicate_ac_reference",
+      "error": "BUILD.ACDC.PROFILE_INVALID: PF requires exactly one declared AC reference per AC island"
+    },
+    {
+      "case": "dc_split_missing_controller",
+      "error": "BUILD.ACDC.PROFILE_INVALID: PF requires exactly one declared DC voltage controller per DC island"
+    },
+    {
+      "case": "duplicate_dc_controller",
+      "error": "BUILD.ACDC.PROFILE_INVALID: PF requires exactly one declared DC voltage controller per DC island"
+    },
+    {
+      "case": "missing_original_ac_reference",
+      "error": "BUILD.ACDC.PROFILE_INVALID: PF requires exactly one declared AC reference per AC island"
+    },
+    {
+      "case": "missing_original_dc_controller",
+      "error": "BUILD.ACDC.PROFILE_INVALID: PF requires exactly one declared DC voltage controller per DC island"
+    },
+    {
+      "case": "unsupplied_reference_island",
+      "error": "BUILD.ACDC.PROFILE_INVALID: PF reference needs active generation"
+    },
+    {
+      "case": "duplicate_converter_voltage",
+      "error": "BUILD.ACDC.PROFILE_INVALID: PF overlapping AC voltage controllers require an explicit sharing model"
+    },
+    {
+      "case": "case39",
+      "error": "BUILD.ACDC.PROFILE_INVALID: PF requires exactly one declared DC voltage controller per DC island"
+    },
+    {
+      "case": "case67",
+      "error": "BUILD.ACDC.PROFILE_INVALID: PF requires exactly one declared AC reference per AC island"
+    }
+  ],
+  "scope": "source_pu_Cinv_PF_with_explicit_generator_allocation; limits_reported_after_solve; no_physical_fixed_mode_PF_or_automatic_control_switching",
+  "solver_options": {
+    "acceptable_iter": 0,
+    "bound_relax_factor": 0.0,
+    "constr_viol_tol": 1e-10,
+    "linear_solver": "mumps",
+    "max_cpu_time": 120.0,
+    "max_iter": 3000,
+    "mu_strategy": "adaptive",
+    "nlp_scaling_method": "none",
+    "print_level": 0,
+    "sb": "yes",
+    "tol": 1e-09
+  },
+  "source_case": {
+    "source_file": "case24_7_jb.m",
+    "source_sha256": "fe8c31d586ef6853257a0ec9a018c2b92da030808e58e57b309deac1eb5ae4b4"
+  },
+  "source_qualification": "unmodified_source_refuses_generator_converter_Vac_overlap_at_215; all_positive_cases_explicitly_switch_converter_6_to_retained_PCC_Q",
+  "suite": "case24"
+}

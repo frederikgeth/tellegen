@@ -1,6 +1,25 @@
 //! Reproduce native/reference PF control and allocation qualification.
+#[path = "../tests/support/acdc_pf_case24.rs"]
+mod case24;
 #[path = "../tests/support/acdc_pf.rs"]
 mod fixture;
+fn names() -> &'static [&'static str] {
+    match std::env::var("TELLEGEN_ACDC_PF_SUITE")
+        .as_deref()
+        .unwrap_or("case5")
+    {
+        "case5" => &fixture::CASES,
+        "case24" => &case24::CASES,
+        _ => panic!("unknown PF suite"),
+    }
+}
+fn instance(case: usize) -> powerio::AcDcPfInstance {
+    if names() == case24::CASES {
+        case24::instance(case)
+    } else {
+        fixture::instance(case)
+    }
+}
 use tellegen::ac_dc::{AcDcPfStart, PreparedAcDcPf};
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let out = std::path::PathBuf::from(std::env::args().nth(1).ok_or("output missing")?);
@@ -8,29 +27,67 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         return verify(&out);
     }
     std::fs::create_dir_all(&out)?;
+    if names() == case24::CASES {
+        let refusals: Vec<_> = case24::refusals()
+            .into_iter()
+            .chain(case24::larger_refusals())
+            .map(|(name, net, expected)| {
+                let error = powerio::AcDcPfInstance::from_network(net, case24::PROFILE)
+                    .unwrap_err()
+                    .to_string();
+                assert!(error.contains(expected), "{name}: {error}");
+                serde_json::json!({"case":name,"error":error})
+            })
+            .collect();
+        std::fs::write(
+            out.join("refusals.json"),
+            serde_json::to_string_pretty(&refusals)? + "\n",
+        )?;
+    }
     let mut cases = vec![];
-    for (case, name) in fixture::CASES.iter().enumerate() {
-        let instance = fixture::instance(case);
+    for (case, name) in names().iter().enumerate() {
+        println!("Native PF {name}");
+        let instance = instance(case);
         let net = instance.network();
         let mut ids =
             serde_json::json!({"bus":{},"gen":{},"branch":{},"busdc":{},"branchdc":{},"convdc":{}});
         for b in net.buses() {
             ids["bus"][b.id.0.to_string()] = serde_json::json!(b.id.0.to_string());
         }
-        for (i, g) in net.generators().iter().enumerate() {
+        for (i, g) in net
+            .generators()
+            .iter()
+            .enumerate()
+            .filter(|(_, g)| g.in_service)
+        {
             ids["gen"][g.uid.as_deref().unwrap()] = serde_json::json!((i + 1).to_string());
         }
-        for (i, b) in net.branches().iter().enumerate() {
+        for (i, b) in net
+            .branches()
+            .iter()
+            .enumerate()
+            .filter(|(_, b)| b.in_service)
+        {
             ids["branch"][b.uid.as_deref().unwrap()] = serde_json::json!((i + 1).to_string());
         }
         let owner = net.ac_dc_equivalent().unwrap();
         for b in &owner.buses {
             ids["busdc"][b.component.to_string()] = serde_json::json!(b.external_id.to_string());
         }
-        for (i, b) in owner.branches.iter().enumerate() {
+        for (i, b) in owner
+            .branches
+            .iter()
+            .enumerate()
+            .filter(|(_, b)| b.in_service)
+        {
             ids["branchdc"][b.component.to_string()] = serde_json::json!((i + 1).to_string());
         }
-        for (i, s) in owner.stations.iter().enumerate() {
+        for (i, s) in owner
+            .stations
+            .iter()
+            .enumerate()
+            .filter(|(_, s)| s.in_service)
+        {
             ids["convdc"][s.component.to_string()] = serde_json::json!((i + 1).to_string());
         }
         let file = format!("pf_{case}.m");
@@ -80,7 +137,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         out.join("native.json"),
         serde_json::to_string_pretty(&cases)? + "\n",
     )?;
-    println!("8 PF cases / 24 native solves pass");
+    println!(
+        "{} PF cases / {} native solves pass",
+        names().len(),
+        3 * names().len()
+    );
     Ok(())
 }
 fn verify(out: &std::path::Path) -> Result<(), Box<dyn std::error::Error>> {
@@ -88,8 +149,7 @@ fn verify(out: &std::path::Path) -> Result<(), Box<dyn std::error::Error>> {
     let mut worst: f64 = 0.;
     let mut checks = 0;
     for case in r["cases"].as_array().ok_or("reference cases missing")? {
-        let model =
-            PreparedAcDcPf::new(fixture::instance(case["case"].as_u64().unwrap() as usize))?;
+        let model = PreparedAcDcPf::new(instance(case["case"].as_u64().unwrap() as usize))?;
         for s in case["solves"].as_array().unwrap() {
             let point = serde_json::from_value(s["point"].clone())?;
             let result = model.evaluate(&point)?;
@@ -98,12 +158,12 @@ fn verify(out: &std::path::Path) -> Result<(), Box<dyn std::error::Error>> {
             checks += 1;
         }
     }
-    assert_eq!(checks, 24);
+    assert_eq!(checks, names().len() * 3);
     std::fs::write(
         out.join("native-cross-check.json"),
         serde_json::to_string_pretty(&serde_json::json!({"checks":checks,"max_violation":worst}))?
             + "\n",
     )?;
-    println!("24 reference PF points pass native equations and sharing");
+    println!("{checks} reference PF points pass native equations and sharing");
     Ok(())
 }
