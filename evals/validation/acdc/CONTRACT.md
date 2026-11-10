@@ -159,3 +159,15 @@ Typed points remain exact, including infeasible ones. New-profile PF diagnostics
 refuse because they do not enforce OPF operating limits. This policy does not
 qualify arbitrary physical projections or enable generic rebasing. See the
 [108-case independent check](physical/README.md#declared-current-profile--2026-11-10).
+
+
+The [bypass/unequal-base gate](physical/BYPASS.md) qualifies all eight station
+flag combinations. Physical transformer bypass requires common PCC/filter
+voltage bases because the source equation equates raw pu voltages and ignores
+the retained tap. The DC branch equation likewise needs common endpoint voltage
+bases for its tested physical interpretation. Unequal-base physical points fail
+only those expected constraints in native Tellegen and unmodified Julia. Source
+profiles continue to evaluate their declared coordinates; this is not a new
+runtime refusal of source cases or a generic physical conversion API. A separate
+physical-coordinate profile must define port/impedance bases and weighted
+bypass/DC equations before those physical projections can be enabled.

@@ -126,3 +126,7 @@ required-features = ["acopf"]
 [[example]]
 name = "acdc_physical"
 required-features = ["acopf"]
+
+[[example]]
+name = "acdc_bypass"
+required-features = ["acopf"]

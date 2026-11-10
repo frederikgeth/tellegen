@@ -183,4 +183,13 @@ The full Tellegen suite passes 762 tests (7 ignored), including case5/24/39/67
 native solve/derivative regressions; all-target Clippy, pin/EPL/fmt guards pass.
 PowerIO's affected suites pass 493 tests; its previously documented broad Clippy
 baseline warnings remain. No native optimum-invariance or new PF-solve claim is
-made. Bypass/unequal-base semantics remain the next physical qualification gate.
+made. The subsequent [bypass qualification](BYPASS.md) records which coordinate
+conditions pass and which unequal-base interpretations remain unsupported.
+
+
+## Bypass and unequal endpoint bases
+
+The [384-case follow-up](BYPASS.md) qualifies all eight station-flag combinations
+under explicit common-base conditions and isolates two unequal-base limitations
+in both native profiles and unmodified Julia. See its supported-interpretation
+table before using source per-unit declarations as physical equipment.

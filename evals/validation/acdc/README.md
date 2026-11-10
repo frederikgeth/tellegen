@@ -282,3 +282,9 @@ physical current limits. Run the physical harness with `--profile declared-curre
 for 108 feasible/binding/violating cases, checked against a Julia model with only
 Imax repair undone. Compatibility remains unchanged; see the
 [policy contract and evidence](physical/README.md#declared-current-profile--2026-11-10).
+
+
+Run `physical/run.py OUTPUT --suite bypass` for the
+[384-case bypass/unequal-base qualification](physical/BYPASS.md): 288 physical
+points pass, while 96 witnesses isolate unsupported unequal-base interpretations.
+Production equations, both profiles and the PowerIO pin remain unchanged.

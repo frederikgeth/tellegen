@@ -296,3 +296,31 @@ changed. PR #300/#358/#822 remain draft at their previous heads.
 This qualifies declared-current bound semantics, not a full physical equipment
 profile, arbitrary rebasing, optimum invariance or native coupled PF. The next
 physical gate is bypass and unequal-base semantics; see [scope/reproduction](physical/README.md).
+
+
+## Bypass and unequal-base gate — 2026-11-10
+
+The [384-case physical qualification](physical/BYPASS.md) covers every
+transformer/reactor/filter flag combination, both directions, one/two poles and
+three power bases. 288 qualified points satisfy both native profiles and the
+unmodified pinned Julia model. 48 unequal-PCC/filter-base transformer-bypass
+witnesses fail only voltage equality; 48 unequal-DC-endpoint-base witnesses fail
+only both DC Ohm-law equations. All other constraints/bounds and objective
+differences are within 1.137e-13. Julia independently locates each expected
+failing constraint; all 384 current-corruption controls specifically fail the
+previously satisfied current equation.
+
+Four new Rust tests cover the complete case matrix, physical conservation,
+source IR preservation, disabled-parameter retention/re-enabling, ineffective
+single-resistance rescaling and metadata-only base edits. Derivative checks pass
+for all eight station combinations at two finite-difference steps. Full-feature
+validation: **766 passed, 7 ignored**; all-target Clippy, formatting, pin/EPL guards
+pass. The existing four-case native regressions pass, and all prior 42/108
+physical-case record fields reproduce exactly.
+
+No production equations, profile meanings, dependency pins, PowerIO source or
+PR heads changed. These are limitations of a physical interpretation of the
+source-coordinate model, not a native/reference discrepancy. The next gate is
+an explicit physical-coordinate contract and separately selected weighted
+bypass/DC formulation, before enabling general physical rebasing. See the
+[compact evidence](physical/bypass-qualification.json) and reproduction commands.

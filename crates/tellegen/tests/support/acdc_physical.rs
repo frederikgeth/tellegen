@@ -30,7 +30,29 @@ impl Bases {
     }
 }
 
+#[derive(Clone, Copy, Debug, serde::Serialize)]
+pub struct Elements {
+    pub transformer: bool,
+    pub reactor: bool,
+    pub filter: bool,
+}
+impl Elements {
+    pub const ALL: Self = Self {
+        transformer: true,
+        reactor: true,
+        filter: true,
+    };
+    pub fn from_mask(mask: u8) -> Self {
+        Self {
+            transformer: mask & 1 != 0,
+            reactor: mask & 2 != 0,
+            filter: mask & 4 != 0,
+        }
+    }
+}
+
 pub struct Circuit {
+    pub elements: Elements,
     pub direction: f64,
     pub poles: u8,
     pub pcc: C,
@@ -51,13 +73,33 @@ pub struct Circuit {
 }
 impl Circuit {
     pub fn new(direction: f64, poles: u8) -> Self {
+        Self::with_elements(direction, poles, Elements::ALL)
+    }
+    pub fn with_elements(direction: f64, poles: u8, elements: Elements) -> Self {
         // Phase-to-neutral RMS voltage and per-phase current. The loss curve
         // uses AC RMS current magnitude in kA (its coefficients are total MW).
         let valve = C::new(200.0 / 3.0_f64.sqrt(), 0.0);
         let valve_current = C::new(direction * 0.25, -0.08);
-        let filter = valve + REACTOR_OHM * valve_current;
-        let transformer_current = valve_current + C::new(0.0, FILTER_SIEMENS) * filter;
-        let pcc = TURNS_RATIO * (filter + TRANSFORMER_OHM * transformer_current);
+        let filter = if elements.reactor {
+            valve + REACTOR_OHM * valve_current
+        } else {
+            valve
+        };
+        let transformer_current = if elements.filter {
+            valve_current + C::new(0.0, FILTER_SIEMENS) * filter
+        } else {
+            valve_current
+        };
+        let turns = if elements.transformer {
+            TURNS_RATIO
+        } else {
+            1.0
+        };
+        let pcc = if elements.transformer {
+            turns * (filter + TRANSFORMER_OHM * transformer_current)
+        } else {
+            filter
+        };
         // Choose the physical AC reference frame; this changes no power/current.
         let rotation = C::from_polar(1.0, -pcc.arg());
         let (pcc, filter, valve, valve_current, transformer_current) = (
@@ -67,7 +109,7 @@ impl Circuit {
             valve_current * rotation,
             transformer_current * rotation,
         );
-        let pcc_power = 3.0 * pcc * (transformer_current / TURNS_RATIO).conj();
+        let pcc_power = 3.0 * pcc * (transformer_current / turns).conj();
         let transformer_to = -3.0 * filter * transformer_current.conj();
         let reactor_from = 3.0 * filter * valve_current.conj();
         let valve_power = 3.0 * valve * valve_current.conj();
@@ -79,6 +121,7 @@ impl Circuit {
         let dc_to_kv = dc_from_kv - DC_OHM * dc_current_ka;
         let dc_to_mw = -f64::from(poles) * dc_to_kv * dc_current_ka;
         Self {
+            elements,
             direction,
             poles,
             pcc,
@@ -135,8 +178,8 @@ impl Circuit {
             area: None,
         };
         let zbase = b.converter_kv.powi(2) / b.mva;
-        let series = |z: C| ConverterSeries {
-            enabled: true,
+        let series = |z: C, enabled| ConverterSeries {
+            enabled,
             resistance_pu: z.re / zbase,
             reactance_pu: z.im / zbase,
         };
@@ -165,12 +208,12 @@ impl Circuit {
                 ac_control: AcConverterControl::ReactivePowerAtPcc,
                 dc_control: DcConverterControl::ActivePowerAtPcc,
                 ac_base_kv: b.converter_kv,
-                transformer: series(TRANSFORMER_OHM),
+                transformer: series(TRANSFORMER_OHM, self.elements.transformer),
                 // Physical turns ratio = tap_pu * PCC_base / converter_base.
                 transformer_tap_ratio: TURNS_RATIO * b.converter_kv / b.pcc_kv,
-                filter_enabled: true,
+                filter_enabled: self.elements.filter,
                 filter_susceptance_pu: FILTER_SIEMENS * zbase,
-                reactor: series(REACTOR_OHM),
+                reactor: series(REACTOR_OHM, self.elements.reactor),
                 valve_voltage_pu: AcDcLimits {
                     min: 180.0 / b.converter_kv,
                     max: 240.0 / b.converter_kv,
