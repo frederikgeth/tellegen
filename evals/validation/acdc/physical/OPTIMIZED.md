@@ -124,7 +124,7 @@ It uses locked/offline Cargo and the pinned Julia environment. Remove only the
 temporary Cargo target after validation; retain generated cases, logs and reports.
 
 This qualifies local optimized solutions for the explicit single-converter
-fixtures above. Multi-converter/meshed-network physical validation is the next
-step. General imported-network rebasing still needs provenance and conversion
+fixtures above. The follow-up [multi-converter mesh gate](MESH.md) qualifies three AC islands
+connected through a DC triangle, including congestion and current-limited dispatch. General imported-network rebasing still needs provenance and conversion
 rules; arbitrary hardware projections, directional loss policy, physical
 pole/return wiring, native coupled PF and global optimality remain separate.

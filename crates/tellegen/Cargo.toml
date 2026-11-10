@@ -130,3 +130,11 @@ required-features = ["acopf"]
 [[example]]
 name = "acdc_bypass"
 required-features = ["acopf"]
+
+[[example]]
+name = "acdc_optimized"
+required-features = ["acopf"]
+
+[[example]]
+name = "acdc_mesh"
+required-features = ["acopf"]

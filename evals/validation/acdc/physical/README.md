@@ -210,3 +210,12 @@ network representations with 256 native and 256 modified-reference Julia
 solves. Both solvers' points pass cross-feasibility, physical bounds and cost
 checks on every equivalent base. This covers single-converter synthetic
 networks; it does not enable general rebasing or qualify global optimality.
+
+## Three-terminal physical DC mesh
+
+The [mesh gate](MESH.md) adds three independently referenced AC islands,
+three VSCs and a triangular DC grid. All 384 local solves and 2,304
+cross-formulation/base checks pass, including binding line/current limits
+and economic redispatch. The independent reference uses documented equivalent
+row normalization and constant-auxiliary presolve; original auxiliary rows
+and bounds are restored for validation. No production model or pin changes.

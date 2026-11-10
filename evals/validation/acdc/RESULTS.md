@@ -368,3 +368,32 @@ Clippy, fmt/pin/EPL guards pass. The extracted physical-reference helper
 reproduces the prior 384-point evidence exactly. No production model, profile,
 PowerIO pin, schema or draft PR head changed. Multi-converter/meshed physical
 networks remain the next validation gate; no general rebasing API is enabled.
+
+## Multi-converter physical DC mesh — 2026-11-10
+
+The [mesh qualification](physical/MESH.md) covers 24 physical networks on four
+base representations: three AC islands, three VSCs and a DC triangle; two
+station configurations, both economic transfer directions, 1/2 poles and
+unconstrained/line-limited/current-limited regimes. All 192 native and 192
+independent Julia local solves pass, along with 2,304 cross-formulation/base
+checks and 576 corruption controls. Max cost difference is 1.459e-8; max Julia
+cross violation in original units is 3.007e-10. Physical bounds, direct phase
+equations, loss balance and economic effects of active limits are checked.
+
+Reference-only numerical failures were investigated explicitly. Final validation
+uses equivalent SI-row normalization and exact presolve of declared-constant
+auxiliaries, restoring all original auxiliary equalities/bounds for acceptance.
+All starts use identical recorded settings; no failed trial is counted as a
+pass and no acceptance threshold is relaxed. This is a conditioning finding,
+not a confirmed electrical-equation bug in unmodified PowerModelsACDC.
+
+All 32 affected AC/DC tests pass, including six mesh derivative cases and
+identity-preserving row reorderings. All-target Clippy and fmt/pin/EPL checks
+pass. No production equation, profile, schema, PowerIO pin or draft PR head
+changes. Connected-AC-network interactions and outage/islanding checks remain
+subsequent gates; native PF, generic rebasing and physical pole wiring remain
+unqualified.
+
+The optimization and mesh examples explicitly require `acopf`, fixing the
+previous optimization example's missing feature gate. Default-feature
+`cargo check -p tellegen --all-targets --locked --offline` also passes.
