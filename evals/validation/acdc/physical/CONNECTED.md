@@ -148,6 +148,6 @@ This qualifies local OPF on these connected AC/DC networks and explicit static
 outages. It does not implement an N−1 security-constrained dispatch, dynamic
 islanding/resynchronization, automatic load shedding, global infeasibility
 certification, physical pole/return wiring or native coupled PF. Generic rebasing,
-directional losses and PF controls/droop/deadbands remain separate gates. A useful
-next gate is an explicit directional-loss contract and rectifier/inverter
-reversal witnesses before extending physical models further.
+directional losses and PF controls/droop/deadbands remain separate gates. The subsequent
+[directional-loss contract and reversal witnesses](LOSSES.md) now establish why
+mode handling needs a separate policy before extending physical models further.

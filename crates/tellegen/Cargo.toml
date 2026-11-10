@@ -142,3 +142,7 @@ required-features = ["acopf"]
 [[example]]
 name = "acdc_connected"
 required-features = ["acopf"]
+
+[[example]]
+name = "acdc_losses"
+required-features = ["acopf"]

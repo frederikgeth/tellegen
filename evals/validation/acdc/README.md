@@ -328,3 +328,22 @@ idle-loss initialization and Ipopt interior-push settings, with unchanged
 acceptance thresholds and no confirmed upstream electrical-equation bug.
 
 Run `CARGO_TARGET_DIR=/tmp/tacdc-connected-target python3 evals/validation/acdc/physical/connected.py /tmp/tacdc-connected-live`.
+
+
+## Directional loss contract — 2026-11-10
+
+The [loss-contract gate](physical/LOSSES.md) checks 1,728 physical witnesses
+across asymmetric/equal coefficients, reversal and idle/zero-power boundaries,
+full/bypassed stations, 1/2 poles and nine bases. All 504 expected inverter-only
+loss discrepancies equal `(Cselected-Cinv)*I²`; other equations and 1,728
+current-corruption controls pass. This is pointwise characterization, not a
+new directional OPF solver. All 39 affected AC/DC tests and build/lint guards pass.
+
+PowerModelsACDC intentionally uses Cinv in both directions; its parser docs
+incorrectly label that field unimplemented. A separate MATACDC 1.0 source audit
+finds inconsistent mode labels and an exact-zero quadratic omission; neither
+is silently adopted. PCC, valve and DC power signs differ near idle operation,
+and a hard valve-P switch has a finite jump at nonzero Q. The next gate is an
+explicit fixed-mode physical loss policy and branch-constrained optimization,
+with automatic reversal kept separate. Existing profiles, pin and draft PR
+heads remain unchanged.

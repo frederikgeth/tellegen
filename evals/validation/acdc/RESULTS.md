@@ -419,3 +419,22 @@ fmt/pin/EPL guards pass. The shared Julia helper reproduces the prior mesh repor
 byte-for-byte. No production model, compatibility profile, schema, PowerIO pin or
 draft PR head changes. Directional loss semantics, native PF controls, generic
 rebasing and physical pole wiring remain separate gates.
+
+
+## Directional loss contract — 2026-11-10
+
+The [loss-contract gate](physical/LOSSES.md) checks 1,728 physical witnesses
+across asymmetric/equal coefficients, reversal and idle/zero-power boundaries,
+full/bypassed stations, 1/2 poles and nine bases. All 504 expected inverter-only
+loss discrepancies equal `(Cselected-Cinv)*I²`; other equations and 1,728
+current-corruption controls pass. This is pointwise characterization, not a
+new directional OPF solver. All 39 affected AC/DC tests and build/lint guards pass.
+
+PowerModelsACDC intentionally uses Cinv in both directions; its parser docs
+incorrectly label that field unimplemented. A separate MATACDC 1.0 source audit
+finds inconsistent mode labels and an exact-zero quadratic omission; neither
+is silently adopted. PCC, valve and DC power signs differ near idle operation,
+and a hard valve-P switch has a finite jump at nonzero Q. The next gate is an
+explicit fixed-mode physical loss policy and branch-constrained optimization,
+with automatic reversal kept separate. Existing profiles, pin and draft PR
+heads remain unchanged.

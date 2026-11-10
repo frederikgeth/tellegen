@@ -76,10 +76,24 @@ impl Circuit {
         Self::with_elements(direction, poles, Elements::ALL)
     }
     pub fn with_elements(direction: f64, poles: u8, elements: Elements) -> Self {
+        Self::with_current_and_loss(
+            direction,
+            poles,
+            elements,
+            C::new(direction * 0.25, -0.08),
+            LOSS[2],
+        )
+    }
+    pub fn with_current_and_loss(
+        direction: f64,
+        poles: u8,
+        elements: Elements,
+        valve_current: C,
+        quadratic_ohm: f64,
+    ) -> Self {
         // Phase-to-neutral RMS voltage and per-phase current. The loss curve
         // uses AC RMS current magnitude in kA (its coefficients are total MW).
         let valve = C::new(200.0 / 3.0_f64.sqrt(), 0.0);
-        let valve_current = C::new(direction * 0.25, -0.08);
         let filter = if elements.reactor {
             valve + REACTOR_OHM * valve_current
         } else {
@@ -114,7 +128,7 @@ impl Circuit {
         let reactor_from = 3.0 * filter * valve_current.conj();
         let valve_power = 3.0 * valve * valve_current.conj();
         let current = valve_current.norm();
-        let valve_loss_mw = LOSS[0] + LOSS[1] * current + LOSS[2] * current * current;
+        let valve_loss_mw = LOSS[0] + LOSS[1] * current + quadratic_ohm * current * current;
         let dc_from_mw = valve_power.re - valve_loss_mw;
         let dc_from_kv = 500.0; // each symmetric pole's voltage
         let dc_current_ka = dc_from_mw / (f64::from(poles) * dc_from_kv);
